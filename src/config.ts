@@ -20,10 +20,10 @@ export const SITE = {
   dir: "ltr", // "rtl" | "auto"
   lang: "ko", // html lang code. Set this empty and default will be "en"
   timezone: "Asia/Seoul", // Default global timezone (IANA format) https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-  export const LOGO_IMAGE = {
+} as const;
+ export const LOGO_IMAGE = {
   enable: true,
   svg: false,
   width: 200, // 로고 크기에 따라 이 숫자를 조절하세요
   height: 46,
 };
-} as const;
