@@ -1,6 +1,6 @@
 export const SITE = {
-  website: "https://astro-paper.pages.dev/", // replace this with your deployed domain
-  author: "editornom",
+  website: "https://editornom.com/", // replace this with your deployed domain
+  author: "편집",
   profile: "https://satnaing.dev/",
   desc: "IT 테크 기술 블로그|AI, 사이버보안, 앱개발",
   title: "편집놈의 IT 블로그",
@@ -19,5 +19,11 @@ export const SITE = {
   dynamicOgImage: true,
   dir: "ltr", // "rtl" | "auto"
   lang: "ko", // html lang code. Set this empty and default will be "en"
-  timezone: "Asia/Bangkok", // Default global timezone (IANA format) https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  timezone: "Asia/Seoul", // Default global timezone (IANA format) https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  export const LOGO_IMAGE = {
+  enable: true,
+  svg: false,
+  width: 200, // 로고 크기에 따라 이 숫자를 조절하세요
+  height: 46,
+};
 } as const;
