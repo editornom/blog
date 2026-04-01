@@ -20,7 +20,7 @@ const { title, description, ogImage, ...datetimeProps } = post.data;
 let thumbnail: any = ogImage;
 
 if (!thumbnail || typeof thumbnail === "string") {
-  const bodyImage = getFirstImage(post.body);
+  const bodyImage = getFirstImage(post.body || "");
   const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/images/**/*.{jpeg,jpg,png,gif,webp}");
   
   // Try to find the matching image in the assets
