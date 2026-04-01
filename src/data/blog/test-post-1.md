@@ -8,8 +8,8 @@ draft: false
 tags:
   - test
   - tech
-ogImage: ../../assets/images/test-1.png
-description: 안티그래비티가 자동으로 생성한 첫 번째 테스트 포스트입니다. 미래지향적인 워크스테이션 이미지를 포함하고 있습니다.
+ogImage: "../../assets/images/test-1.png"
+description: "안티그래비티가 자동으로 생성한 첫 번째 테스트 포스트입니다. 미래지향적인 워크스테이션 이미지를 포함하고 있습니다."
 ---
 
 ## 테스트 포스트 1

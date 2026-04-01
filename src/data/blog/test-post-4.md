@@ -8,8 +8,8 @@ draft: false
 tags:
   - test
   - future
-ogImage: ../../assets/images/test-4.png
-description: 베이퍼웨이브 스타일의 환상적인 하늘을 담은 네 번째 테스트 포스트입니다. 강렬한 색상을 포함하고 있습니다.
+ogImage: "../../assets/images/test-4.png"
+description: "베이퍼웨이브 스타일의 환상적인 하늘을 담은 네 번째 테스트 포스트입니다. 강렬한 색상을 포함하고 있습니다."
 ---
 
 ## 테스트 포스트 4

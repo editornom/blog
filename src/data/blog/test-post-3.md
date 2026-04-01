@@ -8,8 +8,8 @@ draft: false
 tags:
   - test
   - relaxation
-ogImage: ../../assets/images/test-3.png
-description: 따뜻한 커피와 함께 생각에 잠기는 세 번째 테스트 포스트입니다. 노트북과 커피가 포함되어 있습니다.
+ogImage: "../../assets/images/test-3.png"
+description: "따뜻한 커피와 함께 생각에 잠기는 세 번째 테스트 포스트입니다. 노트북과 커피가 포함되어 있습니다."
 ---
 
 ## 테스트 포스트 3
