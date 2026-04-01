@@ -25,5 +25,5 @@ export const SITE = {
   enable: true,
   svg: false,
   width: 200, // 로고 크기에 따라 이 숫자를 조절하세요
-  height: 46,
+  height: 23,
 };
