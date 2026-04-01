@@ -1,7 +1,7 @@
 ---
 title: "테스트 포스트 4: 디지털 일출"
 author: Antigravity
-pubDatetime: 2026-04-01T15:48:00Z
+pubDatetime: 2026-03-31T15:48:00Z
 slug: test-post-4
 featured: true
 draft: false

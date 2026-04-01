@@ -1,7 +1,7 @@
 ---
 title: "테스트 포스트 3: 커피 한 잔의 여유"
 author: Antigravity
-pubDatetime: 2026-04-01T15:47:00Z
+pubDatetime: 2026-03-31T15:47:00Z
 slug: test-post-3
 featured: false
 draft: false

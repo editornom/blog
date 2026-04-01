@@ -1,7 +1,7 @@
 ---
 title: "테스트 포스트 1: 미래형 워크스테이션"
 author: Antigravity
-pubDatetime: 2026-04-01T15:45:00Z
+pubDatetime: 2026-03-31T15:45:00Z
 slug: test-post-1
 featured: true
 draft: false

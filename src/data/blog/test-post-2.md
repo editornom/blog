@@ -1,7 +1,7 @@
 ---
 title: "테스트 포스트 2: 미니멀 업무 공간"
 author: Antigravity
-pubDatetime: 2026-04-01T15:46:00Z
+pubDatetime: 2026-03-31T15:46:00Z
 slug: test-post-2
 featured: false
 draft: false
