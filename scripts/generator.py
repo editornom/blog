@@ -41,7 +41,7 @@ slug: "seo-friendly-english-slug"
 featured: false
 draft: false
 tags: ["태그1", "태그2", "태그3"]
-ogImage: "../../assets/images/placeholder.png"
+ogImage: "../../../../assets/images/placeholder.png"
 description: "메타 설명 (1~2줄)"
 ---
 

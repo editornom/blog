@@ -102,11 +102,11 @@ def process_urls(urls_file="urls.txt", target_url=None, folder="posts"):
         time.sleep(20) 
         
         if generated_path:
-            md_img_link = f"![AI Generated Image](../../assets/images/{img_filename})"
+            md_img_link = f"![AI Generated Image](../../../../assets/images/{img_filename})"
             draft = draft.replace(f"[이미지: {prompt}]", md_img_link)
             
             if i == 0:
-                draft = re.sub(r'ogImage: ".*?"', f'ogImage: "../../assets/images/{img_filename}"', draft)
+                draft = re.sub(r'ogImage: ".*?"', f'ogImage: "../../../../assets/images/{img_filename}"', draft)
 
     # 5. Save the Final Markdown File
     slug_match = re.search(r'slug: "(.*?)"', draft)
