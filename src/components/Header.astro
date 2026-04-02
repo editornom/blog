@@ -30,42 +30,32 @@ const isActive = (path: string) => {
   Skip to content
 </a>
 
-<header
-  class="app-layout flex flex-col items-center justify-between sm:flex-row"
->
+<header class="app-layout">
   <div
     id="top-nav-wrap"
-    class:list={[
-      "pt-4 pb-2 sm:pt-6 sm:pb-0",
-      "border-b border-border",
-      "relative w-full bg-background",
-      "flex items-center justify-between",
-    ]}
+    class="flex flex-col border-b border-border bg-background py-4 sm:flex-row sm:items-center sm:justify-between sm:py-6 sm:border-none"
   >
-    <a
-  href="/"
-  class="static py-1 text-xl leading-8 font-semibold whitespace-nowrap sm:my-auto sm:text-2xl sm:leading-none"
->
-  {
-    LOGO_IMAGE.enable ? (
-      <img
-        src="/logo.png"
-        alt={SITE.title}
-        width={LOGO_IMAGE.width}
-        height={LOGO_IMAGE.height}
-      />
-    ) : (
-      SITE.title
-    )
-  }
-    </a>
-    <nav
-      id="nav-menu"
-      class="flex w-full flex-col items-center sm:ms-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0"
-    >
+    <div class="flex w-full items-center justify-between sm:w-auto">
+      <a
+        href="/"
+        class="static text-xl leading-8 font-semibold whitespace-nowrap sm:text-2xl sm:leading-none"
+      >
+        {
+          LOGO_IMAGE.enable ? (
+            <img
+              src="/logo.png"
+              alt={SITE.title}
+              width={LOGO_IMAGE.width}
+              height={LOGO_IMAGE.height}
+            />
+          ) : (
+            SITE.title
+          )
+        }
+      </a>
       <button
         id="menu-btn"
-        class="focus-outline self-end p-2 sm:hidden"
+        class="focus-outline p-2 sm:hidden"
         aria-label="Open Menu"
         aria-expanded="false"
         aria-controls="menu-items"
@@ -73,10 +63,16 @@ const isActive = (path: string) => {
         <IconX id="close-icon" class="hidden" />
         <IconMenuDeep id="menu-icon" />
       </button>
+    </div>
+
+    <nav
+      id="nav-menu"
+      class="flex w-full flex-col items-center sm:ms-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0"
+    >
       <ul
         id="menu-items"
         class:list={[
-          "mt-4 grid w-44 grid-cols-2 place-content-center gap-2",
+          "mt-4 grid w-full grid-cols-2 place-content-center gap-2",
           "[&>li>a]:block [&>li>a]:px-4 [&>li>a]:py-3 [&>li>a]:text-center [&>li>a]:font-medium [&>li>a]:hover:text-accent sm:[&>li>a]:px-2 sm:[&>li>a]:py-1",
           "hidden",
           "sm:mt-0 sm:flex sm:w-auto sm:gap-x-5 sm:gap-y-0",
