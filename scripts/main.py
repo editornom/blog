@@ -13,10 +13,19 @@ load_dotenv()
 
 DRY_RUN = os.getenv("DRY_RUN", "false").lower() == "true"
 
-def process_urls(urls_file="urls.txt", target_url=None):
+def process_urls(urls_file="urls.txt", target_url=None, folder="posts"):
     """
     Main orchestration function to process multiple URLs into blog posts.
+    
+    Args:
+        urls_file: Path to a text file containing URLs (one per line).
+        target_url: A single URL to process directly.
+        folder: Target folder under src/data/blog/ko/ — either 'posts' or 'haionnet'.
     """
+    if folder not in ("posts", "haionnet"):
+        print(f"Error: Invalid folder '{folder}'. Must be 'posts' or 'haionnet'.")
+        return
+
     if target_url:
         urls = [target_url]
     elif not os.path.exists(urls_file):
@@ -33,6 +42,7 @@ def process_urls(urls_file="urls.txt", target_url=None):
 
     for url in urls:
         print(f"\n--- Processing: {url} ---")
+        print(f"Target category: {folder}")
         
         # 1. Fetch Content
         content = fetch_content(url)
@@ -40,8 +50,8 @@ def process_urls(urls_file="urls.txt", target_url=None):
             continue
             
         # 2. Generate Draft with Gemini
-        print("Generating draft with Gemini...")
-        draft = generate_blog_post(content)
+        print(f"Generating draft with Gemini ({folder} mode)...")
+        draft = generate_blog_post(content, folder=folder)
         if not draft:
             continue
             
@@ -81,7 +91,9 @@ def process_urls(urls_file="urls.txt", target_url=None):
         slug = slug_match.group(1) if slug_match else f"post-{datetime.date.today()}-{uuid.uuid4().hex[:6]}"
         
         post_filename = f"{slug}.md"
-        post_path = os.path.join("src", "data", "blog", post_filename)
+        post_dir = os.path.join("src", "data", "blog", "ko", folder)
+        os.makedirs(post_dir, exist_ok=True)
+        post_path = os.path.join(post_dir, post_filename)
         
         with open(post_path, "w", encoding="utf-8") as f:
             f.write(draft)
@@ -96,16 +108,21 @@ def process_urls(urls_file="urls.txt", target_url=None):
 
 if __name__ == "__main__":
     import sys
+    
+    # Usage: python main.py [URL or file] [posts|haionnet]
     arg = sys.argv[1] if len(sys.argv) > 1 else "urls.txt"
+    folder = sys.argv[2] if len(sys.argv) > 2 else "posts"
+    
+    print(f"Category: {folder}")
     
     # Intelligently decide whether to treat as single URL or a file
     if arg.startswith("http"):
         print(f"Targeting single URL: {arg}")
-        process_urls(target_url=arg)
+        process_urls(target_url=arg, folder=folder)
     elif arg.endswith(".txt"):
         print(f"Targeting specialized URL file: {arg}")
-        process_urls(urls_file=arg)
+        process_urls(urls_file=arg, folder=folder)
     else:
         # Fallback to default urls.txt if no valid arg
         print(f"No specific target provided. Defaulting to: {arg}")
-        process_urls(urls_file=arg)
+        process_urls(urls_file=arg, folder=folder)
