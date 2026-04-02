@@ -1,0 +1,51 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import BentoGrid from "@/components/BentoGrid.astro";
+import getSortedPosts from "@/utils/getSortedPosts";
+
+const posts = await getCollection("blog", ({ filePath }) => filePath?.includes("/ko/"));
+
+const sortedPosts = getSortedPosts(posts);
+
+// Separate posts by folder path
+const normalPosts = sortedPosts.filter(p => p.filePath?.includes("/posts/"));
+const haionnetPosts = sortedPosts.filter(p => p.filePath?.includes("/haionnet/"));
+
+const bentoNormal = normalPosts.slice(0, 4);
+const bentoHaionnet = haionnetPosts.slice(0, 4);
+---
+
+<Layout>
+  <Header />
+  <main id="main-content" data-layout="index" class="app-layout">
+    {
+      bentoNormal.length > 0 && (
+        <section id="bento-normal" class:list={["pt-8"]}>
+          <BentoGrid posts={bentoNormal} />
+        </section>
+      )
+    }
+
+    {
+      bentoHaionnet.length > 0 && (
+        <section id="bento-haionnet" class:list={["mt-[10px] pb-6"]}>
+          <BentoGrid posts={bentoHaionnet} />
+        </section>
+      )
+    }
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const indexLayout = (document.querySelector("#main-content") as HTMLElement)
+      ?.dataset?.layout;
+    if (indexLayout) {
+      sessionStorage.setItem("backUrl", "/");
+    }
+  });
+</script>

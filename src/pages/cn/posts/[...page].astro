@@ -11,16 +11,16 @@ import getSortedPosts from "@/utils/getSortedPosts";
 import { SITE } from "@/config";
 
 export const getStaticPaths = (async ({ paginate }) => {
-  const posts = await getCollection("blog", ({ data }) => !data.draft && data.tags.includes("haionnet"));
+  const posts = await getCollection("blog", ({ data, filePath }) => !data.draft && !filePath?.includes("/haionnet/"));
   return paginate(getSortedPosts(posts), { pageSize: SITE.postPerPage });
 }) satisfies GetStaticPaths;
 
 const { page } = Astro.props;
 ---
 
-<Layout title={`haionnet | ${SITE.title}`}>
+<Layout title={`Posts | ${SITE.title}`}>
   <Header />
-  <Main pageTitle="haionnet" pageDesc="Articles by haionnet.">
+  <Main pageTitle="Posts" pageDesc="All the articles I've posted.">
     <ul>
       {page.data.map(data => <Card {...data} />)}
     </ul>

@@ -1,46 +1,70 @@
 import os
-from google.cloud import aiplatform
-from vertexai.preview.vision_models import ImageGenerationModel
+from google import genai
 from dotenv import load_dotenv
-import requests
 
 load_dotenv()
 
 def generate_image(prompt, output_filename):
     """
-    Generates an image using Imagen 3 via Google Cloud Vertex AI and saves it to the specified path.
-    Requires: GCP_PROJECT_ID and GOOGLE_APPLICATION_CREDENTIALS set in environment.
+    Generates an image using Imagen via Gemini API (Google AI Studio).
+    Requires: GEMINI_API_KEY set in environment.
     """
-    project_id = os.getenv("GCP_PROJECT_ID")
-    if not project_id:
-        print("Error: GCP_PROJECT_ID not found in .env")
+    api_key = os.getenv("GEMINI_API_KEY")
+    if not api_key:
+        print("Error: GEMINI_API_KEY not found in .env")
         return None
 
     try:
-        aiplatform.init(project=project_id, location="us-central1")
-        # Load Imagen 3 model (official name in Vertex AI)
-        model = ImageGenerationModel.from_pretrained("imagen-3.0-generate-001")
+        client = genai.Client(api_key=api_key)
         
-        print(f"Generating image for prompt: {prompt[:100]}...")
+        print(f"Generating image with Imagen for prompt: {prompt[:100]}...")
         
-        response = model.generate_images(
+        # Try Imagen 3.0 first as it's the requested version
+        model_name = 'imagen-3.0-generate-001'
+        
+        # Note: In the new SDK, it is plural 'generate_images' and config can be a dict
+        response = client.models.generate_images(
+            model=model_name,
             prompt=prompt,
-            number_of_images=1,
-            language="en",
-            aspect_ratio="1:1" # Standard for bento grid
+            config={
+                'number_of_images': 1,
+                'aspect_ratio': '1:1'
+            }
         )
         
-        # Save the first image
-        response.images[0].save(location=output_filename, include_generation_parameters=False)
-        print(f"Image saved to {output_filename}")
-        return output_filename
-        
+        # Save the first image from the response
+        if response.generated_images:
+            response.generated_images[0].image.save(output_filename)
+            print(f"Image saved to {output_filename}")
+            return output_filename
+        else:
+            print(f"Error: No images generated in response.")
+            return None
+            
     except Exception as e:
-        print(f"Error generating image: {e}")
-        # Return none or potentially an error code
+        print(f"Error generating image with Imagen 3.0: {e}")
+        # If 404, try Imagen 4.0 as a fallback
+        if "404" in str(e):
+            try:
+                print("Imagen 3.0 not found, trying Imagen 4.0...")
+                model_name = 'imagen-4.0-generate-001'
+                response = client.models.generate_images(
+                    model=model_name,
+                    prompt=prompt,
+                    config={
+                        'number_of_images': 1,
+                        'aspect_ratio': '1:1'
+                    }
+                )
+                if response.generated_images:
+                    response.generated_images[0].image.save(output_filename)
+                    print(f"Image saved via Imagen 4.0 to {output_filename}")
+                    return output_filename
+            except Exception as e2:
+                print(f"Error in Imagen 4.0 fallback: {e2}")
         return None
 
 if __name__ == "__main__":
-    # Test (requires GCP auth)
+    # Test
     test_outfile = "test_image.png"
     generate_image("A futuristic 3D workspace with soft synthwave lighting, high quality, 8k", test_outfile)

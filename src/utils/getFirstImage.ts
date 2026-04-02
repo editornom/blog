@@ -23,7 +23,7 @@ export function getFirstImage(body: string): string {
 
   // Fallback: Default test image basename
   const randomNum = Math.floor(Math.random() * 4) + 1;
-  return `../../assets/images/test-${randomNum}.png`;
+  return `@/assets/images/test-${randomNum}.png`;
 }
 
 export default getFirstImage;

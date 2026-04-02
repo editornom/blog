@@ -1,14 +1,13 @@
-import google.generativeai as genai
+from google import genai
 import os
 import datetime
-import json
 from dotenv import load_dotenv
 
 load_dotenv()
 
 def generate_blog_post(crawled_content, additional_instructions=""):
     """
-    Generates a blog post in Markdown format using the Gemini API.
+    Generates a blog post in Markdown format using the Gemini API (google-genai SDK).
     Auto-tagging is based on the content of the post.
     """
     api_key = os.getenv("GEMINI_API_KEY")
@@ -16,8 +15,7 @@ def generate_blog_post(crawled_content, additional_instructions=""):
         print("Error: GEMINI_API_KEY not found in .env")
         return None
 
-    genai.configure(api_key=api_key)
-    model = genai.GenerativeModel('gemini-1.5-flash')
+    client = genai.Client(api_key=api_key)
 
     prompt = f"""
 당신은 최고 수준의 테크니컬 SEO 전문가이자, AEO/GEO 알고리즘 평가자, 그리고 전문 카피라이터입니다.
@@ -37,7 +35,8 @@ def generate_blog_post(crawled_content, additional_instructions=""):
 ### 📝 원고 작성 원칙:
 - 객관적 데이터와 팩트에 기반하되, IT 전문가의 1:1 컨설팅처럼 신뢰감 있는 경어체(~습니다, ~해 보세요)를 사용하십시오.
 - **이미지 삽입**: 포스트 맨 앞(썸네일)과 본문 중간중간 이미지 위치에 [이미지: 여기에 들어갈 이미지의 간략하고 명확한 영문 설명] 형식을 반드시 사용하십시오.
-- **태그 자동화**: 내용에 맞춰 정확한 태그를 최소 3개 이상 추출하십시오. (예: "haionnet" 태그는 AI/보안/개발 관련 시 반드시 포함)
+- **태그 자동화**: 내용에 맞춰 정확한 태그를 최소 3개 이상 추출하십시오. **태그는 오직 상단 마크다운 Frontmatter의 tags 항목에만 포함**하며, 본문 끝에 별도로 나열하지 마십시오.
+- **결론 소제목**: 마지막 결론 섹션에서 '결론:', '마치며:' 등의 불필요한 수식어는 제외하고 바로 핵심 내용을 담은 소제목을 작성하십시오. (예: `### 안전한 비즈니스 환경의 파트너`)
 
 ### 📂 출력 형식 (Markdown with Frontmatter):
 ---
@@ -59,7 +58,10 @@ description: "AEO/GEO 최적화 메타 설명"
 """
 
     try:
-        response = model.generate_content(prompt)
+        response = client.models.generate_content(
+            model='models/gemini-3-flash-preview',
+            contents=prompt
+        )
         return response.text
     except Exception as e:
         print(f"Error calling Gemini API: {e}")

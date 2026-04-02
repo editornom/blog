@@ -2,6 +2,7 @@ import os
 import re
 import uuid
 import datetime
+import time
 from dotenv import load_dotenv
 from crawler import fetch_content
 from generator import generate_blog_post
@@ -10,19 +11,24 @@ from publish import push_to_github
 
 load_dotenv()
 
-def process_urls(urls_file="urls.txt"):
+DRY_RUN = os.getenv("DRY_RUN", "false").lower() == "true"
+
+def process_urls(urls_file="urls.txt", target_url=None):
     """
     Main orchestration function to process multiple URLs into blog posts.
     """
-    if not os.path.exists(urls_file):
+    if target_url:
+        urls = [target_url]
+    elif not os.path.exists(urls_file):
         print(f"Error: {urls_file} not found.")
         return
-
-    with open(urls_file, "r") as f:
-        urls = [line.strip() for line in f if line.strip() and not line.startswith("#")]
+    else:
+        with open(urls_file, "r") as f:
+            # Filter out comments and category headers
+            urls = [line.strip() for line in f if line.strip() and line.strip().startswith("http")]
 
     if not urls:
-        print("No URLs found in urls.txt.")
+        print(f"No valid URLs found in {urls_file or 'argument'}.")
         return
 
     for url in urls:
@@ -56,6 +62,10 @@ def process_urls(urls_file="urls.txt"):
             print(f"Generating AI image for: {prompt[:50]}...")
             generated_path = generate_image(prompt, img_path)
             
+            # Rate limiting: wait between image generations (API is called even in dry run)
+            print("Waiting 20 seconds to respect API rate limits...")
+            time.sleep(20) 
+            
             if generated_path:
                 # Replace the entire placeholder with Markdown image syntax (relative path)
                 md_img_link = f"![AI Generated Image](../../assets/images/{img_filename})"
@@ -79,7 +89,23 @@ def process_urls(urls_file="urls.txt"):
         print(f"Successfully saved blog post to {post_path}!")
         
         # 5. Push to GitHub
-        push_to_github(f"feat: add automated blog post for {slug}")
+        if DRY_RUN:
+            print(f"Dry run enabled. Skipping push to GitHub for {slug}.")
+        else:
+            push_to_github(f"feat: add automated blog post for {slug}")
 
 if __name__ == "__main__":
-    process_urls()
+    import sys
+    arg = sys.argv[1] if len(sys.argv) > 1 else "urls.txt"
+    
+    # Intelligently decide whether to treat as single URL or a file
+    if arg.startswith("http"):
+        print(f"Targeting single URL: {arg}")
+        process_urls(target_url=arg)
+    elif arg.endswith(".txt"):
+        print(f"Targeting specialized URL file: {arg}")
+        process_urls(urls_file=arg)
+    else:
+        # Fallback to default urls.txt if no valid arg
+        print(f"No specific target provided. Defaulting to: {arg}")
+        process_urls(urls_file=arg)
