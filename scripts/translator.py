@@ -1,0 +1,126 @@
+from google import genai
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+LANGUAGES = {
+    "en": "English",
+    "cn": "Simplified Chinese (简体中文)",
+    "jp": "Japanese (日本語)",
+}
+
+def translate_post(korean_markdown, target_lang):
+    """
+    Translates a Korean blog post markdown into the target language using Gemini.
+    Preserves frontmatter structure and markdown formatting.
+    
+    Args:
+        korean_markdown: The full markdown content (with frontmatter) in Korean.
+        target_lang: Language code ('en', 'cn', 'jp').
+    
+    Returns:
+        Translated markdown string, or None on failure.
+    """
+    api_key = os.getenv("GEMINI_API_KEY")
+    if not api_key:
+        print("Error: GEMINI_API_KEY not found in .env")
+        return None
+
+    lang_name = LANGUAGES.get(target_lang, target_lang)
+    client = genai.Client(api_key=api_key)
+
+    prompt = f"""
+당신은 전문 기술 번역가입니다. 아래의 한국어 블로그 원고를 {lang_name}로 번역하십시오.
+
+### 번역 규칙:
+1. **Frontmatter 유지**: YAML frontmatter(--- 사이의 영역)의 구조는 그대로 유지하되, title과 description만 번역하십시오.
+2. **slug 유지**: slug 값은 절대 변경하지 마십시오.
+3. **이미지 경로 유지**: 이미지 경로(../../assets/images/...)는 절대 변경하지 마십시오.
+4. **마크다운 문법 유지**: 헤더(#, ##, ###), 볼드(**), 리스트(-), 인용(>), 코드블록(```) 등 마크다운 문법을 그대로 유지하십시오.
+5. **자연스러운 번역**: 직역이 아닌, {lang_name} 원어민이 읽었을 때 자연스럽고 전문적인 기술 칼럼처럼 느껴지도록 의역하십시오.
+6. **기술 용어**: 프로토콜명, 기술 약어 등은 원문 그대로 사용하십시오. (예: VPN, UTM, API, SSL 등)
+
+### 원본 한국어 원고:
+{korean_markdown}
+
+### ⚠️ 주의사항:
+- 오직 번역된 마크다운만 출력하십시오.
+- 메타 설명, 코멘트, 번역 과정 설명 등은 일절 출력하지 마십시오.
+- 마크다운 코드 펜스(```markdown 등)로 감싸지 마십시오.
+"""
+
+    try:
+        response = client.models.generate_content(
+            model='models/gemini-3-flash-preview',
+            contents=prompt
+        )
+        return response.text
+    except Exception as e:
+        print(f"Error translating to {lang_name}: {e}")
+        return None
+
+
+def translate_and_save(korean_draft, slug, folder):
+    """
+    Translates the Korean draft into EN, CN, JP and saves each to the correct folder.
+    
+    Args:
+        korean_draft: Full markdown content in Korean.
+        slug: The filename slug (without .md extension).
+        folder: 'posts' or 'haionnet'.
+    
+    Returns:
+        List of successfully saved file paths.
+    """
+    saved_files = []
+    
+    for lang_code, lang_name in LANGUAGES.items():
+        print(f"\n--- Translating to {lang_name} ({lang_code}) ---")
+        
+        translated = translate_post(korean_draft, lang_code)
+        
+        if not translated:
+            print(f"  ✗ Failed to translate to {lang_name}")
+            continue
+        
+        # Clean potential markdown code fence wrapping
+        if translated.startswith("```"):
+            lines = translated.split("\n")
+            # Remove first and last lines if they are code fences
+            if lines[0].startswith("```"):
+                lines = lines[1:]
+            if lines and lines[-1].strip() == "```":
+                lines = lines[:-1]
+            translated = "\n".join(lines)
+        
+        # Save to the correct language folder
+        target_dir = os.path.join("src", "data", "blog", lang_code, folder)
+        os.makedirs(target_dir, exist_ok=True)
+        target_path = os.path.join(target_dir, f"{slug}.md")
+        
+        with open(target_path, "w", encoding="utf-8") as f:
+            f.write(translated)
+        
+        print(f"  ✓ Saved to {target_path}")
+        saved_files.append(target_path)
+    
+    return saved_files
+
+
+if __name__ == "__main__":
+    # Test with a sample file
+    import sys
+    
+    if len(sys.argv) < 2:
+        print("Usage: python translator.py <korean_markdown_file>")
+        sys.exit(1)
+    
+    filepath = sys.argv[1]
+    with open(filepath, "r", encoding="utf-8") as f:
+        content = f.read()
+    
+    slug = os.path.splitext(os.path.basename(filepath))[0]
+    folder = "posts"  # default
+    
+    translate_and_save(content, slug, folder)

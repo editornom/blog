@@ -46,12 +46,27 @@ const structuredData = {
     },
   ],
 };
+
+// Hreflang: generate alternate language URLs
+const langMap: Record<string, string> = { ko: "ko", en: "en", cn: "zh", jp: "ja" };
+const currentPath = Astro.url.pathname;
+const pathSegments = currentPath.split("/").filter(Boolean);
+const currentLang = pathSegments[0] && Object.keys(langMap).includes(pathSegments[0]) ? pathSegments[0] : null;
+const restOfPath = currentLang ? "/" + pathSegments.slice(1).join("/") : currentPath;
+const siteBase = SITE.website?.replace(/\/$/, "") || Astro.url.origin;
+
+const hreflangLinks = currentLang
+  ? Object.entries(langMap).map(([code, hreflang]) => ({
+      hreflang,
+      href: `${siteBase}/${code}${restOfPath}`,
+    }))
+  : [];
 ---
 
 <!doctype html>
 <html
   dir={SITE.dir}
-  lang=`${SITE.lang ?? "en"}`
+  lang=`${currentLang ? langMap[currentLang] : SITE.lang ?? "en"}`
   class={`${scrollSmooth && "scroll-smooth"}`}
 >
   <head>
@@ -126,6 +141,14 @@ const structuredData = {
       title={SITE.title}
       href={new URL("rss.xml", Astro.site)}
     />
+
+    <!-- Hreflang alternate language links -->
+    {hreflangLinks.map(({ hreflang, href }) => (
+      <link rel="alternate" hreflang={hreflang} href={href} />
+    ))}
+    {currentLang && (
+      <link rel="alternate" hreflang="x-default" href={`${siteBase}/ko${restOfPath}`} />
+    )}
 
     <meta name="theme-color" content="" />
 
