@@ -11,30 +11,14 @@ const bigPost = posts[0];
 const smallPosts = posts.slice(1, 4);
 ---
 
-<div class="flex flex-col gap-[5px] py-8">
+<div class="grid grid-cols-1 gap-[10px] py-8 sm:grid-cols-2 lg:grid-cols-3">
   {/* Big Post (Most Recent) */}
-  {bigPost && (
-    <div class="w-full">
-      <BentoCard post={bigPost} isLarge={true} />
-    </div>
-  )}
+  {bigPost && <BentoCard post={bigPost} isLarge={true} />}
 
   {/* Small Posts (Next 3 in a grid) */}
-  <div class="grid grid-cols-1 gap-[5px] sm:grid-cols-2 lg:grid-cols-3">
-    {smallPosts.map((post) => (
-      <BentoCard post={post} />
-    ))}
-  </div>
+  {smallPosts.map((post) => (
+    <BentoCard post={post} />
+  ))}
 </div>
 
-<style>
-  /* Optional: Ensure the grid has a consistent height on desktop if needed */
-  @media (min-width: 1024px) {
-    .grid {
-      grid-template-areas: 
-        "big big small1"
-        "big big small2"
-        "small3 small3 small3" /* Or just keep them in a column */
-    }
-  }
-</style>
+
