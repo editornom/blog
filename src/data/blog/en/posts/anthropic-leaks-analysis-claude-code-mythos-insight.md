@@ -6,7 +6,7 @@ slug: "anthropic-leaks-analysis-claude-code-mythos-insight"
 featured: false
 draft: false
 tags: ["Anthropic", "ClaudeCode", "ClaudeMythos", "AISecurity", "TechCritique"]
-ogImage: "../../assets/images/post-img-6c5f4920-0.png"
+ogImage: "../../../../assets/images/post-img-6c5f4920-0.png"
 description: "An in-depth analysis of the next-generation AI model 'Mythos' and the internal mechanisms of AI coding tools revealed through Anthropic's recent data leaks."
 ---
 
@@ -18,7 +18,7 @@ The message this incident sends to the IT industry is clear: a warning that "eve
 
 > "This leak is not a simple accident. It is a signal of a technical tipping point, where the pace of AI evolution—which humanity sought to control—has already begun to outpace corporate security governance systems."
 
-**![AI Generated Image](../../assets/images/post-img-6c5f4920-0.png)**
+**![AI Generated Image](../../../../assets/images/post-img-6c5f4920-0.png)**
 
 ---
 
@@ -47,7 +47,7 @@ The **'Undercover Mode'** found in the Claude Code source is a highly controvers
 ### 3. From 'Pause' to 'Race': The Shift in RSP v3.0
 The fact that the **promise to 'Pause training' has been removed** from Anthropic’s new Responsible Scaling Policy (RSP v3.0) is telling. In the past, they claimed they would stop development if safety couldn't be guaranteed. Now, they argue that "it is meaningless for us to stop unless our competitors do as well." This is an official acknowledgment that AI safety discourse has moved past 'theoretical regulation' and into a 'practical arms race.'
 
-**![AI Generated Image](../../assets/images/post-img-05a82df1-1.png)**
+**![AI Generated Image](../../../../assets/images/post-img-05a82df1-1.png)**
 
 ---
 
