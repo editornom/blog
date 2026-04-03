@@ -7,12 +7,15 @@ type Props = {
   size?: "sm" | "lg";
 };
 
+const { pathname } = Astro.url;
+const lang = pathname.split("/").filter(Boolean)[0] || "en";
+
 const { tag, tagName, size = "lg" } = Astro.props;
 ---
 
 <li>
   <a
-    href={`/tags/${tag}/`}
+    href={`/${lang}/tags/${tag}/`}
     transition:name={tag}
     class:list={[
       "flex items-center gap-0.5",
