@@ -1,3 +1,6 @@
----
----
-<meta http-equiv="refresh" content="0;url=/ko/" />
+<script is:inline>
+  const supportedLangs = ["ko", "en", "cn", "jp"];
+  const browserLang = navigator.language.split("-")[0];
+  const targetLang = supportedLangs.includes(browserLang) ? browserLang : "en";
+  window.location.replace(`/${targetLang}/`);
+</script>
