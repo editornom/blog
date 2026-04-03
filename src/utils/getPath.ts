@@ -15,7 +15,9 @@ export function getPath(
 ) {
   if (!filePath) return `/${id}`;
 
-  const relativePath = filePath.replace(BLOG_PATH, "").replace(/^\/+/, "");
+  const normalizedPath = filePath.replaceAll("\\", "/");
+  const normalizedBlogPath = BLOG_PATH.replaceAll("\\", "/");
+  const relativePath = normalizedPath.replace(normalizedBlogPath, "").replace(/^\/+/, "");
   const segments = relativePath.split("/");
   const filename = segments.pop() || "";
   const slug = filename.replace(/\.md$/, "");
