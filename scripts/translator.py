@@ -61,51 +61,57 @@ def translate_post(korean_markdown, target_lang):
         return None
 
 
-def translate_and_save(korean_draft, slug, folder):
+def translate_and_save(korean_draft, slug, folder, target_langs=None):
     """
     Translates the Korean draft into EN, CN, JP and saves each to the correct folder.
     
     Args:
-        korean_draft: Full markdown content in Korean.
-        slug: The filename slug (without .md extension).
-        folder: 'posts' or 'haionnet'.
+        target_langs: Optional list of language codes to filter (e.g. ['en']).
     
     Returns:
-        List of successfully saved file paths.
+        Dictionary of { 'lang_code': {'success': bool, 'path': str or None, 'error': str or None} }
     """
-    saved_files = []
+    results = {}
     
     for lang_code, lang_name in LANGUAGES.items():
+        if target_langs and lang_code not in target_langs:
+            continue
+            
         print(f"\n--- Translating to {lang_name} ({lang_code}) ---")
         
-        translated = translate_post(korean_draft, lang_code)
-        
-        if not translated:
-            print(f"  ✗ Failed to translate to {lang_name}")
-            continue
-        
-        # Clean potential markdown code fence wrapping
-        if translated.startswith("```"):
-            lines = translated.split("\n")
-            # Remove first and last lines if they are code fences
-            if lines[0].startswith("```"):
-                lines = lines[1:]
-            if lines and lines[-1].strip() == "```":
-                lines = lines[:-1]
-            translated = "\n".join(lines)
-        
-        # Save to the correct language folder
-        target_dir = os.path.join("src", "data", "blog", lang_code, folder)
-        os.makedirs(target_dir, exist_ok=True)
-        target_path = os.path.join(target_dir, f"{slug}.md")
-        
-        with open(target_path, "w", encoding="utf-8") as f:
-            f.write(translated)
-        
-        print(f"  ✓ Saved to {target_path}")
-        saved_files.append(target_path)
+        try:
+            translated = translate_post(korean_draft, lang_code)
+            
+            if not translated:
+                print(f"  [FAIL] Failed to translate to {lang_name}")
+                results[lang_code] = {"success": False, "path": None, "error": "Empty response"}
+                continue
+            
+            # Clean potential markdown code fence wrapping
+            if translated.startswith("```"):
+                lines = translated.split("\n")
+                if lines[0].startswith("```"):
+                    lines = lines[1:]
+                if lines and lines[-1].strip() == "```":
+                    lines = lines[:-1]
+                translated = "\n".join(lines)
+            
+            # Save to the correct language folder
+            target_dir = os.path.join("src", "data", "blog", lang_code, folder)
+            os.makedirs(target_dir, exist_ok=True)
+            target_path = os.path.join(target_dir, f"{slug}.md")
+            
+            with open(target_path, "w", encoding="utf-8") as f:
+                f.write(translated)
+            
+            print(f"  [PASS] Saved to {target_path}")
+            results[lang_code] = {"success": True, "path": target_path, "error": None}
+            
+        except Exception as e:
+            print(f"  [FAIL] Error translating to {lang_name}: {e}")
+            results[lang_code] = {"success": False, "path": None, "error": str(e)}
     
-    return saved_files
+    return results
 
 
 if __name__ == "__main__":
