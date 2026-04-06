@@ -10,21 +10,18 @@ import { slugifyStr } from "./slugify";
  */
 export function getPath(
   id: string,
-  filePath: string | undefined,
+  filePath: string | undefined, // Note: filePath might be undefined in Astro 5
   includeBase = true
 ) {
-  if (!filePath) return `/${id}`;
-
-  const normalizedPath = filePath.replaceAll("\\", "/");
-  const normalizedBlogPath = BLOG_PATH.replaceAll("\\", "/");
-  const relativePath = normalizedPath.replace(normalizedBlogPath, "").replace(/^\/+/, "");
-  const segments = relativePath.split("/");
-  const filename = segments.pop() || "";
-  const slug = filename.replace(/\.md$/, "");
+  // Normalize id: strip .md extension and handle backslashes
+  const normalizedId = id.replace(/\\/g, "/").replace(/\.(md|mdx)$/, "");
+  const segments = normalizedId.split("/");
+  const slug = segments.pop() || "";
 
   if (!includeBase) {
     return slug;
   }
 
-  return "/" + [...segments, slug].join("/");
+  // Prepend / for absolute internal URL
+  return "/" + normalizedId;
 }

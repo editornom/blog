@@ -8,7 +8,7 @@ import Footer from "@/components/Footer.astro";
 import getUniqueTags from "@/utils/getUniqueTags";
 import { SITE } from "@/config";
 
-const posts = await getCollection("blog", ({ filePath }) => filePath?.replace(/\\/g, "/").includes("/jp/"));
+const posts = await getCollection("blog", ({ id }) => id.replace(/\\/g, "/").startsWith("jp/"));
 
 let tags = getUniqueTags(posts);
 ---

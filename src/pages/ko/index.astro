@@ -6,16 +6,15 @@ import Footer from "@/components/Footer.astro";
 import BentoGrid from "@/components/BentoGrid.astro";
 import getSortedPosts from "@/utils/getSortedPosts";
 
-const posts = await getCollection("blog", ({ id, filePath }) => 
-  id.replace(/\\/g, "/").startsWith("ko/") || 
-  filePath?.replace(/\\/g, "/").includes("/ko/")
+const posts = await getCollection("blog", ({ id }) => 
+  id.replace(/\\/g, "/").startsWith("ko/")
 );
 
 const sortedPosts = getSortedPosts(posts);
 
 // Separate posts by folder path
-const normalPosts = sortedPosts.filter(p => p.filePath?.replace(/\\/g, "/").includes("/posts/"));
-const haionnetPosts = sortedPosts.filter(p => p.filePath?.replace(/\\/g, "/").includes("/haionnet/"));
+const normalPosts = sortedPosts.filter(p => p.id.replace(/\\/g, "/").includes("/posts/"));
+const haionnetPosts = sortedPosts.filter(p => p.id.replace(/\\/g, "/").includes("/haionnet/"));
 
 const bentoNormal = normalPosts.slice(0, 4);
 const bentoHaionnet = haionnetPosts.slice(0, 4);
