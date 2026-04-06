@@ -321,26 +321,33 @@ const nextPost =
 
     if (slug) {
       try {
+        // Calling Supabase RPC to increment and get updated count
         const { data, error } = await supabase.rpc("increment_views", {
           page_slug: slug,
         });
 
         if (error) {
-          console.error("Error incrementing views:", error);
+          console.error(`[Supabase Error] increment_views for ${slug}:`, error);
           viewCountElement.innerText = "0";
         } else {
-          viewCountElement.innerText = data;
+          // If the RPC returns the updated count, update the DOM
+          viewCountElement.innerText = data !== null && data !== undefined ? data.toString() : "1";
+          console.log(`[Supabase] View count for ${slug}:`, data);
         }
       } catch (err) {
-        console.error("Supabase RPC failed:", err);
+        console.error(`[Supabase Exception] for ${slug}:`, err);
         viewCountElement.innerText = "0";
       }
     }
   }
 
-  // Run on initial load
-  updateViewCount();
+  // Double check the DOM is ready for the first load
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", updateViewCount);
+  } else {
+    updateViewCount();
+  }
 
-  // Re-run on Astro page transitions
+  // Support Astro View Transitions
   document.addEventListener("astro:after-swap", updateViewCount);
 </script>
