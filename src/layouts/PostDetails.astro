@@ -330,9 +330,19 @@ const nextPost =
           console.error(`[Supabase Error] increment_views for ${slug}:`, error);
           viewCountElement.innerText = "0";
         } else {
-          // If the RPC returns the updated count, update the DOM
-          viewCountElement.innerText = data !== null && data !== undefined ? data.toString() : "1";
-          console.log(`[Supabase] View count for ${slug}:`, data);
+          // Double check the data returned from the RPC
+          console.log(`[Supabase Response] data for ${slug}:`, data);
+          
+          if (data !== null && data !== undefined) {
+            viewCountElement.innerText = data.toString();
+          } else {
+            // Fallback if the SQL function doesn't RETURN new_count
+            console.warn(`[Supabase Warning] RPC returned null for ${slug}. Check if SQL function has 'RETURN new_count;'`);
+            // Attempt a fallback or just keep it as 1 (assuming it was just incremented)
+            if (viewCountElement.innerText === "--") {
+                 viewCountElement.innerText = "1";
+            }
+          }
         }
       } catch (err) {
         console.error(`[Supabase Exception] for ${slug}:`, err);

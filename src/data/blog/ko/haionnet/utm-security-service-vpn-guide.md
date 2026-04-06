@@ -1,5 +1,5 @@
 ---
-title: "B2B 기업을 위한 UTM 보안 서비스 가이드: 통합 네트워크 보안과 VPN의 결합"
+title: "UTM(통합 위협 관리)이란? 방화벽부터 VPN까지 단일 장비로 끝내는 보안 전략"
 author: "Antigravity"
 pubDatetime: 2026-04-05T09:00:00Z
 slug: "utm-security-service-vpn-guide"
