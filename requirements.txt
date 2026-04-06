@@ -1,0 +1,9 @@
+# Python automation scripts dependencies
+python-dotenv
+google-generativeai
+supabase
+requests
+beautifulsoup4
+lxml
+pillow
+naversitecrawler
