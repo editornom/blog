@@ -12,5 +12,12 @@
     "image": "",
     "siteName": "google.com",
     "url": "https://google.com"
+  },
+  "https://www.haion.net/service/utm/": {
+    "title": "UTM 서비스 - 하이온넷㈜",
+    "description": "방화벽, VPN, IPS 등을 포함하는 고효율 통합 보안기능 설계와 설치 후 끊김 없는 유지보수 관리를 보장하는 전문 네트워크 UTM통합보안서비스입니다.",
+    "image": "https://haion.net/img/og_haion.jpg",
+    "siteName": "하이온넷(주)",
+    "url": "https://www.haion.net/service/utm/"
   }
 }
