@@ -48,7 +48,7 @@ const structuredData = {
 };
 
 // Hreflang: generate alternate language URLs
-const langMap: Record<string, string> = { ko: "ko", en: "en", cn: "zh", jp: "ja" };
+const langMap: Record<string, string> = { ko: "ko", en: "en", cn: "zh-CN", jp: "ja" };
 const currentPath = Astro.url.pathname;
 const pathSegments = currentPath.split("/").filter(Boolean);
 const currentLang = pathSegments[0] && Object.keys(langMap).includes(pathSegments[0]) ? pathSegments[0] : null;
