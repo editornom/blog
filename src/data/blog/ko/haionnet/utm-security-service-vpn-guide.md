@@ -1,7 +1,7 @@
 ---
 title: "B2B 기업을 위한 UTM 보안 서비스 가이드: 통합 네트워크 보안과 VPN의 결합"
 author: "Antigravity"
-pubDatetime: 2026-04-06T09:00:00Z
+pubDatetime: 2026-04-05T09:00:00Z
 slug: "utm-security-service-vpn-guide"
 featured: false
 draft: false
