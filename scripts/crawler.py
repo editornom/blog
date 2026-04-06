@@ -11,7 +11,7 @@ def fetch_content(url):
     }
     
     try:
-        response = requests.get(url, headers=headers, timeout=10)
+        response = requests.get(url, headers=headers, timeout=10, verify=False)
         response.raise_for_status()
     except Exception as e:
         print(f"Error fetching {url}: {e}")

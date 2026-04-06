@@ -20,7 +20,7 @@ def generate_image(prompt, output_filename):
         print(f"Generating image with Imagen for prompt: {prompt[:100]}...")
         
         # Try Imagen 3.0 first as it's the requested version
-        model_name = 'imagen-3.0-generate-001'
+        model_name = 'imagen-4-fast-generate-001'
         
         # Note: In the new SDK, it is plural 'generate_images' and config can be a dict
         response = client.models.generate_images(

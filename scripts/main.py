@@ -13,7 +13,76 @@ from imagen_helper import generate_image
 from translator import translate_and_save
 from publish import push_to_github
 
+def load_faq_content(keyword):
+    """
+    Reads FAQ from source/accordian/{keyword}.txt.
+    Handles numbering (Q1., A1.) and multi-line answers.
+    """
+    faq_path = os.path.join("source", "accordian", f"{keyword}.txt")
+    if not os.path.exists(faq_path):
+        return None
+    
+    faqs = []
+    current_q = None
+    current_a = []
+    
+    # Regex to match headers like Q:, Q1., A:, A1., etc. (case-insensitive)
+    q_re = re.compile(r'^Q\d*[\.:]\s*(.*)', re.IGNORECASE)
+    a_re = re.compile(r'^A\d*[\.:]\s*(.*)', re.IGNORECASE)
+    
+    with open(faq_path, "r", encoding="utf-8") as f:
+        for line in f:
+            line_stripped = line.strip()
+            
+            # Check for Question header
+            q_match = q_re.match(line_stripped)
+            if q_match:
+                # If we were previously building a Q&A pair, save it
+                if current_q and current_a:
+                    faqs.append({"q": current_q, "a": "\n".join(current_a).strip()})
+                    current_a = []
+                current_q = q_match.group(1).strip()
+                continue
+            
+            # Check for Answer header
+            a_match = a_re.match(line_stripped)
+            if a_match:
+                current_a = [a_match.group(1).strip()]
+                continue
+            
+            # If we have a current question and answer started, append intermediate lines to answer
+            if current_q and current_a:
+                current_a.append(line.rstrip())
+                
+        # Append the final pair after loop
+        if current_q and current_a:
+            faqs.append({"q": current_q, "a": "\n".join(current_a).strip()})
+            
+    return faqs
+
+def append_faq_to_draft(draft, faqs):
+    """
+    Appends FAQ accordion to the bottom of the draft.
+    """
+    if not faqs:
+        return draft
+    
+    faq_md = "\n\n## ✅ 자주 묻는 질문 (FAQ)\n"
+    for faq in faqs:
+        faq_md += f"\n<details>\n  <summary>{faq['q']}</summary>\n  {faq['a']}\n</details>\n"
+    
+    # Insert before hashtags if any, otherwise at the end
+    if " # " in draft:
+        parts = draft.rsplit(" # ", 1)
+        return parts[0] + faq_md + "\n # " + parts[1]
+    else:
+        return draft + faq_md
+
 load_dotenv()
+
+if sys.platform == "win32":
+    # Ensure terminal can handle UTF-8/Emojis on Windows
+    sys.stdout.reconfigure(encoding='utf-8')
 
 DRY_RUN = os.getenv("DRY_RUN", "false").lower() == "true"
 
@@ -57,7 +126,7 @@ def print_final_briefing(report):
 
     # 4. Translations
     print("- 🌐 다국어 번역 상태:")
-    if not report["translations"]:
+    if not report.get("translations"):
         print("  - (번역 단계가 실행되지 않았습니다)")
     else:
         for lang, res in report["translations"].items():
@@ -111,7 +180,7 @@ def process_single_file(file_path, folder="posts", target_lang=None):
 
     print_final_briefing(report)
 
-def process_urls(keyword=None, folder="posts"):
+def process_urls(keyword=None, folder="posts", include_faq=False):
     """
     Main pipeline: Crawl -> Generate -> Review -> Image Gen -> Translate -> (Push)
     """
@@ -190,6 +259,15 @@ def process_urls(keyword=None, folder="posts"):
     else:
         report["detox"]["error"] = "Detox failed, keeping original draft"
 
+    # 3.7 Add FAQ if requested
+    if include_faq and keyword:
+        faqs = load_faq_content(keyword)
+        if faqs:
+            draft = append_faq_to_draft(draft, faqs)
+            print(f"Added {len(faqs)} FAQ items to the draft.")
+        else:
+            print(f"Warning: FAQ file not found or empty for keyword '{keyword}'")
+
     # 4. Process Images (Regex to find [이미지: ...])
     image_placeholders = re.findall(r'\[이미지: (.*?)\]', draft)
     
@@ -216,7 +294,7 @@ def process_urls(keyword=None, folder="posts"):
         if generated_path:
             report["images"]["success"] += 1
             rel_path = f"../../../../../source/{folder}/{source_folder_name}/{img_filename}"
-            md_img_link = f"![AI Generated Image]({rel_path})"
+            md_img_link = f"![{prompt}]({rel_path})"
             draft = draft.replace(f"[이미지: {prompt}]", md_img_link)
             
             if i == 0:
@@ -237,10 +315,13 @@ def process_urls(keyword=None, folder="posts"):
     report["draft"]["success"] = True
     report["draft"]["path"] = post_path
     
-    # 6. Translate to EN, CN, JP
-    print(f"\n=== Translating to 3 languages ===")
-    results = translate_and_save(draft, slug, folder)
-    report["translations"] = results
+    # 6. Translate to EN, CN, JP (Skip if folder is haionnet)
+    if folder == "haionnet":
+        print(f"\n=== Skipping translation for 'haionnet' folder (Korea-only service) ===")
+    else:
+        print(f"\n=== Translating to 3 languages ===")
+        results = translate_and_save(draft, slug, folder)
+        report["translations"] = results
     
     # 7. Push to GitHub
     if DRY_RUN:
@@ -258,7 +339,13 @@ if __name__ == "__main__":
     folder = sys.argv[2] if len(sys.argv) > 2 else "posts"
     target_lang = sys.argv[3] if len(sys.argv) > 3 else None
     
+    include_faq = False
+    if not (input_arg and input_arg.endswith(".md")):
+        # Prompt only for full pipeline URL processing
+        ans = input("\n포스팅 하단에 FAQ 아코디언을 추가할까요? (y/n): ").strip().lower()
+        include_faq = (ans == 'y')
+    
     if input_arg and input_arg.endswith(".md"):
         process_single_file(input_arg, folder, target_lang)
     else:
-        process_urls(keyword=input_arg, folder=folder)
+        process_urls(keyword=input_arg, folder=folder, include_faq=include_faq)

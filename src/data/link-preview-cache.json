@@ -1,0 +1,16 @@
+{
+  "https://haion.net": {
+    "title": "하이온넷㈜ | 네트워크, 그 이상의 가치를 추구합니다.",
+    "description": "하이온넷은 빠르고 안전한 인터넷 환경구현을 위해 20년 독자적 VPN기술을 기반으로 국내외 기업/개인고객 대상, 최고의 IT서비스를 제공합니다.",
+    "image": "https://haion.net/img/og_haion.jpg",
+    "siteName": "하이온넷(주)",
+    "url": "https://haion.net"
+  },
+  "https://google.com": {
+    "title": "Google",
+    "description": "",
+    "image": "",
+    "siteName": "google.com",
+    "url": "https://google.com"
+  }
+}

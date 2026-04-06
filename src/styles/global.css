@@ -69,7 +69,32 @@ html[data-theme="dark"] {
   @apply underline decoration-wavy decoration-2 underline-offset-8;
 }
 
+@layer components {
+  .link-card {
+    @apply flex flex-row-reverse overflow-hidden rounded-lg border border-border bg-muted/20 transition-all hover:bg-muted/40 no-underline! shadow-xs hover:shadow-sm;
+    height: 125px;
+    text-decoration: none !important;
+  }
+  .link-card-content {
+    @apply flex flex-1 flex-col justify-center p-4 min-w-0;
+  }
+  .link-card-title {
+    @apply truncate font-bold text-foreground transition-colors;
+  }
+  .link-card-description {
+    @apply mt-1 line-clamp-2 text-xs text-foreground/70 leading-relaxed;
+  }
+  .link-card-site {
+    @apply mt-2 flex items-center text-[10px] text-foreground/40 font-medium;
+  }
+  .link-card-image {
+    @apply w-28 flex-none bg-cover bg-center sm:w-40 border-s border-border;
+    background-color: var(--color-muted);
+  }
+}
+
 /* Source: https://piccalil.li/blog/a-more-modern-css-reset/ */
+
 /* Anything that has been anchored to should have extra scroll margin */
 :target {
   scroll-margin-block: 1rem;

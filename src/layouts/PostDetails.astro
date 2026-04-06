@@ -99,6 +99,30 @@ const nextPost =
     <div class="my-2 flex items-center gap-2">
       <Datetime {pubDatetime} {modDatetime} {timezone} size="lg" />
       <span
+        id="view-count-container"
+        class="flex items-center gap-1.5 text-sm text-foreground/75 opacity-85"
+        data-slug={post.id}
+      >
+        <span aria-hidden="true" class="opacity-50">|</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+          <path
+            d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"
+          ></path>
+        </svg>
+        <span>조회수: <span id="view-count">--</span>회</span>
+      </span>
+      <span
         aria-hidden="true"
         class:list={[
           "max-sm:hidden",
@@ -282,4 +306,41 @@ const nextPost =
   document.addEventListener("astro:after-swap", () =>
     window.scrollTo({ left: 0, top: 0, behavior: "instant" })
   );
+</script>
+
+<script>
+  import { supabase } from "@/utils/supabase";
+
+  async function updateViewCount() {
+    const viewCountElement = document.getElementById("view-count");
+    const container = document.getElementById("view-count-container");
+
+    if (!viewCountElement || !container) return;
+
+    const slug = container.dataset.slug;
+
+    if (slug) {
+      try {
+        const { data, error } = await supabase.rpc("increment_views", {
+          page_slug: slug,
+        });
+
+        if (error) {
+          console.error("Error incrementing views:", error);
+          viewCountElement.innerText = "0";
+        } else {
+          viewCountElement.innerText = data;
+        }
+      } catch (err) {
+        console.error("Supabase RPC failed:", err);
+        viewCountElement.innerText = "0";
+      }
+    }
+  }
+
+  // Run on initial load
+  updateViewCount();
+
+  // Re-run on Astro page transitions
+  document.addEventListener("astro:after-swap", updateViewCount);
 </script>

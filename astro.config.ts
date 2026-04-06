@@ -9,6 +9,8 @@ import {
   transformerNotationWordHighlight,
 } from "@shikijs/transformers";
 import { transformerFileName } from "./src/utils/transformers/fileName";
+import { rehypeLinkPreview } from "./src/utils/rehype-link-preview";
+import rehypeRaw from "rehype-raw";
 import { SITE } from "./src/config";
 
 // https://astro.build/config
@@ -33,6 +35,7 @@ export default defineConfig({
         transformerNotationDiff({ matchAlgorithm: "v3" }),
       ],
     },
+    rehypePlugins: [rehypeRaw, rehypeLinkPreview],
   },
   vite: {
     // eslint-disable-next-line
