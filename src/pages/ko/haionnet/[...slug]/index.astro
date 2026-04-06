@@ -10,7 +10,7 @@ type Props = {
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog", ({ id, data }) => 
-    !data.draft && id.replace(/\\/g, "/").includes("/ko/haionnet/")
+    !data.draft && id.replace(/\\/g, "/").includes("ko/haionnet/")
   );
   
   const postResult = posts.map(post => ({

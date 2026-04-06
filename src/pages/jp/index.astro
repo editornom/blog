@@ -13,8 +13,8 @@ const posts = await getCollection("blog", ({ id }) =>
 const sortedPosts = getSortedPosts(posts);
 
 // Separate posts by folder path
-const normalPosts = sortedPosts.filter(p => p.id.replace(/\\/g, "/").includes("/posts/"));
-const haionnetPosts = sortedPosts.filter(p => p.id.replace(/\\/g, "/").includes("/haionnet/"));
+const normalPosts = sortedPosts.filter(p => p.id.replace(/\\/g, "/").includes("posts/"));
+const haionnetPosts = sortedPosts.filter(p => p.id.replace(/\\/g, "/").includes("haionnet/"));
 
 const bentoNormal = normalPosts.slice(0, 4);
 const bentoHaionnet = haionnetPosts.slice(0, 4);
@@ -51,3 +51,4 @@ const bentoHaionnet = haionnetPosts.slice(0, 4);
     }
   });
 </script>
+
