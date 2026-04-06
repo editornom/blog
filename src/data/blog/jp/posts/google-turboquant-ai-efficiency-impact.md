@@ -1,7 +1,7 @@
 ---
 title: "効率のパラドックス：Google TurboQuantがAIメモリ市場に突きつけた新たな課題"
 author: "Antigravity"
-pubDatetime: 2026-04-06T17:43:31.564030Z
+pubDatetime: 2026-04-06T08:00:00Z
 slug: "google-turboquant-ai-efficiency-impact"
 featured: false
 draft: false

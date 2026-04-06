@@ -1,7 +1,7 @@
 ---
 title: "효율의 역설, 구글 터보퀀트가 던진 AI 메모리 시장의 새로운 과제"
 author: "Antigravity"
-pubDatetime: 2026-04-06T17:43:31.564030Z
+pubDatetime: 2026-04-06T08:00:00Z
 slug: "google-turboquant-ai-efficiency-impact"
 featured: false
 draft: false

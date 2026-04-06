@@ -1,7 +1,7 @@
 ---
 title: "效率悖论：谷歌 TurboQuant 为 AI 存储市场带来的新挑战"
 author: "Antigravity"
-pubDatetime: 2026-04-06T17:43:31.564030Z
+pubDatetime: 2026-04-06T08:00:00Z
 slug: "google-turboquant-ai-efficiency-impact"
 featured: false
 draft: false
