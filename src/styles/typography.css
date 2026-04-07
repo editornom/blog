@@ -86,7 +86,7 @@
       }
 
       & > .faq-content {
-        @apply border-t border-border/20 bg-muted/5 px-10 py-8 text-[0.95rem] leading-relaxed text-foreground/90 duration-300;
+        @apply border-t border-border/10 bg-muted/5 px-8 pt-2 pb-7 text-[0.95rem] leading-relaxed text-foreground/90 duration-300;
         
         & p {
           @apply mb-4 last:mb-0;

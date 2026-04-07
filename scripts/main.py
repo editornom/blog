@@ -123,9 +123,13 @@ def process_single_file(file_path, folder="posts", target_lang=None, include_faq
         # Try finding FAQ by slug first, then fallback to parts of slug or manual check
         # For TurboQuant, slug is 'google-turboquant-ai-efficiency-impact'
         # But file is '터보퀀트.txt'
-        # We might need a mapping or manual input. 
-        # For this specific task, I'll allow searching for '터보퀀트' if the slug contains 'turboquant'
-        keyword = "터보퀀트" if "turboquant" in slug.lower() else slug
+        # mapping or manual input.
+        if "turboquant" in slug.lower():
+            keyword = "터보퀀트"
+        elif "gemma-4" in slug.lower():
+            keyword = "구글젬마4"
+        else:
+            keyword = slug
         
         faqs = load_faq_content(keyword)
         if faqs:
@@ -327,11 +331,9 @@ if __name__ == "__main__":
     folder = sys.argv[2] if len(sys.argv) > 2 else "posts"
     target_lang = sys.argv[3] if len(sys.argv) > 3 else None
     
-    include_faq = False
-    if not (input_arg and input_arg.endswith(".md")):
-        # Prompt only for full pipeline URL processing
-        ans = input("\n포스팅 하단에 FAQ 아코디언을 추가할까요? (y/n): ").strip().lower()
-        include_faq = (ans == 'y')
+    # Always prompt for FAQ accordion inclusion
+    ans = input("\n포스팅 하단에 FAQ 아코디언을 추가할까요? (y/n): ").strip().lower()
+    include_faq = (ans == 'y')
     
     if input_arg and input_arg.endswith(".md"):
         process_single_file(input_arg, folder, target_lang, include_faq=include_faq)
