@@ -10,73 +10,10 @@ from crawler import fetch_content
 from generator import generate_blog_post
 from reviewer import review_manuscript
 from imagen_helper import generate_image
-from translator import translate_and_save
+from translator import translate_and_save, translate_text
 from publish import push_to_github
+from accordian import load_faq_content, append_faq_to_draft
 
-def load_faq_content(keyword):
-    """
-    Reads FAQ from source/accordian/{keyword}.txt.
-    Handles numbering (Q1., A1.) and multi-line answers.
-    """
-    faq_path = os.path.join("source", "accordian", f"{keyword}.txt")
-    if not os.path.exists(faq_path):
-        return None
-    
-    faqs = []
-    current_q = None
-    current_a = []
-    
-    # Regex to match headers like Q:, Q1., A:, A1., etc. (case-insensitive)
-    q_re = re.compile(r'^Q\d*[\.:]\s*(.*)', re.IGNORECASE)
-    a_re = re.compile(r'^A\d*[\.:]\s*(.*)', re.IGNORECASE)
-    
-    with open(faq_path, "r", encoding="utf-8") as f:
-        for line in f:
-            line_stripped = line.strip()
-            
-            # Check for Question header
-            q_match = q_re.match(line_stripped)
-            if q_match:
-                # If we were previously building a Q&A pair, save it
-                if current_q and current_a:
-                    faqs.append({"q": current_q, "a": "\n".join(current_a).strip()})
-                    current_a = []
-                current_q = q_match.group(1).strip()
-                continue
-            
-            # Check for Answer header
-            a_match = a_re.match(line_stripped)
-            if a_match:
-                current_a = [a_match.group(1).strip()]
-                continue
-            
-            # If we have a current question and answer started, append intermediate lines to answer
-            if current_q and current_a:
-                current_a.append(line.rstrip())
-                
-        # Append the final pair after loop
-        if current_q and current_a:
-            faqs.append({"q": current_q, "a": "\n".join(current_a).strip()})
-            
-    return faqs
-
-def append_faq_to_draft(draft, faqs):
-    """
-    Appends FAQ accordion to the bottom of the draft.
-    """
-    if not faqs:
-        return draft
-    
-    faq_md = "\n\n## ✅ 자주 묻는 질문 (FAQ)\n"
-    for faq in faqs:
-        faq_md += f"\n<details>\n  <summary>{faq['q']}</summary>\n  {faq['a']}\n</details>\n"
-    
-    # Insert before hashtags if any, otherwise at the end
-    if " # " in draft:
-        parts = draft.rsplit(" # ", 1)
-        return parts[0] + faq_md + "\n # " + parts[1]
-    else:
-        return draft + faq_md
 
 load_dotenv()
 
@@ -138,7 +75,7 @@ def print_final_briefing(report):
         print("💡 실패한 번역이 있다면 API 부하일 가능성이 높습니다. 잠시 후 다시 시도해 보세요.")
     print("="*40 + "\n")
 
-def process_single_file(file_path, folder="posts", target_lang=None):
+def process_single_file(file_path, folder="posts", target_lang=None, include_faq=False):
     """
     Bypass crawl/gen/review and only run translation for an existing .md file.
     """
@@ -164,7 +101,46 @@ def process_single_file(file_path, folder="posts", target_lang=None):
     with open(file_path, "r", encoding="utf-8") as f:
         draft = f.read()
 
+    # Localize existing English alt tags in the draft
+    # Find all ![Alt](Path) where Alt is in English
+    alt_regex = re.compile(r'!\[(.*?)\]\((.*?)\)')
+    matches = alt_regex.findall(draft)
+    for alt, path in matches:
+        # Check if alt contains English letters (simple check)
+        if re.search(r'[a-zA-Z]', alt):
+            print(f"Localizing alt tag: {alt[:30]}...")
+            localized_alt = translate_text(alt, "ko")
+            draft = draft.replace(f"![{alt}]({path})", f"![{localized_alt}]({path})")
+            
+    # Save the updated Korean draft
+    with open(file_path, "w", encoding="utf-8") as f:
+        f.write(draft)
+
     slug = os.path.splitext(os.path.basename(file_path))[0]
+
+    # Add FAQ if requested (using slug as keyword)
+    if include_faq:
+        # Try finding FAQ by slug first, then fallback to parts of slug or manual check
+        # For TurboQuant, slug is 'google-turboquant-ai-efficiency-impact'
+        # But file is '터보퀀트.txt'
+        # We might need a mapping or manual input. 
+        # For this specific task, I'll allow searching for '터보퀀트' if the slug contains 'turboquant'
+        keyword = "터보퀀트" if "turboquant" in slug.lower() else slug
+        
+        faqs = load_faq_content(keyword)
+        if faqs:
+            # First, strip existing FAQ if any to avoid duplicates
+            if "## ✅ 자주 묻는 질문 (FAQ)" in draft:
+                draft = draft.split("## ✅ 자주 묻는 질문 (FAQ)")[0].strip()
+            
+            draft = append_faq_to_draft(draft, faqs)
+            print(f"Added {len(faqs)} FAQ items to the draft.")
+            
+            # Save the updated Korean draft
+            with open(file_path, "w", encoding="utf-8") as f:
+                f.write(draft)
+        else:
+            print(f"Warning: FAQ content not found for {keyword}")
     
     # Run Translation
     print(f"\n=== Translating to requested languages ===")
@@ -294,7 +270,11 @@ def process_urls(keyword=None, folder="posts", include_faq=False):
         if generated_path:
             report["images"]["success"] += 1
             rel_path = f"../../../../../source/{folder}/{source_folder_name}/{img_filename}"
-            md_img_link = f"![{prompt}]({rel_path})"
+            
+            # Translate English prompt to Korean for Alt Tag
+            translated_alt = translate_text(prompt, "ko")
+            md_img_link = f"![{translated_alt}]({rel_path})"
+            
             draft = draft.replace(f"[이미지: {prompt}]", md_img_link)
             
             if i == 0:
@@ -346,6 +326,6 @@ if __name__ == "__main__":
         include_faq = (ans == 'y')
     
     if input_arg and input_arg.endswith(".md"):
-        process_single_file(input_arg, folder, target_lang)
+        process_single_file(input_arg, folder, target_lang, include_faq=include_faq)
     else:
         process_urls(keyword=input_arg, folder=folder, include_faq=include_faq)

@@ -40,6 +40,7 @@ def translate_post(korean_markdown, target_lang):
 4. **마크다운 문법 유지**: 헤더(#, ##, ###), 볼드(**), 리스트(-), 인용(>), 코드블록(```) 등 마크다운 문법을 그대로 유지하십시오.
 5. **자연스러운 번역**: 직역이 아닌, {lang_name} 원어민이 읽었을 때 자연스럽고 전문적인 기술 칼럼처럼 느껴지도록 의역하십시오.
 6. **기술 용어**: 프로토콜명, 기술 약어 등은 원문 그대로 사용하십시오. (예: VPN, UTM, API, SSL 등)
+7. **이미지 알트태그 번역**: `![alt text](path)` 형식에서 `alt text` 부분을 대상 언어로 자연스럽게 번역하십시오.
 
 ### 원본 한국어 원고:
 {korean_markdown}
@@ -59,6 +60,30 @@ def translate_post(korean_markdown, target_lang):
     except Exception as e:
         print(f"Error translating to {lang_name}: {e}")
         return None
+
+def translate_text(text, target_lang):
+    """
+    Translates a short piece of text into the target language.
+    Useful for alt tags or short phrases.
+    """
+    api_key = os.getenv("GEMINI_API_KEY")
+    if not api_key:
+        return text
+
+    lang_name = LANGUAGES.get(target_lang, target_lang)
+    client = genai.Client(api_key=api_key)
+
+    prompt = f"Translate the following text into {lang_name}. Output only the translated text, nothing else:\n\n{text}"
+
+    try:
+        response = client.models.generate_content(
+            model='models/gemini-3-flash-preview',
+            contents=prompt
+        )
+        return response.text.strip()
+    except Exception as e:
+        print(f"Error translating text to {lang_name}: {e}")
+        return text
 
 
 def translate_and_save(korean_draft, slug, folder, target_langs=None):
