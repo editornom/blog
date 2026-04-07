@@ -152,7 +152,11 @@ def process_single_file(file_path, folder="posts", target_lang=None, include_faq
     if DRY_RUN:
         print(f"Dry run enabled. Skipping push to GitHub for {slug}.")
     else:
-        push_to_github(f"Re-translate post: {slug} ({target_lang if target_lang else 'all'})")
+        ans = input(f"\n🚀 모든 작업을 마쳤습니다. '{slug}' 포스트를 GitHub에 연동(Push)하시겠습니까? (y/n): ").lower()
+        if ans == 'y':
+            push_to_github(f"Re-translate post: {slug} ({target_lang if target_lang else 'all'})")
+        else:
+            print("GitHub 연동을 건너뜁니다.")
 
     print_final_briefing(report)
 
@@ -307,7 +311,11 @@ def process_urls(keyword=None, folder="posts", include_faq=False):
     if DRY_RUN:
         print(f"Dry run enabled. Skipping push to GitHub for {slug}.")
     else:
-        push_to_github(f"Auto-generate post: {slug}")
+        ans = input(f"\n🚀 모든 작업을 마쳤습니다. '{slug}' 포스트를 GitHub에 연동(Push)하시겠습니까? (y/n): ").lower()
+        if ans == 'y':
+            push_to_github(f"Auto-generate post: {slug}")
+        else:
+            print("GitHub 연동을 건너뜁니다.")
         
     # 🚨 FINAL BRIEFING
     print_final_briefing(report)
