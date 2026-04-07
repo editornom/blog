@@ -1,8 +1,7 @@
-https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/
-https://www.tossbank.com/articles/turboquant
-https://www.thelec.kr/news/articleView.html?idxno=54245
-https://namu.wiki/w/%ED%84%B0%EB%B3%B4%ED%80%80%ED%8A%B8
-https://www.chosun.com/economy/tech_it/2026/03/26/JHCQKRRSOBHXBHAXZCLUCJDMKE/
-https://news.einfomax.co.kr/news/articleView.html?idxno=4406135
-https://www.g-enews.com/article/Global-Biz/2026/04/202604040735369090fbbec65dfb_1
-https://news.hada.io/topic?id=27867
+https://blog.google/intl/ko-kr/company-news/technology/gemma-4-kr/
+https://ai.google.dev/gemma/docs/core/model_card_4?hl=ko
+https://www.aitimes.kr/news/articleView.html?idxno=39411
+https://news.hada.io/topic?id=28160
+https://discuss.pytorch.kr/t/google-deepmind-gemma-4/9548
+https://ai.google.dev/gemma/docs/core?hl=ko
+https://mz-moonzoo.tistory.com/144
