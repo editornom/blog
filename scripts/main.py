@@ -128,6 +128,10 @@ def process_single_file(file_path, folder="posts", target_lang=None, include_faq
             keyword = "터보퀀트"
         elif "gemma-4" in slug.lower():
             keyword = "구글젬마4"
+        elif "utm" in slug.lower():
+            keyword = "UTM"
+        elif "colocation" in slug.lower():
+            keyword = "코로케이션"
         else:
             keyword = slug
         
@@ -156,7 +160,12 @@ def process_single_file(file_path, folder="posts", target_lang=None, include_faq
     if DRY_RUN:
         print(f"Dry run enabled. Skipping push to GitHub for {slug}.")
     else:
-        ans = input(f"\n🚀 모든 작업을 마쳤습니다. '{slug}' 포스트를 GitHub에 연동(Push)하시겠습니까? (y/n): ").lower()
+        force = os.getenv("FORCE_REPLY", "n").lower() == "y"
+        if force:
+            ans = "y"
+        else:
+            ans = input(f"\n🚀 모든 작업을 마쳤습니다. '{slug}' 포스트를 GitHub에 연동(Push)하시겠습니까? (y/n): ").lower()
+            
         if ans == 'y':
             push_to_github(f"Re-translate post: {slug} ({target_lang if target_lang else 'all'})")
         else:
@@ -315,7 +324,12 @@ def process_urls(keyword=None, folder="posts", include_faq=False):
     if DRY_RUN:
         print(f"Dry run enabled. Skipping push to GitHub for {slug}.")
     else:
-        ans = input(f"\n🚀 모든 작업을 마쳤습니다. '{slug}' 포스트를 GitHub에 연동(Push)하시겠습니까? (y/n): ").lower()
+        force = os.getenv("FORCE_REPLY", "n").lower() == "y"
+        if force:
+            ans = "y"
+        else:
+            ans = input(f"\n🚀 모든 작업을 마쳤습니다. '{slug}' 포스트를 GitHub에 연동(Push)하시겠습니까? (y/n): ").lower()
+            
         if ans == 'y':
             push_to_github(f"Auto-generate post: {slug}")
         else:
@@ -332,7 +346,11 @@ if __name__ == "__main__":
     target_lang = sys.argv[3] if len(sys.argv) > 3 else None
     
     # Always prompt for FAQ accordion inclusion
-    ans = input("\n포스팅 하단에 FAQ 아코디언을 추가할까요? (y/n): ").strip().lower()
+    force = os.getenv("FORCE_REPLY", "n").lower() == "y"
+    if force:
+        ans = "y"
+    else:
+        ans = input("\n포스팅 하단에 FAQ 아코디언을 추가할까요? (y/n): ").strip().lower()
     include_faq = (ans == 'y')
     
     if input_arg and input_arg.endswith(".md"):
