@@ -75,7 +75,7 @@ def append_faq_to_draft(draft, faqs):
     faq_md = "\n\n## ✅ 자주 묻는 질문 (FAQ)\n"
     for faq in faqs:
         # Standard format following 하이온넷 UTM post
-        faq_md += f"\n<details>\n  <summary>{faq['q']}</summary>\n  {faq['a']}\n</details>\n"
+        faq_md += f"\n<details>\n  <summary>{faq['q']}</summary>\n  <div class=\"faq-content\">\n\n{faq['a']}\n\n  </div>\n</details>\n"
     
     # Insert before hashtags if any, otherwise at the end
     if " # " in draft:

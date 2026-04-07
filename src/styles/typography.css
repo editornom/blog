@@ -85,8 +85,20 @@
         @apply bg-muted/20 border-accent/20 shadow-xs;
       }
 
-      & > :not(summary) {
-        @apply border-t border-border/50 px-4 pt-4 pb-5 text-sm leading-relaxed text-foreground/85 duration-300;
+      & > .faq-content {
+        @apply border-t border-border/20 bg-muted/5 px-10 py-8 text-[0.95rem] leading-relaxed text-foreground/90 duration-300;
+        
+        & p {
+          @apply mb-4 last:mb-0;
+        }
+        
+        & ul, & ol {
+          @apply ml-4 mb-4 last:mb-0;
+        }
+        
+        & li {
+          @apply mb-2 last:mb-0;
+        }
       }
     }
 
