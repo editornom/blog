@@ -102,24 +102,42 @@ def translate_and_save(korean_draft, slug, folder, target_langs=None):
         if target_langs and lang_code not in target_langs:
             continue
             
-        print(f"\n--- Translating to {lang_name} ({lang_code}) ---")
-        
         try:
-            translated = translate_post(korean_draft, lang_code)
+            try:
+                print(f"\n--- Translating to {lang_name} ({lang_code}) ---")
+            except UnicodeEncodeError:
+                print(f"\n--- Translating to {lang_code} ---")
             
+            max_retries = 1
+            translated = None
+            
+            for attempt in range(max_retries + 1):
+                try:
+                    translated = translate_post(korean_draft, lang_code)
+                    if translated:
+                        break
+                except Exception as e:
+                    import time
+                    if "503" in str(e) and attempt < max_retries:
+                        print(f"  [WAIT] 503 Unavailable, retrying in 10s... (Attempt {attempt+1}/{max_retries})")
+                        time.sleep(10)
+                        continue
+                    else:
+                        raise e
+
             if not translated:
                 print(f"  [FAIL] Failed to translate to {lang_name}")
-                results[lang_code] = {"success": False, "path": None, "error": "Empty response"}
+                results[lang_code] = {"success": False, "path": None, "error": "Empty response or translation failed"}
                 continue
             
             # Clean potential markdown code fence wrapping
-            if translated.startswith("```"):
-                lines = translated.split("\n")
-                if lines[0].startswith("```"):
+            if translated.strip().startswith("```"):
+                lines = translated.strip().split("\n")
+                if lines[0].strip().startswith("```"):
                     lines = lines[1:]
                 if lines and lines[-1].strip() == "```":
                     lines = lines[:-1]
-                translated = "\n".join(lines)
+                translated = "\n".join(lines).strip()
             
             # Save to the correct language folder
             target_dir = os.path.join("src", "data", "blog", lang_code, folder)
