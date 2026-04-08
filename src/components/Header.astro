@@ -33,10 +33,12 @@ const isActive = (path: string) => {
   Skip to content
 </a>
 
-<header class="app-layout">
+<header
+  class="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border transition-all"
+>
   <div
     id="top-nav-wrap"
-    class="flex flex-col border-b border-border bg-background py-4 sm:flex-row sm:items-center sm:justify-between sm:py-6 sm:border-none"
+    class="app-layout flex flex-col py-4 sm:py-6 sm:flex-row sm:items-center sm:justify-between"
   >
     <div class="flex w-full items-center justify-between sm:w-auto">
       <a
