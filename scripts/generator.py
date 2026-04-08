@@ -30,13 +30,16 @@ def generate_blog_post(crawled_content, folder="posts", additional_instructions=
 {crawled_content['body']}
 """
 
+    # Set pubDatetime to 10 minutes ago in UTC for immediate visibility
+    pub_time = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(minutes=10)
+
     # Common frontmatter template
     frontmatter_block = f"""
 ### 📂 출력 형식 (Markdown with Frontmatter):
 ---
 title: "최적화된 제목"
 author: "Antigravity"
-pubDatetime: {datetime.datetime.now().isoformat()}Z
+pubDatetime: {pub_time.strftime("%Y-%m-%dT%H:%M:%SZ")}
 slug: "seo-friendly-english-slug"
 featured: false
 draft: false

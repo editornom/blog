@@ -1,7 +1,7 @@
 ---
 title: "Google’s Gemma 4: It’s Time to Rethink ‘Intelligence Density’"
 author: "editornom"
-pubDatetime: 2026-04-07T11:30:35.708957Z
+pubDatetime: 2026-04-07T09:00:00Z
 slug: "gemma-4-google-open-model-analysis"
 featured: false
 draft: false

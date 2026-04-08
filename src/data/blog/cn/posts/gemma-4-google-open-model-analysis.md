@@ -1,7 +1,7 @@
 ---
 title: "谷歌 Gemma 4 引发的思考：现在是时候关注“智能密度”了"
 author: "editornom"
-pubDatetime: 2026-04-07T11:30:35.708957Z
+pubDatetime: 2026-04-07T09:00:00Z
 slug: "gemma-4-google-open-model-analysis"
 featured: false
 draft: false

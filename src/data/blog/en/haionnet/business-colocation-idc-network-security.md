@@ -1,7 +1,7 @@
 ---
 title: "Stable IDC Operations and Integrated Security: A Guide to Choosing Enterprise Colocation"
 author: "Antigravity"
-pubDatetime: 2026-04-07T13:32:31.978284Z
+pubDatetime: 2026-04-07T10:00:00Z
 slug: "business-colocation-idc-network-security"
 featured: false
 draft: false

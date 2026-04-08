@@ -1,7 +1,7 @@
 ---
 title: "グーグル「Gemma 4」が投じた一石、今こそ「知能の密度」を考える時です"
 author: "editornom"
-pubDatetime: 2026-04-07T11:30:35.708957Z
+pubDatetime: 2026-04-07T09:00:00Z
 slug: "gemma-4-google-open-model-analysis"
 featured: false
 draft: false

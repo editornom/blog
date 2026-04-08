@@ -1,7 +1,7 @@
 ---
 title: "稳定 IDC 运营与安全保障：企业服务器托管选择指南"
 author: "Antigravity"
-pubDatetime: 2026-04-07T13:32:31.978284Z
+pubDatetime: 2026-04-07T10:00:00Z
 slug: "business-colocation-idc-network-security"
 featured: false
 draft: false
