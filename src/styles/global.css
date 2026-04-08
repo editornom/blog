@@ -97,5 +97,10 @@ html[data-theme="dark"] {
 
 /* Anything that has been anchored to should have extra scroll margin */
 :target {
-  scroll-margin-block: 5rem;
+  scroll-margin-block: 1rem;
+}
+@media (min-width: 640px) {
+  :target {
+    scroll-margin-block: 5rem;
+  }
 }
