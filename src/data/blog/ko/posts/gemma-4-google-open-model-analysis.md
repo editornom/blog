@@ -1,5 +1,5 @@
 ---
-title: "구글 젬마 4가 던진 화두, 이제 ‘지능의 밀도’를 고민할 때입니다"
+title: "구글 젬마 4가 던진 화두, 이제 ‘지능의 밀도’를 고민할 때"
 author: "editornom"
 pubDatetime: 2026-04-07T09:00:00Z
 slug: "gemma-4-google-open-model-analysis"
