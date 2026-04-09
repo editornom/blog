@@ -3,7 +3,7 @@ export const SITE = {
   author: "편집",
   profile: "https://satnaing.dev/",
   desc: "IT 테크 기술 블로그|AI, 사이버보안, 앱개발",
-  title: "편집놈의 IT 블로그",
+  title: "editorNOM's IT Blog",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
