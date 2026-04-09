@@ -30,8 +30,22 @@ def generate_blog_post(crawled_content, folder="posts", additional_instructions=
 {crawled_content['body']}
 """
 
-    # Set pubDatetime to 10 minutes ago in UTC for immediate visibility
-    pub_time = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(minutes=10)
+    # Calculate times for comparison and immediate visibility
+    # UTC Time
+    utc_now = datetime.datetime.now(datetime.timezone.utc)
+    # Seoul Time (UTC+9)
+    seoul_tz = datetime.timezone(datetime.timedelta(hours=9))
+    seoul_now = datetime.datetime.now(seoul_tz)
+    
+    # Set pubDatetime to 10 minutes ago in KST for immediate visibility
+    pub_time = seoul_now - datetime.timedelta(minutes=10)
+    
+    # Print comparison for the user
+    print(f"--- Time Synchronization ---")
+    print(f"Current UTC:   {utc_now.strftime('%Y-%m-%d %H:%M:%S')} Z")
+    print(f"Current Seoul: {seoul_now.strftime('%Y-%m-%d %H:%M:%S')} +09:00")
+    print(f"Publication:   {pub_time.strftime('%Y-%m-%d %H:%M:%S')} +09:00 (Buffered)")
+    print(f"----------------------------")
 
     # Common frontmatter template
     frontmatter_block = f"""
@@ -39,7 +53,7 @@ def generate_blog_post(crawled_content, folder="posts", additional_instructions=
 ---
 title: "최적화된 제목"
 author: "Antigravity"
-pubDatetime: {pub_time.strftime("%Y-%m-%dT%H:%M:%SZ")}
+pubDatetime: {pub_time.strftime("%Y-%m-%dT%H:%M:%S+09:00")}
 slug: "seo-friendly-english-slug"
 featured: false
 draft: false
