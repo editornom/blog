@@ -132,6 +132,8 @@ def process_single_file(file_path, folder="posts", target_lang=None, include_faq
             keyword = "UTM"
         elif "colocation" in slug.lower():
             keyword = "코로케이션"
+        elif "llm-wiki" in slug.lower():
+            keyword = "llmwiki"
         else:
             keyword = slug
         
