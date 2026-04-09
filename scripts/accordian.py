@@ -55,7 +55,13 @@ def load_faq_content(keyword):
                 current_a = [clean_text(a_match.group(2))]
                 continue
             
-            # If we have a current question and answer started, append intermediate lines to answer
+            # If we have a question but no answer started yet, and it's not a new question
+            # then this line MUST be the start of the answer
+            if current_q and not current_a:
+                current_a.append(line_stripped)
+                continue
+                
+            # If an answer has already started, keep appending
             if current_q and current_a:
                 current_a.append(line.rstrip())
                 
