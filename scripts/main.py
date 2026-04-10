@@ -376,6 +376,35 @@ if __name__ == "__main__":
     if input_arg and input_arg.endswith(".md"):
         # 기존 파일 재작업 모드
         process_single_file(input_arg, folder, target_lang, include_faq=include_faq)
+    elif folder == "haionnet":
+        # 🚀 [HAIONNET SPECIAL MODE] 
+        # 수동 URL 리스트(urls.txt)를 기반으로 고속 포스팅 생성
+        print(f"\n⚡ [HAIONNET MODE] Skipping RSS/Search. Reading from 'source/url/urls.txt'...")
+        
+        url_file = os.path.join("source", "url", "urls.txt")
+        if not os.path.exists(url_file):
+            print(f"❌ '{url_file}' 파일이 없습니다. 수동 URL 리스트를 먼저 작성해 주세요.")
+            sys.exit(1)
+            
+        with open(url_file, "r", encoding="utf-8") as f:
+            manual_urls = [line.strip() for line in f if line.strip() and line.startswith("http")]
+            
+        if not manual_urls:
+            print(f"❌ '{url_file}'에 유효한 URL이 없습니다.")
+            sys.exit(1)
+            
+        print(f"✅ {len(manual_urls)}개의 수동 URL을 로드했습니다. 본문 검증 및 선별을 시작합니다.")
+        
+        # 키워드가 입력되었으면 그것을 사용, 없으면 기본값 사용
+        auto_keyword = input_arg if input_arg else "Haionnet_Service_Highlights"
+        print(f"📌 Target Keyword: {auto_keyword}")
+        
+        # DeepSearch 2.0 엔진 활용 대신 urls.txt 리스트 직접 처리 (지능형 선별 기능 추가)
+        from search_expert import select_best_from_list
+        top_urls = select_best_from_list(manual_urls, auto_keyword)
+        
+        process_urls(urls=top_urls, keyword=auto_keyword, folder=folder, include_faq=include_faq)
+
     elif input_arg:
         # 🚀 [MANUAL MODE] 수동 키워드 입력 시 DeepSearch 연동
         print(f"\n🚀 [MANUAL MODE] Keyword provided: {input_arg}")

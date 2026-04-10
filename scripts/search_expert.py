@@ -221,6 +221,78 @@ def save_urls_to_file(urls, keyword):
     except Exception as e:
         print(f"⚠️ URL 파일 저장 중 오류 발생: {e}")
 
+def select_best_from_list(urls, keyword):
+    """
+    [NEW] 제공된 URL 리스트 중에서 키워드에 가장 적합한 10개를 직접 방문하여 선별합니다.
+    """
+    if not urls:
+        return []
+
+    print(f"🌐 [Selection] {len(urls)}개의 수동 URL 중 '{keyword}' 최적 소스 선별 중...")
+    
+    # 1. 본문 검증 및 미리보기 추출 (DeepSearch 2.0 엔진 사용)
+    probed_results = []
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+        # probe_url 함수를 사용하여 본문 데이터 확보
+        # probe_url 기대 형식: {"link": url}
+        future_to_url = {executor.submit(probe_url, {"link": url}, i): i for i, url in enumerate(urls)}
+        for future in concurrent.futures.as_completed(future_to_url):
+            res = future.result()
+            if res:
+                probed_results.append(res)
+    
+    if not probed_results:
+        print("❌ 유효한 본문을 가진 사이트가 없습니다. 원본 리스트를 사용합니다.")
+        return urls[:10]
+
+    # 인덱스 순 정렬
+    probed_results.sort(key=lambda x: x['index'])
+    
+    # 2. AI(Gemini)에게 선별 시키기
+    gemini_key = os.getenv("GEMINI_API_KEY")
+    client = genai.Client(api_key=gemini_key)
+
+    results_summary = ""
+    for i, r in enumerate(probed_results):
+        results_summary += f"[{i}] 제목: {r.get('title')}\n본문 미리보기: {r.get('preview')[:600]}...\n링크: {r.get('link')}\n\n"
+
+    prompt = f"""
+당신은 IT 기술 문서 전문 큐레이터입니다. 
+아래 {len(probed_results)}개의 수동 수집 사이트 본문 데이터를 분석하여, '{keyword}' 주제로 고품질 홍보 포스팅을 작성하기 위해 가장 가치 있는 소스 10개만 엄선하세요.
+
+[수동 수집 리스트 (본문 기반)]
+{results_summary}
+
+🎯 선정 기준:
+1. '{keyword}'의 특징과 장점을 가장 잘 설명할 수 있는 본문 내용을 가진 사이트를 우선합니다.
+2. 실제 기술 사양, 서비스 프로세스, 도입 효과가 구체적으로 적힌 소스를 선택하세요.
+3. 중복되는 정보보다는 서로 보완적인 정보를 가진 소스들을 조합하세요.
+
+📝 출력 형식:
+선정된 항목의 인덱스 번호만 콤마(,)로 구분해서 정확히 출력하세요. (예: 1, 4, 8...)
+"""
+
+    try:
+        response = client.models.generate_content(
+            model='models/gemini-3-flash-preview',
+            contents=prompt
+        )
+        selection_text = response.text.strip()
+        indices = [int(idx.strip()) for idx in re.findall(r'\d+', selection_text)]
+        
+        selected_urls = []
+        for idx in indices:
+            if 0 <= idx < len(probed_results):
+                selected_urls.append(probed_results[idx]['link'])
+        
+        top_10_urls = list(dict.fromkeys(selected_urls))[:10]
+        print(f"✨ 수동 리스트 중 최적의 {len(top_10_urls)}개 소스를 선별했습니다.")
+        return top_10_urls
+
+    except Exception as e:
+        print(f"⚠️ AI 선별 중 오류 발생: {e}")
+        return urls[:10]
+
 if __name__ == "__main__":
     # 테스트용
     test_keyword = "Model Context Protocol"
