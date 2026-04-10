@@ -58,13 +58,12 @@ def translate_post(korean_markdown, target_lang):
         )
         return response.text
     except Exception as e:
-        print(f"Error translating to {lang_name}: {e}")
-        return None
+        # 에러를 무조건 None으로 반환하지 않고 호출자에게 던져서 재시도 로직이 작동하게 함
+        raise e
 
 def translate_text(text, target_lang):
     """
-    Translates a short piece of text into the target language.
-    Useful for alt tags or short phrases.
+    Translates a short piece of text into the target language with retries.
     """
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
@@ -72,18 +71,27 @@ def translate_text(text, target_lang):
 
     lang_name = LANGUAGES.get(target_lang, target_lang)
     client = genai.Client(api_key=api_key)
-
     prompt = f"Translate the following text into {lang_name}. Output only the translated text, nothing else:\n\n{text}"
 
-    try:
-        response = client.models.generate_content(
-            model='models/gemini-3-flash-preview',
-            contents=prompt
-        )
-        return response.text.strip()
-    except Exception as e:
-        print(f"Error translating text to {lang_name}: {e}")
-        return text
+    max_retries = 3
+    for attempt in range(max_retries + 1):
+        try:
+            response = client.models.generate_content(
+                model='models/gemini-3-flash-preview',
+                contents=prompt
+            )
+            return response.text.strip()
+        except Exception as e:
+            import time
+            error_msg = str(e)
+            if ("503" in error_msg or "429" in error_msg or "UNAVAILABLE" in error_msg) and attempt < max_retries:
+                wait_time = (attempt + 1) * 5 # 짧은 텍스트는 좀 더 짧게 대기 (5s, 10s...)
+                print(f"  [TEXT-RETRY] {lang_name} 번역 중 오류... {wait_time}초 후 재시도 ({attempt+1}/{max_retries})")
+                time.sleep(wait_time)
+                continue
+            else:
+                print(f"Error translating text to {lang_name}: {e}")
+                return text
 
 
 def translate_and_save(korean_draft, slug, folder, target_langs=None):
@@ -108,7 +116,7 @@ def translate_and_save(korean_draft, slug, folder, target_langs=None):
             except UnicodeEncodeError:
                 print(f"\n--- Translating to {lang_code} ---")
             
-            max_retries = 1
+            max_retries = 3
             translated = None
             
             for attempt in range(max_retries + 1):
@@ -116,18 +124,24 @@ def translate_and_save(korean_draft, slug, folder, target_langs=None):
                     translated = translate_post(korean_draft, lang_code)
                     if translated:
                         break
+                    else:
+                        print(f"  [RETRY] Translation returned empty, retrying... ({attempt+1}/{max_retries})")
                 except Exception as e:
                     import time
-                    if "503" in str(e) and attempt < max_retries:
-                        print(f"  [WAIT] 503 Unavailable, retrying in 10s... (Attempt {attempt+1}/{max_retries})")
-                        time.sleep(10)
+                    error_msg = str(e)
+                    # 503(High Demand) 또는 429(Rate Limit) 등의 일시적 오류인 경우 재시도
+                    if ("503" in error_msg or "429" in error_msg or "UNAVAILABLE" in error_msg) and attempt < max_retries:
+                        wait_time = (attempt + 1) * 15 # 15s, 30s, 45s...
+                        print(f"  [WAIT] {error_msg[:50]}... {wait_time}s 후 재시도합니다. (Attempt {attempt+1}/{max_retries})")
+                        time.sleep(wait_time)
                         continue
                     else:
+                        # 더 이상 재시도할 수 없는 치명적 오류인 경우
                         raise e
 
             if not translated:
-                print(f"  [FAIL] Failed to translate to {lang_name}")
-                results[lang_code] = {"success": False, "path": None, "error": "Empty response or translation failed"}
+                print(f"  [FAIL] {lang_name} 번역에 최종적으로 실패했습니다.")
+                results[lang_code] = {"success": False, "path": None, "error": "Max retries reached or empty response"}
                 continue
             
             # Clean potential markdown code fence wrapping

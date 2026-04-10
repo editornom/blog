@@ -13,6 +13,10 @@ from imagen_helper import generate_image
 from translator import translate_and_save, translate_text
 from publish import push_to_github
 from accordian import load_faq_content, append_faq_to_draft
+from headline_crawler import generate_daily_headlines_file
+from trend_catcher import get_daily_topic_from_file
+from search_expert import deep_search_and_filter
+from faq_expert import generate_faq
 
 
 load_dotenv()
@@ -25,55 +29,75 @@ DRY_RUN = os.getenv("DRY_RUN", "false").lower() == "true"
 
 def print_final_briefing(report):
     """
-    Prints a clean, Korean summary of the entire execution process.
+    Prints a clean, Korean summary and SAVES it to reports/YYYY-MM-DD.txt
     """
-    print("\n" + "="*40)
-    print("📢 최종 발행 분석 보고서")
-    print("="*40)
+    now = datetime.datetime.now()
+    report_dir = "reports"
+    os.makedirs(report_dir, exist_ok=True)
+    
+    filename = now.strftime("%Y-%m-%d.txt")
+    filepath = os.path.join(report_dir, filename)
+
+    lines = []
+    lines.append("\n" + "="*40)
+    lines.append(f"📢 최종 발행 분석 보고서 ({now.strftime('%Y-%m-%d %H:%M:%S')})")
+    lines.append("="*40)
     
     # 1. Crawling
     if report["crawl"]["success"] is not None:
         if report["crawl"]["success"]:
-            print(f"- 🔍 데이터 수집: ✅ 성공 ({report['crawl']['count']}개 URL)")
+            lines.append(f"- 🔍 데이터 수집: ✅ 성공 ({report['crawl']['count']}개 URL)")
         else:
-            print(f"- 🔍 데이터 수집: ❌ 실패 ({report['crawl']['error']})")
+            lines.append(f"- 🔍 데이터 수집: ❌ 실패 ({report['crawl']['error']})")
     else:
-        print("- 🔍 데이터 수집: ⚪ 건너뜀 (파일 직접 입력 모드)")
+        lines.append("- 🔍 데이터 수집: ⚪ 건너뜀 (파일 직접 입력 모드)")
         
     # 2. Draft & Detox
     if report["draft"]["success"] is not None:
         if report["draft"]["success"]:
-            print(f"- 📑 원고 초안: ✅ 성공 ({report['draft']['path']})")
+            lines.append(f"- 📑 원고 초안: ✅ 성공 ({report['draft']['path']})")
             if report["detox"]["success"]:
-                print(f"- ✨ 원고 검수: ✅ 완료 (디톡스 필터 적용)")
+                lines.append(f"- ✨ 원고 검수: ✅ 완료 (디톡스 필터 적용)")
             else:
-                print(f"- ✨ 원고 검수: ⚠️ 건너뜀 또는 실패 ({report['detox']['error']})")
+                lines.append(f"- ✨ 원고 검수: ⚠️ 건너뜀 또는 실패 ({report['detox']['error']})")
         else:
-            print(f"- 📑 원고 초안: ❌ 실패")
+            lines.append("- 📑 원고 초안: ❌ 실패")
     else:
-        print("- 📑 원고 초안/검수: ⚪ 건너뜀 (기존 파일 사용)")
+        lines.append("- 📑 원고 초안/검수: ⚪ 건너뜀 (기존 파일 사용)")
 
     # 3. Images
     if report["images"]["requested"] > 0:
-        print(f"- 🖼️ 이미지 생성: ✅ {report['images']['success']} / {report['images']['requested']} 완료")
+        lines.append(f"- 🖼️ 이미지 생성: ✅ {report['images']['success']} / {report['images']['requested']} 완료")
     elif report["images"]["success"] is None:
-         print("- 🖼️ 이미지 생성: ⚪ 건너뜀")
+         lines.append("- 🖼️ 이미지 생성: ⚪ 건너뜀")
     else:
-        print("- 🖼️ 이미지 생성: ⚪ 없음 (플레이스홀더 미발견)")
+        lines.append("- 🖼️ 이미지 생성: ⚪ 없음 (플레이스홀더 미발견)")
 
     # 4. Translations
-    print("- 🌐 다국어 번역 상태:")
+    lines.append("- 🌐 다국어 번역 상태:")
     if not report.get("translations"):
-        print("  - (번역 단계가 실행되지 않았습니다)")
+        lines.append("  - (번역 단계가 실행되지 않았습니다)")
     else:
         for lang, res in report["translations"].items():
             status = "✅ 성공" if res["success"] else f"❌ 실패 (사유: {res['error']})"
-            print(f"  - {lang.upper()}: {status}")
+            lines.append(f"  - {lang.upper()}: {status}")
 
-    print("="*40)
+    lines.append("="*40)
     if any(not res["success"] for res in report["translations"].values()):
-        print("💡 실패한 번역이 있다면 API 부하일 가능성이 높습니다. 잠시 후 다시 시도해 보세요.")
-    print("="*40 + "\n")
+        lines.append("💡 실패한 번역이 있다면 API 부하일 가능성이 높습니다. 잠시 후 다시 시도해 보세요.")
+    lines.append("="*40 + "\n")
+
+    # Output to Console
+    final_output = "\n".join(lines)
+    print(final_output)
+
+    # Save to File
+    try:
+        with open(filepath, "a", encoding="utf-8") as f:
+            f.write(final_output + "\n\n")
+        print(f"💾 보고서가 파일로 저장되었습니다: {filepath}")
+    except Exception as e:
+        print(f"⚠️ 보고서 파일 저장 중 오류 발생: {e}")
 
 def process_single_file(file_path, folder="posts", target_lang=None, include_faq=False):
     """
@@ -162,22 +186,16 @@ def process_single_file(file_path, folder="posts", target_lang=None, include_faq
     if DRY_RUN:
         print(f"Dry run enabled. Skipping push to GitHub for {slug}.")
     else:
-        force = os.getenv("FORCE_REPLY", "n").lower() == "y"
-        if force:
-            ans = "y"
-        else:
-            ans = input(f"\n🚀 모든 작업을 마쳤습니다. '{slug}' 포스트를 GitHub에 연동(Push)하시겠습니까? (y/n): ").lower()
-            
-        if ans == 'y':
-            push_to_github(f"Re-translate post: {slug} ({target_lang if target_lang else 'all'})")
-        else:
-            print("GitHub 연동을 건너뜁니다.")
+        # 무인 자동화를 위해 질문 없이 바로 진행 (y로 간주)
+        print(f"\n🚀 모든 작업 완료. '{slug}' 포스트를 GitHub에 자동으로 연동(Push)합니다.")
+        push_to_github(f"Re-translate post: {slug} ({target_lang if target_lang else 'all'})")
 
     print_final_briefing(report)
 
-def process_urls(keyword=None, folder="posts", include_faq=False):
+def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
     """
-    Main pipeline: Crawl -> Generate -> Review -> Image Gen -> Translate -> (Push)
+    Main pipeline: (Crawl) -> Generate -> Review -> Image Gen -> Translate -> (Push)
+    If 'urls' is provided as a list, it bypasses keyword-based file loading.
     """
     report = {
         "crawl": {"success": False, "count": 0, "error": None},
@@ -188,7 +206,12 @@ def process_urls(keyword=None, folder="posts", include_faq=False):
     }
 
     # 1. Determine URL source
-    if keyword:
+    if urls and isinstance(urls, list):
+        print(f"Using {len(urls)} provided URLs for generation.")
+        print(f"Category: {folder}")
+        if keyword:
+            print(f"Topic: {keyword}")
+    elif keyword:
         keyword_file = os.path.join("source", "url", f"{keyword}.txt")
         if not os.path.exists(keyword_file):
             report["crawl"]["error"] = f"Keyword file not found: {keyword_file}"
@@ -256,6 +279,9 @@ def process_urls(keyword=None, folder="posts", include_faq=False):
 
     # 3.7 Add FAQ if requested
     if include_faq and keyword:
+        # 🚀 [New Pipeline] Generate FAQ automatically before loading
+        generate_faq(draft, keyword)
+        
         faqs = load_faq_content(keyword)
         if faqs:
             draft = append_faq_to_draft(draft, faqs)
@@ -326,16 +352,9 @@ def process_urls(keyword=None, folder="posts", include_faq=False):
     if DRY_RUN:
         print(f"Dry run enabled. Skipping push to GitHub for {slug}.")
     else:
-        force = os.getenv("FORCE_REPLY", "n").lower() == "y"
-        if force:
-            ans = "y"
-        else:
-            ans = input(f"\n🚀 모든 작업을 마쳤습니다. '{slug}' 포스트를 GitHub에 연동(Push)하시겠습니까? (y/n): ").lower()
-            
-        if ans == 'y':
-            push_to_github(f"Auto-generate post: {slug}")
-        else:
-            print("GitHub 연동을 건너뜁니다.")
+        # 무인 자동화를 위해 질문 없이 바로 진행 (y로 간주)
+        print(f"\n🚀 모든 작업 완료. '{slug}' 포스트를 GitHub에 자동으로 연동(Push)합니다.")
+        push_to_github(f"Auto-generate post: {slug}")
         
     # 🚨 FINAL BRIEFING
     print_final_briefing(report)
@@ -347,15 +366,48 @@ if __name__ == "__main__":
     folder = sys.argv[2] if len(sys.argv) > 2 else "posts"
     target_lang = sys.argv[3] if len(sys.argv) > 3 else None
     
-    # Always prompt for FAQ accordion inclusion
-    force = os.getenv("FORCE_REPLY", "n").lower() == "y"
-    if force:
-        ans = "y"
-    else:
-        ans = input("\n포스팅 하단에 FAQ 아코디언을 추가할까요? (y/n): ").strip().lower()
-    include_faq = (ans == 'y')
+    # 🚀 무인 자동화 모드: 질문 없이 FAQ 생성 및 삽입을 기본값으로 설정
+    include_faq = True
+    print("\n✅ FAQ 자동 생성 모드가 활성화되었습니다.")
     
     if input_arg and input_arg.endswith(".md"):
+        # 기존 파일 재작업 모드
         process_single_file(input_arg, folder, target_lang, include_faq=include_faq)
+    elif input_arg:
+        # 🚀 [MANUAL MODE] 수동 키워드 입력 시 DeepSearch 연동
+        print(f"\n🚀 [MANUAL MODE] Keyword provided: {input_arg}")
+        print("Starting DeepSearch & Filter for manual keyword...")
+        
+        # 웹 검색 및 10개 선별 수행
+        top_urls = deep_search_and_filter(input_arg, num_results=100)
+        
+        if top_urls:
+            process_urls(urls=top_urls, keyword=input_arg, folder=folder, include_faq=include_faq)
+        else:
+            print(f"❌ '{input_arg}'에 대한 검색 결과에서 유효한 소스를 찾지 못했습니다.")
     else:
-        process_urls(keyword=input_arg, folder=folder, include_faq=include_faq)
+        # 🔥 완전 자동 모드 (파일 생성 -> 분석 -> 포스팅)
+        print("\n🚀 [AUTO MODE] No arguments provided. Starting full automation pipeline...")
+        
+        # 1. 크롤러 실행: list.txt 읽어서 20260410.txt 생성
+        daily_file = generate_daily_headlines_file("list.txt")
+        
+        if daily_file:
+            # 2. 트렌드 캐처 실행: 수집된 파일 읽어서 키워드 도출 및 URL 파일 생성
+            auto_keyword = get_daily_topic_from_file(daily_file)
+            
+            if auto_keyword:
+                print(f"✨ Auto-selected Keyword: {auto_keyword}")
+                
+                # 🚀 [New Pipeline] DeepSearch & Filter
+                top_urls = deep_search_and_filter(auto_keyword, num_results=100)
+                
+                if top_urls:
+                    # 3. 선별된 고품질 URL들을 사용하여 포스팅 작성
+                    process_urls(urls=top_urls, keyword=auto_keyword, folder=folder, include_faq=include_faq)
+                else:
+                    print("❌ 검색 결과에서 유효한 소스를 찾지 못했습니다.")
+            else:
+                print("❌ AI 키워드 선정에 실패했습니다.")
+        else:
+            print("❌ 헤드라인 수집에 실패하여 파이프라인을 중단합니다.")

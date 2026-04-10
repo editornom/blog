@@ -7,7 +7,10 @@ def load_faq_content(keyword):
     Strips 'Q1.', 'A1.', '**', ':', '.' etc. from indices.
     Returns a list of dictionaries with 'q' and 'a' keys.
     """
-    faq_path = os.path.join("source", "accordian", f"{keyword}.txt")
+    # 키워드에서 파일명으로 쓰기 부적절한 문자 제거 및 공백을 언더바로 변경
+    safe_keyword = re.sub(r'[\\/*?:"<>|]', "", keyword).replace(" ", "_")
+    faq_path = os.path.join("source", "accordian", f"{safe_keyword}.txt")
+    
     if not os.path.exists(faq_path):
         return None
     

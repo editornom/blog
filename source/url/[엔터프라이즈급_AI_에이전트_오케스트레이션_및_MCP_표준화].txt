@@ -1,0 +1,10 @@
+https://www.workato.com/the-connector/ko/mcp%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80-model-context-protocol-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC/
+https://kr.linkedin.com/pulse/aiia32-ai-agent-protocols-10-modern-standards-shaping-natarajan-xetbc?tl=ko
+https://introl.com/ko/blog/ai-agents-infrastructure-building-reliable-agentic-systems-guide
+https://www.databricks.com/kr/blog/accelerate-ai-development-databricks-discover-govern-and-build-mcp-and-agent-bricks
+https://www.jenova.ai/ko/resources/jenova-the-first-ai-agent-built-for-mcp
+https://www.ibm.com/kr-ko/think/topics/ai-agent-orchestration
+https://m.blog.naver.com/simula/223883221567
+https://www.snowflake.com/ko/blog/mcp-servers-unify-extend-data-agents/
+https://www.gttkorea.com/news/articleView.html?idxno=21954
+https://wikidocs.net/323619
