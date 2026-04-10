@@ -49,12 +49,55 @@ def fetch_content(url):
     return {
         "url": url,
         "title": title.strip(),
-        "body": main_text.strip()
+        "body": main_text.strip(),
+        "html_raw": response.text
     }
 
+def extract_related_links(base_url, html_content, max_links=10):
+    """
+    Extracts internal links from the HTML content that are related to the base URL.
+    """
+    from urllib.parse import urljoin, urlparse
+    soup = BeautifulSoup(html_content, 'html.parser')
+    links = set()
+    
+    parsed_base = urlparse(base_url)
+    base_domain = f"{parsed_base.scheme}://{parsed_base.netloc}"
+    # Target path for context (e.g., /colocation/)
+    base_path_parts = parsed_base.path.strip('/').split('/')
+    parent_path = "/" + "/".join(base_path_parts[:-1]) if len(base_path_parts) > 1 else "/"
+
+    for a in soup.find_all('a', href=True):
+        href = a['href']
+        full_url = urljoin(base_url, href)
+        parsed_url = urlparse(full_url)
+        
+        # Only internal links
+        if parsed_url.netloc != parsed_base.netloc:
+            continue
+            
+        # Skip anchors, non-http, and common noise
+        if '#' in href or not full_url.startswith('http'):
+            continue
+        
+        # Extensions to skip
+        if any(full_url.lower().endswith(ext) for ext in [".png", ".jpg", ".jpeg", ".pdf", ".zip"]):
+            continue
+
+        # Prioritize links in the same directory or subdirectories
+        if full_url != base_url and (full_url.startswith(base_domain + parent_path) or len(links) < max_links):
+            links.add(full_url)
+            
+        if len(links) >= max_links:
+            break
+            
+    return list(links)
+
 if __name__ == "__main__":
-    test_url = "https://example.com"
+    test_url = "https://haion.net/colocation/gpu.php"
+    # To test this manually, we would need real HTML.
+    # For now, it's integrated into the main pipeline.
     content = fetch_content(test_url)
     if content:
         print(f"Title: {content['title']}")
-        print(f"Body snippet: {content['body'][:200]}...")
+        # print(f"Body snippet: {content['body'][:200]}...")

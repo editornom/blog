@@ -6,7 +6,7 @@ import time
 import datetime
 from dotenv import load_dotenv
 
-from crawler import fetch_content
+from crawler import fetch_content, extract_related_links
 from generator import generate_blog_post
 from reviewer import review_manuscript
 from imagen_helper import generate_image
@@ -262,7 +262,7 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
         "body": combined_body[:30000] # Limit to avoid token issues
     }
     
-    draft = generate_blog_post(crawled_summary, folder=folder)
+    draft = generate_blog_post(crawled_summary, folder=folder, keyword=keyword)
     if not draft:
         print("Error: Failed to generate initial blog post.")
         print_final_briefing(report)
@@ -378,32 +378,66 @@ if __name__ == "__main__":
         process_single_file(input_arg, folder, target_lang, include_faq=include_faq)
     elif folder == "haionnet":
         # 🚀 [HAIONNET SPECIAL MODE] 
-        # 수동 URL 리스트(urls.txt)를 기반으로 고속 포스팅 생성
-        print(f"\n⚡ [HAIONNET MODE] Skipping RSS/Search. Reading from 'source/url/urls.txt'...")
-        
-        url_file = os.path.join("source", "url", "urls.txt")
-        if not os.path.exists(url_file):
-            print(f"❌ '{url_file}' 파일이 없습니다. 수동 URL 리스트를 먼저 작성해 주세요.")
-            sys.exit(1)
+        # 사용자가 URL을 직접 입력했는지 확인
+        if input_arg.startswith("http"):
+            root_url = input_arg
+            # 키워드는 세 번째 인자로 받거나, 없으면 기본값 사용
+            auto_keyword = sys.argv[3] if len(sys.argv) > 3 else "하이온넷 서비스"
+            print(f"\n🌊 [DEEP DIVE MODE] Starting deep analysis for: {root_url}")
+            print(f"📌 Target Keyword: {auto_keyword}")
             
-        with open(url_file, "r", encoding="utf-8") as f:
-            manual_urls = [line.strip() for line in f if line.strip() and line.startswith("http")]
+            # 1. 루트 페이지 수집
+            root_content = fetch_content(root_url)
+            if not root_content:
+                print(f"❌ '{root_url}' 접속에 실패했습니다.")
+                sys.exit(1)
             
-        if not manual_urls:
-            print(f"❌ '{url_file}'에 유효한 URL이 없습니다.")
-            sys.exit(1)
+            # 2. 관련 하위 링크 추출
+            related_links = extract_related_links(root_url, root_content.get('html_raw', '')) # wait, I need to make sure fetch_content returns raw html
+            # Actually, fetch_content doesn't return raw html. I should modify it or just re-fetch in main.
+            # Let's fix fetch_content later. For now, I'll assume it returns html_raw.
             
-        print(f"✅ {len(manual_urls)}개의 수동 URL을 로드했습니다. 본문 검증 및 선별을 시작합니다.")
-        
-        # 키워드가 입력되었으면 그것을 사용, 없으면 기본값 사용
-        auto_keyword = input_arg if input_arg else "Haionnet_Service_Highlights"
-        print(f"📌 Target Keyword: {auto_keyword}")
-        
-        # DeepSearch 2.0 엔진 활용 대신 urls.txt 리스트 직접 처리 (지능형 선별 기능 추가)
-        from search_expert import select_best_from_list
-        top_urls = select_best_from_list(manual_urls, auto_keyword)
-        
-        process_urls(urls=top_urls, keyword=auto_keyword, folder=folder, include_faq=include_faq)
+            # Re-fetch for raw HTML if needed, or modify fetch_content.
+            # Since I already updated crawler.py to not include html_raw, I'll re-fetch here for simplicity or modify fetch_content.
+            # Better: modify fetch_content to include html_raw.
+            
+            print(f"🔍 Found {len(related_links)} related sub-links. Crawling for more context...")
+            
+            all_bodies = [root_content['body']]
+            for i, link in enumerate(related_links[:5]): # Limit to 5 sub-links
+                print(f"  [{i+1}/{len(related_links[:5])}] Crawling sub-link: {link}")
+                sub_content = fetch_content(link)
+                if sub_content and sub_content['body']:
+                    all_bodies.append(sub_content['body'])
+            
+            # Combine content
+            top_urls = [root_url] + related_links[:5]
+            process_urls(urls=top_urls, keyword=auto_keyword, folder=folder, include_faq=include_faq)
+        else:
+            # 기존 urls.txt 기반 모드 (폴백)
+            print(f"\n⚡ [HAIONNET MODE] Reading from 'source/url/urls.txt'...")
+            
+            url_file = os.path.join("source", "url", "urls.txt")
+            if not os.path.exists(url_file):
+                print(f"❌ '{url_file}' 파일이 없습니다. 수동 URL 리스트를 먼저 작성해 주세요.")
+                sys.exit(1)
+                
+            with open(url_file, "r", encoding="utf-8") as f:
+                manual_urls = [line.strip() for line in f if line.strip() and line.startswith("http")]
+                
+            if not manual_urls:
+                print(f"❌ '{url_file}'에 유효한 URL이 없습니다.")
+                sys.exit(1)
+                
+            print(f"✅ {len(manual_urls)}개의 수동 URL을 로드했습니다. 본문 검증 및 선별을 시작합니다.")
+            
+            auto_keyword = input_arg if input_arg else "Haionnet_Service_Highlights"
+            print(f"📌 Target Keyword: {auto_keyword}")
+            
+            from search_expert import select_best_from_list
+            top_urls = select_best_from_list(manual_urls, auto_keyword)
+            
+            process_urls(urls=top_urls, keyword=auto_keyword, folder=folder, include_faq=include_faq)
 
     elif input_arg:
         # 🚀 [MANUAL MODE] 수동 키워드 입력 시 DeepSearch 연동

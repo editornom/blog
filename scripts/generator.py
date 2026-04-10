@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-def generate_blog_post(crawled_content, folder="posts", additional_instructions=""):
+def generate_blog_post(crawled_content, folder="posts", additional_instructions="", keyword=""):
     """
     Generates a blog post in Markdown format using the Gemini API.
     
@@ -13,6 +13,7 @@ def generate_blog_post(crawled_content, folder="posts", additional_instructions=
         crawled_content: Dict with 'title', 'url', 'body' from crawler.
         folder: 'haionnet' for SEO/AEO/GEO mode, 'posts' for editornom column mode.
         additional_instructions: Extra instructions to append to the prompt.
+        keyword: The primary target keyword to focus on.
     """
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
@@ -21,12 +22,17 @@ def generate_blog_post(crawled_content, folder="posts", additional_instructions=
 
     client = genai.Client(api_key=api_key)
 
+    # Use keyword as primary topic if provided
+    primary_topic = keyword if keyword else crawled_content['title']
+
     # Common data block
     data_block = f"""
+### 🎯 핵심 타겟 키워드:
+{primary_topic}
+
 ### 📄 수집된 본문 데이터:
-제목: {crawled_content['title']}
 출처 URL: {crawled_content['url']}
-본문 내용:
+본문 내용(수집된 여러 소스 통합):
 {crawled_content['body']}
 """
 
@@ -73,11 +79,12 @@ description: "메타 설명 (1~2줄)"
 
 {data_block}
 
-### 🎯 작성 가이드라인:
-1. 구조화 (SEO/AEO): Title & H1 최적화, 명확한 H2/H3 계층 구조를 유지하십시오.
-2. 가독성 및 형식: 긴 글은 피하고, 핵심 정보를 Direct Answer(40~50단어 요약), List(글머리 기호), Table(표) 포맷으로 가공하여 AI가 요약하기 좋게 만드십시오.
-3. 톤앤매너: 객관적 팩트에 기반하되, IT 전문가가 고객에게 1:1 컨설팅을 해주는 듯한 신뢰감 있고 부드러운 경어체(~습니다, ~해 보세요, ~해 드립니다)를 사용하십시오. 과장된 홍보 문구는 지양합니다.
-4. E-E-A-T 강화: 문제 제기 -> 원인 분석 -> 기술적 해결책의 논리적 인과관계를 명확히 하십시오.
+### 🎯 작성 가이드라인 (최우선 순위):
+1. **주제 집중**: 이 포스팅의 절대적인 주인공은 **'{primary_topic}'**입니다. 수집된 본문 데이터에 다른 장비나 서비스(예: HGX, GPU 하드웨어 등) 언급이 많더라도, 그것은 '{primary_topic}' 서비스를 설명하기 위한 예시나 수단일 뿐입니다. 절대로 주제가 하드웨어 스펙으로 흐르지 않게 하십시오.
+2. 구조화 (SEO/AEO): Title & H1 최적화, 명확한 H2/H3 계층 구조를 유지하십시오.
+3. 가독성 및 형식: 긴 글은 피하고, 핵심 정보를 Direct Answer(40~50단어 요약), List(글머리 기호), Table(표) 포맷으로 가공하여 AI가 요약하기 좋게 만드십시오.
+4. 톤앤매너: 객관적 팩트에 기반하되, IT 전문가가 고객에게 1:1 컨설팅을 해주는 듯한 신뢰감 있고 부드러운 경어체(~습니다, ~해 보세요, ~해 드립니다)를 사용하십시오. 과장된 홍보 문구는 지양합니다.
+5. E-E-A-T 강화: 문제 제기 -> 원인 분석 -> 기술적 해결책의 논리적 인과관계를 명확히 하십시오.
 
 ### 📝 세부 작성 원칙:
 - 이미지 삽입: **모든 소제목(H2, H3) 바로 직전**과 본문 시작 전(썸네일)에 해당 단락의 내용을 묘사하는 **[이미지: 여기에 들어갈 이미지의 간략하고 명확한 영문 설명]** 형식을 반드시 삽입하십시오. (설명에 기업명/브랜드명 절대 포함 금지)
@@ -109,8 +116,8 @@ description: "메타 설명 (1~2줄)"
 
 # 칼럼 구조 (Logical Structure)
 ## [작성 지침 - 절대 준수]
-1. 모든 포스팅의 중심 주제는 반드시 **"{crawled_content.get('title', '해당 주제')}"**여야 합니다. 
-2. 제공된 소스 자료에 장비(GPU, HGX 등) 정보가 많더라도, 이를 주인공으로 삼지 마세요. 장비는 {crawled_content.get('title', '해당 주제')} 서비스를 설명하기 위한 예시일 뿐입니다.
+1. 모든 포스팅의 중심 주제는 반드시 **"{primary_topic}"**이어야 합니다. 
+2. 제공된 소서 자료에 장비(GPU, HGX 등) 정보가 많더라도, 이를 주인공으로 삼지 마세요. 장비는 {primary_topic} 서비스를 설명하기 위한 예시일 뿐입니다.
 3. 문단의 가독성을 위해 적절한 소제목(H2, H3)과 불릿 포인트를 활용하세요.
 4. 전문적인 B2B 엔지니어급 톤앤매너를 유지하되, 하이온넷 서비스를 자연스럽게 강조하세요.
 5. 주제를 벗어난 사담이나 키워드와 관련 없는 배경 지식 나열은 금지합니다.
