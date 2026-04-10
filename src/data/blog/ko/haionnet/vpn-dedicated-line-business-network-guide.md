@@ -1,7 +1,7 @@
 ---
 title: "비즈니스 경쟁력을 높이는 VPN 전용회선 구축 전략 및 맞춤형 솔루션 가이드"
 author: "Antigravity"
-pubDatetime: 2024-05-22T10:00:00+09:00
+pubDatetime: 2026-04-10T16:37:00+09:00
 slug: "vpn-dedicated-line-business-network-guide"
 featured: false
 draft: false
