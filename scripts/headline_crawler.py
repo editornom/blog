@@ -10,7 +10,7 @@ if sys.platform == "win32":
 
 def fetch_todays_headlines(rss_url):
     """
-    RSS 피드에 접속하여 '최근 24시간 이내'에 발행된 기사 제목과 진짜 링크를 가져옵니다.
+    RSS 피드에 접속하여 '최근 72시간 이내'에 발행된 기사 제목과 진짜 링크를 가져옵니다.
     """
     headlines = []
     try:
@@ -32,8 +32,8 @@ def fetch_todays_headlines(rss_url):
             if not pub_time:
                 continue
 
-            # 핵심 로직: 현재 시간 기준으로 24시간 이내에 발행된 글인지 검증
-            if now_utc - pub_time <= timedelta(hours=24):
+            # 핵심 로직: 현재 시간 기준으로 72시간 이내에 발행된 글인지 검증
+            if now_utc - pub_time <= timedelta(hours=72):
                 # [진짜 본문 URL] 기사 제목 형태
                 headlines.append(f"[{entry.link}] {entry.title}")
         
@@ -61,7 +61,7 @@ def generate_daily_headlines_file(list_filename="list.txt"):
     with open(list_path, "r", encoding="utf-8") as f:
         urls = [line.strip() for line in f if line.strip() and not line.startswith("#")]
 
-    print(f"\n🌐 {len(urls)}개 매체의 RSS 피드에서 '최근 24시간 이내' 최신글을 수집합니다...")
+    print(f"\n🌐 {len(urls)}개 매체의 RSS 피드에서 '최근 72시간 이내' 최신글을 수집합니다...")
     
     all_headlines = []
     # 병렬 처리로 수십 개 사이트를 순식간에 스캔

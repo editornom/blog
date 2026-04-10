@@ -38,8 +38,8 @@ def generate_image(prompt, output_filename):
                 config={
                     'number_of_images': 1,
                     'aspect_ratio': '1:1', # 블로그용 1:1 비율
-                    'safety_filter_level': 'BLOCK_ONLY_HIGH', # 콘텐츠 성격에 맞게 조정 가능
-                    'person_generation': 'ALLOW_ADULT' # 성인 인물 묘사 허용 (기술적 소스용)
+                    'safety_filter_level': 'BLOCK_LOW_AND_ABOVE', # 4.0 모델 권장 설정
+                    'person_generation': 'ALLOW_ADULT' 
                 }
             )
             

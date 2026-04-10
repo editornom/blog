@@ -31,13 +31,20 @@ def fetch_content(url):
     main_text = ""
     
     # Try common article tags
-    article = soup.find('article')
+    article = soup.find(['article', 'main', 'section'])
     if article:
         main_text = article.get_text(separator='\n', strip=True)
     else:
-        # Fallback: combine all paragraph texts
+        # Fallback 1: combine all paragraph texts
         paragraphs = soup.find_all('p')
         main_text = "\n\n".join([p.get_text(strip=True) for p in paragraphs if len(p.get_text(strip=True)) > 20])
+        
+        # Fallback 2: If still empty or very short, try to find the largest div with a content-related class
+        if len(main_text) < 200:
+            divs = soup.find_all('div', class_=re.compile(r'content|body|post|article|inner|main', re.I))
+            if divs:
+                # Get the div with the most text
+                main_text = max([d.get_text(separator='\n', strip=True) for d in divs], key=len)
 
     return {
         "url": url,

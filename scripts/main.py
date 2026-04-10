@@ -292,8 +292,11 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
     # 4. Process Images (Regex to find [이미지: ...])
     image_placeholders = re.findall(r'\[이미지: (.*?)\]', draft)
     
-    # Define source image directory based on keyword
+    # Define source image directory based on keyword (Sanitize for Windows paths)
     source_folder_name = keyword if keyword else "general"
+    # 윈도우에서 사용할 수 없는 특수문자 제거 (: / \ ? * < > | ")
+    source_folder_name = re.sub(r'[\s\\/:*?"<>|]+', '_', source_folder_name).strip('_')
+    
     source_img_dir = os.path.join("source", folder, source_folder_name)
     os.makedirs(source_img_dir, exist_ok=True)
     
