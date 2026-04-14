@@ -1,6 +1,8 @@
-import os
 from google import genai
+from google.api_core import exceptions
+from api_utils import gemini_retry, gemini_limiter
 from dotenv import load_dotenv
+import os
 import sys
 
 if sys.platform == "win32":
@@ -28,20 +30,24 @@ def generate_image(prompt, output_filename):
 
     client = genai.Client(api_key=api_key)
 
+    @gemini_retry
+    def call_imagen(m_name):
+        gemini_limiter.consume()
+        return client.models.generate_images(
+            model=m_name,
+            prompt=prompt,
+            config={
+                'number_of_images': 1,
+                'aspect_ratio': '1:1',
+                'safety_filter_level': 'BLOCK_LOW_AND_ABOVE',
+                'person_generation': 'ALLOW_ADULT'
+            }
+        )
+
     for model_name in MODELS_TO_TRY:
         try:
             print(f"🎨 {model_name} 모델로 이미지 생성을 시도합니다...")
-            
-            response = client.models.generate_images(
-                model=model_name,
-                prompt=prompt,
-                config={
-                    'number_of_images': 1,
-                    'aspect_ratio': '1:1', # 블로그용 1:1 비율
-                    'safety_filter_level': 'BLOCK_LOW_AND_ABOVE', # 4.0 모델 권장 설정
-                    'person_generation': 'ALLOW_ADULT' 
-                }
-            )
+            response = call_imagen(model_name)
             
             if response.generated_images:
                 response.generated_images[0].image.save(output_filename)
@@ -50,18 +56,15 @@ def generate_image(prompt, output_filename):
             else:
                 print(f"⚠️ {model_name} 결과가 없습니다. 다음 모델로 넘어갑니다.")
                 
+        except exceptions.NotFound:
+            print(f"ℹ️ {model_name}은 현재 계정에서 사용할 수 없거나 지원하지 않습니다. (404)")
+        except exceptions.ResourceExhausted:
+            print(f"⏳ {model_name}의 속도 제한(Rate Limit)에 걸렸으나 재시도 후에도 실패했습니다.")
         except Exception as e:
-            error_msg = str(e)
-            if "404" in error_msg:
-                print(f"ℹ️ {model_name}은 현재 계정에서 사용할 수 없거나 지원하지 않습니다.")
-            elif "429" in error_msg:
-                print(f"⏳ {model_name}의 속도 제한(Rate Limit)에 걸렸습니다.")
-                # 속도 제한인 경우 잠시 쉬었다 가거나 다음 모델 시도
-            else:
-                print(f"⚠️ {model_name} 오류 발생: {error_msg[:100]}...")
+            print(f"⚠️ {model_name} 오류 발생: {str(e)[:100]}...")
             
-            # 다음 모델 시도 환경 조성
-            continue
+        # 다음 모델 시도 환경 조성
+        continue
 
     print("❌ 모든 Imagen 모델 시도가 실패했습니다.")
     return None

@@ -311,9 +311,7 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
         print(f"Generating AI image for: {prompt[:50]}...")
         generated_path = generate_image(prompt, img_path)
         
-        # Rate limit
-        print("Waiting 20 seconds to respect API rate limits...")
-        time.sleep(20) 
+        # Note: Rate limiting is now handled internally by generate_image via TokenBucket.
         
         if generated_path:
             report["images"]["success"] += 1

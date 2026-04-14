@@ -7,7 +7,8 @@ def push_to_github(commit_message):
     """
     try:
         print(f"Running git operations for: {commit_message}")
-        subprocess.run(["git", "add", "."], check=True)
+        # 특정 디렉토리만 스테이징 (보안 및 의도하지 않은 파일 방지)
+        subprocess.run(["git", "add", "src/data/blog/", "src/assets/images/"], check=True)
         subprocess.run(["git", "commit", "-m", commit_message], check=True)
         subprocess.run(["git", "push", "origin", "main"], check=True)
         print("Successfully pushed to GitHub!")

@@ -1,6 +1,8 @@
 import os
 import re
 from google import genai
+from google.api_core import exceptions
+from api_utils import gemini_retry, gemini_limiter
 from dotenv import load_dotenv
 import sys
 
@@ -47,12 +49,16 @@ A2: 답변 내용
 선택된 언어(한국어)로 작성하세요. 다른 메타 코멘트는 일절 배제하세요.
 """
 
-    try:
-        response = client.models.generate_content(
+    @gemini_retry
+    def call_api():
+        gemini_limiter.consume()
+        return client.models.generate_content(
             model='models/gemini-3-flash-preview',
             contents=prompt
         )
-        
+
+    try:
+        response = call_api()
         faq_text = response.text.strip()
         
         if not faq_text:
@@ -74,7 +80,7 @@ A2: 답변 내용
         return True
 
     except Exception as e:
-        print(f"⚠️ FAQ 생성 중 오류 발생: {e}")
+        print(f"⚠️ FAQ 생성 중 최종 실패: {e}")
         return False
 
 if __name__ == "__main__":

@@ -1,12 +1,19 @@
-[https://krebsonsecurity.com/2026/04/russia-hacked-routers-to-steal-microsoft-office-tokens/] Russia Hacked Routers to Steal Microsoft Office Tokens
 [https://www.schneier.com/blog/archives/2026/04/on-microsofts-lousy-cloud-security.html] On Microsoft’s Lousy Cloud Security
 [https://www.schneier.com/blog/archives/2026/04/python-supply-chain-compromise.html] Python Supply-Chain Compromise
-[https://www.schneier.com/blog/archives/2026/04/cybersecurity-in-the-age-of-instant-software.html] Cybersecurity in the Age of Instant Software
 [https://unit42.paloaltonetworks.com/exploit-of-aws-agentcore-iam-god-mode/] Cracks in the Bedrock: Agent God Mode
 [https://unit42.paloaltonetworks.com/bypass-of-aws-sandbox-network-isolation-mode/] Cracks in the Bedrock: Escaping the AWS AgentCore Sandbox
 [https://aws.amazon.com/blogs/aws/launching-s3-files-making-s3-buckets-accessible-as-file-systems/] Launching S3 Files, making S3 buckets accessible as file systems
 [https://opensource.microsoft.com/blog/2026/04/09/how-drasi-used-github-copilot-to-find-documentation-bugs/] How Drasi used GitHub Copilot to find documentation bugs
 [https://azure.microsoft.com/en-us/blog/cloud-cost-optimization-how-to-maximize-roi-from-ai-manage-costs-and-unlock-real-business-value/] Cloud Cost Optimization: How to maximize ROI from AI, manage costs, and unlock real business value
+[https://blogs.cisco.com/news/cisco-announces-the-intent-to-acquire-galileo] Making AI Trustworthy and Observable in Real-Time: Cisco Announces Intent to Acquire Galileo
+[https://blogs.cisco.com/networking/a-simpler-path-to-unified-ai-ready-network-operations] A simpler path to unified, AI-ready network operations
+[https://blogs.cisco.com/industrial-iot/cisco-celebrates-the-smart-industry-industrial-transformation-award-winners] Cisco Celebrates The Smart Industry Industrial Transformation Award Winners
+[https://blogs.cisco.com/security/mwc-2026-soc] Mobile World Congress 2026: AI-powered Network Security
+[https://blogs.cisco.com/security/powering-mwc-barcelona-building-a-unified-soc-and-noc-with-splunk-in-record-time] Powering MWC Barcelona – Building a Unified SOC and NOC with Splunk in Record Time
+[https://blogs.cisco.com/cisco-on-cisco/how-new-data-streams-transformed-cisco-stores-decision-making] How New Data Streams Transformed Cisco Store’s Decision-Making
+[https://blogs.cisco.com/security/mwc-2026-ai-network-security] AI-powered Network Security at the Mobile World Congress 2026 SNOC
+[https://blogs.cisco.com/security/mwc-2026-firepower6100] Inside the Mobile World Congress 2026 SOC: Detecting Shadow Traffic with Firepower 6100
+[https://blogs.cisco.com/our-corporate-purpose/a-decade-of-digital-empowerment-celebrating-ciscos-digitaliani-impact-in-italy] A decade of digital empowerment: Celebrating Cisco’s “Digitaliani” impact in Italy
 [https://www.networkworld.com/article/4156949/google-owns-the-most-ai-compute-and-it-built-it-its-way.html] Google owns the most AI compute, and it built it its way
 [https://www.networkworld.com/article/4156855/cisco-to-acquire-galileo-for-ai-observability.html] Cisco to acquire Galileo for AI observability
 [https://www.networkworld.com/article/3562856/nvidia-latest-news-and-insights.html] Nvidia: Latest news and insights
@@ -17,6 +24,7 @@
 [https://www.networkworld.com/article/4156508/nvidia-rubin-gpus-may-be-delayed-slowing-the-next-phase-of-ai-infrastructure.html] Nvidia Rubin GPUs may be delayed, slowing the next phase of AI infrastructure
 [https://www.networkworld.com/article/3609889/what-is-ai-networking-how-it-automates-your-infrastructure-but-faces-challenges.html] What is AI networking? How it adds intelligence to your infrastructure
 [https://www.networkworld.com/article/4155900/aria-networks-raises-125m-and-debuts-its-approach-for-ai-optimized-networks.html] Aria Networks raises $125M and debuts its approach for AI-optimized networks
+[https://www.cio.com/article/4157043/la-aceleracion-tecnologica-allana-el-camino-de-los-cio-para-convertirse-en-ceo.html] La aceleración tecnológica allana el camino de los CIO para convertirse en CEO
 [https://www.cio.com/article/4156990/bridging-the-digital-divide-in-asia-pacific-epc.html] Bridging the digital divide in Asia-Pacific EPC
 [https://www.cio.com/article/4156977/%eb%a7%81%ed%81%ac%eb%93%9c%ec%9d%b8-%eb%b8%8c%eb%9d%bc%ec%9a%b0%ec%a0%80-%ec%a0%95%eb%b3%b4-%ec%88%98%ec%a7%91-%ea%b3%b5%eb%b0%a9%ec%a2%85%ea%b5%90%c2%b7%ec%a0%95%ec%b9%98-%ec%84%b1.html] 링크드인, 브라우저 정보 수집 공방…종교·정치 성향 추론 의혹 제기
 [https://www.cio.com/article/4156957/%eb%aa%b0%eb%a1%9c%ec%bd%94-%ea%b8%b0%ea%b3%a0-ai-%ec%8b%9c%eb%8c%80%ec%9d%98-%eb%a7%88%ec%bc%80%ed%8c%85-%ed%98%81%ec%8b%a0-%ea%b8%b0%ec%88%a0%eb%b3%b4%eb%8b%a4-%eb%b3%80%ed%99%94.html] 몰로코 기고 | AI 시대의 마케팅 혁신, 기술보다 ‘변화하는 소비자 행동’에 집중하라
@@ -26,7 +34,6 @@
 [https://www.cio.com/article/4155838/stopping-power-the-leadership-skill-that-separates-modern-it-leaders.html] Stopping power: The leadership skill that separates modern IT leaders
 [https://www.cio.com/article/4154281/techs-acceleration-paves-cios-path-to-the-corner-office.html] Tech’s acceleration paves CIOs’ path to the corner office
 [https://www.cio.com/article/4155823/the-path-to-cio.html] The path to CIO
-[https://www.cio.com/article/4154079/5-questions-every-aspiring-cio-should-be-prepared-to-answer-2.html] 5 questions every aspiring CIO should be prepared to answer
 [https://www.zdnet.com/article/lenovo-yoga-7a-2-in-1-review/] Surprise: Not every Lenovo laptop is worth recommending in 2026 - the Yoga 7i is proof
 [https://www.zdnet.com/article/samsung-s95h-vs-samsung-s95f/] Samsung S95H vs. Samsung S95F: I compared the OLED TVs and wasn't prepared for the upset
 [https://www.zdnet.com/article/dewalt-power-tool-bundle-deal-home-depot-spring-black-friday-2026/] Home Depot's new DeWalt deal comes with a free power tool - how to redeem the offer
@@ -44,18 +51,16 @@
 [https://techcrunch.com/2026/04/08/final-3-days-to-save-up-to-500-on-your-techcrunch-disrupt-2026-pass/] Final 3 days to save up to $500 on your TechCrunch Disrupt 2026 pass
 [https://techcrunch.com/2026/04/08/atlassian-confluence-visual-ai-tools-agents/] Atlassian launches visual AI tools and third-party agents in Confluence
 [https://techcrunch.com/2026/04/07/anthropic-mythos-ai-model-preview-security/] Anthropic debuts preview of powerful new AI model Mythos in new cybersecurity initiative
-[https://techcrunch.com/2026/04/07/uber-is-the-latest-to-be-won-over-by-amazons-ai-chips/] Uber is the latest to be won over by Amazon’s AI chips
-[https://techcrunch.com/2026/04/07/anthropic-compute-deal-google-broadcom-tpus/] Anthropic ups compute deal with Google and Broadcom amid skyrocketing demand
-[https://bigbrotherwatch.org.uk/blog/apples-new-iphone-update-is-restricting-internet-freedom-in-the-uk/] Apple's New iPhone Update Is Restricting Internet Freedom in the UK
 [https://cacm.acm.org/news/how-nasa-built-artemis-iis-fault-tolerant-computer/] How NASA built Artemis II’s fault-tolerant computer
+[https://david.coffee/i-still-prefer-mcp-over-skills/] I still prefer MCP over skills
 [https://arhan.sh/blog/native-instant-space-switching-on-macos/] Native Instant Space Switching on macOS
-[https://www.cockroachlabs.com/blog/raft-is-so-fetch/] The Raft Consensus Algorithm Explained Through "Mean Girls"
-[https://www.bbc.co.uk/news/articles/c2evppm30p7o] Hip-hop pioneer, Afrika Bambaataa, dies aged 68
-[https://www.ycombinator.com/companies/collectwise/jobs/Ktc6m6o-ai-agent-engineer] CollectWise (YC F24) Is Hiring
+[https://blog.gitbutler.com/series-a] We've raised $17M to build what comes after Git
+[https://www.openpolicy.sh/blog/no-build-astro] Zero-build privacy policies with Astro
 [https://charcuterie.elastiq.ch/] Charcuterie – Visual similarity Unicode explorer
 [https://www.youtube.com/watch?v=KKbgulTp3FE] RAM Has a Design Flaw from 1966. I Bypassed It [video]
-[https://eaw.app/picoz80/] PicoZ80 – Drop-In Z80 Replacement
-[https://github.com/aloshdenny/reverse-SynthID] Reverse engineering Gemini's SynthID detection
+[https://www.bbc.co.uk/news/articles/c2evppm30p7o] Afrika Bambaataa, hip-hop pioneer, has died
+[https://www.ycombinator.com/companies/collectwise/jobs/Ktc6m6o-ai-agent-engineer] CollectWise (YC F24) Is Hiring
+[https://www.ucdavis.edu/health/news/penguin-toxicologists-find-pfas-chemicals-remote-patagonia] Penguin 'Toxicologists' Find PFAS Chemicals in Remote Patagonia
 [https://engineering.fb.com/2026/04/09/developer-tools/escaping-the-fork-how-meta-modernized-webrtc-across-50-use-cases/] Escaping the Fork: How Meta Modernized WebRTC Across 50+ Use Cases
 [https://engineering.fb.com/2026/04/08/security/trust-but-canary-configuration-safety-at-scale-meta-tech-podcast/] Trust But Canary: Configuration Safety at Scale
 [https://github.blog/news-insights/company-news/github-availability-report-march-2026/] GitHub availability report: March 2026
@@ -81,13 +86,10 @@
 [https://aws.amazon.com/blogs/machine-learning/building-intelligent-audio-search-with-amazon-nova-embeddings-a-deep-dive-into-semantic-audio-understanding/] Building intelligent audio search with Amazon Nova Embeddings: A deep dive into semantic audio understanding
 [https://aws.amazon.com/blogs/machine-learning/reinforcement-fine-tuning-on-amazon-bedrock-best-practices/] Reinforcement fine-tuning on Amazon Bedrock: Best practices
 [https://aws.amazon.com/blogs/machine-learning/manage-ai-costs-with-amazon-bedrock-projects/] Manage AI costs with Amazon Bedrock Projects
-[https://aws.amazon.com/blogs/machine-learning/building-real-time-conversational-podcasts-with-amazon-nova-2-sonic/] Building real-time conversational podcasts with Amazon Nova 2 Sonic
 [https://blog.langchain.com/previewing-interrupt-2026-agents-at-enterprise-scale/] Previewing Interrupt 2026: Agents at Enterprise Scale
 [https://blog.langchain.com/deep-agents-deploy-an-open-alternative-to-claude-managed-agents/] Deep Agents Deploy: an open alternative to Claude Managed Agents
 [https://blog.langchain.com/human-judgment-in-the-agent-improvement-loop/] Human judgment in the agent improvement loop
 [https://blog.langchain.com/better-harness-a-recipe-for-harness-hill-climbing-with-evals/] Better Harness: A Recipe for Harness Hill-Climbing with Evals
-[https://blog.langchain.com/deep-agents-v0-5/] Deep Agents v0.5
-[https://blog.langchain.com/arcade-dev-tools-now-in-langsmith-fleet/] Arcade.dev tools now in LangSmith Fleet
 [https://techcrunch.com/2026/04/09/chatgpt-pro-plan-100-month-codex/] ChatGPT finally offers $100/month Pro plan
 [https://techcrunch.com/2026/04/09/florida-ag-investigation-openai-chatgpt-shooting/] Florida AG announces investigation into OpenAI over shooting that allegedly involved ChatGPT
 [https://techcrunch.com/2026/04/09/after-data-breach-10b-valued-startup-mercor-is-having-a-month/] After data breach, $10B-valued startup Mercor is having a month
@@ -103,7 +105,6 @@
 [https://www.kdnuggets.com/5-docker-containers-for-small-business] 5 Docker Containers for Small Business
 [https://www.kdnuggets.com/run-qwen3-5-on-an-old-laptop-a-lightweight-local-agentic-ai-setup-guide] Run Qwen3.5 on an Old Laptop: A Lightweight Local Agentic AI Setup Guide
 [https://www.kdnuggets.com/5-useful-python-scripts-to-automate-boring-excel-tasks] 5 Useful Python Scripts to Automate Boring Excel Tasks
-[https://www.kdnuggets.com/supabase-vs-firebase-which-backend-is-right-for-your-next-app] Supabase vs Firebase: Which Backend Is Right for Your Next App?
 [https://www.infoq.com/news/2026/04/cloudflare-emdash-wordpress/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global] Cloudflare Introduces EmDash: TypeScript CMS Positioned as WordPress Successor
 [https://www.infoq.com/news/2026/04/uber-hive-decentralized-data/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global] Uber’s Hive Federation Decentralizes 16K Datasets and 10+ PB for Zero-Downtime Analytics at Scale
 [https://www.infoq.com/news/2026/04/aaif-mcp-summit/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global] AAIF's MCP Dev Summit: Gateways, gRPC, and Observability Signal Protocol Hardening

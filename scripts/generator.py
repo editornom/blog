@@ -1,4 +1,6 @@
 from google import genai
+from google.api_core import exceptions
+from api_utils import gemini_retry, gemini_limiter
 import os
 import datetime
 from dotenv import load_dotenv
@@ -140,26 +142,20 @@ description: "메타 설명 (1~2줄)"
     if additional_instructions:
         prompt += f"\n### 추가 지시사항:\n{additional_instructions}\n"
 
-    max_retries = 3
-    for attempt in range(max_retries + 1):
-        try:
-            response = client.models.generate_content(
-                model='models/gemini-3-flash-preview',
-                contents=prompt
-            )
-            return response.text
-        except Exception as e:
-            import time
-            error_msg = str(e)
-            # 일시적인 서버 부하(503, 429, UNAVAILABLE)인 경우 재시도
-            if ("503" in error_msg or "429" in error_msg or "UNAVAILABLE" in error_msg) and attempt < max_retries:
-                wait_time = (attempt + 1) * 15 # 15s, 30s, 45s...
-                print(f"\n⚠️ Gemini API 부하 감지 ({error_msg[:30]}...). {wait_time}초 후 재시도합니다. (Attempt {attempt+1}/{max_retries})")
-                time.sleep(wait_time)
-                continue
-            else:
-                print(f"Error calling Gemini API: {e}")
-                return None
+    @gemini_retry
+    def call_api():
+        gemini_limiter.consume()
+        return client.models.generate_content(
+            model='models/gemini-3-flash-preview',
+            contents=prompt
+        )
+
+    try:
+        response = call_api()
+        return response.text
+    except Exception as e:
+        print(f"❌ Gemini API 최종 실패: {e}")
+        return None
 
 if __name__ == "__main__":
     # Test

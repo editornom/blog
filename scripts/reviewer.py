@@ -1,4 +1,6 @@
 from google import genai
+from google.api_core import exceptions
+from api_utils import gemini_retry, gemini_limiter
 import os
 from dotenv import load_dotenv
 
@@ -57,15 +59,20 @@ def review_manuscript(draft, folder="posts"):
 """
     # ---------------------------------------------------------
 
-    try:
-        print("Gemini가 원고를 검수(디톡스) 중입니다...")
-        response = client.models.generate_content(
+    @gemini_retry
+    def call_api():
+        gemini_limiter.consume()
+        return client.models.generate_content(
             model='models/gemini-3-flash-preview', 
             contents=prompt
         )
+
+    try:
+        print("Gemini가 원고를 검수(디톡스) 중입니다...")
+        response = call_api()
         return response.text
     except Exception as e:
-        print(f"Error during manuscript inspection: {e}")
+        print(f"❌ 원고 검수 중 최종 실패: {e}")
         return draft
 
 if __name__ == "__main__":

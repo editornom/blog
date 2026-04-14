@@ -4,6 +4,7 @@ import concurrent.futures
 from datetime import datetime, timedelta, timezone
 import time
 import sys
+import requests
 
 if sys.platform == "win32":
     sys.stdout.reconfigure(encoding='utf-8')
@@ -14,9 +15,12 @@ def fetch_todays_headlines(rss_url):
     """
     headlines = []
     try:
-        # RSS 피드 파싱
-        # timeout 설정이 없으므로 feedparser의 기본 동작에 의존하거나 직접 처리가 필요할 수 있음
-        feed = feedparser.parse(rss_url)
+        # requests를 사용하여 10초 타임아웃 설정으로 데이터 가져오기
+        response = requests.get(rss_url, timeout=10)
+        response.raise_for_status()
+        
+        # 가져온 텍스트 데이터를 feedparser로 파싱
+        feed = feedparser.parse(response.text)
         now_utc = datetime.now(timezone.utc)
         
         for entry in feed.entries:
@@ -39,8 +43,11 @@ def fetch_todays_headlines(rss_url):
         
         # 한 사이트당 최대 10개까지 허용 (데이터 다양성 확보)
         return headlines[:10]
+    except (requests.exceptions.Timeout, requests.exceptions.RequestException) as e:
+        print(f"⚠️ '{rss_url}' 접속 실패 (타임아웃 또는 네트워크 오류): {e}")
+        return []
     except Exception as e:
-        print(f"❌ '{rss_url}' 수집 중 오류: {e}")
+        print(f"❌ '{rss_url}' 수집 중 예기치 못한 오류: {e}")
         return []
 
 def generate_daily_headlines_file(list_filename="list.txt"):

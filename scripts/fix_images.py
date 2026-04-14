@@ -29,9 +29,7 @@ def fix_images_in_latest_post():
         print(f"Generating AI image for: {prompt[:50]}...")
         generated_path = generate_image(prompt, img_path)
         
-        # Rate limit
-        print("Waiting 20 seconds...")
-        time.sleep(20)
+        # Note: Rate limiting is now handled internally by imagen_helper via TokenBucket.
         
         if generated_path:
             md_img_link = f"![AI Generated Image](../../assets/images/{img_filename})"
