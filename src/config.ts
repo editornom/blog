@@ -2,7 +2,7 @@ export const SITE = {
   website: "https://editornom.com/", // replace this with your deployed domain
   author: "편집",
   profile: "https://satnaing.dev/",
-  desc: "IT 테크 기술 블로그|AI, 사이버보안, 앱개발",
+  desc: "IT 테크 기술 블로그 | AI, 사이버보안, 앱개발",
   title: "editorNOM's IT Blog",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
