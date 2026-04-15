@@ -272,7 +272,8 @@ const hreflangLinks = currentLang
       #scroll-to-top {
         position: fixed;
         bottom: 2rem;
-        right: 2rem;
+        /* Attach to the right side of the content area (max-w-3xl = 768px) on large screens, fallback to 2rem on smaller screens */
+        right: max(2rem, calc(50vw - 384px - 42px - 1rem));
         z-index: 50;
         width: 42px;
         height: 42px;
