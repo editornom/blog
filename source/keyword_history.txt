@@ -1,3 +1,4 @@
 [2026-04-10] 엔터프라이즈 AI 에이전트 확산을 위한 MCP(Model Context Protocol) 표준화와 보안 거버넌스
 [2026-04-14] 엔터프라이즈 에이전틱 인프라: 생산성 역설(Productivity Paradox)과 신뢰 거버넌스
 [2026-04-14] 엔터프라이즈 시맨틱 허브(Semantic Hub)
+[2026-04-15] GPU 기반 AI 인프라의 하드웨어 보안 취약점: NVIDIA GPU Rowhammer 공격

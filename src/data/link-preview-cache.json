@@ -19,5 +19,33 @@
     "image": "https://haion.net/img/og_haion.jpg",
     "siteName": "하이온넷(주)",
     "url": "https://www.haion.net/service/utm/"
+  },
+  "https://haion.net/vpn/": {
+    "title": "VPN 전용회선 - 하이온넷㈜",
+    "description": "하이온넷의 VPN 전용회선 서비스는 특허기술이 적용된 하이온넷만의 독자적 VPN 솔루션으로 빠르고 안전한 네트워크 환경 실현을 목표로 합니다.",
+    "image": "https://haion.net/img/og_haion.jpg",
+    "siteName": "하이온넷(주)",
+    "url": "https://haion.net/vpn/"
+  },
+  "https://haion.net/colocation/gpu.php": {
+    "title": "고전력 코로케이션 - 하이온넷㈜",
+    "description": "고전력 서버에 특화된 자체 서버센터를 운영하고 있으며 서버당 최대 100A(22kW)까지 제공, 최적의 환경 및 전력을 제공합니다.",
+    "image": "https://haion.net/img/og_haion.jpg",
+    "siteName": "하이온넷(주)",
+    "url": "https://haion.net/colocation/gpu.php"
+  },
+  "https://haion.net/global/hgx/": {
+    "title": "국제전용회선 HGX - 하이온넷㈜",
+    "description": "전구간 point-to-point 국제전용회선에 비해 최대 75% 저렴한 비용의 VPN 기술 융합형 하이온넷 국제 전용회선 HGX는 기업의 국내외 지점간 안정적이고 신속한 데이터 전달을 보장합니다. 전용 대역폭으로 고화질의 화상회의가 안정적으로 가능하며, 서비스는 신청 후 즉시 사용이 가능합니다.",
+    "image": "https://haion.net/img/og_haion.jpg",
+    "siteName": "하이온넷(주)",
+    "url": "https://haion.net/global/hgx/"
+  },
+  "https://haion.net/colocation/detail.php": {
+    "title": "코로케이션 - 하이온넷㈜",
+    "description": "고객소유의 서버와 네트워크 장비를 설치하고 운영할 수 있는 최적의 공간을 제공하며 물리적 안정성과 최고 등급의 IT보안으로 무장애를 보장합니다.",
+    "image": "https://haion.net/img/og_haion.jpg",
+    "siteName": "하이온넷(주)",
+    "url": "https://haion.net/colocation/detail.php"
   }
 }
