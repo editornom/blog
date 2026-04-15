@@ -88,11 +88,13 @@ const isActive = (path: string) => {
             Posts
           </a>
         </li>
-        <li class="col-span-2">
-          <a href={`${base}/haionnet`} class:list={{ "active-nav": isActive("/haionnet") }}>
-            haionnet
-          </a>
-        </li>
+        {lang === "ko" && (
+          <li class="col-span-2">
+            <a href={`${base}/haionnet`} class:list={{ "active-nav": isActive("/haionnet") }}>
+              haionnet
+            </a>
+          </li>
+        )}
         <li class="col-span-2">
           <a href={`${base}/tags`} class:list={{ "active-nav": isActive("/tags") }}>
             Tags
