@@ -11,8 +11,11 @@ import BackButton from "@/components/BackButton.astro";
 
 import { getPath } from "@/utils/getPath";
 import { slugifyStr } from "@/utils/slugify";
-import IconChevronLeft from "@/assets/icons/IconChevronLeft.svg";
-import IconChevronRight from "@/assets/icons/IconChevronRight.svg";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import tz from "dayjs/plugin/timezone";
+dayjs.extend(utc);
+dayjs.extend(tz);
 import { SITE } from "@/config";
 
 type Props = {
@@ -67,19 +70,30 @@ const layoutProps = {
   scrollSmooth: true,
 };
 
-/* ========== Prev/Next Posts ========== */
+/* ========== Post List for bottom navigation ========== */
+const ITEMS_PER_PAGE = 4;
 
-const allPosts = posts.map(({ data: { title }, id, filePath }) => ({
-  id,
-  title,
-  filePath,
-}));
+const postListData = posts
+  .filter(p => p.id !== post.id)
+  .map(p => {
+    let thumb = "";
+    if (typeof p.data.ogImage === "string") {
+      thumb = p.data.ogImage;
+    } else if (p.data.ogImage?.src) {
+      thumb = p.data.ogImage.src;
+    }
+    const d = dayjs(p.data.modDatetime && p.data.modDatetime > p.data.pubDatetime ? p.data.modDatetime : p.data.pubDatetime).tz(p.data.timezone || SITE.timezone);
+    return {
+      title: p.data.title,
+      slug: p.data.slug,
+      href: getPath(p.id, p.filePath),
+      thumb,
+      date: d.format("YYYY.MM.DD"),
+    };
+  });
 
-const currentPostIndex = allPosts.findIndex(a => a.id === post.id);
-
-const prevPost = currentPostIndex !== 0 ? allPosts[currentPostIndex - 1] : null;
-const nextPost =
-  currentPostIndex !== allPosts.length ? allPosts[currentPostIndex + 1] : null;
+const totalPages = Math.ceil(postListData.length / ITEMS_PER_PAGE);
+const currentLang = Astro.url.pathname.split("/")[1] || "ko";
 ---
 
 <Layout {...layoutProps}>
@@ -152,37 +166,50 @@ const nextPost =
 
     <hr class="my-6 border-dashed" />
 
-    <!-- Previous/Next Post Buttons -->
-    <div data-pagefind-ignore class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-      {
-        prevPost && (
-          <a
-            href={getPath(prevPost.id, prevPost.filePath)}
-            class="flex w-full gap-1 hover:opacity-75"
+    <!-- Post List Navigation -->
+    <section id="post-list-nav" data-pagefind-ignore data-total-pages={totalPages} data-lang={currentLang} data-sb-url={import.meta.env.PUBLIC_SUPABASE_URL || ""} data-sb-key={import.meta.env.PUBLIC_SUPABASE_ANON_KEY || ""}>
+      <h2 class="mb-4 text-lg font-semibold text-foreground">다른 글 보기</h2>
+      <ul id="post-list-items" class="flex flex-col gap-2">
+        {postListData.map((p, i) => (
+          <li
+            class="post-list-item rounded-lg border border-border bg-muted/10 transition-all hover:bg-muted/30"
+            data-page={Math.floor(i / ITEMS_PER_PAGE)}
+            style={i >= ITEMS_PER_PAGE ? "display:none" : ""}
           >
-            <IconChevronLeft class="inline-block flex-none rtl:rotate-180" />
-            <div>
-              <span>Previous Post</span>
-              <div class="text-sm text-accent/85">{prevPost.title}</div>
-            </div>
-          </a>
-        )
-      }
-      {
-        nextPost && (
-          <a
-            href={getPath(nextPost.id, nextPost.filePath)}
-            class="flex w-full justify-end gap-1 text-end hover:opacity-75 sm:col-start-2"
-          >
-            <div>
-              <span>Next Post</span>
-              <div class="text-sm text-accent/85">{nextPost.title}</div>
-            </div>
-            <IconChevronRight class="inline-block flex-none rtl:rotate-180" />
-          </a>
-        )
-      }
-    </div>
+            <a href={p.href} class="flex items-center gap-3 p-2.5 no-underline sm:gap-4 sm:p-3">
+              <div class="h-12 w-12 flex-none overflow-hidden rounded-md bg-muted sm:h-14 sm:w-14">
+                {p.thumb ? (
+                  <img src={p.thumb} alt={p.title} class="h-full w-full object-cover" loading="lazy" />
+                ) : (
+                  <div class="flex h-full w-full items-center justify-center bg-accent/10 text-xs text-accent">N</div>
+                )}
+              </div>
+              <div class="flex min-w-0 flex-1 flex-col gap-0.5">
+                <span class="truncate text-sm font-medium text-foreground sm:text-base">{p.title}</span>
+                <div class="flex items-center gap-2 text-xs text-foreground/50">
+                  <span class="post-views" data-slug={p.slug}>--</span>
+                  <span aria-hidden="true">·</span>
+                  <span>{p.date}</span>
+                </div>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+      {totalPages > 1 && (
+        <div id="post-list-pagination" class="mt-4 flex items-center justify-center gap-3">
+          <button id="pl-prev" class="rounded-md border border-border px-3 py-1.5 text-sm text-foreground/70 transition-colors hover:bg-muted/40 disabled:opacity-30 disabled:cursor-not-allowed" disabled>
+            ← 이전
+          </button>
+          <span class="text-sm text-foreground/60">
+            <span id="pl-current">1</span> / {totalPages}
+          </span>
+          <button id="pl-next" class="rounded-md border border-border px-3 py-1.5 text-sm text-foreground/70 transition-colors hover:bg-muted/40 disabled:opacity-30 disabled:cursor-not-allowed">
+            다음 →
+          </button>
+        </div>
+      )}
+    </section>
   </main>
   <Footer />
 </Layout>
@@ -362,4 +389,72 @@ const nextPost =
 
   // Support Astro View Transitions
   document.addEventListener("astro:after-swap", updateViewCount);
+</script>
+
+<script is:inline data-astro-rerun>
+  /* ========== Post List Pagination ========== */
+  (function initPostListNav() {
+    const nav = document.getElementById("post-list-nav");
+    if (!nav) return;
+
+    const totalPages = parseInt(nav.dataset.totalPages || "1", 10);
+    const lang = nav.dataset.lang || "ko";
+    const items = document.querySelectorAll(".post-list-item");
+    const prevBtn = document.getElementById("pl-prev");
+    const nextBtn = document.getElementById("pl-next");
+    const currentLabel = document.getElementById("pl-current");
+    let currentPage = 0;
+
+    function showPage(page) {
+      currentPage = page;
+      items.forEach(item => {
+        item.style.display = parseInt(item.dataset.page, 10) === page ? "" : "none";
+      });
+      if (currentLabel) currentLabel.textContent = (page + 1).toString();
+      if (prevBtn) prevBtn.disabled = page === 0;
+      if (nextBtn) nextBtn.disabled = page >= totalPages - 1;
+    }
+
+    if (prevBtn) prevBtn.addEventListener("click", () => { if (currentPage > 0) showPage(currentPage - 1); });
+    if (nextBtn) nextBtn.addEventListener("click", () => { if (currentPage < totalPages - 1) showPage(currentPage + 1); });
+
+    showPage(0);
+
+    /* ========== Bulk fetch view counts for listed posts ========== */
+    const viewSpans = document.querySelectorAll(".post-views[data-slug]");
+    if (viewSpans.length === 0) return;
+
+    const slugs = Array.from(viewSpans).map(s => s.dataset.slug);
+
+    // Use Supabase REST API directly to get view counts
+    const supabaseUrl = nav.dataset.sbUrl;
+    const supabaseKey = nav.dataset.sbKey;
+
+    if (!supabaseUrl || !supabaseKey) {
+      // Fallback: try reading from existing supabase client via window
+      viewSpans.forEach(s => { s.textContent = "조회수 --"; });
+      return;
+    }
+
+    fetch(`${supabaseUrl}/rest/v1/page_views?select=page_slug,view_count&page_lang=eq.${lang}&page_slug=in.(${slugs.map(s => `"${s}"`).join(",")})`, {
+      headers: {
+        "apikey": supabaseKey,
+        "Authorization": `Bearer ${supabaseKey}`
+      }
+    })
+    .then(res => res.json())
+    .then(data => {
+      const countMap = {};
+      if (Array.isArray(data)) {
+        data.forEach(row => { countMap[row.page_slug] = row.view_count; });
+      }
+      viewSpans.forEach(span => {
+        const count = countMap[span.dataset.slug];
+        span.textContent = count !== undefined ? `조회 ${count}` : "조회 0";
+      });
+    })
+    .catch(() => {
+      viewSpans.forEach(s => { s.textContent = "조회 --"; });
+    });
+  })();
 </script>
