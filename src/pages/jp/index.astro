@@ -12,29 +12,28 @@ const posts = await getCollection("blog", ({ id }) =>
 
 const sortedPosts = getSortedPosts(posts);
 
-// Separate posts by folder path
-const normalPosts = sortedPosts.filter(p => p.id.replace(/\\/g, "/").includes("posts/"));
-const haionnetPosts = sortedPosts.filter(p => p.id.replace(/\\/g, "/").includes("haionnet/"));
+// Foreign language: all bento cards from posts only (two rows of 4)
+const allPosts = sortedPosts.filter(p => p.id.replace(/\\/g, "/").includes("posts/"));
 
-const bentoNormal = normalPosts.slice(0, 4);
-const bentoHaionnet = haionnetPosts.slice(0, 4);
+const bentoRow1 = allPosts.slice(0, 4);
+const bentoRow2 = allPosts.slice(4, 8);
 ---
 
 <Layout>
   <Header />
   <main id="main-content" data-layout="index" class="app-layout">
     {
-      bentoNormal.length > 0 && (
-        <section id="bento-normal" class:list={["pt-8"]}>
-          <BentoGrid posts={bentoNormal} />
+      bentoRow1.length > 0 && (
+        <section id="bento-row1" class:list={["pt-8"]}>
+          <BentoGrid posts={bentoRow1} />
         </section>
       )
     }
 
     {
-      bentoHaionnet.length > 0 && (
-        <section id="bento-haionnet" class:list={["mt-[10px] pb-6"]}>
-          <BentoGrid posts={bentoHaionnet} />
+      bentoRow2.length > 0 && (
+        <section id="bento-row2" class:list={["mt-[10px] pb-6"]}>
+          <BentoGrid posts={bentoRow2} />
         </section>
       )
     }
