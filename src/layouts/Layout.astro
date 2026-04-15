@@ -111,6 +111,11 @@ const hreflangLinks = currentLang
         };
       })();
     </script>
+    <!-- Expose Supabase credentials for client-side view count fetching -->
+    <script is:inline define:vars={{ sbUrl: import.meta.env.PUBLIC_SUPABASE_URL || "", sbKey: import.meta.env.PUBLIC_SUPABASE_ANON_KEY || "" }}>
+      window.__SB_URL__ = sbUrl;
+      window.__SB_KEY__ = sbKey;
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
