@@ -190,8 +190,6 @@ const currentLang = Astro.url.pathname.split("/")[1] || "ko";
               <div class="flex min-w-0 flex-1 flex-col gap-0.5">
                 <span class="truncate text-sm font-medium text-foreground sm:text-base">{p.title}</span>
                 <div class="flex items-center gap-2 text-xs text-foreground/50">
-                  <span class="post-views" data-slug={p.slug}>--</span>
-                  <span aria-hidden="true">·</span>
                   <span>{p.date}</span>
                 </div>
               </div>
@@ -394,14 +392,12 @@ const currentLang = Astro.url.pathname.split("/")[1] || "ko";
   document.addEventListener("astro:after-swap", updateViewCount);
 </script>
 
-<script>
-  import { supabase } from "@/utils/supabase";
-
-  async function initPostListNav() {
+<script is:inline data-astro-rerun>
+  /* ========== Post List Pagination ========== */
+  (function initPostListNav() {
     const nav = document.getElementById("post-list-nav");
     if (!nav) return;
 
-    /* ========== Pagination ========== */
     const totalPages = parseInt(nav.dataset.totalPages || "1", 10);
     const lang = nav.dataset.lang || "ko";
     const items = document.querySelectorAll(".post-list-item");
@@ -410,47 +406,56 @@ const currentLang = Astro.url.pathname.split("/")[1] || "ko";
     const currentLabel = document.getElementById("pl-current");
     let currentPage = 0;
 
-    function showPage(page: number) {
+    function showPage(page) {
       currentPage = page;
       items.forEach(item => {
-        (item as HTMLElement).style.display =
-          parseInt((item as HTMLElement).dataset.page || "0", 10) === page ? "" : "none";
+        item.style.display = parseInt(item.dataset.page, 10) === page ? "" : "none";
       });
       if (currentLabel) currentLabel.textContent = (page + 1).toString();
-      if (prevBtn) (prevBtn as HTMLButtonElement).disabled = page === 0;
-      if (nextBtn) (nextBtn as HTMLButtonElement).disabled = page >= totalPages - 1;
+      if (prevBtn) prevBtn.disabled = page === 0;
+      if (nextBtn) nextBtn.disabled = page >= totalPages - 1;
     }
 
-    prevBtn?.addEventListener("click", () => { if (currentPage > 0) showPage(currentPage - 1); });
-    nextBtn?.addEventListener("click", () => { if (currentPage < totalPages - 1) showPage(currentPage + 1); });
+    if (prevBtn) prevBtn.addEventListener("click", () => { if (currentPage > 0) showPage(currentPage - 1); });
+    if (nextBtn) nextBtn.addEventListener("click", () => { if (currentPage < totalPages - 1) showPage(currentPage + 1); });
+
     showPage(0);
 
-    /* ========== Bulk fetch view counts ========== */
-    const viewSpans = document.querySelectorAll<HTMLElement>(".post-views[data-slug]");
-    if (!viewSpans.length) return;
+    /* ========== Bulk fetch view counts for listed posts ========== */
+    const viewSpans = document.querySelectorAll(".post-views[data-slug]");
+    if (viewSpans.length === 0) return;
 
-    const slugs = Array.from(viewSpans).map(s => s.dataset.slug as string);
+    const slugs = Array.from(viewSpans).map(s => s.dataset.slug);
 
-    const { data, error } = await supabase
-      .from("page_views")
-      .select("page_slug, view_count")
-      .eq("page_lang", lang)
-      .in("page_slug", slugs);
+    // Use Supabase REST API directly to get view counts
+    const supabaseUrl = nav.dataset.sbUrl;
+    const supabaseKey = nav.dataset.sbKey;
 
-    if (!error && Array.isArray(data)) {
-      const countMap: Record<string, number> = {};
-      data.forEach(row => { countMap[row.page_slug] = row.view_count; });
+    if (!supabaseUrl || !supabaseKey) {
+      // Fallback: try reading from existing supabase client via window
+      viewSpans.forEach(s => { s.textContent = "조회수 --"; });
+      return;
+    }
+
+    fetch(`${supabaseUrl}/rest/v1/page_views?select=page_slug,view_count&page_lang=eq.${lang}&page_slug=in.(${slugs.map(s => `"${s}"`).join(",")})`, {
+      headers: {
+        "apikey": supabaseKey,
+        "Authorization": `Bearer ${supabaseKey}`
+      }
+    })
+    .then(res => res.json())
+    .then(data => {
+      const countMap = {};
+      if (Array.isArray(data)) {
+        data.forEach(row => { countMap[row.page_slug] = row.view_count; });
+      }
       viewSpans.forEach(span => {
-        const count = countMap[span.dataset.slug as string];
+        const count = countMap[span.dataset.slug];
         span.textContent = count !== undefined ? `조회 ${count}` : "조회 0";
       });
-    }
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initPostListNav);
-  } else {
-    initPostListNav();
-  }
-  document.addEventListener("astro:after-swap", initPostListNav);
+    })
+    .catch(() => {
+      viewSpans.forEach(s => { s.textContent = "조회 --"; });
+    });
+  })();
 </script>
