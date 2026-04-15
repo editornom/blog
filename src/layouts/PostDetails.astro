@@ -427,23 +427,15 @@ const currentLang = Astro.url.pathname.split("/")[1] || "ko";
     const viewSpans = document.querySelectorAll(".post-views[data-slug]");
     if (viewSpans.length === 0) return;
 
-    const slugs = Array.from(viewSpans).map(s => s.dataset.slug);
+    const supabaseUrl = window.__SB_URL__;
+    const supabaseKey = window.__SB_KEY__;
+    if (!supabaseUrl || !supabaseKey) return;
 
-    // Use Supabase REST API directly to get view counts
-    const supabaseUrl = nav.dataset.sbUrl;
-    const supabaseKey = nav.dataset.sbKey;
+    // PostgREST in() filter: no quotes around string values
+    const slugList = Array.from(viewSpans).map(s => s.dataset.slug).join(",");
 
-    if (!supabaseUrl || !supabaseKey) {
-      // Fallback: try reading from existing supabase client via window
-      viewSpans.forEach(s => { s.textContent = "조회수 --"; });
-      return;
-    }
-
-    fetch(`${supabaseUrl}/rest/v1/page_views?select=page_slug,view_count&page_lang=eq.${lang}&page_slug=in.(${slugs.map(s => `"${s}"`).join(",")})`, {
-      headers: {
-        "apikey": supabaseKey,
-        "Authorization": `Bearer ${supabaseKey}`
-      }
+    fetch(`${supabaseUrl}/rest/v1/page_views?select=page_slug,view_count&page_lang=eq.${lang}&page_slug=in.(${slugList})`, {
+      headers: { "apikey": supabaseKey, "Authorization": `Bearer ${supabaseKey}` }
     })
     .then(res => res.json())
     .then(data => {

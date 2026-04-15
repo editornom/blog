@@ -43,9 +43,13 @@ const backUrl = SITE.showBackButton ? Astro.url.pathname : "/";
 
 <script is:inline>
   /* ========== Card view count bulk fetch ========== */
-  (function fetchCardViewCounts() {
+  function fetchCardViewCounts() {
     const spans = document.querySelectorAll(".card-view-count[data-slug]");
     if (!spans.length) return;
+
+    const supabaseUrl = window.__SB_URL__;
+    const supabaseKey = window.__SB_KEY__;
+    if (!supabaseUrl || !supabaseKey) return;
 
     // Group slugs by language
     const byLang = {};
@@ -56,12 +60,9 @@ const backUrl = SITE.showBackButton ? Astro.url.pathname : "/";
       byLang[lang].push({ slug, span });
     });
 
-    const supabaseUrl = window.__SB_URL__;
-    const supabaseKey = window.__SB_KEY__;
-    if (!supabaseUrl || !supabaseKey) return;
-
     Object.entries(byLang).forEach(([lang, entries]) => {
-      const slugList = entries.map(e => `"${e.slug}"`).join(",");
+      // PostgREST in() filter: no quotes around string values
+      const slugList = entries.map(e => e.slug).join(",");
       fetch(`${supabaseUrl}/rest/v1/page_views?select=page_slug,view_count&page_lang=eq.${lang}&page_slug=in.(${slugList})`, {
         headers: { "apikey": supabaseKey, "Authorization": `Bearer ${supabaseKey}` }
       })
@@ -76,40 +77,9 @@ const backUrl = SITE.showBackButton ? Astro.url.pathname : "/";
       })
       .catch(() => {});
     });
-  })();
+  }
 
-  document.addEventListener("astro:page-load", function() {
-    /* re-run on page transitions */
-    const spans = document.querySelectorAll(".card-view-count[data-slug]");
-    if (!spans.length) return;
-
-    const byLang = {};
-    spans.forEach(span => {
-      const slug = span.dataset.slug;
-      const lang = span.dataset.lang || "ko";
-      if (!byLang[lang]) byLang[lang] = [];
-      byLang[lang].push({ slug, span });
-    });
-
-    const supabaseUrl = window.__SB_URL__;
-    const supabaseKey = window.__SB_KEY__;
-    if (!supabaseUrl || !supabaseKey) return;
-
-    Object.entries(byLang).forEach(([lang, entries]) => {
-      const slugList = entries.map(e => `"${e.slug}"`).join(",");
-      fetch(`${supabaseUrl}/rest/v1/page_views?select=page_slug,view_count&page_lang=eq.${lang}&page_slug=in.(${slugList})`, {
-        headers: { "apikey": supabaseUrl, "Authorization": `Bearer ${supabaseKey}` }
-      })
-      .then(r => r.json())
-      .then(rows => {
-        const map = {};
-        if (Array.isArray(rows)) rows.forEach(r => { map[r.page_slug] = r.view_count; });
-        entries.forEach(({ slug, span }) => {
-          const num = span.querySelector(".view-num");
-          if (num) num.textContent = map[slug] !== undefined ? map[slug].toLocaleString() : "0";
-        });
-      })
-      .catch(() => {});
-    });
-  });
+  // Run on initial load and on Astro page transitions
+  fetchCardViewCounts();
+  document.addEventListener("astro:page-load", fetchCardViewCounts);
 </script>
