@@ -13,19 +13,19 @@ load_dotenv()
 def generate_image(prompt, output_filename):
     """
     Imagen 모델들을 순차적으로 시도하여 이미지를 생성합니다.
-    안정성(3.x)부터 최신성(4.x) 순으로 폴백 로직을 가동합니다.
+    최신(4.x)부터 안정성(3.x) 순으로 폴백 로직을 가동합니다.
     """
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
         print("❌ GEMINI_API_KEY가 .env 파일에 없습니다.")
         return None
 
-    # 시도할 모델 후보 리스트 (가장 안정적인 3.0부터 최신 4.0까지)
+    # 시도할 모델 후보 리스트 (최신 4.0부터 가장 안정적인 3.0까지)
     MODELS_TO_TRY = [
-        'imagen-3.0-generate-001',
-        'imagen-3.1-generate-001',
+        'imagen-4.0-generate-001',
         'imagen-4-fast-generate-001',
-        'imagen-4.0-generate-001'
+        'imagen-3.1-generate-001',
+        'imagen-3.0-generate-001'
     ]
 
     client = genai.Client(api_key=api_key)
