@@ -73,8 +73,11 @@ const layoutProps = {
 /* ========== Post List for bottom navigation ========== */
 const ITEMS_PER_PAGE = 4;
 
+// Detect which board the current post belongs to (posts/ or haionnet/)
+const currentBoard = post.id.replace(/\\/g, "/").includes("haionnet/") ? "haionnet/" : "posts/";
+
 const postListData = posts
-  .filter(p => p.id !== post.id)
+  .filter(p => p.id !== post.id && p.id.replace(/\\/g, "/").includes(currentBoard))
   .map(p => {
     let thumb = "";
     if (typeof p.data.ogImage === "string") {
