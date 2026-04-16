@@ -10,3 +10,5 @@
 [2026-04-16] [수동선정] Large Language Model
 [2026-04-16] [수동선정] Wireguard
 [2026-04-16] [수동선정] RAG (Retrieval-Augmented Generation)
+[2026-04-16] [수동선정] fine-tuning
+[2026-04-16] [수동선정] fine-tuning
