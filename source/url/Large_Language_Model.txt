@@ -1,0 +1,6 @@
+https://en.wikipedia.org/wiki/Large_language_model
+https://developers.google.com/machine-learning/crash-course/llm
+https://ask.library.arizona.edu/faq/407985
+https://www.dataiku.com/stories/detail/what-is-a-large-language-model/
+https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-are-large-language-models-llms
+https://uit.stanford.edu/service/techtraining/ai-demystified/llm

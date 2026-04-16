@@ -7,3 +7,4 @@
 [2026-04-16] [클라우드 인프라 / DevOps] 오픈텔레메트리(OpenTelemetry) 선언적 구성(Declarative Configuration) 표준화에 따른 관측성 자동화 체계 구축
 [2026-04-16] [클라우드 인프라 / 거버넌스] 데이터센터 에너지 투명성(Energy Transparency) 공시 의무화와 AI 인프라 확장성 위기
 [2026-04-16] [수동선정] AX(AI transformation)의 중요성
+[2026-04-16] [수동선정] Large Language Model
