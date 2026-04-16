@@ -1,0 +1,116 @@
+[https://krebsonsecurity.com/2026/04/patch-tuesday-april-2026-edition/] Patch Tuesday, April 2026 Edition
+[https://www.schneier.com/blog/archives/2026/04/human-trust-of-ai-agents.html] Human Trust of AI Agents
+[https://www.schneier.com/blog/archives/2026/04/defense-in-depth-medieval-style.html] Defense in Depth, Medieval Style
+[https://www.schneier.com/blog/archives/2026/04/upcoming-speaking-engagements-55.html] Upcoming Speaking Engagements
+[https://www.schneier.com/blog/archives/2026/04/how-hackers-are-thinking-about-ai.html] How Hackers Are Thinking About AI
+[https://unit42.paloaltonetworks.com/exploitation-of-cve-2023-33538/] A Deep Dive Into Attempted Exploitation of CVE-2023-33538
+[https://aws.amazon.com/blogs/aws/introducing-anthropics-claude-opus-4-7-model-in-amazon-bedrock/] Introducing Anthropic’s Claude Opus 4.7 model in Amazon Bedrock
+[https://aws.amazon.com/blogs/aws/aws-interconnect-is-now-generally-available-with-a-new-option-to-simplify-last-mile-connectivity/] AWS Interconnect is now generally available, with a new option to simplify last-mile connectivity
+[https://azure.microsoft.com/en-us/blog/cloud-cost-optimization-principles-that-still-matter/] Cloud Cost Optimization: Principles that still matter
+[https://azure.microsoft.com/en-us/blog/optimize-object-storage-costs-automatically-with-smart-tier-now-generally-available/] Optimize object storage costs automatically with smart tier—now generally available
+[https://blogs.cisco.com/industrial-iot/from-connectivity-to-security-how-e80-future-proofed-its-agv-operations-with-cisco] From Connectivity to Security: How E80 Future-proofed its AGV Operations with Cisco
+[https://blogs.cisco.com/customerexperience/the-infrastructure-of-a-floating-city-aida-cruises-cx-led-digital-transformation] The Infrastructure of a Floating City: AIDA Cruises’ CX-Led Digital Transformation
+[https://blogs.cisco.com/networking/scaling-your-network-for-ai-without-a-forklift-upgrade] Scaling your network for AI without a forklift upgrade
+[https://blogs.cisco.com/sp/why-modern-networks-are-moving-ddos-defense-to-the-edge] Why modern networks are moving DDoS defense to the edge
+[https://blogs.cisco.com/datacenter/evolve-ip-media-to-ai-driven-media-fabrics-future-proof-broadcast-with-cisco-and-nvidia] Evolve IP Media to AI-Driven Media Fabrics: Future-Proof Broadcast with Cisco and NVIDIA
+[https://blogs.cisco.com/our-corporate-purpose/cisco-and-generation-are-scaling-ai-powered-pathways-to-employment] Cisco and Generation are scaling AI-powered pathways to employment
+[https://blogs.cisco.com/ai/reading-between-the-pixels-assessing-prompt-injection-attack-success-in-images] Reading Between the Pixels: Assessing Prompt Injection Attack Success in Images
+[https://blogs.cisco.com/networking/lean-it-future-ready-why-wi-fi-is-your-ai-growth-strategy] Lean IT, future-ready: Why Wi-Fi is your AI growth strategy
+[https://blogs.cisco.com/learning/cisco-modeling-labs-bringing-the-network-digital-twin-to-life] Cisco Modeling Labs: Bringing the Network Digital Twin to Life
+[https://www.networkworld.com/article/4159783/ai-shifts-it-roles-from-operator-to-orchestrator.html] AI shifts IT roles from operator to orchestrator
+[https://www.networkworld.com/article/4159247/ibm-unveils-security-services-for-thwarting-agentic-attacks-automating-threat-assessment.html] IBM unveils security services for thwarting agentic attacks, automating threat assessment
+[https://www.networkworld.com/article/4159269/openai-pulls-out-of-a-second-stargate-data-center-deal.html] OpenAI pulls out of a second Stargate data center deal
+[https://www.networkworld.com/article/4159106/maine-to-put-brakes-on-big-data-centers-as-ai-expansion-collides-with-power-limits.html] Maine to put brakes on big data centers as AI expansion collides with power limits
+[https://www.networkworld.com/article/4158908/satellite-backhaul-service-globalstar-has-a-new-rich-owner-amid-challenging-market-conditions.html] Satellite backhaul service Globalstar has a new, rich owner amid challenging market conditions
+[https://www.networkworld.com/article/4158694/cisco-just-made-two-moves-to-own-the-ai-infrastructure-stack.html] Cisco just made moves to own the AI infrastructure stack
+[https://www.networkworld.com/article/4158559/data-centers-are-moving-inland-away-from-some-traditional-locations.html] Data centers are moving inland, away from some traditional locations
+[https://www.networkworld.com/article/4113326/2026-network-outage-report-and-internet-health-check.html] 2026 network outage report and internet health check
+[https://www.networkworld.com/article/4158134/dns-security-is-often-inadequate-and-network-engineers-should-get-more-involved.html] DNS security is often inadequate, and network engineers should get more involved
+[https://www.cio.com/article/4157529/it%e3%81%af%e3%81%aa%e3%81%9c%e3%81%84%e3%81%a4%e3%82%82%e8%b2%ac%e3%82%81%e3%82%89%e3%82%8c%e3%82%8b%e3%81%ae%e3%81%8b-7%e3%81%a4%e3%81%ae%e7%90%86%e7%94%b1%e3%81%a8%e3%80%81cio.html] ITはなぜいつも責められるのか——7つの理由と、CIOにできること
+[https://www.cio.com/article/4159896/ai-%ec%9e%90%eb%8f%99%ed%99%94-%ec%8b%9c%eb%8c%80-cio%ea%b0%80-%eb%8b%a4%ec%8b%9c-%ec%84%a4%ea%b3%84%ed%95%b4%ec%95%bc-%ed%95%a0-%ec%97%85%eb%ac%b4-%eb%b0%a9%ec%8b%9d%ec%9d%98.html] AI 자동화 시대, CIO가 다시 설계해야 할 ‘업무 방식’의 본질
+[https://www.cio.com/article/4159899/igel-now-next-2026-turning-endpoint-strategy-into-resilient-reality-2.html] IGEL Now & Next 2026: Turning endpoint strategy into resilient reality
+[https://www.cio.com/article/4158486/ai-in-the-interview-room.html] AI in the interview room
+[https://www.cio.com/article/4159281/neglecting-the-cloud-good-luck-with-ai.html] Neglecting the cloud? Good luck with AI
+[https://www.cio.com/article/4158459/the-innovation-tax-audit-is-your-rd-actually-just-opex.html] The innovation tax audit: Is your R&D actually just OpEx?
+[https://www.cio.com/article/4159277/cio-sanjay-shringarpure-invites-you-to-reimagine-the-event-experience.html] CIO Sanjay Shringarpure invites you to reimagine the event experience
+[https://www.cio.com/article/4158442/ai-isnt-killing-saas-its-exposing-which-platforms-matter.html] AI isn’t killing SaaS — it’s exposing which platforms matter
+[https://www.cio.com/article/4159536/salesforce-launches-headless-360-to-support-agent-first-enterprise-workflows.html] Salesforce launches Headless 360 to support agent-first enterprise workflows
+[https://www.cio.com/article/4159475/ai-%eb%8f%99%ec%8b%9c%ed%86%b5%ec%97%ad-%ec%8b%9c%eb%8c%80-%ec%97%ac%eb%8a%94-%eb%94%a5%ec%97%98%c2%b7%c2%b7%c2%b7%ec%88%98%ec%9a%94-%ed%99%95%eb%8c%80-%eb%b0%b0%ea%b2%bd%ec%9c%bc%eb%a1%9c.html] AI 동시통역 시대 여는 딥엘···수요 확대 배경으로 ‘제번스 패러독스’ 제시
+[https://www.zdnet.com/article/google-gemini-app-mac/] I tried the new Gemini app for Mac - and it's better than the website in one big way
+[https://www.zdnet.com/article/google-pixel-10-amazon-deal/] Google's Pixel 10 is now 30% off on Amazon for a limited time
+[https://www.zdnet.com/article/google-chrome-searches-ai-mode/] How Google's updated AI Mode will ease your tab clutter when you search
+[https://www.zdnet.com/article/torras-minimag-magsafe-battery-review/] Why this MagSafe battery pack is our readers' favorite model right now - especially at its price
+[https://www.zdnet.com/article/google-pixel-10a-tmobile-deal/] T-Mobile will give you a Google Pixel 10a for free - plus an extra gift
+[https://www.zdnet.com/article/openai-codex-desktop-update/] OpenAI's Codex Desktop can run your computer now - and has its own browser
+[https://www.zdnet.com/article/snoop-founder-shares-startup-acquisition-proven-tips/] Want to build a startup that gets acquired? This founder shares 5 proven tips
+[https://www.zdnet.com/article/android-users-google-class-action-suit/] Google to pay $135M settlement to Android phone users - how to claim your share if you qualify
+[https://www.zdnet.com/article/macbook-neo-versus-microsoft-surface/] MacBook Neo vs. Surface: Why spiraling RAM prices are bruising Microsoft's PC business but not Apple's
+[https://www.zdnet.com/article/how-to-update-your-linkedin-profile-effectively/] Want to stand out on LinkedIn? Try this career strategist's top 3 tips for strengthening your profile
+[https://techcrunch.com/2026/04/16/openai-takes-aim-at-anthropic-with-beefed-up-codex-that-gives-it-more-power-over-your-desktop/] OpenAI takes aim at Anthropic with beefed-up Codex that gives it more power over your desktop
+[https://techcrunch.com/2026/04/16/insightfinder-raises-15m-to-help-companies-figure-out-where-ai-agents-go-wrong/] InsightFinder raises $15M to help companies figure out where AI agents go wrong
+[https://techcrunch.com/2026/04/15/feds-will-require-data-centers-to-show-their-power-bills/] Feds will require data centers to show their power bills
+[https://techcrunch.com/2026/04/14/ai-datacenter-startup-fluidstack-in-talks-for-1b-round-at-18b-valuation-months-after-hitting-7-5b-says-report/] AI data center startup Fluidstack in talks for $1B round at $18B valuation months after hitting $7.5B, says report
+[https://www.anthropic.com/news/claude-opus-4-7] Claude Opus 4.7
+[https://openai.com/index/codex-for-almost-everything/] Codex for almost everything
+[https://github.com/gainsec/autoprober] Guy builds AI driven hardware hacker arm from duct tape, old cam and CNC machine
+[https://ropensci.org/blog/2026/04/02/tree-sitter-overview/] A Better R Programming Experience Thanks to Tree-sitter
+[https://clojure.org/about/documentary] Official Clojure Documentary page with Video, Shownotes, and Links
+[https://android-developers.googleblog.com/2026/04/build-android-apps-3x-faster-using-any-agent.html] Android CLI: Build Android apps 3x faster using any agent
+[https://qwen.ai/blog?id=qwen3.6-35b-a3b] Qwen3.6-35B-A3B: Agentic coding power, now open to all
+[https://github.com/GRVYDEV/marky] Show HN: Marky – A lightweight Markdown viewer for agentic coding
+[https://simonwillison.net/2026/Apr/16/qwen-beats-opus/] Qwen3.6-35B-A3B on my laptop drew me a better pelican than Claude Opus 4.7
+[https://blog.cloudflare.com/ai-platform/] Cloudflare's AI Platform: an inference layer designed for agents
+[https://engineering.fb.com/2026/04/16/developer-tools/capacity-efficiency-at-meta-how-unified-ai-agents-optimize-performance-at-hyperscale/] Capacity Efficiency at Meta: How Unified AI Agents Optimize Performance at Hyperscale
+[https://engineering.fb.com/2026/04/16/security/post-quantum-cryptography-migration-at-meta-framework-lessons-and-takeaways/] Post-Quantum Cryptography Migration at Meta: Framework, Lessons, and Takeaways
+[https://github.blog/engineering/infrastructure/how-github-uses-ebpf-to-improve-deployment-safety/] How GitHub uses eBPF to improve deployment safety
+[https://github.blog/ai-and-ml/github-copilot/build-a-personal-organization-command-center-with-github-copilot-cli/] Build a personal organization command center with GitHub Copilot CLI
+[https://github.blog/news-insights/policy-news-and-insights/developer-policy-update-intermediary-liability-copyright-and-transparency/] Developer policy update: Intermediary liability, copyright, and transparency
+[https://github.blog/security/hack-the-ai-agent-build-agentic-ai-security-skills-with-the-github-secure-code-game/] Hack the AI agent: Build agentic AI security skills with the GitHub Secure Code Game
+[https://github.blog/security/application-security/how-exposed-is-your-code-find-out-in-minutes-for-free/] How exposed is your code? Find out in minutes—for free
+[https://stackoverflow.blog/2026/04/15/human-input-needed-take-our-survey-on-ai-agents/] Human input needed: take our survey on AI agents
+[https://stackoverflow.blog/2026/04/15/why-ai-hasn-t-replaced-human-expertise/] Why AI hasn't replaced human expertise—and what that means for your SaaS stack
+[https://blogs.nvidia.com/blog/geforce-now-thursday-pragmata/] No Need for Space Gear — Capcom’s ‘PRAGMATA’ Joins GeForce NOW on Launch Day
+[https://blogs.nvidia.com/blog/lowest-token-cost-ai-factories/] Rethinking AI TCO: Why Cost per Token Is the Only Metric That Matters
+[https://blogs.nvidia.com/blog/rtx-ai-garage-nab-adobe-premiere-color-mode/] New Adobe Premiere Color Grading Mode Accelerated on NVIDIA GPUs
+[https://machinelearning.apple.com/research/mixatlas] MixAtlas: Uncertainty-aware Data Mixture Optimization for Multimodal LLM Midtraining
+[https://huggingface.co/blog/transformers-to-mlx] The PR you would have opened yourself
+[https://huggingface.co/blog/train-multimodal-sentence-transformers] Training and Finetuning Multimodal Embedding & Reranker Models with Sentence Transformers
+[https://huggingface.co/blog/ibm-research/vakra-benchmark-analysis] Inside VAKRA: Reasoning, Tool Use, and Failure Modes of Agents
+[https://huggingface.co/blog/Hcompany/holotab] Meet HoloTab by HCompany. Your AI browser companion.
+[https://aws.amazon.com/blogs/machine-learning/cost-efficient-custom-text-to-sql-using-amazon-nova-micro-and-amazon-bedrock-on-demand-inference/] Cost-efficient custom text-to-SQL using Amazon Nova Micro and Amazon Bedrock on-demand inference
+[https://aws.amazon.com/blogs/machine-learning/transform-retail-with-aws-generative-ai-services/] Transform retail with AWS generative AI services
+[https://aws.amazon.com/blogs/machine-learning/how-automated-reasoning-checks-in-amazon-bedrock-transform-generative-ai-compliance/] How Automated Reasoning checks in Amazon Bedrock transform generative AI compliance
+[https://aws.amazon.com/blogs/machine-learning/create-rich-custom-tooltips-in-amazon-quick-sight/] Create rich, custom tooltips in Amazon Quick Sight
+[https://aws.amazon.com/blogs/machine-learning/accelerating-decode-heavy-llm-inference-with-speculative-decoding-on-aws-trainium-and-vllm/] Accelerating decode-heavy LLM inference with speculative decoding on AWS Trainium and vLLM
+[https://aws.amazon.com/blogs/machine-learning/rede-mater-dei-de-saude-monitoring-ai-agents-in-the-revenue-cycle-with-amazon-bedrock-agentcore/] Rede Mater Dei de Saúde: Monitoring AI agents in the revenue cycle with Amazon Bedrock AgentCore
+[https://aws.amazon.com/blogs/machine-learning/navigating-the-generative-ai-journey-the-path-to-value-framework-from-aws/] Navigating the generative AI journey: The Path-to-Value framework from AWS
+[https://aws.amazon.com/blogs/machine-learning/use-case-based-deployments-on-sagemaker-jumpstart/] Use-case based deployments on SageMaker JumpStart
+[https://aws.amazon.com/blogs/machine-learning/best-practices-to-run-inference-on-amazon-sagemaker-hyperpod/] Best practices to run inference on Amazon SageMaker HyperPod
+[https://aws.amazon.com/blogs/machine-learning/how-guidesly-built-ai-generated-trip-reports-for-outdoor-guides-on-aws/] How Guidesly built AI-generated trip reports for outdoor guides on AWS
+[https://techcrunch.com/2026/04/16/factory-hits-1-5b-valuation-to-build-ai-coding-for-enterprises/] Factory hits $1.5B valuation to build AI coding for enterprises
+[https://techcrunch.com/2026/04/16/luma-launches-ai-powered-production-studio-with-faith-focused-wonder-project/] Luma launches AI-powered production studio with faith-focused Wonder Project
+[https://techcrunch.com/2026/04/16/upscale-ai-in-talks-to-raise-at-2b-valuation-says-report/] Upscale AI in talks to raise at $2B valuation, says report
+[https://techcrunch.com/2026/04/16/physical-intelligence-a-hot-robotics-startup-says-its-new-robot-brain-can-figure-out-tasks-it-was-never-taught/] Physical Intelligence, a hot robotics startup, says its new robot brain can figure out tasks it was never taught
+[https://techcrunch.com/2026/04/16/openai-takes-aim-at-anthropic-with-beefed-up-codex-that-gives-it-more-power-over-your-desktop/] OpenAI takes aim at Anthropic with beefed-up Codex that gives it more power over your desktop
+[https://techcrunch.com/2026/04/16/anthropic-cpo-leaves-figmas-board-after-reports-he-will-offer-a-competing-product/] Anthropic CPO leaves Figma’s board after reports he will offer a competing product
+[https://techcrunch.com/2026/04/16/google-now-lets-you-explore-the-web-side-by-side-with-ai-mode/] Google now lets you explore the web side-by-side with AI Mode
+[https://techcrunch.com/2026/04/16/insightfinder-raises-15m-to-help-companies-figure-out-where-ai-agents-go-wrong/] InsightFinder raises $15M to help companies figure out where AI agents go wrong
+[https://techcrunch.com/2026/04/16/ai-traffic-to-us-retailers-rose-393-in-q1-and-its-boosting-their-revenue-too/] AI traffic to US retailers rose 393% in Q1, and it’s boosting their revenue too
+[https://techcrunch.com/2026/04/16/robloxs-ai-assistant-gets-new-agentic-tools-to-plan-build-and-test-games/] Roblox’s AI assistant gets new agentic tools to plan, build, and test games
+[https://www.kdnuggets.com/python-project-setup-2026-uv-ruff-ty-polars] Python Project Setup 2026: uv + Ruff + Ty + Polars
+[https://www.kdnuggets.com/docker-for-python-data-projects-a-beginners-guide] Docker for Python & Data Projects: A Beginner’s Guide
+[https://www.kdnuggets.com/notebooklm-for-the-creative-architect] NotebookLM for the Creative Architect
+[https://www.kdnuggets.com/7-steps-to-mastering-language-model-deployment] 7 Steps to Mastering Language Model Deployment
+[https://www.kdnuggets.com/top-5-extensions-for-vs-code-that-arent-copilot] Top 5 Extensions for VS Code That Aren’t Copilot
+[https://www.kdnuggets.com/collaborative-ai-systems-human-ai-teaming-workflows] Collaborative AI Systems: Human-AI Teaming Workflows
+[https://www.kdnuggets.com/top-7-docker-compose-templates-every-developer-should-use] Top 7 Docker Compose Templates Every Developer Should Use
+[https://www.infoq.com/news/2026/04/aws-s3-files/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global] AWS Introduces S3 Files, Bringing File System Access to S3 Buckets
+[https://www.infoq.com/news/2026/04/google-gemm4/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global] Google Opens Gemma 4 Under Apache 2.0 with Multimodal and Agentic Capabilities
+[https://www.infoq.com/news/2026/04/cloudflare-code-mode-mcp-server/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global] Cloudflare Launches Code Mode MCP Server to Optimize Token Usage for AI Agents
+[https://www.infoq.com/presentations/game-vr-flat-screens/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global] Presentation: From VR to Flat Screens: Bridging the Input and Immersion Gap
+[https://www.infoq.com/news/2026/04/platform-product-deliver-value/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global] Platform as a Product: Delivering Value While Balancing Competing Priorities
+[https://www.infoq.com/news/2026/04/cursor-3-agent-first-interface/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global] Cursor 3 Introduces Agent-First Interface, Moving Beyond the IDE Model
+[https://www.infoq.com/news/2026/04/opentelemetry-declarative-config/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global] OpenTelemetry Declarative Configuration Reaches Stability Milestone
+[https://www.infoq.com/news/2026/04/turboquant-compression-kv-cache/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global] Google’s TurboQuant Compression May Support Faster Inference, Same Accuracy on Less Capable Hardware
+[https://www.infoq.com/presentations/open-source-dependencies/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global] Presentation: Empower Your Developers: How Open Source Dependencies Risk Management Can Unlock Innovation
+[https://www.infoq.com/news/2026/04/zendesk-absorption-capacity/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global] Zendesk Says AI Makes Code Abundant, Shifting the Bottleneck to “Absorption Capacity”

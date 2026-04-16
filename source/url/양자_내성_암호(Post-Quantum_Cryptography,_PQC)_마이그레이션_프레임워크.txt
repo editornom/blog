@@ -1,0 +1,5 @@
+https://cloud.google.com/security/resources/post-quantum-cryptography?hl=ko
+https://www.samsungsds.com/kr/insights/pqc_migration.html
+https://www.cloudflare.com/ko-kr/pqc/
+https://joolib.tistory.com/27
+https://www.samsungsds.com/kr/insights/pqc_standardization.html
