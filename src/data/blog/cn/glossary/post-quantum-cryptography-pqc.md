@@ -1,0 +1,135 @@
+---
+title: "后量子密码学 (PQC)"
+author: "Antigravity"
+pubDatetime: 2026-04-17T08:35:27+09:00
+slug: "post-quantum-cryptography-pqc"
+featured: false
+draft: false
+tags: ["glossary", "Cybersecurity", "QuantumComputing", "Cryptography"]
+description: "本文将介绍后量子密码学 (PQC) 的概念与特征。PQC 是为抵御利用量子计算机超强计算能力的攻击而设计的下一代加密体系。"
+---
+
+![旨在保护数据免受量子计算机攻击的后量子密码算法插图](../../../../../source/glossary/PQC/7c7a31fa-0.png)
+
+| 项目 | 内容 |
+| :--- | :--- |
+| **英文名称** | Post-Quantum Cryptography |
+| **中文名称** | 后量子密码学 |
+| **缩写** | PQC |
+| **相关技术** | Lattice-based Cryptography, Shor's Algorithm, NIST PQC Standards, ML-KEM, ML-DSA |
+
+## 后量子密码学的核心
+后量子密码学 (PQC) 是为了保护数据免受拥有超高速运算能力的量子计算机攻击而设计的全新加密算法。由于现有公开密钥加密体系所依赖的数学难题极有可能被量子算法（如舒尔算法等）破解，PQC 的技术本质在于利用格 (Lattice) 或编码 (Code) 等更复杂的数学问题来确保安全性。
+
+## 量子计算机的威胁与引入背景
+目前我们使用的基于 RSA 或 ECC 的公开密钥加密体系，其安全性建立在大整数因子分解或离散对数的困难性之上。然而，一旦具备充足性能的量子计算机实现商用，通过“舒尔算法 (Shor's algorithm)”即可在极短时间内破解这些加密。
+
+安全行业尤其关注的威胁是“现在收集，以后解密 (Harvest Now, Decrypt Later)”的攻击模式。即攻击者即使现在无法解密，也会先预先收集重要的加密数据，待未来量子计算机问世后再进行解密。为了保护国家机密或需要长期保存的企业数据，现在就必须开始讨论并向 PQC 进行前瞻性迁移。
+
+## 技术特点与实现方式
+*   **利用新的数学难题**：使用已被证明即使是量子计算机也难以高效求解的复杂数学结构，如基于格 (Lattice-based)、多变量多项式 (Multivariate)、基于哈希 (Hash-based) 以及基于编码 (Code-based) 的算法。
+*   **与现有基础设施高度兼容**：与需要特殊物理设备的量子密钥分发 (QKD) 不同，PQC 是纯粹基于算法的软件方式。它可以在保留现有数字通信网和网络设备的基础上，仅通过更新算法来实现，具有极佳的通用性。
+*   **混合迁移策略 (Hybrid Migration)**：在完全验证新算法的稳定性之前，通常采用结合传统加密 (RSA, ECC) 与 PQC 的混合方式。这是一种既能防范量子攻击，又能应对意外算法漏洞的现实选择。
+
+## 与量子加密通信的区别
+*   **后量子密码学 (PQC)**：核心是创建量子计算机难以破解的**数学算法**。它在现有互联网环境下以软件形式运行，主要目的是维护数据的机密性。
+*   **量子加密通信 (如 QKD)**：利用量子力学的**物理特性**（如不可复制性、观测导致状态改变等）。它必须使用专用的光缆和昂贵的量子设备，主要用于检测是否存在窃听。
+
+## 实际应用案例及相关概念
+*   **苹果公司引入 PQ3**：2024 年，苹果在 iMessage 中应用了名为“PQ3”的 PQC 协议。这是全球顶级科技企业在大规模服务中全面引入 PQC，并将端到端加密 (E2EE) 安全水平提升到新高度的标志性案例。
+*   **主要专业术语**：
+    *   **Q-Day (Y2Q)**：指量子计算机能够完全破解现有加密体系的时间点。
+    *   **NIST PQC 标准**：由美国国家标准与技术研究院 (NIST) 主导选定的标准算法，代表性的有 ML-KEM（原 Kyber）和 ML-DSA（原 Dilithium）。
+    *   **格罗弗算法 (Grover's Algorithm)**：一种能将对称密钥加密的安全性强度减半的量子算法。为了应对这一威胁，在 PQC 环境下通过增加对称密钥长度（如使用 AES-256）来维持安全性。
+
+## ✅ 常见问题 (FAQ)
+
+<details>
+  <summary>什么是后量子密码学 (PQC)？</summary>
+  <div class="faq-content">
+
+PQC 是一种全新的加密算法，旨在即使面对未来拥有超强运算能力的量子计算机攻击，也能安全地保护数据。其核心是利用与传统公开密钥加密不同的、基于格或编码的复杂数学难题来确保安全性。
+
+  </div>
+</details>
+
+<details>
+  <summary>为什么现在就要关注后量子密码学？</summary>
+  <div class="faq-content">
+
+因为目前使用的 RSA 或 ECC 加密体系极易被量子计算机的舒尔算法瞬间破解。特别是对于国家机密或需要长期保存的数据，必须从现在起提高安全等级，以应对未来的威胁。
+
+  </div>
+</details>
+
+<details>
+  <summary>“Q-Day”这个词是什么意思？</summary>
+  <div class="faq-content">
+
+Q-Day 是指量子计算机性能实现飞跃发展，从而使我们目前使用的标准加密体系完全失效的时间点。安全专家的目标是在这一天到来之前，完成向更安全的 PQC 的迁移。
+
+  </div>
+</details>
+
+<details>
+  <summary>后量子密码学的主要技术特点是什么？</summary>
+  <div class="faq-content">
+
+其特点是利用量子计算机也难以求解的格基、多变量多项式、哈希基等精密的数学结构。此外，由于它是纯算法的软件方式，因此与现有互联网基础设施的兼容性非常好。
+
+  </div>
+</details>
+
+<details>
+  <summary>什么是“现在收集，以后解密 (Harvest Now, Decrypt Later)”攻击？</summary>
+  <div class="faq-content">
+
+这是一种攻击方式，攻击者先收集目前无法解密的加密数据并保存，等到未来高性能量子计算机出现后再进行解密。为了防御这种攻击，必须考虑数据的有效价值期限，先发制人地应用 PQC。
+
+  </div>
+</details>
+
+<details>
+  <summary>量子加密通信 (QKD) 与后量子密码学 (PQC) 有什么区别？</summary>
+  <div class="faq-content">
+
+PQC 是在现有通信网络中通过软件运行的数学算法；而 QKD 则需要专用光缆和特殊设备来利用量子力学的物理特性。PQC 侧重于数据加密，QKD 则主要侧重于安全的密钥分发和窃听检测。
+
+  </div>
+</details>
+
+<details>
+  <summary>在现有系统中引入 PQC 时使用什么策略？</summary>
+  <div class="faq-content">
+
+主要采用“混合迁移策略”，即同时使用现有的传统加密 (RSA, ECC) 和新的 PQC。这是一种在充分验证 PQC 算法稳定性的同时，确保能够防御量子攻击的务实方案。
+
+  </div>
+</details>
+
+<details>
+  <summary>目前国际上有哪些标准化的 PQC 算法？</summary>
+  <div class="faq-content">
+
+在美国国家标准与技术研究院 (NIST) 的主导下，ML-KEM（原 Kyber）和 ML-DSA（原 Dilithium）等已被选定为标准算法。这些都是基于格的算法，正在成为全球安全解决方案的新标准。
+
+  </div>
+</details>
+
+<details>
+  <summary>苹果公司引入“PQ3”在安全行业有什么意义？</summary>
+  <div class="faq-content">
+
+苹果在 2024 年于 iMessage 中应用 PQ3 协议，率先在全球大型科技企业的大规模服务中引入了 PQC。这是一个标志性案例，证明了即使在日常移动即时通讯中，也可以实现量子级别的强大端到端加密。
+
+  </div>
+</details>
+
+<details>
+  <summary>格罗弗算法 (Grover's Algorithm) 对 PQC 环境有什么影响？</summary>
+  <div class="faq-content">
+
+格罗弗算法具有将对称密钥加密的安全性强度降低至一半水平的特性。为了应对这一挑战，在 PQC 环境中通过使用比以前更长的密钥长度（如 AES-256），可以维持充足的安全性能。
+
+  </div>
+</details>
