@@ -374,11 +374,25 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
     print_final_briefing(report)
 
 if __name__ == "__main__":
-    # Usage 1 (Full): python main.py [keyword] [folder]
-    # Usage 2 (Retry): python main.py [path_to_korean.md] [folder] [target_lang]
-    input_arg = sys.argv[1] if len(sys.argv) > 1 else None
-    folder = sys.argv[2] if len(sys.argv) > 2 else "posts"
-    target_lang = sys.argv[3] if len(sys.argv) > 3 else None
+    import argparse
+    parser = argparse.ArgumentParser(description="Blog Automation Pipeline")
+    
+    # Support positional arguments (for the requested format: python main.py keyword folder)
+    parser.add_argument("p_input_arg", nargs="?", help="Keyword or Path to .md file")
+    parser.add_argument("p_folder", nargs="?", help="Target folder (posts or haionnet)")
+    parser.add_argument("p_target_lang", nargs="?", help="Specific language for retry mode (en, cn, jp)")
+    
+    # Support named arguments for clarity
+    parser.add_argument("--keyword", help="Target keyword")
+    parser.add_argument("--folder", help="Target folder")
+    parser.add_argument("--lang", help="Target language")
+
+    args = parser.parse_args()
+
+    # Priorities: Named arguments > Positional arguments > Defaults
+    input_arg = args.keyword if args.keyword else args.p_input_arg
+    folder = args.folder if args.folder else (args.p_folder if args.p_folder else "posts")
+    target_lang = args.lang if args.lang else args.p_target_lang
     
     # 🚀 무인 자동화 모드: 질문 없이 FAQ 생성 및 삽입을 기본값으로 설정
     include_faq = True
