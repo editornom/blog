@@ -28,11 +28,11 @@ def load_recent_keywords():
         # 최근 10개 정도로 넉넉하게 불러오기
         return "".join(lines[-10:]) 
 
-def save_keyword_to_history(keyword):
-    """오늘 선정된 키워드를 역사에 기록합니다."""
+def save_keyword_to_history(keyword, category="기타"):
+    """오늘 선정된 키워드와 카테고리를 역사에 기록합니다."""
     today = datetime.now().strftime("%Y-%m-%d")
     with open(HISTORY_FILE, "a", encoding="utf-8") as f:
-        f.write(f"[{today}] {keyword}\n")
+        f.write(f"[{today}] [{category}] {keyword}\n")
 # ==========================================
 
 def get_daily_topic_from_file(filename):
@@ -84,14 +84,16 @@ def get_daily_topic_from_file(filename):
 2. [AI 및 데이터 실무 적용]: 기업 환경에 AI를 도입하기 위한 실무 기술(RAG 아키텍처, 엔터프라이즈 LLM 최적화, 보안이 강화된 AI 모델, MLOps 트렌드). 단순 신제품 발표가 아닌 '도입/활용' 관점.
 3. [개발 및 클라우드 트렌드]: MSA(마이크로서비스), 서버리스 비용 최적화, 새로운 데브옵스(DevOps) 툴 등 개발/운영 효율을 극대화하는 이슈.
 
-🚨 [다양성 및 긴급성 룰 (중복 방지)]
-1. 콘텐츠의 다양성을 위해, [최근 다룬 키워드 이력]과 의미가 겹치거나 유사한 주제는 원칙적으로 배제하고 새로운 트렌드를 발굴하세요.
-2. 예외 조항 (Overriding Rule): 만약 오늘 수집된 헤드라인 중 과거 이력과 겹치더라도 "그것을 완전히 덮어버릴 만큼 치명적이고 새로운 스케일의 위협이나 혁신"이 있다면 중복을 허용합니다.
+🚨 [다양성 및 강력한 중복 방지 룰]
+1. 콘텐츠의 다양성을 위해, [최근 다룬 키워드 이력]에 나타난 주제나 카테고리는 **원칙적으로 배제**하십시오.
+2. 특히 '엔터프라이즈 AI', 'LLM 활용', 'AI 에이전트' 카테고리가 최근 3회 이상 등장했다면, 오늘은 반드시 **보안(Security), 클라우드 인프라(Cloud/Infra), 네트워크, 또는 신규 오픈소스 기술** 등 다른 기술 분야를 공략하십시오.
+3. 예외 조항 (Overriding Rule): 과거 이력과 겹치더라도 중복을 허용하는 경우는 오직 "전 지구적 수준의 긴급 보안 패치가 필요한 제로데이 취약점" 또는 "기존 IT 패러다임을 완전히 뒤엎는 역사적 발표"인 경우로 한정합니다. 단순히 '중요한 뉴스' 정도로는 중복을 허용하지 않습니다.
 
 📝 [Output Format] (반드시 아래 형식 그대로 출력할 것, 다른 말은 덧붙이지 마세요)
 ---
-키워드: [명확한 단일 기술 키워드 또는 구문. 예: 엔터프라이즈 RAG 구축 핵심 가이드]
-이유: [이 총괄 편집장이 수많은 기사 중 왜 이 주제를 골랐는지, 이 트렌드가 IT 실무자들의 어떤 고민(비용, 보안, 생산성)을 해결해 줄 수 있는지 3문장으로 날카롭게 설명. (만약 최근 이력과 중복되는 주제를 골랐다면 그 당위성도 함께 포함할 것)]
+카테고리: [기술 카테고리. 예: 보안, 클라우드, 네트워크, 인공지능, 개발툴 등]
+키워드: [명확한 단일 기술 키워드 또는 구문. 예: 클라우드 비용 최적화를 위한 FinOps 도입 가이드]
+이유: [이 총괄 편집장이 수많은 기사 중 왜 이 주제를 골랐는지, 이 트렌드가 IT 실무자들의 어떤 고민(비용, 보안, 생산성)을 해결해 줄 수 있는지 3문장으로 날카롭게 설명.]
 """
 
     try:
@@ -107,15 +109,18 @@ def get_daily_topic_from_file(filename):
         print(result_text)
         print("="*40 + "\n")
         
+        category_match = re.search(r'카테고리:\s*(.*)', result_text)
         keyword_match = re.search(r'키워드:\s*(.*)', result_text)
+        
         if not keyword_match:
             print("❌ 키워드 추출에 실패했습니다.")
             return None
             
+        category = category_match.group(1).strip() if category_match else "기타"
         keyword = keyword_match.group(1).strip()
         
         # 3. 키워드 추출 성공 시 히스토리 파일에 저장
-        save_keyword_to_history(keyword)
+        save_keyword_to_history(keyword, category)
         
         # 검색 정확도를 위해 순정 keyword 반환
         return keyword 

@@ -2,3 +2,7 @@
 [2026-04-14] 엔터프라이즈 에이전틱 인프라: 생산성 역설(Productivity Paradox)과 신뢰 거버넌스
 [2026-04-14] 엔터프라이즈 시맨틱 허브(Semantic Hub)
 [2026-04-15] GPU 기반 AI 인프라의 하드웨어 보안 취약점: NVIDIA GPU Rowhammer 공격
+[2026-04-16] **엔터프라이즈 AI 성과 지표의 전환: 모델 정확도에서 '조직적 흡수 역량(Absorption Capacity)'으로**
+[2026-04-16] [클라우드 인프라] Linux 7.0 정식 릴리스와 차세대 엔터프라이즈 네트워킹 스택
+[2026-04-16] [클라우드 인프라 / DevOps] 오픈텔레메트리(OpenTelemetry) 선언적 구성(Declarative Configuration) 표준화에 따른 관측성 자동화 체계 구축
+[2026-04-16] [클라우드 인프라 / 거버넌스] 데이터센터 에너지 투명성(Energy Transparency) 공시 의무화와 AI 인프라 확장성 위기

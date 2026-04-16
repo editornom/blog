@@ -14,6 +14,7 @@
 [https://blogs.cisco.com/learning/beyond-the-chatbot-how-agentic-frameworks-change-network-engineering] Beyond the Chatbot: How Agentic Frameworks Change Network Engineering
 [https://blogs.cisco.com/our-corporate-purpose/how-were-building-a-cleaner-more-efficient-energy-supply-fy25-purpose-report] How we’re building a cleaner, more efficient energy supply  | FY25 Purpose Report
 [https://blogs.cisco.com/learning/evolve-and-optimize-your-skills-for-the-ai-networking-era] Evolve and Optimize Your Skills for the AI Networking Era
+[https://www.networkworld.com/article/4158908/satellite-backhaul-service-globalstar-has-a-new-rich-owner-amid-challenging-market-conditions.html] Satellite backhaul service Globalstar has a new, rich owner amid challenging market conditions
 [https://www.networkworld.com/article/4158694/cisco-just-made-two-moves-to-own-the-ai-infrastructure-stack.html] Cisco just made two moves to own the AI infrastructure stack
 [https://www.networkworld.com/article/4158559/data-centers-are-moving-inland-away-from-some-traditional-locations.html] Data centers are moving inland, away from some traditional locations
 [https://www.networkworld.com/article/4113326/2026-network-outage-report-and-internet-health-check.html] 2026 network outage report and internet health check
@@ -22,7 +23,7 @@
 [https://www.networkworld.com/article/4158139/fixing-encryption-isnt-enough-quantum-developments-put-focus-on-authentication.html] Fixing encryption isn’t enough. Quantum developments put focus on authentication
 [https://www.networkworld.com/article/4158187/linux-7-0-debuts-with-some-big-changes-for-networking.html] Linux 7.0 debuts with some big changes for networking
 [https://www.networkworld.com/article/4021442/intel-latest-news-and-insights.html] Intel: Latest news and insights
-[https://www.cio.com/article/4157518/it%e3%81%ae%e9%9d%9e%e5%8a%b9%e7%8e%87%e3%81%af%e8%a6%8b%e3%81%88%e3%81%aa%e3%81%84%e3%82%b3%e3%82%b9%e3%83%88%e3%82%92%e3%82%82%e3%81%9f%e3%82%89%e3%81%97%e3%81%a6%e3%81%84%e3%82%8b.html] ITの非効率は見えないコストをもたらしている——多くの企業が見逃す巨額の損失
+[https://www.cio.com/article/4158892/ibms-government-dei-settlement-could-increase-pressure-to-avoid-tech-hiring-diversity.html] IBM’s government DEI settlement could increase pressure to avoid tech hiring diversity
 [https://www.cio.com/article/4158741/why-cloud-innovation-slows-in-reactive-operating-models.html] Why cloud innovation slows in reactive operating models
 [https://www.cio.com/article/4158737/make-your-azure-data-platform-ai-ready.html] Make your Azure data platform AI-ready
 [https://www.cio.com/article/4158734/from-ai-pilots-to-production-results-with-governed-execution.html] From AI pilots to production results with governed execution
@@ -32,29 +33,29 @@
 [https://www.cio.com/article/4158000/ai-strategy-theater-why-cios-are-performing-innovation-instead-of-leading-it.html] AI strategy theater: Why CIOs are performing innovation instead of leading it
 [https://www.cio.com/article/4158102/why-cios-are-moving-away-from-legacy-consulting-in-the-ai-era.html] Why CIOs are moving away from legacy consulting in the AI era
 [https://www.cio.com/article/4158392/corporate-memory-loss-how-the-global-memory-shortage-is-reshaping-device-planning.html] Corporate memory loss: How the global memory shortage is reshaping device planning
+[https://www.zdnet.com/article/increasing-use-of-ai-is-causing-structural-workplace-changes-new-gallup-poll-finds/] Half of all US employees use AI at work now - and waste almost 8 hours a week doing it
+[https://www.zdnet.com/article/gemini-for-home-google-update-april-2026/] The latest Google Home update brings Gemini fixes that I'm actually excited to try again
+[https://www.zdnet.com/article/plus-five-wireless-charging-rule-iphone-android-faster-speeds/] I used the 'Plus Five' rule to fix my iPhone's slow wireless charging - here's how it works
+[https://www.zdnet.com/article/simple-email-trick-stops-marketing-spam-free/] This simple email trick saves me from annoying marketing spam (and it's free to do)
 [https://www.zdnet.com/article/is-a-data-removal-service-worthwhile-2026/] A data removal service helped me reclaim my privacy - see if you need one, too
 [https://www.zdnet.com/article/magsafe-charger-nightstand-ways-its-useful/] Setting a MagSafe charger on my nightstand was the iPhone upgrade I didn't know I needed
 [https://www.zdnet.com/article/jbl-780-nc-review/] I swapped my Sony WH-1000XM6 for lower-end JBL headphones, and they still sounded great
 [https://www.zdnet.com/article/sony-ps-lx5bt-turntable-review/] I love Sony's new Bluetooth turntable, so why do I feel so conflicted using it
-[https://www.zdnet.com/article/gemini-for-home-google-update-april-2026/] Tired of Gemini interrupting you? This Google Home update fixes that and more
 [https://www.zdnet.com/article/pixel-battery-draining-faster-4-temporary-fixes-helped-me/] Is your Pixel battery draining faster lately? These 4 temporary fixes helped me
 [https://www.zdnet.com/article/try-new-linux-7-0-kernel-on-these-distributions/] You can try Linux 7.0 now on these distros - here's what's new
-[https://www.zdnet.com/article/smart-home-tips-devices-for-spring-allergies/] I tested every 'allergy-friendly' smart home gadget - these 6 actually keep the pollen out
-[https://www.zdnet.com/article/google-chrome-save-reuse-ai-prompts-skills/] Chrome's new 'Skills' update lets you save AI prompts now - for one-click reuse
-[https://www.zdnet.com/article/how-to-share-audio-from-android-phone-to-multiple-earbuds/] How to share audio from your Android phone to multiple earbuds (and why it's genius)
 [https://techcrunch.com/2026/04/14/ai-datacenter-startup-fluidstack-in-talks-for-1b-round-at-18b-valuation-months-after-hitting-7-5b-says-report/] AI data center startup Fluidstack in talks for $1B round at $18B valuation months after hitting $7.5B, says report
 [https://techcrunch.com/2026/04/13/ibm-pays-17m-fine-to-end-doj-suit-over-dei-programs/] IBM pays $17M fine to end DOJ suit over DEI programs
 [https://techcrunch.com/2026/04/13/microsoft-is-working-on-yet-another-openclaw-like-agent/] Microsoft is working on yet another OpenClaw-like agent
-[https://stopflock.com] Stop Flock
+[https://iczelia.net/posts/e16-20-year-old-bug/] Fixing a 20-year-old bug in Enlightenment E16
+[https://github.com/steipete/wacli] Wacli – WhatsApp CLI: sync, search, send
 [https://code.claude.com/docs/en/routines] Claude Code Routines
 [https://techcrunch.com/2026/04/13/thousands-of-rare-concert-recordings-are-landing-on-the-internet-archive-listen-now/] Rare concert recordings are landing on the Internet Archive
-[https://ascii.textfiles.com/archives/1717] Fuck the cloud (2009)
-[https://kb.databasedesignbook.com/posts/5nf/] 5NF and Database Design
-[https://blog.google/products-and-platforms/products/chrome/skills-in-chrome/] Turn your best AI prompts into one-click tools in Chrome
-[https://www.eff.org/deeplinks/2026/04/dangers-californias-legislation-censor-3d-printing] The dangers of California's legislation to censor 3D printing
-[https://mceglowski.substack.com/p/lets-talk-space-toilets] Let's talk space toilets
-[https://news.ycombinator.com/item?id=47773026] Ask HN: My ISP is telling my neighbors their slow internet is because of me
-[https://honeypot.net/2026/04/14/i-wrote-to-flocks-privacy.html] I wrote to Flock's privacy contact to opt out of their domestic spying program
+[https://torrentfreak.com/annas-archive-loses-322-million-spotify-piracy-case-without-a-fight/] Anna's Archive Loses $322M Spotify Piracy Case Without a Fight
+[https://calpaterson.com/deps.html] Dependency cooldowns turn you into a free-rider
+[https://www.maiobarbero.dev/articles/ai-assisted-workflow/] My AI-Assisted Workflow
+[https://www.ycombinator.com/companies/mdalgorithms-inc/jobs/LVODKN7-growth-marketer-for-a-rapidly-growing-consumer-ai-healthcare-startup] MDalgorithms (AI Healthcare) – Hiring Growth Marketer – Remote – $80K-$140K
+[https://www.businesswire.com/news/home/20260414237496/en/Amazon-to-Acquire-Globalstar-and-Expand-Amazon-Leo-Satellite-Network] Amazon to acquire Globalstar and expand Amazon Leo satellite network
+[https://stopflock.com] Stop Flock
 [https://github.blog/security/hack-the-ai-agent-build-agentic-ai-security-skills-with-the-github-secure-code-game/] Hack the AI agent: Build agentic AI security skills with the GitHub Secure Code Game
 [https://github.blog/security/application-security/how-exposed-is-your-code-find-out-in-minutes-for-free/] How exposed is your code? Find out in minutes—for free
 [https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-pages/] GitHub for Beginners: Getting started with GitHub Pages
@@ -66,6 +67,7 @@
 [https://aws.amazon.com/blogs/machine-learning/how-guidesly-built-ai-generated-trip-reports-for-outdoor-guides-on-aws/] How Guidesly built AI-generated trip reports for outdoor guides on AWS
 [https://aws.amazon.com/blogs/machine-learning/spring-ai-sdk-for-amazon-bedrock-agentcore-is-now-generally-available/] Spring AI SDK for Amazon Bedrock AgentCore is now Generally Available
 [https://aws.amazon.com/blogs/machine-learning/how-to-build-effective-reward-functions-with-aws-lambda-for-amazon-nova-model-customization/] How to build effective reward functions with AWS Lambda for Amazon Nova model customization
+[https://techcrunch.com/2026/04/14/anthropics-rise-is-giving-some-openai-investors-second-thoughts/] Anthropic’s rise is giving some OpenAI investors second thoughts
 [https://techcrunch.com/2026/04/14/anthropic-co-founder-confirms-the-company-briefed-the-trump-administration-on-mythos/] Anthropic co-founder confirms the company briefed the Trump administration on Mythos
 [https://techcrunch.com/2026/04/14/max-hodaks-science-corp-is-preparing-to-place-its-first-sensor-in-a-human-brain/] Max Hodak’s Science Corp. is preparing to place its first sensor in a human brain
 [https://techcrunch.com/2026/04/14/google-adds-ai-skills-to-chrome-to-help-you-save-favorite-workflows/] Google adds AI Skills to Chrome to help you save favorite workflows
@@ -75,7 +77,6 @@
 [https://techcrunch.com/2026/04/13/openai-has-bought-ai-personal-finance-startup-hiro/] OpenAI has bought AI personal finance startup Hiro
 [https://techcrunch.com/2026/04/13/microsoft-is-working-on-yet-another-openclaw-like-agent/] Microsoft is working on yet another OpenClaw-like agent
 [https://techcrunch.com/2026/04/13/stanford-report-highlights-growing-disconnect-between-ai-insiders-and-everyone-else/] Stanford report highlights growing disconnect between AI insiders and everyone else
-[https://techcrunch.com/2026/04/13/vercel-ceo-guillermo-rauch-signals-ipo-readiness-as-ai-agents-fuel-revenue-surge/] Vercel CEO Guillermo Rauch signals IPO readiness as AI agents fuel revenue surge
 [https://www.kdnuggets.com/collaborative-ai-systems-human-ai-teaming-workflows] Collaborative AI Systems: Human-AI Teaming Workflows
 [https://www.kdnuggets.com/top-7-docker-compose-templates-every-developer-should-use] Top 7 Docker Compose Templates Every Developer Should Use
 [https://www.kdnuggets.com/breaking-down-the-claude-folder] Breaking Down the .claude Folder

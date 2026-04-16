@@ -74,7 +74,7 @@ def review_manuscript(draft, folder="posts"):
         return response.text
     except Exception as e:
         print(f"❌ 원고 검수 중 최종 실패: {e}")
-        return draft
+        return None
 
 if __name__ == "__main__":
     # Test with a dummy draft

@@ -1,0 +1,109 @@
+[https://krebsonsecurity.com/2026/04/patch-tuesday-april-2026-edition/] Patch Tuesday, April 2026 Edition
+[https://www.schneier.com/blog/archives/2026/04/defense-in-depth-medieval-style.html] Defense in Depth, Medieval Style
+[https://www.schneier.com/blog/archives/2026/04/upcoming-speaking-engagements-55.html] Upcoming Speaking Engagements
+[https://www.schneier.com/blog/archives/2026/04/how-hackers-are-thinking-about-ai.html] How Hackers Are Thinking About AI
+[https://www.schneier.com/blog/archives/2026/04/on-anthropics-mythos-preview-and-project-glasswing.html] On Anthropic’s Mythos Preview and Project Glasswing
+[https://aws.amazon.com/blogs/aws/aws-interconnect-is-now-generally-available-with-a-new-option-to-simplify-last-mile-connectivity/] AWS Interconnect is now generally available, with a new option to simplify last-mile connectivity
+[https://aws.amazon.com/blogs/aws/aws-weekly-roundup-claude-mythos-preview-in-amazon-bedrock-aws-agent-registry-and-more-april-13-2026/] AWS Weekly Roundup: Claude Mythos Preview in Amazon Bedrock, AWS Agent Registry, and more (April 13, 2026)
+[https://blogs.cisco.com/ai/reading-between-the-pixels-assessing-prompt-injection-attack-success-in-images] Reading Between the Pixels: Assessing Prompt Injection Attack Success in Images
+[https://blogs.cisco.com/networking/lean-it-future-ready-why-wi-fi-is-your-ai-growth-strategy] Lean IT, future-ready: Why Wi-Fi is your AI growth strategy
+[https://blogs.cisco.com/industries/ai-on-the-factory-floor-why-manufacturing-requires-a-new-architecture-with-cisco-unified-edge] AI on the Factory Floor: Why Manufacturing Requires a New Architecture with Cisco Unified Edge
+[https://blogs.cisco.com/security/securing-ai-scale-infrastructure-without-compromise] Designing for What’s Next: Securing AI-Scale Infrastructure Without Compromise
+[https://blogs.cisco.com/developer/cisco-reddit-ama-network-automation-at-scale] Scaling the Future: Join Our Reddit AMA on Network Automation at Scale
+[https://blogs.cisco.com/networking/5-wireless-trends-retail-it-teams-cant-ignore-in-2026] 5 wireless trends retail IT teams can’t ignore in 2026
+[https://blogs.cisco.com/datacenter/can-your-infrastructure-management-tools-do-that] Can your infrastructure management tools do that?
+[https://blogs.cisco.com/our-corporate-purpose/sustainability-101-lets-talk-about-energy-efficiency] Sustainability 101: Let’s talk about energy efficiency
+[https://blogs.cisco.com/wearecisco/from-chai-breaks-to-checkpoints-a-day-at-cisco-bengaluru] From Chai Breaks to Checkpoints: A Day at Cisco Bengaluru
+[https://www.networkworld.com/article/4159269/openai-pulls-out-of-a-second-stargate-data-center-deal.html] OpenAI pulls out of a second Stargate data center deal
+[https://www.networkworld.com/article/4159106/maine-to-put-brakes-on-big-data-centers-as-ai-expansion-collides-with-power-limits.html] Maine to put brakes on big data centers as AI expansion collides with power limits
+[https://www.networkworld.com/article/4158908/satellite-backhaul-service-globalstar-has-a-new-rich-owner-amid-challenging-market-conditions.html] Satellite backhaul service Globalstar has a new, rich owner amid challenging market conditions
+[https://www.networkworld.com/article/4158694/cisco-just-made-two-moves-to-own-the-ai-infrastructure-stack.html] Cisco just made moves to own the AI infrastructure stack
+[https://www.networkworld.com/article/4158559/data-centers-are-moving-inland-away-from-some-traditional-locations.html] Data centers are moving inland, away from some traditional locations
+[https://www.networkworld.com/article/4113326/2026-network-outage-report-and-internet-health-check.html] 2026 network outage report and internet health check
+[https://www.networkworld.com/article/4158134/dns-security-is-often-inadequate-and-network-engineers-should-get-more-involved.html] DNS security is often inadequate, and network engineers should get more involved
+[https://www.networkworld.com/article/4157986/curious-about-quantum-check-out-training-options-from-isc2-ibm-aws-and-more.html] Curious about quantum? Check out training options from ISC2, IBM, AWS and more
+[https://www.networkworld.com/article/4158139/fixing-encryption-isnt-enough-quantum-developments-put-focus-on-authentication.html] Fixing encryption isn’t enough. Quantum developments put focus on authentication
+[https://www.networkworld.com/article/4158187/linux-7-0-debuts-with-some-big-changes-for-networking.html] Linux 7.0 debuts with some big changes for networking
+[https://www.cio.com/article/4159256/when-ai-goes-rogue-lessons-from-the-alibaba-incident.html] When AI goes rogue: Lessons from the Alibaba incident
+[https://www.cio.com/article/4159246/the-day-the-perimeter-broke-securing-the-enterprise-in-the-age-of-ai.html] The day the perimeter broke: Securing the enterprise in the age of AI
+[https://www.cio.com/article/4159235/mulesoft-agent-fabric-adds-new-ways-to-keep-ai-agents-in-line-2.html] MuleSoft Agent Fabric adds new ways to keep AI agents in line
+[https://www.cio.com/article/4157518/it%e3%81%ae%e9%9d%9e%e5%8a%b9%e7%8e%87%e3%81%af%e8%a6%8b%e3%81%88%e3%81%aa%e3%81%84%e3%82%b3%e3%82%b9%e3%83%88%e3%82%92%e3%82%82%e3%81%9f%e3%82%89%e3%81%97%e3%81%a6%e3%81%84%e3%82%8b.html] ITの非効率は見えないコストをもたらしている——多くの企業が見逃す巨額の損失
+[https://www.cio.com/article/4158059/the-secure-intelligence-framework-architecting-ai-systems-for-a-data-driven-world.html] The secure intelligence framework: Architecting AI systems for a data-driven world
+[https://www.cio.com/article/4159063/los-cio-replantean-los-procesos-empresariales-para-aprovechar-el-potencial-de-la-ia.html] Los CIO replantean los procesos empresariales para aprovechar el potencial de la IA
+[https://www.cio.com/article/4158053/why-ai-systems-fail-at-scale-and-what-you-should-measure-instead-of-model-accuracy.html] Why AI systems fail at scale and what you should measure instead of model accuracy
+[https://www.cio.com/article/4159045/ai-%ed%88%ac%ec%9e%90-roi-%ec%97%86%ec%9d%b4%eb%8f%84-%ea%b0%84%eb%8b%a4%ea%b8%b0%ec%97%85-%ed%98%84%ec%9e%a5%ec%97%90-%eb%b2%8c%ec%96%b4%ec%a7%84-%ec%84%b1.html] “AI 투자, ROI 없이도 간다”…기업 현장에 벌어진 ‘성과 괴리’ 현실
+[https://www.cio.com/article/4156028/cios-are-caught-between-employee-ai-fatigue-and-leadership-expectations.html] CIOs are caught between employee AI fatigue and leadership expectations
+[https://www.cio.com/article/4158047/the-real-cost-of-manual-access-and-why-cios-are-paying-attention.html] The real cost of manual access — and why CIOs are paying attention
+[https://www.zdnet.com/article/macbook-neo-versus-microsoft-surface/] The same Microsoft Surface I bought 4 months ago is 69% more expensive now - here's why
+[https://www.zdnet.com/article/is-a-data-removal-service-worthwhile-2026/] I've been subscribed to a data removal service a month now - what I wish I knew sooner
+[https://www.zdnet.com/article/i-tried-googles-new-desktop-app/] I tried Google's new desktop app for Windows, and I'll never search the old way again
+[https://www.zdnet.com/article/microsoft-back-to-school-laptop-deal/] Microsoft's Windows 11 laptop deal for students comes with a $500 bonus - what's included
+[https://www.zdnet.com/article/lg-b5-oled-tv-deal-best-buy/] Best Buy will give you a free LG TV when you buy the B5 OLED at 50% off - seriously
+[https://www.zdnet.com/article/zorin-os-18-1-release-is-best-linux-distro-for-anyone/] Why Zorin OS 18.1 is simply the best Linux distro - for anyone
+[https://www.zdnet.com/article/netgear-is-first-to-win-exemption-from-fcc-router-ban/] Why Netgear just got the first FCC router ban exemption in the US
+[https://www.zdnet.com/article/secure-boot-microsoft-april-windows-update/] Microsoft's latest Windows update now confirms if your PC is Secure Boot-protected - how it works
+[https://www.zdnet.com/article/fogpanther-image-editor-linux-gimp-competitor/] Can this $70 Linux app make up for the lack of Photoshop? I tried it to find out
+[https://www.zdnet.com/article/try-new-linux-7-0-kernel-on-these-distributions/] You can use Linux 7.0 on these 7 distros today - here's what to expect
+[https://techcrunch.com/2026/04/15/feds-will-require-data-centers-to-show-their-power-bills/] Feds will require data centers to show their power bills
+[https://techcrunch.com/2026/04/14/ai-datacenter-startup-fluidstack-in-talks-for-1b-round-at-18b-valuation-months-after-hitting-7-5b-says-report/] AI data center startup Fluidstack in talks for $1B round at $18B valuation months after hitting $7.5B, says report
+[https://techcrunch.com/2026/04/13/ibm-pays-17m-fine-to-end-doj-suit-over-dei-programs/] IBM pays $17M fine to end DOJ suit over DEI programs
+[https://techcrunch.com/2026/04/13/microsoft-is-working-on-yet-another-openclaw-like-agent/] Microsoft is working on yet another OpenClaw-like agent
+[https://www.dbreunig.com/2026/04/14/cybersecurity-is-proof-of-work-now.html] Cybersecurity looks like proof of work now
+[https://theleo.zone/posts/pager/] I made a terminal pager
+[https://www.bbc.com/news/technology-39576394] Ohio prison inmates 'built computers and hid them in ceiling (2017)
+[https://www.theverge.com/streaming/912898/youtube-shorts-feed-limit-zero-minutes] YouTube now lets you turn off Shorts
+[https://www.eff.org/deeplinks/2026/04/google-broke-its-promise-me-now-ice-has-my-data] Google broke its promise to me – now ICE has my data
+[https://cal.com/blog/cal-com-goes-closed-source-why] Cal.com is going closed source
+[http://tinycorelinux.net/5.x/armv6/releases/README] PiCore - Raspberry Pi Port of Tiny Core Linux
+[https://wchambliss.wordpress.com/2026/03/03/god-sleeps-in-the-minerals/] God sleeps in the minerals
+[https://tratt.net/laurie/blog/2026/retrofitting_jit_compilers_into_c_interpreters.html] Retrofitting JIT Compilers into C Interpreters
+[https://www.bloomberg.com/news/articles/2026-04-15/live-nation-illegally-monopolized-ticketing-market-jury-finds] Live Nation illegally monopolized ticketing market, jury finds
+[https://github.blog/ai-and-ml/github-copilot/build-a-personal-organization-command-center-with-github-copilot-cli/] Build a personal organization command center with GitHub Copilot CLI
+[https://github.blog/news-insights/policy-news-and-insights/developer-policy-update-intermediary-liability-copyright-and-transparency/] Developer policy update: Intermediary liability, copyright, and transparency
+[https://github.blog/security/hack-the-ai-agent-build-agentic-ai-security-skills-with-the-github-secure-code-game/] Hack the AI agent: Build agentic AI security skills with the GitHub Secure Code Game
+[https://github.blog/security/application-security/how-exposed-is-your-code-find-out-in-minutes-for-free/] How exposed is your code? Find out in minutes—for free
+[https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-pages/] GitHub for Beginners: Getting started with GitHub Pages
+[https://stackoverflow.blog/2026/04/15/human-input-needed-take-our-survey-on-ai-agents/] Human input needed: take our survey on AI agents
+[https://stackoverflow.blog/2026/04/15/why-ai-hasn-t-replaced-human-expertise/] Why AI hasn't replaced human expertise—and what that means for your SaaS stack
+[https://stackoverflow.blog/2026/04/14/who-needs-vcs-when-you-have-friends-like-these/] Who needs VCs when you have friends like these?
+[https://blogs.nvidia.com/blog/lowest-token-cost-ai-factories/] Rethinking AI TCO: Why Cost per Token Is the Only Metric That Matters
+[https://blogs.nvidia.com/blog/rtx-ai-garage-nab-adobe-premiere-color-mode/] New Adobe Premiere Color Grading Mode Accelerated on NVIDIA GPUs
+[https://huggingface.co/blog/ibm-research/vakra-benchmark-analysis] Inside VAKRA: Reasoning, Tool Use, and Failure Modes of Agents
+[https://huggingface.co/blog/Hcompany/holotab] Meet HoloTab by HCompany. Your AI browser companion.
+[https://aws.amazon.com/blogs/machine-learning/create-rich-custom-tooltips-in-amazon-quick-sight/] Create rich, custom tooltips in Amazon Quick Sight
+[https://aws.amazon.com/blogs/machine-learning/accelerating-decode-heavy-llm-inference-with-speculative-decoding-on-aws-trainium-and-vllm/] Accelerating decode-heavy LLM inference with speculative decoding on AWS Trainium and vLLM
+[https://aws.amazon.com/blogs/machine-learning/rede-mater-dei-de-saude-monitoring-ai-agents-in-the-revenue-cycle-with-amazon-bedrock-agentcore/] Rede Mater Dei de Saúde: Monitoring AI agents in the revenue cycle with Amazon Bedrock AgentCore
+[https://aws.amazon.com/blogs/machine-learning/navigating-the-generative-ai-journey-the-path-to-value-framework-from-aws/] Navigating the generative AI journey: The Path-to-Value framework from AWS
+[https://aws.amazon.com/blogs/machine-learning/use-case-based-deployments-on-sagemaker-jumpstart/] Use-case based deployments on SageMaker JumpStart
+[https://aws.amazon.com/blogs/machine-learning/best-practices-to-run-inference-on-amazon-sagemaker-hyperpod/] Best practices to run inference on Amazon SageMaker HyperPod
+[https://aws.amazon.com/blogs/machine-learning/how-guidesly-built-ai-generated-trip-reports-for-outdoor-guides-on-aws/] How Guidesly built AI-generated trip reports for outdoor guides on AWS
+[https://aws.amazon.com/blogs/machine-learning/spring-ai-sdk-for-amazon-bedrock-agentcore-is-now-generally-available/] Spring AI SDK for Amazon Bedrock AgentCore is now Generally Available
+[https://aws.amazon.com/blogs/machine-learning/how-to-build-effective-reward-functions-with-aws-lambda-for-amazon-nova-model-customization/] How to build effective reward functions with AWS Lambda for Amazon Nova model customization
+[https://techcrunch.com/2026/04/15/openai-updates-its-agents-sdk-to-help-enterprises-build-safer-more-capable-agents/] OpenAI updates its Agents SDK to help enterprises build safer, more capable agents
+[https://techcrunch.com/2026/04/15/hightouch-reaches-100m-arr-fueled-by-marketing-tools-powered-by-ai/] Hightouch reaches $100M ARR fueled by marketing tools powered by AI
+[https://techcrunch.com/2026/04/15/linkedin-data-shows-ai-isnt-to-blame-for-hiring-decline-yet/] LinkedIn data shows AI isn’t to blame for hiring decline… yet
+[https://techcrunch.com/2026/04/15/ai-learning-app-gizmo-levels-up-with-13m-users-and-a-22m-investment/] AI learning app Gizmo levels up with 13M users and a $22M investment
+[https://techcrunch.com/2026/04/15/can-ai-judge-journalism-a-thiel-backed-startup-says-yes-even-if-it-risks-chilling-whistleblowers/] Can AI judge journalism? A Thiel-backed startup says yes, even if it risks chilling whistleblowers
+[https://techcrunch.com/2026/04/15/google-rolls-out-a-native-gemini-app-for-mac/] Google rolls out a native Gemini app for Mac
+[https://techcrunch.com/podcast/the-musician-turned-biotech-founder-waiting-to-fundraise/] The musician-turned-biotech-founder waiting to fundraise
+[https://techcrunch.com/2026/04/15/indias-vibe-coding-startup-emergent-enters-openclaw-like-ai-agent-space/] India’s vibe-coding startup Emergent enters OpenClaw-like AI agent space
+[https://techcrunch.com/2026/04/15/after-sale-of-its-shoe-business-allbirds-pivots-to-ai/] After sale of its shoe business, Allbirds pivots to AI
+[https://techcrunch.com/2026/04/15/reid-hoffman-weighs-in-on-the-tokenmaxxing-debate/] Reid Hoffman weighs in on the ‘tokenmaxxing’ debate
+[https://www.kdnuggets.com/notebooklm-for-the-creative-architect] NotebookLM for the Creative Architect
+[https://www.kdnuggets.com/7-steps-to-mastering-language-model-deployment] 7 Steps to Mastering Language Model Deployment
+[https://www.kdnuggets.com/top-5-extensions-for-vs-code-that-arent-copilot] Top 5 Extensions for VS Code That Aren’t Copilot
+[https://www.kdnuggets.com/collaborative-ai-systems-human-ai-teaming-workflows] Collaborative AI Systems: Human-AI Teaming Workflows
+[https://www.kdnuggets.com/top-7-docker-compose-templates-every-developer-should-use] Top 7 Docker Compose Templates Every Developer Should Use
+[https://www.kdnuggets.com/breaking-down-the-claude-folder] Breaking Down the .claude Folder
+[https://www.kdnuggets.com/are-ai-agents-your-next-security-nightmare] Are AI Agents Your Next Security Nightmare?
+[https://www.kdnuggets.com/5-best-books-for-building-agentic-ai-systems-in-2026] 5 Best Books for Building Agentic AI Systems in 2026
+[https://www.infoq.com/news/2026/04/opentelemetry-declarative-config/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global] OpenTelemetry Declarative Configuration Reaches Stability Milestone
+[https://www.infoq.com/news/2026/04/turboquant-compression-kv-cache/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global] Google’s TurboQuant Compression May Support Faster Inference, Same Accuracy on Less Capable Hardware
+[https://www.infoq.com/presentations/open-source-dependencies/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global] Presentation: Empower Your Developers: How Open Source Dependencies Risk Management Can Unlock Innovation
+[https://www.infoq.com/news/2026/04/zendesk-absorption-capacity/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global] Zendesk Says AI Makes Code Abundant, Shifting the Bottleneck to “Absorption Capacity”
+[https://www.infoq.com/news/2026/04/claude-code-linux-vulnerability/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global] Claude Code Used to Find Remotely Exploitable Linux Kernel Vulnerability Hidden for 23 Years
+[https://www.infoq.com/articles/lambda-extension-deferred-flush/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global] Article: Using AWS Lambda Extensions to Run Post-Response Telemetry Flush
+[https://www.infoq.com/news/2026/04/rowhammer-attacks-nvidia/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global] New Rowhammer Attacks on NVIDIA GPUs Enable Full System Takeover
+[https://www.infoq.com/news/2026/04/anthropic-paper-llms/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global] Anthropic Paper Examines Behavioral Impact of Emotion-Like Mechanisms in LLMs
+[https://www.infoq.com/presentations/platform-engineering-lessons/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global] Presentation: Platform Engineering: Lessons from the Rise and Fall of eBay Velocity
+[https://www.infoq.com/articles/enterprise-grade-observability-extension-docker/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global] Article: Beyond One-Click: Designing an Enterprise-Grade Observability Extension for Docker

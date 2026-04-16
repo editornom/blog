@@ -14,7 +14,7 @@ from translator import translate_and_save, translate_text
 from publish import push_to_github
 from accordian import load_faq_content, append_faq_to_draft
 from headline_crawler import generate_daily_headlines_file
-from trend_catcher import get_daily_topic_from_file
+from trend_catcher import get_daily_topic_from_file, save_keyword_to_history
 from search_expert import deep_search_and_filter
 from faq_expert import generate_faq
 
@@ -270,12 +270,25 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
     
     # 3.5 Stage 3.5: Manuscript Inspection (Detox)
     print(f"\n=== Stage 3.5: Manuscript Inspection (Detox) ===")
-    reviewed_draft = review_manuscript(draft, folder=folder)
-    if reviewed_draft:
-        draft = reviewed_draft
-        report["detox"]["success"] = True
-    else:
-        report["detox"]["error"] = "Detox failed, keeping original draft"
+    
+    max_retries = 3
+    reviewed_draft = None
+    for attempt in range(max_retries):
+        print(f"  [Attempt {attempt+1}/{max_retries}] Starting detox...")
+        reviewed_draft = review_manuscript(draft, folder=folder)
+        if reviewed_draft:
+            draft = reviewed_draft
+            report["detox"]["success"] = True
+            print(f"  ✅ Detox successful.")
+            break
+        else:
+            print(f"  ⚠️ Detox attempt {attempt+1} failed.")
+            if attempt < max_retries - 1:
+                time.sleep(5) # Wait before retry
+    
+    if not report["detox"]["success"]:
+        report["detox"]["error"] = "Detox failed after all retries, keeping original draft"
+        print(f"  ❌ All detox attempts failed. Using original draft.")
 
     # 3.7 Add FAQ if requested
     if include_faq and keyword:
@@ -410,6 +423,10 @@ if __name__ == "__main__":
             
             # Combine content
             top_urls = [root_url] + related_links[:5]
+            
+            # 수동 모드 역사 기록
+            save_keyword_to_history(auto_keyword, "하이온넷")
+            
             process_urls(urls=top_urls, keyword=auto_keyword, folder=folder, include_faq=include_faq)
         else:
             # 기존 urls.txt 기반 모드 (폴백)
@@ -435,6 +452,9 @@ if __name__ == "__main__":
             from search_expert import select_best_from_list
             top_urls = select_best_from_list(manual_urls, auto_keyword)
             
+            # 수동 모드 역사 기록
+            save_keyword_to_history(auto_keyword, "하이온넷")
+            
             process_urls(urls=top_urls, keyword=auto_keyword, folder=folder, include_faq=include_faq)
 
     elif input_arg:
@@ -446,6 +466,8 @@ if __name__ == "__main__":
         top_urls = deep_search_and_filter(input_arg, num_results=100)
         
         if top_urls:
+            # 수동 모드 역사 기록
+            save_keyword_to_history(input_arg, "수동선정")
             process_urls(urls=top_urls, keyword=input_arg, folder=folder, include_faq=include_faq)
         else:
             print(f"❌ '{input_arg}'에 대한 검색 결과에서 유효한 소스를 찾지 못했습니다.")
