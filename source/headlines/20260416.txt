@@ -5,6 +5,8 @@
 [https://www.schneier.com/blog/archives/2026/04/on-anthropics-mythos-preview-and-project-glasswing.html] On Anthropic’s Mythos Preview and Project Glasswing
 [https://aws.amazon.com/blogs/aws/aws-interconnect-is-now-generally-available-with-a-new-option-to-simplify-last-mile-connectivity/] AWS Interconnect is now generally available, with a new option to simplify last-mile connectivity
 [https://aws.amazon.com/blogs/aws/aws-weekly-roundup-claude-mythos-preview-in-amazon-bedrock-aws-agent-registry-and-more-april-13-2026/] AWS Weekly Roundup: Claude Mythos Preview in Amazon Bedrock, AWS Agent Registry, and more (April 13, 2026)
+[https://azure.microsoft.com/en-us/blog/cloud-cost-optimization-principles-that-still-matter/] Cloud Cost Optimization: Principles that still matter
+[https://azure.microsoft.com/en-us/blog/optimize-object-storage-costs-automatically-with-smart-tier-now-generally-available/] Optimize object storage costs automatically with smart tier—now generally available
 [https://blogs.cisco.com/ai/reading-between-the-pixels-assessing-prompt-injection-attack-success-in-images] Reading Between the Pixels: Assessing Prompt Injection Attack Success in Images
 [https://blogs.cisco.com/networking/lean-it-future-ready-why-wi-fi-is-your-ai-growth-strategy] Lean IT, future-ready: Why Wi-Fi is your AI growth strategy
 [https://blogs.cisco.com/industries/ai-on-the-factory-floor-why-manufacturing-requires-a-new-architecture-with-cisco-unified-edge] AI on the Factory Floor: Why Manufacturing Requires a New Architecture with Cisco Unified Edge
@@ -24,6 +26,7 @@
 [https://www.networkworld.com/article/4157986/curious-about-quantum-check-out-training-options-from-isc2-ibm-aws-and-more.html] Curious about quantum? Check out training options from ISC2, IBM, AWS and more
 [https://www.networkworld.com/article/4158139/fixing-encryption-isnt-enough-quantum-developments-put-focus-on-authentication.html] Fixing encryption isn’t enough. Quantum developments put focus on authentication
 [https://www.networkworld.com/article/4158187/linux-7-0-debuts-with-some-big-changes-for-networking.html] Linux 7.0 debuts with some big changes for networking
+[https://www.cio.com/article/4159398/%eb%ac%b4%eb%a3%8c-%ea%b0%95%ec%9d%98%eb%b6%80%ed%84%b0-%ec%a0%84%eb%ac%b8-%ec%9e%90%ea%b2%a9%ec%a6%9d-%ea%b3%bc%ec%a0%95%ea%b9%8c%ec%a7%80isc2%c2%b7ibm%c2%b7aws-%ec%96%91%ec%9e%90-%eb%b3%b4.html] 무료 강의부터 전문 자격증 과정까지…ISC2·IBM·AWS 양자 보안 교육 총정리
 [https://www.cio.com/article/4159256/when-ai-goes-rogue-lessons-from-the-alibaba-incident.html] When AI goes rogue: Lessons from the Alibaba incident
 [https://www.cio.com/article/4159246/the-day-the-perimeter-broke-securing-the-enterprise-in-the-age-of-ai.html] The day the perimeter broke: Securing the enterprise in the age of AI
 [https://www.cio.com/article/4159235/mulesoft-agent-fabric-adds-new-ways-to-keep-ai-agents-in-line-2.html] MuleSoft Agent Fabric adds new ways to keep AI agents in line
@@ -33,7 +36,8 @@
 [https://www.cio.com/article/4158053/why-ai-systems-fail-at-scale-and-what-you-should-measure-instead-of-model-accuracy.html] Why AI systems fail at scale and what you should measure instead of model accuracy
 [https://www.cio.com/article/4159045/ai-%ed%88%ac%ec%9e%90-roi-%ec%97%86%ec%9d%b4%eb%8f%84-%ea%b0%84%eb%8b%a4%ea%b8%b0%ec%97%85-%ed%98%84%ec%9e%a5%ec%97%90-%eb%b2%8c%ec%96%b4%ec%a7%84-%ec%84%b1.html] “AI 투자, ROI 없이도 간다”…기업 현장에 벌어진 ‘성과 괴리’ 현실
 [https://www.cio.com/article/4156028/cios-are-caught-between-employee-ai-fatigue-and-leadership-expectations.html] CIOs are caught between employee AI fatigue and leadership expectations
-[https://www.cio.com/article/4158047/the-real-cost-of-manual-access-and-why-cios-are-paying-attention.html] The real cost of manual access — and why CIOs are paying attention
+[https://www.zdnet.com/article/roll-back-buggy-google-services-updates-on-android/] I found a way to roll back buggy Google Services updates on Android - in just a few clicks
+[https://www.zdnet.com/article/how-to-disable-tv-store-mode/] Don't fall for the 'Vivid' TV trap when shopping - how I get the most color accurate setup
 [https://www.zdnet.com/article/macbook-neo-versus-microsoft-surface/] The same Microsoft Surface I bought 4 months ago is 69% more expensive now - here's why
 [https://www.zdnet.com/article/is-a-data-removal-service-worthwhile-2026/] I've been subscribed to a data removal service a month now - what I wish I knew sooner
 [https://www.zdnet.com/article/i-tried-googles-new-desktop-app/] I tried Google's new desktop app for Windows, and I'll never search the old way again
@@ -42,22 +46,20 @@
 [https://www.zdnet.com/article/zorin-os-18-1-release-is-best-linux-distro-for-anyone/] Why Zorin OS 18.1 is simply the best Linux distro - for anyone
 [https://www.zdnet.com/article/netgear-is-first-to-win-exemption-from-fcc-router-ban/] Why Netgear just got the first FCC router ban exemption in the US
 [https://www.zdnet.com/article/secure-boot-microsoft-april-windows-update/] Microsoft's latest Windows update now confirms if your PC is Secure Boot-protected - how it works
-[https://www.zdnet.com/article/fogpanther-image-editor-linux-gimp-competitor/] Can this $70 Linux app make up for the lack of Photoshop? I tried it to find out
-[https://www.zdnet.com/article/try-new-linux-7-0-kernel-on-these-distributions/] You can use Linux 7.0 on these 7 distros today - here's what to expect
 [https://techcrunch.com/2026/04/15/feds-will-require-data-centers-to-show-their-power-bills/] Feds will require data centers to show their power bills
 [https://techcrunch.com/2026/04/14/ai-datacenter-startup-fluidstack-in-talks-for-1b-round-at-18b-valuation-months-after-hitting-7-5b-says-report/] AI data center startup Fluidstack in talks for $1B round at $18B valuation months after hitting $7.5B, says report
 [https://techcrunch.com/2026/04/13/ibm-pays-17m-fine-to-end-doj-suit-over-dei-programs/] IBM pays $17M fine to end DOJ suit over DEI programs
 [https://techcrunch.com/2026/04/13/microsoft-is-working-on-yet-another-openclaw-like-agent/] Microsoft is working on yet another OpenClaw-like agent
+[https://darkbloom.dev] Darkbloom – Private inference on idle Macs
+[https://www.tokyodev.com/articles/a-look-into-navidial-japan-s-legacy-phone-service] A Look into NaviDial, Japan's Legacy Phone Service
 [https://www.dbreunig.com/2026/04/14/cybersecurity-is-proof-of-work-now.html] Cybersecurity looks like proof of work now
+[https://daedal.io/@thomzane/116410863009847575] FSF trying to contact Google about spammer sending 10k+ mails from Gmail account
+[https://chatgpt.com/apps/spreadsheets/] ChatGPT for Excel
 [https://theleo.zone/posts/pager/] I made a terminal pager
-[https://www.bbc.com/news/technology-39576394] Ohio prison inmates 'built computers and hid them in ceiling (2017)
-[https://www.theverge.com/streaming/912898/youtube-shorts-feed-limit-zero-minutes] YouTube now lets you turn off Shorts
-[https://www.eff.org/deeplinks/2026/04/google-broke-its-promise-me-now-ice-has-my-data] Google broke its promise to me – now ICE has my data
+[https://github.com/Nightmare-Eclipse/RedSun] RedSun: System user access on Win 11/10 and Server with the April 2026 Update
 [https://cal.com/blog/cal-com-goes-closed-source-why] Cal.com is going closed source
-[http://tinycorelinux.net/5.x/armv6/releases/README] PiCore - Raspberry Pi Port of Tiny Core Linux
 [https://wchambliss.wordpress.com/2026/03/03/god-sleeps-in-the-minerals/] God sleeps in the minerals
-[https://tratt.net/laurie/blog/2026/retrofitting_jit_compilers_into_c_interpreters.html] Retrofitting JIT Compilers into C Interpreters
-[https://www.bloomberg.com/news/articles/2026-04-15/live-nation-illegally-monopolized-ticketing-market-jury-finds] Live Nation illegally monopolized ticketing market, jury finds
+[https://www.eff.org/deeplinks/2026/04/google-broke-its-promise-me-now-ice-has-my-data] Google broke its promise to me – now ICE has my data
 [https://github.blog/ai-and-ml/github-copilot/build-a-personal-organization-command-center-with-github-copilot-cli/] Build a personal organization command center with GitHub Copilot CLI
 [https://github.blog/news-insights/policy-news-and-insights/developer-policy-update-intermediary-liability-copyright-and-transparency/] Developer policy update: Intermediary liability, copyright, and transparency
 [https://github.blog/security/hack-the-ai-agent-build-agentic-ai-security-skills-with-the-github-secure-code-game/] Hack the AI agent: Build agentic AI security skills with the GitHub Secure Code Game
@@ -95,8 +97,6 @@
 [https://www.kdnuggets.com/collaborative-ai-systems-human-ai-teaming-workflows] Collaborative AI Systems: Human-AI Teaming Workflows
 [https://www.kdnuggets.com/top-7-docker-compose-templates-every-developer-should-use] Top 7 Docker Compose Templates Every Developer Should Use
 [https://www.kdnuggets.com/breaking-down-the-claude-folder] Breaking Down the .claude Folder
-[https://www.kdnuggets.com/are-ai-agents-your-next-security-nightmare] Are AI Agents Your Next Security Nightmare?
-[https://www.kdnuggets.com/5-best-books-for-building-agentic-ai-systems-in-2026] 5 Best Books for Building Agentic AI Systems in 2026
 [https://www.infoq.com/news/2026/04/opentelemetry-declarative-config/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global] OpenTelemetry Declarative Configuration Reaches Stability Milestone
 [https://www.infoq.com/news/2026/04/turboquant-compression-kv-cache/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global] Google’s TurboQuant Compression May Support Faster Inference, Same Accuracy on Less Capable Hardware
 [https://www.infoq.com/presentations/open-source-dependencies/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global] Presentation: Empower Your Developers: How Open Source Dependencies Risk Management Can Unlock Innovation
