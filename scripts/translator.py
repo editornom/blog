@@ -155,9 +155,17 @@ def translate_and_save(korean_draft, slug, folder, target_langs=None):
                     lines = lines[:-1]
                 translated = "\n".join(lines).strip()
             
-            # Apply regex to fix potentially broken tags array specifically (e.g. missing closing quote on last item)
+            # Apply regex to fix potentially broken tags array specifically
+            # Ensure the last item ends with a quote before the closing bracket
             import re
-            translated = re.sub(r'(tags:\s*\[.*?")(\])', r'\1"\2', translated)
+            def fix_tags_array(txt):
+                match = re.search(r'(tags:\s*\[)(.*?)(\])', txt)
+                if not match: return txt
+                inner = match.group(2).strip()
+                if inner and inner[-1] not in ['"', "'"]:
+                    inner += '"'
+                return txt[:match.start()] + match.group(1) + inner + match.group(3) + txt[match.end():]
+            translated = fix_tags_array(translated)
             
             # 신규 생성된 다국어 맞춤형 Slug 추출 (정규식 활용)
             new_slug_match = re.search(r'slug:\s*["\'](.*?)["\']', translated)
