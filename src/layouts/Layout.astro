@@ -15,6 +15,7 @@ type Props = {
   pubDatetime?: Date;
   modDatetime?: Date | null;
   scrollSmooth?: boolean;
+  faqSchema?: Record<string, any>;
 };
 
 const {
@@ -27,6 +28,7 @@ const {
   pubDatetime,
   modDatetime,
   scrollSmooth = false,
+  faqSchema,
 } = Astro.props;
 
 const socialImageURL = new URL(ogImage, Astro.url);
@@ -188,6 +190,14 @@ const hreflangLinks = currentLang
       is:inline
       set:html={JSON.stringify(structuredData)}
     />
+    
+    {faqSchema && (
+      <script
+        type="application/ld+json"
+        is:inline
+        set:html={JSON.stringify(faqSchema)}
+      />
+    )}
 
     <!-- Enable RSS feed auto-discovery  -->
     <!-- https://docs.astro.build/en/recipes/rss/#enabling-rss-feed-auto-discovery -->

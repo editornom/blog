@@ -59,6 +59,28 @@ const ogImage = ogImageUrl
   ? new URL(ogImageUrl, Astro.url.origin).href
   : undefined;
 
+let faqSchema: Record<string, any> | undefined;
+
+if (post.body) {
+  const faqRegex = /<details>[\s\S]*?<summary>([\s\S]*?)<\/summary>[\s\S]*?<div class="faq-content">([\s\S]*?)<\/div>[\s\S]*?<\/details>/g;
+  const faqMatches = [...post.body.matchAll(faqRegex)];
+  
+  if (faqMatches.length > 0) {
+    faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqMatches.map(match => ({
+        "@type": "Question",
+        "name": match[1].trim(),
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": match[2].trim().replace(/\n/g, " ")
+        }
+      }))
+    };
+  }
+}
+
 const layoutProps = {
   title: `${title} | ${SITE.title}`,
   author,
@@ -68,6 +90,7 @@ const layoutProps = {
   canonicalURL,
   ogImage,
   scrollSmooth: true,
+  faqSchema,
 };
 
 /* ========== Post List for bottom navigation ========== */
