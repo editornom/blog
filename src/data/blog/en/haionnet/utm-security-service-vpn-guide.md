@@ -1,6 +1,6 @@
 ---
 title: "What is UTM (Unified Threat Management)? A Comprehensive Security Strategy from Firewalls to VPNs"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-05T09:00:00Z
 slug: "utm-security-service-vpn-guide"
 featured: false

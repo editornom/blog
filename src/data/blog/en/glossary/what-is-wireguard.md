@@ -1,6 +1,6 @@
 ---
 title: "WireGuard: Next-Generation High-Performance Open-Source VPN Protocol"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-16T17:25:00+09:00
 slug: "what-is-wireguard"
 featured: false

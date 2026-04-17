@@ -1,6 +1,6 @@
 ---
 title: "데이터의 불확실성을 관리하는 기술, TestDiversityKeyword의 실용적 접근"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-16T09:17:18+09:00
 slug: "data-diversity-analysis-and-test-diversity-keyword"
 featured: false

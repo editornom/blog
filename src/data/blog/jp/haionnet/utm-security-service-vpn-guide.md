@@ -1,6 +1,6 @@
 ---
 title: "UTM（統合脅威管理）とは？ファイアウォールからVPNまで単一機器で完結するセキュリティ戦略"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-05T09:00:00Z
 slug: "utm-security-service-vpn-guide"
 featured: false

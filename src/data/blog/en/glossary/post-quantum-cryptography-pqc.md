@@ -1,6 +1,6 @@
 ---
 title: "Post-Quantum Cryptography (PQC)"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-17T08:35:27+09:00
 slug: "post-quantum-cryptography-pqc"
 featured: false

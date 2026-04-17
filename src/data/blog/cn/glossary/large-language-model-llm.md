@@ -1,6 +1,6 @@
 ---
 title: "大语言模型 (Large Language Model)"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-16T15:09:54+09:00
 slug: "large-language-model-llm"
 featured: false

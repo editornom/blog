@@ -1,6 +1,6 @@
 ---
 title: "AX、ツールの導入を超えてビジネスプロセスの「再設計」へ"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-16T14:05:50+09:00
 slug: "importance-of-ax-ai-transformation"
 featured: false

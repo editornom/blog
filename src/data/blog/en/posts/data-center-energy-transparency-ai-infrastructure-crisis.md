@@ -1,6 +1,6 @@
 ---
 title: "The Critical Threshold of AI Growth: Infrastructure Scalability Crisis Driven by Mandatory Energy Transparency Disclosure"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-16T10:17:51+09:00
 slug: "data-center-energy-transparency-ai-infrastructure-crisis"
 featured: false

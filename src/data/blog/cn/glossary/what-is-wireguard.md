@@ -1,6 +1,6 @@
 ---
 title: "WireGuard：下一代高性能开源 VPN 协议"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-16T17:25:00+09:00
 slug: "what-is-wireguard"
 featured: false

@@ -1,6 +1,6 @@
 ---
 title: "データの意味を読み解く技術：エンタープライズ・セマンティック・ハブが切り拓くインテリジェント企業の未来"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-14T08:40:26+09:00
 slug: "enterprise-semantic-hub-and-ai-agent-architecture"
 featured: false

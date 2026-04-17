@@ -1,6 +1,6 @@
 ---
 title: "해외 비즈니스의 속도와 안정성을 결정하는 국제전용회선 HGX 솔루션 가이드"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-10T15:02:19+09:00
 slug: "global-leased-line-hgx-solution"
 featured: false

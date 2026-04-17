@@ -1,6 +1,6 @@
 ﻿---
 title: "AI?덀꺖??꺍?뤵궎?멥깵?껁궚(AI Token Hijacking)??셽餓ｃ곥걗?ゃ걼??궩?껁궥?㎯꺍??츎?ⓦ겎?쇻걢竊?
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-17T11:03:09+09:00
 slug: "ai-token-hijacking-threat-analysis"
 featured: false

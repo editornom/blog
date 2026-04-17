@@ -1,6 +1,6 @@
 ---
 title: "안정적인 IDC 운영과 보안의 완성: 기업용 코로케이션 선택 가이드"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-07T10:00:00Z
 slug: "business-colocation-idc-network-security"
 featured: false

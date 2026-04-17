@@ -1,6 +1,6 @@
 ---
 title: "The Art of Reading Data Meaning: How Enterprise Semantic Hubs Shape the Future of Intelligent Enterprises"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-14T08:40:26+09:00
 slug: "enterprise-semantic-hub-and-ai-agent-architecture"
 featured: false

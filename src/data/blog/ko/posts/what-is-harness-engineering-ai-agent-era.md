@@ -1,6 +1,6 @@
 ---
 title: "AI 에이전트의 안정성을 담보하는 설계 전략, 하네스 엔지니어링(Harness Engineering)"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-15T10:42:26+09:00
 slug: "what-is-harness-engineering-ai-agent-era"
 featured: false

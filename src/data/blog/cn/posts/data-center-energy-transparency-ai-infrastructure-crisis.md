@@ -1,6 +1,6 @@
 ---
 title: "AI增长的临界点：能源透明度披露义务化引发的基础设施扩展性危机"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-16T10:17:51+09:00
 slug: "data-center-energy-transparency-ai-infrastructure-crisis"
 featured: false

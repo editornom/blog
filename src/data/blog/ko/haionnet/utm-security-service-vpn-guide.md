@@ -1,6 +1,6 @@
 ---
 title: "UTM(통합 위협 관리)이란? 방화벽부터 VPN까지 단일 장비로 끝내는 보안 전략"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-05T09:00:00Z
 slug: "utm-security-service-vpn-guide"
 featured: false

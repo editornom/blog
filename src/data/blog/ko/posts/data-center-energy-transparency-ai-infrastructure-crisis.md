@@ -1,6 +1,6 @@
 ---
 title: "AI 성장의 임계점, 에너지 투명성 공시 의무화가 불러온 인프라 확장성 위기"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-16T10:17:51+09:00
 slug: "data-center-energy-transparency-ai-infrastructure-crisis"
 featured: false

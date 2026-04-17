@@ -1,6 +1,6 @@
 ---
 title: "AX: From Tool Adoption to Business Process 'Redesign'"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-16T14:05:50+09:00
 slug: "importance-of-ax-ai-transformation"
 featured: false

@@ -1,6 +1,6 @@
 ---
 title: "AIエージェントの安定性を担保する設計戦略、ハーネスエンジニアリング（Harness Engineering）"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-15T10:42:26+09:00
 slug: "what-is-harness-engineering-ai-agent-era"
 featured: false

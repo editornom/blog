@@ -1,6 +1,6 @@
 ---
 title: "微调 (Fine-tuning)"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-16T17:43:55+09:00
 slug: "fine-tuning-deep-learning"
 featured: false

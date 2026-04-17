@@ -1,6 +1,6 @@
 ---
 title: "데이터의 의미를 읽는 기술, 엔터프라이즈 시맨틱 허브가 열어갈 지능형 기업의 미래"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-14T08:40:26+09:00
 slug: "enterprise-semantic-hub-and-ai-agent-architecture"
 featured: false

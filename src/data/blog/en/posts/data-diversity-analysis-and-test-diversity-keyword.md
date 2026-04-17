@@ -1,6 +1,6 @@
 ---
 title: "Managing Data Uncertainty: A Practical Approach to TestDiversityKeyword"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-16T09:17:18+09:00
 slug: "data-diversity-analysis-and-test-diversity-keyword"
 featured: false

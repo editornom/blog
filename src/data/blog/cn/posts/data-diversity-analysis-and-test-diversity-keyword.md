@@ -1,6 +1,6 @@
 ---
 title: "管理数据不确定性的技术：TestDiversityKeyword 的实用方法"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-16T09:17:18+09:00
 slug: "data-diversity-analysis-and-test-diversity-keyword"
 featured: false

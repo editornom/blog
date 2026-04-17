@@ -1,6 +1,6 @@
 ﻿---
 title: "The Era of AI Token Hijacking: Is Your Session Truly Secure?"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-17T11:03:09+09:00
 slug: "ai-token-hijacking-threat-analysis"
 featured: false

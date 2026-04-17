@@ -1,6 +1,6 @@
 ---
 title: "AI成長の臨界点、エネルギー透明性開示の義務化がもたらすインフラ拡張性の危機"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-16T10:17:51+09:00
 slug: "data-center-energy-transparency-ai-infrastructure-crisis"
 featured: false

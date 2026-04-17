@@ -1,6 +1,6 @@
 ---
 title: "AX, 도구의 도입을 넘어 비즈니스 프로세스의 '재설계'로"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-16T14:05:50+09:00
 slug: "importance-of-ax-ai-transformation"
 featured: false

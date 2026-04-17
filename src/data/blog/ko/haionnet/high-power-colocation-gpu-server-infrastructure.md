@@ -1,6 +1,6 @@
 ---
 title: "고전력 코로케이션: AI 및 GPU 서버 운영을 위한 최적의 인프라 구축 전략"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-10T16:54:59+09:00
 slug: "high-power-colocation-gpu-server-infrastructure"
 featured: false

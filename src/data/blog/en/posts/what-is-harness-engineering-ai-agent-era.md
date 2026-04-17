@@ -1,6 +1,6 @@
 ---
 title: "Harness Engineering: A Design Strategy for Ensuring AI Agent Stability"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-15T10:42:26+09:00
 slug: "what-is-harness-engineering-ai-agent-era"
 featured: false

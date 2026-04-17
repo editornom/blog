@@ -1,6 +1,6 @@
 ---
 title: "앤스로픽 클로드 미토스(Claude Mythos) 성능 공개: 보안의 판도를 바꿀 AI의 등장"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-14T08:52:06+09:00
 slug: "anthropic-claude-mythos-performance-security-analysis"
 featured: false

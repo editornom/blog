@@ -1,6 +1,6 @@
 ---
 title: "WireGuard: 차세대 고성능 오픈 소스 VPN 프로토콜"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-16T17:25:00+09:00
 slug: "what-is-wireguard"
 featured: false

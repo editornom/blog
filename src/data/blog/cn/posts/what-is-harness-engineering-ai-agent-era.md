@@ -1,6 +1,6 @@
 ---
 title: "确保 AI Agent 稳定性的设计策略：约束工程 (Harness Engineering)"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-15T10:42:26+09:00
 slug: "what-is-harness-engineering-ai-agent-era"
 featured: false

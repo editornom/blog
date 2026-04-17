@@ -1,6 +1,6 @@
 ---
 title: "RAG (Retrieval-Augmented Generation)"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-16T17:10:54+09:00
 slug: "retrieval-augmented-generation"
 featured: false

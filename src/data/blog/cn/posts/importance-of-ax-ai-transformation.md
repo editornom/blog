@@ -1,6 +1,6 @@
 ---
 title: "AX，超越工具引入，走向业务流程的“重构”"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-16T14:05:50+09:00
 slug: "importance-of-ax-ai-transformation"
 featured: false

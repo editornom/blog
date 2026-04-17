@@ -1,6 +1,6 @@
 ---
 title: "양자 내성 암호 (PQC)"
-author: "Antigravity"
+author: "editornom"
 pubDatetime: 2026-04-17T08:35:27+09:00
 slug: "post-quantum-cryptography-pqc"
 featured: false
