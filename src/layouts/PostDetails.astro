@@ -97,6 +97,14 @@ const postListData = posts
 
 const totalPages = Math.ceil(postListData.length / ITEMS_PER_PAGE);
 const currentLang = Astro.url.pathname.split("/")[1] || "ko";
+
+const UI_TEXT = {
+  ko: { otherPosts: "다른 글 보기", prev: "← 이전", next: "다음 →" },
+  en: { otherPosts: "Other Posts", prev: "← Prev", next: "Next →" },
+  jp: { otherPosts: "他の記事", prev: "← 前へ", next: "次へ →" },
+  cn: { otherPosts: "其他文章", prev: "← 上一页", next: "下一页 →" },
+};
+const t = UI_TEXT[currentLang as keyof typeof UI_TEXT] || UI_TEXT.ko;
 ---
 
 <Layout {...layoutProps}>
@@ -171,7 +179,7 @@ const currentLang = Astro.url.pathname.split("/")[1] || "ko";
 
     <!-- Post List Navigation -->
     <section id="post-list-nav" data-pagefind-ignore data-total-pages={totalPages} data-lang={currentLang} data-sb-url={import.meta.env.PUBLIC_SUPABASE_URL || ""} data-sb-key={import.meta.env.PUBLIC_SUPABASE_ANON_KEY || ""}>
-      <h2 class="mb-4 text-lg font-semibold text-foreground">다른 글 보기</h2>
+      <h2 class="mb-4 text-lg font-semibold text-foreground">{t.otherPosts}</h2>
       <ul id="post-list-items" class="flex flex-col gap-2">
         {postListData.map((p, i) => (
           <li
@@ -200,13 +208,13 @@ const currentLang = Astro.url.pathname.split("/")[1] || "ko";
       {totalPages > 1 && (
         <div id="post-list-pagination" class="mt-4 flex items-center justify-center gap-3">
           <button id="pl-prev" class="rounded-md border border-border px-3 py-1.5 text-sm text-foreground/70 transition-colors hover:bg-muted/40 disabled:opacity-30 disabled:cursor-not-allowed" disabled>
-            ← 이전
+            {t.prev}
           </button>
           <span class="text-sm text-foreground/60">
             <span id="pl-current">1</span> / {totalPages}
           </span>
           <button id="pl-next" class="rounded-md border border-border px-3 py-1.5 text-sm text-foreground/70 transition-colors hover:bg-muted/40 disabled:opacity-30 disabled:cursor-not-allowed">
-            다음 →
+            {t.next}
           </button>
         </div>
       )}
@@ -431,9 +439,17 @@ const currentLang = Astro.url.pathname.split("/")[1] || "ko";
     const supabaseUrl = nav.dataset.sbUrl;
     const supabaseKey = nav.dataset.sbKey;
 
+    const viewCountTexts = {
+      ko: { views: count => `조회 ${count}`, loading: "조회 --" },
+      en: { views: count => `${count} views`, loading: "Views --" },
+      jp: { views: count => `閲覧 ${count}`, loading: "閲覧 --" },
+      cn: { views: count => `阅读 ${count}`, loading: "阅读 --" }
+    };
+    const tViews = viewCountTexts[lang] || viewCountTexts.ko;
+
     if (!supabaseUrl || !supabaseKey) {
       // Fallback: try reading from existing supabase client via window
-      viewSpans.forEach(s => { s.textContent = "조회수 --"; });
+      viewSpans.forEach(s => { s.textContent = tViews.loading; });
       return;
     }
 
@@ -451,11 +467,11 @@ const currentLang = Astro.url.pathname.split("/")[1] || "ko";
       }
       viewSpans.forEach(span => {
         const count = countMap[span.dataset.slug];
-        span.textContent = count !== undefined ? `조회 ${count}` : "조회 0";
+        span.textContent = count !== undefined ? tViews.views(count) : tViews.views(0);
       });
     })
     .catch(() => {
-      viewSpans.forEach(s => { s.textContent = "조회 --"; });
+      viewSpans.forEach(s => { s.textContent = tViews.loading; });
     });
   })();
 </script>
