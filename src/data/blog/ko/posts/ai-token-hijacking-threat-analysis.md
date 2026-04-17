@@ -20,7 +20,7 @@ description: "최근 급증하는 AI 토큰 탈취(AI Token Hijacking)의 기술
 
 이렇게 탈취된 토큰은 기업 클라우드 인프라 전체로 위협이 확산되는 발판이 됩니다. 토큰이 유효한 기간 동안 공격자는 별도의 인증 없이도 이메일 무단 반출, 사내 디렉터리 분석, 권한 상승 등을 시도할 수 있습니다. 이는 단순한 데이터 유출을 넘어 기업 내의 근본적인 '신뢰 체인'이 붕괴되는 심각한 상황을 초래합니다.
 
-!![AI 토큰 탈취(AI Token Hijacking) - 대규모 피싱 캠페인을 나타내는, 서버 노드에서 빨간색 경고 아이콘이 깜빡이는 글로벌 네트워크의 개념도, 플랫 디자인 에디토리얼 스타일, 전문적인 컬러 팔레트.](../../../../../source/posts/AI_토큰_탈취(AI_Token_Hijacking)/4cc4071d-1.webp)
+!![AI Token Hijacking - A conceptual diagram of a global network with red warning icons flashing on server nodes, representing a large-scale phishing campaign, flat design editorial style, professional color palette.](../../../../../source/posts/AI_토큰_탈취(AI_Token_Hijacking)/4cc4071d-1.webp)
 
 ## 정상적인 인증 절차를 파고드는 디바이스 코드 피싱
 
