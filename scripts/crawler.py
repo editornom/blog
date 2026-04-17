@@ -51,14 +51,19 @@ def fetch_content(url):
             print(f"🔄 '{url}' 정적 본문 추출 실패. Playwright 헤드리스 브라우저로 재시도합니다...")
             with sync_playwright() as p:
                 browser = p.chromium.launch(headless=True)
-                page = browser.new_page()
-                page.goto(url, timeout=15000)
                 try:
-                    page.wait_for_load_state("networkidle", timeout=10000)
-                except Exception:
-                    pass # 타임아웃 무시하고 현재 상태의 DOM이라도 긁어옴
-                dyn_content = page.content()
-                browser.close()
+                    page = browser.new_page()
+                    page.goto(url, timeout=15000)
+                    try:
+                        page.wait_for_load_state("networkidle", timeout=10000)
+                    except Exception:
+                        pass # 타임아웃 무시하고 현재 상태의 DOM이라도 긁어옴
+                    dyn_content = page.content()
+                except Exception as e:
+                    print(f"  ⚠️ Playwright 크롤링 중 오류: {e}")
+                    dyn_content = ""
+                finally:
+                    browser.close() # 무조건 브라우저 종료 (좀비 프로세스 방지)
                 
             dyn_soup = BeautifulSoup(dyn_content, 'html.parser')
             for script_or_style in dyn_soup(["script", "style", "header", "footer", "nav", "aside"]):

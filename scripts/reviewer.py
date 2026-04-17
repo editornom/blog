@@ -2,6 +2,7 @@ from google import genai
 from google.api_core import exceptions
 from api_utils import gemini_retry, gemini_limiter, gemini_tracker
 import os
+import re
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -20,6 +21,16 @@ def review_manuscript(draft, folder="posts"):
         return draft
 
     client = genai.Client(api_key=api_key)
+
+    # 🌟 [개선] Frontmatter 분리 로직 (Action Plan 5)
+    # YAML 영역을 AI에게 보내지 않고 보호하여 Astro 빌드 에러를 원천 차단합니다.
+    yaml_match = re.match(r'^(---\s*\n.*?\n---\s*\n)', draft, re.DOTALL)
+    if yaml_match:
+        frontmatter = yaml_match.group(1)
+        body_content = draft[len(frontmatter):]
+    else:
+        frontmatter = ""
+        body_content = draft
 
     # 경쟁사 텍스트 파일 로드 (Negative Prompt 활용)
     competitors_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "competitors.txt")
@@ -65,13 +76,13 @@ def review_manuscript(draft, folder="posts"):
 - 'Deep Dive:', 'The Mechanism:', '핵심 요약' 등 억지로 붙인 듯한 태그형 소제목을 삭제하고, 해당 문단의 핵심 내용을 직관적으로 보여주는 매끄러운 한국어 소제목으로 변경하십시오.
 
 5. 마크다운 및 원본 요소 보존 (CRITICAL)
-- 원본에 포함된 이미지 태그(`![이미지](...)` 또는 `[이미지: ...]`), Frontmatter(YAML 윗부분), 코드 블록, 인용구(>), 굵은 글씨(**) 등은 절대 누락하거나 훼손하지 마십시오.
+- 원본에 포함된 이미지 태그(`![이미지](...)` 또는 `[이미지: ...]`), 코드 블록, 인용구(>), 굵은 글씨(**) 등은 절대 누락하거나 훼손하지 마십시오.
 - 어떠한 메타 코멘트(예: "수정된 원고입니다", "요청하신 대로 윤문했습니다")도 출력하지 마십시오. 
 - 오직 마크다운 문법으로 완성된 '최종 수정 원고 텍스트'만 출력해야 합니다.
 
 ---
 [초안 텍스트]
-{draft}
+{body_content}
 """
     # ---------------------------------------------------------
 
@@ -97,18 +108,12 @@ def review_manuscript(draft, folder="posts"):
             
         # 2. 표(Table) 문법 기본 점검 (헤더 구분선 |---| 누락 감지)
         if "|" in result_text and "\n|---" not in result_text and "\n| ---" not in result_text.replace(" ", ""):
-            # 완벽한 복구는 어려우나 파이프라인에서 Warning 로그를 남겨 수정을 유도
-            if result_text.count("|") > 4: # 단순 파이프 사용이 아닌 표 형태일 가능성이 높을 때
-                print("  ⚠️ [Detox] 마크다운 표(Table) 헤더 구분선 구조 오류 가능성이 감지되었습니다. 원고 확인이 필요합니다.")
-                
-        return result_text
-    except Exception as e:
-        print(f"❌ 원고 검수 중 최종 실패: {e}")
-        return None
+            print("  ⚠️ [Detox] 마크다운 표 문법이 불안전할 수 있습니다. 수동 점검이 필요할 수 있습니다.")
 
-if __name__ == "__main__":
-    # Test with a dummy draft
-    test_draft = "# Hello World\nThis is a test draft."
-    reviewed = review_manuscript(test_draft)
-    print("\n--- Reviewed Output ---\n")
-    print(reviewed)
+        # 🌟 Frontmatter 재결합
+        return frontmatter + result_text
+
+    except Exception as e:
+        print(f"❌ Gemini 디톡스 중 오류 발생: {e}")
+        # 오류 발생 시 원본(frontmatter + body_content = draft) 유지하여 파이프라인 중단 방지
+        return draft

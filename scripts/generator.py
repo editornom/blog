@@ -162,29 +162,33 @@ def generate_blog_post(crawled_content, folder="posts", additional_instructions=
             
             content_text = data.get("content", "")
             
-            # 밀도 검증
-            words = content_text.split()
-            word_count = len(words)
-            if word_count > 0:
+            # 🌟 [개선] 한국어 맞춤형 글자 수 기반 밀도 검증 (Action Plan 3)
+            # 영어식 띄어쓰기(split)는 한국어 조사 결합 등으로 인해 정확도가 떨어지므로 글자 수로 계산합니다.
+            clean_content = re.sub(r'\s+', '', content_text) # 공백 제거 본문
+            total_chars = len(clean_content)
+            
+            if total_chars > 0:
                 keyword_count = content_text.lower().count(keyword_lower)
-                keyword_word_len = len(keyword_lower.split())
-                actual_density = (keyword_count * keyword_word_len) / word_count
+                keyword_len = len(re.sub(r'\s+', '', keyword_lower))
+                actual_density = (keyword_count * keyword_len) / total_chars
             else:
                 actual_density = 0
 
             min_density = 0.01 # 하한선 1%
-            max_density = 0.03 # 상한선 3% (안전 마지노선)
+            max_density = 0.03 # 상한선 3% (검색 엔진 어뷰징 방지 마지노선)
             
             if min_density <= actual_density <= max_density:
                 print(f"  ✅ 키워드 밀도 충족: {actual_density*100:.2f}% (안전 구간)")
                 final_draft_data = data
                 density_warning = None # Valid
-                break
+                break # 성공 시 루프 종료
             elif actual_density > max_density:
                 warning_msg = f"⚠️ 키워드 밀도 초과 (실제: {actual_density*100:.2f}%, 상한: 3%). 어뷰징(도배) 위험!"
                 print(f"  {warning_msg}")
                 if attempt < max_attempts - 1:
+                    print(f"  🔄 밀도가 너무 높습니다. 밀도를 낮추기 위해 수정을 요청합니다.")
                     prompt += f"\n\n[SYSTEM Feedback] 이전 원고에서 타겟 키워드('{primary_topic}')가 너무 과도하게 반복되었습니다(키워드 스터핑). 검색 엔진 패널티를 피하기 위해 대명사를 활용하거나 생략하여 키워드 노출 빈도를 절반 이하로 줄이고, 자연스럽게 다듬어 주세요 (목표 밀도 1.5%)."
+                    continue # 🚨 [중요] 상한선 초과 시 종료하지 않고 재시도
                 final_draft_data = data
                 density_warning = warning_msg
             else:
@@ -192,6 +196,7 @@ def generate_blog_post(crawled_content, folder="posts", additional_instructions=
                 print(f"  {warning_msg}")
                 if attempt < max_attempts - 1:
                     prompt += f"\n\n[SYSTEM Feedback] 이전 생성된 원고에서 타겟 키워드('{primary_topic}')의 사용 빈도가 너무 적습니다. 문맥을 해치지 않는 선에서 자연스럽게 키워드를 더 배치하여 밀도를 높여주세요 (목표 1.5%)."
+                    continue # 미달 시 재시도
                 final_draft_data = data
                 density_warning = warning_msg
 

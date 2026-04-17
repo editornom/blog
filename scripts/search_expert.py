@@ -2,6 +2,7 @@ import os
 import requests
 import json
 import re
+from urllib.parse import urlparse
 import concurrent.futures
 from google import genai
 from dotenv import load_dotenv
@@ -147,8 +148,9 @@ def deep_search_and_filter(keyword, num_results=100):
             domain_count += 1
             continue
             
-        # 2. 확장자 체크
-        if any(link.endswith(ext) for ext in EXCLUDED_EXTENSIONS):
+        # 2. 확장자 체크 (파라미터 포함된 URL도 대응하도록 urlparse 적용)
+        parsed_link = urlparse(link)
+        if any(parsed_link.path.endswith(ext) for ext in EXCLUDED_EXTENSIONS):
             ext_count += 1
             continue
             
