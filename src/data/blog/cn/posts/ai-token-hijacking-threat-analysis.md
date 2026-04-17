@@ -5,7 +5,7 @@ pubDatetime: 2026-04-17T11:03:09+09:00
 slug: "ai-token-hijacking-session-security-guide"
 featured: false
 draft: false
-tags: ["AI 令牌窃取", "设备代码钓鱼", "网络安全", "Haionnet", "提示注入""]
+tags: ["AI 令牌窃取", "设备代码钓鱼", "网络安全", "Haionnet", "提示注入"]
 ogImage: "../../../../../source/posts/AI_토큰_탈취(AI_Token_Hijacking)/74150eef-0.webp"
 description: "本文深入分析了近期激增的 AI 令牌窃取 (AI Token Hijacking) 技术机制，并针对 AI Agent 环境提出了专业的安全应对策略。"
 ---

@@ -5,7 +5,7 @@ pubDatetime: 2026-04-17T11:03:09+09:00
 slug: "understanding-ai-token-hijacking-threats"
 featured: false
 draft: false
-tags: ["AIトークンハイジャック", "デバイスコードフィッシング", "サイバーセキュリティ", "Haionnet", "プロンプトインジェクション""]
+tags: ["AIトークンハイジャック", "デバイスコードフィッシング", "サイバーセキュリティ", "Haionnet", "プロンプトインジェクション"]
 ogImage: "../../../../../source/posts/AI_토큰_탈취(AI_Token_Hijacking)/74150eef-0.webp"
 description: "最近急増しているAIトークンハイジャック(AI Token Hijacking)の技術的メカニズムを分析し、エージェントベースのAI環境におけるセキュリティ対応戦略を提示します。"
 ---

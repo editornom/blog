@@ -5,7 +5,7 @@ pubDatetime: 2026-04-17T11:03:09+09:00
 slug: "ai-token-hijacking-session-security-threats"
 featured: false
 draft: false
-tags: ["AI Token Hijacking", "Device Code Phishing", "Cybersecurity", "Haionnet", "Prompt Injection""]
+tags: ["AI Token Hijacking", "Device Code Phishing", "Cybersecurity", "Haionnet", "Prompt Injection"]
 ogImage: "../../../../../source/posts/AI_토큰_탈취(AI_Token_Hijacking)/74150eef-0.webp"
 description: "Analyze the technical mechanisms of the surging AI Token Hijacking attacks and explore security defense strategies for agentic AI environments."
 ---
