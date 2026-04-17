@@ -18,3 +18,4 @@
 [2026-04-17] [AI추천_39점] AI 토큰 탈취(AI Token Hijacking)
 [2026-04-17] [수동선정] Multimodal
 [2026-04-17] [수동선정] Zero Trust
+[2026-04-17] [수동선정] AEO
