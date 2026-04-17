@@ -1,0 +1,10 @@
+https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-are-multimodal-large-language-models
+https://www.superannotate.com/blog/multimodal-ai
+https://www.tiledb.com/blog/multimodal-ai-models
+https://cloud.google.com/transform/how-multimodal-ai-helps-business
+https://witechpedia.com/wiki/multimodal-ai/
+https://namu.wiki/w/%EB%A9%80%ED%8B%B0%EB%AA%A8%EB%8B%AC%20%EB%AA%A8%EB%8D%B8
+https://tech.hancom.com/multimodal-vlm-trends/
+https://feccle.tistory.com/m/434
+https://www.kim2kie.com/res/html/0_formula/00%20AI/Multimodal.html
+https://www.themoonlight.io/ko/review/multimodal-representation-learning-and-fusion
