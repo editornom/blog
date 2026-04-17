@@ -354,7 +354,13 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
             alt_keyword = keyword if keyword else "IT 트렌드"
             md_img_link = f"![{alt_keyword} - {translated_alt}]({rel_path})"
             
+            # 1. 기본 교체 수행
             draft = draft.replace(f"[이미지: {prompt}]", md_img_link)
+            
+            # 2. 🚨 AI가 무의식적으로 남긴 마크다운 찌꺼기 청소
+            draft = draft.replace("!![", "![") # 범인: 중복된 느낌표 제거
+            draft = draft.replace("**![", "![") # 혹시 모를 앞 볼드체 제거
+            draft = draft.replace("]**", "]") # 혹시 모를 뒤 볼드체 제거
             
             if i == 0:
                 draft = re.sub(r'ogImage: ".*?"', f'ogImage: "{rel_path}"', draft)
