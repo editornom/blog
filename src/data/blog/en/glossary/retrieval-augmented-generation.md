@@ -17,7 +17,6 @@ description: "This article explains Retrieval-Augmented Generation (RAG), a tech
 | Item | Details |
 | :--- | :--- |
 | **English Name** | Retrieval-Augmented Generation |
-| **Korean Name** | 검색 증강 생성 |
 | **Abbreviation** | RAG |
 | **Key Technologies** | LLM, Vector Database, Embedding, Semantic Search, Prompt Engineering |
 | **Originally Proposed by** | Patrick Lewis et al. (2020) |

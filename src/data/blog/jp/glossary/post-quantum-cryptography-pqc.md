@@ -14,7 +14,6 @@ description: "量子コンピュータの演算能力を利用した攻撃に対
 | 項目 | 内容 |
 | :--- | :--- |
 | **英文名** | Post-Quantum Cryptography |
-| **日本語名** | 耐量子計算機暗号 |
 | **略称** | PQC |
 | **関連技術** | Lattice-based Cryptography, Shor's Algorithm, NIST PQC Standards, ML-KEM, ML-DSA |
 

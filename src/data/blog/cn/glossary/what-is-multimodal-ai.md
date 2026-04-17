@@ -17,7 +17,6 @@ description: "本文定义了通过综合处理文本、图像、语音等多种
 | 项目 | 内容 |
 | :--- | :--- |
 | 英文名 | Multimodal |
-| 中文名 | 多模态 |
 | 缩写 | MLLM (Multimodal Large Language Model) |
 | 相关技术 | 深度学习 (Deep Learning), 计算机视觉, 自然语言处理 (NLP), 扩散模型 (Diffusion Model) |
 

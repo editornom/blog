@@ -17,7 +17,6 @@ description: "テキスト、画像、音声など、多様なデータタイプ
 | 項目 | 内容 |
 | :--- | :--- |
 | 英文名 | Multimodal |
-| 日本語名 | マルチモーダル |
 | 略称 | MLLM (Multimodal Large Language Model) |
 | 関連技術 | 딥러닝(Deep Learning), コンピュータビジョン, 自然言語処理(NLP), 拡散モデル(Diffusion Model) |
 

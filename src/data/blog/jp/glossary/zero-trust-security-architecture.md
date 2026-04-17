@@ -17,7 +17,6 @@ description: "「決して信頼せず、常に検証せよ」という原則に
 | 区分 | 内容 |
 | :--- | :--- |
 | 英文名 | Zero Trust Architecture |
-| 日本語名 | ゼロトラストアーキテクチャ |
 | 略称 | ZTA, ZT |
 | 関連技術 | IAM, MFA, ZTNA, Micro-segmentation, SIEM |
 

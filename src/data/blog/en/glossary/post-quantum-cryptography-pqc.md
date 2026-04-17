@@ -14,7 +14,6 @@ description: "An overview of Post-Quantum Cryptography (PQC), a next-generation 
 | Category | Content |
 | :--- | :--- |
 | **English Name** | Post-Quantum Cryptography |
-| **Korean Name** | 양자 내성 암호 |
 | **Abbreviation** | PQC |
 | **Related Technologies** | Lattice-based Cryptography, Shor's Algorithm, NIST PQC Standards, ML-KEM, ML-DSA |
 

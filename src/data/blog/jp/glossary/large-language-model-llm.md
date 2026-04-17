@@ -17,7 +17,6 @@ description: "膨大なテキストデータを学習し、自然言語の生成
 | 項目 | 内容 |
 | :--- | :--- |
 | **英文名** | Large Language Model |
-| **日本語名** | 大規模言語モデル |
 | **略称** | LLM |
 | **関連技術** | Transformer, Deep Learning, Tokenization, RLHF, RAG |
 

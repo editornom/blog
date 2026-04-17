@@ -17,7 +17,6 @@ description: "大規模言語モデル（LLM）の正確性と信頼性を向上
 | 項目 | 内容 |
 | :--- | :--- |
 | **英文名** | Retrieval-Augmented Generation |
-| **日本語名** | 検索拡張生成 |
 | **略称** | RAG |
 | **主要な関連技術** | LLM, Vector Database, Embedding, Semantic Search, Prompt Engineering |
 | **初の提案** | Patrick Lewis et al. (2020) |

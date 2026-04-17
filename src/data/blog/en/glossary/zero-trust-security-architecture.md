@@ -17,7 +17,6 @@ description: "A modern security framework based on the principle of 'Never Trust
 | Category | Description |
 | :--- | :--- |
 | English Name | Zero Trust Architecture |
-| Korean Name | 제로 트러스트 아키텍처 |
 | Acronym | ZTA, ZT |
 | Related Technologies | IAM, MFA, ZTNA, Micro-segmentation, SIEM |
 

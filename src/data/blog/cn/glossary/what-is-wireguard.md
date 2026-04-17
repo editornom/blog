@@ -17,7 +17,6 @@ description: "探讨基于现代加密技术和轻量化代码库，极大地提
 | 类别 | 内容 |
 | :--- | :--- |
 | **英文名称** | WireGuard |
-| **中文名称** | WireGuard |
 | **缩写** | WG |
 | **相关技术** | VPN, ChaCha20, Curve25519, UDP, Linux Kernel, Cryptokey Routing |
 

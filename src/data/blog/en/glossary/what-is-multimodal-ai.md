@@ -17,7 +17,6 @@ description: "An in-depth look at Multimodal AI, a technology that processes tex
 | Item | Description |
 | :--- | :--- |
 | English Name | Multimodal |
-| Korean Name | 멀티모달 |
 | Abbreviation | MLLM (Multimodal Large Language Model) |
 | Related Technologies | Deep Learning, Computer Vision, NLP, Diffusion Model |
 

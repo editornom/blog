@@ -15,7 +15,6 @@ description: "An explanation of the definition and principles of fine-tuning, a 
 | Item | Description |
 | :--- | :--- |
 | **English Name** | Fine-tuning |
-| **Korean Name** | 파인튜닝, 미세 조정 |
 | **Abbreviation** | - |
 | **Related Tech** | Transfer Learning, Deep Learning, LLM, PEFT, LoRA |
 

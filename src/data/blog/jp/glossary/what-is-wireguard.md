@@ -17,7 +17,6 @@ description: "最新の暗号化技術と軽量化されたコードベースに
 | 区分 | 内容 |
 | :--- | :--- |
 | **英文名** | WireGuard |
-| **日本語名** | ワイヤーガード |
 | **略称** | WG |
 | **関連技術** | VPN, ChaCha20, Curve25519, UDP, Linux Kernel, Cryptokey Routing |
 

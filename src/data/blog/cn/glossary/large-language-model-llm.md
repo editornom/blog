@@ -17,7 +17,6 @@ description: "本文介绍大语言模型 (LLM) 的定义及其核心技术。LL
 | 项目 | 内容 |
 | :--- | :--- |
 | **英文名** | Large Language Model |
-| **中文名** | 大语言模型 |
 | **缩写** | LLM |
 | **相关技术** | Transformer, Deep Learning, Tokenization, RLHF, RAG |
 

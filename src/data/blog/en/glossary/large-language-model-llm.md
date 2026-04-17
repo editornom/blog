@@ -17,7 +17,6 @@ description: "This article explains the definition and core technologies of Larg
 | Item | Details |
 | :--- | :--- |
 | **English Name** | Large Language Model |
-| **Korean Name** | 거대 언어 모델 |
 | **Abbreviation** | LLM |
 | **Related Technologies** | Transformer, Deep Learning, Tokenization, RLHF, RAG |
 

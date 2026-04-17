@@ -17,7 +17,6 @@ description: "An in-depth look at WireGuard, a next-generation VPN protocol that
 | Category | Description |
 | :--- | :--- |
 | **English Name** | WireGuard |
-| **Korean Name** | 와이어가드 |
 | **Abbreviation** | WG |
 | **Related Technologies** | VPN, ChaCha20, Curve25519, UDP, Linux Kernel, Cryptokey Routing |
 
