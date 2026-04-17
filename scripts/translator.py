@@ -35,6 +35,7 @@ def translate_post(korean_markdown, target_lang):
 
 ### 번역 규칙:
 1. **Frontmatter 유지**: YAML frontmatter(--- 사이의 영역)의 구조는 그대로 유지하되, title과 description만 번역하십시오.
+   - 🚨 **[중요]**: 번역된 title과 description의 값은 반드시 큰따옴표(" ")로 감싸야 하며, 문자열 내부에는 절대 큰따옴표나 줄바꿈을 넣지 마십시오. (필요시 홑따옴표 사용)
 2. **Slug 현지화 (SEO 최적화)**: slug 값은 기존 영어 slug를 복사하지 마세요. 번역된 {lang_name} 원문에서의 핵심 키워드를 기반으로 해당 국가의 SEO에 가장 유리한 형태의 영문 단어 조합(소문자와 하이픈만 사용, 알파벳 표기 또는 직관적 의미역)으로 완전히 새롭게 창작하여 부여하십시오.
 3. **이미지 경로 유지**: 이미지 경로(../../../../assets/images/...)는 절대 변경하지 마십시오.
 4. **마크다운 문법 유지**: 헤더(#, ##, ###), 볼드(**), 리스트(-), 인용(>), 코드블록(```) 등 마크다운 문법을 그대로 유지하십시오.
@@ -154,14 +155,15 @@ def translate_and_save(korean_draft, slug, folder, target_langs=None):
                     lines = lines[:-1]
                 translated = "\n".join(lines).strip()
             
-            # 신규 생성된 다국어 맞춤형 Slug 추출 (정규식 활용)
+            # Apply regex to fix potentially broken tags array specifically (e.g. missing closing quote on last item)
             import re
-            new_slug_match = re.search(r'slug:\s*["\'](.*?)["\']', translated)
-            target_slug = new_slug_match.group(1).strip() if new_slug_match else slug
+            translated = re.sub(r'(tags:\s*\[.*?")(\])', r'\1"\2', translated)
             
-            # 단, slug가 비정상적으로 한글/특수문자가 들어오거나 너무 길면 원본 slug를 폴백으로 사용
-            if not re.match(r'^[a-z0-9\-]+$', target_slug) or len(target_slug) < 3:
-                target_slug = slug
+            # 신규 생성된 다국어 맞춤형 Slug 추출 (정규식 활용)
+            new_slug_match = re.search(r'slug:\s*["\'](.*?)["\']', translated)
+            
+            # 강제로 원본 한국어 slug를 사용하도록 고정 (언어 전환 시 url 매핑을 위해)
+            target_slug = slug
             
             # Save to the correct language folder
             target_dir = os.path.join("src", "data", "blog", lang_code, folder)
