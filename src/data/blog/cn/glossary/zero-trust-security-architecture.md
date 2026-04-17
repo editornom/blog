@@ -1,0 +1,237 @@
+---
+title: "零信任 (Zero Trust) 安全架构"
+author: "editornom"
+pubDatetime: 2026-04-17T15:15:46+09:00
+slug: "zero-trust-architecture-comprehensive-guide"
+featured: false
+draft: false
+tags: ["glossary", "Zero Trust", "Cybersecurity", "Network Security", "Cloud Computing"]
+ogImage: "../../../../../source/glossary/Zero_Trust/95cab963-0.webp"
+description: "基于'永不信任，始终验证'的原则，持续确认并控制网络内外所有访问请求的现代安全框架。"
+---
+
+![Zero Trust - 展示身份验证和微隔离的零信任安全架构概念图](../../../../../source/glossary/Zero_Trust/95cab963-0.webp)
+
+### 1. 技术摘要
+
+| 区分 | 内容 |
+| :--- | :--- |
+| 英文名 | Zero Trust Architecture |
+| 中文名 | 零信任架构 |
+| 缩写 | ZTA, ZT |
+| 相关技术 | IAM, MFA, ZTNA, Micro-segmentation, SIEM |
+
+### 2. 排除信任的常态化验证体系
+
+零信任是在“永不信任，始终验证 (Never Trust, Always Verify)”的前题下，对所有访问进行验证的安全模型。它摆脱了以往仅因用户连接到公司内部网络就赋予权限的传统方式，其核心是对所有试图访问资源的实体，在任何时刻都执行严格的身份验证和控制。
+
+### 3. 边界安全局限性与范式转变
+
+过去的安全系统采用所谓的“城堡与护城河 (Castle-and-Moat)”模式运行。这种模式认为只要能防范外部入侵，内部用户就是安全的。然而，随着 Cloud 转型加速以及远程与混合办公成为常态，定义物理网络边界变得越来越困难。
+
+特别是在面对由于内部人员失误或账号被盗引发的横向移动 (Lateral Movement) 攻击时，传统安全体系显得力不从心。因此，这种不分位置、对每次访问请求进行独立验证的新方法，已成为极具实操意义的替代方案。
+
+### 4. 支撑零信任的三大原则
+
+- **明确验证 (Verify Explicitly):** 不仅根据用户 ID，还结合当前访问位置、设备安全状态、请求数据的性质等所有可用信息，实时决定身份验证和授权。
+- **最小特权原则 (Least Privilege Access):** 仅在需要的时间 (Just-in-Time) 授予执行业务所需的最小权限。通过这种方式，即使特定账号被盗，也能将损失扩散范围降至最低。
+- **假定已受侵入 (Assume Breach):** 假设网络已经被黑客渗透。为了实现损失局部化，应用微隔离 (Micro-segmentation) 技术将网络细分，并对所有通信数据进行默认加密管理。
+
+### 5. 与传统方式的区别
+
+| 比较项目 | 传统远程访问 (VPN 等) | 零信任 (ZTNA) |
+| :--- | :--- | :--- |
+| **安全哲学** | 基于边界 (认证时内部信任) | 无边界 (时刻验证) |
+| **访问控制** | 登录时允许访问整个网络 | 基于单个应用程序和资源单位的控制 |
+| **威胁响应** | 内部入侵后难以防御侧向移动 | 通过细粒度权限设置易于阻断损失 |
+
+### 6. 实务应用及主要概念
+
+在实际构建案例中，Google 的 “BeyondCorp” 最具代表性。Google 通过引入该模型，使员工在无需额外连接 VPN 的情况下，也能在公共网络中安全地使用公司内部资源。
+
+为了理解该架构，需要同时关注以下术语：
+
+- **IAM (Identity and Access Management):** 确认用户身份并管理其访问适当资源权限的基础。
+- **ZTNA (Zero Trust Network Access):** 一种不向外部暴露内部网络，仅向经过认证的用户开启特定应用通道的技术。
+- **MFA (Multi-Factor Authentication):** 通过结合密码以外的额外认证手段，提高身份确认安全性的方式。
+
+## ✅ 常见问题 (FAQ)
+
+<details>
+  <summary>什么是零信任安全？</summary>
+  <div class="faq-content">
+
+这是一种基于“永不信任，始终验证”原则的安全模型。它意味着一种现代安全框架，不信任网络内外的所有访问请求，并在每时每刻执行严格的认证和控制。
+
+  </div>
+</details>
+
+<details>
+  <summary>零信任的三大原则是什么？</summary>
+  <div class="faq-content">
+
+由明确验证（实时确认用户/设备）、最小特权原则（仅授予必要权限）、假定已受侵入（前提是网络已被渗透并采取应对）这三个原则组成。
+
+  </div>
+</details>
+
+<details>
+  <summary>与传统的“城堡与护城河”式安全有何不同？</summary>
+  <div class="faq-content">
+
+传统方式侧重于边界安全，专注于阻断外部入侵并信任内部。而零信任则认为边界本身不存在，无论位置如何，都会对所有访问尝试进行独立验证。
+
+  </div>
+</details>
+
+<details>
+  <summary>为什么零信任安全最近变得如此重要？</summary>
+  <div class="faq-content">
+
+因为随着 Cloud 的引入和远程、混合办公的普及，物理网络边界已经消失。特别是在防御通过内部人员失误或账号被盗进行的内部移动攻击时，它已成为不可或缺的替代方案。
+
+  </div>
+</details>
+
+<details>
+  <summary>支撑零信任的核心技术要素有哪些？</summary>
+  <div class="faq-content">
+
+主要技术包括管理用户身份的 IAM、用于多重认证的 MFA、仅允许访问特定应用的 ZTNA、细分网络的微隔离以及分析日志的 SIEM 等。
+
+  </div>
+</details>
+
+<details>
+  <summary>传统 VPN 与零信任 (ZTNA) 的决定性区别是什么？</summary>
+  <div class="faq-content">
+
+VPN 是基于边界的方式，在登录时允许访问整个网络。而 ZTNA 不向外部暴露内部网络，仅为经过认证的用户单独开启通往特定应用程序的通道。
+
+  </div>
+</details>
+
+<details>
+  <summary>“假定已受侵入”原则在实务中是如何实现的？</summary>
+  <div class="faq-content">
+
+它假设网络可能已经被黑客攻破。为了防止损失扩散，通过微隔离将网络细分，并对所有通信数据进行基础加密管理。
+
+  </div>
+</details>
+
+<details>
+  <summary>引入零信任时，“最小特权原则”如何应用？</summary>
+  <div class="faq-content">
+
+仅在执行特定业务所需的必要时间内 (Just-in-Time) 授予必要权限。通过这种方式，即使特定账号被盗，也能将黑客可访问的范围极小化，从而阻断损失。
+
+  </div>
+</details>
+
+<details>
+  <summary>是否有成功引入零信任安全的实际案例？</summary>
+  <div class="faq-content">
+
+Google 的 “BeyondCorp” 具有代表性。Google 通过该模型实现了员工无需额外 VPN 即可在公共网络安全使用内部资源的办公环境。
+
+  </div>
+</details>
+
+<details>
+  <summary>零信任架构中“明确验证”的具体含义是什么？</summary>
+  <div class="faq-content">
+
+这是一种不仅通过用户 ID，还实时结合访问位置、连接设备的健康状态、所请求数据的敏感度等所有可用信息，来决定认证和授权的方式。
+
+  </div>
+</details>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "什么是零信任安全？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "这是一种基于'永不信任，始终验证'原则的安全模型。它意味着一种现代安全框架，不信任网络内外的所有访问请求，并在每时每刻执行严格的认证和控制。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "零信任的三大原则是什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "由明确验证（实时确认用户/设备）、最小特权原则（仅授予必要权限）、假定已受侵入（前提是网络已被渗透并采取应对）这三个原则组成。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "与传统的'城堡与护城河'式安全有何不同？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "传统方式侧重于边界安全，专注于阻断外部入侵并信任内部。而零信任则认为边界本身不存在，无论位置如何，都会对所有访问尝试进行独立验证。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么零信任安全最近变得如此重要？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "因为随着 Cloud 的引入和远程、混合办公的普及，物理网络边界已经消失。特别是在防御通过内部人员失误或账号被盗进行的内部移动攻击时，它已成为不可或缺的替代方案。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "支撑零信任的核心技术要素有哪些？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "主要技术包括管理用户身份的 IAM、用于多重认证的 MFA、仅允许访问特定应用的 ZTNA、细分网络的微隔离以及分析日志的 SIEM 等。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "传统 VPN 与零信任 (ZTNA) 的决定性区别是什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VPN 是基于边界的方式，在登录时允许访问整个网络。而 ZTNA 不向外部暴露内部网络，仅为经过认证的用户单独开启通往特定应用程序的通道。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "'假定已受侵入'原则在实务中是如何实现的？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "它假设网络可能已经被黑客攻破。为了防止损失扩散，通过微隔离将网络细分，并对所有通信数据进行基础加密管理。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "引入零信任时，'最小特权原则'如何应用？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "仅在执行特定业务所需的必要时间内 (Just-in-Time) 授予必要权限。通过这种方式，即使特定账号被盗，也能将黑客可访问的范围极小化，从而阻断损失。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "是否有成功引入零信任安全的实际案例？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Google 的 'BeyondCorp' 具有代表性。Google 通过该模型实现了员工无需额外 VPN 即可在公共网络安全使用内部资源的办公环境。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "零信任架构中'明确验证'的具体含义是什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "这是一种不仅通过用户 ID，还实时结合访问位置、连接设备的健康状态、所请求数据的敏感度等所有可用信息，来决定认证和授权的方式。"
+      }
+    }
+  ]
+}
+</script>
