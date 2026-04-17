@@ -14,3 +14,4 @@
 [2026-04-16] [수동선정] fine-tuning
 [2026-04-17] [보안 / 인프라 거버넌스] 양자 내성 암호(Post-Quantum Cryptography, PQC) 마이그레이션 프레임워크
 [2026-04-17] [수동선정] PQC
+[2026-04-17] [AI추천_38점] 정형 검증 (Formal Verification)

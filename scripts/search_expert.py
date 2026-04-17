@@ -51,26 +51,71 @@ def deep_search_and_filter(keyword, num_results=100):
         print("⚠️ SERPER_API_KEY가 .env에 없습니다. 검색을 건너뛰고 빈 리스트를 반환합니다.")
         return []
 
-    print(f"🔍 '{keyword}'에 대한 광범위 웹 검색을 시작합니다 (목표: {num_results}개)...")
+    # -----------------------------------------------------
+    # 🌟 [NEW] 키워드 영문 번역 (글로벌 검색용)
+    # -----------------------------------------------------
+    client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+    try:
+        res = client.models.generate_content(
+            model='models/gemini-3-flash-preview',
+            contents=f"Translate this IT keyword to a short English search query (just the words, no symbols): {keyword}"
+        )
+        keyword_en = res.text.strip()
+    except Exception:
+        keyword_en = keyword # 실패 시 원본 사용
 
-    # 1. Serper API를 이용한 검색
+    print(f"🔍 '{keyword}' (영문: {keyword_en})에 대한 글로벌 교차 검색을 시작합니다...")
+
     url = "https://google.serper.dev/search"
-    payload = json.dumps({
-        "q": keyword,
-        "num": num_results
+    clean_keyword = keyword.replace("(", " ").replace(")", "")
+    
+    # 1. 영문/미국 구글 검색 (깊이 있는 기술 자료 확보)
+    payload_en = json.dumps({
+        "q": keyword_en,
+        "num": num_results // 2, # 목표치의 절반
+        "gl": "us",              # 국가: 미국
+        "hl": "en",              # 언어: 영어
+        "tbs": "qdr:y"           # 최근 1년 이내
     })
+    
+    # 2. 국문/한국 구글 검색 (국내 트렌드 확보)
+    payload_ko = json.dumps({
+        "q": clean_keyword,
+        "num": num_results // 2, # 목표치의 절반
+        "gl": "kr",              # 국가: 한국
+        "hl": "ko",              # 언어: 한국어
+        "tbs": "qdr:y"           # 최근 1년 이내
+    })
+
     headers = {
         'X-API-KEY': api_key,
         'Content-Type': 'application/json'
     }
 
+    results = []
     try:
-        response = requests.post(url, headers=headers, data=payload)
-        response.raise_for_status()
-        results = response.json().get('organic', [])
+        # 두 번의 API 호출로 영문/국문 결과 통합
+        res_en = requests.post(url, headers=headers, data=payload_en)
+        res_ko = requests.post(url, headers=headers, data=payload_ko)
+        
+        if res_en.status_code == 200:
+            results.extend(res_en.json().get('organic', []))
+        if res_ko.status_code == 200:
+            results.extend(res_ko.json().get('organic', []))
+            
     except Exception as e:
         print(f"❌ 검색 중 오류 발생: {e}")
         return []
+
+    # 경쟁사 리스트 텍스트 파일 로드
+    competitors_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "competitors.txt")
+    competitor_domains = []
+    if os.path.exists(competitors_file):
+        try:
+            with open(competitors_file, "r", encoding="utf-8") as f:
+                competitor_domains = [line.strip().lower() for line in f if line.strip() and not line.startswith("#")]
+        except Exception as e:
+            print(f"⚠️ 경쟁사 리스트(competitors.txt)를 읽지 못했습니다: {e}")
 
     # [강화된 블랙리스트] 기술 분석이 불가능하거나 부적합한 소스 사전 필터링
     EXCLUDED_DOMAINS = [
@@ -82,6 +127,8 @@ def deep_search_and_filter(keyword, num_results=100):
         "amazon.com", "ebay.com", "coupang.com", # 커머스
         "play.google.com", "apps.apple.com" # 앱스토어
     ]
+    # 동적으로 로드한 경쟁사 도메인 추가
+    EXCLUDED_DOMAINS.extend(competitor_domains)
 
     EXCLUDED_EXTENSIONS = [
         ".pdf", ".zip", ".doc", ".docx", ".xls", ".xlsx", 
@@ -112,6 +159,22 @@ def deep_search_and_filter(keyword, num_results=100):
     if ext_count > 0:
         print(f"📎 실행/문서 파일(PDF, ZIP 등) {ext_count}개를 필터링했습니다.")
     
+    # 🌟 도메인 권위(Authority) 가중치 정렬 (Action Plan 2)
+    # 공식 벤더사나 권위 있는 신뢰 도메인을 식별하여 리스트 최상단으로 끌어올립니다.
+    AUTHORITY_DOMAINS = ["nvidia.com", "aws.amazon.com", "microsoft.com", "ibm.com", "oracle.com", "cisco.com", "cloudflare.com"]
+    AUTHORITY_TLDS = [".go.kr", ".ac.kr", ".edu", ".gov", ".mil"]
+    
+    def score_domain(r):
+        link = r.get('link', '').lower()
+        # 점수가 높을수록 최상단으로 정렬
+        score = 0
+        if any(d in link for d in AUTHORITY_DOMAINS):
+            score += 100
+        if any(link.endswith(t) or (t + "/") in link for t in AUTHORITY_TLDS):
+            score += 50
+        return score
+        
+    filtered_results.sort(key=score_domain, reverse=True)
     results = filtered_results
 
     if not results:

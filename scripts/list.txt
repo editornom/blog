@@ -41,3 +41,4 @@ https://techcrunch.com/category/artificial-intelligence/feed/
 https://www.kdnuggets.com/feed
 https://feed.infoq.com/
 https://a16z.com/category/ai/feed/
+https://www.artificialintelligence-news.com/feed/

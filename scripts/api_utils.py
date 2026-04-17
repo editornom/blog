@@ -57,3 +57,40 @@ gemini_retry = retry(
     before_sleep=before_sleep_log(logger, logging.WARNING),
     reraise=True
 )
+
+class TokenTracker:
+    """
+    모든 API 파이프라인에서 측정된 토큰 사용량과 이미지 생성 횟수를 합산하여
+    대략적인 총 비용(USD)을 추적하는 글로벌 싱글톤 클래스입니다.
+    """
+    def __init__(self):
+        self.prompt_tokens = 0
+        self.candidate_tokens = 0
+        self.image_count = 0
+        
+    def add_text_usage(self, response):
+        if hasattr(response, 'usage_metadata') and response.usage_metadata:
+            self.prompt_tokens += getattr(response.usage_metadata, 'prompt_token_count', 0)
+            self.candidate_tokens += getattr(response.usage_metadata, 'candidates_token_count', 0)
+            
+    def add_image_usage(self):
+        self.image_count += 1
+        
+    def get_summary_and_cost(self):
+        # Gemini 1.5 Flash Approximate Pricing (Tier 1 rough estimates)
+        # Prompt: $0.075 / 1M tokens
+        # Candidates: $0.30 / 1M tokens
+        # Imagen 3: ~$0.03 per image
+        cost = (self.prompt_tokens / 1_000_000) * 0.075
+        cost += (self.candidate_tokens / 1_000_000) * 0.30
+        cost += self.image_count * 0.03
+        
+        return {
+            "prompt": self.prompt_tokens,
+            "candidate": self.candidate_tokens,
+            "images": self.image_count,
+            "cost_usd": cost
+        }
+
+# 전역 트래커 인스턴스
+gemini_tracker = TokenTracker()

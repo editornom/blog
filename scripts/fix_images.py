@@ -3,6 +3,7 @@ import re
 import uuid
 import time
 from imagen_helper import generate_image
+from translator import translate_text
 
 def fix_images_in_latest_post():
     blog_dir = os.path.join("src", "data", "blog")
@@ -23,7 +24,8 @@ def fix_images_in_latest_post():
     
     for i, prompt in enumerate(placeholders):
         img_uuid = str(uuid.uuid4())[:8]
-        img_filename = f"post-img-{img_uuid}-{i}.png"
+        # 포맷 최적화: webp 적용
+        img_filename = f"post-img-{img_uuid}-{i}.webp"
         img_path = os.path.join("src", "assets", "images", img_filename)
         
         print(f"Generating AI image for: {prompt[:50]}...")
@@ -32,7 +34,12 @@ def fix_images_in_latest_post():
         # Note: Rate limiting is now handled internally by imagen_helper via TokenBucket.
         
         if generated_path:
-            md_img_link = f"![AI Generated Image](../../assets/images/{img_filename})"
+            # SEO Alt 태그 처리: 글 제목을 키워드로 활용
+            title_match = re.search(r'title:\s*"(.*?)"', content, re.IGNORECASE)
+            title = title_match.group(1) if title_match else "IT 트렌드"
+            translated_alt = translate_text(prompt, "ko")
+            
+            md_img_link = f"![{title} - {translated_alt}](../../assets/images/{img_filename})"
             content = content.replace(f"[이미지: {prompt}]", md_img_link)
             
             # Update ogImage if it's the first one

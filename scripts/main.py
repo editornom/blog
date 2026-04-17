@@ -17,6 +17,7 @@ from headline_crawler import generate_daily_headlines_file
 from trend_catcher import get_daily_topic_from_file, save_keyword_to_history
 from search_expert import deep_search_and_filter
 from faq_expert import generate_faq
+from api_utils import gemini_tracker
 
 
 load_dotenv()
@@ -56,6 +57,8 @@ def print_final_briefing(report):
     if report["draft"]["success"] is not None:
         if report["draft"]["success"]:
             lines.append(f"- 📑 원고 초안: ✅ 성공 ({report['draft']['path']})")
+            if report["draft"].get("warning"):
+                lines.append(f"  {report['draft']['warning']}")
             if report["detox"]["success"]:
                 lines.append(f"- ✨ 원고 검수: ✅ 완료 (디톡스 필터 적용)")
             else:
@@ -87,6 +90,17 @@ def print_final_briefing(report):
         lines.append("💡 실패한 번역이 있다면 API 부하일 가능성이 높습니다. 잠시 후 다시 시도해 보세요.")
     lines.append("="*40 + "\n")
 
+    # [NEW] 비용/토큰 메트릭 추적
+    metrics = gemini_tracker.get_summary_and_cost()
+    lines.append("\n" + "="*40)
+    lines.append("💰 이번 포스팅에 사용된 대략적인 API 비용 및 리소스")
+    lines.append("="*40)
+    lines.append(f"- 텍스트 프롬프트 송신: {metrics['prompt']:,} tokens")
+    lines.append(f"- 텍스트 생성 결과 수신: {metrics['candidate']:,} tokens")
+    lines.append(f"- 고해상도 AI 이미지 생성: {metrics['images']} 회")
+    lines.append(f"- 💵 총 사용 비용 (추정): 약 ${metrics['cost_usd']:.4f} USD")
+    lines.append("="*40 + "\n")
+
     # Output to Console
     final_output = "\n".join(lines)
     print(final_output)
@@ -111,7 +125,7 @@ def process_single_file(file_path, folder="posts", target_lang=None, include_faq
 
     report = {
         "crawl": {"success": None, "count": 0, "error": None},
-        "draft": {"success": None, "path": None},
+        "draft": {"success": None, "path": None, "warning": None},
         "detox": {"success": None, "error": None},
         "images": {"success": None, "requested": 0},
         "translations": {}
@@ -199,7 +213,7 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
     """
     report = {
         "crawl": {"success": False, "count": 0, "error": None},
-        "draft": {"success": False, "path": None},
+        "draft": {"success": False, "path": None, "warning": None},
         "detox": {"success": False, "error": None},
         "images": {"success": 0, "requested": 0},
         "translations": {}
@@ -262,11 +276,15 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
         "body": combined_body[:30000] # Limit to avoid token issues
     }
     
-    draft = generate_blog_post(crawled_summary, folder=folder, keyword=keyword)
+    draft, density_warning = generate_blog_post(crawled_summary, folder=folder, keyword=keyword)
     if not draft:
         print("Error: Failed to generate initial blog post.")
+        report["draft"]["error"] = "Failed to generate initial blog post."
         print_final_briefing(report)
         return
+    
+    if density_warning:
+        report["draft"]["warning"] = density_warning
     
     # 3.5 Stage 3.5: Manuscript Inspection (Detox)
     print(f"\n=== Stage 3.5: Manuscript Inspection (Detox) ===")
@@ -318,7 +336,8 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
 
     for i, prompt in enumerate(image_placeholders):
         img_uuid = str(uuid.uuid4())[:8]
-        img_filename = f"{img_uuid}-{i}.png"
+        # 포맷 최적화: png 대신 webp 사용
+        img_filename = f"{img_uuid}-{i}.webp"
         img_path = os.path.join(source_img_dir, img_filename)
         
         print(f"Generating AI image for: {prompt[:50]}...")
@@ -330,9 +349,10 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
             report["images"]["success"] += 1
             rel_path = f"../../../../../source/{folder}/{source_folder_name}/{img_filename}"
             
-            # Translate English prompt to Korean for Alt Tag
+            # Alt 태그 SEO 초적화: 핵심 키워드 조합
             translated_alt = translate_text(prompt, "ko")
-            md_img_link = f"![{translated_alt}]({rel_path})"
+            alt_keyword = keyword if keyword else "IT 트렌드"
+            md_img_link = f"![{alt_keyword} - {translated_alt}]({rel_path})"
             
             draft = draft.replace(f"[이미지: {prompt}]", md_img_link)
             
@@ -489,25 +509,51 @@ if __name__ == "__main__":
         # 🔥 완전 자동 모드 (파일 생성 -> 분석 -> 포스팅)
         print("\n🚀 [AUTO MODE] No arguments provided. Starting full automation pipeline...")
         
-        # 1. 크롤러 실행: list.txt 읽어서 20260410.txt 생성
+        # 1. 크롤러 실행: list.txt 읽어서 YYYYMMDD.txt 생성
         daily_file = generate_daily_headlines_file("list.txt")
         
+        auto_keyword = None
+        
         if daily_file:
-            # 2. 트렌드 캐처 실행: 수집된 파일 읽어서 키워드 도출 및 URL 파일 생성
+            # 2. 트렌드 캐처 실행: 수집된 파일 읽어서 키워드 도출
             auto_keyword = get_daily_topic_from_file(daily_file)
             
-            if auto_keyword:
-                print(f"✨ Auto-selected Keyword: {auto_keyword}")
-                
-                # 🚀 [New Pipeline] DeepSearch & Filter
-                top_urls = deep_search_and_filter(auto_keyword, num_results=100)
-                
-                if top_urls:
-                    # 3. 선별된 고품질 URL들을 사용하여 포스팅 작성
-                    process_urls(urls=top_urls, keyword=auto_keyword, folder=folder, include_faq=include_faq)
-                else:
-                    print("❌ 검색 결과에서 유효한 소스를 찾지 못했습니다.")
+        if not auto_keyword:
+            # 헤드라인 수집이 아예 안 됐거나, 키워드 추출 중 오류 발생 시 에버그린 fallback
+            print("⚠️ 헤드라인 기반 키워드 도출에 실패(또는 기사 없음). 즉시 Evergreen 키워드(Fallback) 모드로 전환합니다.")
+            from trend_catcher import get_evergreen_keywords, save_keyword_to_history
+            import random
+            
+            evergreen_pool = get_evergreen_keywords()
+            if evergreen_pool:
+                auto_keyword = random.choice(evergreen_pool)
+                print(f"🔄 대비책(Fallback) 가동: 상시 키워드 풀에서 '{auto_keyword}'(을)를 선택합니다.")
+                save_keyword_to_history(auto_keyword, "Fallback_Auto_Pipeline")
             else:
-                print("❌ AI 키워드 선정에 실패했습니다.")
+                print("❌ 상시 키워드 목록도 비어있어 파이프라인을 중단합니다.")
+                sys.exit(1)
+                
+        print(f"✨ Auto-selected Keyword: {auto_keyword}")
+        
+        # 🚀 [New Pipeline] DeepSearch & Filter
+        top_urls = deep_search_and_filter(auto_keyword, num_results=100)
+        
+        # 검색 실패 시 한 번 더 에버그린 풀에서 다른 단어로 시도
+        if not top_urls:
+            print(f"⚠️ '{auto_keyword}'에 대한 검색 결과가 빈약합니다. Evergreen 키워드로 2차 재시도합니다.")
+            from trend_catcher import get_evergreen_keywords, save_keyword_to_history
+            import random
+            evergreen_pool = get_evergreen_keywords()
+            if auto_keyword in evergreen_pool:
+                evergreen_pool.remove(auto_keyword)
+            if evergreen_pool:
+                auto_keyword = random.choice(evergreen_pool)
+                print(f"🔄 2차 대비책(Fallback) 가동: '{auto_keyword}'(을)를 선택합니다.")
+                save_keyword_to_history(auto_keyword, "Fallback_DeepSearchFail")
+                top_urls = deep_search_and_filter(auto_keyword, num_results=100)
+
+        if top_urls:
+            # 3. 선별된 고품질 URL들을 사용하여 포스팅 작성
+            process_urls(urls=top_urls, keyword=auto_keyword, folder=folder, include_faq=include_faq)
         else:
-            print("❌ 헤드라인 수집에 실패하여 파이프라인을 중단합니다.")
+            print("❌ 검색 결과에서 유효한 소스를 끝내 찾지 못하여 파이프라인을 중단합니다.")

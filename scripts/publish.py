@@ -7,11 +7,19 @@ def push_to_github(commit_message):
     """
     try:
         print(f"Running git operations for: {commit_message}")
-        # 특정 디렉토리만 스테이징 (보안 및 의도하지 않은 파일 방지)
+        
+        # 1. 원격 저장소 동기화 (Git 충돌 방지)
+        print("Pulling latest changes with rebase...")
+        subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=False)
+        
+        # 2. 특정 디렉토리 스테이징 및 커밋
         subprocess.run(["git", "add", "src/data/blog/", "src/assets/images/", "source/"], check=True)
         subprocess.run(["git", "commit", "-m", commit_message], check=True)
+        
+        # 3. 푸시
         subprocess.run(["git", "push", "origin", "main"], check=True)
         print("Successfully pushed to GitHub!")
+        
         return True
     except subprocess.CalledProcessError as e:
         print(f"Git Error: {e}")

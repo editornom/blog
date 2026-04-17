@@ -35,11 +35,12 @@ def translate_post(korean_markdown, target_lang):
 
 ### 번역 규칙:
 1. **Frontmatter 유지**: YAML frontmatter(--- 사이의 영역)의 구조는 그대로 유지하되, title과 description만 번역하십시오.
-2. **slug 유지**: slug 값은 절대 변경하지 마십시오.
+2. **Slug 현지화 (SEO 최적화)**: slug 값은 기존 영어 slug를 복사하지 마세요. 번역된 {lang_name} 원문에서의 핵심 키워드를 기반으로 해당 국가의 SEO에 가장 유리한 형태의 영문 단어 조합(소문자와 하이픈만 사용, 알파벳 표기 또는 직관적 의미역)으로 완전히 새롭게 창작하여 부여하십시오.
 3. **이미지 경로 유지**: 이미지 경로(../../../../assets/images/...)는 절대 변경하지 마십시오.
 4. **마크다운 문법 유지**: 헤더(#, ##, ###), 볼드(**), 리스트(-), 인용(>), 코드블록(```) 등 마크다운 문법을 그대로 유지하십시오.
 5. **자연스러운 번역**: 직역이 아닌, {lang_name} 원어민이 읽었을 때 자연스럽고 전문적인 기술 칼럼처럼 느껴지도록 의역하십시오.
-6. **기술 용어**: 프로토콜명, 기술 약어 등은 원문 그대로 사용하십시오. (예: VPN, UTM, API, SSL 등)
+6. **고유명사 보호 (Glossary Enforcement)**: 다음 목록의 브랜드명과 IT 솔루션 전문 용어들은 엉뚱한 현지어로 직역하지 말고 반드시 영문 스펠링을 그대로 유지하거나 업계 표준 표기를 가장 우선시하십시오.
+   - [보호 사전]: Haionnet(하이온넷), Editornom, VPN, UTM, API, SSL, B2B, AI, LLM, RAG, NVIDIA, CDN, SD-WAN, Playwright, Cloud, On-Premise, Node, React, Next.js
 7. **이미지 알트태그 번역**: `![alt text](path)` 형식에서 `alt text` 부분을 대상 언어로 자연스럽게 번역하십시오.
 
 ### 원본 한국어 원고:
@@ -153,10 +154,19 @@ def translate_and_save(korean_draft, slug, folder, target_langs=None):
                     lines = lines[:-1]
                 translated = "\n".join(lines).strip()
             
+            # 신규 생성된 다국어 맞춤형 Slug 추출 (정규식 활용)
+            import re
+            new_slug_match = re.search(r'slug:\s*["\'](.*?)["\']', translated)
+            target_slug = new_slug_match.group(1).strip() if new_slug_match else slug
+            
+            # 단, slug가 비정상적으로 한글/특수문자가 들어오거나 너무 길면 원본 slug를 폴백으로 사용
+            if not re.match(r'^[a-z0-9\-]+$', target_slug) or len(target_slug) < 3:
+                target_slug = slug
+            
             # Save to the correct language folder
             target_dir = os.path.join("src", "data", "blog", lang_code, folder)
             os.makedirs(target_dir, exist_ok=True)
-            target_path = os.path.join(target_dir, f"{slug}.md")
+            target_path = os.path.join(target_dir, f"{target_slug}.md")
             
             with open(target_path, "w", encoding="utf-8") as f:
                 f.write(translated)

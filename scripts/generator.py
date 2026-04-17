@@ -4,30 +4,33 @@ from api_utils import gemini_retry, gemini_limiter
 import os
 import datetime
 from dotenv import load_dotenv
+import json
+from pydantic import BaseModel, Field
 
 load_dotenv()
 
+class BlogPostSchema(BaseModel):
+    title: str = Field(description="최적화된 제목")
+    slug: str = Field(description="seo-friendly-english-slug")
+    tags: list[str] = Field(description="태그 리스트 (3~5개)")
+    description: str = Field(description="메타 설명 (1~2줄)")
+    content: str = Field(description="마크다운 형식의 본문 내용")
+
 def generate_blog_post(crawled_content, folder="posts", additional_instructions="", keyword=""):
     """
-    Generates a blog post in Markdown format using the Gemini API.
-    
-    Args:
-        crawled_content: Dict with 'title', 'url', 'body' from crawler.
-        folder: 'haionnet' for SEO/AEO/GEO mode, 'posts' for editornom column mode.
-        additional_instructions: Extra instructions to append to the prompt.
-        keyword: The primary target keyword to focus on.
+    Generates a blog post using the Gemini API with Structured Outputs (JSON) and Keyword Density validation.
+    Returns:
+        tuple: (markdown_draft, density_warning_message)
     """
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
         print("Error: GEMINI_API_KEY not found in .env")
-        return None
+        return None, None
 
     client = genai.Client(api_key=api_key)
 
-    # Use keyword as primary topic if provided
     primary_topic = keyword if keyword else crawled_content['title']
 
-    # Common data block
     data_block = f"""
 ### 🎯 핵심 타겟 키워드:
 {primary_topic}
@@ -38,43 +41,18 @@ def generate_blog_post(crawled_content, folder="posts", additional_instructions=
 {crawled_content['body']}
 """
 
-    # Calculate times for comparison and immediate visibility
-    # UTC Time
     utc_now = datetime.datetime.now(datetime.timezone.utc)
-    # Seoul Time (UTC+9)
     seoul_tz = datetime.timezone(datetime.timedelta(hours=9))
     seoul_now = datetime.datetime.now(seoul_tz)
-    
-    # Set pubDatetime to 10 minutes ago in KST for immediate visibility
     pub_time = seoul_now - datetime.timedelta(minutes=10)
     
-    # Print comparison for the user
     print(f"--- Time Synchronization ---")
     print(f"Current UTC:   {utc_now.strftime('%Y-%m-%d %H:%M:%S')} Z")
     print(f"Current Seoul: {seoul_now.strftime('%Y-%m-%d %H:%M:%S')} +09:00")
     print(f"Publication:   {pub_time.strftime('%Y-%m-%d %H:%M:%S')} +09:00 (Buffered)")
     print(f"----------------------------")
 
-    # Common frontmatter template
-    frontmatter_block = f"""
-### 📂 출력 형식 (Markdown with Frontmatter):
----
-title: "최적화된 제목"
-author: "Antigravity"
-pubDatetime: {pub_time.strftime("%Y-%m-%dT%H:%M:%S+09:00")}
-slug: "seo-friendly-english-slug"
-featured: false
-draft: false
-tags: ["태그1", "태그2", "태그3"]
-ogImage: "../../../../assets/images/placeholder.png"
-description: "메타 설명 (1~2줄)"
----
-
-(여기에 본문 작성)
-"""
-
     if folder == "glossary":
-        # ========== GLOSSARY MODE: Wiki/Terminology Expert ==========
         prompt = f"""
 # ROLE
 당신은 IT/마케팅/웹 기술 분야의 '수석 백과사전 편집자(Wiki Contributor)'이자 테크니컬 라이터입니다. 당신의 목표는 독자에게 최고 수준의 객관성과 구조적 완결성을 갖춘 위키 문서(Glossary)를 마크다운 형식으로 제공하는 것입니다.
@@ -82,7 +60,7 @@ description: "메타 설명 (1~2줄)"
 {data_block}
 
 # OUTPUT STRUCTURE (엄격 준수)
-모든 응답은 반드시 아래 6단계를 포함해야 합니다.
+본문(content)은 반드시 아래 6단계를 포함해야 합니다.
 1. 위키 요약표: 영문명, 한글명, 약어, 관련 기술을 마크다운 표(Table)로 작성.
 2. 개요 (TL;DR): 150자 내외의 명확하고 건조한 백과사전식 정의.
 3. 등장 배경 (Background): 이 기술/용어가 왜 필요해졌고, 어떤 문제를 해결하기 위해 등장했는지 서술.
@@ -93,21 +71,15 @@ description: "메타 설명 (1~2줄)"
 # TONE & STYLE
 - '위키백과'처럼 극도로 객관적이고 건조한 문체(~입니다, ~합니다 체 유지)를 사용하십시오.
 - 감정적 표현이나 불필요한 수식어를 완전히 배제하십시오.
-- Astro 블로그의 Markdown Frontmatter 형식을 완벽히 준수하십시오.
 
 ### 📝 세부 작성 규칙:
-- **이미지 삽입**: 본문 내에는 이미지를 넣지 마십시오. 오직 **본문 시작 직전(위키 요약표 바로 위)**에 해당 용어를 상징하는 **[이미지: 여기에 들어갈 이미지의 간략하고 명확한 영문 설명]** 형식을 딱 한 번만 삽입하십시오.
-- **태그 자동화**: 반드시 Frontmatter의 tags 항목에 **"glossary"** 태그를 무조건 포함하고, 그 외 관련 핵심 키워드 2~3개를 추가하십시오.
-- **⚠️ Frontmatter 주의**: 아래 제공된 **`pubDatetime` 값은 시스템에서 생성한 정확한 시간이므로 절대 수정하거나 마음대로 바꾸지 마십시오.** `author`, `featured` 값도 그대로 유지하십시오.
-
-### 📂 출력 형식 (Markdown with Frontmatter - EXACT TEMPLATE):
-{frontmatter_block}
+- **이미지 삽입**: 본문(content) 내에는 이미지를 넣지 마십시오. 오직 **본문 시작 직전(위키 요약표 바로 위)**에 해당 용어를 상징하는 **[이미지: 여기에 들어갈 이미지의 간략하고 명확한 영문 설명]** 형식을 딱 한 번만 삽입하십시오.
+- **태그 자동화**: 반드시 tags 항목에 **"glossary"** 태그를 무조건 포함하고, 그 외 관련 핵심 키워드 2~3개를 추가하십시오.
 
 ### ⚠️ 주의사항:
-당신의 내부 시스템에서 평가 과정이나 메타 코멘트를 절대 노출하지 마십시오. 오직 마크다운(Markdown) 문법으로 완성된 최종 원고 텍스트만을 출력하십시오.
+당신의 내부 시스템에서 평가 과정이나 메타 코멘트를 절대 노출하지 마십시오. 요구된 JSON 스키마 필드만 엄격히 반환하십시오.
 """
     elif folder == "haionnet":
-        # ========== HAIONNET MODE: SEO/AEO/GEO Expert ==========
         prompt = f"""
 당신은 B2B IT 서비스 및 네트워크 솔루션을 다루는 최고 수준의 테크니컬 SEO 전문가이자 전문 카피라이터입니다.
 아래의 정보를 바탕으로 검색 엔진(SEO)과 AI 추천(AEO/GEO)에서 상위 노출될 수 있는 고품질 기업 블로그 원고를 작성하십시오.
@@ -115,26 +87,21 @@ description: "메타 설명 (1~2줄)"
 {data_block}
 
 ### 🎯 작성 가이드라인 (최우선 순위):
-1. **주제 집중**: 이 포스팅의 절대적인 주인공은 **'{primary_topic}'**입니다. 수집된 본문 데이터에 다른 장비나 서비스(예: HGX, GPU 하드웨어 등) 언급이 많더라도, 그것은 '{primary_topic}' 서비스를 설명하기 위한 예시나 수단일 뿐입니다. 절대로 주제가 하드웨어 스펙으로 흐르지 않게 하십시오.
-2. 구조화 (SEO/AEO): Title & H1 최적화, 명확한 H2/H3 계층 구조를 유지하십시오.
-3. 가독성 및 형식: 긴 글은 피하고, 핵심 정보를 Direct Answer(40~50단어 요약), List(글머리 기호), Table(표) 포맷으로 가공하여 AI가 요약하기 좋게 만드십시오.
-4. 톤앤매너: 객관적 팩트에 기반하되, IT 전문가가 고객에게 1:1 컨설팅을 해주는 듯한 신뢰감 있고 부드러운 경어체(~습니다, ~해 보세요, ~해 드립니다)를 사용하십시오. 과장된 홍보 문구는 지양합니다.
+1. **주제 집중**: 이 포스팅의 절대적인 주인공은 **'{primary_topic}'**입니다. 수집된 본문 데이터에 다른 장비나 서비스 언급이 많더라도, 그것은 '{primary_topic}' 서비스를 설명하기 위한 수단일 뿐입니다.
+2. 구조화 (SEO/AEO): 명확한 H2/H3 계층 구조를 유지하십시오.
+3. 가독성 및 형식: 긴 글은 피하고, 핵심 정보를 Direct Answer, List, Table 포맷으로 가공하십시오.
+4. 톤앤매너: IT 전문가가 고객에게 1:1 컨설팅을 해주는 듯한 신뢰감 있고 부드러운 경어체를 사용하십시오.
 5. E-E-A-T 강화: 문제 제기 -> 원인 분석 -> 기술적 해결책의 논리적 인과관계를 명확히 하십시오.
 
 ### 📝 세부 작성 원칙:
-- 이미지 삽입: **모든 소제목(H2, H3) 바로 직전**과 본문 시작 전(썸네일)에 해당 단락의 내용을 묘사하는 **[이미지: 여기에 들어갈 이미지의 간략하고 명확한 영문 설명]** 형식을 반드시 삽입하십시오. (설명에 기업명/브랜드명 절대 포함 금지)
-- 소제목 규칙: '결론:', '마치며:' 같은 불필요한 수식어를 빼고, "도입 효과 및 향후 전망"과 같이 구체적인 키워드를 담은 소제목을 사용하십시오.
-- 태그 자동화: 본문 내용에 맞는 핵심 키워드 태그를 3~5개 추출하여 **반드시 Frontmatter의 tags 항목에만 기입**하십시오. 본문 하단에 태그를 나열하지 마십시오.
-- **⚠️ Frontmatter 주의**: 아래 제공된 **`pubDatetime` 값은 절대 수정하거나 마음대로 바꾸지 마십시오.** `author`, `featured` 값도 그대로 유지하십시오.
-
-### 📂 출력 형식 (Markdown with Frontmatter - EXACT TEMPLATE):
-{frontmatter_block}
+- 이미지 삽입: **모든 소제목(H2, H3) 바로 직전**과 본문 시작 전(썸네일)에 해당 단락의 내용을 묘사하는 **[이미지: 여기에 들어갈 이미지의 간략하고 명확한 영문 설명]** 형식을 반드시 삽입하십시오. (기업명 절대 포함 금지)
+- 소제목 규칙: '결론:' 같은 불필요한 수식어를 빼고 구체적인 키워드를 담은 소제목 사용.
+- 태그 자동화: 본문 내용에 맞는 핵심 키워드 태그를 3~5개 추출하여 tags 항목에만 기입하십시오. 본문에 태그 나열 절대 금지.
 
 ### ⚠️ 주의사항:
-당신의 내부 시스템에서 평가 과정이나 메타 코멘트를 절대 노출하지 마십시오. 오직 마크다운(Markdown) 문법으로 완성된 최종 원고 텍스트만을 출력하십시오.
+요구된 JSON 스키마 필드만 엄격히 반환하십시오.
 """
     else:
-        # ========== POSTS MODE: editornom Column Persona ==========
         prompt = f"""
 # 페르소나 (Persona)
 당신은 국내외 IT 트렌드를 담백하고 객관적인 문체로 분석하는 10년 차 IT 전문 칼럼니스트 'editornom'입니다.
@@ -143,71 +110,123 @@ description: "메타 설명 (1~2줄)"
 {data_block}
 
 # 핵심 작성 원칙 (Writing Principles)
-1. 말투: "~입니다", "~습니다" 같은 문어체를 기본으로 하되, 지적이고 친근한 '해요체'(~해요, ~거든요, ~이죠)를 자연스럽게 섞어 사용하세요.
+1. 말투: "~입니다", "~습니다" 문어체를 기본으로 하되, 지적이고 친근한 '해요체'를 섞어 사용하세요.
 2. 금지어 및 금지 패턴 (Negative Prompt): 
-   - "비평가의 시선으로", "제언하건대", "해부해 보겠습니다" 등 거창하고 작위적인 표현 절대 금지.
-   - "적기 조례(Red Flag Act)", "양날의 검" 같은 진부한 비유나 클리셰 사용 절대 금지.
-   - [Deep Dive], [The Mechanism] 같은 불필요한 영문 소제목 병기 금지. (자연스러운 한국어 소제목만 사용할 것)
-3. 고유명사 강제: 외국 IT 기업이나 서비스명 표기 시 오류를 주의하세요. (예: 'Anthropic'은 반드시 '앤스로픽'으로 표기할 것)
-4. 분량 및 깊이: 공백 제외 2,500자 이상의 심층 분석 글로 작성하며, 일반인이 모르는 기술적 디테일(프로토콜, 알고리즘 이름 등)을 최소 2개 이상 자연스럽게 녹여내세요.
+   - 거창하고 작위적인 표현 절대 금지.
+   - [Deep Dive], [The Mechanism] 같은 불필요한 영문 소제목 병기 금지.
+3. 고유명사 강제: 외국 IT 기업이나 서비스명 표기 시 오류를 주의하세요.
+4. 분량 및 깊이: 공백 제외 2,500자 이상의 심층 분석 글로 작성하며, 일반인이 모르는 기술적 디테일을 최소 2개 이상 자연스럽게 녹여내세요.
 
 # 칼럼 구조 (Logical Structure)
 ## [작성 지침 - 절대 준수]
 1. 모든 포스팅의 중심 주제는 반드시 **"{primary_topic}"**이어야 합니다. 
-2. 제공된 소서 자료에 장비(GPU, HGX 등) 정보가 많더라도, 이를 주인공으로 삼지 마세요. 장비는 {primary_topic} 서비스를 설명하기 위한 예시일 뿐입니다.
+2. 제공된 소스 자료에 하드웨어 장비 정보가 많더라도, 이를 주인공으로 삼지 마세요.
 3. 문단의 가독성을 위해 적절한 소제목(H2, H3)과 불릿 포인트를 활용하세요.
-4. 전문적인 B2B 엔지니어급 톤앤매너를 유지하되, 하이온넷 서비스를 자연스럽게 강조하세요.
-5. 주제를 벗어난 사담이나 키워드와 관련 없는 배경 지식 나열은 금지합니다.
-6. 서론: 이 이슈가 왜 발생했는지, 핵심 화두가 무엇인지 간결하게 짚어주세요.
-7. 본문: 현상의 기술적 원리와 구조적 배경을 심층 분석하세요.
-8. 전망: 이 사건이 향후 IT 생태계(보안, 비즈니스 등)에 미칠 파급력을 예측하세요.
-9. 결론: 실무적으로 어떻게 대응해야 하는지 현실적인 조언으로 마무리하세요.
+4. 전문적인 톤앤매너를 유지하되, 하이온넷 서비스를 자연스럽게 강조하세요.
+5. 서론 -> 본문 심층 분석 -> 전망 -> 결론 구조.
 
 # GEO & E-E-A-T 강화 요소
-- 인용구: 본문 중간에 메시지를 돋보이게 하는 인용구(Blockquote)를 1~2개 배치하세요.
-- 데이터 시각화 지시: **모든 소제목(H2, H3) 바로 직전**에 본문 내용과 어울리는 시스템 구조도나 차트, 혹은 에디토리얼 스타일의 이미지를 위한 프롬프트를 반드시 삽입하세요. (형식: **[이미지: 영어로 된 상세한 Editorial Style 생성 프롬프트]** / 절대 특정 기업명이나 브랜드 로고를 묘사하라고 지시하지 말 것)
-- 태그 자동화: 내용에 맞는 핵심 태그 3개 이상을 추출하여 **오직 Frontmatter의 tags 항목에만 포함**하십시오. 
-- **⚠️ Frontmatter 주의**: 아래 제공된 **`pubDatetime` 값은 절대 수정하거나 마음대로 바꾸지 마십시오.** `author`, `featured` 값도 그대로 유지하십시오.
-
-### 📁 출력 형식 (Markdown with Frontmatter - EXACT TEMPLATE):
-{frontmatter_block}
+- 인용구: 중심 메시지를 위한 인용구(Blockquote) 1~2개 배치.
+- 데이터 시각화 지시: **모든 소제목(H2, H3) 바로 직전**에 에디토리얼 이미지 프롬프트를 삽입하세요. (형식: **[이미지: 영어로 된 상세한 Editorial Style 생성 프롬프트]**)
+- 태그 자동화: 핵심 태그 3개 이상을 추출하여 tags 항목에만 기입.
 
 ### ⚠️ 주의사항:
-오직 마크다운(Markdown)으로 완성된 최종 원고만을 출력해야 합니다. 내부 평가 과정이나 부가 설명은 일절 출력하지 마십시오.
+오직 JSON 스키마에 정의된 데이터만 출력해야 합니다.
 """
 
     if additional_instructions:
         prompt += f"\n### 추가 지시사항:\n{additional_instructions}\n"
 
-    @gemini_retry
-    def call_api():
-        gemini_limiter.consume()
-        return client.models.generate_content(
-            model='models/gemini-3-flash-preview',
-            contents=prompt
-        )
+    keyword_lower = primary_topic.lower()
+    max_attempts = 3 # Original attempt + 2 retries
+    density_warning = None
+    final_draft_data = None
 
-    try:
-        response = call_api()
-        return response.text
-    except Exception as e:
-        print(f"❌ Gemini API 최종 실패: {e}")
-        return None
+    for attempt in range(max_attempts):
+        @gemini_retry
+        def call_api(current_prompt):
+            gemini_limiter.consume()
+            return client.models.generate_content(
+                model='models/gemini-3-flash-preview',
+                contents=current_prompt,
+                config={
+                    'response_mime_type': 'application/json',
+                    'response_schema': BlogPostSchema
+                }
+            )
+
+        try:
+            print(f"  [Generator] API 호출 중... (시도 {attempt+1}/{max_attempts})")
+            response = call_api(prompt)
+            data = json.loads(response.text)
+            
+            content_text = data.get("content", "")
+            
+            # 밀도 검증
+            words = content_text.split()
+            word_count = len(words)
+            if word_count > 0:
+                keyword_count = content_text.lower().count(keyword_lower)
+                keyword_word_len = len(keyword_lower.split())
+                actual_density = (keyword_count * keyword_word_len) / word_count
+            else:
+                actual_density = 0
+
+            target_density = 0.01 # 1%
+            if actual_density >= target_density:
+                print(f"  ✅ 키워드 밀도 충족: {actual_density*100:.2f}%")
+                final_draft_data = data
+                density_warning = None # Valid
+                break
+            else:
+                warning_msg = f"⚠️ 키워드 밀도 1% 미달 (실제 밀도: {actual_density*100:.2f}%)"
+                print(f"  {warning_msg}")
+                if attempt < max_attempts - 1:
+                    prompt += f"\n\n[SYSTEM Feedback] 이전 생성된 원고에서 타겟 키워드('{primary_topic}')의 사용 빈도가 너무 적습니다. 문맥을 해치지 않는 선에서 자연스럽게 키워드를 더 배치하여 밀도를 높여주세요 (목표 1%)."
+                final_draft_data = data
+                density_warning = warning_msg
+
+        except Exception as e:
+            print(f"❌ Gemini API 오류: {e}")
+            if attempt == max_attempts - 1:
+                return None, None
+
+    if final_draft_data:
+        # Markdown 조립
+        tags_str = json.dumps(final_draft_data.get('tags', []), ensure_ascii=False)
+        markdown = f"""---
+title: "{final_draft_data.get('title', '').replace('"', "'")}"
+author: "Antigravity"
+pubDatetime: {pub_time.strftime("%Y-%m-%dT%H:%M:%S+09:00")}
+slug: "{final_draft_data.get('slug', 'auto-slug')}"
+featured: false
+draft: false
+tags: {tags_str}
+ogImage: "../../../../assets/images/placeholder.png"
+description: "{final_draft_data.get('description', '').replace('"', "'")}"
+---
+
+{final_draft_data.get('content', '')}
+"""
+        return markdown, density_warning
+    
+    return None, None
 
 if __name__ == "__main__":
-    # Test
     dummy_content = {
         "title": "Astra v5 Released",
         "url": "https://astro.build/blog/v5-released/",
         "body": "Astra v5 is here with many new features and performance improvements. It includes new rendering modes and better SEO support."
     }
     
-    # 수정 완료: folder와 additional_instructions 파라미터 명시
-    post = generate_blog_post(
+    post, warning = generate_blog_post(
         crawled_content=dummy_content, 
         folder="posts", 
         additional_instructions="Focus on performance improvements."
     )
     
     if post:
+        print("=== GENERATED DRAFT ===")
         print(post)
+        if warning:
+            print("\nWARNING: " + warning)

@@ -1,6 +1,6 @@
 from google import genai
 from google.api_core import exceptions
-from api_utils import gemini_retry, gemini_limiter
+from api_utils import gemini_retry, gemini_limiter, gemini_tracker
 import os
 from dotenv import load_dotenv
 
@@ -21,6 +21,19 @@ def review_manuscript(draft, folder="posts"):
 
     client = genai.Client(api_key=api_key)
 
+    # 경쟁사 텍스트 파일 로드 (Negative Prompt 활용)
+    competitors_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "competitors.txt")
+    competitor_list_str = ""
+    if os.path.exists(competitors_file):
+        try:
+            with open(competitors_file, "r", encoding="utf-8") as f:
+                # 도메인 확장자 제거하고 브랜드명만 추출
+                competitors = [line.strip().split('.')[0] for line in f if line.strip() and not line.startswith("#")]
+                if competitors:
+                    competitor_list_str = f"자사 마케팅 목적에 위배되는 다음 경쟁사 브랜드({', '.join(competitors)})는 본문에서 철저히 배제 및 삭제하십시오."
+        except Exception:
+            pass
+
     # ---------------------------------------------------------
     # 📝 B2B IT 전문 에디터의 '범용 디톡스' 프롬프트
     # ---------------------------------------------------------
@@ -35,7 +48,8 @@ def review_manuscript(draft, folder="posts"):
 - 도입부: "급변하는 IT 환경 속에서", "단순한 ~을 넘어", "~에 대해 알아보겠습니다", "비평가의 시선으로 해부해보겠습니다" 등 상투적인 시작을 절대 금지합니다. 핵심 화두로 바로 진입하십시오.
 - 결론부: "결론적으로", "요약하자면", "마치며" 같은 기계적인 접속사나 소제목을 지우고, 실무적인 제언이나 자연스러운 마무리로 대체하십시오.
 - 과장된 수사: "완벽한", "전례 없는", "혁신적인", "처절한" 등 지나치게 감정적이거나 드라마틱한 형용사를 제거하고 담백한 팩트 위주로 서술하십시오.
-- 또한 (**가나다**) 와 같이 ai가 주로 사용하는 표현들은 작위적인 느낌이 들지 않도록 기호나 단어를 지우십시오.
+- {competitor_list_str}
+- (가), (나), (다) 또는 **가**, **나** 와 같이 AI가 주로 억지로 사용하는 문서 넘버링이나 기호들은 작위적인 느낌이 들지 않도록 자연스러운 불릿 포인트(-)나 문장으로 다듬으십시오.
 
 2. 작위적인 페르소나 및 화법 제거
 - 글쓴이를 스스로 "전문가로서", "필자는" 등으로 지칭하며 과도하게 권위를 부여하는 표현을 모두 삭제하십시오. 
@@ -71,7 +85,22 @@ def review_manuscript(draft, folder="posts"):
     try:
         print("Gemini가 원고를 검수(디톡스) 중입니다...")
         response = call_api()
-        return response.text
+        gemini_tracker.add_text_usage(response)
+        result_text = response.text
+        
+        # 🛡️ 파이썬 기반 마크다운 문법 안정성 검사 (Action Plan 적용)
+        # 1. 코드 블록(```) 닫기 누락 검사 및 자동 복구
+        if result_text.count("```") % 2 != 0:
+            print("  ⚠️ [Detox] 마크다운 코드 블록 닫기(```) 누락 감지. 파이썬 단에서 자동 추가합니다.")
+            result_text += "\n```\n"
+            
+        # 2. 표(Table) 문법 기본 점검 (헤더 구분선 |---| 누락 감지)
+        if "|" in result_text and "\n|---" not in result_text and "\n| ---" not in result_text.replace(" ", ""):
+            # 완벽한 복구는 어려우나 파이프라인에서 Warning 로그를 남겨 수정을 유도
+            if result_text.count("|") > 4: # 단순 파이프 사용이 아닌 표 형태일 가능성이 높을 때
+                print("  ⚠️ [Detox] 마크다운 표(Table) 헤더 구분선 구조 오류 가능성이 감지되었습니다. 원고 확인이 필요합니다.")
+                
+        return result_text
     except Exception as e:
         print(f"❌ 원고 검수 중 최종 실패: {e}")
         return None

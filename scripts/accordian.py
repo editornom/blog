@@ -1,5 +1,7 @@
 import os
 import re
+import html
+import json
 
 def load_faq_content(keyword):
     """
@@ -76,22 +78,50 @@ def load_faq_content(keyword):
 
 def append_faq_to_draft(draft, faqs):
     """
-    Appends FAQ accordion to the bottom of the draft using standard labels.
+    Appends FAQ accordion to the bottom of the draft and injects FAQPage JSON-LD schema.
     """
     if not faqs:
         return draft
     
+    # 1. 중복 삽입 방지: 기존 FAQ 블록 전체 제거 (정규식 개선)
+    # 기존 원고에 이미 생성된 FAQ 섹션이 있다면 완전히 도려낸 후 새 데이터로 덮어씁니다.
+    existing_faq_pattern = re.compile(r'\n*## ✅ 자주 묻는 질문 \(FAQ\).*$', re.DOTALL)
+    if existing_faq_pattern.search(draft):
+        draft = existing_faq_pattern.sub("", draft)
+        
     faq_md = "\n\n## ✅ 자주 묻는 질문 (FAQ)\n"
-    for faq in faqs:
-        # Standard format following 하이온넷 UTM post
-        faq_md += f"\n<details>\n  <summary>{faq['q']}</summary>\n  <div class=\"faq-content\">\n\n{faq['a']}\n\n  </div>\n</details>\n"
     
-    # Insert before hashtags if any, otherwise at the end
-    if " # " in draft:
-        parts = draft.rsplit(" # ", 1)
-        return parts[0] + faq_md + "\n # " + parts[1]
-    else:
-        return draft + faq_md
+    # SEO(GEO) 강화를 위한 JSON-LD 스키마 초기화
+    schema_dict = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": []
+    }
+    
+    for faq in faqs:
+        # 안전한 HTML 이스케이프 처리 (HTML 태그 꼬임으로 인한 레이아웃 붕괴 방지)
+        safe_q = html.escape(faq['q'])
+        safe_a = html.escape(faq['a'])
+        
+        # Accordion UI 마크다운 결합
+        faq_md += f"\n<details>\n  <summary>{safe_q}</summary>\n  <div class=\"faq-content\">\n\n{safe_a}\n\n  </div>\n</details>\n"
+        
+        # JSON-LD 스키마 데이터 조립 (json.dumps가 이스케이프를 완벽 처리하므로 원본 텍스트 사용)
+        schema_dict["mainEntity"].append({
+            "@type": "Question",
+            "name": faq['q'],
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq['a']
+            }
+        })
+    
+    # 생성된 JSON-LD 스크립트를 마크다운 최하단에 삽입
+    schema_script = f"\n<script type=\"application/ld+json\">\n{json.dumps(schema_dict, indent=2, ensure_ascii=False)}\n</script>\n"
+    faq_md += schema_script
+    
+    # 깔끔하게 원고 맨 아래에 붙이기
+    return draft.strip() + faq_md
 
 if __name__ == "__main__":
     # Test script for local verification
