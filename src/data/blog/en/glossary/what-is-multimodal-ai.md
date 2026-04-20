@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Multimodal AI: Bridging the Gap Between Text, Vision, and Sound"
 author: "editornom"
 pubDatetime: 2026-04-17T15:11:51+09:00
@@ -32,7 +32,7 @@ Early AI models were primarily 'Unimodal,' optimized for specific fields like Na
 
 - **Fusion & Alignment**: This involves converting different data forms, such as image vectors and text vectors, into a shared mathematical space to learn their associations. For example, it is the process of recognizing that the word 'apple' and a photograph of an apple refer to the same concept.
 - **Cross-modal Processing**: This feature allows the AI to produce an output in a different format from the input. Key examples include generating images based on text descriptions (Text-to-Image) or converting audio data into real-time text.
-- **Deep Contextual Understanding**: By combining linguistic information with non-verbal data?봲uch as image composition, a speaker's tone of voice, or movement in a video?봳he AI achieves a high-level understanding of context that goes far beyond simple keyword analysis.
+- **Deep Contextual Understanding**: By combining linguistic information with non-verbal data—such as image composition, a speaker's tone of voice, or movement in a video—the AI achieves a high-level understanding of context that goes far beyond simple keyword analysis.
 
 ### 5. Differences Between Unimodal and Multimodal AI
 
@@ -44,12 +44,12 @@ Early AI models were primarily 'Unimodal,' optimized for specific fields like Na
 - **Real-world Application**: In the medical field, Multimodal AI plays a critical role in providing accurate diagnoses and personalized treatments by comprehensively analyzing a patient's X-rays (images), past medical records (text), and real-time vital signs (data).
 - **Related Terms**: This technology is closely linked to Foundation Models, Embedding, and CLIP (Contrastive Language-Image Pre-training).
 
-## ??Frequently Asked Questions (FAQ)
+## ✅ Frequently Asked Questions (FAQ)
 
 <details>
   <summary>What is Multimodal AI?</summary>
   <div class="faq-content">
-It is an AI technology that learns and processes different data formats?봲uch as text, images, voice, and video?봲imultaneously. It understands information comprehensively, much like how humans perceive the world through their five senses.
+It is an AI technology that learns and processes different data formats—such as text, images, voice, and video—simultaneously. It understands information comprehensively, much like how humans perceive the world through their five senses.
   </div>
 </details>
 
@@ -115,5 +115,4 @@ A prime example is the medical sector. It is used to suggest more accurate diagn
 Technically related concepts include 'Foundation Models' (the basis for various models), 'Embedding' (the numerical representation of data), and 'CLIP' (a technology that learns by contrasting images and language).
   </div>
 </details>
-
 

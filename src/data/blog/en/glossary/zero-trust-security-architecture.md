@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Zero Trust Security Architecture: Principles and Implementation"
 author: "editornom"
 pubDatetime: 2026-04-17T15:15:46+09:00
@@ -28,7 +28,7 @@ Zero Trust is a security model built on the foundational premise of "Never Trust
 
 Historically, security systems operated on the "Castle-and-Moat" approach. This model assumes that as long as external intrusions are blocked, users already inside the network can be trusted. However, with the acceleration of Cloud migration and the normalization of remote and hybrid work, defining a physical network perimeter has become increasingly difficult.
 
-Traditional security frameworks have proven vulnerable to "Lateral Movement" attacks, where threats spread through insider errors or credential theft once the initial perimeter is breached. Consequently, this new approach?봶hich individually verifies every access attempt regardless of the user's location?봦as emerged as a vital practical alternative.
+Traditional security frameworks have proven vulnerable to "Lateral Movement" attacks, where threats spread through insider errors or credential theft once the initial perimeter is breached. Consequently, this new approach—which individually verifies every access attempt regardless of the user's location—has emerged as a vital practical alternative.
 
 ### 4. The Three Pillars of Zero Trust
 
@@ -54,7 +54,7 @@ To fully understand this architecture, the following key concepts are essential:
 - **ZTNA (Zero Trust Network Access):** A technology that hides internal networks from the public internet and opens secure tunnels only to specific applications for authenticated users.
 - **MFA (Multi-Factor Authentication):** A security mechanism that requires multiple forms of verification, significantly enhancing identity security beyond simple passwords.
 
-## ??Frequently Asked Questions (FAQ)
+## ✅ Frequently Asked Questions (FAQ)
 
 <details>
   <summary>What is Zero Trust security?</summary>
@@ -145,5 +145,4 @@ It refers to making authentication and authorization decisions by combining all 
 
   </div>
 </details>
-
 
