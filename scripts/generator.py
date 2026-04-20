@@ -177,6 +177,13 @@ def generate_blog_post(crawled_content, folder="posts", additional_instructions=
             else:
                 actual_density = 0
 
+            # 🌟 [GLOSSARY] 용어 사전은 밀도 체크를 생략하고 즉시 통과
+            if folder == "glossary":
+                print(f"  ✅ [Glossary Mode] 키워드 밀도 체크를 생략합니다.")
+                final_draft_data = data
+                density_warning = None
+                break
+
             min_density = 0.01 # 하한선 1%
             max_density = 0.03 # 상한선 3% (검색 엔진 어뷰징 방지 마지노선)
             

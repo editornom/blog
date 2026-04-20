@@ -14,8 +14,7 @@ from crawler import fetch_content
 if sys.platform == "win32":
     sys.stdout.reconfigure(encoding='utf-8')
 
-# .env 파일 로드 (있을 경우). override=False로 설정하여 시스템 환경 변수가 우선되도록 합니다.
-load_dotenv(override=False)
+load_dotenv()
 
 def probe_url(r, index):
     """
