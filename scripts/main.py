@@ -18,6 +18,7 @@ from trend_catcher import get_daily_topic_from_file, save_keyword_to_history
 from search_expert import deep_search_and_filter
 from faq_expert import generate_faq
 from api_utils import gemini_tracker
+from glossary_expert import pick_daily_glossary_keyword
 
 
 load_dotenv()
@@ -412,6 +413,7 @@ if __name__ == "__main__":
     parser.add_argument("--keyword", help="Target keyword")
     parser.add_argument("--folder", help="Target folder")
     parser.add_argument("--lang", help="Target language")
+    parser.add_argument("--auto-glossary", action="store_true", help="Automated glossary generation mode")
 
     args = parser.parse_args()
 
@@ -420,6 +422,18 @@ if __name__ == "__main__":
     folder = args.folder if args.folder else (args.p_folder if args.p_folder else "posts")
     target_lang = args.lang if args.lang else args.p_target_lang
     
+    # 🚀 [New] 자동 용어 사전 모드 지원
+    if args.auto_glossary:
+        print("\n📚 [AUTO GLOSSARY MODE] Selecting a new technical term...")
+        auto_term = pick_daily_glossary_keyword()
+        if auto_term:
+            input_arg = auto_term
+            folder = "glossary"
+            print(f"✨ Selected Keyword: {input_arg}")
+        else:
+            print("❌ Failed to select a glossary term. Aborting.")
+            sys.exit(1)
+
     # 🚀 무인 자동화 모드: 질문 없이 FAQ 생성 및 삽입을 기본값으로 설정
     include_faq = True
     print("\n✅ FAQ 자동 생성 모드가 활성화되었습니다.")

@@ -1,0 +1,7 @@
+google-genai
+python-dotenv
+tenacity
+requests
+beautifulsoup4
+pydantic
+playwright

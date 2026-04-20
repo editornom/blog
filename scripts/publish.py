@@ -8,6 +8,12 @@ def push_to_github(commit_message):
     try:
         print(f"Running git operations for: {commit_message}")
         
+        # 0. CI 환경(GitHub Actions) 대응: 사용자 정보 설정
+        if os.getenv("GITHUB_ACTIONS") == "true":
+            print("Configuring git user for GitHub Actions...")
+            subprocess.run(["git", "config", "user.name", "github-actions[bot]"], check=True)
+            subprocess.run(["git", "config", "user.email", "github-actions[bot]@users.noreply.github.com"], check=True)
+        
         # 1. 원격 저장소 동기화 (Git 충돌 방지)
         print("Pulling latest changes with rebase...")
         subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=False)
