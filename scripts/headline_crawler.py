@@ -103,6 +103,10 @@ def generate_daily_headlines_file(list_filename="list.txt"):
         except Exception:
             pass
 
+    # 🚨 [임시] 중복 필터링 스킵 모드: 72시간 이내의 모든 자료를 무조건 가져오도록 설정
+    print("📢 [SKIP MODE] 마지막 수집 시간 체크를 무시하고 최근 72시간 자료를 모두 긁어옵니다.")
+    last_run_time = None
+
     print(f"\n🌐 {len(urls)}개 매체의 RSS 피드에서 '최근 72시간 이내' 최신글을 수집합니다...")
     if last_run_time:
          print(f"🕒 마지막 성공 수집: {last_run_time.strftime('%Y-%m-%d %H:%M:%S UTC')} 이후의 글만 가져옵니다.")

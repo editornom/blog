@@ -3,6 +3,7 @@ from google.api_core import exceptions
 from api_utils import gemini_retry, gemini_limiter
 import os
 import datetime
+import re
 from dotenv import load_dotenv
 import json
 from pydantic import BaseModel, Field
