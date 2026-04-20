@@ -8,12 +8,17 @@ from dotenv import load_dotenv
 import json
 from pydantic import BaseModel, Field
 
+import sys
+
 load_dotenv()
+
+if sys.platform == "win32":
+    # Ensure terminal can handle UTF-8/Emojis on Windows
+    sys.stdout.reconfigure(encoding='utf-8')
 
 class BlogPostSchema(BaseModel):
     title: str = Field(description="최적화된 제목")
     slug: str = Field(description="seo-friendly-english-slug")
-    tags: list[str] = Field(description="태그 리스트 (3~5개)")
     description: str = Field(description="메타 설명 (1~2줄)")
     content: str = Field(description="마크다운 형식의 본문 내용")
 
@@ -73,9 +78,7 @@ def generate_blog_post(crawled_content, folder="posts", additional_instructions=
 - '위키백과'처럼 극도로 객관적이고 건조한 문체(~입니다, ~합니다 체 유지)를 사용하십시오.
 - 감정적 표현이나 불필요한 수식어를 완전히 배제하십시오.
 
-### 📝 세부 작성 규칙:
 - **이미지 삽입**: 본문(content) 내에는 이미지를 넣지 마십시오. 오직 **본문 시작 직전(위키 요약표 바로 위)**에 해당 용어를 상징하는 **[이미지: 여기에 들어갈 이미지의 간략하고 명확한 영문 설명]** 형식을 딱 한 번만 삽입하십시오.
-- **태그 자동화**: 반드시 tags 항목에 **"glossary"** 태그를 무조건 포함하고, 그 외 관련 핵심 키워드 2~3개를 추가하십시오.
 
 ### ⚠️ 주의사항:
 당신의 내부 시스템에서 평가 과정이나 메타 코멘트를 절대 노출하지 마십시오. 요구된 JSON 스키마 필드만 엄격히 반환하십시오.
@@ -97,7 +100,6 @@ def generate_blog_post(crawled_content, folder="posts", additional_instructions=
 ### 📝 세부 작성 원칙:
 - 이미지 삽입: **모든 소제목(H2, H3) 바로 직전**과 본문 시작 전(썸네일)에 해당 단락의 내용을 묘사하는 **[이미지: 여기에 들어갈 이미지의 간략하고 명확한 영문 설명]** 형식을 반드시 삽입하십시오. (기업명 절대 포함 금지)
 - 소제목 규칙: '결론:' 같은 불필요한 수식어를 빼고 구체적인 키워드를 담은 소제목 사용.
-- 태그 자동화: 본문 내용에 맞는 핵심 키워드 태그를 3~5개 추출하여 tags 항목에만 기입하십시오. 본문에 태그 나열 절대 금지.
 
 ### ⚠️ 주의사항:
 요구된 JSON 스키마 필드만 엄격히 반환하십시오.
@@ -129,7 +131,6 @@ def generate_blog_post(crawled_content, folder="posts", additional_instructions=
 # GEO & E-E-A-T 강화 요소
 - 인용구: 중심 메시지를 위한 인용구(Blockquote) 1~2개 배치.
 - 데이터 시각화 지시: **모든 소제목(H2, H3) 바로 직전**에 에디토리얼 이미지 프롬프트를 삽입하세요. (형식: **[이미지: 영어로 된 상세한 Editorial Style 생성 프롬프트]**)
-- 태그 자동화: 핵심 태그 3개 이상을 추출하여 tags 항목에만 기입.
 
 ### ⚠️ 주의사항:
 오직 JSON 스키마에 정의된 데이터만 출력해야 합니다.
@@ -207,8 +208,6 @@ def generate_blog_post(crawled_content, folder="posts", additional_instructions=
                 return None, None
 
     if final_draft_data:
-        # Markdown 조립
-        tags_str = json.dumps(final_draft_data.get('tags', []), ensure_ascii=False)
         markdown = f"""---
 title: "{final_draft_data.get('title', '').replace('"', "'")}"
 author: "editornom"
@@ -216,7 +215,6 @@ pubDatetime: {pub_time.strftime("%Y-%m-%dT%H:%M:%S+09:00")}
 slug: "{final_draft_data.get('slug', 'auto-slug')}"
 featured: false
 draft: false
-tags: {tags_str}
 ogImage: "../../../../assets/images/placeholder.png"
 description: "{final_draft_data.get('description', '').replace('"', "'")}"
 ---
