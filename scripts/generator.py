@@ -134,7 +134,8 @@ def generate_blog_post(crawled_content, folder="posts", additional_instructions=
 - 데이터 시각화 지시: **모든 소제목(H2, H3) 바로 직전**에는 반드시 에디토리얼 이미지 프롬프트를 삽입해야 합니다. 이는 예외 없는 **강제 사항**입니다. (형식: **[이미지: 영어로 된 상세한 Editorial Style 생성 프롬프트]**)
 
 ### ⚠️ 주의사항:
-본문(content) 내부에 <script> 태그나 JSON-LD(application/ld+json) 코드를 절대 포함하지 마십시오. 오직 JSON 스키마에 정의된 데이터만 출력해야 합니다.
+본문(content) 내부에 <script> 태그나 JSON-LD(application/ld+json) 코드를 절대 포함하지 마십시오. 이는 시스템 오류를 유발하며 절대 허용되지 않습니다. 오직 JSON 스키마에 정의된 마크다운 데이터만 출력해야 합니다.
+- 이미지 삽입 시 반드시 `[이미지: 영어 프롬프트]` 형식을 유지하세요. `![]()`와 같은 마크다운 이미지 문법을 미리 사용하지 마십시오.
 """
 
     if additional_instructions:

@@ -321,8 +321,9 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
         else:
             print(f"Warning: FAQ file not found or empty for keyword '{keyword}'")
 
-    # 4. Process Images (Regex to find [이미지: ...])
-    image_placeholders = re.findall(r'\[이미지: (.*?)\]', draft)
+    # 4. Process Images (Regex to find [이미지: ...] or ![이미지](...))
+    # AI가 제멋대로 형식을 바꿔도 인식할 수 있도록 유연한 정규식 적용
+    image_placeholders = re.findall(r'(?:!\[이미지\]\(|\[이미지: )(.*?)(?:\)|\])', draft)
     
     # Define source image directory based on keyword (Sanitize for Windows paths)
     source_folder_name = keyword if keyword else "general"
