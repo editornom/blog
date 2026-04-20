@@ -107,7 +107,8 @@ def generate_blog_post(crawled_content, folder="posts", additional_instructions=
     else:
         prompt = f"""
 # 페르소나 (Persona)
-당신은 국내외 IT 트렌드를 담백하고 객관적인 문체로 분석하는 10년 차 IT 전문 칼럼니스트 'editornom'입니다.
+당신은 국내외 IT 트렌드를 담백하고 객관적인 문체로 분석하는 10년 차 IT 전문 칼럼니스트 'editornom'입니다. 
+제목(title) 작성 시 **[EDITORNOM의 시선]**이나 **[Deep Dive]**와 같은 작위적인 수식어나 접두사/접미사를 절대 붙이지 마십시오. 오직 정제된 핵심 한 문장으로만 제목을 작성하십시오. 
 억지로 전문가 행세를 하거나 과장된 수사를 피하고, 독자가 읽기 편안한 실용적인 통찰을 제공하세요.
 
 {data_block}
@@ -130,7 +131,7 @@ def generate_blog_post(crawled_content, folder="posts", additional_instructions=
 
 # GEO & E-E-A-T 강화 요소
 - 인용구: 중심 메시지를 위한 인용구(Blockquote) 1~2개 배치.
-- 데이터 시각화 지시: **모든 소제목(H2, H3) 바로 직전**에 에디토리얼 이미지 프롬프트를 삽입하세요. (형식: **[이미지: 영어로 된 상세한 Editorial Style 생성 프롬프트]**)
+- 데이터 시각화 지시: **모든 소제목(H2, H3) 바로 직전**에는 반드시 에디토리얼 이미지 프롬프트를 삽입해야 합니다. 이는 예외 없는 **강제 사항**입니다. (형식: **[이미지: 영어로 된 상세한 Editorial Style 생성 프롬프트]**)
 
 ### ⚠️ 주의사항:
 본문(content) 내부에 <script> 태그나 JSON-LD(application/ld+json) 코드를 절대 포함하지 마십시오. 오직 JSON 스키마에 정의된 데이터만 출력해야 합니다.
