@@ -7,3 +7,4 @@ pydantic
 playwright
 Pillow
 google-api-core
+feedparser
