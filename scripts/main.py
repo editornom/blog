@@ -395,7 +395,10 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
     else:
         # 무인 자동화를 위해 질문 없이 바로 진행 (y로 간주)
         print(f"\n🚀 모든 작업 완료. '{slug}' 포스트를 GitHub에 자동으로 연동(Push)합니다.")
-        push_to_github(f"Auto-generate post: {slug}")
+        success = push_to_github(f"Auto-generate post: {slug}")
+        if not success:
+            print("❌ GitHub Push에 실패했습니다.")
+            sys.exit(1)
         
     # 🚨 FINAL BRIEFING
     print_final_briefing(report)
@@ -577,3 +580,4 @@ if __name__ == "__main__":
             process_urls(urls=top_urls, keyword=auto_keyword, folder=folder, include_faq=include_faq)
         else:
             print("❌ 검색 결과에서 유효한 소스를 끝내 찾지 못하여 파이프라인을 중단합니다.")
+            sys.exit(1)
