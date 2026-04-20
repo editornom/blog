@@ -1,5 +1,8 @@
 name: Daily Trend Blog Automation
 
+permissions:
+  contents: write
+
 on:
   schedule:
     - cron: '0 0 * * *' # 매일 09:00 KST (00:00 UTC)

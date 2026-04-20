@@ -1,5 +1,8 @@
 name: Daily Glossary Blog Automation
 
+permissions:
+  contents: write
+
 on:
   schedule:
     - cron: '0 6 * * *' # 매일 15:00 KST (06:00 UTC) - 트렌드 포스트와 6시간 간격
