@@ -81,7 +81,7 @@ def generate_blog_post(crawled_content, folder="posts", additional_instructions=
 - **이미지 삽입**: 본문(content) 내에는 이미지를 넣지 마십시오. 오직 **본문 시작 직전(위키 요약표 바로 위)**에 해당 용어를 상징하는 **[이미지: 여기에 들어갈 이미지의 간략하고 명확한 영문 설명]** 형식을 딱 한 번만 삽입하십시오.
 
 ### ⚠️ 주의사항:
-당신의 내부 시스템에서 평가 과정이나 메타 코멘트를 절대 노출하지 마십시오. 요구된 JSON 스키마 필드만 엄격히 반환하십시오.
+당신의 내부 시스템에서 평가 과정이나 메타 코멘트를 절대 노출하지 마십시오. 본문(content) 내부에 <script> 태그나 JSON-LD(application/ld+json) 코드를 절대 포함하지 마십시오. 요구된 JSON 스키마 필드만 엄격히 반환하십시오.
 """
     elif folder == "haionnet":
         prompt = f"""
@@ -102,7 +102,7 @@ def generate_blog_post(crawled_content, folder="posts", additional_instructions=
 - 소제목 규칙: '결론:' 같은 불필요한 수식어를 빼고 구체적인 키워드를 담은 소제목 사용.
 
 ### ⚠️ 주의사항:
-요구된 JSON 스키마 필드만 엄격히 반환하십시오.
+본문(content) 내부에 <script> 태그나 JSON-LD(application/ld+json) 코드를 절대 포함하지 마십시오. 요구된 JSON 스키마 필드만 엄격히 반환하십시오.
 """
     else:
         prompt = f"""
@@ -133,7 +133,7 @@ def generate_blog_post(crawled_content, folder="posts", additional_instructions=
 - 데이터 시각화 지시: **모든 소제목(H2, H3) 바로 직전**에 에디토리얼 이미지 프롬프트를 삽입하세요. (형식: **[이미지: 영어로 된 상세한 Editorial Style 생성 프롬프트]**)
 
 ### ⚠️ 주의사항:
-오직 JSON 스키마에 정의된 데이터만 출력해야 합니다.
+본문(content) 내부에 <script> 태그나 JSON-LD(application/ld+json) 코드를 절대 포함하지 마십시오. 오직 JSON 스키마에 정의된 데이터만 출력해야 합니다.
 """
 
     if additional_instructions:
