@@ -26,7 +26,7 @@ def pick_daily_glossary_keyword():
     """Gemini를 사용하여 오늘 작성할 새로운 IT/보안/네트워크/AI 용어를 선정합니다."""
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
-        logger.error("GEMINI_API_KEY not found.")
+        logger.error("❌ GEMINI_API_KEY가 설정되지 않았습니다. GitHub Secrets를 확인해주세요.")
         return None
 
     client = genai.Client(api_key=api_key)
