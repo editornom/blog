@@ -1,13 +1,40 @@
 ---
-title: "AI 令牌窃取 (AI Token Hijacking) 时代，您的会话安全吗？"
-author: "editornom"
-pubDatetime: 2026-04-17T11:03:09+09:00
-slug: "ai-token-hijacking-session-security-guide"
+title: AI 令牌窃取 (AI Token Hijacking) 时代，您的会话安全吗？
+author: editornom
+pubDatetime: 2026-04-17 11:03:09+09:00
+slug: ai-token-hijacking-session-security-guide
 featured: false
 draft: false
-tags: ["AI 令牌窃取", "设备代码钓鱼", "网络安全", "Haionnet", "提示注入"]
-ogImage: "../../../../../source/posts/AI_토큰_탈취(AI_Token_Hijacking)/74150eef-0.webp"
-description: "本文深入分析了近期激增的 AI 令牌窃取 (AI Token Hijacking) 技术机制，并针对 AI Agent 环境提出了专业的安全应对策略。"
+tags:
+- AI 令牌窃取
+- 设备代码钓鱼
+- 网络安全
+- Haionnet
+- 提示注入
+ogImage: ../../../../../source/posts/AI_토큰_탈취(AI_Token_Hijacking)/74150eef-0.webp
+description: 本文深入分析了近期激增的 AI 令牌窃取 (AI Token Hijacking) 技术机制，并针对 AI Agent 环境提出了专业的安全应对策略。
+faqs:
+- q: 什么是 AI 令牌窃取 (AI Token Hijacking)？
+  a: 这是一种利用生成式 AI 拦截已完成认证的“登录会话令牌”的攻击。它的特点是超越了获取账号密码的阶段，直接令多因素身份验证 (MFA) 失效，并以用户的权限非法访问企业内部系统。
+- q: 像 'EvilTokens' 这样的钓鱼工具包有哪些主要特点？
+  a: 作为钓鱼服务化 (PhaaS) 工具，它通过生成式 AI 创建针对受害者职位的定制化诱饵。它基于自动化基础设施进行大规模攻击，并利用窃取的令牌进行邮件窃取或权限提升等后续攻击。
+- q: 为什么设备代码钓鱼非常危险？
+  a: 因为它利用了智能电视等设备中使用的正常认证程序。攻击者通过创建实时自动化节点来绕过代码过期时间，并在用户输入代码的瞬间劫持会话。这种方式极难被传统的安全监控手段察觉。
+- q: 什么是间接提示注入 (Indirect Prompt Injection)？
+  a: 这是一种将恶意指令隐藏在 AI 读取的外部数据（邮件、文档等）中的手段。利用 AI 模型无法明确区分数据与指令的结构性缺陷，诱导 AI 自动将会话令牌或
+    API 密钥发送给攻击者。
+- q: 为什么登录后的“会话安全”变得如此重要？
+  a: 因为最近的攻击目标不再是突破第一道认证，而是瞄准作为认证结果的会话。一旦会话被劫持，攻击者无需额外认证即可操控企业的整个 Cloud 基础设施，导致根本性的信任体系崩溃。
+- q: 攻击者为了绕过设备代码使用了哪些技术手段？
+  a: 他们在 Railway.com 等 PaaS 平台创建数千个“短期轮询 Node”。为了克服 15 分钟的极短有效期，在用户点击链接的瞬间通过后端自动化实时生成代码，从而立即捕获认证会话。
+- q: 在 AI Agent 环境中需要注意哪些安全事项？
+  a: AI Agent 的漏洞往往在没有发布正式 CVE 的情况下被默然修复。因此，必须注意避免使用旧版本代理，并始终警惕 AI 处理的外部数据可能转化为恶意指令的风险。
+- q: Haionnet 的解决方案是如何应对的？
+  a: 通过基于专用线路的基础设施和托管安全服务 (MSSP)，在网络层构建第一道防线。实时追踪异常流量，从源头阻断数据外泄至可疑域名，确保业务的连续性。
+- q: 与传统安全方式相比，多层防御策略有何不同？
+  a: 它不单纯依赖用户的警惕性，而是在网络端设定强有力的策略。通过实时流量分析和针对基础设施特征的精细验证程序，分层阻断自动化 AI 攻击向内部扩散。
+- q: 企业践行“零信任”安全的核心是什么？
+  a: 核心是摒弃“一次认证即永久安全”的迷思。对所有连接和会话进行持续验证，并与 Haionnet 等专业伙伴合作重新检查基础设施，在网络层面同步实施强力管控。
 ---
 
 最近，网络攻击正从跨越 ID 和密码的第一道防线，进化为直接瞄准登录会话本身。如果说过去的黑客攻击还停留在窃取账号信息的水平，那么现在已经发展到了直接夺取已完成认证的“令牌（Token）”，从而使多因素身份验证 (MFA) 体系失效的阶段。而这其中的核心，便是利用生成式 AI 提升攻击精细度与速度的“AI 令牌窃取 (AI Token Hijacking)”。
@@ -51,96 +78,3 @@ AI Agent 的普及形成了另一条安全战线。最近研究发现，主流 A
 AI 令牌窃取已不再是理论上的方案，而是现实的威胁。自动化工具正无时无刻不在觊觎会话，我们为了提高效率而引入的 AI Agent 反而可能成为攻击的通道。
 
 现在是时候摒弃“认证过的会话即安全”这一传统观念了。必须实践零信任原则，对所有连接进行持续验证，并在网络层面同步实施强有力的安全管控。与 Haionnet 等专业安全合作伙伴一起重新检查基础设施的根基，才是安全度过 AI 时代最可靠的方法。
-
-## ✅ 常见问题 (FAQ)
-
-<details>
-  <summary>什么是 AI 令牌窃取 (AI Token Hijacking)？</summary>
-  <div class="faq-content">
-
-这是一种利用生成式 AI 拦截已完成认证的“登录会话令牌”的攻击。它的特点是超越了获取账号密码的阶段，直接令多因素身份验证 (MFA) 失效，并以用户的权限非法访问企业内部系统。
-
-  </div>
-</details>
-
-<details>
-  <summary>像 'EvilTokens' 这样的钓鱼工具包有哪些主要特点？</summary>
-  <div class="faq-content">
-
-作为钓鱼服务化 (PhaaS) 工具，它通过生成式 AI 创建针对受害者职位的定制化诱饵。它基于自动化基础设施进行大规模攻击，并利用窃取的令牌进行邮件窃取或权限提升等后续攻击。
-
-  </div>
-</details>
-
-<details>
-  <summary>为什么设备代码钓鱼非常危险？</summary>
-  <div class="faq-content">
-
-因为它利用了智能电视等设备中使用的正常认证程序。攻击者通过创建实时自动化节点来绕过代码过期时间，并在用户输入代码的瞬间劫持会话。这种方式极难被传统的安全监控手段察觉。
-
-  </div>
-</details>
-
-<details>
-  <summary>什么是间接提示注入 (Indirect Prompt Injection)？</summary>
-  <div class="faq-content">
-
-这是一种将恶意指令隐藏在 AI 读取的外部数据（邮件、文档等）中的手段。利用 AI 模型无法明确区分数据与指令的结构性缺陷，诱导 AI 自动将会话令牌或 API 密钥发送给攻击者。
-
-  </div>
-</details>
-
-<details>
-  <summary>为什么登录后的“会话安全”变得如此重要？</summary>
-  <div class="faq-content">
-
-因为最近的攻击目标不再是突破第一道认证，而是瞄准作为认证结果的会话。一旦会话被劫持，攻击者无需额外认证即可操控企业的整个 Cloud 基础设施，导致根本性的信任体系崩溃。
-
-  </div>
-</details>
-
-<details>
-  <summary>攻击者为了绕过设备代码使用了哪些技术手段？</summary>
-  <div class="faq-content">
-
-他们在 Railway.com 等 PaaS 平台创建数千个“短期轮询 Node”。为了克服 15 分钟的极短有效期，在用户点击链接的瞬间通过后端自动化实时生成代码，从而立即捕获认证会话。
-
-  </div>
-</details>
-
-<details>
-  <summary>在 AI Agent 环境中需要注意哪些安全事项？</summary>
-  <div class="faq-content">
-
-AI Agent 的漏洞往往在没有发布正式 CVE 的情况下被默然修复。因此，必须注意避免使用旧版本代理，并始终警惕 AI 处理的外部数据可能转化为恶意指令的风险。
-
-  </div>
-</details>
-
-<details>
-  <summary>Haionnet 的解决方案是如何应对的？</summary>
-  <div class="faq-content">
-
-通过基于专用线路的基础设施和托管安全服务 (MSSP)，在网络层构建第一道防线。实时追踪异常流量，从源头阻断数据外泄至可疑域名，确保业务的连续性。
-
-  </div>
-</details>
-
-<details>
-  <summary>与传统安全方式相比，多层防御策略有何不同？</summary>
-  <div class="faq-content">
-
-它不单纯依赖用户的警惕性，而是在网络端设定强有力的策略。通过实时流量分析和针对基础设施特征的精细验证程序，分层阻断自动化 AI 攻击向内部扩散。
-
-  </div>
-</details>
-
-<details>
-  <summary>企业践行“零信任”安全的核心是什么？</summary>
-  <div class="faq-content">
-
-核心是摒弃“一次认证即永久安全”的迷思。对所有连接和会话进行持续验证，并与 Haionnet 等专业伙伴合作重新检查基础设施，在网络层面同步实施强力管控。
-
-  </div>
-</details>
-

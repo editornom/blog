@@ -1,12 +1,68 @@
 ---
-title: "Post-Quantum Cryptography (PQC)"
-author: "editornom"
-pubDatetime: 2026-04-17T08:35:27+09:00
-slug: "post-quantum-cryptography-pqc"
+title: Post-Quantum Cryptography (PQC)
+author: editornom
+pubDatetime: 2026-04-17 08:35:27+09:00
+slug: post-quantum-cryptography-pqc
 featured: false
 draft: false
-tags: ["glossary", "Cybersecurity", "QuantumComputing", "Cryptography"]
-description: "An overview of Post-Quantum Cryptography (PQC), a next-generation encryption framework designed to remain secure against the advanced computational power of quantum computers."
+tags:
+- glossary
+- Cybersecurity
+- QuantumComputing
+- Cryptography
+description: An overview of Post-Quantum Cryptography (PQC), a next-generation encryption
+  framework designed to remain secure against the advanced computational power of
+  quantum computers.
+faqs:
+- q: What is Post-Quantum Cryptography (PQC)?
+  a: PQC refers to new cryptographic algorithms designed to keep data secure even
+    against attacks from future quantum computers with massive processing power. Unlike
+    current public-key encryption, it ensures security by leveraging complex mathematical
+    problems such as lattices or codes.
+- q: Why should we pay attention to Post-Quantum Cryptography right now?
+  a: Because the RSA and ECC encryption systems currently in use are at risk of being
+    decrypted almost instantly by Shor’s algorithm on a quantum computer. For national
+    secrets or data requiring long-term storage, security levels must be raised now
+    to prepare for future threats.
+- q: What does the term 'Q-Day' mean?
+  a: Q-Day refers to the moment when quantum computing technology advances to the
+    point where it can completely neutralize the standard cryptographic systems we
+    use today. Security experts aim to complete the transition to secure PQC before
+    this day arrives.
+- q: What are the main technical characteristics of PQC?
+  a: PQC is characterized by its use of sophisticated mathematical structures—like
+    lattice-based, multivariate, and hash-based systems—that are difficult for quantum
+    computers to solve. Since it is a purely algorithmic software approach, it is
+    highly compatible with existing internet infrastructure.
+- q: What is a 'Harvest Now, Decrypt Later' attack?
+  a: This is an attack method where encrypted data is collected today with the intent
+    to decrypt it in the future when high-performance quantum computers become available.
+    To defend against this, PQC should be applied proactively, considering the duration
+    for which the data remains sensitive.
+- q: What is the difference between QKD and PQC?
+  a: PQC is a mathematical algorithm that runs as software on existing networks, while
+    QKD requires dedicated fiber-optic cables and special hardware to utilize the
+    physical properties of quantum mechanics. PQC is focused on data encryption, whereas
+    QKD is mainly focused on secure key distribution and eavesdropping detection.
+- q: What strategy is used when introducing PQC to existing systems?
+  a: A 'Hybrid Migration Strategy' is primarily used, where classical cryptography
+    (RSA, ECC) and new PQC algorithms are used together. This is a practical way to
+    ensure defense against quantum attacks while the long-term stability of PQC algorithms
+    is being fully verified.
+- q: What are the currently standardized international PQC algorithms?
+  a: Led by the U.S. National Institute of Standards and Technology (NIST), algorithms
+    such as ML-KEM (formerly Kyber) and ML-DSA (formerly Dilithium) have been selected
+    as standards. These lattice-based algorithms are becoming the new standard for
+    security solutions worldwide.
+- q: What is the significance of Apple's 'PQ3' adoption in the security industry?
+  a: By applying the PQ3 protocol to iMessage in 2024, Apple became a leader among
+    global tech giants in deploying PQC for large-scale services. This case serves
+    as a symbolic proof that robust, quantum-level end-to-end encryption is possible
+    even in everyday mobile messaging.
+- q: How does Grover's Algorithm affect the PQC environment?
+  a: Grover's Algorithm has the property of halving the security strength of symmetric-key
+    encryption. To counter this in a PQC environment, security is maintained by using
+    longer key lengths than before, such as AES-256.
 ---
 
 ![Illustration of post-quantum cryptographic algorithms protecting data from quantum computer attacks](../../../../../source/glossary/PQC/7c7a31fa-0.png)
@@ -40,75 +96,3 @@ A particularly concerning threat to the security industry is the "Harvest Now, D
     *   **Q-Day (Y2Q)**: The point in time when quantum computers will be powerful enough to completely break current cryptographic systems.
     *   **NIST PQC Standards**: Standard algorithms selected by the National Institute of Standards and Technology (NIST), including ML-KEM (formerly Kyber) and ML-DSA (formerly Dilithium).
     *   **Grover's Algorithm**: A quantum algorithm that effectively halves the security strength of symmetric-key cryptography. To counter this, PQC environments maintain security by increasing symmetric key lengths, such as using AES-256.
-
-## ✅ Frequently Asked Questions (FAQ)
-
-<details>
-  <summary>What is Post-Quantum Cryptography (PQC)?</summary>
-  <div class="faq-content">
-PQC refers to new cryptographic algorithms designed to keep data secure even against attacks from future quantum computers with massive processing power. Unlike current public-key encryption, it ensures security by leveraging complex mathematical problems such as lattices or codes.
-  </div>
-</details>
-
-<details>
-  <summary>Why should we pay attention to Post-Quantum Cryptography right now?</summary>
-  <div class="faq-content">
-Because the RSA and ECC encryption systems currently in use are at risk of being decrypted almost instantly by Shor’s algorithm on a quantum computer. For national secrets or data requiring long-term storage, security levels must be raised now to prepare for future threats.
-  </div>
-</details>
-
-<details>
-  <summary>What does the term 'Q-Day' mean?</summary>
-  <div class="faq-content">
-Q-Day refers to the moment when quantum computing technology advances to the point where it can completely neutralize the standard cryptographic systems we use today. Security experts aim to complete the transition to secure PQC before this day arrives.
-  </div>
-</details>
-
-<details>
-  <summary>What are the main technical characteristics of PQC?</summary>
-  <div class="faq-content">
-PQC is characterized by its use of sophisticated mathematical structures—like lattice-based, multivariate, and hash-based systems—that are difficult for quantum computers to solve. Since it is a purely algorithmic software approach, it is highly compatible with existing internet infrastructure.
-  </div>
-</details>
-
-<details>
-  <summary>What is a 'Harvest Now, Decrypt Later' attack?</summary>
-  <div class="faq-content">
-This is an attack method where encrypted data is collected today with the intent to decrypt it in the future when high-performance quantum computers become available. To defend against this, PQC should be applied proactively, considering the duration for which the data remains sensitive.
-  </div>
-</details>
-
-<details>
-  <summary>What is the difference between QKD and PQC?</summary>
-  <div class="faq-content">
-PQC is a mathematical algorithm that runs as software on existing networks, while QKD requires dedicated fiber-optic cables and special hardware to utilize the physical properties of quantum mechanics. PQC is focused on data encryption, whereas QKD is mainly focused on secure key distribution and eavesdropping detection.
-  </div>
-</details>
-
-<details>
-  <summary>What strategy is used when introducing PQC to existing systems?</summary>
-  <div class="faq-content">
-A 'Hybrid Migration Strategy' is primarily used, where classical cryptography (RSA, ECC) and new PQC algorithms are used together. This is a practical way to ensure defense against quantum attacks while the long-term stability of PQC algorithms is being fully verified.
-  </div>
-</details>
-
-<details>
-  <summary>What are the currently standardized international PQC algorithms?</summary>
-  <div class="faq-content">
-Led by the U.S. National Institute of Standards and Technology (NIST), algorithms such as ML-KEM (formerly Kyber) and ML-DSA (formerly Dilithium) have been selected as standards. These lattice-based algorithms are becoming the new standard for security solutions worldwide.
-  </div>
-</details>
-
-<details>
-  <summary>What is the significance of Apple's 'PQ3' adoption in the security industry?</summary>
-  <div class="faq-content">
-By applying the PQ3 protocol to iMessage in 2024, Apple became a leader among global tech giants in deploying PQC for large-scale services. This case serves as a symbolic proof that robust, quantum-level end-to-end encryption is possible even in everyday mobile messaging.
-  </div>
-</details>
-
-<details>
-  <summary>How does Grover's Algorithm affect the PQC environment?</summary>
-  <div class="faq-content">
-Grover's Algorithm has the property of halving the security strength of symmetric-key encryption. To counter this in a PQC environment, security is maintained by using longer key lengths than before, such as AES-256.
-  </div>
-</details>

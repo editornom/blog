@@ -352,15 +352,25 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
         report["detox"]["error"] = "Detox failed after all retries, keeping original draft"
         print(f"  ❌ All detox attempts failed. Using original draft.")
 
-    # 3.7 Add FAQ if requested
+    # 3.7 Add FAQ if requested (New YAML Frontmatter Architecture)
     if include_faq and keyword:
-        # 🚀 [New Pipeline] Generate FAQ automatically before loading
         generate_faq(draft, keyword)
-        
         faqs = load_faq_content(keyword)
         if faqs:
-            draft = append_faq_to_draft(draft, faqs)
-            print(f"Added {len(faqs)} FAQ items to the draft.")
+            # 본문의 레거시 FAQ 태그 제거 및 데이터 확보
+            draft, faqs_data = prepare_faq_data(draft, faqs)
+            
+            # 프런트매터 영역에 YAML 배열 형태로 주입
+            # 단순화를 위해 정규식을 사용하여 두 번째 --- 앞에 삽입합니다.
+            import yaml
+            faq_yaml = yaml.dump({"faqs": faqs_data}, allow_unicode=True, sort_keys=False, indent=2)
+            # Remove start/end doc markers from dump if any
+            faq_yaml = faq_yaml.replace("---", "").strip()
+            
+            # Insert before the last Frontmatter separator
+            draft = re.sub(r'\n---', f'\n{faq_yaml}\n---', draft, count=1, flags=re.MULTILINE)
+            
+            print(f"✅ Injected {len(faqs)} FAQ items into YAML Frontmatter.")
         else:
             print(f"Warning: FAQ file not found or empty for keyword '{keyword}'")
 

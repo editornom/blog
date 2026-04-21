@@ -1,13 +1,38 @@
 ---
-title: "多模态 (Multimodal)"
-author: "editornom"
-pubDatetime: 2026-04-17T15:11:51+09:00
-slug: "comprehensive-guide-to-multimodal-ai-technology"
+title: 多模态 (Multimodal)
+author: editornom
+pubDatetime: 2026-04-17 15:11:51+09:00
+slug: comprehensive-guide-to-multimodal-ai-technology
 featured: false
 draft: false
-tags: ["glossary", "AI", "MachineLearning", "Multimodal"]
-ogImage: "../../../../../source/glossary/Multimodal/325ed15c-0.webp"
-description: "本文定义了通过综合处理文本、图像、语音等多种数据类型，实现类人语境理解的人工智能技术。"
+tags:
+- glossary
+- AI
+- MachineLearning
+- Multimodal
+ogImage: ../../../../../source/glossary/Multimodal/325ed15c-0.webp
+description: 本文定义了通过综合处理文本、图像、语音等多种数据类型，实现类人语境理解的人工智能技术。
+faqs:
+- q: 什么是多模态 (Multimodal) AI？
+  a: 这是一种同时结合并学习、处理文本、图像、语音、视频等不同格式数据的人工智能技术。它像人类通过五感理解世界一样，对信息进行综合把握。
+- q: 多模态 AI 的核心特征是什么？
+  a: 主要特征包括：在统一的数学空间中连接多种形式数据的“数据融合”，以及输出与输入数据形式不同的结果的“跨模态处理”。
+- q: 为什么多模态比传统的单模态方式更重要？
+  a: 因为现实数据是由多种感官信息交织而成的。多模态超越了处理单一数据的单模态局限，能够在复杂情况下实现类人的高维度语境理解。
+- q: 在多模态技术中，MLLM 代表什么？
+  a: 它是“Multimodal Large Language Model”的缩写，指不仅能理解和生成文本，还能处理图像和声音等多种模态的大语言模型。
+- q: 多模态 AI 可以处理哪些类型的数据？
+  a: 它可以综合处理包括自然语言（文本）、照片（图像）、声音（音频）、动态画面（视频）等我们在日常生活中接触到的大部分数字数据格式。
+- q: 单模态 (Unimodal) 和多模态 AI 的决定性区别是什么？
+  a: 单模态仅处理单一数据，容易忽略视觉情境或语音语调等复合语境。而多模态结合了多种数据，可以应对如“我拿的这个东西是什么？”之类的复合咨询。
+- q: 多模态的核心原理“数据对齐 (Alignment)”是如何运作的？
+  a: 它将图像和单词等不同形式的数据转换为统一的数学空间（向量），并学习它们之间的关联。通过这种方式，模型能认识到“苹果”这个词和真实的苹果图像是同一个概念。
+- q: “跨模态 (Cross-modal)”处理的具体案例有哪些？
+  a: 典型代表包括根据文本描述生成图像的“Text-to-Image”，以及将视频中的语音实时转换为文本的技术。它能自由跨越输入和输出的数据格式。
+- q: 多模态技术在实际工业现场是如何应用的？
+  a: 医疗领域最具代表性。通过综合分析患者的 X 光影像、既往诊疗记录（文本）和实时生命体征数据，用于提供更准确的诊断和个性化治疗方案。
+- q: 为了理解多模态技术，还需要了解哪些相关概念？
+  a: 在技术上紧密相关的概念包括：作为各种模型基础的“基础模型”、将数据数值化的“嵌入”，以及通过对照图像和语言进行学习的“CLIP”技术。
 ---
 
 ![Multimodal - 展示整合文本、图像、音频数据类型的多模态 AI 架构图](../../../../../source/glossary/Multimodal/325ed15c-0.webp)
@@ -43,96 +68,3 @@ description: "本文定义了通过综合处理文本、图像、语音等多种
 
 - **实务应用**：在医疗领域，多模态 AI 发挥着核心作用。它能综合分析患者的 X 光片（影像）、既往诊疗记录（文本）和实时生命体征（数据），从而做出准确诊断或提供个性化治疗方案。
 - **关联术语**：在技术上，基础模型 (Foundation Model)、嵌入 (Embedding)、CLIP (Contrastive Language-Image Pre-training) 等概念与多模态技术紧密相关。
-
-## ✅ 常见问题 (FAQ)
-
-<details>
-  <summary>什么是多模态 (Multimodal) AI？</summary>
-  <div class="faq-content">
-
-这是一种同时结合并学习、处理文本、图像、语音、视频等不同格式数据的人工智能技术。它像人类通过五感理解世界一样，对信息进行综合把握。
-
-  </div>
-</details>
-
-<details>
-  <summary>多模态 AI 的核心特征是什么？</summary>
-  <div class="faq-content">
-
-主要特征包括：在统一的数学空间中连接多种形式数据的“数据融合”，以及输出与输入数据形式不同的结果的“跨模态处理”。
-
-  </div>
-</details>
-
-<details>
-  <summary>为什么多模态比传统的单模态方式更重要？</summary>
-  <div class="faq-content">
-
-因为现实数据是由多种感官信息交织而成的。多模态超越了处理单一数据的单模态局限，能够在复杂情况下实现类人的高维度语境理解。
-
-  </div>
-</details>
-
-<details>
-  <summary>在多模态技术中，MLLM 代表什么？</summary>
-  <div class="faq-content">
-
-它是“Multimodal Large Language Model”的缩写，指不仅能理解和生成文本，还能处理图像和声音等多种模态的大语言模型。
-
-  </div>
-</details>
-
-<details>
-  <summary>多模态 AI 可以处理哪些类型的数据？</summary>
-  <div class="faq-content">
-
-它可以综合处理包括自然语言（文本）、照片（图像）、声音（音频）、动态画面（视频）等我们在日常生活中接触到的大部分数字数据格式。
-
-  </div>
-</details>
-
-<details>
-  <summary>单模态 (Unimodal) 和多模态 AI 的决定性区别是什么？</summary>
-  <div class="faq-content">
-
-单模态仅处理单一数据，容易忽略视觉情境或语音语调等复合语境。而多模态结合了多种数据，可以应对如“我拿的这个东西是什么？”之类的复合咨询。
-
-  </div>
-</details>
-
-<details>
-  <summary>多模态的核心原理“数据对齐 (Alignment)”是如何运作的？</summary>
-  <div class="faq-content">
-
-它将图像和单词等不同形式的数据转换为统一的数学空间（向量），并学习它们之间的关联。通过这种方式，模型能认识到“苹果”这个词和真实的苹果图像是同一个概念。
-
-  </div>
-</details>
-
-<details>
-  <summary>“跨模态 (Cross-modal)”处理的具体案例有哪些？</summary>
-  <div class="faq-content">
-
-典型代表包括根据文本描述生成图像的“Text-to-Image”，以及将视频中的语音实时转换为文本的技术。它能自由跨越输入和输出的数据格式。
-
-  </div>
-</details>
-
-<details>
-  <summary>多模态技术在实际工业现场是如何应用的？</summary>
-  <div class="faq-content">
-
-医疗领域最具代表性。通过综合分析患者的 X 光影像、既往诊疗记录（文本）和实时生命体征数据，用于提供更准确的诊断和个性化治疗方案。
-
-  </div>
-</details>
-
-<details>
-  <summary>为了理解多模态技术，还需要了解哪些相关概念？</summary>
-  <div class="faq-content">
-
-在技术上紧密相关的概念包括：作为各种模型基础的“基础模型”、将数据数值化的“嵌入”，以及通过对照图像和语言进行学习的“CLIP”技术。
-
-  </div>
-</details>
-

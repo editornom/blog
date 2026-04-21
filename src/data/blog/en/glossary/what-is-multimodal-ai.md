@@ -1,13 +1,59 @@
 ---
-title: "Multimodal AI: Bridging the Gap Between Text, Vision, and Sound"
-author: "editornom"
-pubDatetime: 2026-04-17T15:11:51+09:00
-slug: "guide-to-multimodal-ai-mllm-technology"
+title: 'Multimodal AI: Bridging the Gap Between Text, Vision, and Sound'
+author: editornom
+pubDatetime: 2026-04-17 15:11:51+09:00
+slug: guide-to-multimodal-ai-mllm-technology
 featured: false
 draft: false
-tags: ["glossary", "AI", "MachineLearning", "Multimodal"]
-ogImage: "../../../../../source/glossary/Multimodal/325ed15c-0.webp"
-description: "An in-depth look at Multimodal AI, a technology that processes text, images, and audio to achieve human-like contextual understanding."
+tags:
+- glossary
+- AI
+- MachineLearning
+- Multimodal
+ogImage: ../../../../../source/glossary/Multimodal/325ed15c-0.webp
+description: An in-depth look at Multimodal AI, a technology that processes text,
+  images, and audio to achieve human-like contextual understanding.
+faqs:
+- q: What is Multimodal AI?
+  a: It is an AI technology that learns and processes different data formats—such
+    as text, images, voice, and video—simultaneously. It understands information comprehensively,
+    much like how humans perceive the world through their five senses.
+- q: What are the key features of Multimodal AI?
+  a: The primary features are 'Data Fusion,' which connects various forms of data
+    in a shared mathematical space, and 'Cross-modal Processing,' which allows the
+    system to generate outputs in a format different from the input.
+- q: Why is Multimodal AI more important than the traditional Unimodal approach?
+  a: Real-world data is inherently multimodal, with various sensory inputs intertwined.
+    Multimodal AI overcomes the limitations of Unimodal systems by enabling human-like,
+    high-level contextual understanding in complex situations.
+- q: What does MLLM mean in the context of Multimodal technology?
+  a: MLLM stands for 'Multimodal Large Language Model.' it refers to a large-scale
+    model capable of understanding and generating not just text, but also various
+    other modalities like images and sound.
+- q: What types of data can Multimodal AI process?
+  a: It can handle almost all digital data formats we encounter daily, including natural
+    language (text), photographs (images), voices (audio), and moving pictures (video).
+- q: What is the decisive difference between Unimodal and Multimodal AI?
+  a: Unimodal AI processes only one type of data, often missing complex contexts like
+    visual cues or vocal tones. In contrast, Multimodal AI combines multiple data
+    streams to respond to complex queries like "What is this object I'm holding?"
+- q: How does 'Data Alignment,' a core principle of Multimodal AI, work?
+  a: It converts different data types, like images and words, into a common mathematical
+    space (vectors) to learn their relationships. This allows the AI to recognize
+    that the text 'apple' and an actual image of an apple represent the same concept.
+- q: Can you provide a specific example of 'Cross-modal' processing?
+  a: Representative examples include 'Text-to-Image' technology, which generates images
+    from text descriptions, and speech-to-text systems that convert video audio into
+    real-time text. It seamlessly transitions between different data formats for input
+    and output.
+- q: How is Multimodal technology used in actual industries?
+  a: A prime example is the medical sector. It is used to suggest more accurate diagnoses
+    and tailored treatments by synthesizing patient X-rays, medical history (text),
+    and real-time vital data.
+- q: What related concepts should I know to understand Multimodal technology?
+  a: Technically related concepts include 'Foundation Models' (the basis for various
+    models), 'Embedding' (the numerical representation of data), and 'CLIP' (a technology
+    that learns by contrasting images and language).
 ---
 
 ![Multimodal AI Architecture - A diagram showing the integration of text, image, and audio data types](../../../../../source/glossary/Multimodal/325ed15c-0.webp)
@@ -43,76 +89,3 @@ Early AI models were primarily 'Unimodal,' optimized for specific fields like Na
 
 - **Real-world Application**: In the medical field, Multimodal AI plays a critical role in providing accurate diagnoses and personalized treatments by comprehensively analyzing a patient's X-rays (images), past medical records (text), and real-time vital signs (data).
 - **Related Terms**: This technology is closely linked to Foundation Models, Embedding, and CLIP (Contrastive Language-Image Pre-training).
-
-## ✅ Frequently Asked Questions (FAQ)
-
-<details>
-  <summary>What is Multimodal AI?</summary>
-  <div class="faq-content">
-It is an AI technology that learns and processes different data formats—such as text, images, voice, and video—simultaneously. It understands information comprehensively, much like how humans perceive the world through their five senses.
-  </div>
-</details>
-
-<details>
-  <summary>What are the key features of Multimodal AI?</summary>
-  <div class="faq-content">
-The primary features are 'Data Fusion,' which connects various forms of data in a shared mathematical space, and 'Cross-modal Processing,' which allows the system to generate outputs in a format different from the input.
-  </div>
-</details>
-
-<details>
-  <summary>Why is Multimodal AI more important than the traditional Unimodal approach?</summary>
-  <div class="faq-content">
-Real-world data is inherently multimodal, with various sensory inputs intertwined. Multimodal AI overcomes the limitations of Unimodal systems by enabling human-like, high-level contextual understanding in complex situations.
-  </div>
-</details>
-
-<details>
-  <summary>What does MLLM mean in the context of Multimodal technology?</summary>
-  <div class="faq-content">
-MLLM stands for 'Multimodal Large Language Model.' it refers to a large-scale model capable of understanding and generating not just text, but also various other modalities like images and sound.
-  </div>
-</details>
-
-<details>
-  <summary>What types of data can Multimodal AI process?</summary>
-  <div class="faq-content">
-It can handle almost all digital data formats we encounter daily, including natural language (text), photographs (images), voices (audio), and moving pictures (video).
-  </div>
-</details>
-
-<details>
-  <summary>What is the decisive difference between Unimodal and Multimodal AI?</summary>
-  <div class="faq-content">
-Unimodal AI processes only one type of data, often missing complex contexts like visual cues or vocal tones. In contrast, Multimodal AI combines multiple data streams to respond to complex queries like "What is this object I'm holding?"
-  </div>
-</details>
-
-<details>
-  <summary>How does 'Data Alignment,' a core principle of Multimodal AI, work?</summary>
-  <div class="faq-content">
-It converts different data types, like images and words, into a common mathematical space (vectors) to learn their relationships. This allows the AI to recognize that the text 'apple' and an actual image of an apple represent the same concept.
-  </div>
-</details>
-
-<details>
-  <summary>Can you provide a specific example of 'Cross-modal' processing?</summary>
-  <div class="faq-content">
-Representative examples include 'Text-to-Image' technology, which generates images from text descriptions, and speech-to-text systems that convert video audio into real-time text. It seamlessly transitions between different data formats for input and output.
-  </div>
-</details>
-
-<details>
-  <summary>How is Multimodal technology used in actual industries?</summary>
-  <div class="faq-content">
-A prime example is the medical sector. It is used to suggest more accurate diagnoses and tailored treatments by synthesizing patient X-rays, medical history (text), and real-time vital data.
-  </div>
-</details>
-
-<details>
-  <summary>What related concepts should I know to understand Multimodal technology?</summary>
-  <div class="faq-content">
-Technically related concepts include 'Foundation Models' (the basis for various models), 'Embedding' (the numerical representation of data), and 'CLIP' (a technology that learns by contrasting images and language).
-  </div>
-</details>
-

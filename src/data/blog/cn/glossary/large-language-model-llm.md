@@ -1,13 +1,40 @@
 ---
-title: "大语言模型 (Large Language Model)"
-author: "editornom"
-pubDatetime: 2026-04-16T15:09:54+09:00
-slug: "large-language-model-llm"
+title: 大语言模型 (Large Language Model)
+author: editornom
+pubDatetime: 2026-04-16 15:09:54+09:00
+slug: large-language-model-llm
 featured: false
 draft: false
-tags: ["glossary", "Artificial-Intelligence", "Deep-Learning", "NLP"]
-ogImage: "../../../../../source/glossary/Large_Language_Model/54353314-0.png"
-description: "本文介绍大语言模型 (LLM) 的定义及其核心技术。LLM 是一种通过学习海量文本数据，实现自然语言生成、翻译及推理的人工智能模型。"
+tags:
+- glossary
+- Artificial-Intelligence
+- Deep-Learning
+- NLP
+ogImage: ../../../../../source/glossary/Large_Language_Model/54353314-0.png
+description: 本文介绍大语言模型 (LLM) 的定义及其核心技术。LLM 是一种通过学习海量文本数据，实现自然语言生成、翻译及推理的人工智能模型。
+faqs:
+- q: 什么是大语言模型 (LLM)？
+  a: LLM 是一种旨在通过学习海量文本数据来理解和生成人类语言的人工智能模型。它基于数亿个以上的参数，其特点是除了简单的文案撰写外，还能执行摘要、翻译以及复杂的逻辑推理。
+- q: 作为 LLM 核心的 Transformer 架构起什么作用？
+  a: Transformer 是一种通过 Self-Attention 机制同时计算句子内所有单词之间关系的技术。通过这种方式，即使句子变长，模型也不会遗忘前面的信息，从而精确把握上下文，并通过数据并行处理大幅提升训练速度。
+- q: LLM 中所说的“涌现能力 (Emergent abilities)”是什么意思？
+  a: 它是指当模型的参数数量和数据规模超过特定阈值时，突然出现以前的小型模型中不曾见到的高阶推理能力的现象。这是根据扩展法则 (Scaling Law)，随着计算资源和数据的增加，模型能力飞跃式提升过程中产生的现象。
+- q: LLM 训练过程中的“预训练”和“微调”有什么区别？
+  a: 预训练是初始阶段，通过大规模非结构化数据学习语言的通用结构和知识。微调则是优化阶段，通过针对特定任务调整模型或通过反映人类反馈的强化学习 (RLHF) 来提高回答的适切性和准确度。
+- q: 什么是分词 (Tokenization)，它为什么重要？
+  a: 分词是将文本拆分为模型可以处理的最小单位“Token”的预处理过程。由于人工智能并不是直接理解文本，而是通过这些分词后的数字进行运算，因此高效的分词直接影响模型的性能和成本。
+- q: LLM 和小语言模型 (SLM) 的主要区别是什么？
+  a: LLM 是消耗巨大资源的通用模型，而 SLM 是通过优化参数数量、专注于特定目的（医疗、法律等）的模型。由于 SLM 轻量且快速，在安全性要求高的私有网络环境或在设备本身运行的端侧
+    AI 实现中更具优势。
+- q: 如何解决 LLM 引入时产生的“幻觉 (Hallucination)”现象？
+  a: 幻觉是指模型将错误信息当作事实陈述的现象。为了解决这一问题，主要采用 RAG (检索增强生成) 技术。通过让模型先参考与问题相关的可靠外部文档后再生成回答，可以显著提高信息的准确度。
+- q: 实战中经常提到的 RAG (检索增强生成) 具体是什么？
+  a: RAG 是一种不完全依赖模型自身知识，而是实时从企业知识库或外部数据库中检索相关信息并将其作为回答依据的技术。通过这种方式可以提高回答的可信度，并实时反映最新信息。
+- q: 为什么提示词工程 (Prompt Engineering) 很重要？
+  a: "因为根据提问（输入值）的形式，LLM 输出结果的质量会有很大差异。通过精细设计和优化提问方式，让模型准确理解上下文，可以更高效地获得所需形式的高质量回答。\n\
+    \n</details>\n\n<details>\n  <summary>多模态 (Multimodality) 对 LLM 的未来有什么影响？</summary>\n\
+    \  <div class=\"faq-content\">\n\n多模态是超越文本，同时理解和生成图像、声音、视频等多种形式数据的能力。通过多模态，LLM\
+    \ 可以结合视觉信息或听觉语境，实现更接近人类的综合思考和交互。"
 ---
 
 ![处理海量文本数据流并生成类人语言输出的神经网络结构概念可视化](../../../../../source/glossary/Large_Language_Model/54353314-0.png)
@@ -40,94 +67,3 @@ LLM 的出现源于对传统 RNN（循环神经网络）或 LSTM 模型结构局
     1.  **Tokenization：** 将文本拆分为模型可处理的最小单位“Token”的预处理过程。
     2.  **Prompt Engineering：** 为了从模型中获得理想结果，对输入值（问题）进行精细设计和优化的技术。
     3.  **Multimodality：** 不仅是文本，还具备同时理解和生成图像、声音、视频等不同形式数据的能力。
-
-## ✅ 常见问题解答 (FAQ)
-
-<details>
-  <summary>什么是大语言模型 (LLM)？</summary>
-  <div class="faq-content">
-
-LLM 是一种旨在通过学习海量文本数据来理解和生成人类语言的人工智能模型。它基于数亿个以上的参数，其特点是除了简单的文案撰写外，还能执行摘要、翻译以及复杂的逻辑推理。
-
-  </div>
-</details>
-
-<details>
-  <summary>作为 LLM 核心的 Transformer 架构起什么作用？</summary>
-  <div class="faq-content">
-
-Transformer 是一种通过 Self-Attention 机制同时计算句子内所有单词之间关系的技术。通过这种方式，即使句子变长，模型也不会遗忘前面的信息，从而精确把握上下文，并通过数据并行处理大幅提升训练速度。
-
-  </div>
-</details>
-
-<details>
-  <summary>LLM 中所说的“涌现能力 (Emergent abilities)”是什么意思？</summary>
-  <div class="faq-content">
-
-它是指当模型的参数数量和数据规模超过特定阈值时，突然出现以前的小型模型中不曾见到的高阶推理能力的现象。这是根据扩展法则 (Scaling Law)，随着计算资源和数据的增加，模型能力飞跃式提升过程中产生的现象。
-
-  </div>
-</details>
-
-<details>
-  <summary>LLM 训练过程中的“预训练”和“微调”有什么区别？</summary>
-  <div class="faq-content">
-
-预训练是初始阶段，通过大规模非结构化数据学习语言的通用结构和知识。微调则是优化阶段，通过针对特定任务调整模型或通过反映人类反馈的强化学习 (RLHF) 来提高回答的适切性和准确度。
-
-  </div>
-</details>
-
-<details>
-  <summary>什么是分词 (Tokenization)，它为什么重要？</summary>
-  <div class="faq-content">
-
-分词是将文本拆分为模型可以处理的最小单位“Token”的预处理过程。由于人工智能并不是直接理解文本，而是通过这些分词后的数字进行运算，因此高效的分词直接影响模型的性能和成本。
-
-  </div>
-</details>
-
-<details>
-  <summary>LLM 和小语言模型 (SLM) 的主要区别是什么？</summary>
-  <div class="faq-content">
-
-LLM 是消耗巨大资源的通用模型，而 SLM 是通过优化参数数量、专注于特定目的（医疗、法律等）的模型。由于 SLM 轻量且快速，在安全性要求高的私有网络环境或在设备本身运行的端侧 AI 实现中更具优势。
-
-  </div>
-</details>
-
-<details>
-  <summary>如何解决 LLM 引入时产生的“幻觉 (Hallucination)”现象？</summary>
-  <div class="faq-content">
-
-幻觉是指模型将错误信息当作事实陈述的现象。为了解决这一问题，主要采用 RAG (检索增强生成) 技术。通过让模型先参考与问题相关的可靠外部文档后再生成回答，可以显著提高信息的准确度。
-
-  </div>
-</details>
-
-<details>
-  <summary>实战中经常提到的 RAG (检索增强生成) 具体是什么？</summary>
-  <div class="faq-content">
-
-RAG 是一种不完全依赖模型自身知识，而是实时从企业知识库或外部数据库中检索相关信息并将其作为回答依据的技术。通过这种方式可以提高回答的可信度，并实时反映最新信息。
-
-  </div>
-</details>
-
-<details>
-  <summary>为什么提示词工程 (Prompt Engineering) 很重要？</summary>
-  <div class="faq-content">
-
-因为根据提问（输入值）的形式，LLM 输出结果的质量会有很大差异。通过精细设计和优化提问方式，让模型准确理解上下文，可以更高效地获得所需形式的高质量回答。
-
-</details>
-
-<details>
-  <summary>多模态 (Multimodality) 对 LLM 的未来有什么影响？</summary>
-  <div class="faq-content">
-
-多模态是超越文本，同时理解和生成图像、声音、视频等多种形式数据的能力。通过多模态，LLM 可以结合视觉信息或听觉语境，实现更接近人类的综合思考和交互。
-
-  </div>
-</details>

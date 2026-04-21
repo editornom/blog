@@ -25,6 +25,10 @@ const blog = defineCollection({
       canonicalURL: z.string().optional(),
       hideEditPost: z.boolean().optional(),
       timezone: z.string().optional(),
+      faqs: z.array(z.object({
+        q: z.string(),
+        a: z.string(),
+      })).optional(),
     }),
 });
 

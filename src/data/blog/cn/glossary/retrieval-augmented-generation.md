@@ -1,13 +1,38 @@
 ---
-title: "RAG (Retrieval-Augmented Generation)"
-author: "editornom"
-pubDatetime: 2026-04-16T17:10:54+09:00
-slug: "retrieval-augmented-generation"
+title: RAG (Retrieval-Augmented Generation)
+author: editornom
+pubDatetime: 2026-04-16 17:10:54+09:00
+slug: retrieval-augmented-generation
 featured: false
 draft: false
-tags: ["glossary", "LLM", "GenerativeAI", "AI"]
-ogImage: "../../../../../source/glossary/RAG_(Retrieval-Augmented_Generation)/3f23135c-0.png"
-description: "本文介绍 RAG（检索增强生成）技术，这是一种通过从外部知识源检索信息并将其整合到生成过程中，以提高大语言模型准确性和可靠性的技术。"
+tags:
+- glossary
+- LLM
+- GenerativeAI
+- AI
+ogImage: ../../../../../source/glossary/RAG_(Retrieval-Augmented_Generation)/3f23135c-0.png
+description: 本文介绍 RAG（检索增强生成）技术，这是一种通过从外部知识源检索信息并将其整合到生成过程中，以提高大语言模型准确性和可靠性的技术。
+faqs:
+- q: 什么是 RAG？
+  a: RAG（检索增强生成）是一种技术，它让大语言模型 (LLM) 在生成回答之前，先从外部可靠的数据源中检索相关信息，并参考这些内容来回答。其核心是让模型不再仅仅依赖已学习的知识，而是实时“查阅”所需信息后做出回答。
+- q: RAG 的缩写和中文名称是什么？
+  a: 英文缩写为 RAG，全称是“Retrieval-Augmented Generation”。中文通常直译为“检索增强生成”。
+- q: RAG 技术出现的背景是什么？
+  a: 因为 LLM 无法获知训练完成后的信息或非公开数据，容易产生“幻觉 (Hallucination)”现象，即给出与事实不符的回答。为了解决这个问题，研究者开发了从外部查找并传递准确数据的方法，而不是每次都重新训练模型。
+- q: 构建 RAG 系统需要哪些主要技术？
+  a: 核心技术包括作为回答基础的 LLM，以及用于存储和检索数据的向量数据库 (Vector Database)、将文本数值化的嵌入 (Embedding) 技术，以及基于语义的搜索技术等。
+- q: 使用 RAG 有哪些优点？
+  a: 它克服了模型训练数据的局限性，能够准确传达最新信息和专业知识，有效抑制 AI 常见的幻觉现象。此外，由于可以明确提供回答的出处，能为用户提供更高的可信度。
+- q: RAG 和微调 (Fine-tuning) 的关键区别是什么？
+  a: RAG 像是参考外部资料寻找答案的“开卷考试”，而微调则是通过直接修改模型参数来获取知识的“学习”方式。RAG 的信息更新快且成本低，而微调更擅长掌握特定的语气或格式。
+- q: RAG 是如何减少 AI 的“幻觉”现象的？
+  a: 因为它在提示词中包含了与问题相关的真实文档片段，并指示模型“基于此内容进行回答”，从而防止模型随意捏造答案。通过引导模型生成基于证据的回答，最大限度地减少了事实性错误。
+- q: 在 RAG 工作流程中，“向量数据库”起什么作用？
+  a: 它充当存储库的角色。将用户的问题转换为向量后，向量数据库能从海量数据中快速找到语义最相似的文档片段，从而为 LLM 提供最符合提问意图的参考资料。
+- q: 当有新信息产生时，RAG 系统如何应对？
+  a: 无需重新训练模型，只需将包含最新信息的文档更新到外部数据库中即可。这使得系统能够实时补充知识，在大幅节省运营资源的同时，始终保持最新状态。
+- q: 如果企业在实务中引入 RAG，可以用于哪些用途？
+  a: 可以运行基于企业内部庞大技术文档或产品手册的客户支持 AI 聊天机器人。它能针对客户提问实时提供基于手册的准确回答，并给出依据页面的链接，从而提高工作效率。
 ---
 
 ![展示 RAG 工作流程的概念图：用户查询触发外部知识库检索，为大语言模型 (LLM) 的响应提供上下文。](../../../../../source/glossary/RAG_(Retrieval-Augmented_Generation)/3f23135c-0.png)
@@ -42,95 +67,3 @@ LLM 仅能记住截至预训练 (Pre-training) 完成时的数据。因此，它
     1.  **向量数据库 (Vector Database)：** 专门用于存储和检索向量数据的存储库，旨在通过数值计算文本的语义相似性。
     2.  **임베딩 (Embedding)：** 将文本等非结构化数据转换为计算机可以理解和运算的高维向量的核心过程。
     3.  **환각 (Hallucination)：** 指 AI 模型自信地输出与事实不符的信息，并将其视为事实的错误现象。
-
-## ✅ 常见问题 (FAQ)
-
-<details>
-  <summary>什么是 RAG？</summary>
-  <div class="faq-content">
-
-RAG（检索增强生成）是一种技术，它让大语言模型 (LLM) 在生成回答之前，先从外部可靠的数据源中检索相关信息，并参考这些内容来回答。其核心是让模型不再仅仅依赖已学习的知识，而是实时“查阅”所需信息后做出回答。
-
-  </div>
-</details>
-
-<details>
-  <summary>RAG 的缩写和中文名称是什么？</summary>
-  <div class="faq-content">
-
-英文缩写为 RAG，全称是“Retrieval-Augmented Generation”。中文通常直译为“检索增强生成”。
-
-  </div>
-</details>
-
-<details>
-  <summary>RAG 技术出现的背景是什么？</summary>
-  <div class="faq-content">
-
-因为 LLM 无法获知训练完成后的信息或非公开数据，容易产生“幻觉 (Hallucination)”现象，即给出与事实不符的回答。为了解决这个问题，研究者开发了从外部查找并传递准确数据的方法，而不是每次都重新训练模型。
-
-  </div>
-</details>
-
-<details>
-  <summary>构建 RAG 系统需要哪些主要技术？</summary>
-  <div class="faq-content">
-
-核心技术包括作为回答基础的 LLM，以及用于存储和检索数据的向量数据库 (Vector Database)、将文本数值化的嵌入 (Embedding) 技术，以及基于语义的搜索技术等。
-
-  </div>
-</details>
-
-<details>
-  <summary>使用 RAG 有哪些优点？</summary>
-  <div class="faq-content">
-
-它克服了模型训练数据的局限性，能够准确传达最新信息和专业知识，有效抑制 AI 常见的幻觉现象。此外，由于可以明确提供回答的出处，能为用户提供更高的可信度。
-
-  </div>
-</details>
-
-<details>
-  <summary>RAG 和微调 (Fine-tuning) 的关键区别是什么？</summary>
-  <div class="faq-content">
-
-RAG 像是参考外部资料寻找答案的“开卷考试”，而微调则是通过直接修改模型参数来获取知识的“学习”方式。RAG 的信息更新快且成本低，而微调更擅长掌握特定的语气或格式。
-
-  </div>
-</details>
-
-<details>
-  <summary>RAG 是如何减少 AI 的“幻觉”现象的？</summary>
-  <div class="faq-content">
-
-因为它在提示词中包含了与问题相关的真实文档片段，并指示模型“基于此内容进行回答”，从而防止模型随意捏造答案。通过引导模型生成基于证据的回答，最大限度地减少了事实性错误。
-
-  </div>
-</details>
-
-<details>
-  <summary>在 RAG 工作流程中，“向量数据库”起什么作用？</summary>
-  <div class="faq-content">
-
-它充当存储库的角色。将用户的问题转换为向量后，向量数据库能从海量数据中快速找到语义最相似的文档片段，从而为 LLM 提供最符合提问意图的参考资料。
-
-  </div>
-</details>
-
-<details>
-  <summary>当有新信息产生时，RAG 系统如何应对？</summary>
-  <div class="faq-content">
-
-无需重新训练模型，只需将包含最新信息的文档更新到外部数据库中即可。这使得系统能够实时补充知识，在大幅节省运营资源的同时，始终保持最新状态。
-
-  </div>
-</details>
-
-<details>
-  <summary>如果企业在实务中引入 RAG，可以用于哪些用途？</summary>
-  <div class="faq-content">
-
-可以运行基于企业内部庞大技术文档或产品手册的客户支持 AI 聊天机器人。它能针对客户提问实时提供基于手册的准确回答，并给出依据页面的链接，从而提高工作效率。
-
-  </div>
-</details>

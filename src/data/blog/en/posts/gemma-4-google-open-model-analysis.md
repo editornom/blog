@@ -1,13 +1,68 @@
 ---
-title: "Google’s Gemma 4: It’s Time to Rethink ‘Intelligence Density’"
-author: "editornom"
-pubDatetime: 2026-04-07T09:00:00Z
-slug: "gemma-4-google-open-model-analysis"
+title: 'Google’s Gemma 4: It’s Time to Rethink ‘Intelligence Density’'
+author: editornom
+pubDatetime: 2026-04-07 09:00:00+00:00
+slug: gemma-4-google-open-model-analysis
 featured: false
 draft: false
-tags: ["Google", "Gemma 4", "Open Model", "On-device AI", "Agents"]
-ogImage: "../../../../../source/posts/구글젬마4/5d610c6d-0.png"
-description: "An analysis of Gemma 4’s technical features aimed at peak performance per byte and its impact on the IT ecosystem."
+tags:
+- Google
+- Gemma 4
+- Open Model
+- On-device AI
+- Agents
+ogImage: ../../../../../source/posts/구글젬마4/5d610c6d-0.png
+description: An analysis of Gemma 4’s technical features aimed at peak performance
+  per byte and its impact on the IT ecosystem.
+faqs:
+- q: What is Gemma 4?
+  a: Gemma 4 is a state-of-the-art open language model released by Google DeepMind
+    in April 2026. Built on the world-class research and technology used for Gemini
+    3, it is characterized by providing the most intelligent and powerful performance
+    relative to its size (parameters) to date.
+- q: What model sizes are available?
+  a: 'It is available in four sizes to suit different environments:
+
+    *   **E2B (Effective 2B) & E4B:** Ultra-lightweight models optimized for mobile
+    and edge environments such as smartphones and Raspberry Pi.
+
+    *   **26B A4B MoE:** A Mixture-of-Experts (MoE) model that activates approximately
+    3.8 billion (4B) out of 26 billion parameters during inference, offering both
+    high speed and high intelligence.
+
+    *   **31B Dense:** The flagship model of Gemma 4, delivering peak performance
+    on high-end workstations or cloud environments.'
+- q: Can it be used commercially? (What is the license?)
+  a: Yes, it can. Gemma 4 has been released under the **Apache 2.0 license**, which
+    is fully open and has no legal barriers to commercial distribution, modification,
+    or redistribution.
+- q: Can it recognize images or audio in addition to text?
+  a: Yes, all Gemma 4 models can natively process **image and video (MP4, WebM, etc.)
+    input** at variable resolutions. Specifically, the smaller E2B and E4B models
+    **natively understand audio input** without a separate speech converter, enabling
+    Automatic Speech Recognition (ASR) and real-time translation.
+- q: How long a document can it read at once? (Context Window)
+  a: It supports a context window twice as large as the previous generation. Smaller
+    models (E2B, E4B) can process up to **128,000 tokens**, while medium-to-large
+    models (26B, 31B) can handle up to **256,000 tokens** at once, allowing for the
+    analysis of vast codebases or book-length documents in a single prompt.
+- q: Is it useful for coding or automation tasks (agents)?
+  a: Very much so. Gemma 4 features a built-in **Thinking mode** that thinks step-by-step
+    before answering, effectively solving complex logical and mathematical problems.
+    Additionally, it natively supports structured JSON output and **Function Calling**,
+    making it ideal for building **Agentic workflows** that can manipulate external
+    tools and solve problems autonomously.
+- q: Can it run on local PCs or mobile devices?
+  a: Yes, one of the key features of Gemma 4 is its broad compatibility. E2B and E4B
+    can run offline with ultra-low latency on mobile edge environments like Android
+    smartphones. The larger 26B and 31B models are also designed to run as local code
+    assistants on laptops or consumer-grade desktop GPUs (e.g., when quantization
+    is applied).
+- q: What is the performance level?
+  a: As of the 31B model, it ranked 3rd globally among open models on the Arena AI
+    text leaderboard, and the 26B MoE model ranked 6th, outperforming models more
+    than 20 times its size. It is currently evaluated as the open model that scores
+    closest to frontier (top-tier commercial) models.
 ---
 
 Google’s release of ‘Gemma 4’ is once again shifting the currents of the open-model market. While the industry has long been bifurcated into 'massive models' that prove performance through size and 'lightweight models' that prioritize practicality, Gemma 4 demonstrates overwhelming efficiency in the latter domain. It goes beyond simple performance improvements; it is the result of a concentrated effort on ‘Intelligence Density’—maximizing the level of intelligence relative to the number of parameters.
@@ -65,64 +120,3 @@ If you are considering adopting Gemma 4, you must first clarify whether your ser
 AI technology has moved beyond the 'size of the model' and entered the stage of 'efficiency in delivering intelligence.' Gemma 4 is a model at the center of that shift. Even when stripping away excessive hype or illusions, it is clear that Gemma 4 is an attractive and powerful tool from a practical perspective.
 
 I encourage you to test Gemma 4 yourself via Hugging Face or Ollama. It is worth experiencing firsthand how a powerful AI assistant that thinks and acts for itself—not just as a consumer of computing resources—can be implemented on your workstation. Technology advances rapidly, but ultimately, success will be determined by how you utilize these tools.
-
-## ✅ Frequently Asked Questions (FAQ)
-
-<details>
-  <summary>What is Gemma 4?</summary>
-  <div class="faq-content">
-Gemma 4 is a state-of-the-art open language model released by Google DeepMind in April 2026. Built on the world-class research and technology used for Gemini 3, it is characterized by providing the most intelligent and powerful performance relative to its size (parameters) to date.
-  </div>
-</details>
-
-<details>
-  <summary>What model sizes are available?</summary>
-  <div class="faq-content">
-It is available in four sizes to suit different environments:
-*   **E2B (Effective 2B) & E4B:** Ultra-lightweight models optimized for mobile and edge environments such as smartphones and Raspberry Pi.
-*   **26B A4B MoE:** A Mixture-of-Experts (MoE) model that activates approximately 3.8 billion (4B) out of 26 billion parameters during inference, offering both high speed and high intelligence.
-*   **31B Dense:** The flagship model of Gemma 4, delivering peak performance on high-end workstations or cloud environments.
-  </div>
-</details>
-
-<details>
-  <summary>Can it be used commercially? (What is the license?)</summary>
-  <div class="faq-content">
-Yes, it can. Gemma 4 has been released under the **Apache 2.0 license**, which is fully open and has no legal barriers to commercial distribution, modification, or redistribution.
-  </div>
-</details>
-
-<details>
-  <summary>Can it recognize images or audio in addition to text?</summary>
-  <div class="faq-content">
-Yes, all Gemma 4 models can natively process **image and video (MP4, WebM, etc.) input** at variable resolutions. Specifically, the smaller E2B and E4B models **natively understand audio input** without a separate speech converter, enabling Automatic Speech Recognition (ASR) and real-time translation.
-  </div>
-</details>
-
-<details>
-  <summary>How long a document can it read at once? (Context Window)</summary>
-  <div class="faq-content">
-It supports a context window twice as large as the previous generation. Smaller models (E2B, E4B) can process up to **128,000 tokens**, while medium-to-large models (26B, 31B) can handle up to **256,000 tokens** at once, allowing for the analysis of vast codebases or book-length documents in a single prompt.
-  </div>
-</details>
-
-<details>
-  <summary>Is it useful for coding or automation tasks (agents)?</summary>
-  <div class="faq-content">
-Very much so. Gemma 4 features a built-in **Thinking mode** that thinks step-by-step before answering, effectively solving complex logical and mathematical problems. Additionally, it natively supports structured JSON output and **Function Calling**, making it ideal for building **Agentic workflows** that can manipulate external tools and solve problems autonomously.
-  </div>
-</details>
-
-<details>
-  <summary>Can it run on local PCs or mobile devices?</summary>
-  <div class="faq-content">
-Yes, one of the key features of Gemma 4 is its broad compatibility. E2B and E4B can run offline with ultra-low latency on mobile edge environments like Android smartphones. The larger 26B and 31B models are also designed to run as local code assistants on laptops or consumer-grade desktop GPUs (e.g., when quantization is applied).
-  </div>
-</details>
-
-<details>
-  <summary>What is the performance level?</summary>
-  <div class="faq-content">
-As of the 31B model, it ranked 3rd globally among open models on the Arena AI text leaderboard, and the 26B MoE model ranked 6th, outperforming models more than 20 times its size. It is currently evaluated as the open model that scores closest to frontier (top-tier commercial) models.
-  </div>
-</details>

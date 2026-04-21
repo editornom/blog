@@ -76,48 +76,21 @@ def load_faq_content(keyword):
             
     return faqs
 
-def append_faq_to_draft(draft, faqs):
+def prepare_faq_data(draft, faqs):
     """
-    Appends FAQ accordion to the bottom of the draft and injects FAQPage JSON-LD schema.
+    Cleans up any legacy FAQ blocks in the draft and returns the cleaned draft 
+    along with the FAQ data list for frontmatter insertion.
     """
     if not faqs:
-        return draft
+        return draft, []
     
-    # 1. 중복 삽입 방지: 기존 FAQ 블록 전체 제거 (정규식 개선)
-    # 기존 원고에 이미 생성된 FAQ 섹션이 있다면 완전히 도려낸 후 새 데이터로 덮어씁니다.
+    # 1. 중복 삽입 방지: 기존 레거시 FAQ 블록(HTML 방식) 제거
+    # 정적 HTML 삽입 방식에서 프런트매터 방식으로 전환하므로 기존 본문에 남은 찌꺼기를 제거합니다.
     existing_faq_pattern = re.compile(r'\n*## ✅ 자주 묻는 질문 \(FAQ\).*$', re.DOTALL)
     if existing_faq_pattern.search(draft):
         draft = existing_faq_pattern.sub("", draft)
         
-    faq_md = "\n\n## ✅ 자주 묻는 질문 (FAQ)\n"
-    
-    # SEO(GEO) 강화를 위한 JSON-LD 스키마 초기화
-    schema_dict = {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": []
-    }
-    
-    for faq in faqs:
-        # 안전한 HTML 이스케이프 처리 (HTML 태그 꼬임으로 인한 레이아웃 붕괴 방지)
-        safe_q = html.escape(faq['q'])
-        safe_a = html.escape(faq['a'])
-        
-        # Accordion UI 마크다운 결합
-        faq_md += f"\n<details>\n  <summary>{safe_q}</summary>\n  <div class=\"faq-content\">\n\n{safe_a}\n\n  </div>\n</details>\n"
-        
-        # JSON-LD 스키마 데이터 조립 (json.dumps가 이스케이프를 완벽 처리하므로 원본 텍스트 사용)
-        schema_dict["mainEntity"].append({
-            "@type": "Question",
-            "name": faq['q'],
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq['a']
-            }
-        })
-    
-    # 깔끔하게 원고 맨 아래에 붙이기
-    return draft.strip() + faq_md
+    return draft.strip(), faqs
 
 if __name__ == "__main__":
     # Test script for local verification
