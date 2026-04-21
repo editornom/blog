@@ -1,6 +1,7 @@
 import os
 import re
 import yaml
+import html
 
 base_path = "src/data/blog"
 
@@ -39,8 +40,8 @@ for root, dirs, files in os.walk(base_path):
                 # 3. Parse <details> tags
                 faqs = []
                 for m in details_re.finditer(faq_html):
-                    q = m.group(1).strip()
-                    a = m.group(2).strip()
+                    q = html.unescape(m.group(1).strip())
+                    a = html.unescape(m.group(2).strip())
                     faqs.append({"q": q, "a": a})
                 
                 if not faqs:

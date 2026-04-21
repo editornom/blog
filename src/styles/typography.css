@@ -108,20 +108,10 @@
       &::-webkit-details-marker {
         display: none;
       }
-
-      &::after {
-        content: "+";
-        @apply ml-2 text-xl font-light text-accent transition-transform duration-300;
-      }
     }
 
     details[open] summary {
       @apply bg-muted/40 text-accent;
-
-      &::after {
-        content: "−";
-        @apply rotate-180;
-      }
     }
 
     pre {
