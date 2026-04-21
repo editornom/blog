@@ -44,7 +44,7 @@ faqs:
 
 클라우드 컴퓨팅과 인공지능 기술의 결합으로 기업 인프라는 전례 없이 복잡해졌습니다. 수천 개의 컨테이너와 데이터 파이프라인이 얽힌 환경에서 AI 모델을 안정적으로 운영하는 것은 이제 실무자들의 핵심 과제가 되었습니다. 이러한 흐름 속에서 가장 중요한 화두는 '클라우드 네이티브 AI 보안(Cloud-Native AI Security)'입니다. 민첩성을 유지하면서도 AI의 성능을 온전히 활용하기 위해서는 기존과는 다른 차원의 보안 접근법이 필요합니다. CNCF 백서와 주요 보안 프레임워크를 통해 현재 기업들이 직면한 보안 과제와 대응 방향을 정리했습니다.
 
-![Cloud-Native AI Security - AI Generation](../../../../../source/posts/Cloud-Native_AI_Security/e1dae86b-0.webp)
+![클라우드 네이티브 AI 보안 - AI 생성](../../../../../source/posts/Cloud-Native_AI_Security/e1dae86b-0.webp)
 
 ## AI 워크로드 확산에 따른 새로운 위협 모델의 등장
 
@@ -52,7 +52,7 @@ faqs:
 
 여기서 주목해야 할 점은 AI에 특화된 위협 모델입니다. 기존 보안이 서버 가용성과 단순 접근 제어에 집중했다면, 이제는 데이터 포이즈닝(Data Poisoning)이나 모델 추출(Model Extraction) 같은 공격을 방어해야 합니다. 데이터 포이즈닝은 학습 단계에서 악의적인 데이터를 주입해 모델이 특정 상황에서 잘못된 판단을 내리도록 유도하는 공격으로, 일반적인 방화벽만으로는 감지하기가 매우 어렵습니다. 결국 클라우드 인프라 전반을 아우르는 통합적인 가시성 확보가 이 보안 체계의 핵심입니다.
 
-![Cloud-Native AI Security - AI Generation](../../../../../source/posts/Cloud-Native_AI_Security/b39e3d22-1.webp)
+![클라우드 네이티브 AI 보안 - AI 생성](../../../../../source/posts/Cloud-Native_AI_Security/b39e3d22-1.webp)
 
 ## CNAPP 통합 관리와 eBPF를 활용한 실시간 방어 전략
 
@@ -62,7 +62,7 @@ faqs:
 
 > "클라우드 네이티브 AI 보안은 단순한 도구 도입을 넘어, 개발부터 운영까지 이어지는 전체 라이프사이클의 무결성을 보장하는 프로세스의 변화입니다."
 
-![Cloud-Native AI Security - AI Generation](../../../../../source/posts/Cloud-Native_AI_Security/655209d5-2.webp)
+![클라우드 네이티브 AI 보안 - AI 생성](../../../../../source/posts/Cloud-Native_AI_Security/655209d5-2.webp)
 
 ## 거버넌스 수립을 위한 NIST와 CSA 프레임워크 활용
 
@@ -70,7 +70,7 @@ faqs:
 
 반면 CSA의 AICM(AI 제어 매트릭스)은 클라우드 네이티브 관점에 최적화되어 있습니다. 18개 도메인에 걸쳐 243개의 구체적인 제어 항목을 제공하며, 모델 공급자부터 애플리케이션 개발자까지 각 주체가 담당해야 할 '책임 공유 모델(Shared Responsibility Model)'을 명확하게 정의합니다. 클라우드 서비스 제공자(CSP)가 인프라 보안을 책임진다면, 기업은 배포된 모델의 입력값 검증과 프롬프트 인젝션 방어에 집중해야 한다는 식이죠. 두 프레임워크를 상호보완적으로 활용하면 조직 내에 보다 견고한 보안 체계를 세울 수 있습니다.
 
-![Cloud-Native AI Security - AI Generation](../../../../../source/posts/Cloud-Native_AI_Security/6556e64f-3.webp)
+![클라우드 네이티브 AI 보안 - AI 생성](../../../../../source/posts/Cloud-Native_AI_Security/6556e64f-3.webp)
 
 ## 실무적인 보안 로드맵과 인프라 파트너십의 중요성
 

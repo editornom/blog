@@ -1,99 +1,67 @@
 ---
-title: Integrated Approaches and Governance Strategies for Navigating Technical Complexities
-  in Cloud-Native AI Security
+title: "Integrated Approaches and Governance Strategies for Solving Technical Complexities in Cloud-Native AI Security"
 author: editornom
 pubDatetime: 2026-04-20 15:14:50+09:00
-slug: cloud-native-ai-security-governance-and-technical-frameworks
+slug: cloud-native-ai-security-governance-and-cnapp-strategies
 featured: false
 draft: false
 ogImage: ../../../../../source/posts/Cloud-Native_AI_Security/e1dae86b-0.webp
-description: A deep dive into the roles of CNAPP and the latest guidelines from CNCF,
-  NIST, and CSA for building robust AI security within cloud-native environments.
+description: "A deep dive into technical insights, the role of CNAPP, and the latest CNCF, NIST, and CSA guidelines for building robust AI security within cloud-native environments."
 faqs:
-- q: What is Cloud-native AI security?
-  a: It is a security strategy designed to safely operate AI models within the containers
-    and data pipelines of a Cloud-native environment. It aims to protect model weights
-    and training data while maintaining agility and ensuring integrity throughout
-    the AI lifecycle.
-- q: What are the primary security threats in AI workloads?
-  a: Typical threats include ‘Data Poisoning,’ which manipulates training data to
-    mislead model decisions, and ‘Model Extraction,’ which steals ‘model weights,’
-    a key piece of intellectual property. These attacks are difficult to detect with
-    traditional firewalls, making AI-specific security models essential.
-- q: What is the role of CNAPP as a security management platform?
-  a: CNAPP integrates posture management (CSPM), workload protection (CWPP), and entitlement
-    management (CIEM) into one platform. it helps monitor AI workloads running on
-    large-scale GPU clusters and distributed Kubernetes nodes in real-time from a
-    single console.
+- q: What is cloud-native AI security?
+  a: It is a security strategy designed to safely operate AI models within containers and data pipelines of cloud-native environments. The goal is to protect model weights and training data while maintaining agility and ensuring integrity across the AI lifecycle.
+- q: What are the main security threats in AI workloads?
+  a: Key examples include 'Data Poisoning,' where training data is manipulated to mislead model decisions, and 'Model Extraction,' which involves stealing model weights—a core piece of intellectual property. Since these attacks are hard to detect with traditional firewalls, AI-specific security models are essential.
+- q: What is the role of CNAPP in security management?
+  a: CNAPP integrates Cloud Security Posture Management (CSPM), Cloud Workload Protection Platform (CWPP), and Cloud Infrastructure Entitlement Management (CIEM) into a single platform. It helps monitor AI workloads running on large GPU clusters and distributed Kubernetes nodes from a single console in real-time.
 - q: Why is establishing AI security governance important?
-  a: It is necessary to clarify security standards within an organization beyond technical
-    protection. Utilizing NIST and CSA guidelines allows for the natural integration
-    of AI security into existing processes and clarifies the division of responsibility
-    between model providers and users.
+  a: Beyond technical protection, it clarifies security standards within an organization. Utilizing NIST and CSA guidelines allows for the natural integration of AI security into existing processes and clarifies the division of responsibility between model providers and users.
 - q: What does the 'Shared Responsibility Model' mean in AI security?
-  a: It defines the security roles between the Cloud Service Provider (CSP) and the
-    user. While the CSP is responsible for infrastructure security, the user must
-    focus on application-layer security, such as input validation for deployed models,
-    prompt injection defense, and dataset access control.
-- q: How can eBPF technology be used in AI security practice?
-  a: It analyzes events at the kernel level to capture abnormal access to model weight
-    files or suspicious API calls in real-time. It is useful for defending against
-    data leaks at the runtime stage by immediately blocking anomalies, such as excessive
-    read requests for training data.
+  a: It defines the security roles between Cloud Service Providers (CSPs) and users. While the CSP is responsible for infrastructure security, the user must focus on application-layer security, such as input validation for deployed models, prompt injection defense, and dataset access control.
+- q: How can eBPF technology be utilized in AI security practice?
+  a: By analyzing events at the kernel level, it captures abnormal access to model weight files or irregular API calls in real-time. It is highly effective for defending against data leaks during runtime by immediately blocking anomalies, such as excessive read requests for training data.
 - q: What are the differences between the NIST and CSA frameworks?
-  a: NIST COSAIS is suitable for extending existing standards for public and large
-    enterprises to AI, while CSA AICM provides 243 specific control items from a Cloud-native
-    perspective. The two frameworks should be used complementarily based on the organization's
-    environment.
+  a: NIST COSAIS is suitable for extending existing standards of public and large enterprises to AI, while CSA AICM provides 243 specific control items from a cloud-native perspective. Organizations should use both frameworks complementarily based on their environment.
 - q: What is the 'Shift-Left' strategy emphasized in practice?
-  a: It is an approach that applies security from the early development stages, such
-    as Infrastructure as Code (IaC) scanning. It is a core strategy to prevent security
-    incidents by correcting configuration errors before the operational phase and
-    to ensure the safety of the AI system throughout its lifecycle.
+  a: It is an approach that applies security from the early stages of development, starting with Infrastructure as Code (IaC) scanning. It is a key strategy for preventing security incidents by correcting configuration errors before operation and ensuring safety throughout the AI system's lifecycle.
 - q: What should be prioritized when establishing an AI security roadmap?
-  a: The combination of 'Shift-Left' and 'Runtime Protection' to ensure lifecycle
-    integrity is paramount. In particular, a system that can integrate and manage
-    threats across the infrastructure through the application of Zero Trust principles
-    to optimize network paths and secure visibility must be established first.
+  a: The combination of 'Shift-Left' and 'Runtime Protection' is vital to ensure lifecycle integrity. In particular, a system should first be established to manage threats across the infrastructure by applying Zero Trust principles to optimize network paths and secure visibility.
 - q: How do infrastructure partnerships help in building AI security?
-  a: It is difficult to directly secure multi-Cloud and complex network environments.
-    By linking dedicated lines and security solutions from professional partners like
-    Haionnet, enterprises can focus exclusively on AI model advancement and technological
-    innovation on a strong security foundation.
+  a: It is difficult to manage security alone in multi-cloud and complex network environments. By linking dedicated lines and security solutions from professional infrastructure partners, companies can focus on advancing AI models and technical innovation on a strong security foundation without the burden of managing it all themselves.
 ---
 
-The convergence of Cloud computing and Artificial Intelligence has rendered enterprise infrastructure more complex than ever. Operating AI models reliably across environments interwoven with thousands of containers and data pipelines has become a primary challenge for practitioners. In this landscape, the most critical topic is 'Cloud-Native AI Security.' To fully leverage AI performance while maintaining agility, a security approach of a different dimension is required. Based on the CNCF whitepaper and major security frameworks, we have summarized the security challenges and response strategies currently facing enterprises.
+The combination of Cloud computing and artificial intelligence technologies has made corporate infrastructure unprecedentedly complex. Operating AI models stably in an environment where thousands of containers and data pipelines are intertwined has now become a core challenge for practitioners. In this flow, the most important topic is 'Cloud-Native AI Security.' To maintain agility while fully utilizing AI performance, a security approach of a different dimension than before is required. We have summarized the security challenges and response directions currently faced by companies through the CNCF whitepaper and major security frameworks.
 
-![A high-tech digital editorial illustration showing a secure AI neural network intertwined with cloud infrastructure, emphasizing protection and futuristic connectivity, professional blue and silver color palette.](../../../../../source/posts/Cloud-Native_AI_Security/e1dae86b-0.webp)
+![Cloud-Native AI Security - AI Generated](../../../../../source/posts/Cloud-Native_AI_Security/e1dae86b-0.webp)
 
-## The Emergence of New Threat Models with the Expansion of AI Workloads
+## Emergence of New Threat Models with AI Workload Proliferation
 
-Recently, the CNCF (Cloud Native Computing Foundation) Technical Oversight Committee (TOC) published the 'Cloud Native AI Security Whitepaper,' highlighting the urgency of securing AI workloads. In a Cloud-native environment, AI systems have evolved beyond simple tools to become the core of decision-making. If these systems are compromised, it could shake the very foundation of business operations, far beyond simple data breaches. Specifically, attempts to manipulate model prediction results or steal model weights—a core piece of intellectual property—can deal fatal blows to a business.
+Recently, the CNCF (Cloud Native Computing Foundation) Technical Oversight Committee (TOC) published the 'Cloud Native AI Security Whitepaper,' emphasizing the urgency of AI workload security. In a Cloud-Native environment, AI systems have moved beyond being simple tools to become the core of decision-making. If these systems are compromised, it could shake the very foundation of corporate operations beyond simple data leaks. In particular, attempts to manipulate model prediction results or steal model weights—a company's core intellectual property—can deal a fatal blow to the business.
 
-What deserves particular attention here are threat models specifically tailored to AI. While traditional security focused on server availability and simple access control, we must now defend against attacks like Data Poisoning and Model Extraction. Data Poisoning involves injecting malicious data during the training phase to cause the model to make incorrect decisions in specific scenarios, which is extremely difficult to detect with standard firewalls alone. Ultimately, securing integrated visibility across the entire Cloud infrastructure is the cornerstone of this security architecture.
+A point to note here is the AI-specific threat model. While traditional security focused on server availability and simple access control, we must now defend against attacks such as Data Poisoning or Model Extraction. Data Poisoning is an attack that injects malicious data during the training phase to induce the model to make wrong decisions in specific situations, which is very difficult to detect with general firewalls alone. Ultimately, securing integrated visibility across the entire Cloud infrastructure is the core of this security system.
 
-![A conceptual diagram illustrating a Cloud-Native Application Protection Platform (CNAPP) with integrated layers for identity, workload, and AI data security, clean flat design style.](../../../../../source/posts/Cloud-Native_AI_Security/b39e3d22-1.webp)
+![Cloud-Native AI Security - AI Generated](../../../../../source/posts/Cloud-Native_AI_Security/b39e3d22-1.webp)
 
-## CNAPP Integrated Management and Real-time Defense Strategies using eBPF
+## CNAPP Integrated Management and Real-time Defense Strategy Using eBPF
 
-The concept of CNAPP (Cloud-Native Application Protection Platform) has emerged to manage complex security threats. CNAPP integrates previously siloed functions such as posture management (CSPM), workload protection (CWPP), and entitlement management (CIEM) into a single platform. Given that AI workloads run on massive GPU clusters and distributed Kubernetes nodes, the role of CNAPP—enabling monitoring from a single console—is bound to become even more vital.
+To manage complex security threats, the concept of CNAPP (Cloud-Native Application Protection Platform) has emerged. CNAPP is a form that integrates CSPM (Posture Management), CWPP (Workload Protection), and CIEM (Entitlement Management), which were previously operated individually, into a single platform. Since AI workloads run on large GPU clusters and distributed Kubernetes nodes, the role of CNAPP, which can monitor these from a single console, is bound to become more important.
 
-Digging deeper into the technical aspects, runtime monitoring utilizing eBPF (Extended Berkeley Packet Filter) serves as a practical solution. By analyzing events occurring at the kernel level while the AI model is operating, it can capture abnormal access to model weight files or anomalies in API call patterns in real-time. For instance, if a specific container sends an unusually high volume of read requests to object storage containing training datasets, it can be flagged as a data exfiltration attempt and blocked immediately. Building such a security environment using specialized services like Haionnet allows for the application of Zero Trust principles from the network infrastructure level, effectively neutralizing external threats.
+Digging deeper technically, runtime monitoring using eBPF (Extended Berkeley Packet Filter) serves as a practical alternative. This method captures abnormal access to model weight files or anomalies in API call patterns in real-time by analyzing events occurring at the kernel level while the AI model is operating. For example, if a specific container sends an unusually high number of read requests to object storage containing training datasets, it can be regarded as a data theft attempt and immediately blocked. By building such a security environment using verified security infrastructure services, external threats can be more effectively contained by applying Zero Trust principles from the network infrastructure stage.
 
-> "Cloud-native AI security is more than just adopting tools; it is a process shift that ensures the integrity of the entire lifecycle, from development to operations."
+> "Cloud-native AI security is not just about adopting tools; it is a shift in process that ensures the integrity of the entire lifecycle from development to operation."
 
-![A split screen visual comparing NIST and CSA AI security frameworks, with icons representing control matrices and regulatory compliance, minimalist vector art.](../../../../../source/posts/Cloud-Native_AI_Security/655209d5-2.webp)
+![Cloud-Native AI Security - AI Generated](../../../../../source/posts/Cloud-Native_AI_Security/655209d5-2.webp)
 
 ## Utilizing NIST and CSA Frameworks for Establishing Governance
 
-In addition to technical protection measures, establishing a governance framework is essential. In 2025, the U.S. NIST (National Institute of Standards and Technology) and the CSA (Cloud Security Alliance) presented specific guidelines for AI security. NIST’s COSAIS (Control Overlay for AI Systems) is characterized by extending the existing SP 800-53 standards to fit AI environments. This is useful for public institutions or large enterprises already following NIST standards to naturally integrate AI security into their existing processes.
+In addition to technical protection measures, establishing a governance system is essential. Entering 2025, the US NIST (National Institute of Standards and Technology) and the CSA (Cloud Security Alliance) presented specific guidelines for AI security. NIST's COSAIS (Control Overlay for AI Systems) is characterized by extending the existing SP 800-53 standard to suit the AI environment. This is useful for public institutions or large corporations that already follow NIST standards to naturally melt AI security into their existing security processes.
 
-On the other hand, the CSA’s AICM (AI Control Matrix) is optimized for a Cloud-native perspective. It provides 243 specific control items across 18 domains and clearly defines the 'Shared Responsibility Model' for each entity, from model providers to application developers. For example, while the Cloud Service Provider (CSP) is responsible for infrastructure security, the enterprise must focus on input validation for deployed models and defending against prompt injection. Using these two frameworks complementarily allows an organization to build a more robust security system.
+On the other hand, CSA's AICM (AI Controls Matrix) is optimized from a Cloud-Native perspective. It provides 243 specific control items across 18 domains and clearly defines the 'Shared Responsibility Model' that each entity, from model providers to application developers, must handle. For example, if a Cloud Service Provider (CSP) is responsible for infrastructure security, the company should focus on input validation for deployed models and defense against prompt injection. Using the two frameworks complementarily can establish a more robust security system within the organization.
 
-![A futuristic city landscape representing a secure digital society with floating data nodes and AI protection shields, professional editorial style.](../../../../../source/posts/Cloud-Native_AI_Security/6556e64f-3.webp)
+![Cloud-Native AI Security - AI Generated](../../../../../source/posts/Cloud-Native_AI_Security/6556e64f-3.webp)
 
-## The Importance of a Practical Security Roadmap and Infrastructure Partnerships
+## Practical Security Roadmap and the Importance of Infrastructure Partnership
 
-At this stage, the core of Cloud-native AI security is the combination of 'Shift-Left' and 'Runtime Protection.' It is necessary to create a structure where configuration errors are corrected through IaC (Infrastructure as Code) scanning in the early development stages, while AI-based detection systems continuously monitor during the operational stage. However, implementing this perfectly across complex network paths and multi-Cloud environments is no easy feat.
+At this point, the core of Cloud-Native AI security is the combination of 'Shift-Left' and 'Runtime Protection.' A structure must be created where configuration errors are corrected through IaC (Infrastructure as Code) scanning in the early stages of development, and AI-based detection systems constantly monitor during the operation phase. However, perfectly implementing this in complex network paths and multi-cloud environments is no easy task.
 
-To solve these technical difficulties, leveraging the capabilities of partners like Haionnet is one effective strategy. By combining stable dedicated lines with powerful security solutions, enterprises can reduce the burden of security and establish a foundation to focus more on AI innovation itself. The threats hidden behind the possibilities brought by AI technology are a very real problem. It is now time to establish and execute security strategies optimized for Cloud-native environments. When the depth of security matches the speed of technological advancement, a true digital transformation will be achieved.
+To solve these technical challenges, utilizing the capabilities of professional infrastructure partners is also a way. By combining stable dedicated lines with powerful security solutions, companies can lay a foundation to focus more on AI innovation itself while reducing the burden of security. As much as the possibilities that AI technology will bring, the threats hidden behind them are also realistic problems. Now is the time to establish and execute a security strategy optimized for the Cloud-Native environment. When the depth of security is secured in line with the speed of technological development, digital transformation in the true sense will be completed.
