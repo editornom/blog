@@ -14,7 +14,12 @@ export function getPath(
   includeBase = true
 ) {
   // Normalize id: strip .md extension and handle backslashes
-  const normalizedId = id.replace(/\\/g, "/").replace(/\.(md|mdx)$/, "");
+  // Also strip YYMMDD_ prefix from any path segment to keep URLs clean
+  const normalizedId = id
+    .replace(/\\/g, "/")
+    .replace(/\.(md|mdx)$/, "")
+    .replace(/(^|\/)\d{6}_/g, "$1");
+    
   const segments = normalizedId.split("/");
   const slug = segments.pop() || "";
 

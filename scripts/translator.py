@@ -44,7 +44,7 @@ def translate_post(korean_markdown, target_lang):
    - 🚨 **[배열 기호 엄수]**: tags 항목의 대괄호 [ ] 안의 항목들을 구분할 때는 반드시 영문 반각 쉼표(,)만 사용하십시오. 절대 중국어/일본어 전각 쉼표(， 또는 、)를 쓰지 마십시오.
 5. **자연스러운 번역**: 직역이 아닌, {lang_name} 원어민이 읽었을 때 자연스럽고 전문적인 기술 칼럼처럼 느껴지도록 의역하십시오.
 6. **고유명사 보호 (Glossary Enforcement)**: 다음 목록의 브랜드명과 IT 솔루션 전문 용어들은 엉뚱한 현지어로 직역하지 말고 반드시 영문 스펠링을 그대로 유지하거나 업계 표준 표기를 가장 우선시하십시오.
-   - [보호 사전]: Haionnet(하이온넷), Editornom, VPN, UTM, API, SSL, B2B, AI, LLM, RAG, NVIDIA, CDN, SD-WAN, Playwright, Cloud, On-Premise, Node, React, Next.js
+   - [보호 사전]: Editornom, VPN, UTM, API, SSL, B2B, AI, LLM, RAG, NVIDIA, CDN, SD-WAN, Playwright, Cloud, On-Premise, Node, React, Next.js
 7. **이미지 알트태그 번역**: `![alt text](path)` 형식에서 `alt text` 부분을 대상 언어로 자연스럽게 번역하십시오.
 
 ### 원본 한국어 원고:
@@ -176,10 +176,18 @@ def translate_and_save(korean_draft, slug, folder, target_langs=None):
             # 강제로 원본 한국어 slug를 사용하도록 고정 (언어 전환 시 url 매핑을 위해)
             target_slug = slug
             
+            # Extract pubDatetime for filename prefix (YYMMDD)
+            pub_match = re.search(r'pubDatetime: (\d{4})-(\d{2})-(\d{2})', translated)
+            if pub_match:
+                yy, mm, dd = pub_match.group(1)[2:], pub_match.group(2), pub_match.group(3)
+                prefix = f"{yy}{mm}{dd}_"
+            else:
+                prefix = datetime.datetime.now().strftime("%y%m%d_")
+                
             # Save to the correct language folder
             target_dir = os.path.join("src", "data", "blog", lang_code, folder)
             os.makedirs(target_dir, exist_ok=True)
-            target_path = os.path.join(target_dir, f"{target_slug}.md")
+            target_path = os.path.join(target_dir, f"{prefix}{target_slug}.md")
             
             with open(target_path, "w", encoding="utf-8") as f:
                 f.write(translated)

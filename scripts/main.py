@@ -12,7 +12,7 @@ from reviewer import review_manuscript
 from imagen_helper import generate_image
 from translator import translate_and_save, translate_text
 from publish import push_to_github
-from accordian import load_faq_content, append_faq_to_draft
+from accordian import load_faq_content, prepare_faq_data
 from headline_crawler import generate_daily_headlines_file
 from trend_catcher import get_daily_topic_from_file, save_keyword_to_history
 from search_expert import deep_search_and_filter
@@ -220,12 +220,28 @@ def process_single_file(file_path, folder="posts", target_lang=None, include_faq
         
         faqs = load_faq_content(keyword)
         if faqs:
-            # First, strip existing FAQ if any to avoid duplicates
+            # First, strip existing legacy FAQ in body if any to avoid duplicates
             if "## ✅ 자주 묻는 질문 (FAQ)" in draft:
                 draft = draft.split("## ✅ 자주 묻는 질문 (FAQ)")[0].strip()
             
-            draft = append_faq_to_draft(draft, faqs)
-            print(f"Added {len(faqs)} FAQ items to the draft.")
+            # Use prepare_faq_data to cleanup draft and get faq list
+            draft, faqs = prepare_faq_data(draft, faqs)
+            
+            # NOTE: For frontmatter insertion, we'll need a more robust check. 
+            # If the draft already has 'faqs:' in frontmatter, we might want to skip or update.
+            # For simplicity in this 'posts' mode, we trust the translator to handle frontmatter if it's there,
+            # or we manually inject if missing.
+            if "faqs:" not in draft[:1000]: # Check first 1000 chars (frontmatter area)
+                import yaml
+                # Simple injection: find the second --- and put it before
+                parts = draft.split("---", 2)
+                if len(parts) >= 3:
+                    fm = yaml.safe_load(parts[1])
+                    fm['faqs'] = faqs
+                    new_fm = yaml.dump(fm, allow_unicode=True, sort_keys=False)
+                    draft = f"---\n{new_fm}---\n{parts[2].strip()}"
+            
+            print(f"Ensured FAQ data for '{keyword}' is ready for translation.")
             
             # Save the updated Korean draft
             with open(file_path, "w", encoding="utf-8") as f:
@@ -404,13 +420,14 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
             report["images"]["success"] += 1
             rel_path = f"../../../../../source/{folder}/{source_folder_name}/{img_filename}"
             
-            # Alt 태그 SEO 초적화: 핵심 키워드 조합
-            translated_alt = translate_text(prompt, "ko")
+            # Alt 태그 SEO 최적화: AI 프롬프트 노이즈를 제거하고 핵심 맥락만 추출
+            # '4k', 'cinematic' 등의 노이즈는 제외하도록 translate_text 내부에 가이드하거나 별도 처리
+            alt_clean_prompt = f"다음 이미지 생성용 프롬프트에서 시각적 스타일 키워드(4k, 해상도 등)를 제외하고, 초보자도 이해할 수 있는 핵심 의미만 한 문장으로 요약해서 ko로 번역해줘. (예: '데이터 센터의 보안 시스템'):\n{prompt}"
+            translated_alt = translate_text(alt_clean_prompt, "ko")
             alt_keyword = keyword if keyword else "IT 트렌드"
             md_img_link = f"![{alt_keyword} - {translated_alt}]({rel_path})"
             
-            # 1. 기본 교체 수행 (AI가 사용한 포맷에 맞게 교체)
-            # 괄호 포맷 (![이미지](...)) 및 대괄호 포맷 ([이미지: ...]) 모두 대응
+            # 1. 기본 교체 수행
             draft = draft.replace(f"[이미지: {prompt}]", md_img_link)
             draft = draft.replace(f"![이미지]({prompt})", md_img_link)
             
@@ -422,13 +439,21 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
             if i == 0:
                 draft = re.sub(r'ogImage: ".*?"', f'ogImage: "{rel_path}"', draft)
 
-    # 5. Save the Final Markdown File
+    # 5. Save the Final Markdown File with YYMMDD_ prefix
     slug_match = re.search(r'slug: "(.*?)"', draft)
     slug = slug_match.group(1) if slug_match else f"post-{datetime.datetime.now().strftime('%Y-%m-%d-%H%M%S')}"
     
+    # Extract pubDatetime for filename prefix (YYMMDD)
+    pub_match = re.search(r'pubDatetime: (\d{4})-(\d{2})-(\d{2})', draft)
+    if pub_match:
+        yy, mm, dd = pub_match.group(1)[2:], pub_match.group(2), pub_match.group(3)
+        prefix = f"{yy}{mm}{dd}_"
+    else:
+        prefix = datetime.datetime.now().strftime("%y%m%d_")
+        
     target_dir = os.path.join("src", "data", "blog", "ko", folder)
     os.makedirs(target_dir, exist_ok=True)
-    post_path = os.path.join(target_dir, f"{slug}.md")
+    post_path = os.path.join(target_dir, f"{prefix}{slug}.md")
     
     with open(post_path, "w", encoding="utf-8") as f:
         f.write(draft)
@@ -437,13 +462,10 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
     report["draft"]["success"] = True
     report["draft"]["path"] = post_path
     
-    # 6. Translate to EN, CN, JP (Skip if folder is haionnet)
-    if folder == "haionnet":
-        print(f"\n=== Skipping translation for 'haionnet' folder (Korea-only service) ===")
-    else:
-        print(f"\n=== Translating to 3 languages ===")
-        results = translate_and_save(draft, slug, folder)
-        report["translations"] = results
+    # 6. Translate to EN, CN, JP
+    print(f"\n=== Translating to 3 languages ===")
+    results = translate_and_save(draft, slug, folder)
+    report["translations"] = results
     
     # 7. Push to GitHub
     if DRY_RUN:
@@ -465,7 +487,7 @@ if __name__ == "__main__":
     
     # Support positional arguments (for the requested format: python main.py keyword folder)
     parser.add_argument("p_input_arg", nargs="?", help="Keyword or Path to .md file")
-    parser.add_argument("p_folder", nargs="?", help="Target folder (posts or haionnet)")
+    parser.add_argument("p_folder", nargs="?", help="Target folder (default: posts)")
     parser.add_argument("p_target_lang", nargs="?", help="Specific language for retry mode (en, cn, jp)")
     
     # Support named arguments for clarity
@@ -500,75 +522,6 @@ if __name__ == "__main__":
     if input_arg and input_arg.endswith(".md"):
         # 기존 파일 재작업 모드
         process_single_file(input_arg, folder, target_lang, include_faq=include_faq)
-    elif folder == "haionnet":
-        # 🚀 [HAIONNET SPECIAL MODE] 
-        # 사용자가 URL을 직접 입력했는지 확인
-        if input_arg.startswith("http"):
-            root_url = input_arg
-            # 키워드는 세 번째 인자로 받거나, 없으면 기본값 사용
-            auto_keyword = sys.argv[3] if len(sys.argv) > 3 else "하이온넷 서비스"
-            print(f"\n🌊 [DEEP DIVE MODE] Starting deep analysis for: {root_url}")
-            print(f"📌 Target Keyword: {auto_keyword}")
-            
-            # 1. 루트 페이지 수집
-            root_content = fetch_content(root_url)
-            if not root_content:
-                print(f"❌ '{root_url}' 접속에 실패했습니다.")
-                sys.exit(1)
-            
-            # 2. 관련 하위 링크 추출
-            related_links = extract_related_links(root_url, root_content.get('html_raw', '')) # wait, I need to make sure fetch_content returns raw html
-            # Actually, fetch_content doesn't return raw html. I should modify it or just re-fetch in main.
-            # Let's fix fetch_content later. For now, I'll assume it returns html_raw.
-            
-            # Re-fetch for raw HTML if needed, or modify fetch_content.
-            # Since I already updated crawler.py to not include html_raw, I'll re-fetch here for simplicity or modify fetch_content.
-            # Better: modify fetch_content to include html_raw.
-            
-            print(f"🔍 Found {len(related_links)} related sub-links. Crawling for more context...")
-            
-            all_bodies = [root_content['body']]
-            for i, link in enumerate(related_links[:5]): # Limit to 5 sub-links
-                print(f"  [{i+1}/{len(related_links[:5])}] Crawling sub-link: {link}")
-                sub_content = fetch_content(link)
-                if sub_content and sub_content['body']:
-                    all_bodies.append(sub_content['body'])
-            
-            # Combine content
-            top_urls = [root_url] + related_links[:5]
-            
-            # 수동 모드 역사 기록
-            save_keyword_to_history(auto_keyword, "하이온넷")
-            
-            process_urls(urls=top_urls, keyword=auto_keyword, folder=folder, include_faq=include_faq)
-        else:
-            # 기존 urls.txt 기반 모드 (폴백)
-            print(f"\n⚡ [HAIONNET MODE] Reading from 'source/url/urls.txt'...")
-            
-            url_file = os.path.join("source", "url", "urls.txt")
-            if not os.path.exists(url_file):
-                print(f"❌ '{url_file}' 파일이 없습니다. 수동 URL 리스트를 먼저 작성해 주세요.")
-                sys.exit(1)
-                
-            with open(url_file, "r", encoding="utf-8") as f:
-                manual_urls = [line.strip() for line in f if line.strip() and line.startswith("http")]
-                
-            if not manual_urls:
-                print(f"❌ '{url_file}'에 유효한 URL이 없습니다.")
-                sys.exit(1)
-                
-            print(f"✅ {len(manual_urls)}개의 수동 URL을 로드했습니다. 본문 검증 및 선별을 시작합니다.")
-            
-            auto_keyword = input_arg if input_arg else "Haionnet_Service_Highlights"
-            print(f"📌 Target Keyword: {auto_keyword}")
-            
-            from search_expert import select_best_from_list
-            top_urls = select_best_from_list(manual_urls, auto_keyword)
-            
-            # 수동 모드 역사 기록
-            save_keyword_to_history(auto_keyword, "하이온넷")
-            
-            process_urls(urls=top_urls, keyword=auto_keyword, folder=folder, include_faq=include_faq)
 
     elif input_arg:
         # 🚀 [MANUAL MODE] 수동 키워드 입력 시 DeepSearch 연동

@@ -12,8 +12,8 @@ def review_manuscript(draft, folder="posts"):
     Sends the generated blog post draft to Gemini for final inspection and refinement.
     
     Args:
-        draft: The markdown content generated in step 3.
-        folder: 'posts' or 'haionnet'.
+        draft: The markdown content generated.
+        folder: Target content category.
     """
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
