@@ -4,7 +4,7 @@
   "version": "5.5.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro check && astro build && pagefind --site dist && (if exist public\\pagefind (rmdir /s /q public\\pagefind)) && xcopy /E /I dist\\pagefind public\\pagefind",
+    "build": "astro check && astro build && pagefind --site dist && node -e \"const fs = require('fs'); if (fs.existsSync('public/pagefind')) fs.rmSync('public/pagefind', { recursive: true, force: true }); fs.cpSync('dist/pagefind', 'public/pagefind', { recursive: true })\"",
     "preview": "astro preview",
     "sync": "astro sync",
     "astro": "astro",
