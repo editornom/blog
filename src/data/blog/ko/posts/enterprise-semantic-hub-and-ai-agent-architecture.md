@@ -84,7 +84,7 @@ AI 에이전트가 비즈니스 전반에서 자율적으로 활동하려면 기
 
 이 과정에서 에이전트는 **자기 반영(Self-Reflection)** 프레임워크를 가동합니다. 자신의 결정 근거를 시맨틱 레이어의 지식과 대조해보고, 확신이 부족할 경우 인간에게 승인을 요청하거나 추가 데이터를 확보합니다. AI의 불확실성을 관리하면서 자율성을 높이는 실무적인 해법이라 할 수 있습니다.
 
-**![사람 아이콘과 AI 에이전트 아이콘 사이를 흐르는 빛나는 데이터 경로를 보여주는 비즈니스 프로세스 모델의 디지털 트윈, 정교한 에디토리얼 인포그래픽 스타일](../../../../../source/posts/엔터프라이즈_시맨틱_허브(Semantic_Hub)/8d8abe9b-3.png)**
+**![Digital twin of a business process model showing a glowing data path flowing between a human icon and an AI agent icon, sophisticated editorial infographic style](../../../../../source/posts/엔터프라이즈_시맨틱_허브(Semantic_Hub)/8d8abe9b-3.png)**
 
 ## 에이전트 중심(Agent-First) 환경으로의 변화와 과제
 
