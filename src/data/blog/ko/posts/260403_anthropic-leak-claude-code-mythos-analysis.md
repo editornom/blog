@@ -1,14 +1,18 @@
 ---
-title: "실수가 드러낸 미래: 앤스로픽 소스코드 유출과 ‘클로드 미토스’의 실체"
-author: "editornom"
-pubDatetime: 2026-04-03T18:35:10.630685Z
-slug: "anthropic-leak-claude-code-mythos-analysis"
+title: '실수가 드러낸 미래: 앤스로픽 소스코드 유출과 ‘클로드 미토스’의 실체'
+author: editornom
+pubDatetime: 2026-04-03 18:35:10.630685+00:00
+slug: anthropic-leak-claude-code-mythos-analysis
 featured: false
 draft: false
-tags: ["앤스로픽", "클로드미토스", "보안가이드라인"]
-ogImage: "../../../../../source/posts/클로드유출/27d4d8d2-0.png"
-description: "배포 실수로 유출된 앤스로픽의 차세대 AI 모델 정보와 소스코드 내부의 기술적 방어 기제, 그리고 달라진 보안 정책을 심층 분석합니다."
+tags:
+- 앤스로픽
+- 클로드미토스
+- 보안가이드라인
+ogImage: ../../../../../source/posts/클로드유출/27d4d8d2-0.png
+description: 배포 실수로 유출된 앤스로픽의 차세대 AI 모델 정보와 소스코드 내부의 기술적 방어 기제, 그리고 달라진 보안 정책을 심층 분석합니다.
 ---
+
 
 보안과 안전을 최우선 가치로 내세웠던 앤스로픽(Anthropic)이 최근 곤혹스러운 상황에 직면했습니다. 불과 일주일 간격으로 발생한 두 차례의 데이터 유출 사고 때문입니다. 하나는 콘텐츠 관리 시스템(CMS)의 설정 오류였고, 다른 하나는 개발자의 단순한 배포 실수에서 기인했습니다.
 

@@ -11,67 +11,30 @@ tags:
 - Deep-Learning
 - NLP
 ogImage: ../../../../../source/glossary/Large_Language_Model/54353314-0.png
-description: This article explains the definition and core technologies of Large Language
-  Models (LLMs), AI models trained on vast amounts of text data to generate, translate,
-  and reason with natural language.
+description: This article explains the definition and core technologies of Large Language Models (LLMs), AI models trained on vast amounts of text data to generate, translate, and reason with natural language.
 faqs:
 - q: What is a Large Language Model (LLM)?
-  a: An LLM is an artificial intelligence model designed to understand and generate
-    human language by training on vast amounts of text data. Based on hundreds of
-    millions or billions of parameters, it is characterized by its ability to perform
-    tasks ranging from simple writing to summarization, translation, and complex logical
-    reasoning.
+  a: An LLM is an artificial intelligence model designed to understand and generate human language by training on vast amounts of text data. Based on hundreds of millions or billions of parameters, it is characterized by its ability to perform tasks ranging from simple writing to summarization, translation, and complex logical reasoning.
 - q: What role does the 'Transformer' architecture play in LLMs?
-  a: The Transformer is a technology that simultaneously calculates the relationships
-    between all words in a sentence through the 'Self-Attention' mechanism. This allows
-    the model to accurately grasp context without forgetting information from the
-    beginning of long sentences, and it dramatically increases training speed through
-    parallel data processing.
+  a: The Transformer is a technology that simultaneously calculates the relationships between all words in a sentence through the 'Self-Attention' mechanism. This allows the model to accurately grasp context without forgetting information from the beginning of long sentences, and it dramatically increases training speed through parallel data processing.
 - q: What are 'Emergent abilities' in the context of LLMs?
-  a: This refers to a phenomenon where high-level reasoning abilities, which were
-    not seen in smaller models, suddenly appear when the model's parameters and data
-    scale exceed a certain threshold. This occurs as a result of the Scaling Law,
-    where model capabilities improve significantly as computing resources and data
-    grow.
+  a: This refers to a phenomenon where high-level reasoning abilities, which were not seen in smaller models, suddenly appear when the model's parameters and data scale exceed a certain threshold. This occurs as a result of the Scaling Law, where model capabilities improve significantly as computing resources and data grow.
 - q: How do the learning processes of 'Pre-training' and 'Fine-tuning' differ?
-  a: Pre-training is the initial stage where the model learns the general structure
-    and knowledge of language through large-scale unstructured data. Fine-tuning is
-    an optimization stage that improves the appropriateness and accuracy of answers
-    by refining the model for specific tasks or incorporating human feedback through
-    Reinforcement Learning from Human Feedback (RLHF).
+  a: Pre-training is the initial stage where the model learns the general structure and knowledge of language through large-scale unstructured data. Fine-tuning is an optimization stage that improves the appropriateness and accuracy of answers by refining the model for specific tasks or incorporating human feedback through Reinforcement Learning from Human Feedback (RLHF).
 - q: What is Tokenization and why is it important?
-  a: Tokenization is a preprocessing step that breaks text into 'tokens,' the smallest
-    units the model can handle. Since AI does not understand text directly but operates
-    through these tokenized numbers, efficient tokenization directly impacts the model's
-    performance and operational costs.
+  a: Tokenization is a preprocessing step that breaks text into 'tokens,' the smallest units the model can handle. Since AI does not understand text directly but operates through these tokenized numbers, efficient tokenization directly impacts the model's performance and operational costs.
 - q: What are the main differences between LLMs and Small Language Models (SLMs)?
-  a: While LLMs are general-purpose models that consume vast resources, SLMs are models
-    focused on specific purposes (medical, legal, etc.) by optimizing the number of
-    parameters. Because SLMs are lightweight and fast, they are more advantageous
-    for implementation in secure closed networks or on-device AI that runs directly
-    on hardware.
+  a: While LLMs are general-purpose models that consume vast resources, SLMs are models focused on specific purposes (medical, legal, etc.) by optimizing the number of parameters. Because SLMs are lightweight and fast, they are more advantageous for implementation in secure closed networks or on-device AI that runs directly on hardware.
 - q: How is the 'Hallucination' phenomenon in LLMs resolved?
-  a: Hallucination is a phenomenon where the model provides incorrect information
-    as if it were true. To solve this, RAG (Retrieval-Augmented Generation) technology
-    is primarily used. By having the model reference reliable external documents related
-    to the question before generating an answer, the accuracy of the information can
-    be improved.
+  a: Hallucination is a phenomenon where the model provides incorrect information as if it were true. To solve this, RAG (Retrieval-Augmented Generation) technology is primarily used. By having the model reference reliable external documents related to the question before generating an answer, the accuracy of the information can be improved.
 - q: What exactly is RAG (Retrieval-Augmented Generation)?
-  a: RAG is a technology where the model does not rely solely on its internal knowledge
-    but searches for relevant information in real-time from corporate knowledge bases
-    or external databases to use as a basis for its answers. This increases the reliability
-    of responses and allows for the reflection of the latest information in real-time.
+  a: RAG is a technology where the model does not rely solely on its internal knowledge but searches for relevant information in real-time from corporate knowledge bases or external databases to use as a basis for its answers. This increases the reliability of responses and allows for the reflection of the latest information in real-time.
 - q: Why is Prompt Engineering important?
-  a: This is because the quality of the LLM's output varies significantly depending
-    on the form of the question (input). By precisely designing and optimizing questions
-    so that the model accurately understands the context, high-quality answers in
-    the desired format can be obtained more efficiently.
+  a: This is because the quality of the LLM's output varies significantly depending on the form of the question (input). By precisely designing and optimizing questions so that the model accurately understands the context, high-quality answers in the desired format can be obtained more efficiently.
 - q: How does Multimodality affect the future of LLMs?
-  a: Multimodality is the ability to simultaneously understand and generate various
-    forms of data beyond text, such as images, sound, and video. This allows LLMs
-    to combine visual information and auditory context, enabling integrated thinking
-    and interaction that is even more similar to that of humans.
+  a: Multimodality is the ability to simultaneously understand and generate various forms of data beyond text, such as images, sound, and video. This allows LLMs to combine visual information and auditory context, enabling integrated thinking and interaction that is even more similar to that of humans.
 ---
+
 
 ![Neural network processing text data for language generation.](../../../../../source/glossary/Large_Language_Model/54353314-0.png)
 

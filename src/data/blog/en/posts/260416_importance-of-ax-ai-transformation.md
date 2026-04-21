@@ -1,14 +1,18 @@
 ---
-title: "AX: From Tool Adoption to Business Process 'Redesign'"
-author: "editornom"
-pubDatetime: 2026-04-16T14:05:50+09:00
-slug: "importance-of-ax-ai-transformation"
+title: 'AX: From Tool Adoption to Business Process ''Redesign'''
+author: editornom
+pubDatetime: 2026-04-16 14:05:50+09:00
+slug: importance-of-ax-ai-transformation
 featured: false
 draft: false
-tags: ["AX", "AI Transformation", "Business Automation"]
-ogImage: "../../../../../source/posts/AX(AI_transformation)의_중요성/6c5a5aa9-0.png"
-description: "We analyze the essence of AX (AI Transformation) and its practical implementation strategies that go beyond simple AI tool adoption to fundamentally reshape business structures."
+tags:
+- AX
+- AI Transformation
+- Business Automation
+ogImage: ../../../../../source/posts/AX(AI_transformation)의_중요성/6c5a5aa9-0.png
+description: We analyze the essence of AX (AI Transformation) and its practical implementation strategies that go beyond simple AI tool adoption to fundamentally reshape business structures.
 ---
+
 
 Recently, the IT industry has seen AX (AI Transformation) emerge as the primary survival strategy following DX (Digital Transformation). While the focus just a few years ago was on digitizing all data, the core of the generative AI era lies in how AI can make decisions and execute actions based on that accumulated data.
 

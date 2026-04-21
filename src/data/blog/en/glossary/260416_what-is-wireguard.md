@@ -11,58 +11,30 @@ tags:
 - NetworkSecurity
 - Cryptography
 ogImage: ../../../../../source/glossary/Wireguard/24721b46-0.png
-description: An in-depth look at WireGuard, a next-generation VPN protocol that maximizes
-  speed and security through modern cryptography and a lightweight codebase.
+description: An in-depth look at WireGuard, a next-generation VPN protocol that maximizes speed and security through modern cryptography and a lightweight codebase.
 faqs:
 - q: What is WireGuard?
-  a: It is a next-generation open-source VPN protocol that maximizes speed and security
-    through modern cryptographic techniques and a lean codebase. Unlike traditional,
-    complex VPN methods, it operates within the Linux kernel to provide extremely
-    high processing performance.
+  a: It is a next-generation open-source VPN protocol that maximizes speed and security through modern cryptographic techniques and a lean codebase. Unlike traditional, complex VPN methods, it operates within the Linux kernel to provide extremely high processing performance.
 - q: What are the main features of WireGuard?
-  a: It is designed with a very lightweight codebase of around 4,000 lines, making
-    security audits easier and configuration more straightforward. By using a fixed
-    set of modern cryptographic algorithms, it achieves strong security and low-power,
-    high-speed communication simultaneously.
+  a: It is designed with a very lightweight codebase of around 4,000 lines, making security audits easier and configuration more straightforward. By using a fixed set of modern cryptographic algorithms, it achieves strong security and low-power, high-speed communication simultaneously.
 - q: What was the background behind the development of this technology?
-  a: Traditional protocols like IPsec and OpenVPN have massive codebases reaching
-    hundreds of thousands of lines, making them difficult to configure and audit for
-    security holes. To address this, security researcher Jason A. Donenfeld designed
-    a new standard that operates efficiently even in mobile and embedded environments.
+  a: Traditional protocols like IPsec and OpenVPN have massive codebases reaching hundreds of thousands of lines, making them difficult to configure and audit for security holes. To address this, security researcher Jason A. Donenfeld designed a new standard that operates efficiently even in mobile and embedded environments.
 - q: How does 'Cryptokey Routing' work?
-  a: It is a method of communication that associates a public key with a specific
-    tunnel IP address, similar to SSH authentication. It ensures connection reliability
-    by cryptographically verifying that the source IP of incoming packets matches
-    the IP of a pre-authorized peer.
+  a: It is a method of communication that associates a public key with a specific tunnel IP address, similar to SSH authentication. It ensures connection reliability by cryptographically verifying that the source IP of incoming packets matches the IP of a pre-authorized peer.
 - q: What cryptographic algorithms does WireGuard use?
-  a: It uses a fixed suite of modern, validated algorithms including ChaCha20, Poly1305,
-    and Curve25519. This prevents configuration errors that might occur if a user
-    were to accidentally choose a lower-security algorithm.
+  a: It uses a fixed suite of modern, validated algorithms including ChaCha20, Poly1305, and Curve25519. This prevents configuration errors that might occur if a user were to accidentally choose a lower-security algorithm.
 - q: What is the biggest advantage of WireGuard compared to OpenVPN?
-  a: Its codebase is less than 1% the size of OpenVPN's, resulting in much faster
-    speeds and lower system resource consumption. Additionally, it uses simple public-key
-    pairs instead of complex certificate systems, making deployment and maintenance
-    much easier.
+  a: Its codebase is less than 1% the size of OpenVPN's, resulting in much faster speeds and lower system resource consumption. Additionally, it uses simple public-key pairs instead of complex certificate systems, making deployment and maintenance much easier.
 - q: Why is WireGuard preferred in mobile environments?
-  a: Because it supports UDP-based stateless connections, it offers a robust 'IP roaming'
-    feature that keeps the connection alive without re-authentication when switching
-    networks (e.g., from Wi-Fi to LTE). This allows for uninterrupted VPN usage while
-    moving.
+  a: Because it supports UDP-based stateless connections, it offers a robust 'IP roaming' feature that keeps the connection alive without re-authentication when switching networks (e.g., from Wi-Fi to LTE). This allows for uninterrupted VPN usage while moving.
 - q: How is it used in professional settings?
-  a: It is used for establishing large-scale remote work systems for enterprises and
-    for secure communication between containers in microservices (MSA) architectures.
-    Due to its high performance, it is also actively adopted as the high-speed tunneling
-    engine for many commercial VPN services.
+  a: It is used for establishing large-scale remote work systems for enterprises and for secure communication between containers in microservices (MSA) architectures. Due to its high performance, it is also actively adopted as the high-speed tunneling engine for many commercial VPN services.
 - q: What is 'Perfect Forward Secrecy (PFS)' and how does it relate to WireGuard?
-  a: PFS is a security feature that ensures past communication data cannot be decrypted
-    even if a specific session key is leaked. This is built into WireGuard's handshake
-    process by default, strengthening the long-term security of data transmissions.
+  a: PFS is a security feature that ensures past communication data cannot be decrypted even if a specific session key is leaked. This is built into WireGuard's handshake process by default, strengthening the long-term security of data transmissions.
 - q: What should be considered or what are the disadvantages when adopting WireGuard?
-  a: Since the default configuration uses static IP allocation, additional technical
-    implementation may be required to achieve complete anonymity. Furthermore, because
-    it is a UDP-only protocol, you must verify beforehand whether UDP traffic is blocked
-    on the target network.
+  a: Since the default configuration uses static IP allocation, additional technical implementation may be required to achieve complete anonymity. Furthermore, because it is a UDP-only protocol, you must verify beforehand whether UDP traffic is blocked on the target network.
 ---
+
 
 ![Diagram of a WireGuard tunnel using UDP and public-key cryptography.](../../../../../source/glossary/Wireguard/24721b46-0.png)
 

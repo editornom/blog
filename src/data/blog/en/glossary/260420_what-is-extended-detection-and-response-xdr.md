@@ -6,48 +6,30 @@ slug: extended-detection-and-response-xdr-security-guide
 featured: false
 draft: false
 ogImage: ../../../../../source/glossary/Extended_Detection_and_Response_(XDR)/d9bf4dbe-0.webp
-description: Extended Detection and Response (XDR) is a next-generation security solution
-  that integrates data from various security layers—including endpoints, networks,
-  and cloud—to detect and respond to threats.
+description: Extended Detection and Response (XDR) is a next-generation security solution that integrates data from various security layers—including endpoints, networks, and cloud—to detect and respond to threats.
 faqs:
 - q: What is XDR?
-  a: It is a next-generation security platform that integrates data from multiple
-    security layers—such as endpoints, networks, and the Cloud—to detect and respond
-    to threats in a unified manner.
+  a: It is a next-generation security platform that integrates data from multiple security layers—such as endpoints, networks, and the Cloud—to detect and respond to threats in a unified manner.
 - q: What are the key features of XDR?
-  a: XDR analyzes data from various security tools using machine learning to identify
-    attack paths. it supports centralized control through a single console and enables
-    automated, immediate responses.
+  a: XDR analyzes data from various security tools using machine learning to identify attack paths. it supports centralized control through a single console and enables automated, immediate responses.
 - q: Why was XDR developed?
-  a: It was developed to overcome 'security silos' that make it difficult for individual
-    solutions to identify broad threats and to solve the 'Alert Fatigue' issue caused
-    by redundant notifications.
+  a: It was developed to overcome 'security silos' that make it difficult for individual solutions to identify broad threats and to solve the 'Alert Fatigue' issue caused by redundant notifications.
 - q: What kind of data does XDR analyze?
-  a: It collects heterogeneous data from across the infrastructure, including endpoint
-    logs, network traffic, Cloud workloads, emails, and identity (ID) management systems.
+  a: It collects heterogeneous data from across the infrastructure, including endpoint logs, network traffic, Cloud workloads, emails, and identity (ID) management systems.
 - q: What are the main terms related to XDR?
-  a: Key related terms include Endpoint Detection and Response (EDR), Network Detection
-    and Response (NDR), Security Information and Event Management (SIEM), and Security
-    Orchestration, Automation, and Response (SOAR).
+  a: Key related terms include Endpoint Detection and Response (EDR), Network Detection and Response (NDR), Security Information and Event Management (SIEM), and Security Orchestration, Automation, and Response (SOAR).
 - q: What is the biggest difference between EDR and XDR?
-  a: While EDR focuses on the security of individual devices like laptops or servers,
-    XDR expands visibility to include the network and Cloud across the entire infrastructure.
+  a: While EDR focuses on the security of individual devices like laptops or servers, XDR expands visibility to include the network and Cloud across the entire infrastructure.
 - q: How do security silos impact security?
-  a: Since data is not shared between security tools, tracking attack paths is delayed,
-    and it becomes difficult to grasp the overall context of a threat, resulting in
-    slower response speeds.
+  a: Since data is not shared between security tools, tracking attack paths is delayed, and it becomes difficult to grasp the overall context of a threat, resulting in slower response speeds.
 - q: How does XDR reduce threat response time?
-  a: It uses machine-learning-based correlation analysis to instantly reconstruct
-    attack timelines and enables immediate actions, such as device isolation or account
-    blocking, from a single platform.
+  a: It uses machine-learning-based correlation analysis to instantly reconstruct attack timelines and enables immediate actions, such as device isolation or account blocking, from a single platform.
 - q: How is XDR used in a Security Operations Center (SOC)?
-  a: It is used to prioritize real security breaches among numerous alerts and to
-    optimize resources by shortening the time spent on investigation and remediation.
+  a: It is used to prioritize real security breaches among numerous alerts and to optimize resources by shortening the time spent on investigation and remediation.
 - q: What practical benefits can be expected from implementing XDR?
-  a: It increases operational efficiency by providing unified management of fragmented
-    security environments and uses intelligent analysis to quickly catch complex threats
-    that existing tools might miss.
+  a: It increases operational efficiency by providing unified management of fragmented security environments and uses intelligent analysis to quickly catch complex threats that existing tools might miss.
 ---
+
 
 ![XDR architecture diagram showing data flow to a central analysis engine.](../../../../../source/glossary/Extended_Detection_and_Response_(XDR)/d9bf4dbe-0.webp)
 

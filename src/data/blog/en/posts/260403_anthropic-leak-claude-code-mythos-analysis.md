@@ -1,14 +1,18 @@
 ---
-title: "The Future Revealed by a Gaffe: Anthropic's Source Code Leak and the Truth Behind 'Claude Mythos'"
-author: "editornom"
-pubDatetime: 2026-04-03T18:35:10.630685Z
-slug: "anthropic-leak-claude-code-mythos-analysis"
+title: 'The Future Revealed by a Gaffe: Anthropic''s Source Code Leak and the Truth Behind ''Claude Mythos'''
+author: editornom
+pubDatetime: 2026-04-03 18:35:10.630685+00:00
+slug: anthropic-leak-claude-code-mythos-analysis
 featured: false
 draft: false
-tags: ["Anthropic", "Claude Mythos", "Security Guidelines"]
-ogImage: "../../../../../source/posts/클로드유출/27d4d8d2-0.png"
-description: "An in-depth analysis of Anthropic's next-generation AI model info leaked through a deployment error, internal technical defense mechanisms, and their shifted security policies."
+tags:
+- Anthropic
+- Claude Mythos
+- Security Guidelines
+ogImage: ../../../../../source/posts/클로드유출/27d4d8d2-0.png
+description: An in-depth analysis of Anthropic's next-generation AI model info leaked through a deployment error, internal technical defense mechanisms, and their shifted security policies.
 ---
+
 
 Anthropic, a company that has long championed security and safety as its core values, recently found itself in an embarrassing predicament. Within just one week, the company suffered two distinct data leaks: one stemming from a misconfiguration in their Content Management System (CMS), and the other from a simple deployment error by a developer.
 

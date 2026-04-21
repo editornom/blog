@@ -1,5 +1,5 @@
 ---
-title: "AI 令牌劫持 (AI Token Hijacking) 时代，您的会话安全吗？"
+title: AI 令牌劫持 (AI Token Hijacking) 时代，您的会话安全吗？
 author: editornom
 pubDatetime: 2026-04-17 11:03:09+09:00
 slug: ai-token-hijacking-session-security-analysis
@@ -12,7 +12,7 @@ tags:
 - IT 基础设施安全
 - 提示词注入
 ogImage: ../../../../../source/posts/AI_토큰_탈취(AI_Token_Hijacking)/74150eef-0.webp
-description: "分析近期激增的 AI 令牌劫持 (AI Token Hijacking) 技术机制，并提出代理型 AI 环境下的安全应对策略。"
+description: 分析近期激增的 AI 令牌劫持 (AI Token Hijacking) 技术机制，并提出代理型 AI 环境下的安全应对策略。
 faqs:
 - q: 什么是 AI 令牌劫持 (AI Token Hijacking)？
   a: 这是一种利用生成式 AI 窃取已完成认证的“登录会话令牌”的攻击方式。它超越了获取账号密码的阶段，能够使多因素身份验证 (MFA) 失效，并以用户的权限非法访问企业内部系统。
@@ -35,6 +35,7 @@ faqs:
 - q: 企业践行“零信任”安全的核心是什么？
   a: 核心是摒弃“一次认证后的会话就是安全的”这一观念。不断验证所有连接和会话，并与专业安全伙伴合作重新审视基础设施基础，在网络层面实施强有力的控制。
 ---
+
 
 
 近期的网络攻击已进化到超越账号和密码的第一道关口，直接瞄准登录会话本身。如果说过去的黑客攻击停留在窃取账号信息的水平，那么现在已经发展到直接劫持已完成认证的“令牌”，从而使多因素身份验证 (MFA) 体系失效。其核心正是利用生成式 AI 提升攻击精细度和速度的“AI 令牌劫持 (AI Token Hijacking)”。

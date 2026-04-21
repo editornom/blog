@@ -1,14 +1,19 @@
 ---
-title: "AEO (Answer Engine Optimization)"
-author: "editornom"
-pubDatetime: 2026-04-17T15:33:27+09:00
-slug: "answer-engine-optimization-aeo"
+title: AEO (Answer Engine Optimization)
+author: editornom
+pubDatetime: 2026-04-17 15:33:27+09:00
+slug: answer-engine-optimization-aeo
 featured: false
 draft: false
-tags: ["glossary", "AEO", "AI-Search", "Digital-Marketing"]
-ogImage: "../../../../../source/glossary/AEO/19738f2b-0.webp"
-description: "AI 기반 답변 엔진이 사용자 질문에 직접적인 답변을 제공할 때 자사 콘텐츠가 핵심 출처로 선택되도록 최적화하는 전략인 AEO에 대해 설명합니다."
+tags:
+- glossary
+- AEO
+- AI-Search
+- Digital-Marketing
+ogImage: ../../../../../source/glossary/AEO/19738f2b-0.webp
+description: AI 기반 답변 엔진이 사용자 질문에 직접적인 답변을 제공할 때 자사 콘텐츠가 핵심 출처로 선택되도록 최적화하는 전략인 AEO에 대해 설명합니다.
 ---
+
 
 ![신뢰할 수 있는 정보를 답변 박스 형태로 제공하는 AI 답변 엔진 AEO](../../../../../source/glossary/AEO/19738f2b-0.webp)
 

@@ -1,14 +1,18 @@
 ---
-title: "AX, 도구의 도입을 넘어 비즈니스 프로세스의 '재설계'로"
-author: "editornom"
-pubDatetime: 2026-04-16T14:05:50+09:00
-slug: "importance-of-ax-ai-transformation"
+title: AX, 도구의 도입을 넘어 비즈니스 프로세스의 '재설계'로
+author: editornom
+pubDatetime: 2026-04-16 14:05:50+09:00
+slug: importance-of-ax-ai-transformation
 featured: false
 draft: false
-tags: ["AX", "AI전환", "비즈니스자동화"]
-ogImage: "../../../../../source/posts/AX(AI_transformation)의_중요성/6c5a5aa9-0.png"
-description: "단순한 AI 툴 도입을 넘어 비즈니스 구조 자체를 바꾸는 AX(AI Transformation)의 본질과 실무적 적용 방안을 분석합니다."
+tags:
+- AX
+- AI전환
+- 비즈니스자동화
+ogImage: ../../../../../source/posts/AX(AI_transformation)의_중요성/6c5a5aa9-0.png
+description: 단순한 AI 툴 도입을 넘어 비즈니스 구조 자체를 바꾸는 AX(AI Transformation)의 본질과 실무적 적용 방안을 분석합니다.
 ---
+
 
 최근 IT 업계에서 DX(Digital Transformation) 다음의 생존 전략으로 AX(AI Transformation, 인공지능 전환)가 전면에 등장했습니다. 불과 몇 년 전까지만 해도 모든 데이터를 디지털화하는 것에 집중했다면, 생성형 AI 시대의 핵심은 '모인 데이터를 기반으로 인공지능이 어떻게 판단하고 실행하게 할 것인가'에 있습니다. 
 

@@ -12,54 +12,30 @@ tags:
 - Network Security
 - Cloud Computing
 ogImage: ../../../../../source/glossary/Zero_Trust/95cab963-0.webp
-description: A modern security framework based on the principle of 'Never Trust, Always
-  Verify' that continuously validates and controls every access request, regardless
-  of whether it originates inside or outside the network.
+description: A modern security framework based on the principle of 'Never Trust, Always Verify' that continuously validates and controls every access request, regardless of whether it originates inside or outside the network.
 faqs:
 - q: What is Zero Trust security?
-  a: It is a security model based on the principle of 'Never Trust, Always Verify.'
-    It represents a modern security framework that treats all access requests as untrusted
-    and performs rigorous authentication and control at every step, regardless of
-    whether the request comes from inside or outside the network.
+  a: It is a security model based on the principle of 'Never Trust, Always Verify.' It represents a modern security framework that treats all access requests as untrusted and performs rigorous authentication and control at every step, regardless of whether the request comes from inside or outside the network.
 - q: What are the three core principles of Zero Trust?
-  a: 'The three principles are: Verify Explicitly (real-time user/device checks),
-    Least Privilege Access (granting only necessary permissions), and Assume Breach
-    (responding under the assumption that the network is already compromised).'
+  a: 'The three principles are: Verify Explicitly (real-time user/device checks), Least Privilege Access (granting only necessary permissions), and Assume Breach (responding under the assumption that the network is already compromised).'
 - q: How does it differ from the traditional 'Castle-and-Moat' security approach?
-  a: The traditional approach focuses on perimeter security, trusting everything inside
-    once external threats are blocked. In contrast, Zero Trust assumes there is no
-    perimeter and individually verifies every access attempt regardless of the user's
-    location.
+  a: The traditional approach focuses on perimeter security, trusting everything inside once external threats are blocked. In contrast, Zero Trust assumes there is no perimeter and individually verifies every access attempt regardless of the user's location.
 - q: Why has Zero Trust security become so important recently?
-  a: The rise of Cloud adoption and remote/hybrid work has dissolved physical network
-    boundaries. Zero Trust has become essential to defend against lateral movement
-    attacks caused by insider mistakes or stolen credentials that traditional systems
-    cannot handle.
+  a: The rise of Cloud adoption and remote/hybrid work has dissolved physical network boundaries. Zero Trust has become essential to defend against lateral movement attacks caused by insider mistakes or stolen credentials that traditional systems cannot handle.
 - q: What are the key technical elements that support Zero Trust?
-  a: Key technologies include IAM for identity management, MFA for multi-factor authentication,
-    ZTNA for application-specific access, Micro-segmentation to divide networks, and
-    SIEM for log analysis and monitoring.
+  a: Key technologies include IAM for identity management, MFA for multi-factor authentication, ZTNA for application-specific access, Micro-segmentation to divide networks, and SIEM for log analysis and monitoring.
 - q: What is the decisive difference between a traditional VPN and Zero Trust (ZTNA)?
-  a: A VPN is perimeter-based, often granting access to the entire internal network
-    upon login. ZTNA keeps the internal network hidden and only opens individual pathways
-    to specific applications for authenticated users.
+  a: A VPN is perimeter-based, often granting access to the entire internal network upon login. ZTNA keeps the internal network hidden and only opens individual pathways to specific applications for authenticated users.
 - q: How is the 'Assume Breach' principle implemented in practice?
-  a: It operates assuming a hacker may already be in the system. To prevent the spread
-    of damage, the network is divided using Micro-segmentation, and all communication
-    data is encrypted by default.
+  a: It operates assuming a hacker may already be in the system. To prevent the spread of damage, the network is divided using Micro-segmentation, and all communication data is encrypted by default.
 - q: How is the 'Least Privilege Principle' applied during Zero Trust adoption?
-  a: Permissions are granted only for the specific tasks required and only at the
-    time they are needed (Just-in-Time). This ensures that even if an account is hijacked,
-    the hacker's reach is extremely limited, effectively containing the breach.
+  a: Permissions are granted only for the specific tasks required and only at the time they are needed (Just-in-Time). This ensures that even if an account is hijacked, the hacker's reach is extremely limited, effectively containing the breach.
 - q: Are there real-world examples of successful Zero Trust implementation?
-  a: Google's 'BeyondCorp' is a leading example. Through this model, Google allows
-    its employees to safely access corporate resources from public networks without
-    needing a separate VPN connection.
+  a: Google's 'BeyondCorp' is a leading example. Through this model, Google allows its employees to safely access corporate resources from public networks without needing a separate VPN connection.
 - q: What does 'Explicit Verification' specifically mean in Zero Trust Architecture?
-  a: It refers to making authentication and authorization decisions by combining all
-    available real-time information, such as the user's ID, location, device security
-    status, and the sensitivity of the requested data.
+  a: It refers to making authentication and authorization decisions by combining all available real-time information, such as the user's ID, location, device security status, and the sensitivity of the requested data.
 ---
+
 
 ![Zero Trust diagram of identity verification and micro-segmentation](../../../../../source/glossary/Zero_Trust/95cab963-0.webp)
 

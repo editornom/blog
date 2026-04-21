@@ -1,14 +1,18 @@
 ---
-title: "ミスが露呈させた未来：Anthropicのソースコード流出と『Claude Mythos』の実体"
-author: "editornom"
-pubDatetime: 2026-04-03T18:35:10.630685Z
-slug: "anthropic-leak-claude-code-mythos-analysis"
+title: ミスが露呈させた未来：Anthropicのソースコード流出と『Claude Mythos』の実体
+author: editornom
+pubDatetime: 2026-04-03 18:35:10.630685+00:00
+slug: anthropic-leak-claude-code-mythos-analysis
 featured: false
 draft: false
-tags: ["Anthropic", "Claude Mythos", "セキュリティガイドライン"]
-ogImage: "../../../../../source/posts/클로드유출/27d4d8d2-0.png"
-description: "デプロイミスにより流出したAnthropicの次世代AIモデル情報と、ソースコード内部の技術的防御メカニズム、さらに変更されたセキュリティポリシーを詳細に分析します。"
+tags:
+- Anthropic
+- Claude Mythos
+- セキュリティガイドライン
+ogImage: ../../../../../source/posts/클로드유출/27d4d8d2-0.png
+description: デプロイミスにより流出したAnthropicの次世代AIモデル情報と、ソースコード内部の技術的防御メカニズム、さらに変更されたセキュリティポリシーを詳細に分析します。
 ---
+
 
 セキュリティと安全性を最優先事項として掲げてきたAnthropicが、最近、困惑すべき状況に直面しています。わずか1週間の間隔で発生した2度のデータ流出事故が原因です。一つはコンテンツ管理システム（CMS）の設定ミス、もう一つは開発者の単純なデプロイミスに起因するものでした。
 

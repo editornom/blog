@@ -1,14 +1,19 @@
 ---
-title: "AEO (Answer Engine Optimization)"
-author: "editornom"
-pubDatetime: 2026-04-17T15:33:27+09:00
-slug: "answer-engine-optimization-aeo-guide"
+title: AEO (Answer Engine Optimization)
+author: editornom
+pubDatetime: 2026-04-17 15:33:27+09:00
+slug: answer-engine-optimization-aeo-guide
 featured: false
 draft: false
-tags: ["glossary", "AEO", "AI-Search", "Digital-Marketing"]
-ogImage: "../../../../../source/glossary/AEO/19738f2b-0.webp"
-description: "介绍 AEO（回答引擎优化）策略，即在 AI 回答引擎直接回复用户问题时，通过优化使自备内容被选为核心参考来源的方法。"
+tags:
+- glossary
+- AEO
+- AI-Search
+- Digital-Marketing
+ogImage: ../../../../../source/glossary/AEO/19738f2b-0.webp
+description: 介绍 AEO（回答引擎优化）策略，即在 AI 回答引擎直接回复用户问题时，通过优化使自备内容被选为核心参考来源的方法。
 ---
+
 
 ![AEO - AI 回答引擎整合高可信度网页资源并以直接回答框形式呈现内容](../../../../../source/glossary/AEO/19738f2b-0.webp)
 

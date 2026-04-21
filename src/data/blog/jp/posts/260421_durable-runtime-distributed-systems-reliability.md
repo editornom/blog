@@ -1,12 +1,12 @@
 ---
-title: "状態を失わないコード：Durable Runtimeが再定義する分散システムの信頼性"
+title: 状態を失わないコード：Durable Runtimeが再定義する分散システムの信頼性
 author: editornom
 pubDatetime: 2026-04-21 14:30:46+09:00
 slug: durable-execution-distributed-systems-reliability-guide
 featured: false
 draft: false
 ogImage: ../../../../../source/posts/Durable_Runtime/0db2bbc6-0.webp
-description: "プロセスクラッシュやネットワーク遅延が発生しても実行状態を維持するDurable Runtimeの技術的実態と、AIエージェント時代の必須インフラとしての価値を分析します。"
+description: プロセスクラッシュやネットワーク遅延が発生しても実行状態を維持するDurable Runtimeの技術的実態と、AIエージェント時代の必須インフラとしての価値を分析します。
 faqs:
 - q: Durable Runtime（耐久的実行）とは何ですか？
   a: プロセスのライフサイクルと実行状態を分離する技術です。サーバーの障害や再起動が発生してもメモリ状態を失わず、最後に成功した地点（チェックポイント）から即座に実行を再開できる「実行の仮想化」を提供します。
@@ -29,6 +29,7 @@ faqs:
 - q: システムの安定性のために、ソフトウェア以外に考慮すべき点はありますか？
   a: ソフトウェアの耐久性は物理インフラの品質と直結します。分散システムが性能を十分に発揮するには、安定した企業用専用線とネットワークインフラが不可欠であり、ネットワークの連続性が保障されなければなりません。
 ---
+
 
 
 2017年にAzure Durable Functionsが初期ガイドの形で公開された当時、この技術はサーバーレス環境の付加的な機能程度に見なされていました。しかし、それから7年が経過した今、分散システムの設計パラダイムは「耐久的実行（Durable Execution）」という概念を中心に急速に再編されています。現代の分散コンピューティングの複雑さを解決する核心的な原動力として定着したDurable Runtimeの実体を探ってみましょう。

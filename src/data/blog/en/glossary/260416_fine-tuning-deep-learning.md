@@ -11,55 +11,30 @@ tags:
 - transfer-learning
 - AI
 ogImage: ../../../../../source/glossary/fine-tuning/ef69ec01-0.png
-description: An explanation of the definition and principles of fine-tuning, a deep
-  learning technique that optimizes performance by further training a pre-trained
-  model for specific tasks or domains.
+description: An explanation of the definition and principles of fine-tuning, a deep learning technique that optimizes performance by further training a pre-trained model for specific tasks or domains.
 faqs:
 - q: What is Fine-tuning?
-  a: It is a technique that optimizes a foundational model, already trained on vast
-    amounts of data, by performing additional training on a dataset intended for a
-    specific purpose. It is a type of transfer learning that refines a model with
-    general knowledge for specialized fields like medicine, law, or specific tasks.
+  a: It is a technique that optimizes a foundational model, already trained on vast amounts of data, by performing additional training on a dataset intended for a specific purpose. It is a type of transfer learning that refines a model with general knowledge for specialized fields like medicine, law, or specific tasks.
 - q: Why is Fine-tuning important?
-  a: It significantly reduces the immense time and cost required to train large-scale
-    models from scratch. By reusing the intelligence of an existing model, high-performance
-    specialized models can be implemented with minimal data and computing resources.
+  a: It significantly reduces the immense time and cost required to train large-scale models from scratch. By reusing the intelligence of an existing model, high-performance specialized models can be implemented with minimal data and computing resources.
 - q: What is the difference between Pre-training and Fine-tuning?
-  a: Pre-training is the phase of building foundational intelligence and representation
-    using massive datasets, while fine-tuning is the optimization phase that refines
-    the model for a specific task. It can be compared to doing the interior design
-    for a specific purpose after the basic construction of a building is finished.
+  a: Pre-training is the phase of building foundational intelligence and representation using massive datasets, while fine-tuning is the optimization phase that refines the model for a specific task. It can be compared to doing the interior design for a specific purpose after the basic construction of a building is finished.
 - q: What is PEFT (Parameter-Efficient Fine-tuning)?
-  a: PEFT is a set of techniques that efficiently improve performance by modifying
-    only a minimal subset of parameters rather than the entire model. This saves significant
-    computational cost and memory while maintaining the model's overall performance.
+  a: PEFT is a set of techniques that efficiently improve performance by modifying only a minimal subset of parameters rather than the entire model. This saves significant computational cost and memory while maintaining the model's overall performance.
 - q: What benefits can be expected from Fine-tuning?
-  a: By learning industry-specific terms or unique patterns not found in general datasets,
-    fine-tuning increases response accuracy for specific tasks. This results in better
-    contextual understanding and expertise that meets specific business requirements.
+  a: By learning industry-specific terms or unique patterns not found in general datasets, fine-tuning increases response accuracy for specific tasks. This results in better contextual understanding and expertise that meets specific business requirements.
 - q: What are the weight update strategies in Fine-tuning?
-  a: Strategies include "Full Fine-tuning," where all parameters are retrained, and
-    "Freezing," where only specific layers are trained while the rest remain unchanged.
-    Recently, adapter-based methods like LoRA have been widely used to maximize efficiency.
+  a: Strategies include "Full Fine-tuning," where all parameters are retrained, and "Freezing," where only specific layers are trained while the rest remain unchanged. Recently, adapter-based methods like LoRA have been widely used to maximize efficiency.
 - q: What are the advantages of LoRA (Low-Rank Adaptation)?
-  a: LoRA trains a small number of additional parameters using low-rank matrices while
-    keeping the original model structure intact. It achieves similar performance gains
-    as full retraining but with much lower memory and computational costs.
+  a: LoRA trains a small number of additional parameters using low-rank matrices while keeping the original model structure intact. It achieves similar performance gains as full retraining but with much lower memory and computational costs.
 - q: What is 'Catastrophic Forgetting' in the context of Fine-tuning?
-  a: This refers to a phenomenon where a model loses the general knowledge it learned
-    previously while being trained on new, specific data. Care must be taken because
-    excessive optimization for a specific domain can degrade the model's general-purpose
-    capabilities.
+  a: This refers to a phenomenon where a model loses the general knowledge it learned previously while being trained on new, specific data. Care must be taken because excessive optimization for a specific domain can degrade the model's general-purpose capabilities.
 - q: How does RLHF relate to Fine-tuning?
-  a: RLHF (Reinforcement Learning from Human Feedback) is an alignment technique that
-    uses human feedback to ensure model responses match user intent and ethical standards.
-    it is often used as a stage of fine-tuning to guide the model toward more useful
-    and safe answers.
+  a: RLHF (Reinforcement Learning from Human Feedback) is an alignment technique that uses human feedback to ensure model responses match user intent and ethical standards. it is often used as a stage of fine-tuning to guide the model toward more useful and safe answers.
 - q: What are the key factors to consider when implementing Fine-tuning in practice?
-  a: The most important factor is securing high-quality labeled data relevant to the
-    problem. Additionally, a decision must be made between full fine-tuning or efficient
-    techniques like PEFT based on the project's budget and time constraints.
+  a: The most important factor is securing high-quality labeled data relevant to the problem. Additionally, a decision must be made between full fine-tuning or efficient techniques like PEFT based on the project's budget and time constraints.
 ---
+
 
 ![Neural network fine-tuning process with pre-trained layers and updates](../../../../../source/glossary/fine-tuning/ef69ec01-0.png)
 

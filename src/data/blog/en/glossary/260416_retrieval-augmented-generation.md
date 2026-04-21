@@ -11,60 +11,30 @@ tags:
 - GenerativeAI
 - AI
 ogImage: ../../../../../source/glossary/RAG_(Retrieval-Augmented_Generation)/3f23135c-0.png
-description: This article explains Retrieval-Augmented Generation (RAG), a technique
-  that improves the accuracy and reliability of large language models by retrieving
-  and integrating information from external knowledge sources into the generation
-  process.
+description: This article explains Retrieval-Augmented Generation (RAG), a technique that improves the accuracy and reliability of large language models by retrieving and integrating information from external knowledge sources into the generation process.
 faqs:
 - q: What is RAG?
-  a: RAG (Retrieval-Augmented Generation) is a technique that allows a Large Language
-    Model (LLM) to look up relevant information from trusted external data sources
-    before generating a response and then use that information as a reference. The
-    key is to have the model "find" the necessary information in real-time instead
-    of relying solely on pre-trained knowledge.
+  a: RAG (Retrieval-Augmented Generation) is a technique that allows a Large Language Model (LLM) to look up relevant information from trusted external data sources before generating a response and then use that information as a reference. The key is to have the model "find" the necessary information in real-time instead of relying solely on pre-trained knowledge.
 - q: What does RAG stand for, and what is its Korean name?
-  a: The abbreviation is RAG, which stands for 'Retrieval-Augmented Generation.' In
-    Korean, it is translated literally as '검색 증강 생성' (Geomsaek Jeunggang Saengseong).
+  a: The abbreviation is RAG, which stands for 'Retrieval-Augmented Generation.' In Korean, it is translated literally as '검색 증강 생성' (Geomsaek Jeunggang Saengseong).
 - q: What is the background behind the emergence of RAG technology?
-  a: It emerged because LLMs often exhibit 'hallucinations'—providing incorrect facts
-    because they lack information on events occurring after their training or private
-    data. RAG was designed to provide models with accurate external data rather than
-    requiring them to be retrained every time.
+  a: It emerged because LLMs often exhibit 'hallucinations'—providing incorrect facts because they lack information on events occurring after their training or private data. RAG was designed to provide models with accurate external data rather than requiring them to be retrained every time.
 - q: What are the primary technologies required to build a RAG system?
-  a: Core technologies include the LLM (which serves as the foundation for answers),
-    a Vector Database for storing and searching data, Embedding for numerical text
-    conversion, and semantic search technologies for meaning-based retrieval.
+  a: Core technologies include the LLM (which serves as the foundation for answers), a Vector Database for storing and searching data, Embedding for numerical text conversion, and semantic search technologies for meaning-based retrieval.
 - q: What are the advantages of using RAG?
-  a: It overcomes the limitations of a model's training data to provide accurate,
-    up-to-date information and specialized knowledge. It also effectively suppresses
-    hallucinations and offers high reliability to users by clearly identifying the
-    sources of information.
+  a: It overcomes the limitations of a model's training data to provide accurate, up-to-date information and specialized knowledge. It also effectively suppresses hallucinations and offers high reliability to users by clearly identifying the sources of information.
 - q: What is the critical difference between RAG and Fine-tuning?
-  a: RAG is like an 'open-book exam' where the model refers to external materials,
-    whereas Fine-tuning is like 'studying' to acquire knowledge by directly modifying
-    the model's parameters. RAG is faster for updates and more cost-effective, while
-    Fine-tuning is better for mastering specific styles or formats.
+  a: RAG is like an 'open-book exam' where the model refers to external materials, whereas Fine-tuning is like 'studying' to acquire knowledge by directly modifying the model's parameters. RAG is faster for updates and more cost-effective, while Fine-tuning is better for mastering specific styles or formats.
 - q: How does RAG reduce AI 'hallucinations'?
-  a: By including actual document fragments related to the query in the prompt and
-    instructing the model to 'answer based on this content,' it prevents the model
-    from fabricating answers. This induces evidence-based generation, minimizing factual
-    errors.
+  a: By including actual document fragments related to the query in the prompt and instructing the model to 'answer based on this content,' it prevents the model from fabricating answers. This induces evidence-based generation, minimizing factual errors.
 - q: What role does the 'Vector Database' play in the RAG process?
-  a: It serves as a repository that converts user queries into vectors and then quickly
-    identifies the document fragments that are semantically most similar among vast
-    amounts of data. This allows it to supply the LLM with the most relevant reference
-    materials for the user's intent.
+  a: It serves as a repository that converts user queries into vectors and then quickly identifies the document fragments that are semantically most similar among vast amounts of data. This allows it to supply the LLM with the most relevant reference materials for the user's intent.
 - q: How does a RAG system respond when new information arises?
-  a: There is no need to retrain the model. You simply update the external database
-    with documents containing the latest information. This significantly reduces operational
-    resources while ensuring the system stays current through real-time knowledge
-    updates.
+  a: There is no need to retrain the model. You simply update the external database with documents containing the latest information. This significantly reduces operational resources while ensuring the system stays current through real-time knowledge updates.
 - q: How can companies practically implement RAG in their business?
-  a: Companies can operate AI customer support chatbots based on extensive internal
-    technical documents or product manuals. This improves efficiency by providing
-    real-time, manual-based accurate answers to customer questions along with links
-    to the supporting evidence pages.
+  a: Companies can operate AI customer support chatbots based on extensive internal technical documents or product manuals. This improves efficiency by providing real-time, manual-based accurate answers to customer questions along with links to the supporting evidence pages.
 ---
+
 
 ![Conceptual diagram showing the RAG workflow where a user query triggers a search](../../../../../source/glossary/RAG_(Retrieval-Augmented_Generation)/3f23135c-0.png)
 

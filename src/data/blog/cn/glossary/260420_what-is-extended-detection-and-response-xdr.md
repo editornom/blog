@@ -36,6 +36,7 @@ faqs:
   a: 通过统一管理碎片化的安全环境来提高运营效率，并通过智能分析快速捕捉传统工具容易遗漏的复合型威胁。
 ---
 
+
 ![扩展检测与响应 (XDR) 架构图：展示多层安全数据流向中央分析引擎。](../../../../../source/glossary/Extended_Detection_and_Response_(XDR)/d9bf4dbe-0.webp)
 
 ### 维基摘要表

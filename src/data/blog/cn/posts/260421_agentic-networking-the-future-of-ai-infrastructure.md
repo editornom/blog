@@ -1,12 +1,12 @@
 ---
-title: "机器主导的数据通信时代：Agentic Networking 带来的网络基础设施根本变革"
+title: 机器主导的数据通信时代：Agentic Networking 带来的网络基础设施根本变革
 author: editornom
 pubDatetime: 2026-04-21 10:57:56+09:00
 slug: agentic-networking-ai-infrastructure-evolution
 featured: false
 draft: false
 ogImage: ../../../../../source/posts/에이전틱_네트워킹(Agentic_Networking)/6c5a8cef-0.webp
-description: "在 AI 智能体之间自主通信激增的时代，深入分析以超低延迟和自主运行为核心的 Agentic Networking 的技术实质与战略价值。"
+description: 在 AI 智能体之间自主通信激增的时代，深入分析以超低延迟和自主运行为核心的 Agentic Networking 的技术实质与战略价值。
 faqs:
 - q: 什么是 Agentic Networking？
   a: 这是一种支持 AI 智能体之间自主通信的基础设施。为了应对机器主导的数据通信时代，它提供超低延迟和自主运行能力，是针对机器速度而非人类速度进行优化的下一代网络范式。
@@ -29,6 +29,7 @@ faqs:
 - q: 在自主运行中，人的角色（Human-in-the-loop）是什么？
   a: 即使网络通过分析和推理实现自主运行，人类仍负责最终审批或高层战略判断。这是在极大化运营效率的同时，保持人类对机器自主行为控制权的重要机制。
 ---
+
 
 
 # AI 智能体时代，网络范式正在发生变革

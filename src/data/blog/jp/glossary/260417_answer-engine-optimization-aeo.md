@@ -1,14 +1,19 @@
 ---
-title: "AEO (回答エンジン最適化)"
-author: "editornom"
-pubDatetime: 2026-04-17T15:33:27+09:00
-slug: "aeo-answer-engine-optimization-marketing-strategy"
+title: AEO (回答エンジン最適化)
+author: editornom
+pubDatetime: 2026-04-17 15:33:27+09:00
+slug: aeo-answer-engine-optimization-marketing-strategy
 featured: false
 draft: false
-tags: ["glossary", "AEO", "AI-Search", "Digital-Marketing"]
-ogImage: "../../../../../source/glossary/AEO/19738f2b-0.webp"
-description: "AI回答エンジンがユーザーの質問に直接回答する際、自社のコンテンツが主要なソースとして選ばれるように最適化する戦略『AEO』について解説します。"
+tags:
+- glossary
+- AEO
+- AI-Search
+- Digital-Marketing
+ogImage: ../../../../../source/glossary/AEO/19738f2b-0.webp
+description: AI回答エンジンがユーザーの質問に直接回答する際、自社のコンテンツが主要なソースとして選ばれるように最適化する戦略『AEO』について解説します。
 ---
+
 
 ![信頼できる情報を統合し回答を直接表示するAI回答エンジン(AEO)](../../../../../source/glossary/AEO/19738f2b-0.webp)
 

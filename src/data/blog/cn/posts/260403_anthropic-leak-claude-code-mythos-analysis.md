@@ -1,14 +1,18 @@
 ---
-title: "失误揭示的未来：Anthropic 源码泄露与 ‘Claude Mythos’ 的真相"
-author: "editornom"
-pubDatetime: 2026-04-03T18:35:10.630685Z
-slug: "anthropic-leak-claude-code-mythos-analysis"
+title: 失误揭示的未来：Anthropic 源码泄露与 ‘Claude Mythos’ 的真相
+author: editornom
+pubDatetime: 2026-04-03 18:35:10.630685+00:00
+slug: anthropic-leak-claude-code-mythos-analysis
 featured: false
 draft: false
-tags: ["Anthropic", "Claude Mythos", "安全指南"]
-ogImage: "../../../../../source/posts/클로드유출/27d4d8d2-0.png"
-description: "深度分析因部署失误泄露的 Anthropic 下一代 AI 模型信息、源代码内部的技术防御机制以及更新的安全政策。"
+tags:
+- Anthropic
+- Claude Mythos
+- 安全指南
+ogImage: ../../../../../source/posts/클로드유출/27d4d8d2-0.png
+description: 深度分析因部署失误泄露的 Anthropic 下一代 AI 模型信息、源代码内部的技术防御机制以及更新的安全政策。
 ---
+
 
 一直将安全与可靠作为核心价值的 Anthropic 最近陷入了窘境。在短短一周内，该公司连续遭遇了两起数据泄露事故：一起源于内容管理系统 (CMS) 的配置错误，另一起则归因于开发人员在部署过程中的疏忽。
 

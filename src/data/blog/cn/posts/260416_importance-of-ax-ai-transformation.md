@@ -1,14 +1,18 @@
 ---
-title: "AX，超越工具引入，走向业务流程的“重构”"
-author: "editornom"
-pubDatetime: 2026-04-16T14:05:50+09:00
-slug: "importance-of-ax-ai-transformation"
+title: AX，超越工具引入，走向业务流程的“重构”
+author: editornom
+pubDatetime: 2026-04-16 14:05:50+09:00
+slug: importance-of-ax-ai-transformation
 featured: false
 draft: false
-tags: ["AX", "AI转型", "业务自动化"]
-ogImage: "../../../../../source/posts/AX(AI_transformation)의_중요성/6c5a5aa9-0.png"
-description: "深入分析 AX (AI Transformation) 的本质与实践方案，探讨如何超越单纯的 AI 工具引入，实现业务结构的根本性变革。"
+tags:
+- AX
+- AI转型
+- 业务自动化
+ogImage: ../../../../../source/posts/AX(AI_transformation)의_중요성/6c5a5aa9-0.png
+description: 深入分析 AX (AI Transformation) 的本质与实践方案，探讨如何超越单纯的 AI 工具引入，实现业务结构的根本性变革。
 ---
+
 
 最近在 IT 行业中，AX (AI Transformation，人工智能转型) 作为继 DX (Digital Transformation，数字化转型) 之后的生存战略被推向了前台。如果说几年前的重点还集中在将所有数据数字化，那么生成型 AI 时代的核心则在于“如何让 AI 基于收集到的数据进行判断和执行”。
 

@@ -1,14 +1,19 @@
 ---
-title: "AEO (Answer Engine Optimization)"
-author: "editornom"
-pubDatetime: 2026-04-17T15:33:27+09:00
-slug: "guide-to-answer-engine-optimization-aeo"
+title: AEO (Answer Engine Optimization)
+author: editornom
+pubDatetime: 2026-04-17 15:33:27+09:00
+slug: guide-to-answer-engine-optimization-aeo
 featured: false
 draft: false
-tags: ["glossary", "AEO", "AI-Search", "Digital-Marketing"]
-ogImage: "../../../../../source/glossary/AEO/19738f2b-0.webp"
-description: "Learn about AEO, a strategy designed to optimize content so it serves as a primary source for AI-driven answer engines providing direct responses to user queries."
+tags:
+- glossary
+- AEO
+- AI-Search
+- Digital-Marketing
+ogImage: ../../../../../source/glossary/AEO/19738f2b-0.webp
+description: Learn about AEO, a strategy designed to optimize content so it serves as a primary source for AI-driven answer engines providing direct responses to user queries.
 ---
+
 
 ![AI answer engine providing a direct response box from web sources.](../../../../../source/glossary/AEO/19738f2b-0.webp)
 

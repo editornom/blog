@@ -1,14 +1,20 @@
 ---
-title: "效率悖论：谷歌 TurboQuant 为 AI 内存市场带来的新课题"
-author: "editornom"
-pubDatetime: 2026-04-06T08:00:00Z
-slug: "google-turboquant-ai-efficiency-impact"
+title: 效率悖论：谷歌 TurboQuant 为 AI 内存市场带来的新课题
+author: editornom
+pubDatetime: 2026-04-06 08:00:00+00:00
+slug: google-turboquant-ai-efficiency-impact
 featured: false
 draft: false
-tags: ["AI 效率化", "TurboQuant", "半导体市场", "谷歌研究", "量化"]
-ogImage: "../../../../../source/posts/터보퀀트/ec0ebcfb-0.png"
-description: "分析谷歌发布的极限压缩技术 TurboQuant 的技术原理，及其对半导体市场和 AI 生态系统的影响。"
+tags:
+- AI 效率化
+- TurboQuant
+- 半导体市场
+- 谷歌研究
+- 量化
+ogImage: ../../../../../source/posts/터보퀀트/ec0ebcfb-0.png
+description: 分析谷歌发布的极限压缩技术 TurboQuant 的技术原理，及其对半导体市场和 AI 生态系统的影响。
 ---
+
 
 AI 行业的竞争轴心正迅速从“模型规模”转向“资源效率”。与其看训练了多少数据，不如看在有限资源下能产出多智能的结果，这已成为实际的业务竞争力。谷歌研究院（Google Research）最近公开的压缩技术“TurboQuant”正是这一趋势的象征。它不仅是一项技术成就，也为连接英伟达、三星电子、SK 海力士等硬件价值链带来了深远的启示。
 

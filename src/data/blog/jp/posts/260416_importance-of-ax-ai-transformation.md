@@ -1,14 +1,18 @@
 ---
-title: "AX、ツールの導入を超えてビジネスプロセスの「再設計」へ"
-author: "editornom"
-pubDatetime: 2026-04-16T14:05:50+09:00
-slug: "importance-of-ax-ai-transformation"
+title: AX、ツールの導入を超えてビジネスプロセスの「再設計」へ
+author: editornom
+pubDatetime: 2026-04-16 14:05:50+09:00
+slug: importance-of-ax-ai-transformation
 featured: false
 draft: false
-tags: ["AX", "AI전환", "비즈니스자동화"]
-ogImage: "../../../../../source/posts/AX(AI_transformation)의_중요성/6c5a5aa9-0.png"
-description: "単なるAIツールの導入にとどまらず、ビジネス構造そのものを変革するAX（AI Transformation）の本質と実務的な適用方法を分析します。"
+tags:
+- AX
+- AI전환
+- 비즈니스자동화
+ogImage: ../../../../../source/posts/AX(AI_transformation)의_중요성/6c5a5aa9-0.png
+description: 単なるAIツールの導入にとどまらず、ビジネス構造そのものを変革するAX（AI Transformation）の本質と実務的な適用方法を分析します。
 ---
+
 
 最近、IT業界ではDX（Digital Transformation）の次なる生存戦略として、AX（AI Transformation、AI転換）が前面に登場しています。わずか数年前まではすべてのデータをデジタル化することに注力していましたが、生成AI時代の核心は「集まったデータに基づき、AIにどのように判断させ、実行させるか」にあります。
 
