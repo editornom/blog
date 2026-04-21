@@ -23,3 +23,5 @@
 [2026-04-17] [Fallback] 개발자를 위한 프로토콜 심층 분석
 [2026-04-20] [수동선정] Extended Detection and Response (XDR)
 [2026-04-20] [AI추천_39점] Cloud-Native AI Security
+[2026-04-21] [AI추천_39점] 인지적 메모리 아키텍처 (Cognitive Memory Architecture)
+[2026-04-21] [AI추천_39점] 에이전틱 네트워킹(Agentic Networking)
