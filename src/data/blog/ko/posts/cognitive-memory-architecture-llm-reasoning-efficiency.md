@@ -66,7 +66,7 @@ faqs:
 
 > "인지적 메모리 아키텍처(Cognitive Memory Architecture)는 LLM이 단순한 텍스트 생성기를 넘어, 스스로 학습하고 진화하는 자율 에이전트로 나아가기 위한 필수적인 기술적 토대입니다."
 
-![인지적 메모리 아키텍처 (Cognitive Memory Architecture) - 두 개의 양식화된 AI 에이전트 아이콘, 하나는 'Reasoning', 다른 하나는 'Memory'라고 표시됨, 디지털 이진 데이터 스트림 위에서 악수하는 모습, 깔끔한 기업용 테크 스타일.](../../../../../source/posts/인지적_메모리_아키텍처_(Cognitive_Memory_Architecture)/64be37a0-2.webp)
+![인지적 메모리 아키텍처 - 'Reasoning'과 'Memory'라고 표시된 두 개의 양식화된 AI 에이전트 아이콘이 디지털 이진 데이터 스트림 위에서 악수하는 모습, 깔끔한 기업용 테크 스타일.](../../../../../source/posts/인지적_메모리_아키텍처_(Cognitive_Memory_Architecture)/64be37a0-2.webp)
 
 ## 추론과 메모리 에이전트의 유기적 협업
 
