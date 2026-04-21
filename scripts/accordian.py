@@ -116,10 +116,6 @@ def append_faq_to_draft(draft, faqs):
             }
         })
     
-    # 생성된 JSON-LD 스크립트를 마크다운 최하단에 삽입
-    schema_script = f"\n<script type=\"application/ld+json\">\n{json.dumps(schema_dict, indent=2, ensure_ascii=False)}\n</script>\n"
-    faq_md += schema_script
-    
     # 깔끔하게 원고 맨 아래에 붙이기
     return draft.strip() + faq_md
 
