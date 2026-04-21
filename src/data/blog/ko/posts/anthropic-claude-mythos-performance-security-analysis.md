@@ -47,7 +47,7 @@ faqs:
 
 생성형 AI의 기술 경쟁 축이 단순한 텍스트 생성을 넘어 소프트웨어의 심장부인 '보안' 영역으로 빠르게 옮겨가고 있습니다. 최근 앤스로픽(Anthropic)이 공개한 새로운 모델 ‘클로드 미토스(Claude Mythos) 프리뷰’는 이러한 변화를 상징적으로 보여줍니다. 기존 모델들과는 궤를 달리하는 사이버 보안 분석 능력을 갖춰 업계에 적지 않은 하두를 던졌거든요. 앤스로픽의 발표 데이터를 토대로 미토스가 왜 보안 실무 환경에서 중요한 변곡점이 될지, 그 기술적 실체와 시사점을 정리했습니다.
 
-!![이진 코드로 이루어진 복잡한 디지털 요새를 스캔하는 빛나는 반투명 AI 코어의 에디토리얼 일러스트레이션, 구조적 균열에 미세한 하이라이트가 표현됨.](../../../../../source/posts/Anthropic_Claude_Mythos_성능_공개/28506a6d-0.png)
+!![Editorial illustration of a glowing translucent AI core scanning a complex digital fortress made of binary code, with subtle highlights on structural cracks.](../../../../../source/posts/Anthropic_Claude_Mythos_성능_공개/28506a6d-0.png)
 
 ## 범용 모델의 진화가 가져온 보안 성능의 비약적 향상
 
