@@ -19,7 +19,7 @@ def push_to_github(commit_message):
         subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=False)
         
         # 2. 특정 디렉토리 스테이징 및 커밋
-        subprocess.run(["git", "add", "src/data/blog/", "src/assets/images/", "source/"], check=True)
+        subprocess.run(["git", "add", "src/data/blog/", "src/assets/images/", "source/", "reports/"], check=True)
         subprocess.run(["git", "commit", "-m", commit_message], check=True)
         
         # 3. 푸시

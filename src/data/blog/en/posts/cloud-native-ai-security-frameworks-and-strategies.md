@@ -5,13 +5,13 @@ pubDatetime: 2026-04-20T15:14:50+09:00
 slug: "cloud-native-ai-security-governance-and-technical-frameworks"
 featured: false
 draft: false
-ogImage: "../../../../assets/images/placeholder.png"
+ogImage: "../../../../../source/posts/Cloud-Native_AI_Security/e1dae86b-0.webp"
 description: "A deep dive into the roles of CNAPP and the latest guidelines from CNCF, NIST, and CSA for building robust AI security within cloud-native environments."
 ---
 
 The convergence of Cloud computing and Artificial Intelligence has rendered enterprise infrastructure more complex than ever. Operating AI models reliably across environments interwoven with thousands of containers and data pipelines has become a primary challenge for practitioners. In this landscape, the most critical topic is 'Cloud-Native AI Security.' To fully leverage AI performance while maintaining agility, a security approach of a different dimension is required. Based on the CNCF whitepaper and major security frameworks, we have summarized the security challenges and response strategies currently facing enterprises.
 
-![A high-tech digital editorial illustration showing a secure AI neural network intertwined with cloud infrastructure, emphasizing protection and futuristic connectivity, professional blue and silver color palette.](../../../../assets/images/placeholder.png)
+![A high-tech digital editorial illustration showing a secure AI neural network intertwined with cloud infrastructure, emphasizing protection and futuristic connectivity, professional blue and silver color palette.](../../../../../source/posts/Cloud-Native_AI_Security/e1dae86b-0.webp)
 
 ## The Emergence of New Threat Models with the Expansion of AI Workloads
 
@@ -19,7 +19,7 @@ Recently, the CNCF (Cloud Native Computing Foundation) Technical Oversight Commi
 
 What deserves particular attention here are threat models specifically tailored to AI. While traditional security focused on server availability and simple access control, we must now defend against attacks like Data Poisoning and Model Extraction. Data Poisoning involves injecting malicious data during the training phase to cause the model to make incorrect decisions in specific scenarios, which is extremely difficult to detect with standard firewalls alone. Ultimately, securing integrated visibility across the entire Cloud infrastructure is the cornerstone of this security architecture.
 
-![A conceptual diagram illustrating a Cloud-Native Application Protection Platform (CNAPP) with integrated layers for identity, workload, and AI data security, clean flat design style.](../../../../assets/images/placeholder.png)
+![A conceptual diagram illustrating a Cloud-Native Application Protection Platform (CNAPP) with integrated layers for identity, workload, and AI data security, clean flat design style.](../../../../../source/posts/Cloud-Native_AI_Security/b39e3d22-1.webp)
 
 ## CNAPP Integrated Management and Real-time Defense Strategies using eBPF
 
@@ -29,7 +29,7 @@ Digging deeper into the technical aspects, runtime monitoring utilizing eBPF (Ex
 
 > "Cloud-native AI security is more than just adopting tools; it is a process shift that ensures the integrity of the entire lifecycle, from development to operations."
 
-![A split screen visual comparing NIST and CSA AI security frameworks, with icons representing control matrices and regulatory compliance, minimalist vector art.](../../../../assets/images/placeholder.png)
+![A split screen visual comparing NIST and CSA AI security frameworks, with icons representing control matrices and regulatory compliance, minimalist vector art.](../../../../../source/posts/Cloud-Native_AI_Security/655209d5-2.webp)
 
 ## Utilizing NIST and CSA Frameworks for Establishing Governance
 
@@ -37,7 +37,7 @@ In addition to technical protection measures, establishing a governance framewor
 
 On the other hand, the CSA’s AICM (AI Control Matrix) is optimized for a Cloud-native perspective. It provides 243 specific control items across 18 domains and clearly defines the 'Shared Responsibility Model' for each entity, from model providers to application developers. For example, while the Cloud Service Provider (CSP) is responsible for infrastructure security, the enterprise must focus on input validation for deployed models and defending against prompt injection. Using these two frameworks complementarily allows an organization to build a more robust security system.
 
-![A futuristic city landscape representing a secure digital society with floating data nodes and AI protection shields, professional editorial style.](../../../../assets/images/placeholder.png)
+![A futuristic city landscape representing a secure digital society with floating data nodes and AI protection shields, professional editorial style.](../../../../../source/posts/Cloud-Native_AI_Security/6556e64f-3.webp)
 
 ## The Importance of a Practical Security Roadmap and Infrastructure Partnerships
 

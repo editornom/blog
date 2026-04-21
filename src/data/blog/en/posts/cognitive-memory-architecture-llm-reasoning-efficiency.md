@@ -41,7 +41,7 @@ Within this system, two types of agents communicate closely: the 'Reasoning Agen
 
 Thanks to this asynchronous collaboration, the model can recognize and correct its own errors. For example, if the Memory Agent detects a logical contradiction occurring in the fifth turn of a conversation, the system immediately updates the DA content. Consequently, the model can provide a corrected answer in the sixth turn. This closely mimics the human process of saying, "Ah, there was a misunderstanding in what I said earlier," to adjust context during a conversation.
 
-![Cognitive Memory Architecture - A data visualization graph showing token usage efficiency where one line rises sharply and the other remains stable and flat, clean data style.](../../../../../source/posts/인지적_메모리_아키텍처_(Cognitive_Memory_Architecture)/8eb8e73-3.webp)
+![Comparison of Token Usage Efficiency](../../../../../source/posts/인지적_메모리_아키텍처_(Cognitive_Memory_Architecture)/8eb8e673-3.webp)
 
 ## Token Efficiency and Cost Reduction from a Business Perspective
 

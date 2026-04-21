@@ -13,11 +13,11 @@ description: "AI 에이전트 간의 자율적 통신이 급증하는 시대를 
 
 AI가 사용자의 지시를 수행하는 '보조자(Copilot)'를 넘어, 스스로 목표를 설정하고 협업하는 '에이전트'로 진화하고 있습니다. 이제 네트워크 통신의 주체는 인간에서 기계로 빠르게 이동 중이며, 기존의 인프라 구조로는 감당하기 어려운 새로운 도전 과제가 부상하고 있죠. 이러한 흐름 속에서 기계 간의 자율적인 소통을 지원하는 **에이전틱 네트워킹(Agentic Networking)**이 핵심 인프라로 주목받고 있습니다.
 
-![이미지](https://image_url_placeholder/agentic_networking_main.png)
+![이미지](../../../../../source/posts/에이전틱_네트워킹(Agentic_Networking)/6c5a8cef-0.webp)
 
 ## 기계의 속도에 대응하는 초저지연 인프라
 
-![이미지](https://image_url_placeholder/high_speed_data.png)
+![이미지](../../../../../source/posts/에이전틱_네트워킹(Agentic_Networking)/40f01efa-1.webp)
 
 과거의 네트워크는 사람이 웹페이지를 클릭하고 데이터가 로딩되기를 기다리는 '초' 단위의 호흡에 맞춰 설계되었습니다. 하지만 AI 에이전트들이 서로 데이터를 주고받으며 의사결정을 내리는 환경은 전혀 다릅니다. 이 기술적 환경에서 기계 간 통신은 밀리초(ms) 단위의 찰나에 이루어지거든요.
 
@@ -26,11 +26,11 @@ AI가 사용자의 지시를 수행하는 '보조자(Copilot)'를 넘어, 스스
 - **동서향(East-West) 트래픽의 부상**: 기존에는 사용자가 클라우드에서 데이터를 가져오는 '남북향' 흐름이 주를 이루었으나, 이제는 에이전트 간, 혹은 엣지 노드 간에 데이터를 주고받는 '동서향' 트래픽이 폭발적으로 증가하고 있습니다. 이 아키텍처는 이러한 트래픽 급증을 효율적으로 처리하는 데 최적화되어 있습니다.
 - **자율 운영으로의 전환**: 장애 발생 후 사람이 개입하여 문제를 해결하는 방식으로는 수만 건의 미세 상호작용을 감당할 수 없습니다. 네트워크가 스스로 지연 시간과 지터를 모니터링하고, 선제적으로 경로를 재설정하는 자율 운영 능력이 필수적입니다.
 
-![이미지](https://image_url_placeholder/digital_twin_network.png)
+![이미지](../../../../../source/posts/에이전틱_네트워킹(Agentic_Networking)/fd193945-2.webp)
 
 ## 분석과 추론이 결합된 이중 지능 아키텍처
 
-![이미지](https://image_url_placeholder/dual_intelligence_gears.png)
+![이미지](../../../../../source/posts/에이전틱_네트워킹(Agentic_Networking)/6f36ec33-3.webp)
 
 이 기술의 정수는 '이중 지능' 구조에 있습니다. 네트워크가 단순히 데이터를 전달하는 것에 그치지 않고, 상황을 직접 이해하고 행동해야 하기 때문입니다.
 
@@ -40,11 +40,11 @@ AI가 사용자의 지시를 수행하는 '보조자(Copilot)'를 넘어, 스스
 
 특히 '텔레메트리 네이티브 에이전트(Telemetry-Native Agents)' 기술이 중요합니다. 로그를 사후에 분석하는 게 아니라, 장비에서 발생하는 패킷 데이터를 실시간으로 직접 처리하여 지연 시간을 극단적으로 낮추는 방식입니다. 이러한 고난도 인프라를 안정적으로 구현하기 위해서는 하이온넷과 같은 숙련된 파트너의 역할이 무엇보다 중요해지고 있습니다.
 
-![이미지](https://image_url_placeholder/security_command_center.png)
+![이미지](../../../../../source/posts/에이전틱_네트워킹(Agentic_Networking)/769a24ca-4.webp)
 
 ## 속도와 안전을 동시에 잡는 동적 보안 체계
 
-![이미지](https://image_url_placeholder/dynamic_security_shield.png)
+![이미지](../../../../../source/posts/에이전틱_네트워킹(Agentic_Networking)/2e8e417f-5.webp)
 
 AI 에이전트가 네트워크를 주도하게 되면 공격 표면(Attack Surface)은 기하급수적으로 넓어집니다. 보안 역시 기계의 속도에 맞춰 실시간으로 작동해야 하죠.
 
@@ -54,11 +54,11 @@ AI 에이전트가 네트워크를 주도하게 되면 공격 표면(Attack Surf
 
 이처럼 복잡한 보안 요구사항을 개별 기업이 직접 관리하기는 현실적으로 어렵습니다. 안정적인 전용회선과 통합 보안 관제를 제공하는 하이온넷의 솔루션이 에이전틱 네트워킹으로 전환하려는 기업들에 실질적인 기반이 되는 이유입니다.
 
-![이미지](https://image_url_placeholder/business_strategy_meeting.png)
+![이미지](../../../../../source/posts/에이전틱_네트워킹(Agentic_Networking)/0ca6888d-6.webp)
 
 ## 기계와 대화할 준비가 되었는가
 
-![이미지](https://image_url_placeholder/future_city_data_flow.png)
+![이미지](../../../../../source/posts/에이전틱_네트워킹(Agentic_Networking)/a97ffe6f-7.webp)
 
 우리는 지금 '사람을 위한 네트워크'에서 '기계를 위한 네트워크'로 넘어가는 중대한 변곡점에 서 있습니다. 에이전틱 네트워킹은 단순한 기술적 트렌드가 아니라, AI가 비즈니스의 핵심 동력으로 작동하기 위해 반드시 갖춰야 할 생존 인프라입니다.
 

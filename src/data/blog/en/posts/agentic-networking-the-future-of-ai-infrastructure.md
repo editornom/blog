@@ -13,11 +13,11 @@ description: "Explore the technical reality and strategic value of Agentic Netwo
 
 AI is evolving beyond a "Copilot" that simply follows user instructions into an "Agent" that sets its own goals and collaborates autonomously. The primary subjects of network communication are rapidly shifting from humans to machines, presenting new challenges that traditional infrastructure can no longer handle. In this context, **Agentic Networking**, which supports autonomous communication between machines, is emerging as a critical infrastructure.
 
-![Overview of Agentic Networking Concept](https://image_url_placeholder/agentic_networking_main.png)
+![Overview of Agentic Networking Concept](../../../../../source/posts/에이전틱_네트워킹(Agentic_Networking)/6c5a8cef-0.webp)
 
 ## Ultra-Low Latency Infrastructure for Machine Speeds
 
-![High-speed Machine Data Exchange](https://image_url_placeholder/high_speed_data.png)
+![High-speed Machine Data Exchange](../../../../../source/posts/에이전틱_네트워킹(Agentic_Networking)/40f01efa-1.webp)
 
 In the past, networks were designed for the "seconds-long" rhythm of a human clicking a webpage and waiting for it to load. However, the environment where AI agents exchange data and make decisions is fundamentally different. In this technical landscape, machine-to-machine communication occurs in the blink of an eye—within milliseconds (ms).
 
@@ -26,11 +26,11 @@ A delay of just 100ms can break an AI's inference loop or disrupt an execution c
 - **The Rise of East-West Traffic**: While traditional flows were primarily "North-South" (users fetching data from the Cloud), there is now an explosive increase in "East-West" traffic, where data moves between agents or edge nodes. This architecture is optimized to handle such traffic surges efficiently.
 - **Transition to Autonomous Operations**: Relying on human intervention to fix issues after they occur is impossible when dealing with tens of thousands of micro-interactions. Networks must possess autonomous operational capabilities—monitoring latency and jitter themselves and preemptively rerouting paths.
 
-![Digital Twin and Network Visualization](https://image_url_placeholder/digital_twin_network.png)
+![Digital Twin and Network Visualization](../../../../../source/posts/에이전틱_네트워킹(Agentic_Networking)/fd193945-2.webp)
 
 ## Dual Intelligence Architecture: Combining Analytics and Reasoning
 
-![Dual Intelligence Gears: Analytics and Reasoning](https://image_url_placeholder/dual_intelligence_gears.png)
+![Dual Intelligence Gears: Analytics and Reasoning](../../../../../source/posts/에이전틱_네트워킹(Agentic_Networking)/6f36ec33-3.webp)
 
 The core of this technology lies in a "Dual Intelligence" structure. The network must do more than just deliver data; it must understand the context and act accordingly.
 
@@ -40,11 +40,11 @@ In the next phase, **"Reasoning Intelligence,"** LLM-based agents identify the r
 
 "Telemetry-Native Agents" are particularly vital here. Instead of analyzing logs after the fact, they process packet data directly from devices in real-time to achieve extremely low latency. To implement such sophisticated infrastructure stably, the role of an experienced partner like Haionnet is becoming more important than ever.
 
-![Security Command Center for AI Networks](https://image_url_placeholder/security_command_center.png)
+![Security Command Center for AI Networks](../../../../../source/posts/에이전틱_네트워킹(Agentic_Networking)/769a24ca-4.webp)
 
 ## Dynamic Security Systems: Balancing Speed and Safety
 
-![Dynamic Security Shield for AI Agents](https://image_url_placeholder/dynamic_security_shield.png)
+![Dynamic Security Shield for AI Agents](../../../../../source/posts/에이전틱_네트워킹(Agentic_Networking)/2e8e417f-5.webp)
 
 As AI agents dominate the network, the attack surface expands exponentially. Security must operate in real-time to match machine speeds.
 
@@ -54,11 +54,11 @@ In the past, policy compliance was verified through periodic security audits. No
 
 Managing such complex security requirements internally is practically difficult for individual enterprises. This is why solutions from Haionnet, which provide stable dedicated lines and integrated security management, serve as a practical foundation for companies transitioning to Agentic Networking.
 
-![Strategic Business Planning for AI Infrastructure](https://image_url_placeholder/business_strategy_meeting.png)
+![Strategic Business Planning for AI Infrastructure](../../../../../source/posts/에이전틱_네트워킹(Agentic_Networking)/0ca6888d-6.webp)
 
 ## Are You Ready to Talk to Machines?
 
-![Future City Data Flow and Connectivity](https://image_url_placeholder/future_city_data_flow.png)
+![Future City Data Flow and Connectivity](../../../../../source/posts/에이전틱_네트워킹(Agentic_Networking)/a97ffe6f-7.webp)
 
 We are at a major inflection point, moving from "networks for humans" to "networks for machines." Agentic Networking is not just a technical trend; it is the essential survival infrastructure required for AI to function as a core business driver.
 

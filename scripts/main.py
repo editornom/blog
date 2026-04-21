@@ -28,6 +28,36 @@ if sys.platform == "win32":
     sys.stdout.reconfigure(encoding='utf-8')
 
 DRY_RUN = os.getenv("DRY_RUN", "false").lower() == "true"
+ 
+def get_system_status():
+    """
+    Collects diagnostic information about the current automation state.
+    """
+    status = {
+        "last_run_kst": "정보 없음",
+        "headlines_file_exists": False,
+        "skipped_reason": None
+    }
+    
+    # Check last_run.txt
+    last_run_path = os.path.join("source", "headlines", "last_run.txt")
+    if os.path.exists(last_run_path):
+        try:
+            with open(last_run_path, "r", encoding="utf-8") as f:
+                utc_str = f.read().strip()
+                utc_dt = datetime.datetime.fromisoformat(utc_str)
+                # Convert to KST (+9)
+                kst_dt = utc_dt + datetime.timedelta(hours=9)
+                status["last_run_kst"] = kst_dt.strftime("%Y-%m-%d %H:%M:%S")
+        except Exception:
+            pass
+
+    # Check today's headlines file
+    today_str = datetime.datetime.now().strftime("%Y%m%d")
+    headlines_path = os.path.join("source", "headlines", f"{today_str}.txt")
+    status["headlines_file_exists"] = os.path.exists(headlines_path)
+    
+    return status
 
 def print_final_briefing(report):
     """
@@ -45,6 +75,17 @@ def print_final_briefing(report):
     lines.append(f"📢 최종 발행 분석 보고서 ({now.strftime('%Y-%m-%d %H:%M:%S')})")
     lines.append("="*40)
     
+    # [NEW] 0. System Health & Diagnostics
+    lines.append("🛡️ 시스템 상태 및 진단 정보")
+    if report.get("system"):
+        sys_info = report["system"]
+        lines.append(f"- 마지막 뉴스 수집 성공: {sys_info.get('last_run_kst', '알 수 없음')}")
+        lines.append(f"- 오늘자 헤드라인 파일: {'✅ 있음' if sys_info.get('headlines_file_exists') else '❌ 없음'}")
+        if sys_info.get("skipped_reason"):
+            lines.append(f"- ⚠️ 자동화 건너뜀 사유: {sys_info['skipped_reason']}")
+    else:
+        lines.append("- 시스템 정보 데이터 누락")
+    lines.append("-" * 20)
     # 1. Crawling
     if report["crawl"]["success"] is not None:
         if report["crawl"]["success"]:
@@ -94,12 +135,13 @@ def print_final_briefing(report):
     # [NEW] 비용/토큰 메트릭 추적
     metrics = gemini_tracker.get_summary_and_cost()
     lines.append("\n" + "="*40)
-    lines.append("💰 이번 포스팅에 사용된 대략적인 API 비용 및 리소스")
+    lines.append("💰 이번 세션 리소스 사용량")
     lines.append("="*40)
-    lines.append(f"- 텍스트 프롬프트 송신: {metrics['prompt']:,} tokens")
-    lines.append(f"- 텍스트 생성 결과 수신: {metrics['candidate']:,} tokens")
-    lines.append(f"- 고해상도 AI 이미지 생성: {metrics['images']} 회")
-    lines.append(f"- 💵 총 사용 비용 (추정): 약 ${metrics['cost_usd']:.4f} USD")
+    lines.append(f"- 텍스트 프롬프트: {metrics['prompt']:,} tokens")
+    lines.append(f"- 결과 생성: {metrics['candidate']:,} tokens")
+    if metrics['images'] > 0:
+        lines.append(f"- AI 이미지 생성: {metrics['images']} 회")
+    lines.append(f"- 💵 추정 비용: ${metrics['cost_usd']:.4f} USD")
     lines.append("="*40 + "\n")
 
     # Output to Console
@@ -213,6 +255,7 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
     If 'urls' is provided as a list, it bypasses keyword-based file loading.
     """
     report = {
+        "system": get_system_status(), # 초기화 시 시스템 정보 수집
         "crawl": {"success": False, "count": 0, "error": None},
         "draft": {"success": False, "path": None, "warning": None},
         "detox": {"success": False, "error": None},
@@ -356,8 +399,10 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
             alt_keyword = keyword if keyword else "IT 트렌드"
             md_img_link = f"![{alt_keyword} - {translated_alt}]({rel_path})"
             
-            # 1. 기본 교체 수행
+            # 1. 기본 교체 수행 (AI가 사용한 포맷에 맞게 교체)
+            # 괄호 포맷 (![이미지](...)) 및 대괄호 포맷 ([이미지: ...]) 모두 대응
             draft = draft.replace(f"[이미지: {prompt}]", md_img_link)
+            draft = draft.replace(f"![이미지]({prompt})", md_img_link)
             
             # 2. 🚨 AI가 무의식적으로 남긴 마크다운 찌꺼기 청소
             draft = draft.replace("!![", "![") # 범인: 중복된 느낌표 제거
@@ -533,52 +578,91 @@ if __name__ == "__main__":
         # 🔥 완전 자동 모드 (파일 생성 -> 분석 -> 포스팅)
         print("\n🚀 [AUTO MODE] No arguments provided. Starting full automation pipeline...")
         
-        # 1. 크롤러 실행: list.txt 읽어서 YYYYMMDD.txt 생성
-        daily_file = generate_daily_headlines_file("list.txt")
+        master_report = {
+            "system": get_system_status(),
+            "crawl": {"success": None, "count": 0, "error": None},
+            "draft": {"success": None, "path": None, "warning": None},
+            "detox": {"success": None, "error": None},
+            "images": {"success": None, "requested": 0},
+            "translations": {}
+        }
         
-        auto_keyword = None
-        
-        if daily_file:
-            # 2. 트렌드 캐처 실행: 수집된 파일 읽어서 키워드 도출
-            auto_keyword = get_daily_topic_from_file(daily_file)
+        try:
+            # 1. 크롤러 실행: list.txt 읽어서 YYYYMMDD.txt 생성
+            daily_file = generate_daily_headlines_file("list.txt")
+            master_report["system"]["headlines_file_exists"] = os.path.exists(daily_file) if daily_file else False
             
-        if not auto_keyword:
-            # 헤드라인 수집이 아예 안 됐거나, 키워드 추출 중 오류 발생 시 에버그린 fallback
-            print("⚠️ 헤드라인 기반 키워드 도출에 실패(또는 기사 없음). 즉시 Evergreen 키워드(Fallback) 모드로 전환합니다.")
-            from trend_catcher import get_evergreen_keywords, save_keyword_to_history
-            import random
+            auto_keyword = None
+            if daily_file:
+                # 2. 트렌드 캐처 실행: 수집된 파일 읽어서 키워드 도출
+                auto_keyword = get_daily_topic_from_file(daily_file)
             
-            evergreen_pool = get_evergreen_keywords()
-            if evergreen_pool:
-                auto_keyword = random.choice(evergreen_pool)
-                print(f"🔄 대비책(Fallback) 가동: 상시 키워드 풀에서 '{auto_keyword}'(을)를 선택합니다.")
-                save_keyword_to_history(auto_keyword, "Fallback_Auto_Pipeline")
-            else:
-                print("❌ 상시 키워드 목록도 비어있어 파이프라인을 중단합니다.")
-                sys.exit(1)
+            if not auto_keyword:
+                # 헤드라인 수집이 아예 안 됐거나, 키워드 추출 중 오류 발생 시 에버그린 fallback
+                print("⚠️ 헤드라인 기반 키워드 도출에 실패(또는 기사 없음). 즉시 Evergreen 키워드(Fallback) 모드로 전환합니다.")
+                master_report["system"]["skipped_reason"] = "헤드라인 수집 실패 또는 새로운 기사 없음 (에버그린 폴백 진행)"
+                from trend_catcher import get_evergreen_keywords, save_keyword_to_history
+                import random
                 
-        print(f"✨ Auto-selected Keyword: {auto_keyword}")
-        
-        # 🚀 [New Pipeline] DeepSearch & Filter
-        top_urls = deep_search_and_filter(auto_keyword, num_results=100)
-        
-        # 검색 실패 시 한 번 더 에버그린 풀에서 다른 단어로 시도
-        if not top_urls:
-            print(f"⚠️ '{auto_keyword}'에 대한 검색 결과가 빈약합니다. Evergreen 키워드로 2차 재시도합니다.")
-            from trend_catcher import get_evergreen_keywords, save_keyword_to_history
-            import random
-            evergreen_pool = get_evergreen_keywords()
-            if auto_keyword in evergreen_pool:
-                evergreen_pool.remove(auto_keyword)
-            if evergreen_pool:
-                auto_keyword = random.choice(evergreen_pool)
-                print(f"🔄 2차 대비책(Fallback) 가동: '{auto_keyword}'(을)를 선택합니다.")
-                save_keyword_to_history(auto_keyword, "Fallback_DeepSearchFail")
-                top_urls = deep_search_and_filter(auto_keyword, num_results=100)
+                evergreen_pool = get_evergreen_keywords()
+                if evergreen_pool:
+                    auto_keyword = random.choice(evergreen_pool)
+                    print(f"🔄 대비책(Fallback) 가동: 상시 키워드 풀에서 '{auto_keyword}'(을)를 선택합니다.")
+                    save_keyword_to_history(auto_keyword, "Fallback_Auto_Pipeline")
+                else:
+                    error_msg = "상시 키워드 목록도 비어있어 파이프라인을 중단합니다."
+                    print(f"❌ {error_msg}")
+                    master_report["system"]["skipped_reason"] = error_msg
+                    sys.exit(1)
+                    
+            print(f"✨ Auto-selected Keyword: {auto_keyword}")
+            
+            # 🚀 [New Pipeline] DeepSearch & Filter
+            top_urls = deep_search_and_filter(auto_keyword, num_results=100)
+            
+            # 검색 실패 시 한 번 더 에버그린 풀에서 다른 단어로 시도
+            if not top_urls:
+                print(f"⚠️ '{auto_keyword}'에 대한 검색 결과가 빈약합니다. Evergreen 키워드로 2차 재시도합니다.")
+                master_report["system"]["skipped_reason"] = f"'{auto_keyword}' 검색 결과 부족 (2차 폴백 진행)"
+                from trend_catcher import get_evergreen_keywords, save_keyword_to_history
+                import random
+                evergreen_pool = get_evergreen_keywords()
+                if auto_keyword in evergreen_pool:
+                    evergreen_pool.remove(auto_keyword)
+                if evergreen_pool:
+                    auto_keyword = random.choice(evergreen_pool)
+                    print(f"🔄 2차 대비책(Fallback) 가동: '{auto_keyword}'(을)를 선택합니다.")
+                    save_keyword_to_history(auto_keyword, "Fallback_DeepSearchFail")
+                    top_urls = deep_search_and_filter(auto_keyword, num_results=100)
 
-        if top_urls:
-            # 3. 선별된 고품질 URL들을 사용하여 포스팅 작성
-            process_urls(urls=top_urls, keyword=auto_keyword, folder=folder, include_faq=include_faq)
-        else:
-            print("❌ 검색 결과에서 유효한 소스를 끝내 찾지 못하여 파이프라인을 중단합니다.")
-            sys.exit(1)
+            if top_urls:
+                # 3. 선별된 고품질 URL들을 사용하여 포스팅 작성
+                process_urls(urls=top_urls, keyword=auto_keyword, folder=folder, include_faq=include_faq)
+                # process_urls 내부에서 print_final_briefing을 호출하므로 여기서는 중복 호출하지 않기 위해 
+                # master_report를 직접 관리하는 방식 대신 process_urls의 결과를 받거나 
+                # 혹은 전역적인 상태 관리가 필요함. 
+                # 여기서는 단순화를 위해 process_urls가 끝난 후 return 하도록 함.
+                sys.exit(0) 
+            else:
+                error_msg = "검색 결과에서 유효한 소스를 끝내 찾지 못하여 파이프라인을 중단합니다."
+                print(f"❌ {error_msg}")
+                master_report["system"]["skipped_reason"] = error_msg
+                sys.exit(1)
+        except SystemExit:
+            # sys.exit() 호출 시에도 finally 블록이 실행되도록 함
+            pass
+        except Exception as e:
+            error_msg = f"자동화 중 치명적 오류 발생: {str(e)}"
+            print(f"❌ {error_msg}")
+            master_report["system"]["skipped_reason"] = error_msg
+        finally:
+            # 리포트 출력 및 저장
+            # 만약 process_urls 내에서 이미 리포트가 생성되었다면 중복될 수 있으나, 
+            # 에러 발생 시에는 여기서 생성하는 것이 안전함.
+            # 중복 방지를 위해 파일 존재 여부나 상태를 체크할 수도 있으나 우선은 단순 출력.
+            print_final_briefing(master_report)
+            
+            # 실패 시에도 리포트를 GitHub에 푸시하기 위해 push_to_github 호출
+            if not DRY_RUN:
+                from publish import push_to_github
+                push_to_github("Update diagnostic automation report")
