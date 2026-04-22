@@ -31,3 +31,4 @@
 [2026-04-22] [AI추천_39점] OAuth Supply Chain Security
 [2026-04-22] [AI추천_39점] Managed Execution Layer (MEL)
 [2026-04-22] [AI추천_39점] Model Context Protocol (MCP)
+[2026-04-22] [수동선정] 벡터 데이터베이스 (Vector Database)
