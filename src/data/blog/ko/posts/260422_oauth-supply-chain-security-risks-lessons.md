@@ -51,7 +51,7 @@ references:
 - https://redcanary.com/blog/threat-detection/google-workspace-oauth-attack/
 - https://vercel.com/kb/bulletin/vercel-april-2026-security-incident
 author_role: Senior Tech Editor
-modDatetime: '2026-04-22T13:22:20.777134+09:00'
+modDatetime: 2026-04-22T13:22:20.777134+09:00
 ---
 
 현대 기업의 보안 경계선은 더 이상 서버실의 방화벽에 머물지 않습니다. 오늘날의 침해 사고는 시스템 외부가 아닌, 우리가 신뢰하고 허용한 '연결'의 틈바구니에서 발생합니다. 2025년 Salesloft와 Gainsight를 뒤흔든 공급망 보안 사고는 이 치명적인 신뢰의 배신을 증명하는 완성형 사례입니다.

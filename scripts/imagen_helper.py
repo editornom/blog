@@ -82,7 +82,7 @@ def generate_image(prompt, output_filename):
             response = call_imagen(model_name, enhanced_prompt)
             
             if response.generated_images:
-                # [수정된 부분] SDK 객체에서 바이트(Bytes)를 직접 꺼내 PIL로 변환 후 저장
+            # [수정된 부분] SDK 객체에서 바이트(Bytes)를 직접 꺼내 PIL로 변환 후 저장
                 img_bytes = response.generated_images[0].image.image_bytes
                 pil_img = Image.open(io.BytesIO(img_bytes))
                 
@@ -101,22 +101,26 @@ def generate_image(prompt, output_filename):
                     pass
                 
                 print(f"✅ {model_name}을(를) 사용하여 이미지 WebP 포맷 최적화 저장 완료: {output_filename}")
-                return output_filename
+                return output_filename, None
             else:
-                print(f"⚠️ {model_name} 결과가 없습니다. 다음 모델로 넘어갑니다.")
+                last_error = f"{model_name}: No image generated (Safety filter?)"
+                print(f"⚠️ {last_error}. 다음 모델로 넘어갑니다.")
                 
         except exceptions.NotFound:
-            print(f"ℹ️ {model_name}은 현재 계정에서 사용할 수 없거나 지원하지 않습니다. (404)")
+            last_error = f"{model_name}: Not Found (404)"
+            print(f"ℹ️ {last_error}")
         except exceptions.ResourceExhausted:
-            print(f"⏳ {model_name}의 속도 제한(Rate Limit)에 걸렸으나 재시도 후에도 실패했습니다.")
+            last_error = f"{model_name}: Rate Limit (429)"
+            print(f"⏳ {last_error}")
         except Exception as e:
-            print(f"⚠️ {model_name} 오류 발생: {str(e)[:100]}...")
+            last_error = f"{model_name}: {str(e)[:100]}"
+            print(f"⚠️ {last_error}...")
             
         # 다음 모델 시도 환경 조성
         continue
 
-    print("❌ 모든 Imagen 모델 시도가 실패했습니다.")
-    return None
+    print(f"❌ 모든 Imagen 모델 시도가 실패했습니다. 마지막 에러: {last_error}")
+    return None, last_error
 
 if __name__ == "__main__":
     # 단독 테스트용

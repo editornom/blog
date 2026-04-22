@@ -115,7 +115,10 @@ def print_final_briefing(report):
 
     # 3. Images
     if report["images"]["requested"] > 0:
-        lines.append(f"- 🖼️ 이미지 생성: ✅ {report['images']['success']} / {report['images']['requested']} 완료")
+        status = "✅ 완수" if report["images"]["success"] == report["images"]["requested"] else "⚠️ 부분 성공"
+        lines.append(f"- 🖼️ 이미지 생성: {status} ({report['images']['success']} / {report['images']['requested']} 완료)")
+        if report["images"].get("error"):
+            lines.append(f"  ❌ 에러 발생: {report['images']['error']}")
     elif report["images"]["success"] is None:
          lines.append("- 🖼️ 이미지 생성: ⚪ 건너뜀")
     else:
@@ -241,7 +244,7 @@ def process_single_file(file_path, folder="posts", target_lang=None, include_faq
                     fm = yaml.safe_load(parts[1])
                     fm['faqs'] = faqs
                     # [E-E-A-T] Update metadata for freshness and authority
-                    fm['modDatetime'] = datetime.datetime.now().astimezone().isoformat()
+                    fm['modDatetime'] = datetime.datetime.now().astimezone()
                     fm['author_role'] = "Senior Tech Editor"
                     fm['author_url'] = "https://editornom.com/about"
                     
@@ -280,9 +283,9 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
     report = {
         "system": get_system_status(), # 초기화 시 시스템 정보 수집
         "crawl": {"success": False, "count": 0, "error": None},
-        "draft": {"success": False, "path": None, "warning": None},
+        "draft": {"success": False, "path": None, "warning": None, "error": None},
         "detox": {"success": False, "error": None},
-        "images": {"success": 0, "requested": 0},
+        "images": {"success": 0, "requested": 0, "error": None},
         "translations": {}
     }
 
@@ -418,16 +421,15 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
         img_path = os.path.join(source_img_dir, img_filename)
         
         print(f"Generating AI image for: {prompt[:50]}...")
-        generated_path = generate_image(prompt, img_path)
+        generated_path, img_error = generate_image(prompt, img_path)
         
         # Note: Rate limiting is now handled internally by generate_image via TokenBucket.
         
         if generated_path:
             report["images"]["success"] += 1
-            rel_path = f"../../../../../source/{folder}/{source_folder_name}/{img_filename}"
+            rel_path = f"../../../../../source/{folder}/{source_folder_name}/{img_uuid}-{i}.webp"
             
             # Alt 태그 SEO 최적화: AI 프롬프트 노이즈를 제거하고 핵심 맥락만 추출
-            # '4k', 'cinematic' 등의 노이즈는 제외하도록 translate_text 내부에 가이드하거나 별도 처리
             alt_clean_prompt = f"다음 이미지 생성용 프롬프트에서 시각적 스타일 키워드(4k, 해상도 등)를 제외하고, 초보자도 이해할 수 있는 핵심 의미만 한 문장으로 요약해서 ko로 번역해줘. (예: '데이터 센터의 보안 시스템'):\n{prompt}"
             translated_alt = translate_text(alt_clean_prompt, "ko")
             alt_keyword = keyword if keyword else "IT 트렌드"
@@ -436,6 +438,8 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
             # 1. 기본 교체 수행
             draft = draft.replace(f"[이미지: {prompt}]", md_img_link)
             draft = draft.replace(f"![이미지]({prompt})", md_img_link)
+        else:
+            report["images"]["error"] = img_error if img_error else "Unknown Error"
             
             # 2. 🚨 AI가 무의식적으로 남긴 마크다운 찌꺼기 청소
             draft = draft.replace("!![", "![") # 범인: 중복된 느낌표 제거
@@ -445,39 +449,51 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
             if i == 0:
                 draft = re.sub(r'ogImage: ".*?"', f'ogImage: "{rel_path}"', draft)
 
-    # 5. Save the Final Markdown File with YYMMDD_ prefix
-    slug_match = re.search(r'slug: "(.*?)"', draft)
-    slug = slug_match.group(1) if slug_match else f"post-{datetime.datetime.now().strftime('%Y-%m-%d-%H%M%S')}"
-    
-    # Extract pubDatetime for filename prefix (YYMMDD)
-    pub_match = re.search(r'pubDatetime: (\d{4})-(\d{2})-(\d{2})', draft)
-    if pub_match:
-        yy, mm, dd = pub_match.group(1)[2:], pub_match.group(2), pub_match.group(3)
-        prefix = f"{yy}{mm}{dd}_"
-    else:
+    # 4.5 Inject References into Frontmatter (E-E-A-T: Trustworthiness) 및 메타데이터 추출
+    # [ROBUST] 따옴표 없는 슬러그 등 YAML 구조적 추출
+    try:
+        parts = re.split(r'^---$', draft, maxsplit=2, flags=re.MULTILINE)
+        if len(parts) >= 3:
+            frontmatter_raw = parts[1]
+            body_content = parts[2]
+            fm_data = yaml.safe_load(frontmatter_raw)
+            
+            # 슬러그 추출 (파일명용)
+            slug = fm_data.get('slug', f"post-{datetime.datetime.now().strftime('%Y-%m-%d-%H%M%S')}")
+            
+            # 날짜 추출 (파일명 접두사용)
+            pub_dt = fm_data.get('pubDatetime')
+            if isinstance(pub_dt, (datetime.datetime, datetime.date)):
+                 prefix = pub_dt.strftime("%y%m%d_")
+            elif isinstance(pub_dt, str):
+                 date_match = re.search(r'(\d{4})-(\d{2})-(\d{2})', pub_dt)
+                 if date_match:
+                     prefix = f"{date_match.group(1)[2:]}{date_match.group(2)}{date_match.group(3)}_"
+                 else:
+                     prefix = datetime.datetime.now().strftime("%y%m%d_")
+            else:
+                 prefix = datetime.datetime.now().strftime("%y%m%d_")
+
+            # References 주입
+            if urls:
+                fm_data["references"] = urls[:10]
+            
+            # [E-E-A-T] Update metadata for freshness and editorial persona
+            fm_data['modDatetime'] = datetime.datetime.now().astimezone()
+            # author_role은 main.py 상단이나 설정에서 관리하도록 추후 고도화 가능
+            fm_data['author_role'] = "Senior Tech Editor"
+            fm_data['author_url'] = "https://editornom.com/about"
+            
+            new_fm = yaml.dump(fm_data, allow_unicode=True, sort_keys=False).strip()
+            draft = f"---\n{new_fm}\n---{body_content}"
+        else:
+             slug = f"post-{datetime.datetime.now().strftime('%M%S')}"
+             prefix = datetime.datetime.now().strftime("%y%m%d_")
+    except Exception as e:
+        print(f"⚠️ [Metadata] YAML processing failed: {e}")
+        report["draft"]["error"] = f"YAML 메타데이터 처리 실패: {str(e)}"
+        slug = f"post-err-{datetime.datetime.now().strftime('%M%S')}"
         prefix = datetime.datetime.now().strftime("%y%m%d_")
-        
-    # 4.5 Inject References into Frontmatter (E-E-A-T: Trustworthiness)
-    if urls:
-        # Use first 10 URLs
-        ref_list = urls[:10]
-        # Move FAQ injection logic up or use PyYAML to add references
-        try:
-            parts = re.split(r'^---$', draft, maxsplit=2, flags=re.MULTILINE)
-            if len(parts) >= 3:
-                frontmatter_raw = parts[1]
-                body_content = parts[2]
-                fm_data = yaml.safe_load(frontmatter_raw)
-                fm_data["references"] = ref_list
-                # [E-E-A-T] Update metadata for freshness and editorial persona
-                fm_data['modDatetime'] = datetime.datetime.now().astimezone().isoformat()
-                fm_data['author_role'] = "Senior Tech Editor"
-                fm_data['author_url'] = "https://editornom.com/about"
-                
-                new_fm = yaml.dump(fm_data, allow_unicode=True, sort_keys=False).strip()
-                draft = f"---\n{new_fm}\n---{body_content}"
-        except Exception as e:
-            print(f"⚠️ [References] YAML injection failed: {e}")
 
     target_dir = os.path.join("src", "data", "blog", "ko", folder)
     os.makedirs(target_dir, exist_ok=True)

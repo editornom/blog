@@ -40,7 +40,7 @@ references:
 - https://redcanary.com/blog/threat-detection/google-workspace-oauth-attack/
 - https://vercel.com/kb/bulletin/vercel-april-2026-security-incident
 author_role: Senior Tech Editor
-modDatetime: '2026-04-22T13:22:20.777134+09:00'
+modDatetime: 2026-04-22T13:22:20.777134+09:00
 ---
 
 The security perimeter of a modern enterprise no longer stops at the server room firewall. Today’s breaches often occur not from outside the system, but within the gaps of the "connections" we have trusted and allowed. The supply chain security incidents that shook Salesloft and Gainsight in 2025 serve as a definitive case study proving this fatal betrayal of trust.

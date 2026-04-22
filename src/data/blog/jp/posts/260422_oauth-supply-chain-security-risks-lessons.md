@@ -40,7 +40,7 @@ references:
 - https://redcanary.com/blog/threat-detection/google-workspace-oauth-attack/
 - https://vercel.com/kb/bulletin/vercel-april-2026-security-incident
 author_role: Senior Tech Editor
-modDatetime: '2026-04-22T13:22:20.777134+09:00'
+modDatetime: 2026-04-22T13:22:20.777134+09:00
 ---
 
 現代企業のセキュリティ境界線は、もはやサーバー室のファイアウォールに留まりません。今日発生する侵害事故はシステムの外部からではなく、私たちが信頼し許可した「連携」の隙間から発生しています。2025年にSalesloftとGainsightを揺るがしたサプライチェーンセキュリティ事故は、この致命的な信頼の裏切りを証明する完成された事例です。

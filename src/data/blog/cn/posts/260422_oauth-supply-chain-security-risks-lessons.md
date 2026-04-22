@@ -40,7 +40,7 @@ references:
 - https://redcanary.com/blog/threat-detection/google-workspace-oauth-attack/
 - https://vercel.com/kb/bulletin/vercel-april-2026-security-incident
 author_role: Senior Tech Editor
-modDatetime: '2026-04-22T13:22:20.777134+09:00'
+modDatetime: 2026-04-22T13:22:20.777134+09:00
 ---
 
 现代企业的安全边界早已不再局限于机房的防火墙。如今的入侵事件并非发生在系统外部，而是发生在我们信任并允许的“连接”缝隙中。2025 年震动 Salesloft 和 Gainsight 的供应链安全事故，正是证明这种致命信任被背叛的典型案例。
