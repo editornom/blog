@@ -8,53 +8,38 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-def review_manuscript(draft, folder="posts"):
+def review_manuscript(draft_data, folder="posts"):
     """
     Sends the generated blog post draft to Gemini for final inspection and refinement.
     
     Args:
-        draft: The markdown content generated.
+        draft_data: Dictionary containing 'title' and 'content'.
         folder: Target content category.
     """
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
         print("Error: GEMINI_API_KEY not found in .env")
-        return draft
+        return draft_data
 
     client = genai.Client(api_key=api_key)
 
-    # 🌟 [개선] Frontmatter 분리 및 제목 추출 로직
-    # YAML 영역을 AI에게 보내지 않고 보호하되, 제목(title)만 추출하여 윤문 대상에 포함합니다.
-    yaml_match = re.match(r'^---\s*\n(.*?)\n---\s*\n', draft, re.DOTALL)
-    current_title = ""
-    fm_dict = {}
-    if yaml_match:
-        frontmatter_raw = yaml_match.group(1)
-        try:
-            fm_dict = yaml.safe_load(frontmatter_raw)
-            current_title = fm_dict.get('title', '')
-        except Exception:
-            pass
-        body_content = draft[yaml_match.end():]
-    else:
-        body_content = draft
+    current_title = draft_data.get('title', '')
+    body_content = draft_data.get('content', '')
 
     # 경쟁사 텍스트 파일 로드 (Negative Prompt 활용)
     competitors_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "competitors.txt")
     competitor_list_str = ""
+    # ... (Keep competitor logic unchanged) ...
     if os.path.exists(competitors_file):
         try:
             with open(competitors_file, "r", encoding="utf-8") as f:
-                # 도메인 확장자 제거하고 브랜드명만 추출
                 competitors = [line.strip().split('.')[0] for line in f if line.strip() and not line.startswith("#")]
                 if competitors:
                     competitor_list_str = f"자사 마케팅 목적에 위배되는 다음 경쟁사 브랜드({', '.join(competitors)})는 본문에서 철저히 배제 및 삭제하십시오."
         except Exception:
             pass
 
-    # ---------------------------------------------------------
-    # 📝 테크 매거진 전문 에디터의 '인사이트 디톡스' 프롬프트
-    # ---------------------------------------------------------
+    # ... (Prompt remains similar but assumes title/content separation) ...
     prompt = f"""
 당신은 TechCrunch, The Verge, Wired와 같은 글로벌 테크 매거진의 15년 차 수석 에디터입니다.
 주어진 초안은 데이터 중심의 팩트 나열로 인해 딱딱한 B2B 보고서 느낌이 들거나, AI가 작성하여 기계적인 패턴과 상투적인 표현이 섞여 있습니다.
@@ -101,7 +86,6 @@ def review_manuscript(draft, folder="posts"):
 3. 세 번째 줄부터 '다듬어진 본문(마크다운)'을 작성하십시오.
 4. 어떠한 메타 코멘트도 포함하지 마십시오.
 """
-    # ---------------------------------------------------------
 
     @gemini_retry
     def call_api():
@@ -118,7 +102,6 @@ def review_manuscript(draft, folder="posts"):
         response_text = response.text.strip()
         
         # 제목과 본문 분리 파싱
-        # 지시한 대로 첫 줄은 제목, 그 이후는 본문으로 간주
         parts = response_text.split("\n", 2)
         if len(parts) >= 3:
             refined_title = parts[0].strip().strip('"').strip("'")
@@ -127,27 +110,23 @@ def review_manuscript(draft, folder="posts"):
              refined_title = parts[0].strip().strip('"').strip("'")
              result_text = parts[1].strip()
         else:
-            refined_title = current_title # 실패 시 기존 제목 유지
+            refined_title = current_title
             result_text = response_text
 
         # 🛡️ 파이썬 기반 마크다운 문법 안정성 검사
         if result_text.count("```") % 2 != 0:
             print("  ⚠️ [Detox] 마크다운 코드 블록 닫기(```) 누락 감지. 자동 복구합니다.")
             result_text += "\n```\n"
-            
-        if "|" in result_text and "\n|---" not in result_text and "\n| ---" not in result_text.replace(" ", ""):
-            print("  ⚠️ [Detox] 마크다운 표 문법 불안전 감지.")
 
-        # 🌟 Frontmatter 업데이트 및 재결합
-        if yaml_match and fm_dict:
-            fm_dict['title'] = refined_title
-            # YAML 생성 시 따옴표 처리 및 유니코드 보존
-            new_fm = yaml.dump(fm_dict, allow_unicode=True, sort_keys=False, indent=2)
-            return f"---\n{new_fm.strip()}\n---\n\n{result_text}"
-        
-        return result_text
+        return {
+            "title": refined_title,
+            "content": result_text
+        }
 
     except Exception as e:
         print(f"❌ Gemini 디톡스 중 오류 발생: {e}")
-        # 오류 발생 시 원본(frontmatter + body_content = draft) 유지하여 파이프라인 중단 방지
-        return draft
+        return draft_data
+
+    except Exception as e:
+        print(f"❌ Gemini 디톡스 중 오류 발생: {e}")
+        return draft_data

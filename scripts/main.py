@@ -21,6 +21,61 @@ from search_expert import deep_search_and_filter
 from faq_expert import generate_faq
 from api_utils import gemini_tracker
 from glossary_expert import pick_daily_glossary_keyword
+from google import genai
+
+def assemble_post_metadata(reviewed_data, folder="posts", keyword="", urls=None):
+    """
+    Creates final Frontmatter and combines it with refined content.
+    Generates SEO-friendly slug and description based on REFINED content.
+    """
+    api_key = os.getenv("GEMINI_API_KEY")
+    client = genai.Client(api_key=api_key)
+    
+    title = reviewed_data['title']
+    content = reviewed_data['content']
+    
+    # 1. Generate SEO-optimized Slug from REFINED Title
+    print(f"  [Assembler] Generating optimized slug...")
+    slug_prompt = f"Create a short, SEO-friendly English URL slug from this blog title: '{title}'. Output ONLY the slug (lowercase-and-hyphens-only)."
+    slug_resp = client.models.generate_content(model='models/gemini-3-flash-preview', contents=slug_prompt)
+    slug = slug_resp.text.strip().lower().replace(' ', '-').replace('"', '').replace("'", "")
+    # Remove any non-alphanumeric/hyphen chars just in case
+    slug = re.sub(r'[^a-z0-9\-]', '', slug)
+    
+    # 2. Generate Description from REFINED Content
+    print(f"  [Assembler] Generating meta description...")
+    desc_prompt = f"Summarize this blog post into 1-2 professional sentences for a meta description (SEO): \n\n{content[:1000]}"
+    desc_resp = client.models.generate_content(model='models/gemini-3-flash-preview', contents=desc_prompt)
+    description = desc_resp.text.strip().replace('"', "'")
+    
+    # 3. Time calculation
+    seoul_tz = datetime.timezone(datetime.timedelta(hours=9))
+    seoul_now = datetime.datetime.now(seoul_tz)
+    pub_time = seoul_now - datetime.timedelta(minutes=10) # Buffer
+    prefix = pub_time.strftime("%y%m%d_")
+    
+    # 4. Assemble YAML
+    fm_data = {
+        "title": title,
+        "author": "editornom",
+        "author_role": "Senior Tech Editor",
+        "author_url": "https://editornom.com/about",
+        "pubDatetime": pub_time.strftime("%Y-%m-%dT%H:%M:%S+09:00"),
+        "slug": slug,
+        "featured": False,
+        "draft": False,
+        "ogImage": "../../../../assets/images/placeholder.png",
+        "description": description,
+        "references": urls[:10] if urls else []
+    }
+    
+    # [E-E-A-T] Last check for author meta
+    fm_data['modDatetime'] = seoul_now.strftime("%Y-%m-%dT%H:%M:%S+09:00")
+    
+    yaml_str = yaml.dump(fm_data, allow_unicode=True, sort_keys=False, indent=2)
+    final_markdown = f"---\n{yaml_str}---\n\n{content}"
+    
+    return final_markdown, prefix, slug
 
 
 
@@ -335,21 +390,21 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
     report["crawl"]["success"] = True
     report["crawl"]["count"] = len(all_content)
 
-    # 3. Generate initial draft
+    # 3. Generate initial draft parts
     combined_body = "\n\n---\n\n".join([c['body'] for c in all_content])
     print(f"\n=== Combined {len(all_content)} pages into {len(combined_body)} chars ===")
     
-    print(f"Generating draft with Gemini ({folder} mode)...")
+    print(f"Generating draft parts with Gemini ({folder} mode)...")
     crawled_summary = {
         "title": all_content[0].get('title', 'Untitled Issue'),
         "url": urls[0],
         "body": combined_body[:30000] # Limit to avoid token issues
     }
     
-    draft, density_warning = generate_blog_post(crawled_summary, folder=folder, keyword=keyword)
-    if not draft:
-        print("Error: Failed to generate initial blog post.")
-        report["draft"]["error"] = "Failed to generate initial blog post."
+    draft_data, density_warning = generate_blog_post(crawled_summary, folder=folder, keyword=keyword)
+    if not draft_data:
+        print("Error: Failed to generate initial blog post parts.")
+        report["draft"]["error"] = "Failed to generate initial blog post parts."
         print_final_briefing(report)
         return
     
@@ -360,25 +415,30 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
     print(f"\n=== Stage 3.5: Manuscript Inspection (Detox) ===")
     
     max_retries = 3
-    reviewed_draft = None
+    reviewed_data = None
     for attempt in range(max_retries):
         print(f"  [Attempt {attempt+1}/{max_retries}] Starting detox...")
-        reviewed_draft = review_manuscript(draft, folder=folder)
-        if reviewed_draft:
-            draft = reviewed_draft
+        reviewed_data = review_manuscript(draft_data, folder=folder)
+        if reviewed_data and reviewed_data != draft_data:
             report["detox"]["success"] = True
             print(f"  ✅ Detox successful.")
             break
         else:
-            print(f"  ⚠️ Detox attempt {attempt+1} failed.")
+            print(f"  ⚠️ Detox attempt {attempt+1} failed or returned no changes.")
             if attempt < max_retries - 1:
                 time.sleep(5) # Wait before retry
     
     if not report["detox"]["success"]:
-        report["detox"]["error"] = "Detox failed after all retries, keeping original draft"
-        print(f"  ❌ All detox attempts failed. Using original draft.")
+        report["detox"]["error"] = "Detox failed after all retries, keeping original parts"
+        print(f"  ❌ All detox attempts failed. Using original parts.")
+        reviewed_data = draft_data
 
-    # 3.7 Add FAQ if requested (New YAML Frontmatter Architecture)
+    # NEW STEP: Stage 3.7: Metadata Assembly & Slug Generation
+    print(f"\n=== Stage 3.7: Metadata Assembly & Slug Generation ===")
+    draft, prefix, slug = assemble_post_metadata(reviewed_data, folder=folder, keyword=keyword, urls=urls)
+    print(f"  ✅ Metadata assembled. Final Slug: {slug}")
+
+    # 3.8 Add FAQ if requested (New YAML Frontmatter Architecture)
     if include_faq and keyword:
         generate_faq(draft, keyword)
         faqs = load_faq_content(keyword)
@@ -387,25 +447,19 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
             draft, faqs_data = prepare_faq_data(draft, faqs)
             
             # 프런트매터 영역에 YAML 배열 형태로 주입
-            # 단순화를 위해 정규식을 사용하여 두 번째 --- 앞에 삽입합니다.
             faq_yaml = yaml.dump({"faqs": faqs_data}, allow_unicode=True, sort_keys=False, indent=2)
-            # Remove start/end doc markers from dump if any
             faq_yaml = faq_yaml.replace("---", "").strip()
             
             # Insert before the last Frontmatter separator
             draft = re.sub(r'\n---', f'\n{faq_yaml}\n---', draft, count=1, flags=re.MULTILINE)
-            
             print(f"✅ Injected {len(faqs)} FAQ items into YAML Frontmatter.")
         else:
             print(f"Warning: FAQ file not found or empty for keyword '{keyword}'")
 
-    # 4. Process Images (Regex to find [이미지: ...] or ![이미지](...))
-    # AI가 제멋대로 형식을 바꿔도 인식할 수 있도록 유연한 정규식 적용
+    # 4. Process Images
     image_placeholders = re.findall(r'(?:!\[이미지\]\(|\[이미지: )(.*?)(?:\)|\])', draft)
     
-    # Define source image directory based on keyword (Sanitize for Windows paths)
     source_folder_name = keyword if keyword else "general"
-    # 윈도우에서 사용할 수 없는 특수문자 제거 (: / \ ? * < > | ")
     source_folder_name = re.sub(r'[\s\\/:*?"<>|]+', '_', source_folder_name).strip('_')
     
     source_img_dir = os.path.join("source", folder, source_folder_name)
@@ -414,91 +468,32 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
     print(f"Found {len(image_placeholders)} image placeholders.")
     report["images"]["requested"] = len(image_placeholders)
 
-    # [Context Extraction] Extract Title for image context to prevent hallucination
-    title_match = re.search(r'^title:\s*(["\']?)(.*?)\1\s*$', draft, re.MULTILINE)
-    post_title = title_match.group(2) if title_match else "IT Tech Blog"
-    image_context = f"Post Title: {post_title} | Keyword: {keyword if keyword else 'Technology'}"
+    image_context = f"Post Title: {reviewed_data['title']} | Keyword: {keyword if keyword else 'Technology'}"
 
     for i, prompt in enumerate(image_placeholders):
         img_uuid = str(uuid.uuid4())[:8]
-        # 포맷 최적화: png 대신 webp 사용
         img_filename = f"{img_uuid}-{i}.webp"
         img_path = os.path.join(source_img_dir, img_filename)
         
         print(f"Generating AI image for: {prompt[:50]}...")
         generated_path, img_error = generate_image(prompt, img_path, context=image_context)
         
-        # Note: Rate limiting is now handled internally by generate_image via TokenBucket.
-        
         if generated_path:
             report["images"]["success"] += 1
             rel_path = f"../../../../../source/{folder}/{source_folder_name}/{img_uuid}-{i}.webp"
             
-            # Alt 태그 SEO 최적화: AI 프롬프트 노이즈를 제거하고 핵심 맥락만 추출
-            alt_clean_prompt = f"다음 이미지 생성용 프롬프트에서 시각적 스타일 키워드(4k, 해상도 등)를 제외하고, 초보자도 이해할 수 있는 핵심 의미만 한 문장으로 요약해서 ko로 번역해줘. (예: '데이터 센터의 보안 시스템'):\n{prompt}"
+            alt_clean_prompt = f"다음 이미지 생성용 프롬프트에서 시각적 스타일 키워드(4k, 해상도 등)를 제외하고, 초보자도 이해할 수 있는 핵심 의미만 한 문장으로 요약해서 ko로 번역해줘:\n{prompt}"
             translated_alt = translate_text(alt_clean_prompt, "ko")
             alt_keyword = keyword if keyword else "IT 트렌드"
             md_img_link = f"![{alt_keyword} - {translated_alt}]({rel_path})"
             
-            # 1. 기본 교체 수행
             draft = draft.replace(f"[이미지: {prompt}]", md_img_link)
             draft = draft.replace(f"![이미지]({prompt})", md_img_link)
-        else:
-            report["images"]["error"] = img_error if img_error else "Unknown Error"
-            
-            # 2. 🚨 AI가 무의식적으로 남긴 마크다운 찌꺼기 청소
-            draft = draft.replace("!![", "![") # 범인: 중복된 느낌표 제거
-            draft = draft.replace("**![", "![") # 혹시 모를 앞 볼드체 제거
-            draft = draft.replace("]**", "]") # 혹시 모를 뒤 볼드체 제거
             
             if i == 0:
                 draft = re.sub(r'ogImage: ".*?"', f'ogImage: "{rel_path}"', draft)
-
-    # 4.5 Inject References into Frontmatter (E-E-A-T: Trustworthiness) 및 메타데이터 추출
-    # [ROBUST] 따옴표 없는 슬러그 등 YAML 구조적 추출
-    try:
-        parts = re.split(r'^---$', draft, maxsplit=2, flags=re.MULTILINE)
-        if len(parts) >= 3:
-            frontmatter_raw = parts[1]
-            body_content = parts[2]
-            fm_data = yaml.safe_load(frontmatter_raw)
-            
-            # 슬러그 추출 (파일명용)
-            slug = fm_data.get('slug', f"post-{datetime.datetime.now().strftime('%Y-%m-%d-%H%M%S')}")
-            
-            # 날짜 추출 (파일명 접두사용)
-            pub_dt = fm_data.get('pubDatetime')
-            if isinstance(pub_dt, (datetime.datetime, datetime.date)):
-                 prefix = pub_dt.strftime("%y%m%d_")
-            elif isinstance(pub_dt, str):
-                 date_match = re.search(r'(\d{4})-(\d{2})-(\d{2})', pub_dt)
-                 if date_match:
-                     prefix = f"{date_match.group(1)[2:]}{date_match.group(2)}{date_match.group(3)}_"
-                 else:
-                     prefix = datetime.datetime.now().strftime("%y%m%d_")
-            else:
-                 prefix = datetime.datetime.now().strftime("%y%m%d_")
-
-            # References 주입
-            if urls:
-                fm_data["references"] = urls[:10]
-            
-            # [E-E-A-T] Update metadata for freshness and editorial persona
-            fm_data['modDatetime'] = datetime.datetime.now().astimezone()
-            # author_role은 main.py 상단이나 설정에서 관리하도록 추후 고도화 가능
-            fm_data['author_role'] = "Senior Tech Editor"
-            fm_data['author_url'] = "https://editornom.com/about"
-            
-            new_fm = yaml.dump(fm_data, allow_unicode=True, sort_keys=False).strip()
-            draft = f"---\n{new_fm}\n---{body_content}"
         else:
-             slug = f"post-{datetime.datetime.now().strftime('%M%S')}"
-             prefix = datetime.datetime.now().strftime("%y%m%d_")
-    except Exception as e:
-        print(f"⚠️ [Metadata] YAML processing failed: {e}")
-        report["draft"]["error"] = f"YAML 메타데이터 처리 실패: {str(e)}"
-        slug = f"post-err-{datetime.datetime.now().strftime('%M%S')}"
-        prefix = datetime.datetime.now().strftime("%y%m%d_")
+            report["images"]["error"] = img_error if img_error else "Unknown Error"
 
     # [NEW] E-E-A-T 신뢰도 확보를 위한 참고 문헌 (아코디언 UI로 숨김 처리)
     if urls:
@@ -509,6 +504,7 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
         references_html += "</ul>\n</details>\n"
         draft += references_html
 
+    # 5. Save the final draft
     target_dir = os.path.join("src", "data", "blog", "ko", folder)
     os.makedirs(target_dir, exist_ok=True)
     post_path = os.path.join(target_dir, f"{prefix}{slug}.md")
@@ -531,6 +527,7 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
     else:
         # 무인 자동화를 위해 질문 없이 바로 진행 (y로 간주)
         print(f"\n🚀 모든 작업 완료. '{slug}' 포스트를 GitHub에 자동으로 연동(Push)합니다.")
+        from publish import push_to_github
         success = push_to_github(f"Auto-generate post: {slug}")
         if not success:
             print("❌ GitHub Push에 실패했습니다.")
@@ -538,6 +535,8 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
         
     # 🚨 FINAL BRIEFING
     print_final_briefing(report)
+
+
 
 if __name__ == "__main__":
     import argparse

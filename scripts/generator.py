@@ -18,8 +18,6 @@ if sys.platform == "win32":
 
 class BlogPostSchema(BaseModel):
     title: str = Field(description="최적화된 제목")
-    slug: str = Field(description="seo-friendly-english-slug")
-    description: str = Field(description="메타 설명 (1~2줄)")
     content: str = Field(description="마크다운 형식의 본문 내용")
 
 def generate_blog_post(crawled_content, folder="posts", additional_instructions="", keyword=""):
@@ -202,22 +200,7 @@ def generate_blog_post(crawled_content, folder="posts", additional_instructions=
                 return None, None
 
     if final_draft_data:
-        markdown = f"""---
-title: "{final_draft_data.get('title', '').replace('"', "'")}"
-author: "editornom"
-author_role: "IT Infrastructure Specialist"
-author_url: "https://editornom.com/about"
-pubDatetime: {pub_time.strftime("%Y-%m-%dT%H:%M:%S+09:00")}
-slug: "{final_draft_data.get('slug', 'auto-slug')}"
-featured: false
-draft: false
-ogImage: "../../../../assets/images/placeholder.png"
-description: "{final_draft_data.get('description', '').replace('"', "'")}"
----
-
-{final_draft_data.get('content', '')}
-"""
-        return markdown, density_warning
+        return final_draft_data, density_warning
     
     return None, None
 
