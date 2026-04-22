@@ -52,7 +52,7 @@ modDatetime: 2026-04-22T13:33:50.208112+09:00
 
 **Managed Execution Layer (MEL)**는 이러한 리스크를 물리적으로 차단하기 위해 고안되었습니다. 이 계층은 AI 모델이 내린 결정을 실제 시스템에 적용하기 전, 미리 정의된 거버넌스 규칙에 따라 검증하고 제어하는 독립적인 필터 역할을 수행합니다. AI가 특정 작업을 제안하면, MEL이 해당 작업의 안전성과 권한 허용 여부를 최종 판독하는 구조입니다. 이는 프롬프트 엔지니어링만으로는 도달할 수 없는, 하드코딩된 보안 프로토콜의 영역입니다.
 
-![Managed Execution Layer (MEL) - 안정성 확보](../../../../../source/posts/Managed_Execution_Layer_MEL/img3.webp)
+![Managed Execution Layer (MEL) - 자율 에이전트를 위한 지능형 제어 계층](../../../../../source/posts/Managed_Execution_Layer_MEL/img2.webp)
 
 ## 자율성에 질서를 부여하는 핵심 기술 장치
 
@@ -70,7 +70,7 @@ modDatetime: 2026-04-22T13:33:50.208112+09:00
 
 Model Context Protocol(MCP)과 같은 표준을 이 계층에 통합하면, AI는 복잡한 기업 시스템 구조를 보다 직관적으로 이해할 수 있습니다. 또한, MEL은 에이전트의 이동 경로를 실시간으로 모니터링하며 과도한 API 호출(Rate Limiting)이나 비정상적인 데이터 추출 징후를 사전에 차단합니다. 이러한 가시성 확보는 운영진에게 단순한 보안 그 이상의 통찰을 제공합니다.
 
-![Managed Execution Layer (MEL) - 첨단 보안 시스템을 갖춘 미래형 데이터 센터](../../../../../source/posts/Managed_Execution_Layer_(MEL)/6de8852d-1.webp)
+![Managed Execution Layer (MEL) - 강력한 보안 인프라과 가시성 확보](../../../../../source/posts/Managed_Execution_Layer_MEL/img3.webp)
 
 ## 거버넌스 엔진으로 재편되는 개발 환경
 
