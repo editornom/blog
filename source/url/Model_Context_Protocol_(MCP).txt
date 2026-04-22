@@ -1,0 +1,10 @@
+https://cloud.google.com/discover/what-is-model-context-protocol
+https://modelcontextprotocol.io/specification/2025-11-25
+https://www.databricks.com/blog/what-is-model-context-protocol
+https://admin.salesforce.com/blog/2025/what-is-mcp-a-simple-guide-to-model-context-protocol-for-salesforce-admins
+https://octopus.com/blog/what-is-mcp
+https://www.redhat.com/en/blog/model-context-protocol-discover-missing-link-ai-integration
+https://www.backslash.security/blog/what-is-mcp-model-context-protocol
+https://www.redhat.com/en/topics/ai/what-is-model-context-protocol-mcp
+https://mjoo1106.tistory.com/70
+https://www.redhat.com/en/blog/model-context-protocol-mcp-understanding-security-risks-and-controls
