@@ -18,7 +18,7 @@ Anthropic, a company that has long championed security and safety as its core va
 
 What makes these incidents particularly noteworthy is the sheer volume of Anthropic's next-generation roadmap that was inadvertently exposed. Approximately 510,000 lines of 'Claude Code' source code and over 3,000 internal documents have surfaced, providing a clear window into the technical direction the company is pursuing. Below, we analyze the technical context of these leaks and what they reveal about the future of AI.
 
-**![Magnifying glass examining leaked Anthropic source code.](../../../../../source/posts/클로드유출/27d4d8d2-0.png)**
+<b>![Magnifying glass examining leaked Anthropic source code.](../../../../../source/posts/클로드유출/27d4d8d2-0.png)</b>
 
 ## A Flaw in the Pipeline: The Trail Left by Sourcemaps
 
@@ -28,7 +28,7 @@ In typical software deployment, JavaScript or TypeScript code is minified and ob
 
 These sourcemap files contained links to Anthropic’s private cloud storage, which ultimately exposed approximately 1,900 original source files. This case serves as a stark reminder that even for a "unicorn" AI giant, a single minor configuration error in an automated deployment script can lead to the exposure of core IP.
 
-**![Diagram of a security error in a software deployment pipeline.](../../../../../source/posts/클로드유출/0a4cc113-1.png)**
+<b>![Diagram of a security error in a software deployment pipeline.](../../../../../source/posts/클로드유출/0a4cc113-1.png)</b>
 
 ## Poisoning the Well: Technical Defenses via Anti-Distillation
 
@@ -40,7 +40,7 @@ When this feature is active, Claude Code injects randomized "Fake Tool" definiti
 
 Additionally, an "Undercover Mode" was discovered. This feature forcibly strips internal Anthropic codenames and traces of AI authorship from commit logs and review requests. While intended as a security measure, it has sparked ethical debates within the open-source community, as it could be used to disguise AI-generated contributions as human work.
 
-**![3D visualization of Anthropic's Claude Mythos AI model structure.](../../../../../source/posts/클로드유출/cdb83203-2.png)**
+<b>![3D visualization of Anthropic's Claude Mythos AI model structure.](../../../../../source/posts/클로드유출/cdb83203-2.png)</b>
 
 ## 'Claude Mythos' and the Reality of Autonomous Agents
 
@@ -48,9 +48,9 @@ The CMS leak revealed the existence of 'Claude Mythos' (internal codename: Capyb
 
 Anthropic insiders refer to the arrival of this model as a "Step Change," implying a qualitative leap forward rather than a simple incremental improvement. The most significant gains appear to be in software coding, academic reasoning, and cybersecurity domains.
 
-Key terms to watch are 'KAIROS' and 'autoDream.' **KAIROS** is an "Autonomous Agent" mode that runs continuously in the background without explicit user commands. It proactively checks projects every five minutes, subscribes to GitHub events, and modifies code independently. **autoDream** is a feature where the AI cleans up its own memory and reconciles contradictory information during idle time. This appears to be modeled after the human process of consolidating memories during sleep.
+Key terms to watch are 'KAIROS' and 'autoDream.' <b>KAIROS</b> is an "Autonomous Agent" mode that runs continuously in the background without explicit user commands. It proactively checks projects every five minutes, subscribes to GitHub events, and modifies code independently. <b>autoDream</b> is a feature where the AI cleans up its own memory and reconciles contradictory information during idle time. This appears to be modeled after the human process of consolidating memories during sleep.
 
-**![Human and Claude AI agent reviewing project blueprints.](../../../../../source/posts/클로드유출/e756f660-3.png)**
+<b>![Human and Claude AI agent reviewing project blueprints.](../../../../../source/posts/클로드유출/e756f660-3.png)</b>
 
 ## Responsible Scaling Policy (RSP) v3.0 and Practical Implications
 
@@ -60,8 +60,8 @@ This move suggests a realization that unilateral development halts are ineffecti
 
 This leak and Anthropic's subsequent trajectory offer several critical takeaways for developers and security professionals:
 
-1.  **Preparing for Cybersecurity Asymmetry**: As Mythos-class models become available, the speed of vulnerability detection will likely overwhelm the speed of defense. Companies must follow Anthropic’s lead in prioritizing security defense teams and begin implementing AI-driven security scanning tools now.
-2.  **Adapting to Agentic Workflows**: As indicated by the KAIROS feature, AI is evolving from a "tool" into an "autonomous collaborator." Infrastructure and workflows need to be redesigned to accommodate the automation of the entire development process.
-3.  **Reinforcing Supply Chain Security Basics**: The massive leak started with a single sourcemap setting. Rather than over-relying on default tool configurations, it is essential to internalize security checklists that automatically inspect distribution artifacts within the pipeline.
+1.  <b>Preparing for Cybersecurity Asymmetry</b>: As Mythos-class models become available, the speed of vulnerability detection will likely overwhelm the speed of defense. Companies must follow Anthropic’s lead in prioritizing security defense teams and begin implementing AI-driven security scanning tools now.
+2.  <b>Adapting to Agentic Workflows</b>: As indicated by the KAIROS feature, AI is evolving from a "tool" into an "autonomous collaborator." Infrastructure and workflows need to be redesigned to accommodate the automation of the entire development process.
+3.  <b>Reinforcing Supply Chain Security Basics</b>: The massive leak started with a single sourcemap setting. Rather than over-relying on default tool configurations, it is essential to internalize security checklists that automatically inspect distribution artifacts within the pipeline.
 
 Paradoxically, Anthropic's blunder has served as a demonstration of the power of the tools they are building. By treating these basic mistakes as a cautionary tale, we can better prepare for the era of autonomous AI. Ultimately, the success or failure of a system often hinges not on grand narratives, but on a single, minute configuration.

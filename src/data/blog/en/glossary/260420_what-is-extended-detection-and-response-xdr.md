@@ -47,12 +47,12 @@ XDR is a security platform that collects and analyzes data across all areas of a
 In the past, it was common for organizations to operate specialized solutions (such as EDR or NDR) in isolation. However, as cyberattacks have grown more sophisticated, the 'security silo' effect—where data is not shared between systems—has revealed its limitations. This fragmentation makes tracking attack paths time-consuming and leads to 'Alert Fatigue,' where security teams are overwhelmed by redundant notifications. XDR emerged to unify these fragmented environments and perform context-driven analysis.
 
 ### Data Correlation and Response Automation
-- **Multi-layered Correlation Analysis**: XDR uses machine learning to connect disparate data collected from endpoint logs, Cloud environments, emails, and identity management systems. This allows for a clear reconstruction of the entire attack timeline, from the initial entry point to lateral movement.
-- **Centralized Control and Immediate Response**: It monitors threats across the entire infrastructure from a single console. When a threat is detected, the platform can immediately execute actions such as isolating an endpoint or blocking an account, significantly boosting the efficiency of security operations.
+- <b>Multi-layered Correlation Analysis</b>: XDR uses machine learning to connect disparate data collected from endpoint logs, Cloud environments, emails, and identity management systems. This allows for a clear reconstruction of the entire attack timeline, from the initial entry point to lateral movement.
+- <b>Centralized Control and Immediate Response</b>: It monitors threats across the entire infrastructure from a single console. When a threat is detected, the platform can immediately execute actions such as isolating an endpoint or blocking an account, significantly boosting the efficiency of security operations.
 
 ### Difference Between EDR and XDR
 While EDR (Endpoint Detection and Response) focuses on the security of individual devices such as laptops or servers, XDR expands this scope to include the entire infrastructure, such as networks and the Cloud. If EDR is a method for precisely monitoring specific points, XDR takes a comprehensive approach by understanding the enterprise-wide context to catch multifaceted threats that traditional tools might miss.
 
 ### Practical Application and Key Terms
-- **Operational Use**: Security Operations Centers (SOC) use XDR to integrate alerts from multiple security devices and prioritize actual security breaches. This reduces the time required for incident investigation and remediation while optimizing operational resources.
-- **Related Terms**: SIEM (Security Information and Event Management), SOAR (Security Orchestration, Automation, and Response), NDR (Network Detection and Response).
+- <b>Operational Use</b>: Security Operations Centers (SOC) use XDR to integrate alerts from multiple security devices and prioritize actual security breaches. This reduces the time required for incident investigation and remediation while optimizing operational resources.
+- <b>Related Terms</b>: SIEM (Security Information and Event Management), SOAR (Security Orchestration, Automation, and Response), NDR (Network Detection and Response).

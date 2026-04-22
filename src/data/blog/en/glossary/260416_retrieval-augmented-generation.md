@@ -42,10 +42,10 @@ faqs:
 
 | Item | Details |
 | :--- | :--- |
-| **English Name** | Retrieval-Augmented Generation |
-| **Abbreviation** | RAG |
-| **Key Technologies** | LLM, Vector Database, Embedding, Semantic Search, Prompt Engineering |
-| **Originally Proposed by** | Patrick Lewis et al. (2020) |
+| <b>English Name</b> | Retrieval-Augmented Generation |
+| <b>Abbreviation</b> | RAG |
+| <b>Key Technologies</b> | LLM, Vector Database, Embedding, Semantic Search, Prompt Engineering |
+| <b>Originally Proposed by</b> | Patrick Lewis et al. (2020) |
 
 ### 2. Concept and Definition
 Retrieval-Augmented Generation (RAG) is a technique that enables a Large Language Model (LLM) to search for relevant information in trusted external data sources before generating a response, then incorporating that information into the prompt. The core concept is to have the model "look up" the necessary information in real-time rather than relying solely on the knowledge it already acquired during training. This approach overcomes the limitations of a model's training data, allowing it to provide accurate information on the latest events or specific domain-specific expertise. It is also highly effective at mitigating "hallucinations," a common side effect where AI generates plausible-sounding but incorrect information.
@@ -54,17 +54,17 @@ Retrieval-Augmented Generation (RAG) is a technique that enables a Large Languag
 LLMs only remember data up to the point where their pre-training was completed. Consequently, they are unaware of events occurring after training or confidential internal corporate data that is not publicly available. This is why hallucinations occur—when asked about information the model doesn't know, it relies on its internal parameters to produce a response that sounds convincing but is factually incorrect. Re-training (Fine-tuning) the model every time new information emerges is prohibitively expensive and time-consuming. RAG solves these constraints by retrieving accurate data from an external repository and providing it to the model as "reference material."
 
 ### 4. How It Works and Key Features
-*   **Retrieval and Information Augmentation:** When a user query is received, it is converted into a vector to find semantically similar document fragments in a Vector Database. These retrieved pieces of information are then combined with the user's original query and passed to the LLM.
-*   **Evidence-Based Response Generation:** The LLM prioritizes the external documents provided in the prompt over its pre-existing internal knowledge to formulate a response. This not only increases accuracy but also makes it easier to verify reliability by clearly identifying the sources used in the response.
-*   **Flexibility in Knowledge Updates:** There is no need to retrain the model itself. By simply updating the external database with the latest information, the model can immediately provide responses reflecting those updates, significantly reducing operational resource requirements.
+*   <b>Retrieval and Information Augmentation:</b> When a user query is received, it is converted into a vector to find semantically similar document fragments in a Vector Database. These retrieved pieces of information are then combined with the user's original query and passed to the LLM.
+*   <b>Evidence-Based Response Generation:</b> The LLM prioritizes the external documents provided in the prompt over its pre-existing internal knowledge to formulate a response. This not only increases accuracy but also makes it easier to verify reliability by clearly identifying the sources used in the response.
+*   <b>Flexibility in Knowledge Updates:</b> There is no need to retrain the model itself. By simply updating the external database with the latest information, the model can immediately provide responses reflecting those updates, significantly reducing operational resource requirements.
 
 ### 5. RAG vs. Fine-tuning
-*   **RAG:** Comparable to an "open-book exam," where the model’s structure remains unchanged while it pulls external data to find answers. Its strengths lie in fast updates and the ability to provide evidence.
-*   **Fine-tuning:** Comparable to "studying," where the model's parameters are directly modified using a specific dataset. While it is suitable for learning specific tones, formats, or complex patterns, it incurs re-training costs for every update and makes it difficult to fully control hallucination issues.
+*   <b>RAG:</b> Comparable to an "open-book exam," where the model’s structure remains unchanged while it pulls external data to find answers. Its strengths lie in fast updates and the ability to provide evidence.
+*   <b>Fine-tuning:</b> Comparable to "studying," where the model's parameters are directly modified using a specific dataset. While it is suitable for learning specific tones, formats, or complex patterns, it incurs re-training costs for every update and makes it difficult to fully control hallucination issues.
 
 ### 6. Practical Applications and Related Terms
-*   **Real-world Use:** Enterprises can build vector databases containing vast technical documents or product manuals to operate AI customer support chatbots. These bots provide real-time, manual-based accurate responses and can provide links to the source pages as evidence.
-*   **Related Key Terms:**
-    1.  **Vector Database:** A dedicated storage system that stores and searches vector data, designed to calculate the semantic similarity of text numerically.
-    2.  **Embedding:** The essential process of converting unstructured data, such as text, into high-dimensional vectors that a computer can understand and process.
-    3.  **Hallucination:** An error where an AI model confidently outputs factually incorrect information as if it were true.
+*   <b>Real-world Use:</b> Enterprises can build vector databases containing vast technical documents or product manuals to operate AI customer support chatbots. These bots provide real-time, manual-based accurate responses and can provide links to the source pages as evidence.
+*   <b>Related Key Terms:</b>
+    1.  <b>Vector Database:</b> A dedicated storage system that stores and searches vector data, designed to calculate the semantic similarity of text numerically.
+    2.  <b>Embedding:</b> The essential process of converting unstructured data, such as text, into high-dimensional vectors that a computer can understand and process.
+    3.  <b>Hallucination:</b> An error where an AI model confidently outputs factually incorrect information as if it were true.

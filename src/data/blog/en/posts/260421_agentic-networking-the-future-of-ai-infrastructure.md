@@ -34,7 +34,7 @@ faqs:
 
 # The Era of AI Agents: A Paradigm Shift in Networking
 
-AI is evolving beyond being a 'Copilot' that follows user instructions to becoming 'Agents' that can set their own goals and collaborate. The primary subject of network communication is rapidly shifting from humans to machines, giving rise to new challenges that traditional infrastructure can no longer handle. In this landscape, **Agentic Networking**, which supports autonomous communication between machines, is emerging as a critical infrastructure.
+AI is evolving beyond being a 'Copilot' that follows user instructions to becoming 'Agents' that can set their own goals and collaborate. The primary subject of network communication is rapidly shifting from humans to machines, giving rise to new challenges that traditional infrastructure can no longer handle. In this landscape, <b>Agentic Networking</b>, which supports autonomous communication between machines, is emerging as a critical infrastructure.
 
 ![Agentic Networking Overview](../../../../../source/posts/에이전틱_네트워킹(Agentic_Networking)/6c5a8cef-0.webp)
 
@@ -46,8 +46,8 @@ In the past, networks were designed for a human pace—measured in 'seconds'—w
 
 A delay of just 100ms can break an AI's reasoning loop or disrupt its execution chain. For instance, in a smart factory, if a machine vision agent detects a defect and sends a stop signal to a control agent, even a slight network delay could lead to significant production issues. Therefore, Agentic Networking must go beyond simple bandwidth expansion to guarantee ultra-low latency and high predictability that matches machine speed.
 
-- **The Rise of East-West Traffic**: While 'North-South' flow—where users retrieve data from the Cloud—used to be the norm, 'East-West' traffic between agents or edge nodes is now exploding. This architecture is optimized to handle such surges in horizontal traffic efficiently.
-- **Transition to Autonomous Operations**: Manually intervening to fix problems after a failure is no longer sustainable for managing tens of thousands of micro-interactions. Autonomous operational capabilities, where the network monitors latency and jitter itself and preemptively reroutes paths, are now essential.
+- <b>The Rise of East-West Traffic</b>: While 'North-South' flow—where users retrieve data from the Cloud—used to be the norm, 'East-West' traffic between agents or edge nodes is now exploding. This architecture is optimized to handle such surges in horizontal traffic efficiently.
+- <b>Transition to Autonomous Operations</b>: Manually intervening to fix problems after a failure is no longer sustainable for managing tens of thousands of micro-interactions. Autonomous operational capabilities, where the network monitors latency and jitter itself and preemptively reroutes paths, are now essential.
 
 ![Autonomous Operations Flow](../../../../../source/posts/에이전틱_네트워킹(Agentic_Networking)/fd193945-2.webp)
 
@@ -57,9 +57,9 @@ A delay of just 100ms can break an AI's reasoning loop or disrupt its execution 
 
 The essence of this technology lies in its 'Dual Intelligence' structure. This is because the network must do more than just deliver data; it must understand the context and take action.
 
-First, in the **'Analytical Intelligence'** stage, time-series foundation models play a key role. Moving away from static threshold methods of the past, these models read subtle patterns in real-time telemetry data to discover invisible anomalies early. They find precursors to failure within trillions of packets.
+First, in the <b>'Analytical Intelligence'</b> stage, time-series foundation models play a key role. Moving away from static threshold methods of the past, these models read subtle patterns in real-time telemetry data to discover invisible anomalies early. They find precursors to failure within trillions of packets.
 
-In the next stage, **'Reasoning Intelligence'**, LLM-based agents identify the root cause of the problem based on the analyzed data and establish an execution plan. These two forms of intelligence work closely together to implement a 'Human-in-the-loop' model, where the operator is only required for final approval or high-level decision-making.
+In the next stage, <b>'Reasoning Intelligence'</b>, LLM-based agents identify the root cause of the problem based on the analyzed data and establish an execution plan. These two forms of intelligence work closely together to implement a 'Human-in-the-loop' model, where the operator is only required for final approval or high-level decision-making.
 
 The 'Telemetry-Native Agents' technology is particularly critical here. Instead of analyzing logs after the fact, it processes packet data directly from the hardware in real-time to drastically reduce latency. To stably implement such high-level infrastructure, the role of specialized firms experienced in infrastructure operation is becoming more important than ever.
 

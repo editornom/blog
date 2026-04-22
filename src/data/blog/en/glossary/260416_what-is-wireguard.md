@@ -42,9 +42,9 @@ faqs:
 
 | Category | Description |
 | :--- | :--- |
-| **English Name** | WireGuard |
-| **Abbreviation** | WG |
-| **Related Technologies** | VPN, ChaCha20, Curve25519, UDP, Linux Kernel, Cryptokey Routing |
+| <b>English Name</b> | WireGuard |
+| <b>Abbreviation</b> | WG |
+| <b>Related Technologies</b> | VPN, ChaCha20, Curve25519, UDP, Linux Kernel, Cryptokey Routing |
 
 ### 2. Core Summary
 WireGuard is an open-source protocol developed to address the inherent complexity of traditional VPN protocols like IPsec and OpenVPN. By operating within the Linux kernel, it achieves exceptionally high processing speeds. Furthermore, by drastically reducing the codebase to approximately 4,000 lines, it makes auditing for security vulnerabilities significantly easier. It is widely regarded as a solution that successfully delivers both high performance and ease of management.
@@ -54,23 +54,23 @@ Existing protocols like IPsec and OpenVPN are massive, often consisting of hundr
 
 ### 4. Key Features and Operating Principles
 
-*   **Cryptokey Routing:** Similar to SSH authentication, WireGuard associates public keys with specific tunnel IP addresses. It cryptographically verifies whether the source IP of a packet entering an interface matches the pre-allowed peer's IP, ensuring a clear and secure configuration process.
-*   **Fixed Cryptographic Suite:** Rather than offering a wide array of potentially weak encryption options, WireGuard is fixed to use only modern, proven algorithms such as ChaCha20, Poly1305, and Curve25519. This fundamentally prevents security degradation caused by configuration errors.
-*   **Stateless Connectivity:** Built on top of UDP, WireGuard supports "IP roaming," which maintains a seamless connection even when a user's IP changes (e.g., switching from Wi-Fi to LTE) without requiring re-authentication. This is a significant advantage in mobile environments where users are frequently on the move.
+*   <b>Cryptokey Routing:</b> Similar to SSH authentication, WireGuard associates public keys with specific tunnel IP addresses. It cryptographically verifies whether the source IP of a packet entering an interface matches the pre-allowed peer's IP, ensuring a clear and secure configuration process.
+*   <b>Fixed Cryptographic Suite:</b> Rather than offering a wide array of potentially weak encryption options, WireGuard is fixed to use only modern, proven algorithms such as ChaCha20, Poly1305, and Curve25519. This fundamentally prevents security degradation caused by configuration errors.
+*   <b>Stateless Connectivity:</b> Built on top of UDP, WireGuard supports "IP roaming," which maintains a seamless connection even when a user's IP changes (e.g., switching from Wi-Fi to LTE) without requiring re-authentication. This is a significant advantage in mobile environments where users are frequently on the move.
 
 ### 5. Comparison with OpenVPN
 
 | Comparison Item | OpenVPN | WireGuard |
 | :--- | :--- | :--- |
-| **Codebase Size** | Approx. 600,000+ lines | Approx. 4,000 lines |
-| **Primary Protocol** | TCP or UDP | UDP only |
-| **Encryption Method** | Certificate-based & multiple algorithms | Public-key pairs & fixed algorithms |
-| **Key Characteristics** | High compatibility and versatility, but complex configuration and overhead can lead to performance degradation. | Concise structure leads to high speeds and easy security audits. However, the default static IP allocation may require additional work for full anonymity. |
+| <b>Codebase Size</b> | Approx. 600,000+ lines | Approx. 4,000 lines |
+| <b>Primary Protocol</b> | TCP or UDP | UDP only |
+| <b>Encryption Method</b> | Certificate-based & multiple algorithms | Public-key pairs & fixed algorithms |
+| <b>Key Characteristics</b> | High compatibility and versatility, but complex configuration and overhead can lead to performance degradation. | Concise structure leads to high speeds and easy security audits. However, the default static IP allocation may require additional work for full anonymity. |
 
 ### 6. Practical Applications and Related Terms
 
-*   **Practical Applications:** WireGuard is widely used for building large-scale corporate remote work systems, securing container-to-container communication in microservices (MSA) environments (Service Mesh), and serving as the high-speed tunneling engine for commercial VPN services.
-*   **Related Terms:**
-    1.  **Noise Protocol Framework:** The framework upon which WireGuard’s handshake process was designed.
-    2.  **Perfect Forward Secrecy (PFS):** A feature that ensures past communications cannot be decrypted even if a session key is compromised.
-    3.  **Endpoint:** The public IP address and port on the internet where a WireGuard peer actually sends and receives data.
+*   <b>Practical Applications:</b> WireGuard is widely used for building large-scale corporate remote work systems, securing container-to-container communication in microservices (MSA) environments (Service Mesh), and serving as the high-speed tunneling engine for commercial VPN services.
+*   <b>Related Terms:</b>
+    1.  <b>Noise Protocol Framework:</b> The framework upon which WireGuard’s handshake process was designed.
+    2.  <b>Perfect Forward Secrecy (PFS):</b> A feature that ensures past communications cannot be decrypted even if a session key is compromised.
+    3.  <b>Endpoint:</b> The public IP address and port on the internet where a WireGuard peer actually sends and receives data.

@@ -33,13 +33,13 @@ faqs:
 modDatetime: 2026-04-22T13:33:50.208112+09:00
 ---
 
-The paradigm of the Software Development Life Cycle (SDLC) is undergoing a fundamental shift. While AI has previously served as a 'smart assistant' suggesting code or identifying bugs, it is now evolving into an 'autonomous agent' that directly calls APIs, modifies data, and controls production environments. However, the degree of authority granted to these agents is proportional to the level of risk managers must bear. As demonstrated by recent 'OpenClaw' incidents, unexpected actions—such as an AI agent deleting bulk emails after bypassing safety guidelines—can become a reality at any time. This is why the **Managed Execution Layer (MEL)**, which safely mediates between AI decisions and system execution, is rapidly emerging as an essential infrastructure rather than a mere peripheral tool.
+The paradigm of the Software Development Life Cycle (SDLC) is undergoing a fundamental shift. While AI has previously served as a 'smart assistant' suggesting code or identifying bugs, it is now evolving into an 'autonomous agent' that directly calls APIs, modifies data, and controls production environments. However, the degree of authority granted to these agents is proportional to the level of risk managers must bear. As demonstrated by recent 'OpenClaw' incidents, unexpected actions—such as an AI agent deleting bulk emails after bypassing safety guidelines—can become a reality at any time. This is why the <b>Managed Execution Layer (MEL)</b>, which safely mediates between AI decisions and system execution, is rapidly emerging as an essential infrastructure rather than a mere peripheral tool.
 
 ## Separation of Intelligence and Execution: Controlling the Uncertainty of Probabilistic Models
 
 The primary reason enterprises hesitate to adopt AI agents is their 'unpredictability.' Large Language Models (LLMs) fundamentally operate on probability, harboring the potential to overlook critical safety rules during information compression and processing. If an AI can directly access a database and issue a delete command, a single lapse in judgment could shake the very foundations of a business.
 
-The **Managed Execution Layer (MEL)** is designed to physically block these risks. This layer acts as an independent filter that validates and controls decisions made by the AI model before they are applied to the actual system, based on predefined governance rules. When an AI suggests a specific task, MEL performs the final check on its safety and authorization. This is the domain of hardcoded security protocols—a level of control that prompt engineering alone cannot achieve.
+The <b>Managed Execution Layer (MEL)</b> is designed to physically block these risks. This layer acts as an independent filter that validates and controls decisions made by the AI model before they are applied to the actual system, based on predefined governance rules. When an AI suggests a specific task, MEL performs the final check on its safety and authorization. This is the domain of hardcoded security protocols—a level of control that prompt engineering alone cannot achieve.
 
 ![Managed Execution Layer (MEL) - Intelligent Control Layer for Autonomous Agents](../../../../../source/posts/Managed_Execution_Layer_MEL/img2.webp)
 
@@ -47,9 +47,9 @@ The **Managed Execution Layer (MEL)** is designed to physically block these risk
 
 Building a stable MEL environment requires practical technical support beyond simple policy settings.
 
-- **Sandbox-based Dynamic Sessions**: Exposing unverified agent code directly to a production environment is highly risky. The 'Dynamic Sessions' approach, utilized in services like Azure Container Apps, isolates agent activities within a restricted environment (sandbox) to fundamentally prevent the spread of risk to the entire system. Within this space, agents can test code freely, but access to external resources is only possible through strict MEL approval.
+- <b>Sandbox-based Dynamic Sessions</b>: Exposing unverified agent code directly to a production environment is highly risky. The 'Dynamic Sessions' approach, utilized in services like Azure Container Apps, isolates agent activities within a restricted environment (sandbox) to fundamentally prevent the spread of risk to the entire system. Within this space, agents can test code freely, but access to external resources is only possible through strict MEL approval.
 
-- **Precision Tool-Level Permissions**: Permissions are granted differentially based on the nature of the tools the agent uses. Low-risk tasks like data retrieval (Read) are granted autonomy, while tasks with significant impact, such as modification or deletion (Write/Delete), are forced to go through a 'Human-in-the-loop' (HITL) phase. This creates a final line of defense to protect the system even if the model's internal logic fails.
+- <b>Precision Tool-Level Permissions</b>: Permissions are granted differentially based on the nature of the tools the agent uses. Low-risk tasks like data retrieval (Read) are granted autonomy, while tasks with significant impact, such as modification or deletion (Write/Delete), are forced to go through a 'Human-in-the-loop' (HITL) phase. This creates a final line of defense to protect the system even if the model's internal logic fails.
 
 > "Competitiveness in the age of AI agents will be determined not just by who possesses the highest-performing models, but by who has built the most secure and controllable execution layer."
 

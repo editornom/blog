@@ -38,7 +38,7 @@ faqs:
 
 In the IT industry, where new technical specifications rise and fall constantly, the recent trajectory of the Model Context Protocol (MCP) is remarkably different. A term that was virtually unknown just a year ago has now emerged as a core agenda item for enterprise CIOs. Let’s examine from a practical perspective why this specification, first proposed by Anthropic, has so rapidly permeated the center of enterprise infrastructure and why we must pay attention to this "standard for connectivity."
 
-**![Central node linking databases, cloud services, and AI models via one cable.](../../../../../source/posts/엔터프라이즈_AI_에이전트_확산을_위한_MCP(Model_Context_Protocol)_표준화와_보안_거버넌스/121291ed-0.png)**
+<b>![Central node linking databases, cloud services, and AI models via one cable.](../../../../../source/posts/엔터프라이즈_AI_에이전트_확산을_위한_MCP(Model_Context_Protocol)_표준화와_보안_거버넌스/121291ed-0.png)</b>
 
 ## The Technical Key to Unifying Fragmented Integration Environments
 
@@ -50,7 +50,7 @@ Technically, MCP leverages a bidirectional messaging protocol based on JSON-RPC 
 
 > "MCP allows for the connection of existing application stacks without the hassle of tedious API integration. It is effectively a universal connector for enterprise AI."
 
-**![Software architecture blueprint: database tables and neural network data flow.](../../../../../source/posts/엔터프라이즈_AI_에이전트_확산을_위한_MCP(Model_Context_Protocol)_표준화와_보안_거버넌스/21c01b06-1.png)**
+<b>![Software architecture blueprint: database tables and neural network data flow.](../../../../../source/posts/엔터프라이즈_AI_에이전트_확산을_위한_MCP(Model_Context_Protocol)_표준화와_보안_거버넌스/21c01b06-1.png)</b>
 
 ## Evolution from RAG to Executable AI
 
@@ -60,7 +60,7 @@ In contrast, MCP grants AI actual "actionability." This is because MCP servers c
 
 What is particularly noteworthy here is the integration with "System Dependency Graphs." As demonstrated recently by companies like Virtana, an MCP server can provide a structured map of an entire enterprise infrastructure's relationships. Instead of just looking at isolated snippets of code, the AI can understand hierarchically "how storage latency in a specific region affects which services" and propose corrective actions. This signifies the evolution of AI from a simple assistant to a primary actor in operations.
 
-**![Digital shield with circuit patterns protecting a network of nodes.](../../../../../source/posts/엔터프라이즈_AI_에이전트_확산을_위한_MCP(Model_Context_Protocol)_표준화와_보안_거버넌스/e3ccf5b2-2.png)**
+<b>![Digital shield with circuit patterns protecting a network of nodes.](../../../../../source/posts/엔터프라이즈_AI_에이전트_확산을_위한_MCP(Model_Context_Protocol)_표준화와_보안_거버넌스/e3ccf5b2-2.png)</b>
 
 ## Governance and Security Risks of Data Openness
 
@@ -70,7 +70,7 @@ AI agents, in particular, possess non-deterministic characteristics. This means 
 
 Therefore, what is needed now is not to block adoption, but to establish a governance framework tightly coupled with the protocol layer. We must verify the authentication methods of MCP servers and ensure that "Human-in-the-loop" guardrails are functioning during the AI's command execution phase. While companies like Anthropic and OpenAI are leading the ecosystem and strengthening security standards, the ultimate responsibility lies in the policy decisions of the enterprises operating these systems.
 
-**![Laptop showing code and a bridge connecting two data islands.](../../../../../source/posts/엔터프라이즈_AI_에이전트_확산을_위한_MCP(Model_Context_Protocol)_표준화와_보안_거버넌스/ddd0fc44-3.png)**
+<b>![Laptop showing code and a bridge connecting two data islands.](../../../../../source/posts/엔터프라이즈_AI_에이전트_확산을_위한_MCP(Model_Context_Protocol)_표준화와_보안_거버넌스/ddd0fc44-3.png)</b>
 
 ## A Phased Approach Strategy for Real-World Implementation
 

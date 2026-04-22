@@ -38,19 +38,19 @@ faqs:
 
 In recent years, IT data has evolved beyond a mere sequence of structured numbers into something resembling a complex, organic entity with intricate correlations. Particularly in fields like Bioinformatics and large-scale user behavior analysis, determining 'how diverse the combined elements are' often dictates the success of an analysis more than simply calculating the total volume of data.
 
-From this perspective, the concept utilized in practice is **TestDiversityKeyword**. This refers to a series of processes that go beyond simply counting items to precisely verify diversity differences between groups based on statistical significance. We have summarized the technical principles behind how this works and the infrastructure requirements to consider for a stable implementation.
+From this perspective, the concept utilized in practice is <b>TestDiversityKeyword</b>. This refers to a series of processes that go beyond simply counting items to precisely verify diversity differences between groups based on statistical significance. We have summarized the technical principles behind how this works and the infrastructure requirements to consider for a stable implementation.
 
 ![Interconnected nodes and prism representing data diversity testing](../../../../../source/posts/TestDiversityKeyword/0785c1e2-0.png)
 
 ## Standards for Measuring Data Diversity: Hill Numbers and Statistical Significance
 
-A common mistake when measuring data diversity is simply checking "species richness" (the number of unique types). However, in real-world scenarios, results are highly likely to be distorted by sample size. To prevent this, the **'Hill numbers'** algorithm is used as a core component in the TestDiversityKeyword environment.
+A common mistake when measuring data diversity is simply checking "species richness" (the number of unique types). However, in real-world scenarios, results are highly likely to be distorted by sample size. To prevent this, the <b>'Hill numbers'</b> algorithm is used as a core component in the TestDiversityKeyword environment.
 
 Hill numbers allow various diversity indices to be explained within a single unified framework. Depending on the analysis objective, users can adjust the index (q-value) to decide whether to be sensitive to rare data or to focus on the common distribution. For example, when q=0, it reflects pure richness; when q=1, it incorporates Shannon entropy; and when q=2, it reflects the Simpson index.
 
 > "In data analysis, diversity is not just a spread of distribution, but a metric that quantifies the resilience and potential of a system."
 
-During the actual implementation stage, **'Bootstrap resampling'** techniques are applied through packages such as alakazam. This is a process of forming statistical confidence intervals by repeatedly performing random sampling from the existing data. It is an extremely effective way to objectively determine whether observed differences are coincidental or represent actual meaningful changes, even when data is scarce or unbalanced.
+During the actual implementation stage, <b>'Bootstrap resampling'</b> techniques are applied through packages such as alakazam. This is a process of forming statistical confidence intervals by repeatedly performing random sampling from the existing data. It is an extremely effective way to objectively determine whether observed differences are coincidental or represent actual meaningful changes, even when data is scarce or unbalanced.
 
 ![Bell curve with digital circuit patterns for statistical bootstrapping.](../../../../../source/posts/TestDiversityKeyword/b790b515-1.png)
 
@@ -78,8 +78,8 @@ In the latest AI trends, securing high-quality, diverse data is directly linked 
 
 Practitioners responsible for data analysis or system infrastructure should first look at the essence of the data behind the technological flashiness and the reliability of the infrastructure that supports it.
 
-1.  **Strengthen Statistical Validation Capabilities**: Rather than accepting the figures output by analysis tools at face value, one needs the insight to judge whether algorithms like Bootstrap or Hill numbers align with the business logic.
-2.  **Proactively Address Infrastructure Bottlenecks**: When large-scale computational tasks are expected, high-availability infrastructure should be reviewed from the early stages to prevent analysis delays caused by resource shortages.
-3.  **Establish Continuous Monitoring Systems**: Diversity measurement is not a one-time task. It is advisable to build a pipeline that tracks how indicators change in real-time according to shifts in the business environment.
+1.  <b>Strengthen Statistical Validation Capabilities</b>: Rather than accepting the figures output by analysis tools at face value, one needs the insight to judge whether algorithms like Bootstrap or Hill numbers align with the business logic.
+2.  <b>Proactively Address Infrastructure Bottlenecks</b>: When large-scale computational tasks are expected, high-availability infrastructure should be reviewed from the early stages to prevent analysis delays caused by resource shortages.
+3.  <b>Establish Continuous Monitoring Systems</b>: Diversity measurement is not a one-time task. It is advisable to build a pipeline that tracks how indicators change in real-time according to shifts in the business environment.
 
 Ultimately, the value of IT technology lies in finding meaningful order within complexity. TestDiversityKeyword is a scientific milestone for finding that order, and with a reliable partner and infrastructure to support it, you can find a clear direction in the vast ocean of data.

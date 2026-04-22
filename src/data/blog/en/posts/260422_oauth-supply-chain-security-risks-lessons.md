@@ -79,9 +79,9 @@ If a token used by an AI agent is compromised, the attacker moves beyond merely 
 
 Enterprises must completely move away from the traditional management style of treating SaaS integrations as "set and forget." The practical directions for response that companies should consider are as follows:
 
-- **Complete OAuth Visibility Inventory**: The first priority is to identify which apps have been granted what permissions by users within the organization. Utilize SSPM (SaaS Security Posture Management) solutions to identify and systematically manage neglected integrations.
-- **Applying the Principle of Least Privilege**: Strictly audit whether the permissions requested by third-party apps align with their service purpose. Governance must be established to firmly restrict excessive permission requests.
-- **Token-Based Behavior Analysis**: Move beyond checking for simple connectivity and implement real-time monitoring for anomalies, such as an app pulling more data than usual. This must be backed by an automated response system that immediately invalidates tokens when suspicious patterns are detected.
+- <b>Complete OAuth Visibility Inventory</b>: The first priority is to identify which apps have been granted what permissions by users within the organization. Utilize SSPM (SaaS Security Posture Management) solutions to identify and systematically manage neglected integrations.
+- <b>Applying the Principle of Least Privilege</b>: Strictly audit whether the permissions requested by third-party apps align with their service purpose. Governance must be established to firmly restrict excessive permission requests.
+- <b>Token-Based Behavior Analysis</b>: Move beyond checking for simple connectivity and implement real-time monitoring for anomalies, such as an app pulling more data than usual. This must be backed by an automated response system that immediately invalidates tokens when suspicious patterns are detected.
 
 ![OAuth Supply Chain Security - A futuristic lighthouse beam cutting through digital fog, illuminating a vast network.](../../../../../source/posts/OAuth_Supply_Chain_Security/img3.webp)
 

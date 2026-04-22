@@ -19,19 +19,19 @@ faqs:
 - q: What model sizes are available?
   a: 'It is available in four sizes to suit different environments:
 
-    *   **E2B (Effective 2B) & E4B:** Ultra-lightweight models optimized for mobile and edge environments such as smartphones and Raspberry Pi.
+    *   <b>E2B (Effective 2B) & E4B:</b> Ultra-lightweight models optimized for mobile and edge environments such as smartphones and Raspberry Pi.
 
-    *   **26B A4B MoE:** A Mixture-of-Experts (MoE) model that activates approximately 3.8 billion (4B) out of 26 billion parameters during inference, offering both high speed and high intelligence.
+    *   <b>26B A4B MoE:</b> A Mixture-of-Experts (MoE) model that activates approximately 3.8 billion (4B) out of 26 billion parameters during inference, offering both high speed and high intelligence.
 
-    *   **31B Dense:** The flagship model of Gemma 4, delivering peak performance on high-end workstations or cloud environments.'
+    *   <b>31B Dense:</b> The flagship model of Gemma 4, delivering peak performance on high-end workstations or cloud environments.'
 - q: Can it be used commercially? (What is the license?)
-  a: Yes, it can. Gemma 4 has been released under the **Apache 2.0 license**, which is fully open and has no legal barriers to commercial distribution, modification, or redistribution.
+  a: Yes, it can. Gemma 4 has been released under the <b>Apache 2.0 license</b>, which is fully open and has no legal barriers to commercial distribution, modification, or redistribution.
 - q: Can it recognize images or audio in addition to text?
-  a: Yes, all Gemma 4 models can natively process **image and video (MP4, WebM, etc.) input** at variable resolutions. Specifically, the smaller E2B and E4B models **natively understand audio input** without a separate speech converter, enabling Automatic Speech Recognition (ASR) and real-time translation.
+  a: Yes, all Gemma 4 models can natively process <b>image and video (MP4, WebM, etc.) input</b> at variable resolutions. Specifically, the smaller E2B and E4B models <b>natively understand audio input</b> without a separate speech converter, enabling Automatic Speech Recognition (ASR) and real-time translation.
 - q: How long a document can it read at once? (Context Window)
-  a: It supports a context window twice as large as the previous generation. Smaller models (E2B, E4B) can process up to **128,000 tokens**, while medium-to-large models (26B, 31B) can handle up to **256,000 tokens** at once, allowing for the analysis of vast codebases or book-length documents in a single prompt.
+  a: It supports a context window twice as large as the previous generation. Smaller models (E2B, E4B) can process up to <b>128,000 tokens</b>, while medium-to-large models (26B, 31B) can handle up to <b>256,000 tokens</b> at once, allowing for the analysis of vast codebases or book-length documents in a single prompt.
 - q: Is it useful for coding or automation tasks (agents)?
-  a: Very much so. Gemma 4 features a built-in **Thinking mode** that thinks step-by-step before answering, effectively solving complex logical and mathematical problems. Additionally, it natively supports structured JSON output and **Function Calling**, making it ideal for building **Agentic workflows** that can manipulate external tools and solve problems autonomously.
+  a: Very much so. Gemma 4 features a built-in <b>Thinking mode</b> that thinks step-by-step before answering, effectively solving complex logical and mathematical problems. Additionally, it natively supports structured JSON output and <b>Function Calling</b>, making it ideal for building <b>Agentic workflows</b> that can manipulate external tools and solve problems autonomously.
 - q: Can it run on local PCs or mobile devices?
   a: Yes, one of the key features of Gemma 4 is its broad compatibility. E2B and E4B can run offline with ultra-low latency on mobile edge environments like Android smartphones. The larger 26B and 31B models are also designed to run as local code assistants on laptops or consumer-grade desktop GPUs (e.g., when quantization is applied).
 - q: What is the performance level?
@@ -43,7 +43,7 @@ Google’s release of ‘Gemma 4’ is once again shifting the currents of the o
 
 The core of Gemma 4 is ‘Byte-for-byte intelligence.’ By placing a ‘Local-first’ strategy at the forefront, Google is proposing an environment where developers can run high-level agents on laptops or smartphones without the burden of cloud costs. This reflects Google's determination to extract the maximum possible intelligence within the constraints of hardware resources.
 
-**![Microscopic digital circuits forming a glowing brain shape.](../../../../../source/posts/구글젬마4/5d610c6d-0.png)**
+<b>![Microscopic digital circuits forming a glowing brain shape.](../../../../../source/posts/구글젬마4/5d610c6d-0.png)</b>
 
 ## Efficiency-Driven Design: PLE and p-RoPE Architectures
 
@@ -53,7 +53,7 @@ The most notable technology is ‘PLE (Per-Layer Embeddings).’ Unlike traditio
 
 To resolve the memory bottlenecks that occur during long-context processing, Google implemented ‘p-RoPE (Proportional Rotary Positional Embeddings).’ Traditional RoPE methods faced limitations where the accuracy of positional information degraded as context length increased. p-RoPE solves this by adjusting the rotation angle in proportion to the context length, allowing for the lossless processing of vast datasets ranging from 128K to 256K. This is why the model maintains context even when analyzing long codebases or processing thick legal documents in a single prompt.
 
-**![Laptop and smartphone connected by neural filaments for on-device AI.](../../../../../source/posts/구글젬마4/9d81106d-1.png)**
+<b>![Laptop and smartphone connected by neural filaments for on-device AI.](../../../../../source/posts/구글젬마4/9d81106d-1.png)</b>
 
 ## Parallel Release of MoE and Dense Models: Providing the Optimal Choice
 
@@ -65,7 +65,7 @@ The 26B MoE model features a total of 26 billion parameters, but only activates 
 
 In contrast, the 31B Dense model features an organically connected structure where all parameters are utilized, making it suitable for high-performance fine-tuning where output consistency and quality are paramount. Having ranked 3rd among open models on the Arena AI leaderboard, its intellectual capabilities are well-proven, making it an excellent alternative for companies looking to develop enterprise-grade solutions. This is expected to accelerate the movement toward securing ‘digital sovereignty’ by building proprietary infrastructure rather than relying on closed-source models.
 
-**![Interconnected AI agents performing coding, data analysis, and scheduling.](../../../../../source/posts/구글젬마4/b5263249-2.png)**
+<b>![Interconnected AI agents performing coding, data analysis, and scheduling.](../../../../../source/posts/구글젬마4/b5263249-2.png)</b>
 
 ## Native Features Optimized for Agentic Environments
 
@@ -75,17 +75,17 @@ Previous models often failed during parsing when external API integration result
 
 Another noteworthy feature is the native processing of audio input on mobile devices (E2B, E4B). Since the model understands sound directly without a separate Speech-to-Text (STT) model, battery consumption is reduced and response times are faster. This will significantly elevate the quality of on-device assistants operating on smartphones and IoT devices.
 
-**![Global network map with characters representing 140+ languages.](../../../../../source/posts/구글젬마4/b1f261f8-3.png)**
+<b>![Global network map with characters representing 140+ languages.](../../../../../source/posts/구글젬마4/b1f261f8-3.png)</b>
 
 ## How Gemma 4 Will Transform the IT Ecosystem
 
 The emergence of Gemma 4 is poised to change the landscape of the ecosystem in three major ways.
 
-First is the **democratization of 'Personalized AI.'** As MacBooks and Android phones become capable of processing 256K contexts without expensive GPU servers, we will see a surge of security-focused local apps that do not send data to external servers. This is expected to be particularly high-impact in fields like healthcare and finance, where privacy is critical.
+First is the <b>democratization of 'Personalized AI.'</b> As MacBooks and Android phones become capable of processing 256K contexts without expensive GPU servers, we will see a surge of security-focused local apps that do not send data to external servers. This is expected to be particularly high-impact in fields like healthcare and finance, where privacy is critical.
 
-Second is the **strengthening of 'Digital Sovereignty' for developers.** The Apache 2.0 license imposes almost no restrictions on commercial use. Companies can own and operate their own specialized models based on Gemma 4 without being at the mercy of API policy changes from tech giants. Cases of countries building sovereign language models based on Gemma are already evidence of this trend.
+Second is the <b>strengthening of 'Digital Sovereignty' for developers.</b> The Apache 2.0 license imposes almost no restrictions on commercial use. Companies can own and operate their own specialized models based on Gemma 4 without being at the mercy of API policy changes from tech giants. Cases of countries building sovereign language models based on Gemma are already evidence of this trend.
 
-Third is the **intensification of hardware optimization competition.** Google has collaborated with companies like Qualcomm, MediaTek, and NVIDIA to tune Gemma 4 for peak performance on their respective chipsets. This signals that in the future, 'how smoothly AI models run' will become a key criterion for purchasing devices.
+Third is the <b>intensification of hardware optimization competition.</b> Google has collaborated with companies like Qualcomm, MediaTek, and NVIDIA to tune Gemma 4 for peak performance on their respective chipsets. This signals that in the future, 'how smoothly AI models run' will become a key criterion for purchasing devices.
 
 ## Advice for Practitioners Considering Adoption
 

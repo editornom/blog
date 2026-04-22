@@ -31,13 +31,13 @@ faqs:
 ---
 
 
-While Large Language Models (LLMs) have made leaps and bounds, their limitations quickly become apparent when applied to real-world tasks. They may answer single questions brilliantly, but their focus drops sharply when entering a "multi-turn" environment where conversations drag on. A prime example is the "hallucination" phenomenon, where the model forgets previous details or loses logical consistency. This happens because current models are essentially "stateless," relying on the inefficient method of re-stuffing the entire past conversation into the prompt every single time. To resolve this bottleneck, academia and industry have recently turned their attention to the concept of **Cognitive Memory Architecture**.
+While Large Language Models (LLMs) have made leaps and bounds, their limitations quickly become apparent when applied to real-world tasks. They may answer single questions brilliantly, but their focus drops sharply when entering a "multi-turn" environment where conversations drag on. A prime example is the "hallucination" phenomenon, where the model forgets previous details or loses logical consistency. This happens because current models are essentially "stateless," relying on the inefficient method of re-stuffing the entire past conversation into the prompt every single time. To resolve this bottleneck, academia and industry have recently turned their attention to the concept of <b>Cognitive Memory Architecture</b>.
 
 ![Human brain integrated with digital storage and data structure layers.](../../../../../source/posts/인지적_메모리_아키텍처_(Cognitive_Memory_Architecture)/91f9e72e-0.webp)
 
 ## Context Window Limits and New Alternatives
 
-Existing LLMs face the problem of context size growing indefinitely as conversations lengthen. This directly leads to increased computational costs and decreased reasoning efficiency. Recent benchmark results, such as TurnBench, show that even state-of-the-art models suffer a sharp drop in accuracy—often below 20%—in complex multi-turn reasoning environments. **Cognitive Memory Architecture** takes inspiration from how the human brain processes information, managing data by layering and structuring it rather than just piling it up.
+Existing LLMs face the problem of context size growing indefinitely as conversations lengthen. This directly leads to increased computational costs and decreased reasoning efficiency. Recent benchmark results, such as TurnBench, show that even state-of-the-art models suffer a sharp drop in accuracy—often below 20%—in complex multi-turn reasoning environments. <b>Cognitive Memory Architecture</b> takes inspiration from how the human brain processes information, managing data by layering and structuring it rather than just piling it up.
 
 The core of this technology is to ensure the model doesn't need to scan every bit of past data at every moment. Instead, it dynamically reconfigures only the information strictly necessary for the current task and delivers it to the model. It works on a principle similar to a seasoned expert who has thousands of pages of reference books nearby but focuses on a core summary and their current judgment when actually solving a problem.
 
@@ -47,9 +47,9 @@ The core of this technology is to ensure the model doesn't need to scan every bi
 
 A representative case of implementing this architecture is CogMem, which divides the structure into three major layers. This detail is the decisive difference between simple Retrieval-Augmented Generation (RAG) and a true cognitive memory structure.
 
-- **Long-Term Memory (LTM)**: Stores reasoning strategies and reusable knowledge accumulated over multiple sessions. It doesn't just record 'facts'; it remembers the 'methods' and 'patterns' used to solve specific problems.
-- **Direct-Access Memory (DA)**: Acts as the working memory for the current session. Intermediate conclusions generated in real-time, detailed goals, and relevant knowledge retrieved from the LTM are organically combined here. This allows the model to immediately apply past success stories to current problems.
-- **Focus of Attention (FoA)**: The heart of the entire structure. It extracts and summarizes the minimum 'must-know' information from the vast amount stored in the DA to generate the next response.
+- <b>Long-Term Memory (LTM)</b>: Stores reasoning strategies and reusable knowledge accumulated over multiple sessions. It doesn't just record 'facts'; it remembers the 'methods' and 'patterns' used to solve specific problems.
+- <b>Direct-Access Memory (DA)</b>: Acts as the working memory for the current session. Intermediate conclusions generated in real-time, detailed goals, and relevant knowledge retrieved from the LTM are organically combined here. This allows the model to immediately apply past success stories to current problems.
+- <b>Focus of Attention (FoA)</b>: The heart of the entire structure. It extracts and summarizes the minimum 'must-know' information from the vast amount stored in the DA to generate the next response.
 
 Through this mechanism, the number of tokens the model must process is dramatically reduced, and the clarity of reasoning is maximized. It implements sustainable intelligence while preventing information volatility.
 

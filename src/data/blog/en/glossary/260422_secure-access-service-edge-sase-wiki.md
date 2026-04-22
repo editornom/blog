@@ -47,16 +47,16 @@ SASE is an architecture that consolidates corporate network functions (SD-WAN) a
 In the past, corporate networks relied on a "Castle-and-Moat" perimeter security model that surrounded the data center like a fortress. However, as work environments shifted toward Cloud and hybrid models, the limitations of this approach became clear. Forcing all external traffic to reroute to a headquarter server for security checks creates bottlenecks and degrades the user experience. SASE emerged to solve latency issues by moving the focus of security from the central server to the "Edge," closer to the user.
 
 ### 4. Key Components and Operating Principles
-- **Integrated Service Availability**: SASE integrates the path optimization of SD-WAN with complex security functions like SWG, CASB, and ZTNA into a single platform. This drastically reduces the complexity of operational management.
-- **Identity-Based Zero Trust**: Instead of trusting a user's IP address, SASE verifies the context—identity, device security status, and location—every time. It implements the Zero Trust principle of "Never Trust, Always Verify" at a practical, operational level.
-- **Global Edge Points of Presence**: Security services are delivered through Points of Presence (PoPs) distributed worldwide. This prevents performance degradation caused by physical distance and allows for flexible scaling to handle traffic surges by utilizing Cloud-native scalability.
+- <b>Integrated Service Availability</b>: SASE integrates the path optimization of SD-WAN with complex security functions like SWG, CASB, and ZTNA into a single platform. This drastically reduces the complexity of operational management.
+- <b>Identity-Based Zero Trust</b>: Instead of trusting a user's IP address, SASE verifies the context—identity, device security status, and location—every time. It implements the Zero Trust principle of "Never Trust, Always Verify" at a practical, operational level.
+- <b>Global Edge Points of Presence</b>: Security services are delivered through Points of Presence (PoPs) distributed worldwide. This prevents performance degradation caused by physical distance and allows for flexible scaling to handle traffic surges by utilizing Cloud-native scalability.
 
 ### 5. Differences Between SASE and SSE
 While these two terms are often used interchangeably, there is a clear distinction. SASE refers to the entire framework encompassing both networking (SD-WAN) and security functions. On the other hand, SSE (Security Service Edge) is a subset of SASE that refers only to the security service stack (SWG, CASB, ZTNA, etc.), excluding the network optimization components. Companies that already have a stable network infrastructure often start by adopting SSE.
 
 ### 6. Practical Application and Key Terms
-- **Real-World Application**: When a remote employee connects to the internal network, they pass through the nearest SASE Edge node for real-time inspection without requiring separate hardware devices. During this process, the system checks for malware infections and immediately manages access permissions for Cloud applications to maintain a secure connection.
-- **Key Terminology**: 
-  - **SD-WAN (Software-Defined Wide Area Network)**: A technology that virtualizes and manages wide-area networks through software.
-  - **ZTNA (Zero Trust Network Access)**: A security approach that individually authenticates every access request without assuming trust based on network boundaries.
-  - **CASB (Cloud Access Security Broker)**: A solution that mediates security policies and provides visibility between an organization and Cloud service providers.
+- <b>Real-World Application</b>: When a remote employee connects to the internal network, they pass through the nearest SASE Edge node for real-time inspection without requiring separate hardware devices. During this process, the system checks for malware infections and immediately manages access permissions for Cloud applications to maintain a secure connection.
+- <b>Key Terminology</b>: 
+  - <b>SD-WAN (Software-Defined Wide Area Network)</b>: A technology that virtualizes and manages wide-area networks through software.
+  - <b>ZTNA (Zero Trust Network Access)</b>: A security approach that individually authenticates every access request without assuming trust based on network boundaries.
+  - <b>CASB (Cloud Access Security Broker)</b>: A solution that mediates security policies and provides visibility between an organization and Cloud service providers.

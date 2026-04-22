@@ -42,9 +42,9 @@ faqs:
 
 | Item | Details |
 | :--- | :--- |
-| **English Name** | Large Language Model |
-| **Abbreviation** | LLM |
-| **Related Technologies** | Transformer, Deep Learning, Tokenization, RLHF, RAG |
+| <b>English Name</b> | Large Language Model |
+| <b>Abbreviation</b> | LLM |
+| <b>Related Technologies</b> | Transformer, Deep Learning, Tokenization, RLHF, RAG |
 
 ### 2. Definition of Large Language Model (LLM)
 A Large Language Model (LLM) is an artificial intelligence model designed to understand and generate human language by learning from massive amounts of text data. Built upon hundreds of millions or billions of parameters, these models primarily leverage the Transformer architecture to grasp context. Beyond simple text generation, they can perform a wide range of sophisticated language processing tasks, including summarization, translation, and complex logical reasoning.
@@ -53,16 +53,16 @@ A Large Language Model (LLM) is an artificial intelligence model designed to und
 The emergence of LLMs began as an effort to overcome the structural limitations of traditional RNN (Recurrent Neural Network) or LSTM-based models. Previous models suffered from chronic issues such as the 'long-term dependency' problem, where information from the beginning of a sentence was lost as the sentence grew longer, and slow training speeds due to sequential operations. The Transformer architecture, introduced by Google in 2017 based on the 'Attention' mechanism, enabled parallel data processing and dramatically improved training efficiency. Combined with the growth of computing resources and the availability of large-scale internet data, this paved the way for the current LLM era.
 
 ### 4. Core Principles and Key Features
-*   **Transformer Architecture:** Through the Self-Attention mechanism, the model simultaneously calculates relationships between all words in a sentence. A major advantage of this is its ability to accurately capture the context between words that are physically far apart.
-*   **Pre-training and Fine-tuning:** Models first undergo Pre-training to learn the general structure of language through large-scale unstructured data. Performance is then refined through instruction tuning for specific tasks or Reinforcement Learning from Human Feedback (RLHF) to improve the appropriateness of responses.
-*   **Scaling Laws and Emergent Abilities:** LLMs exhibit a characteristic where model capabilities improve exponentially as the number of parameters, data scale, and computational power increase. Notably, when a certain scale threshold is crossed, high-level reasoning abilities that were not present in smaller models may suddenly appear; the industry refers to these as 'Emergent abilities.'
+*   <b>Transformer Architecture:</b> Through the Self-Attention mechanism, the model simultaneously calculates relationships between all words in a sentence. A major advantage of this is its ability to accurately capture the context between words that are physically far apart.
+*   <b>Pre-training and Fine-tuning:</b> Models first undergo Pre-training to learn the general structure of language through large-scale unstructured data. Performance is then refined through instruction tuning for specific tasks or Reinforcement Learning from Human Feedback (RLHF) to improve the appropriateness of responses.
+*   <b>Scaling Laws and Emergent Abilities:</b> LLMs exhibit a characteristic where model capabilities improve exponentially as the number of parameters, data scale, and computational power increase. Notably, when a certain scale threshold is crossed, high-level reasoning abilities that were not present in smaller models may suddenly appear; the industry refers to these as 'Emergent abilities.'
 
 ### 5. Differences Between LLM and SLM
-If an LLM is a versatile generalist capable in all fields, a **SLM (Small Language Model)** is more like a specialist focused on a specific purpose. While LLMs deliver overwhelming performance, they require immense costs and computational resources to build and operate. In contrast, SLMs are designed with an optimized number of parameters to provide efficient performance in specific domains (medical, legal, finance, etc.). This allows them to be lightweight and fast, making them a more suitable choice for secure, closed-network environments or on-device AI implementations.
+If an LLM is a versatile generalist capable in all fields, a <b>SLM (Small Language Model)</b> is more like a specialist focused on a specific purpose. While LLMs deliver overwhelming performance, they require immense costs and computational resources to build and operate. In contrast, SLMs are designed with an optimized number of parameters to provide efficient performance in specific domains (medical, legal, finance, etc.). This allows them to be lightweight and fast, making them a more suitable choice for secure, closed-network environments or on-device AI implementations.
 
 ### 6. Practical Application and Key Terms
-*   **Real-world Use Cases:** A representative example is building chatbots using internal corporate knowledge bases. When a user asks a question, **RAG (Retrieval-Augmented Generation)** technology allows the model to reference internal documents before generating an answer. This reduces the 'Hallucination' phenomenon—where the LLM states incorrect information as if it were a fact—and increases the reliability of the responses.
-*   **Glossary of Related Terms:**
-    1.  **Tokenization:** A preprocessing step that divides text into 'tokens,' the smallest units that the model can process.
-    2.  **Prompt Engineering:** The technique of precisely designing and optimizing input values (questions) to elicit the desired results from the model.
-    3.  **Multimodality:** The ability to simultaneously understand and generate different types of data, such as images, sound, and video, in addition to text.
+*   <b>Real-world Use Cases:</b> A representative example is building chatbots using internal corporate knowledge bases. When a user asks a question, <b>RAG (Retrieval-Augmented Generation)</b> technology allows the model to reference internal documents before generating an answer. This reduces the 'Hallucination' phenomenon—where the LLM states incorrect information as if it were a fact—and increases the reliability of the responses.
+*   <b>Glossary of Related Terms:</b>
+    1.  <b>Tokenization:</b> A preprocessing step that divides text into 'tokens,' the smallest units that the model can process.
+    2.  <b>Prompt Engineering:</b> The technique of precisely designing and optimizing input values (questions) to elicit the desired results from the model.
+    3.  <b>Multimodality:</b> The ability to simultaneously understand and generate different types of data, such as images, sound, and video, in addition to text.

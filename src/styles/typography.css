@@ -19,12 +19,18 @@
 
     p,
     strong,
+    b,
     ol,
     ul,
     figcaption,
     table,
     code {
       @apply text-foreground;
+    }
+
+    strong,
+    b {
+      @apply font-bold;
     }
 
     a {

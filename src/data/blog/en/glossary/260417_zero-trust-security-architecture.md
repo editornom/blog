@@ -59,17 +59,17 @@ Traditional security frameworks have proven vulnerable to "Lateral Movement" att
 
 ### 4. The Three Pillars of Zero Trust
 
-- **Verify Explicitly:** Authentication and authorization decisions are made in real-time by combining all available data points, including user identity, current location, device health, and the sensitivity of the requested data.
-- **Least Privilege Access:** Users are granted only the minimum permissions necessary to perform their tasks, and only for the duration required (Just-in-Time). This minimizes the potential blast radius even if a specific account is compromised.
-- **Assume Breach:** The architecture operates under the assumption that the network may have already been compromised. To contain damage, it employs Micro-segmentation to divide the network into small zones and manages all communication with default encryption.
+- <b>Verify Explicitly:</b> Authentication and authorization decisions are made in real-time by combining all available data points, including user identity, current location, device health, and the sensitivity of the requested data.
+- <b>Least Privilege Access:</b> Users are granted only the minimum permissions necessary to perform their tasks, and only for the duration required (Just-in-Time). This minimizes the potential blast radius even if a specific account is compromised.
+- <b>Assume Breach:</b> The architecture operates under the assumption that the network may have already been compromised. To contain damage, it employs Micro-segmentation to divide the network into small zones and manages all communication with default encryption.
 
 ### 5. Comparison with Traditional Methods
 
 | Comparison Item | Traditional Remote Access (VPN, etc.) | Zero Trust (ZTNA) |
 | :--- | :--- | :--- |
-| **Security Philosophy** | Perimeter-based (Trusted once inside) | Perimeter-less (Verify every moment) |
-| **Access Control** | Full network access granted upon login | Control at individual application/resource level |
-| **Breach Response** | Difficult to stop lateral movement after entry | Granular permissions make it easy to block damage |
+| <b>Security Philosophy</b> | Perimeter-based (Trusted once inside) | Perimeter-less (Verify every moment) |
+| <b>Access Control</b> | Full network access granted upon login | Control at individual application/resource level |
+| <b>Breach Response</b> | Difficult to stop lateral movement after entry | Granular permissions make it easy to block damage |
 
 ### 6. Practical Implementation and Key Concepts
 
@@ -77,6 +77,6 @@ Google's "BeyondCorp" is one of the most prominent examples of a real-world Zero
 
 To fully understand this architecture, the following key concepts are essential:
 
-- **IAM (Identity and Access Management):** The foundation for verifying user identities and managing permissions to ensure the right people have the right access to resources.
-- **ZTNA (Zero Trust Network Access):** A technology that hides internal networks from the public internet and opens secure tunnels only to specific applications for authenticated users.
-- **MFA (Multi-Factor Authentication):** A security mechanism that requires multiple forms of verification, significantly enhancing identity security beyond simple passwords.
+- <b>IAM (Identity and Access Management):</b> The foundation for verifying user identities and managing permissions to ensure the right people have the right access to resources.
+- <b>ZTNA (Zero Trust Network Access):</b> A technology that hides internal networks from the public internet and opens secure tunnels only to specific applications for authenticated users.
+- <b>MFA (Multi-Factor Authentication):</b> A security mechanism that requires multiple forms of verification, significantly enhancing identity security beyond simple passwords.

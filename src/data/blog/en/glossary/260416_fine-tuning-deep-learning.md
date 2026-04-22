@@ -40,9 +40,9 @@ faqs:
 
 | Item | Description |
 | :--- | :--- |
-| **English Name** | Fine-tuning |
-| **Abbreviation** | - |
-| **Related Tech** | Transfer Learning, Deep Learning, LLM, PEFT, LoRA |
+| <b>English Name</b> | Fine-tuning |
+| <b>Abbreviation</b> | - |
+| <b>Related Tech</b> | Transfer Learning, Deep Learning, LLM, PEFT, LoRA |
 
 ### The Process of Optimizing Models for Specific Tasks
 Fine-tuning is a technique that takes the weights of a foundational "Pre-trained Model"—already trained on massive datasets—as a starting point and performs additional training using a dataset tailored to a specific purpose. As a subset of Transfer Learning, its core objective is to transform a model with general knowledge into one optimized for specific downstream tasks or specialized industries.
@@ -51,16 +51,16 @@ Fine-tuning is a technique that takes the weights of a foundational "Pre-trained
 Training Large Language Models (LLMs) or massive neural networks from scratch requires astronomical computing resources and time. Fine-tuning dramatically reduces this cost burden. By reusing the intelligence of a model that already understands general features, businesses can meet specialized requirements—such as medical consultation or legal document summarization—using significantly less data and fewer resources.
 
 ### Core Mechanisms of Fine-tuning
-*   **Weight Update Strategies**: Depending on the requirements, developers can choose between "Full Fine-tuning," where all model parameters are retrained, or "Freezing" techniques, where only specific layers are updated while others remain locked. Recently, Parameter-Efficient Fine-tuning (PEFT) has become the preferred approach for maximizing efficiency.
-*   **Efficient Techniques like LoRA**: Approaches such as LoRA (Low-Rank Adaptation) are widely used. These methods maintain the original model structure while inserting a small number of additional parameters (Adapters) or adjusting weights using low-rank matrices. This significantly saves memory and computational costs.
-*   **Domain Adaptation and Performance Enhancement**: By training on industry-specific terminology and unique patterns rarely found in general datasets, fine-tuning improves response accuracy and contextual understanding for specific tasks.
+*   <b>Weight Update Strategies</b>: Depending on the requirements, developers can choose between "Full Fine-tuning," where all model parameters are retrained, or "Freezing" techniques, where only specific layers are updated while others remain locked. Recently, Parameter-Efficient Fine-tuning (PEFT) has become the preferred approach for maximizing efficiency.
+*   <b>Efficient Techniques like LoRA</b>: Approaches such as LoRA (Low-Rank Adaptation) are widely used. These methods maintain the original model structure while inserting a small number of additional parameters (Adapters) or adjusting weights using low-rank matrices. This significantly saves memory and computational costs.
+*   <b>Domain Adaptation and Performance Enhancement</b>: By training on industry-specific terminology and unique patterns rarely found in general datasets, fine-tuning improves response accuracy and contextual understanding for specific tasks.
 
 ### Difference Between Pre-training and Fine-tuning
 If pre-training is the stage where a model's foundational intelligence and representation capabilities are built using large-scale unlabeled data, fine-tuning is the optimization stage where that model is meticulously refined with specific labeled data. It is analogous to finishing the interior of a building for a specific use after the structural foundation and shell (pre-training) are complete.
 
 ### Practical Applications and Key Concepts
-*   **Real-world Use Case**: By fine-tuning a general GPT model with a company's internal technical documents and manuals, a business can create a customer support chatbot that provides expert advice specifically for its own products.
-*   **Related Terms**:
-    *   **PEFT (Parameter-Efficient Fine-tuning)**: A technique to efficiently improve models by modifying only a minimum number of parameters.
-    *   **RLHF (Reinforcement Learning from Human Feedback)**: A method of "alignment" where human feedback is used to ensure the model's responses match human intent and values.
-    *   **Catastrophic Forgetting**: A phenomenon where a model "forgets" previously learned general knowledge while being trained on new, specific data. This is a critical factor to manage during the fine-tuning process.
+*   <b>Real-world Use Case</b>: By fine-tuning a general GPT model with a company's internal technical documents and manuals, a business can create a customer support chatbot that provides expert advice specifically for its own products.
+*   <b>Related Terms</b>:
+    *   <b>PEFT (Parameter-Efficient Fine-tuning)</b>: A technique to efficiently improve models by modifying only a minimum number of parameters.
+    *   <b>RLHF (Reinforcement Learning from Human Feedback)</b>: A method of "alignment" where human feedback is used to ensure the model's responses match human intent and values.
+    *   <b>Catastrophic Forgetting</b>: A phenomenon where a model "forgets" previously learned general knowledge while being trained on new, specific data. This is a critical factor to manage during the fine-tuning process.

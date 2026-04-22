@@ -56,16 +56,16 @@ Early AI models were primarily 'Unimodal,' optimized for specific fields like Na
 
 ### 4. Core Principles and Key Features
 
-- **Fusion & Alignment**: This involves converting different data forms, such as image vectors and text vectors, into a shared mathematical space to learn their associations. For example, it is the process of recognizing that the word 'apple' and a photograph of an apple refer to the same concept.
-- **Cross-modal Processing**: This feature allows the AI to produce an output in a different format from the input. Key examples include generating images based on text descriptions (Text-to-Image) or converting audio data into real-time text.
-- **Deep Contextual Understanding**: By combining linguistic information with non-verbal data—such as image composition, a speaker's tone of voice, or movement in a video—the AI achieves a high-level understanding of context that goes far beyond simple keyword analysis.
+- <b>Fusion & Alignment</b>: This involves converting different data forms, such as image vectors and text vectors, into a shared mathematical space to learn their associations. For example, it is the process of recognizing that the word 'apple' and a photograph of an apple refer to the same concept.
+- <b>Cross-modal Processing</b>: This feature allows the AI to produce an output in a different format from the input. Key examples include generating images based on text descriptions (Text-to-Image) or converting audio data into real-time text.
+- <b>Deep Contextual Understanding</b>: By combining linguistic information with non-verbal data—such as image composition, a speaker's tone of voice, or movement in a video—the AI achieves a high-level understanding of context that goes far beyond simple keyword analysis.
 
 ### 5. Differences Between Unimodal and Multimodal AI
 
-- **Unimodal AI**: Processes only a single mode of data. A text-only model can accurately read the meaning of a sentence but cannot understand the visual circumstances in which that sentence was uttered.
-- **Multimodal AI**: Processes multiple data modes simultaneously. It can handle a combination of a user's voice command and visual information from a camera. This is why it can respond to complex queries like, "What is the name of this object (image) I am holding right now? (voice)."
+- <b>Unimodal AI</b>: Processes only a single mode of data. A text-only model can accurately read the meaning of a sentence but cannot understand the visual circumstances in which that sentence was uttered.
+- <b>Multimodal AI</b>: Processes multiple data modes simultaneously. It can handle a combination of a user's voice command and visual information from a camera. This is why it can respond to complex queries like, "What is the name of this object (image) I am holding right now? (voice)."
 
 ### 6. Industrial Applications and Related Concepts
 
-- **Real-world Application**: In the medical field, Multimodal AI plays a critical role in providing accurate diagnoses and personalized treatments by comprehensively analyzing a patient's X-rays (images), past medical records (text), and real-time vital signs (data).
-- **Related Terms**: This technology is closely linked to Foundation Models, Embedding, and CLIP (Contrastive Language-Image Pre-training).
+- <b>Real-world Application</b>: In the medical field, Multimodal AI plays a critical role in providing accurate diagnoses and personalized treatments by comprehensively analyzing a patient's X-rays (images), past medical records (text), and real-time vital signs (data).
+- <b>Related Terms</b>: This technology is closely linked to Foundation Models, Embedding, and CLIP (Contrastive Language-Image Pre-training).

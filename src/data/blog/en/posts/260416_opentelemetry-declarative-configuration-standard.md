@@ -40,7 +40,7 @@ As microservice architectures have become the norm, the complexity of managing s
 
 Recently, a noteworthy shift occurred within the OTel ecosystem: the 'Declarative Configuration' specification has reached the 'Stable' stage. Now, engineers can build observability frameworks using a single YAML file—much like defining Kubernetes resources—without having to modify code line-by-line. Let's examine the technical context of this standardization and the changes it will bring to production environments.
 
-**![Distributed network architecture with nodes and data streams.](../../../../../source/posts/오픈텔레메트리(OpenTelemetry)_선언적_구성(Declarative_Configuration)_표준화에_따른_관측성_자동화_체계_구축/c462b2de-0.png)**
+<b>![Distributed network architecture with nodes and data streams.](../../../../../source/posts/오픈텔레메트리(OpenTelemetry)_선언적_구성(Declarative_Configuration)_표준화에_따른_관측성_자동화_체계_구축/c462b2de-0.png)</b>
 
 ## The Fragmentation of Observability Data Collection and the Need for Standardization
 
@@ -50,7 +50,7 @@ Until now, a major hurdle was that the methods for collecting data varied by ven
 
 However, a challenge remained. The way SDKs were initialized or Exporters were configured differed slightly across languages like Java, Go, and Python. As system scales grew, this fragmentation of configurations itself became a significant operational cost.
 
-**![YAML configuration file transforming into 3D digital architecture.](../../../../../source/posts/오픈텔레메트리(OpenTelemetry)_선언적_구성(Declarative_Configuration)_표준화에_따른_관측성_자동화_체계_구축/0deb6da0-1.png)**
+<b>![YAML configuration file transforming into 3D digital architecture.](../../../../../source/posts/오픈텔레메트리(OpenTelemetry)_선언적_구성(Declarative_Configuration)_표준화에_따른_관측성_자동화_체계_구축/0deb6da0-1.png)</b>
 
 ## Declarative Configuration: The Foundation for Operational Automation
 
@@ -60,13 +60,13 @@ The standardization of Declarative Configuration marks a turning point, shifting
 
 Technically, the core of this update is that the JSON/YAML schema for `opentelemetry-configuration` has been finalized to version 1.0.0. The key changes include:
 
-1.  **Schema Standardization**: The data model for observability settings has been standardized. Regardless of the programming language used, the same YAML file format can be shared.
-2.  **Single Configuration Management (OTEL_CONFIG_FILE)**: Instead of injecting dozens of environment variables, the SDK's behavior is controlled by this single variable pointing to the configuration file path.
-3.  **Extensibility**: Through the `PluginComponentProvider` mechanism, custom extensions can be flexibly integrated within the declarative structure.
+1.  <b>Schema Standardization</b>: The data model for observability settings has been standardized. Regardless of the programming language used, the same YAML file format can be shared.
+2.  <b>Single Configuration Management (OTEL_CONFIG_FILE)</b>: Instead of injecting dozens of environment variables, the SDK's behavior is controlled by this single variable pointing to the configuration file path.
+3.  <b>Extensibility</b>: Through the `PluginComponentProvider` mechanism, custom extensions can be flexibly integrated within the declarative structure.
 
 The practical benefits are clear. When an infrastructure team needs to adjust the sampling rate across all services, they no longer need to request code changes from development teams. By simply updating a centrally managed YAML file, the changes can be applied immediately through the deployment pipeline.
 
-**![Data pipeline diagram showing receivers, processors, and exporters.](../../../../../source/posts/오픈텔레메트리(OpenTelemetry)_선언적_구성(Declarative_Configuration)_표준화에_따른_관측성_자동화_체계_구축/0b6a771d-2.png)**
+<b>![Data pipeline diagram showing receivers, processors, and exporters.](../../../../../source/posts/오픈텔레메트리(OpenTelemetry)_선언적_구성(Declarative_Configuration)_표준화에_따른_관측성_자동화_체계_구축/0b6a771d-2.png)</b>
 
 ## Optimizing Data Pipelines via the OTel Collector
 
@@ -76,17 +76,17 @@ In this process, 'Baggage' and 'Context Propagation' are core technologies that 
 
 For efficient operation, data selection is also crucial. Indiscriminately sending all data leads to high costs. By leveraging declarative configuration, you can finely tune the collector's processors. For instance, you can use the `batch` processor to improve transmission efficiency or the `attributes` processor to mask sensitive information—all by simply modifying a configuration file. A significant advantage is the ability to process data with low latency in high-performance environments using the gRPC protocol buffer.
 
-**![Developer viewing AI analytics and predictive maintenance dashboard.](../../../../../source/posts/오픈텔레메트리(OpenTelemetry)_선언적_구성(Declarative_Configuration)_표준화에_따른_관측성_자동화_체계_구축/e6289902-3.png)**
+<b>![Developer viewing AI analytics and predictive maintenance dashboard.](../../../../../source/posts/오픈텔레메트리(OpenTelemetry)_선언적_구성(Declarative_Configuration)_표준화에_따른_관측성_자동화_체계_구축/e6289902-3.png)</b>
 
 ## Incorporating Observability into the 'Infrastructure as Code (IaC)' Framework
 
 This standardization will accelerate the trend of managing observability as part of the infrastructure—like Terraform or Ansible—rather than as a secondary task in the development phase. We anticipate the following shifts in the market:
 
--   **Elimination of Vendor Lock-in**: Standardized configuration files make switching backend analysis tools as simple as updating an address.
--   **Runtime Dynamic Control**: Features to adjust collection intensity in real-time without restarting applications will become more sophisticated.
--   **Ensuring Data Consistency**: Data collected through standardized schemas serves as a foundation for improving the accuracy of AI-driven anomaly detection and Root Cause Analysis (RCA).
+-   <b>Elimination of Vendor Lock-in</b>: Standardized configuration files make switching backend analysis tools as simple as updating an address.
+-   <b>Runtime Dynamic Control</b>: Features to adjust collection intensity in real-time without restarting applications will become more sophisticated.
+-   <b>Ensuring Data Consistency</b>: Data collected through standardized schemas serves as a foundation for improving the accuracy of AI-driven anomaly detection and Root Cause Analysis (RCA).
 
-**![Bridge connecting complex code to a streamlined management panel.](../../../../../source/posts/오픈텔레메트리(OpenTelemetry)_선언적_구성(Declarative_Configuration)_표준화에_따른_관측성_자동화_체계_구축/413ea6d3-4.png)**
+<b>![Bridge connecting complex code to a streamlined management panel.](../../../../../source/posts/오픈텔레메트리(OpenTelemetry)_선언적_구성(Declarative_Configuration)_표준화에_따른_관측성_자동화_체계_구축/413ea6d3-4.png)</b>
 
 ## Practical Response Strategies
 

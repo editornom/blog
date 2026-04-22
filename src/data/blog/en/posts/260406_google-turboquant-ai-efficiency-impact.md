@@ -20,37 +20,37 @@ The competitive landscape of the AI industry is rapidly shifting from "model siz
 
 When software attempts to overcome the physical limits of hardware, the market often shows a complex reaction. There is a coexistence of concern that the demand for high-performance memory might decrease, alongside expectations for AI proliferation driven by falling costs. Let’s delve into the technical reality of TurboQuant and the business context behind it.
 
-**![Data flow compressing through a digital lens into a central core.](../../../../../source/posts/터보퀀트/ec0ebcfb-0.png)**
+<b>![Data flow compressing through a digital lens into a central core.](../../../../../source/posts/터보퀀트/ec0ebcfb-0.png)</b>
 
 ## KV Cache: The Chronic Bottleneck of LLMs
 
-When interacting with a Large Language Model (LLM), the AI must remember the preceding context in real time. The **KV Cache (Key-Value Cache)** acts as a sort of "digital notepad" for this purpose. The problem is that as conversations grow longer and context windows expand, this cache data increases exponentially.
+When interacting with a Large Language Model (LLM), the AI must remember the preceding context in real time. The <b>KV Cache (Key-Value Cache)</b> acts as a sort of "digital notepad" for this purpose. The problem is that as conversations grow longer and context windows expand, this cache data increases exponentially.
 
 This data primarily resides in the GPU's High Bandwidth Memory (HBM). When space becomes insufficient, processing speeds drop drastically, or the number of concurrent users is limited. Until now, the industry responded by simply packing in more HBM, but Google has opted for a software-based solution: extreme data compression.
 
-**![Diagram of data points shifting from Cartesian to polar coordinates.](../../../../../source/posts/터보퀀트/febcd1b0-1.png)**
+<b>![Diagram of data points shifting from Cartesian to polar coordinates.](../../../../../source/posts/터보퀀트/febcd1b0-1.png)</b>
 
 ## Reinterpreting Data: PolarQuant and QJL
 
-The core of TurboQuant lies in two algorithms: **PolarQuant** and **QJL (Quantized Johnson-Lindenstrauss)**. This approach fundamentally rearranges the data structure to drive efficiency.
+The core of TurboQuant lies in two algorithms: <b>PolarQuant</b> and <b>QJL (Quantized Johnson-Lindenstrauss)</b>. This approach fundamentally rearranges the data structure to drive efficiency.
 
-First, **PolarQuant** changes the coordinate system used to view the data. Instead of the traditional Cartesian (XY) coordinate system, it introduces a polar coordinate system using radius and angle. By separating data into "direction" and "magnitude," it can preserve core information while drastically reducing the computational load. Notably, it utilizes a random rotation technique to even out the data distribution, maximizing compression efficiency.
+First, <b>PolarQuant</b> changes the coordinate system used to view the data. Instead of the traditional Cartesian (XY) coordinate system, it introduces a polar coordinate system using radius and angle. By separating data into "direction" and "magnitude," it can preserve core information while drastically reducing the computational load. Notably, it utilizes a random rotation technique to even out the data distribution, maximizing compression efficiency.
 
-Next, **QJL** performs precise error correction. Leveraging the mathematical principle that high-dimensional data can be projected into lower dimensions while preserving distances between points, it resolves distortions from the compression process with just a single bit of additional information. As a result, it reduces 16-bit data down to a 3-bit level while maintaining an inference accuracy suitable for practical applications.
+Next, <b>QJL</b> performs precise error correction. Leveraging the mathematical principle that high-dimensional data can be projected into lower dimensions while preserving distances between points, it resolves distortions from the compression process with just a single bit of additional information. As a result, it reduces 16-bit data down to a 3-bit level while maintaining an inference accuracy suitable for practical applications.
 
 > "TurboQuant is not just about squashing data; it is closer to a technology that understands and rearranges the geometric structure of data. It will become a new benchmark for how software optimizes hardware resources."
 
-**![Split-screen of cluttered server racks and optimized fiber-optic network.](../../../../../source/posts/터보퀀트/2ef05757-2.png)**
+<b>![Split-screen of cluttered server racks and optimized fiber-optic network.](../../../../../source/posts/터보퀀트/2ef05757-2.png)</b>
 
 ## Reduced Memory Demand or a Catalyst for Market Expansion?
 
-The sensitive reaction of some semiconductor stock prices immediately following the technology's announcement was due to the market interpreting it as "reduced demand." The logic was that if the same performance can be achieved with less HBM, sales volume would decrease. However, history suggests that the **"Jevons Paradox"** is more likely to take effect.
+The sensitive reaction of some semiconductor stock prices immediately following the technology's announcement was due to the market interpreting it as "reduced demand." The logic was that if the same performance can be achieved with less HBM, sales volume would decrease. However, history suggests that the <b>"Jevons Paradox"</b> is more likely to take effect.
 
 Just as the increased efficiency of steam engines in the 19th century led to a surge in coal demand rather than a decrease—because the technology became widely adopted across all industries—the same principle applies here. As the cost of operating AI falls, countless companies that hesitated due to the financial burden will enter the market. In an environment where AI runs constantly on every device, total market demand will trend upward even if memory usage per device decreases.
 
-Specifically, TurboQuant is expected to be a trigger for the **On-device AI** era. It enables high-performance models to run using only the internal memory of smartphones or laptops, without relying on cloud infrastructure. For memory manufacturers, this presents a new opportunity in the specialized custom memory market for individual devices, moving beyond just HBM supply.
+Specifically, TurboQuant is expected to be a trigger for the <b>On-device AI</b> era. It enables high-performance models to run using only the internal memory of smartphones or laptops, without relying on cloud infrastructure. For memory manufacturers, this presents a new opportunity in the specialized custom memory market for individual devices, moving beyond just HBM supply.
 
-**![Digital circuit board world map illustrating global AI technology expansion.](../../../../../source/posts/터보퀀트/77cd4b74-3.png)**
+<b>![Digital circuit board world map illustrating global AI technology expansion.](../../../../../source/posts/터보퀀트/77cd4b74-3.png)</b>
 
 ## Strategic Outlook and Practical Response
 

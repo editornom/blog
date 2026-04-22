@@ -18,7 +18,7 @@ Recently, the IT industry has seen AX (AI Transformation) emerge as the primary 
 
 In the field, many believe they are achieving AX simply by using ChatGPT or Notion AI. However, frankly speaking, this is merely "tool utilization" rather than a "transformation." True AX is the process of placing AI at the core of the business and redesigning the existing workflows and decision-making systems themselves.
 
-**![AI data streams flowing through a minimalist futuristic office.](../../../../../source/posts/AX(AI_transformation)의_중요성/6c5a5aa9-0.png)**
+<b>![AI data streams flowing through a minimalist futuristic office.](../../../../../source/posts/AX(AI_transformation)의_중요성/6c5a5aa9-0.png)</b>
 
 ## Moving Beyond Infrastructure to the Intelligent Execution Phase
 
@@ -26,44 +26,44 @@ DX and AX differ fundamentally in their objectives. If DX is the infrastructure 
 
 The core value lies in reducing the time humans spend contemplating data and having AI prepare the basis for judgment or even handle execution directly. From a practical standpoint, the greatest value of AX is liberation from repetitive tasks. By embedding intelligence into workflows like research, proposal drafting, and contract review—which consume significant time in business development or marketing—teams can focus on more essential strategy formulation and decision-making.
 
-**![Diagram of an AI core connecting sales, HR, and marketing departments.](../../../../../source/posts/AX(AI_transformation)의_중요성/40e9ff9c-1.png)**
+<b>![Diagram of an AI core connecting sales, HR, and marketing departments.](../../../../../source/posts/AX(AI_transformation)의_중요성/40e9ff9c-1.png)</b>
 
 ## Technical Foundations Supporting Substantial Automation
 
-For AX to function in practice, technical support is essential. One of the most actively adopted technologies recently is **RAG (Retrieval-Augmented Generation)**. To prevent the chronic "Hallucination" issue of AI, this method forces the AI to first scan a company's internal, verified database and then generate answers based on that information.
+For AX to function in practice, technical support is essential. One of the most actively adopted technologies recently is <b>RAG (Retrieval-Augmented Generation)</b>. To prevent the chronic "Hallucination" issue of AI, this method forces the AI to first scan a company's internal, verified database and then generate answers based on that information.
 
 When RAG is applied to legal review, the AI doesn't just recite general legal knowledge. It compares the company's past contract history and special clauses to provide sophisticated guidance, such as, "This clause may conflict with the contract terms signed with Company A last year."
 
-Furthermore, the **MCP (Model Context Protocol)**, a standard protocol for connecting different AI agents, is worth watching. The key to advanced AX is building an environment where the entire organization moves within a single context—for instance, data analyzed by a marketing AI is immediately passed to a sales AI, which then links to performance metrics in the HR system.
+Furthermore, the <b>MCP (Model Context Protocol)</b>, a standard protocol for connecting different AI agents, is worth watching. The key to advanced AX is building an environment where the entire organization moves within a single context—for instance, data analyzed by a marketing AI is immediately passed to a sales AI, which then links to performance metrics in the HR system.
 
-There is already an increasing number of cases where work efficiency is maximized using workflow automation tools like **n8n** or development tools like **Cursor**. Environments where developers automate a significant portion of code writing or where sales teams complete CRM entries without manual work after a meeting are possible not just because they use tools well, but because they have properly integrated these technical architectures into their business.
+There is already an increasing number of cases where work efficiency is maximized using workflow automation tools like <b>n8n</b> or development tools like <b>Cursor</b>. Environments where developers automate a significant portion of code writing or where sales teams complete CRM entries without manual work after a meeting are possible not just because they use tools well, but because they have properly integrated these technical architectures into their business.
 
-**![Detailed 3D close-up of a digital circuit board with data pulses moving between ](../../../../../source/posts/AX(AI_transformation)의_중요성/2d5e77f4-2.png)**
+<b>![Detailed 3D close-up of a digital circuit board with data pulses moving between ](../../../../../source/posts/AX(AI_transformation)의_중요성/2d5e77f4-2.png)</b>
 
 ## Companies Redefining the Way They Work Through AX
 
-In Korea, organizations are beginning to show significant results through AX. **Channel Corporation** has fully automated the recording and summarizing of sales meetings through its internal AX team. As a result, manual tasks that used to take over four hours a week have disappeared, allowing managers to focus more on the core value of building customer relationships.
+In Korea, organizations are beginning to show significant results through AX. <b>Channel Corporation</b> has fully automated the recording and summarizing of sales meetings through its internal AX team. As a result, manual tasks that used to take over four hours a week have disappeared, allowing managers to focus more on the core value of building customer relationships.
 
-**Wrtn Technologies** provides customized AI agents to public institutions and enterprises through its dedicated "Wrtn AX" division. By building RAG-based platforms that reflect the specificities of each organization, they demonstrate that AX can be more than just a productivity tool—it can be a business model. In the case of **Imweb**, they are focusing on transforming the organizational culture itself so that employees in all roles can integrate AI into their daily work. Ultimately, the success of AX depends as much on "organizational receptivity to accepting AI as a colleague" as it does on technical prowess.
+<b>Wrtn Technologies</b> provides customized AI agents to public institutions and enterprises through its dedicated "Wrtn AX" division. By building RAG-based platforms that reflect the specificities of each organization, they demonstrate that AX can be more than just a productivity tool—it can be a business model. In the case of <b>Imweb</b>, they are focusing on transforming the organizational culture itself so that employees in all roles can integrate AI into their daily work. Ultimately, the success of AX depends as much on "organizational receptivity to accepting AI as a colleague" as it does on technical prowess.
 
 > "AX is not the adoption of technology itself, but the 'design' of a new way for humans and AI to collaborate."
 
-**![Cluttered paper desk vs. clean digital AI dashboard](../../../../../source/posts/AX(AI_transformation)의_중요성/c51dd4e1-3.png)**
+<b>![Cluttered paper desk vs. clean digital AI dashboard](../../../../../source/posts/AX(AI_transformation)의_중요성/c51dd4e1-3.png)</b>
 
 ## AX Implementation Strategy Tailored to Your Organization
 
 If you are considering adopting AX, it is necessary to go through the following checklist before starting full-scale development:
 
-1. **Process Decomposition:** Have you identified tasks that are repetitive and have clear rules?
-2. **Data Quality:** Is the data that the AI will learn from or reference managed systematically?
-3. **Governance:** Is there a clear entity responsible for reviewing and taking final accountability for AI outcomes?
-4. **Connectivity:** Can it be flexibly linked with existing systems without being locked into a specific tool?
+1. <b>Process Decomposition:</b> Have you identified tasks that are repetitive and have clear rules?
+2. <b>Data Quality:</b> Is the data that the AI will learn from or reference managed systematically?
+3. <b>Governance:</b> Is there a clear entity responsible for reviewing and taking final accountability for AI outcomes?
+4. <b>Connectivity:</b> Can it be flexibly linked with existing systems without being locked into a specific tool?
 
 When collaborating with external partners, it is dangerous to only consider development costs. This is because in AX, the ability to understand business processes and design their connection to AI is far more important than the actual code implementation. You must carefully evaluate whether the partner can communicate in business terms and if they have sufficient experience in data security and operational environments.
 
-In this regard, a partner like **Toktokhan Dev** can be a realistic alternative. They move beyond simple outsourcing and aim to directly graft the practical know-how gained from operating their own B2B services into projects. Having built AX expertise in various environments—from startups to new business ventures of large corporations—they are an excellent choice if you are looking for a partner who understands the nuances of business.
+In this regard, a partner like <b>Toktokhan Dev</b> can be a realistic alternative. They move beyond simple outsourcing and aim to directly graft the practical know-how gained from operating their own B2B services into projects. Having built AX expertise in various environments—from startups to new business ventures of large corporations—they are an excellent choice if you are looking for a partner who understands the nuances of business.
 
-**![Diverse professionals collaborating on AI data visualizations](../../../../../source/posts/AX(AI_transformation)의_중요성/698f59e4-4.png)**
+<b>![Diverse professionals collaborating on AI data visualizations](../../../../../source/posts/AX(AI_transformation)의_중요성/698f59e4-4.png)</b>
 
 ## Advice for Companies Riding the Wave of Change
 
