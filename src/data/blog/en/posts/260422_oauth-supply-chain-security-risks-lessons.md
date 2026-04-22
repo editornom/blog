@@ -28,6 +28,17 @@ faqs:
   a: First, organizations should conduct a full audit of OAuth integrations using SSPM solutions. Then, they must block apps with unnecessary or excessive permissions based on the 'Principle of Least Privilege' and periodically clean up abandoned refresh tokens.
 - q: What kind of monitoring system is needed to detect anomalies?
   a: Monitoring should go beyond simple connection logs to analyze the API call patterns of apps. It is essential to build a response system that can automatically invalidate tokens immediately if abnormal patterns, such as an app pulling excessive data, are detected.
+references:
+- https://www.trendmicro.com/en_us/research/26/d/vercel-breach-oauth-supply-chain.html
+- https://www.obsidiansecurity.com/blog/a-guide-to-saas-supply-chain-solutions
+- https://cloudsecurityalliance.org/blog/2025/09/25/the-salesloft-drift-oauth-supply-chain-attack-cross-industry-lessons-in-third-party-access-visibility
+- https://www.zscaler.com/blogs/product-insights/gainsight-supply-chain-attack-what-it-means-saas-security
+- https://appomni.com/learn/saas-security-fundamentals/oauth-token-security-risks/
+- https://unit42.paloaltonetworks.com/third-party-supply-chain-token-management/
+- https://www.obsidiansecurity.com/blog/what-are-oauth-tokens-vulnerabilities
+- https://www.valencesecurity.com/resources/blogs/salesforce-oauth-token-breach-what-every-security-team-must-know
+- https://redcanary.com/blog/threat-detection/google-workspace-oauth-attack/
+- https://vercel.com/kb/bulletin/vercel-april-2026-security-incident
 ---
 
 Recently, the front line of IT security has shifted beyond server vulnerabilities toward exploiting the trust relationships between systems. In particular, the supply chain security incidents involving Salesloft and Gainsight in 2025 vividly demonstrated how the OAuth integrations we adopt for convenience can become fatal attack vectors.

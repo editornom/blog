@@ -28,6 +28,17 @@ faqs:
   a: "まずSSPMソリューションなどで組織内のOAuth連携状況を全数調査すべきです。その後、'最小権限の原則' に基づき、不要または過剰な権限を持つアプリを遮断し、放置されたリフレッシュトークンを定期的に整理する必要があります。"
 - q: "異常兆候検知のために、どのようなモニタリング体制が必要ですか？"
   a: "単にアクセスの有無を見るだけでなく、アプリのAPI呼び出しパターンを分析する必要があります。特定のアプリが通常より過剰なデータを取得するなどの異常パターンが検知された際、そのトークンを即座に自動無効化する対応システムの構築が不可欠です。"
+references:
+- https://www.trendmicro.com/en_us/research/26/d/vercel-breach-oauth-supply-chain.html
+- https://www.obsidiansecurity.com/blog/a-guide-to-saas-supply-chain-solutions
+- https://cloudsecurityalliance.org/blog/2025/09/25/the-salesloft-drift-oauth-supply-chain-attack-cross-industry-lessons-in-third-party-access-visibility
+- https://www.zscaler.com/blogs/product-insights/gainsight-supply-chain-attack-what-it-means-saas-security
+- https://appomni.com/learn/saas-security-fundamentals/oauth-token-security-risks/
+- https://unit42.paloaltonetworks.com/third-party-supply-chain-token-management/
+- https://www.obsidiansecurity.com/blog/what-are-oauth-tokens-vulnerabilities
+- https://www.valencesecurity.com/resources/blogs/salesforce-oauth-token-breach-what-every-security-team-must-know
+- https://redcanary.com/blog/threat-detection/google-workspace-oauth-attack/
+- https://vercel.com/kb/bulletin/vercel-april-2026-security-incident
 ---
 
 最近のITセキュリティの最前線は、サーバー自体の脆弱性を超え、システム間の「信頼関係」を突く形へと変化しています。特に2025年に発生したSalesloftとGainsightのサプライチェーンセキュリティ事故は、私たちが利便性のために導入したOAuth統合がいかに致命的な攻撃経路になり得るかを如実に示しました。

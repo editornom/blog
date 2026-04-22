@@ -38,6 +38,17 @@ faqs:
 - q: 이상 징후 탐지를 위해 어떤 모니터링 체계가 필요한가요?
   a: 단순히 접속 여부만 보는 것이 아니라, 앱의 API 호출 패턴을 분석해야 합니다. 특정 앱이 평소보다 과도한 데이터를 가져가는 등의 이상
     패턴이 감지되면, 해당 토큰을 즉시 자동 무효화하는 대응 시스템 구축이 필수적입니다.
+references:
+- https://www.trendmicro.com/en_us/research/26/d/vercel-breach-oauth-supply-chain.html
+- https://www.obsidiansecurity.com/blog/a-guide-to-saas-supply-chain-solutions
+- https://cloudsecurityalliance.org/blog/2025/09/25/the-salesloft-drift-oauth-supply-chain-attack-cross-industry-lessons-in-third-party-access-visibility
+- https://www.zscaler.com/blogs/product-insights/gainsight-supply-chain-attack-what-it-means-saas-security
+- https://appomni.com/learn/saas-security-fundamentals/oauth-token-security-risks/
+- https://unit42.paloaltonetworks.com/third-party-supply-chain-token-management/
+- https://www.obsidiansecurity.com/blog/what-are-oauth-tokens-vulnerabilities
+- https://www.valencesecurity.com/resources/blogs/salesforce-oauth-token-breach-what-every-security-team-must-know
+- https://redcanary.com/blog/threat-detection/google-workspace-oauth-attack/
+- https://vercel.com/kb/bulletin/vercel-april-2026-security-incident
 ---
 
 최근 IT 보안의 최전선은 서버 자체의 취약점을 넘어, 시스템 간의 신뢰 관계를 파고드는 양상으로 변하고 있습니다. 특히 2025년 발생한 Salesloft와 Gainsight의 공급망 보안 사고는 우리가 편의를 위해 도입한 OAuth 통합이 어떻게 치명적인 공격 통로가 될 수 있는지 여실히 보여주었습니다.

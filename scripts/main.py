@@ -21,7 +21,6 @@ from search_expert import deep_search_and_filter
 from faq_expert import generate_faq
 from api_utils import gemini_tracker
 from glossary_expert import pick_daily_glossary_keyword
-import yaml
 
 
 
@@ -458,15 +457,22 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
     else:
         prefix = datetime.datetime.now().strftime("%y%m%d_")
         
-    # 4.5 Add References Section (E-E-A-T: Trustworthiness)
+    # 4.5 Inject References into Frontmatter (E-E-A-T: Trustworthiness)
     if urls:
-        references_md = "\n\n## 📚 참고 문헌 및 출처\n"
-        # Use first 5-10 URLs as references to avoid cluttering but show breadth
-        for url in urls[:10]:
-            domain = urlparse(url).netloc
-            if domain:
-                references_md += f"- [{domain}]({url})\n"
-        draft += references_md
+        # Use first 10 URLs
+        ref_list = urls[:10]
+        # Move FAQ injection logic up or use PyYAML to add references
+        try:
+            parts = re.split(r'^---$', draft, maxsplit=2, flags=re.MULTILINE)
+            if len(parts) >= 3:
+                frontmatter_raw = parts[1]
+                body_content = parts[2]
+                fm_data = yaml.safe_load(frontmatter_raw)
+                fm_data["references"] = ref_list
+                new_fm = yaml.dump(fm_data, allow_unicode=True, sort_keys=False).strip()
+                draft = f"---\n{new_fm}\n---{body_content}"
+        except Exception as e:
+            print(f"⚠️ [References] YAML injection failed: {e}")
 
     target_dir = os.path.join("src", "data", "blog", "ko", folder)
     os.makedirs(target_dir, exist_ok=True)

@@ -28,6 +28,17 @@ faqs:
   a: 首先应使用 SSPM 方案等对组织内的 OAuth 联动情况进行全面调查。随后根据‘最小权限原则’拦截不必要或权限过大的应用，并定期清理闲置的刷新令牌。
 - q: 为了探测异常迹象，需要建立什么样的监控体系？
   a: 不能仅查看是否登录，还需分析应用的 API 调用模式。如果监测到某个应用获取的数据量远超平时等异常模式，必须建立能立即自动注销该令牌的响应系统。
+references:
+- https://www.trendmicro.com/en_us/research/26/d/vercel-breach-oauth-supply-chain.html
+- https://www.obsidiansecurity.com/blog/a-guide-to-saas-supply-chain-solutions
+- https://cloudsecurityalliance.org/blog/2025/09/25/the-salesloft-drift-oauth-supply-chain-attack-cross-industry-lessons-in-third-party-access-visibility
+- https://www.zscaler.com/blogs/product-insights/gainsight-supply-chain-attack-what-it-means-saas-security
+- https://appomni.com/learn/saas-security-fundamentals/oauth-token-security-risks/
+- https://unit42.paloaltonetworks.com/third-party-supply-chain-token-management/
+- https://www.obsidiansecurity.com/blog/what-are-oauth-tokens-vulnerabilities
+- https://www.valencesecurity.com/resources/blogs/salesforce-oauth-token-breach-what-every-security-team-must-know
+- https://redcanary.com/blog/threat-detection/google-workspace-oauth-attack/
+- https://vercel.com/kb/bulletin/vercel-april-2026-security-incident
 ---
 
 最近，IT 安全的前沿阵地已不再局限于服务器自身的漏洞，而是演变为针对系统间信任关系的渗透。特别是 2025 年发生的 Salesloft 和 Gainsight 供应链安全事故，深刻揭示了我们为了便利而引入的 OAuth 集成是如何演变成致命攻击通道的。
