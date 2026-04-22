@@ -60,7 +60,7 @@ def assemble_post_metadata(reviewed_data, folder="posts", keyword="", urls=None)
         "author": "editornom",
         "author_role": "Senior Tech Editor",
         "author_url": "https://editornom.com/about",
-        "pubDatetime": pub_time.strftime("%Y-%m-%dT%H:%M:%S+09:00"),
+        "pubDatetime": pub_time, # Pass datetime object directly
         "slug": slug,
         "featured": False,
         "draft": False,
@@ -70,7 +70,7 @@ def assemble_post_metadata(reviewed_data, folder="posts", keyword="", urls=None)
     }
     
     # [E-E-A-T] Last check for author meta
-    fm_data['modDatetime'] = seoul_now.strftime("%Y-%m-%dT%H:%M:%S+09:00")
+    fm_data['modDatetime'] = seoul_now # Pass datetime object directly
     
     yaml_str = yaml.dump(fm_data, allow_unicode=True, sort_keys=False, indent=2)
     final_markdown = f"---\n{yaml_str}---\n\n{content}"
