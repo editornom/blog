@@ -3,6 +3,7 @@ from google.api_core import exceptions
 from api_utils import gemini_retry, gemini_limiter, gemini_tracker
 import os
 import re
+import yaml
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -22,14 +23,20 @@ def review_manuscript(draft, folder="posts"):
 
     client = genai.Client(api_key=api_key)
 
-    # 🌟 [개선] Frontmatter 분리 로직 (Action Plan 5)
-    # YAML 영역을 AI에게 보내지 않고 보호하여 Astro 빌드 에러를 원천 차단합니다.
-    yaml_match = re.match(r'^(---\s*\n.*?\n---\s*\n)', draft, re.DOTALL)
+    # 🌟 [개선] Frontmatter 분리 및 제목 추출 로직
+    # YAML 영역을 AI에게 보내지 않고 보호하되, 제목(title)만 추출하여 윤문 대상에 포함합니다.
+    yaml_match = re.match(r'^---\s*\n(.*?)\n---\s*\n', draft, re.DOTALL)
+    current_title = ""
+    fm_dict = {}
     if yaml_match:
-        frontmatter = yaml_match.group(1)
-        body_content = draft[len(frontmatter):]
+        frontmatter_raw = yaml_match.group(1)
+        try:
+            fm_dict = yaml.safe_load(frontmatter_raw)
+            current_title = fm_dict.get('title', '')
+        except Exception:
+            pass
+        body_content = draft[yaml_match.end():]
     else:
-        frontmatter = ""
         body_content = draft
 
     # 경쟁사 텍스트 파일 로드 (Negative Prompt 활용)
@@ -81,8 +88,17 @@ def review_manuscript(draft, folder="posts"):
 - 오직 마크다운 문법으로 완성된 '최종 수정 원고 텍스트'만 출력해야 합니다.
 
 ---
-[초안 텍스트]
+[초안 제목]
+{current_title}
+
+[초안 본문]
 {body_content}
+
+# 최종 출력 형식 (지시사항 - 절대 준수)
+1. 첫 번째 줄에는 반드시 '다듬어진 제목'만 작성하십시오. (따옴표나 '제목:' 같은 태그 포함 금지)
+2. 두 번째 줄은 비워두십시오.
+3. 세 번째 줄부터 '다듬어진 본문(마크다운)'을 작성하십시오.
+4. 어떠한 메타 코멘트도 포함하지 마십시오.
 """
     # ---------------------------------------------------------
 
@@ -95,23 +111,40 @@ def review_manuscript(draft, folder="posts"):
         )
 
     try:
-        print("Gemini가 원고를 검수(디톡스) 중입니다...")
+        print("Gemini가 원고 및 제목을 검수(디톡스) 중입니다...")
         response = call_api()
         gemini_tracker.add_text_usage(response)
-        result_text = response.text
+        response_text = response.text.strip()
         
-        # 🛡️ 파이썬 기반 마크다운 문법 안정성 검사 (Action Plan 적용)
-        # 1. 코드 블록(```) 닫기 누락 검사 및 자동 복구
+        # 제목과 본문 분리 파싱
+        # 지시한 대로 첫 줄은 제목, 그 이후는 본문으로 간주
+        parts = response_text.split("\n", 2)
+        if len(parts) >= 3:
+            refined_title = parts[0].strip().strip('"').strip("'")
+            result_text = parts[2].strip()
+        elif len(parts) == 2:
+             refined_title = parts[0].strip().strip('"').strip("'")
+             result_text = parts[1].strip()
+        else:
+            refined_title = current_title # 실패 시 기존 제목 유지
+            result_text = response_text
+
+        # 🛡️ 파이썬 기반 마크다운 문법 안정성 검사
         if result_text.count("```") % 2 != 0:
-            print("  ⚠️ [Detox] 마크다운 코드 블록 닫기(```) 누락 감지. 파이썬 단에서 자동 추가합니다.")
+            print("  ⚠️ [Detox] 마크다운 코드 블록 닫기(```) 누락 감지. 자동 복구합니다.")
             result_text += "\n```\n"
             
-        # 2. 표(Table) 문법 기본 점검 (헤더 구분선 |---| 누락 감지)
         if "|" in result_text and "\n|---" not in result_text and "\n| ---" not in result_text.replace(" ", ""):
-            print("  ⚠️ [Detox] 마크다운 표 문법이 불안전할 수 있습니다. 수동 점검이 필요할 수 있습니다.")
+            print("  ⚠️ [Detox] 마크다운 표 문법 불안전 감지.")
 
-        # 🌟 Frontmatter 재결합
-        return frontmatter + result_text
+        # 🌟 Frontmatter 업데이트 및 재결합
+        if yaml_match and fm_dict:
+            fm_dict['title'] = refined_title
+            # YAML 생성 시 따옴표 처리 및 유니코드 보존
+            new_fm = yaml.dump(fm_dict, allow_unicode=True, sort_keys=False, indent=2)
+            return f"---\n{new_fm.strip()}\n---\n\n{result_text}"
+        
+        return result_text
 
     except Exception as e:
         print(f"❌ Gemini 디톡스 중 오류 발생: {e}")

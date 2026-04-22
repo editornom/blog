@@ -200,6 +200,8 @@ def generate_blog_post(crawled_content, folder="posts", additional_instructions=
         markdown = f"""---
 title: "{final_draft_data.get('title', '').replace('"', "'")}"
 author: "editornom"
+author_role: "IT Infrastructure Specialist"
+author_url: "https://editornom.com/about"
 pubDatetime: {pub_time.strftime("%Y-%m-%dT%H:%M:%S+09:00")}
 slug: "{final_draft_data.get('slug', 'auto-slug')}"
 featured: false

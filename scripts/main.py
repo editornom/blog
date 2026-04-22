@@ -5,6 +5,8 @@ import re
 import time
 import datetime
 from dotenv import load_dotenv
+from urllib.parse import urlparse
+import yaml
 
 from crawler import fetch_content, extract_related_links
 from generator import generate_blog_post
@@ -239,6 +241,11 @@ def process_single_file(file_path, folder="posts", target_lang=None, include_faq
                 if len(parts) >= 3:
                     fm = yaml.safe_load(parts[1])
                     fm['faqs'] = faqs
+                    # [E-E-A-T] Update metadata for freshness and authority
+                    fm['modDatetime'] = datetime.datetime.now().astimezone().isoformat()
+                    fm['author_role'] = "IT Infrastructure Specialist"
+                    fm['author_url'] = "https://editornom.com/about"
+                    
                     new_fm = yaml.dump(fm, allow_unicode=True, sort_keys=False)
                     draft = f"---\n{new_fm}---\n{parts[2].strip()}"
             
@@ -451,6 +458,16 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
     else:
         prefix = datetime.datetime.now().strftime("%y%m%d_")
         
+    # 4.5 Add References Section (E-E-A-T: Trustworthiness)
+    if urls:
+        references_md = "\n\n## 📚 참고 문헌 및 출처\n"
+        # Use first 5-10 URLs as references to avoid cluttering but show breadth
+        for url in urls[:10]:
+            domain = urlparse(url).netloc
+            if domain:
+                references_md += f"- [{domain}]({url})\n"
+        draft += references_md
+
     target_dir = os.path.join("src", "data", "blog", "ko", folder)
     os.makedirs(target_dir, exist_ok=True)
     post_path = os.path.join(target_dir, f"{prefix}{slug}.md")
