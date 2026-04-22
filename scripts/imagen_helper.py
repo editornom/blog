@@ -21,7 +21,8 @@ def enhance_image_prompt(base_prompt, client):
 당신은 DALL-E, Midjourney, Imagen 같은 AI 이미지 제너레이터 프롬프트 작성 전문가입니다.
 사용자가 블로그에 삽입할 이미지의 간략한 상황 설명이나 키워드를 줄 것입니다.
 이를 바탕으로 최고 품질의 이미지를 생성할 수 있는 매우 상세한 영문 프롬프트(Prompt)로 확장해주세요.
-반드시 영어로만 출력하며, "Cinematic lighting, 8k resolution, highly detailed, photorealistic, isometric 3d render" 등의 수식어를 적절히 혼합하여 쉼표로 연결된 1~2줄의 문구만 출력하십시오.
+반드시 영어로만 출력하며, "Cinematic lighting, 8k resolution, highly detailed, photorealistic, isometric 3d render" 등의 수식어를 적절히 혼합하여 쉼표로 연결된 1~2줄의 문구만 출력하십시오. 
+특히, 이미지 내에 텍스트(Text), 인포그래픽(Infographic), 표(Table), 차트(Chart) 등이 절대 포함되지 않도록 "no text, no infographics, no tables, no charts, no labels"와 같은 부정 프롬프트를 적절히 융합하여 프롬프트를 구성하십시오.
 
 [원본 설명]: {base_prompt}
 """

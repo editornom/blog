@@ -19,6 +19,8 @@ from search_expert import deep_search_and_filter
 from faq_expert import generate_faq
 from api_utils import gemini_tracker
 from glossary_expert import pick_daily_glossary_keyword
+import yaml
+
 
 
 load_dotenv()
@@ -232,7 +234,6 @@ def process_single_file(file_path, folder="posts", target_lang=None, include_faq
             # For simplicity in this 'posts' mode, we trust the translator to handle frontmatter if it's there,
             # or we manually inject if missing.
             if "faqs:" not in draft[:1000]: # Check first 1000 chars (frontmatter area)
-                import yaml
                 # Simple injection: find the second --- and put it before
                 parts = draft.split("---", 2)
                 if len(parts) >= 3:
@@ -378,7 +379,6 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
             
             # 프런트매터 영역에 YAML 배열 형태로 주입
             # 단순화를 위해 정규식을 사용하여 두 번째 --- 앞에 삽입합니다.
-            import yaml
             faq_yaml = yaml.dump({"faqs": faqs_data}, allow_unicode=True, sort_keys=False, indent=2)
             # Remove start/end doc markers from dump if any
             faq_yaml = faq_yaml.replace("---", "").strip()
