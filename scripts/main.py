@@ -414,6 +414,11 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
     print(f"Found {len(image_placeholders)} image placeholders.")
     report["images"]["requested"] = len(image_placeholders)
 
+    # [Context Extraction] Extract Title for image context to prevent hallucination
+    title_match = re.search(r'^title:\s*(["\']?)(.*?)\1\s*$', draft, re.MULTILINE)
+    post_title = title_match.group(2) if title_match else "IT Tech Blog"
+    image_context = f"Post Title: {post_title} | Keyword: {keyword if keyword else 'Technology'}"
+
     for i, prompt in enumerate(image_placeholders):
         img_uuid = str(uuid.uuid4())[:8]
         # 포맷 최적화: png 대신 webp 사용
@@ -421,7 +426,7 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
         img_path = os.path.join(source_img_dir, img_filename)
         
         print(f"Generating AI image for: {prompt[:50]}...")
-        generated_path, img_error = generate_image(prompt, img_path)
+        generated_path, img_error = generate_image(prompt, img_path, context=image_context)
         
         # Note: Rate limiting is now handled internally by generate_image via TokenBucket.
         
