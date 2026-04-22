@@ -28,3 +28,4 @@
 [2026-04-21] [AI추천_39점] Durable Runtime
 [2026-04-21] [AI추천_39점] 자율형 취약점 탐지 (Autonomous Vulnerability Research)
 [2026-04-22] [수동선정] SASE (Secure Access Service Edge)
+[2026-04-22] [AI추천_39점] OAuth Supply Chain Security
