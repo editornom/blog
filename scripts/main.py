@@ -237,19 +237,19 @@ def process_single_file(file_path, folder="posts", target_lang=None, include_faq
             # If the draft already has 'faqs:' in frontmatter, we might want to skip or update.
             # For simplicity in this 'posts' mode, we trust the translator to handle frontmatter if it's there,
             # or we manually inject if missing.
-            if "faqs:" not in draft[:1000]: # Check first 1000 chars (frontmatter area)
-                # Simple injection: find the second --- and put it before
-                parts = draft.split("---", 2)
-                if len(parts) >= 3:
-                    fm = yaml.safe_load(parts[1])
+            # [E-E-A-T] Update metadata for freshness and authority
+            parts = draft.split("---", 2)
+            if len(parts) >= 3:
+                fm = yaml.safe_load(parts[1])
+                if include_faq and faqs:
                     fm['faqs'] = faqs
-                    # [E-E-A-T] Update metadata for freshness and authority
-                    fm['modDatetime'] = datetime.datetime.now().astimezone()
-                    fm['author_role'] = "Senior Tech Editor"
-                    fm['author_url'] = "https://editornom.com/about"
-                    
-                    new_fm = yaml.dump(fm, allow_unicode=True, sort_keys=False)
-                    draft = f"---\n{new_fm}---\n{parts[2].strip()}"
+                
+                fm['modDatetime'] = datetime.datetime.now().astimezone()
+                fm['author_role'] = "Senior Tech Editor"
+                fm['author_url'] = "https://editornom.com/about"
+                
+                new_fm = yaml.dump(fm, allow_unicode=True, sort_keys=False)
+                draft = f"---\n{new_fm}---\n{parts[2].strip()}"
             
             print(f"Ensured FAQ data for '{keyword}' is ready for translation.")
             
@@ -499,6 +499,15 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
         report["draft"]["error"] = f"YAML 메타데이터 처리 실패: {str(e)}"
         slug = f"post-err-{datetime.datetime.now().strftime('%M%S')}"
         prefix = datetime.datetime.now().strftime("%y%m%d_")
+
+    # [NEW] E-E-A-T 신뢰도 확보를 위한 참고 문헌 (아코디언 UI로 숨김 처리)
+    if urls:
+        references_html = "\n\n---\n\n<details>\n<summary>📚 참고 자료 확인하기</summary>\n<ul>\n"
+        for u in urls[:10]: # Too many links can be spammy, limit to 10
+            domain = urlparse(u).netloc.replace("www.", "")
+            references_html += f"<li><a href=\"{u}\" target=\"_blank\" rel=\"noopener noreferrer\">{domain} 원문</a></li>\n"
+        references_html += "</ul>\n</details>\n"
+        draft += references_html
 
     target_dir = os.path.join("src", "data", "blog", "ko", folder)
     os.makedirs(target_dir, exist_ok=True)

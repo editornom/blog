@@ -3,35 +3,14 @@ layout: ../../layouts/AboutLayout.astro
 title: "About"
 ---
 
-AstroPaper is a minimal, accessible and SEO-friendly blog theme built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
+## 순수 IT 트렌드 & 테크 인사이트 큐레이터
+복잡한 기술의 맥락을 짚어내는 테크 큐레이터, editorNOM입니다.
 
-![Astro Paper](public/astropaper-og.jpg)
+쏟아지는 IT 뉴스와 신기술 속에서 길을 잃은 적 없으신가요?
+외계어 같은 전문 용어로 가득한 기술 블로그와, 보도자료를 그대로 복사한 영혼 없는 기사들 사이에서 기술의 '진짜 의미'를 찾기란 쉽지 않습니다.
 
-AstroPaper provides a solid foundation for blogs, or even portfolios\_ with full markdown support, built-in dark mode, and a clean layout that works out-of-the-box.
+저는 파편화된 기술 트렌드를 모아, 그 이면에 숨겨진 맥락을 읽기 쉬운 언어로 번역하는 작업을 합니다.
 
-The blog posts in this theme also serve as guides, docs or example articles\_ making AstroPaper a flexible starting point for your next content-driven site.
+AI가 일상을 넘어 웹 생태계를 어떻게 재편하고 있는지, 차세대 보안 아키텍처는 왜 등장할 수밖에 없었는지, 그리고 실리콘밸리의 빅테크 기업들이 어떤 미래를 설계하고 있는지.
 
-## Features
-
-AstroPaper comes with a set of useful features that make content publishing easy and effective:
-
-- SEO-friendly
-- Fast performance
-- Light & dark mode
-- Highly customizable
-- Organizable blog posts
-- Responsive & accessible
-- Static search with [PageFind](https://pagefind.app/)
-- Automatic social image generation
-
-and so much more.
-
-## Show your support
-
-If you like [AstroPaper](https://github.com/satnaing/astro-paper), consider giving it a star ⭐️.
-
-Found a bug 🐛 or have an improvement ✨ in mind? Feel free to open an [issue](https://github.com/satnaing/astro-paper/issues), submit a [pull request](https://github.com/satnaing/astro-paper/pulls) or start a [discussion](https://github.com/satnaing/astro-paper/discussions).
-
-If you find this theme helpful, you can also [sponsor me on GitHub](https://github.com/sponsors/satnaing) or [buy me a coffee](https://buymeacoffee.com/satnaing) to show your support — every penny counts.
-
-Kyay zuu! 🙏🏼
+단순히 기술의 '스펙'을 나열하는 것을 넘어 **"그래서 이 기술이 왜 만들어졌고, 어떤 변화를 가져올 것인가?"**라는 본질적인 질문에 대한 인사이트를 기록합니다. 기술의 흐름을 가장 세련되고 명확하게 읽어내고 싶은 분들을 환영합니다.
