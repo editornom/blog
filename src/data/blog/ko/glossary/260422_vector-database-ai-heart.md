@@ -3,7 +3,7 @@ title: 언어의 지도를 그리는 기술, 벡터 데이터베이스가 AI의 
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
-pubDatetime: '2026-04-22T17:29:28+09:00'
+pubDatetime: 2026-04-22T17:29:28+09:00
 slug: vector-database-ai-heart
 featured: false
 draft: false
