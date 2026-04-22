@@ -242,7 +242,7 @@ def process_single_file(file_path, folder="posts", target_lang=None, include_faq
                     fm['faqs'] = faqs
                     # [E-E-A-T] Update metadata for freshness and authority
                     fm['modDatetime'] = datetime.datetime.now().astimezone().isoformat()
-                    fm['author_role'] = "IT Infrastructure Specialist"
+                    fm['author_role'] = "Senior Tech Editor"
                     fm['author_url'] = "https://editornom.com/about"
                     
                     new_fm = yaml.dump(fm, allow_unicode=True, sort_keys=False)
@@ -469,6 +469,11 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
                 body_content = parts[2]
                 fm_data = yaml.safe_load(frontmatter_raw)
                 fm_data["references"] = ref_list
+                # [E-E-A-T] Update metadata for freshness and editorial persona
+                fm_data['modDatetime'] = datetime.datetime.now().astimezone().isoformat()
+                fm_data['author_role'] = "Senior Tech Editor"
+                fm_data['author_url'] = "https://editornom.com/about"
+                
                 new_fm = yaml.dump(fm_data, allow_unicode=True, sort_keys=False).strip()
                 draft = f"---\n{new_fm}\n---{body_content}"
         except Exception as e:

@@ -21,8 +21,9 @@ def enhance_image_prompt(base_prompt, client):
 당신은 DALL-E, Midjourney, Imagen 같은 AI 이미지 제너레이터 프롬프트 작성 전문가입니다.
 사용자가 블로그에 삽입할 이미지의 간략한 상황 설명이나 키워드를 줄 것입니다.
 이를 바탕으로 최고 품질의 이미지를 생성할 수 있는 매우 상세한 영문 프롬프트(Prompt)로 확장해주세요.
-반드시 영어로만 출력하며, 화려한 "Cinematic lighting" 같은 수식어보다는 B2B IT 전문가가 직접 디자인한 듯한 "Minimalist cloud architecture diagram, flat vector style, isometric blueprint, technical illustration, clean corporate colors" 스타일로 생성하십시오.
-특히, 이미지 내에 텍스트(Text), 인포그래픽(Infographic), 표(Table), 차트(Chart) 등이 절대 포함되지 않도록 "no text, no infographics, no tables, no charts, no labels"와 같은 부정 프롬프트를 적절히 융합하여 프롬프트를 구성하십시오.
+반드시 영어로만 출력하며, 뻔한 스톡 사진(Cinematic, Photorealistic) 느낌을 배제하십시오. 
+대신 세련된 IT 매거진에 들어갈 법한 "High-quality modern tech illustration, engaging editorial style, conceptual flat design, clean background" 스타일로 생성하십시오.
+AI 텍스트 렌더링 오류를 막기 위해 "no text, no letters, no labels, no complex charts"라는 부정 프롬프트를 융합하십시오.
 
 [원본 설명]: {base_prompt}
 """
