@@ -204,12 +204,12 @@ const t = UI_TEXT[currentLang as keyof typeof UI_TEXT] || UI_TEXT.ko;
     {post.data.references && post.data.references.length > 0 && (
       <div class="references-section mt-12">
         <details class="group transition-all opacity-80 hover:opacity-100">
-          <summary class="cursor-pointer font-medium flex items-center justify-between list-none py-2 border-b border-border/50">
+          <summary class="cursor-pointer font-medium flex items-center justify-start gap-2.5 list-none py-2 border-b border-border/50">
             <span class="flex items-center gap-2 text-foreground/70">
               📚 <span class="group-open:hidden">참고 자료 확인하기</span>
               <span class="hidden group-open:inline">정보 출처 및 관련 문서</span>
             </span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform group-open:rotate-180 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </summary>
