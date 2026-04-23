@@ -1,0 +1,7 @@
+https://unit42.paloaltonetworks.com/air-snitch-enterprise-wireless-attacks/
+https://www.sans.org/webcasts/airsnitch-how-worried-should-you-be
+https://arstechnica.com/security/2026/02/new-airsnitch-attack-breaks-wi-fi-encryption-in-homes-offices-and-enterprises/
+https://news.ycombinator.com/item?id=47167763
+https://github.com/seclab-ucr/airsnitch
+https://www.supernetworks.org/pages/blog/airsnitch-breaking-wifi-client-isolation
+https://news.hada.io/topic?id=27058

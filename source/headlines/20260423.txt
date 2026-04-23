@@ -54,12 +54,12 @@
 [https://wheelfront.com/this-alberta-startup-sells-no-tech-tractors-for-half-price/] Alberta startup sells no-tech tractors for half price - Comments
 [https://techcrunch.com/2026/04/22/apple-fixes-bug-that-cops-used-to-extract-deleted-chat-messages-from-iphones/] Apple fixes bug that cops used to extract deleted chat messages from iPhones - Comments
 [https://fingerprint.com/blog/firefox-tor-indexeddb-privacy-vulnerability/] We found a stable Firefox identifier linking all your private Tor identities - Comments
-[https://qwen.ai/blog?id=qwen3.6-27b] Qwen3.6-27B: Flagship-Level Coding in a 27B Dense Model - Comments
 [https://www.quantamagazine.org/what-physical-life-force-turns-biologys-wheels-20260420/] A True Life Hack: What Physical 'Life Force' Turns Biology's Wheels? - Comments
 [https://www.scattered-thoughts.net/writing/borrow-checking-without-type-checking/] Borrow-checking without type-checking - Comments
-[https://www.nytimes.com/2026/04/20/business/infowars-alex-jones-the-onion.html] The Onion to Take over InfoWars - Comments
+[https://arstechnica.com/staff/2026/04/our-newsroom-ai-policy/] Ars Technica: Our newsroom AI policy - Comments
 [https://tempest.homemade.systems] Tempest vs. Tempest: The Making and Remaking of Atari's Iconic Video Game - Comments
 [https://nrehiew.github.io/blog/minimal_editing/] Over-editing refers to a model modifying code beyond what is necessary - Comments
+[https://www.nytimes.com/2026/04/20/business/infowars-alex-jones-the-onion.html] The Onion to Take over InfoWars - Comments
 [https://engineering.fb.com/2026/04/21/ml-applications/modernizing-the-facebook-groups-search-to-unlock-the-power-of-community-knowledge/] Modernizing the Facebook Groups Search to Unlock the Power of Community Knowledge - We’ve fundamentally transformed Facebook Groups Search to help people more reliably discover, sort through, and validate community content that’s most relevant to them. We’ve adopted a new hybrid retr...
 [https://github.blog/news-insights/company-news/changes-to-github-copilot-individual-plans/] Changes to GitHub Copilot Individual plans - We're making these changes to ensure a reliable and predictable experience for existing customers. The post Changes to GitHub Copilot Individual plans appeared first on The GitHub Blog.
 [https://github.blog/open-source/git/highlights-from-git-2-54/] Highlights from Git 2.54 - The open source Git project just released Git 2.54. Here is GitHub’s look at some of the most interesting features and changes introduced since last time. The post Highlights from Git 2.54 appeared fi...
