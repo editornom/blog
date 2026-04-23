@@ -487,11 +487,12 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
             alt_keyword = keyword if keyword else "IT 트렌드"
             md_img_link = f"![{alt_keyword} - {translated_alt}]({rel_path})"
             
-            draft = draft.replace(f"[이미지: {prompt}]", md_img_link)
-            draft = draft.replace(f"![이미지]({prompt})", md_img_link)
+            # 정규표현식을 사용하여 [이미지: ...] 형태를 유연하게 찾아 치환합니다. (공백/줄바꿈 대응)
+            pattern = r"\[이미지:\s*" + re.escape(prompt) + r"\s*\]"
+            draft = re.sub(pattern, md_img_link, draft)
             
             if i == 0:
-                # Update ogImage to the first generated image
+                # 첫 번째 이미지를 ogImage로 자동 설정
                 draft = re.sub(r'ogImage:.*', f'ogImage: "{rel_path}"', draft)
         else:
             report["images"]["error"] = img_error if img_error else "Unknown Error"
