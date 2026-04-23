@@ -1,0 +1,5 @@
+https://riscv.org/blog/workload-specific-silicon/
+https://www.arm.com/glossary/custom-silicon
+https://www.qodequay.com/ai-chips-custom-silicon?srsltid=AfmBOoqGU9c029t1dMN6nc9tsuukUfYr9zj5aaOFOMxJ4KXxszjDbg3p
+https://semiengineering.com/balancing-workloads-in-ai-processor-designs/
+https://cloud.google.com/discover/what-is-an-ai-workload

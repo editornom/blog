@@ -34,3 +34,4 @@
 [2026-04-22] [수동선정] 벡터 데이터베이스 (Vector Database)
 [2026-04-23] [AI추천_38점] Sovereign Fault Domains
 [2026-04-23] [수동선정] AI Agent (인공지능 에이전트)
+[2026-04-23] [AI추천_39점] 워크로드 특화형 AI 실리콘 (Workload-Specific AI Silicon)
