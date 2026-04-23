@@ -44,7 +44,7 @@ def assemble_post_metadata(reviewed_data, folder="posts", keyword="", urls=None)
     
     # 2. Generate Description from REFINED Content
     print(f"  [Assembler] Generating meta description...")
-    desc_prompt = f"Summarize this blog post into 1-2 professional sentences for a meta description (SEO): \n\n{content[:1000]}"
+    desc_prompt = f"Summarize this blog post into 1-2 professional sentences for a meta description (SEO). Output ONLY the raw description text without any introductory remarks, labels, or multiple options: \n\n{content[:1000]}"
     desc_resp = client.models.generate_content(model='models/gemini-3-flash-preview', contents=desc_prompt)
     description = desc_resp.text.strip().replace('"', "'")
     
@@ -66,7 +66,7 @@ def assemble_post_metadata(reviewed_data, folder="posts", keyword="", urls=None)
         "draft": False,
         "ogImage": "../../../../assets/images/placeholder.png",
         "description": description,
-        "references": urls[:10] if urls else []
+        "references": urls[:3] if urls else []
     }
     
     # [E-E-A-T] Last check for author meta
@@ -491,14 +491,15 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
             draft = draft.replace(f"![이미지]({prompt})", md_img_link)
             
             if i == 0:
-                draft = re.sub(r'ogImage: ".*?"', f'ogImage: "{rel_path}"', draft)
+                # Update ogImage to the first generated image
+                draft = re.sub(r'ogImage:.*', f'ogImage: "{rel_path}"', draft)
         else:
             report["images"]["error"] = img_error if img_error else "Unknown Error"
 
     # [NEW] E-E-A-T 신뢰도 확보를 위한 참고 문헌 (아코디언 UI로 숨김 처리)
     if urls:
         references_html = "\n\n---\n\n<details>\n<summary>📚 참고 자료 확인하기</summary>\n<ul>\n"
-        for u in urls[:10]: # Too many links can be spammy, limit to 10
+        for u in urls[:3]: # Too many links can be spammy, limit to 3
             domain = urlparse(u).netloc.replace("www.", "")
             references_html += f"<li><a href=\"{u}\" target=\"_blank\" rel=\"noopener noreferrer\">{domain} 원문</a></li>\n"
         references_html += "</ul>\n</details>\n"
