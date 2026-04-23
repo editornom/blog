@@ -108,6 +108,16 @@ def deep_search_and_filter(keyword, num_results=100):
         print(f"❌ 검색 중 오류 발생: {e}")
         return []
 
+    # 경쟁사 리스트 텍스트 파일 로드
+    competitors_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "competitors.txt")
+    competitor_domains = []
+    if os.path.exists(competitors_file):
+        try:
+            with open(competitors_file, "r", encoding="utf-8") as f:
+                competitor_domains = [line.strip().lower() for line in f if line.strip() and not line.startswith("#")]
+        except Exception as e:
+            print(f"⚠️ 경쟁사 리스트(competitors.txt)를 읽지 못했습니다: {e}")
+
     # [강화된 블랙리스트] 기술 분석이 불가능하거나 부적합한 소스 사전 필터링
     EXCLUDED_DOMAINS = [
         "youtube.com", "youtu.be", "vimeo.com", "dailymotion.com", # 동영상
@@ -118,6 +128,8 @@ def deep_search_and_filter(keyword, num_results=100):
         "amazon.com", "ebay.com", "coupang.com", # 커머스
         "play.google.com", "apps.apple.com" # 앱스토어
     ]
+    # 동적으로 로드한 경쟁사 도메인 추가
+    EXCLUDED_DOMAINS.extend(competitor_domains)
 
     EXCLUDED_EXTENSIONS = [
         ".pdf", ".zip", ".doc", ".docx", ".xls", ".xlsx", 
