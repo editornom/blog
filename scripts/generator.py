@@ -91,7 +91,7 @@ def generate_blog_post(crawled_content, folder="posts", additional_instructions=
 {data_block}
 
 # 핵심 작성 원칙 (Writing Principles)
-1. 말투: "~입니다", "~습니다" 문어체를 기본으로 하되, 지적이고 친근한 '해요체'를 섞어 사용하세요.
+1. 말투: 독자와 1:1로 대화하는 듯한 친근한 **'해요체'**를 기본 어조로 사용하십시오. 너무 딱딱한 보고서 느낌보다는 지적인 블로거가 편하게 설명해주는 듯한 느낌을 유지하세요.
 2. 금지어 및 금지 패턴 (Negative Prompt): 
    - 거창하고 작위적인 표현 절대 금지.
    - [Deep Dive], [The Mechanism] 같은 불필요한 영문 소제목 병기 금지.
