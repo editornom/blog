@@ -1,0 +1,5 @@
+https://www.ibm.com/kr-ko/solutions/confidential-computing
+https://cloud.google.com/blog/ko/products/identity-security/confidential-computing-ai
+http://m.boannews.com/html/detail.html?idx=140299
+https://cloud.google.com/blog/ko/products/identity-security/from-clicks-to-clusters-confidential-computing-expands-with-intel-tdx
+https://www.redhat.com/ko/topics/security/what-is-confidential-computing
