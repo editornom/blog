@@ -181,27 +181,26 @@ const t = UI_TEXT[currentLang as keyof typeof UI_TEXT] || UI_TEXT.ko;
       class="app-prose mt-8 w-full max-w-app prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg)"
     >
       <Content />
+      {post.data.faqs && post.data.faqs.length > 0 && (
+        <div class="faq-section mt-12">
+          <h2 class="text-xl font-bold mb-4">✅ 자주 묻는 질문 (FAQ)</h2>
+          {post.data.faqs.map((item) => (
+            <details class="group border-b border-border py-2">
+              <summary class="cursor-pointer font-medium list-none flex items-center justify-between">
+                <span>{item.q}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <div class="faq-content mt-2 text-foreground/80 leading-relaxed whitespace-pre-wrap">
+                {item.a}
+              </div>
+            </details>
+          ))}
+        </div>
+      )}
     </article>
 
-    {post.data.faqs && post.data.faqs.length > 0 && (
-      <div class="faq-section mt-12">
-        <h2 class="text-xl font-bold mb-4">✅ 자주 묻는 질문 (FAQ)</h2>
-        {post.data.faqs.map((item) => (
-          <details class="group border-b border-border py-2">
-            <summary class="cursor-pointer font-medium list-none flex items-center justify-between">
-              <span>{item.q}</span>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </summary>
-            <div class="faq-content mt-2 text-foreground/80 leading-relaxed whitespace-pre-wrap">
-              {item.a}
-            </div>
-          </details>
-        ))}
-      </div>
-    )}
-    
     {post.data.references && post.data.references.length > 0 && (
       <div class="references-section mt-12">
         <details class="group transition-all opacity-80 hover:opacity-100">
