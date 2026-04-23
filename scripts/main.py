@@ -496,15 +496,6 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
         else:
             report["images"]["error"] = img_error if img_error else "Unknown Error"
 
-    # [NEW] E-E-A-T 신뢰도 확보를 위한 참고 문헌 (아코디언 UI로 숨김 처리)
-    if urls:
-        references_html = "\n\n---\n\n<details>\n<summary>📚 참고 자료 확인하기</summary>\n<ul>\n"
-        for u in urls[:3]: # Too many links can be spammy, limit to 3
-            domain = urlparse(u).netloc.replace("www.", "")
-            references_html += f"<li><a href=\"{u}\" target=\"_blank\" rel=\"noopener noreferrer\">{domain} 원문</a></li>\n"
-        references_html += "</ul>\n</details>\n"
-        draft += references_html
-
     # 5. Save the final draft
     target_dir = os.path.join("src", "data", "blog", "ko", folder)
     os.makedirs(target_dir, exist_ok=True)

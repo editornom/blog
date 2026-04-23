@@ -202,9 +202,9 @@ const t = UI_TEXT[currentLang as keyof typeof UI_TEXT] || UI_TEXT.ko;
       
       {post.data.references && post.data.references.length > 0 && (
         <div class="references-section mt-12">
-          <details class="group border border-border rounded-lg bg-foreground/5 p-4 transition-all">
-            <summary class="cursor-pointer font-bold flex items-center justify-between list-none">
-              <span class="flex items-center gap-2">
+          <details class="group transition-all opacity-80 hover:opacity-100">
+            <summary class="cursor-pointer font-medium flex items-center justify-between list-none py-2 border-b border-border/50">
+              <span class="flex items-center gap-2 text-foreground/70">
                 📚 <span class="group-open:hidden">참고 자료 확인하기</span>
                 <span class="hidden group-open:inline">정보 출처 및 관련 문서</span>
               </span>
@@ -212,7 +212,7 @@ const t = UI_TEXT[currentLang as keyof typeof UI_TEXT] || UI_TEXT.ko;
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </summary>
-            <ul class="mt-4 space-y-2 border-t border-border pt-4">
+            <ul class="mt-3 space-y-2 px-1">
               {post.data.references.map((url, i) => (
                 <li class="flex gap-2 text-sm text-foreground/75 overflow-hidden">
                   <span class="font-bold flex-none">{i + 1}:</span>
