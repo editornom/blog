@@ -1,0 +1,10 @@
+https://blog.cloudflare.com/dynamic-workers/
+https://developer.nvidia.com/blog/practical-security-guidance-for-sandboxing-agentic-workflows-and-managing-execution-risk/
+https://blog.cloudflare.com/ko-kr/sandbox-ga/
+https://www.firecrawl.dev/blog/ai-agent-sandbox
+https://kubernetes.io/blog/2026/03/20/running-agents-on-kubernetes-with-agent-sandbox/
+https://northflank.com/blog/how-to-sandbox-ai-agents
+https://cloud.google.com/blog/ko/products/containers-kubernetes/agentic-ai-on-kubernetes-and-gke
+https://docs.cloud.google.com/kubernetes-engine/docs/how-to/agent-sandbox?hl=ko
+https://discuss.pytorch.kr/t/sandbox-runtime-srt-anthropic-ai/8674
+https://www.cloudbro.ai/t/ai/4124
