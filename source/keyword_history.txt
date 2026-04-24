@@ -39,3 +39,4 @@
 [2026-04-23] [수동선정] 기밀 컴퓨팅 (Confidential Computing)
 [2026-04-24] [AI추천_39점] 포렌식 영속성 (Forensic Persistence)
 [2026-04-24] [AI추천_38점] AI 에이전트 샌드박싱 (AI Agent Sandboxing)
+[2026-04-24] [수동선정] Mixture of Experts (MoE)
