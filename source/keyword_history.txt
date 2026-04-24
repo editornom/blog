@@ -37,3 +37,4 @@
 [2026-04-23] [AI추천_39점] 워크로드 특화형 AI 실리콘 (Workload-Specific AI Silicon)
 [2026-04-23] [AI추천_37점] AirSnitch
 [2026-04-23] [수동선정] 기밀 컴퓨팅 (Confidential Computing)
+[2026-04-24] [AI추천_39점] 포렌식 영속성 (Forensic Persistence)

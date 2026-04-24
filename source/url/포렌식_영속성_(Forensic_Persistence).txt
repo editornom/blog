@@ -1,0 +1,8 @@
+https://cofense.com/Blog/Windows-Persistence-Explained-Techniques,-Risks,-and-What-Defenders-Should-Know
+https://www.nextron-systems.com/2025/07/29/detecting-the-most-popular-mitre-persistence-method-registry-run-keys-startup-folder/
+https://www.praetorian.com/blog/corrupting-the-hive-mind-persistence-through-forgotten-windows-internals/
+https://hunt.io/glossary/linux-threat-hunting
+https://www.sisainfosec.com/blogs/cloud-forensics-explained/
+https://www.moxfive.com/blog/multi-layered-persistence-in-the-cyberverse-of-madness
+https://cybercentaurs.com/blog/deconstructing-the-clickfix-infection-chain-part-2-loader-obfuscation-and-stealth-persistence/
+https://cybered.io/forensics-and-malware/
