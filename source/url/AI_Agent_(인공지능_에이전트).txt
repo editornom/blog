@@ -1,10 +1,10 @@
-https://mitsloan.mit.edu/ideas-made-to-matter/agentic-ai-explained
-https://github.com/resources/articles/what-are-ai-agents
-https://www.creatio.com/glossary/ai-agents
-https://www.kommo.com/blog/ai-agents/
 https://www.smileshark.kr/post/ai-vs-ai-agent-comparison
-https://www.koreadeep.com/blog/ai-agent
 https://cloud.google.com/discover/what-is-agentic-ai?hl=ko
+https://www.samsungsds.com/kr/insights/agentic-ai-the-autonomous-era-of-artificial-intelligence.html
+https://www.uipath.com/ko/ai/ai-agents
+https://www.koreadeep.com/blog/ai-agent
+https://www.databricks.com/kr/blog/ai-agent-examples-shaping-business-landscape
+https://www.databricks.com/kr/blog/types-ai-agents-definitions-roles-and-examples
 https://www.samsungsds.com/kr/insights/ai-agents-insight-and-actions.html
 https://b2b.spartacodingclub.kr/blog/ai-agents-explained
-https://www.databricks.com/kr/blog/types-ai-agents-definitions-roles-and-examples
+https://news.samsungsemiconductor.com/kr/behind-the-chip-%EC%8B%9C%EC%A6%8C2-ai-%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8%EA%B0%80-%EB%B6%88%EB%9F%AC%EC%98%A8-ai-%ED%8C%A9%ED%86%A0%EB%A6%AC-%EC%8B%9C%EB%8C%80%EC%9D%98-%EA%B0%9C%ED%99%94/

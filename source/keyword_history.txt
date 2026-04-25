@@ -41,3 +41,4 @@
 [2026-04-24] [AI추천_38점] AI 에이전트 샌드박싱 (AI Agent Sandboxing)
 [2026-04-24] [수동선정] Mixture of Experts (MoE)
 [2026-04-25] [AI추천_39점] Agentic AI Infrastructure
+[2026-04-25] [수동선정] AI Agent (인공지능 에이전트)
