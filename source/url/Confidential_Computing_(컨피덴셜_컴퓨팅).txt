@@ -1,0 +1,10 @@
+https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/computing-overview-wp.html
+https://www.ibm.com/kr-ko/solutions/confidential-computing
+https://www.redhat.com/en/topics/security/what-is-confidential-computing
+https://confidentialcomputing.io/2025/12/03/new-study-finds-confidential-computing-emerging-as-a-strategic-imperative-for-secure-ai-and-data-collaboration/
+https://unmitigatedrisk.com/?p=1232
+https://edera.dev/stories/what-is-confidential-computing
+https://www.amd.com/ko/products/processors/server/epyc/confidential-computing.html
+https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/confidential-vm-overview?hl=ko
+https://cloud.google.com/blog/ko/products/identity-security/confidential-computing-ai
+https://docs.cloud.google.com/confidential-computing/docs/attestation?hl=ko
