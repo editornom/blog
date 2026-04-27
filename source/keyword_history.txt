@@ -46,3 +46,4 @@
 [2026-04-26] [수동선정] eBPF (Extended Berkeley Packet Filter)
 [2026-04-27] [Fallback] 프라이빗 5G망을 활용한 스마트 물류 센터 인프라 설계
 [2026-04-27] [수동선정] Confidential Computing (컨피덴셜 컴퓨팅)
+[2026-04-27] [AI추천_40점] Model Context Protocol (MCP)
