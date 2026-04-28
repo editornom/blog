@@ -505,9 +505,11 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
                     "url": "Auto-extracted from context",
                     "body": f"Please explain what '{term}' is based on this context: {draft[:3000]}"
                 }
+                g_final_slug_for_link = g_slug
                 g_draft_data, _ = generate_blog_post(g_summary, folder="glossary", keyword=term)
                 if g_draft_data:
                     g_draft, g_prefix, g_final_slug = assemble_post_metadata(g_draft_data, folder="glossary", keyword=term)
+                    g_final_slug_for_link = g_final_slug
                     g_target_dir = os.path.join("src", "data", "blog", "ko", "glossary")
                     os.makedirs(g_target_dir, exist_ok=True)
                     g_post_path = os.path.join(g_target_dir, f"{g_prefix}{g_final_slug}.md")
@@ -525,7 +527,7 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
                     body = parts[2]
                     # 따옴표 이스케이프 처리
                     safe_definition = definition.replace('"', '&quot;')
-                    replacement = f'<a href="/ko/glossary/{g_slug}" class="glossary-tooltip" data-definition="{safe_definition}">{term}</a>'
+                    replacement = f'<a href="/ko/glossary/{g_final_slug_for_link}" class="glossary-tooltip" data-definition="{safe_definition}">{term}</a>'
                     body = body.replace(term, replacement, 1)
                     draft = f"---{parts[1]}---{body}"
                     print(f"  ✅ Injected tooltip for '{term}' into main post.")
