@@ -162,7 +162,6 @@ def translate_and_save(korean_draft, slug, folder, target_langs=None):
             
             # Apply regex to fix potentially broken tags array specifically
             # Ensure the last item ends with a quote before the closing bracket
-            import re
             def fix_tags_array(txt):
                 match = re.search(r'(tags:\s*\[)(.*?)(\])', txt)
                 if not match: return txt
@@ -171,6 +170,20 @@ def translate_and_save(korean_draft, slug, folder, target_langs=None):
                     inner += '"'
                 return txt[:match.start()] + match.group(1) + inner + match.group(3) + txt[match.end():]
             translated = fix_tags_array(translated)
+            
+            # YAML 에러 방지를 위해 Frontmatter 내의 FAQ(q, a) 값이 따옴표로 감싸져 있지 않으면 강제로 감싸기
+            def fix_faq_quotes(txt):
+                parts = txt.split("---", 2)
+                if len(parts) >= 3:
+                    fm = parts[1]
+                    import re
+                    # q: 와 a: 뒤의 값을 캡처하되, 이미 따옴표로 시작하지 않는 경우에만 처리
+                    fm = re.sub(r'^(\s*(?:-\s*q:|a:)\s+)(?![("\'])(.*)$', 
+                                lambda m: m.group(1) + '"' + m.group(2).replace('"', "'") + '"', 
+                                fm, flags=re.MULTILINE)
+                    return f"---{fm}---{parts[2]}"
+                return txt
+            translated = fix_faq_quotes(translated)
             
             # 신규 생성된 다국어 맞춤형 Slug 추출 (정규식 활용)
             new_slug_match = re.search(r'slug:\s*["\'](.*?)["\']', translated)

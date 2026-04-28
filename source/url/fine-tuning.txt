@@ -1,5 +1,0 @@
-https://en.wikipedia.org/wiki/Fine-tuning_(deep_learning)
-https://www.databricks.com/blog/what-is-fine-tuning
-https://huggingface.co/docs/transformers/en/training
-https://www.coursera.org/articles/what-is-fine-tuning
-https://cohere.com/blog/fine-tuning

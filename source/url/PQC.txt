@@ -1,8 +1,0 @@
-https://en.wikipedia.org/wiki/Post-quantum_cryptography
-https://csrc.nist.gov/projects/post-quantum-cryptography
-https://www.cisco.com/site/us/en/learn/topics/networking/what-is-post-quantum-cryptography.html
-https://pqcc.org/
-https://www.fsisac.com/knowledge/pqc
-https://www.f5.com/solutions/post-quantum-cryptography-readiness
-https://cloud.google.com/security/resources/post-quantum-cryptography
-https://www.digicert.com/tls-ssl/post-quantum-cryptography

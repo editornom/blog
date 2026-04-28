@@ -61,33 +61,14 @@ Do not include any other text or markdown formatting outside the JSON.
             with open(file_path, "w", encoding="utf-8") as f:
                 f.write(fixed_content)
             
-            # Commit and Push
-            commit_and_push(file_path)
+            # Commit and Push everything (including the fix and newly generated images/translations)
+            from publish import push_to_github
+            push_to_github(f"[Self-Healing] Fixed build error in {os.path.basename(file_path)}")
         else:
             print(f"Error: AI suggested a file that doesn't exist: {file_path}")
 
     except Exception as e:
         print(f"Healer failed to fix the issue: {e}")
-
-def commit_and_push(file_path):
-    try:
-        print(f"Committing fix for {file_path}...")
-        
-        # Git config (for CI environment)
-        if os.getenv("GITHUB_ACTIONS") == "true":
-            subprocess.run(["git", "config", "user.name", "github-actions[bot]"], check=True)
-            subprocess.run(["git", "config", "user.email", "github-actions[bot]@users.noreply.github.com"], check=True)
-
-        subprocess.run(["git", "add", file_path], check=True)
-        subprocess.run(["git", "commit", "-m", f"[Self-Healing] Fixed build error in {os.path.basename(file_path)}"], check=True)
-        
-        # Pull before push to avoid conflicts
-        subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=True)
-        subprocess.run(["git", "push", "origin", "main"], check=True)
-        
-        print("Self-Healing fix pushed successfully!")
-    except Exception as e:
-        print(f"Failed to push self-healing fix: {e}")
 
 if __name__ == "__main__":
     analyze_and_fix()

@@ -104,3 +104,23 @@ html[data-theme="dark"] {
     scroll-margin-block: 5rem;
   }
 }
+
+/* Glossary Tooltip */
+@layer components {
+  .glossary-tooltip {
+    @apply relative cursor-help underline decoration-dashed underline-offset-4 decoration-accent;
+  }
+  
+  .glossary-tooltip::after {
+    content: attr(data-definition);
+    @apply absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max max-w-[250px] sm:max-w-xs px-3 py-2 text-xs sm:text-sm rounded shadow-lg opacity-0 invisible transition-all z-50 whitespace-normal text-center;
+    /* Invert colors for tooltip */
+    background-color: var(--color-foreground);
+    color: var(--color-background);
+    pointer-events: none;
+  }
+  
+  .glossary-tooltip:hover::after {
+    @apply opacity-100 visible;
+  }
+}

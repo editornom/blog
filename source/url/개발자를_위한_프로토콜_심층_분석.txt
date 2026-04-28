@@ -1,6 +1,0 @@
-https://blog.cloudflare.com/tag/deep-dive/
-https://dev.to/hardiksankhla/unlocking-the-future-of-ai-a-deep-dive-into-the-model-context-protocol-mcp-1b1o
-https://neo4j.com/blog/developer/model-context-protocol/
-https://www.pldg.xyz/
-https://dev.to/vishalmysore/a2a-protocol-deep-dive-3707
-https://zenity.io/blog/security/securing-the-model-context-protocol-mcp

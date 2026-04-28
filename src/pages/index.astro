@@ -13,30 +13,30 @@ const posts = await getCollection("blog", ({ id }) =>
 const sortedPosts = getSortedPosts(posts);
 
 const normalPosts = sortedPosts.filter(p => p.id.replace(/\\/g, "/").includes("posts/"));
-const haionnetPosts = sortedPosts.filter(p => p.id.replace(/\\/g, "/").includes("haionnet/"));
 
-const bentoNormal = normalPosts.slice(0, 4);
-const bentoHaionnet = haionnetPosts.slice(0, 4);
+const bentoRow1 = normalPosts.slice(0, 4);
+const bentoRow2 = normalPosts.slice(4, 8);
 ---
 
 <Layout>
   <Header />
   <main id="main-content" data-layout="index" class="app-layout">
     {
-      bentoNormal.length > 0 && (
-        <section id="bento-normal" class:list={["pt-8"]}>
-          <BentoGrid posts={bentoNormal} />
+      bentoRow1.length > 0 && (
+        <section id="bento-row1" class:list={["pt-8"]}>
+          <BentoGrid posts={bentoRow1} />
         </section>
       )
     }
 
     {
-      bentoHaionnet.length > 0 && (
-        <section id="bento-haionnet" class:list={["mt-[10px] pb-6"]}>
-          <BentoGrid posts={bentoHaionnet} />
+      bentoRow2.length > 0 && (
+        <section id="bento-row2" class:list={["mt-[10px] pb-6"]}>
+          <BentoGrid posts={bentoRow2} />
         </section>
       )
     }
+
   </main>
   <Footer />
 </Layout>

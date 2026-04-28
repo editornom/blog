@@ -73,6 +73,68 @@ def pick_daily_glossary_keyword():
         logger.error(f"Error picking glossary keyword: {e}")
         return None
 
+def extract_and_generate_glossaries(draft_text, max_terms=3):
+    """
+    본문에서 어려운 IT 전문 용어를 추출하고, 기존 용어사전에 없는 경우 
+    새로운 용어 사전 문서(Glossary)를 자동 생성합니다.
+    본문에 툴팁과 링크를 삽입하기 위한 데이터를 반환합니다.
+    """
+    api_key = os.getenv("GEMINI_API_KEY")
+    if not api_key:
+        logger.error("GEMINI_API_KEY is missing.")
+        return []
+        
+    client = genai.Client(api_key=api_key)
+    existing_terms = get_existing_glossary_terms()
+    
+    prompt = f"""
+다음 IT 블로그 본문에서 독자가 이해하기 어려울 만한 **IT 전문 용어(Jargon, 영어 약어 등)**를 최대 {max_terms}개 추출하세요.
+이미 다음 용어들은 사전에 존재하므로 **절대 추출하지 마세요**: {", ".join(existing_terms)}
+
+각 용어에 대해 마우스 호버 시 보여줄 **짧은 사전적 정의(1~2문장)**도 작성해주세요.
+
+본문:
+{draft_text[:5000]}
+
+반드시 아래 JSON 배열 형식으로만 응답하세요:
+[
+  {{
+    "term": "단어 (본문에 등장한 정확한 형태)",
+    "definition": "사전적 정의"
+  }}
+]
+"""
+    try:
+        response = client.models.generate_content(
+            model='models/gemini-3-flash-preview',
+            contents=prompt,
+            config={'response_mime_type': 'application/json'}
+        )
+        data = json.loads(response.text)
+        
+        extracted_terms = []
+        for item in data:
+            term = item.get("term")
+            definition = item.get("definition")
+            if not term or not definition:
+                continue
+                
+            # 슬러그 생성 (소문자, 공백은 하이픈)
+            import re
+            slug = re.sub(r'[^a-z0-9\-]', '', term.lower().replace(' ', '-'))
+            if not slug:
+                continue
+                
+            item['slug'] = slug
+            extracted_terms.append(item)
+            
+        logger.info(f"Extracted {len(extracted_terms)} new glossary terms.")
+        return extracted_terms
+        
+    except Exception as e:
+        logger.error(f"Error extracting glossary terms: {e}")
+        return []
+
 if __name__ == "__main__":
     keyword = pick_daily_glossary_keyword()
     if keyword:

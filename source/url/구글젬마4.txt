@@ -1,7 +1,0 @@
-https://blog.google/intl/ko-kr/company-news/technology/gemma-4-kr/
-https://ai.google.dev/gemma/docs/core/model_card_4?hl=ko
-https://www.aitimes.kr/news/articleView.html?idxno=39411
-https://news.hada.io/topic?id=28160
-https://discuss.pytorch.kr/t/google-deepmind-gemma-4/9548
-https://ai.google.dev/gemma/docs/core?hl=ko
-https://mz-moonzoo.tistory.com/144

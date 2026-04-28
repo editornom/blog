@@ -21,7 +21,8 @@ export default defineConfig({
     sitemap({
       filter: page => 
         (SITE.showArchives || !page.endsWith("/archives")) &&
-        !page.includes("/tags/"),
+        !page.includes("/tags/") &&
+        !page.includes("/haionnet/"),
     }),
   ],
   markdown: {

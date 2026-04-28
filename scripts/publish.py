@@ -35,5 +35,7 @@ def push_to_github(commit_message):
         return False
 
 if __name__ == "__main__":
-    # Test (safe push)
-    push_to_github("test automation commit")
+    import sys
+    msg = sys.argv[1] if len(sys.argv) > 1 else "Auto-generate post"
+    if not push_to_github(msg):
+        sys.exit(1)

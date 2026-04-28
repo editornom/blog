@@ -1,8 +1,0 @@
-https://arxiv.org/abs/2603.14371
-https://awsdocs-neuron.readthedocs-hosted.com/en/latest/libraries/nxd-inference/app-notes/parallelism.html
-https://discuss.vllm.ai/t/data-parallel-and-kv-cache-with-multiple-gpus/1657
-https://www.infoq.com/news/2026/04/cache-parallelism-cloudflare/
-https://github.com/vllm-project/vllm/issues/26133
-https://sgl-project.github.io/advanced_features/pipeline_parallelism.html
-https://ko.wikipedia.org/wiki/%EB%A9%94%EB%AA%A8%EB%A6%AC_%EC%88%98%EC%A4%80_%EB%B3%91%EB%A0%AC%EC%84%B1
-https://brunch.co.kr/@dr-jenna/5

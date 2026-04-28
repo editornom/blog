@@ -1,7 +1,0 @@
-https://arxiv.org/abs/2512.14118
-https://arxiv.org/html/2512.14118v1
-https://www.infoq.com/news/2026/04/linkedin-cognitive-memory-agent/
-https://quiq.com/blog/what-is-cognitive-architecture/
-https://www.bluetickconsultants.com/building-ai-agents-with-memory-systems-cognitive-architectures-for-llms/
-https://openreview.net/forum?id=JnwClln80Q
-https://github.com/gyunggyung/AGI-Papers

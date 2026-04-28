@@ -1,6 +1,0 @@
-https://www.tamirdresher.com/blog/2026/04/07/durable-task-scheduler
-https://www.infoq.com/news/2026/04/cloudflare-project-think/
-https://temporal.io/blog/what-is-durable-execution
-https://www.langchain.com/conceptual-guides/runtime-behind-production-deep-agents
-https://inference.sh/blog/agent-runtime/durable-execution
-https://github.com/mavdol/capsule

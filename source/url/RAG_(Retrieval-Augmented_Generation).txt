@@ -1,4 +1,0 @@
-https://en.wikipedia.org/wiki/Retrieval-augmented_generation
-https://blogs.nvidia.com/blog/what-is-retrieval-augmented-generation/
-https://cloud.google.com/use-cases/retrieval-augmented-generation
-https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-retrieval-augmented-generation-rag

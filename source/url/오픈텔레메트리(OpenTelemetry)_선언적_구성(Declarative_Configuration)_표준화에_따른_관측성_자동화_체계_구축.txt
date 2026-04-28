@@ -1,7 +1,0 @@
-https://velog.io/@youngjun0627/%EA%B4%80%EC%B8%A1-%EA%B0%80%EB%8A%A5%EC%84%B1%EC%9D%98-%ED%91%9C%EC%A4%80-%EC%98%A4%ED%94%88%ED%85%94%EB%A0%88%EB%A9%94%ED%8A%B8%EB%A6%AC
-https://www.elastic.co/kr/what-is/opentelemetry
-https://opentelemetry.io/blog/2026/stable-declarative-config/
-https://docs.newrelic.com/kr/docs/opentelemetry/opentelemetry-introduction/
-https://docs.cloud.google.com/monitoring/custom-metrics/open-telemetry?hl=ko
-https://nyyang.tistory.com/207
-https://1mini2.tistory.com/175
