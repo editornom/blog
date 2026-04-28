@@ -27,7 +27,8 @@ def enhance_image_prompt(base_prompt, client, context=None):
 1. 최고 품질의 이미지를 생성할 수 있는 매우 상세한 영문 프롬프트(Prompt)로 확장해주세요.
 2. 반드시 영어로만 출력하며, 뻔한 스톡 사진(Cinematic, Photorealistic) 느낌을 철저히 배제하십시오.
 3. **핵심 규칙**: 모든 이미지는 반드시 "Modern IT Tech Illustration" 컨셉을 유지해야 합니다. 
-   - 절대 오토바이, 음식(햄버거 등), 무관한 인물, 평범한 자연 풍경 등을 그리지 마십시오.
+   - **어떠한 경우에도 사람(인물, 캐릭터, 신체 부위 등)을 절대 그리지 마십시오.** (Strictly NO humans, NO characters, NO people)
+   - 절대 오토바이, 음식(햄버거 등), 무관한 사물, 평범한 자연 풍경 등을 그리지 마십시오.
    - 대신 "High-quality modern tech illustration, engaging editorial style, conceptual flat design, clean background" 스타일을 사용하십시오.
 4. AI 텍스트 렌더링 오류를 막기 위해 "no text, no letters, no labels, no complex charts"라는 부정 프롬프트를 융합하십시오.{context_str}
 
@@ -74,7 +75,7 @@ def generate_image(prompt, output_filename, context=None):
                 'number_of_images': 1,
                 'aspect_ratio': '1:1',
                 'safety_filter_level': 'BLOCK_LOW_AND_ABOVE',
-                'person_generation': 'ALLOW_ADULT'
+                'person_generation': 'DONT_ALLOW'
             }
         )
 
