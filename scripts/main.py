@@ -23,6 +23,42 @@ from api_utils import gemini_tracker
 from glossary_expert import pick_daily_glossary_keyword
 from google import genai
 
+def inject_internal_links(draft, folder):
+    import glob
+    target_dir = os.path.join("src", "data", "blog", "ko", folder)
+    if not os.path.exists(target_dir):
+        return draft
+        
+    md_files = glob.glob(os.path.join(target_dir, "*.md"))
+    # Sort files by modification time (most recent first)
+    md_files.sort(key=os.path.getmtime, reverse=True)
+    
+    # Take top 2 recent posts
+    related_links = []
+    for file_path in md_files[:2]:
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+                if content.startswith("---"):
+                    parts = content.split("---", 2)
+                    if len(parts) >= 3:
+                        frontmatter = yaml.safe_load(parts[1])
+                        title = frontmatter.get("title")
+                        slug = frontmatter.get("slug")
+                        if title and slug:
+                            href = f"/ko/{folder}/{slug}"
+                            related_links.append(f"- [{title}]({href})")
+        except Exception as e:
+            print(f"Error parsing {file_path} for internal links: {e}")
+            continue
+            
+    if related_links:
+        links_md = "\n\n## 🔗 함께 읽으면 좋은 글\n" + "\n".join(related_links) + "\n"
+        draft += links_md
+        print(f"✅ Injected {len(related_links)} internal links.")
+        
+    return draft
+
 def assemble_post_metadata(reviewed_data, folder="posts", keyword="", urls=None):
     """
     Creates final Frontmatter and combines it with refined content.
@@ -394,14 +430,28 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
     combined_body = "\n\n---\n\n".join([c['body'] for c in all_content])
     print(f"\n=== Combined {len(all_content)} pages into {len(combined_body)} chars ===")
     
-    print(f"Generating draft parts with Gemini ({folder} mode)...")
+    print("\n=== Generating Dynamic Editor Stance ===")
+    dynamic_stance = ""
+    try:
+        from google import genai
+        api_key = os.getenv("GEMINI_API_KEY")
+        if api_key:
+            client = genai.Client(api_key=api_key)
+            stance_prompt = f"다음은 작성할 IT 칼럼의 소스 데이터입니다. 이 기술/이슈의 가장 큰 맹점, 한계점, 또는 실무 적용 시의 리스크를 찾아 1~2문장의 '날카로운 비판적 스탠스'로 요약해주세요.\n\n[소스 데이터]\n{combined_body[:10000]}"
+            stance_resp = client.models.generate_content(model='models/gemini-3-flash-preview', contents=stance_prompt)
+            dynamic_stance = stance_resp.text.strip()
+            print(f"  💡 Dynamic Stance: {dynamic_stance}")
+    except Exception as e:
+        print(f"  ⚠️ Error generating dynamic stance: {e}")
+
+    print(f"\nGenerating draft parts with Gemini ({folder} mode)...")
     crawled_summary = {
         "title": all_content[0].get('title', 'Untitled Issue'),
         "url": urls[0],
         "body": combined_body[:30000] # Limit to avoid token issues
     }
     
-    draft_data, density_warning = generate_blog_post(crawled_summary, folder=folder, keyword=keyword)
+    draft_data, density_warning = generate_blog_post(crawled_summary, folder=folder, keyword=keyword, stance=dynamic_stance)
     if not draft_data:
         print("Error: Failed to generate initial blog post parts.")
         report["draft"]["error"] = "Failed to generate initial blog post parts."
@@ -437,6 +487,54 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
     print(f"\n=== Stage 3.7: Metadata Assembly & Slug Generation ===")
     draft, prefix, slug = assemble_post_metadata(reviewed_data, folder=folder, keyword=keyword, urls=urls)
     print(f"  ✅ Metadata assembled. Final Slug: {slug}")
+
+    # NEW STEP: Stage 3.7.5: Auto Glossary Extraction
+    if folder != "glossary":
+        print(f"\n=== Stage 3.7.5: Auto Glossary Extraction ===")
+        try:
+            from glossary_expert import extract_and_generate_glossaries
+            glossary_terms = extract_and_generate_glossaries(draft, max_terms=3)
+            for term_info in glossary_terms:
+                term = term_info['term']
+                definition = term_info['definition']
+                g_slug = term_info['slug']
+                
+                print(f"  [Glossary] Generating new glossary post for: {term}")
+                g_summary = {
+                    "title": term,
+                    "url": "Auto-extracted from context",
+                    "body": f"Please explain what '{term}' is based on this context: {draft[:3000]}"
+                }
+                g_draft_data, _ = generate_blog_post(g_summary, folder="glossary", keyword=term)
+                if g_draft_data:
+                    g_draft, g_prefix, g_final_slug = assemble_post_metadata(g_draft_data, folder="glossary", keyword=term)
+                    g_target_dir = os.path.join("src", "data", "blog", "ko", "glossary")
+                    os.makedirs(g_target_dir, exist_ok=True)
+                    g_post_path = os.path.join(g_target_dir, f"{g_prefix}{g_final_slug}.md")
+                    with open(g_post_path, "w", encoding="utf-8") as f:
+                        f.write(g_draft)
+                    print(f"  ✅ Saved glossary: {g_post_path}")
+                    
+                    # 다국어 번역 (Glossary)
+                    print(f"  🌐 Translating Glossary: {term}")
+                    translate_and_save(g_draft, g_final_slug, "glossary")
+                
+                # 본문에 툴팁 링크 주입 (Frontmatter 보호)
+                parts = draft.split("---", 2)
+                if len(parts) >= 3:
+                    body = parts[2]
+                    # 따옴표 이스케이프 처리
+                    safe_definition = definition.replace('"', '&quot;')
+                    replacement = f'<a href="/ko/glossary/{g_slug}" class="glossary-tooltip" data-definition="{safe_definition}">{term}</a>'
+                    body = body.replace(term, replacement, 1)
+                    draft = f"---{parts[1]}---{body}"
+                    print(f"  ✅ Injected tooltip for '{term}' into main post.")
+        except Exception as e:
+            print(f"  ❌ Error in Auto Glossary Extraction: {e}")
+
+    # 3.7.8 Inject Internal Links (SEO)
+    print(f"\n=== Stage 3.7.8: Internal Linking ===")
+    draft = inject_internal_links(draft, folder)
 
     # 3.8 Add FAQ if requested (New YAML Frontmatter Architecture)
     if include_faq and keyword:
@@ -514,17 +612,9 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
     results = translate_and_save(draft, slug, folder)
     report["translations"] = results
     
-    # 7. Push to GitHub
-    if DRY_RUN:
-        print(f"Dry run enabled. Skipping push to GitHub for {slug}.")
-    else:
-        # 무인 자동화를 위해 질문 없이 바로 진행 (y로 간주)
-        print(f"\n🚀 모든 작업 완료. '{slug}' 포스트를 GitHub에 자동으로 연동(Push)합니다.")
-        from publish import push_to_github
-        success = push_to_github(f"Auto-generate post: {slug}")
-        if not success:
-            print("❌ GitHub Push에 실패했습니다.")
-            sys.exit(1)
+    # 7. Push to GitHub (REMOVED)
+    # GitHub Actions workflow now handles `pnpm build` first, and if successful, runs `publish.py`
+    print(f"\n🚀 파일 생성 완료. (자동 푸시는 이제 GitHub Actions의 빌드 검증 이후에 수행됩니다.)")
         
     # 🚨 FINAL BRIEFING
     print_final_briefing(report)
@@ -675,7 +765,5 @@ if __name__ == "__main__":
             # 중복 방지를 위해 파일 존재 여부나 상태를 체크할 수도 있으나 우선은 단순 출력.
             print_final_briefing(master_report)
             
-            # 실패 시에도 리포트를 GitHub에 푸시하기 위해 push_to_github 호출
-            if not DRY_RUN:
-                from publish import push_to_github
-                push_to_github("Update diagnostic automation report")
+            # 실패 시 리포트는 로컬에만 저장하고, healer.py가 이후에 처리하도록 맡김
+            print("\n❌ Automation pipeline failed. Generating diagnostic report locally...")
