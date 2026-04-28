@@ -5,7 +5,9 @@ import Footer from "@/components/Footer.astro";
 import LinkButton from "@/components/LinkButton.astro";
 import { SITE } from "@/config";
 const { pathname } = Astro.url;
-const lang = pathname.split("/").filter(Boolean)[0] || "en";
+const supportedLangs = ["en", "ko", "cn", "jp"];
+const firstSegment = pathname.split("/").filter(Boolean)[0];
+const lang = supportedLangs.includes(firstSegment) ? firstSegment : (SITE.lang || "ko");
 const base = `/${lang}/`;
 ---
 

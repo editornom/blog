@@ -9,7 +9,9 @@ import LinkButton from "./LinkButton.astro";
 import { SITE, LOGO_IMAGE } from "@/config";
 
 const { pathname } = Astro.url;
-const lang = pathname.split("/").filter(Boolean)[0] || "en";
+const supportedLangs = ["en", "ko", "cn", "jp"];
+const firstSegment = pathname.split("/").filter(Boolean)[0];
+const lang = supportedLangs.includes(firstSegment) ? firstSegment : (SITE.lang || "ko");
 const base = `/${lang}`;
 
 // Remove trailing slash from current pathname if exists
