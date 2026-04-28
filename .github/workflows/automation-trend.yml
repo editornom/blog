@@ -53,14 +53,8 @@ jobs:
       - name: Build site
         run: pnpm run build 2>&1 | tee build_log.txt
 
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: blog
-          directory: dist
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+      - name: Push to GitHub (If build succeeded)
+        run: python scripts/publish.py "Auto-generate post and verified build"
 
       - name: Self-Healing on Failure
         if: failure()
