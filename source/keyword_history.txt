@@ -49,3 +49,4 @@
 [2026-04-27] [AI추천_40점] Model Context Protocol (MCP)
 [2026-04-27] [AI추천_39점] Indirect Prompt Injection
 [2026-04-28] [AI추천_39점] 자율 진화형 AI (Self-Evolving AI)
+[2026-04-28] [AI추천_40점] 사용량 기반 AI 경제 (Usage-based AI Economics)
