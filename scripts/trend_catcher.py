@@ -57,61 +57,68 @@ def save_keyword_to_history(keyword, category="기타"):
         f.write(f"[{today}] [{category}] {keyword}\n")
 # ==========================================
 
-def get_daily_topic_from_file(filename):
+def get_topic_for_schedule(schedule_type, filename=None):
     """
-    저장된 YYYYMMDD.txt 파일을 읽어 Gemini를 통해 핵심 키워드를 추출합니다.
+    스케줄 타입에 맞춰서 주제를 선정합니다.
     """
-    if not filename or not os.path.exists(filename):
-        print(f"❌ '{filename}' 파일을 찾을 수 없어 분석을 종료합니다.")
-        return None
-
-    print(f"\n🧠 '{os.path.basename(filename)}' 파일의 데이터를 읽어 AI 분석을 시작합니다...")
-
-    with open(filename, "r", encoding="utf-8") as f:
-        headlines_raw = f.readlines()
-    
-    headlines_text = "".join(headlines_raw)
-
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
         print("❌ GEMINI_API_KEY가 .env 파일에 없습니다.")
         return None
         
     client = genai.Client(api_key=api_key)
-
-    # 1. AI에게 보여줄 과거 이력 불러오기
     recent_history = load_recent_keywords()
+    
+    if schedule_type == "09_tech_news":
+        system_instruction = "당신은 IT 전문 블로그의 수석 편집장입니다.\n제공된 72시간 이내의 최신 뉴스 헤드라인을 분석하여 오늘 심층 칼럼으로 작성할 주제 1개를 선정하세요.\n[주의] 이 시간대에는 '인공지능(AI)' 관련 주제는 제외하고, 전반적인 IT, 테크, 사이버보안, 인프라, 앱개발 등의 일반 기술 트렌드에서 선정하세요."
+    elif schedule_type == "15_ai_news":
+        system_instruction = "당신은 AI/Tech 전문 블로그의 수석 편집장입니다.\n제공된 72시간 이내의 최신 뉴스 헤드라인을 분석하여 오늘 심층 칼럼으로 작성할 주제 1개를 선정하세요.\n[주의] 이 시간대에는 반드시 '인공지능(AI), 머신러닝, LLM' 등 AI와 직접적으로 관련된 최신 동향을 주제로 선정하세요."
+    elif schedule_type == "12_tech_feature":
+        system_instruction = "당신은 IT 전문 블로그의 수석 편집장입니다.\n역사상(all-time) IT, 테크, 사이버보안, 소프트웨어 개발 분야에서 있었던 '기념비적인 사건, 개발, 발견' 중 하나를 특집 기사 주제로 선정하세요.\n[주의] '인공지능(AI)' 관련 주제는 절대 제외하세요. 반드시 그 사건/발견이 이후 IT 생태계에 어떤 파장과 영향력을 미쳤는지 서술할 수 있는 심도 있는 주제여야 합니다."
+    elif schedule_type == "18_ai_feature":
+        system_instruction = "당신은 AI/Tech 전문 블로그의 수석 편집장입니다.\n역사상(all-time) '인공지능(AI)' 분야에서 있었던 '기념비적인 사건, 개발, 발견, 논문 발표' 중 하나를 특집 기사 주제로 선정하세요.\n반드시 그 사건/발견이 이후 AI 산업과 인류에 어떤 파장과 영향력을 미쳤는지 서술할 수 있는 심도 있는 주제여야 합니다."
+    else:
+        system_instruction = "당신은 IT 전문 블로그의 수석 편집장입니다."
 
-    prompt = f"""당신은 IT 전문 블로그의 수석 편집장입니다. 
-아래 제공된 최근 72시간 이내의 뉴스 헤드라인 목록을 분석하여, 오늘 심층 칼럼으로 작성하기 가장 완벽한 주제 1개를 선정하세요.
+    # 뉴스 기반일 경우 헤드라인 첨부
+    headlines_text = ""
+    if "news" in schedule_type:
+        if not filename or not os.path.exists(filename):
+            print(f"❌ '{filename}' 파일을 찾을 수 없어 분석을 종료합니다.")
+            return None
+        with open(filename, "r", encoding="utf-8") as f:
+            headlines_text = "".join(f.readlines())
+
+    prompt = f"""{system_instruction}
 
 선정 시 아래 4가지 지표(각 10점 만점)를 평가하여 총점이 가장 높은 것을 고르세요.
-1. 시의성(Timeliness): 지금 당장 화제가 되고 검색량이 폭증할 만한가?
-2. 기술적 깊이(Depth): 단순한 현상 전달을 넘어 프로토콜, 아키텍처, 알고리즘 등을 심층 분석할 여지가 있는가?
-3. 파급력(Impact): IT 생태계 전체나 개발자/기획자들의 업무 방식에 큰 영향을 미치는가?
-4. 실용성(Practicality): 독자들이 실무적으로 대비하거나 적용할 만한 인사이트를 도출할 수 있는가?
+1. 화제성/시의성: 사람들의 관심을 끌 만한가? (역사적 사건의 경우 오늘날 다시 조명할 가치가 있는가?)
+2. 기술적 깊이: 단순한 현상 전달을 넘어 프로토콜, 아키텍처, 알고리즘 등을 심층 분석할 여지가 있는가?
+3. 파급력(Impact): IT 생태계 전체나 개발자/기획자들의 업무 방식에 큰 영향을 미치는가(미쳤는가)?
+4. 실용성/인사이트: 독자들이 실무적으로 대비하거나 적용할 만한 인사이트를 도출할 수 있는가?
 
 [최근 과거에 다룬 주제 리스트] (중복 방지용)
 - {recent_history}
 
 반드시 위 과거 주제들과 의미론적으로 겹치지 않는 새로운 주제여야 합니다.
+"""
+    if "news" in schedule_type:
+        prompt += f"\n[최신 뉴스 헤드라인]\n{headlines_text}\n"
 
-[최신 뉴스 헤드라인]
-{headlines_text}
-
+    prompt += """
 출력은 반드시 아래 JSON 형식을 엄격히 지켜주세요. 다른 인사말은 필요 없습니다.
-{{
-  "selected_headline": "[원문 URL] 기사 제목",
+{
+  "selected_headline": "기사 제목 또는 특집 주제 명",
   "derived_keyword": "가장 핵심이 되는 검색용 키워드 1개 (예: 멀티모달 AI, WebAssembly)",
-  "evaluation": {{
+  "evaluation": {
     "timeliness": 9,
     "depth": 8,
     "impact": 9,
     "practicality": 7,
     "total_score": 33
-  }},
-  "reason": "이 주제를 선정한 이유를 2문장으로 요약"
-}}
+  },
+  "reason": "이 주제를 선정한 이유와 (특집기사인 경우) 이 이슈로 인해 이후 어떤 파장이 일어났는지 영향력을 2문장으로 요약"
+}
 """
 
     try:
@@ -157,7 +164,5 @@ def get_daily_topic_from_file(filename):
         return fallback_keyword
 
 if __name__ == "__main__":
-    # 테스트용 (오늘 날짜 파일이 있을 경우)
-    today_str = datetime.now().strftime("%Y%m%d")
-    headline_path = os.path.join(BASE_DIR, "source", "headlines", f"{today_str}.txt")
-    get_daily_topic_from_file(headline_path)
+    # 테스트용
+    print(get_topic_for_schedule("18_ai_feature"))

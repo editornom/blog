@@ -693,14 +693,34 @@ if __name__ == "__main__":
         }
         
         try:
-            # 1. 크롤러 실행: list.txt 읽어서 YYYYMMDD.txt 생성
-            daily_file = generate_daily_headlines_file("list.txt")
+            from datetime import datetime, timezone, timedelta
+            now_kst = datetime.now(timezone.utc) + timedelta(hours=9)
+            hour = now_kst.hour
+            
+            if 8 <= hour < 11:
+                schedule_type = "09_tech_news"
+            elif 11 <= hour < 14:
+                schedule_type = "12_tech_feature"
+            elif 14 <= hour < 17:
+                schedule_type = "15_ai_news"
+            elif 17 <= hour < 20:
+                schedule_type = "18_ai_feature"
+            else:
+                schedule_type = "09_tech_news" # default
+                
+            print(f"🕒 Current KST Hour: {hour} -> Schedule Type: {schedule_type}")
+
+            daily_file = None
+            if "news" in schedule_type:
+                # 1. 크롤러 실행: list.txt 읽어서 YYYYMMDD.txt 생성 (뉴스 기반일 때만)
+                daily_file = generate_daily_headlines_file("list.txt")
+            
             master_report["system"]["headlines_file_exists"] = os.path.exists(daily_file) if daily_file else False
             
             auto_keyword = None
-            if daily_file:
-                # 2. 트렌드 캐처 실행: 수집된 파일 읽어서 키워드 도출
-                auto_keyword = get_daily_topic_from_file(daily_file)
+            # 2. 트렌드 캐처 실행: 스케줄에 맞춰 키워드 도출
+            from trend_catcher import get_topic_for_schedule
+            auto_keyword = get_topic_for_schedule(schedule_type, filename=daily_file)
             
             if not auto_keyword:
                 # 헤드라인 수집이 아예 안 됐거나, 키워드 추출 중 오류 발생 시 에버그린 fallback
