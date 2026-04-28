@@ -1,0 +1,9 @@
+https://www.oracle.com/database/model-context-protocol-mcp/
+https://cloud.google.com/discover/what-is-model-context-protocol
+https://modelcontextprotocol.io/specification/2025-11-25
+https://www.databricks.com/blog/what-is-model-context-protocol
+https://www.redhat.com/en/blog/model-context-protocol-discover-missing-link-ai-integration
+https://www.redhat.com/en/topics/ai/what-is-model-context-protocol-mcp
+https://mjoo1106.tistory.com/70
+https://tech.hancom.com/mcp-llm-agent/
+https://www.redhat.com/en/blog/model-context-protocol-mcp-understanding-security-risks-and-controls
