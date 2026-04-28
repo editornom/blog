@@ -493,7 +493,7 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
         print(f"\n=== Stage 3.7.5: Auto Glossary Extraction ===")
         try:
             from glossary_expert import extract_and_generate_glossaries
-            glossary_terms = extract_and_generate_glossaries(draft, max_terms=3)
+            glossary_terms = extract_and_generate_glossaries(draft, max_terms=1)
             for term_info in glossary_terms:
                 term = term_info['term']
                 definition = term_info['definition']
