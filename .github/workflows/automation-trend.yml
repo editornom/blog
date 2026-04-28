@@ -51,7 +51,9 @@ jobs:
         run: pnpm install
 
       - name: Build site
-        run: pnpm run build 2>&1 | tee build_log.txt
+        run: |
+          set -o pipefail
+          pnpm run build 2>&1 | tee build_log.txt
 
       - name: Push to GitHub (If build succeeded)
         run: python scripts/publish.py "Auto-generate post and verified build"
