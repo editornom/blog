@@ -15,26 +15,26 @@ references:
 - https://towardsdatascience.com/the-age-of-self-evolving-ai-is-here/
 modDatetime: 2026-04-28 09:13:36.263967+09:00
 faqs:
-- q: What are Self-Evolving Agents?
-  a: They are next-generation AI systems that go beyond learning from fixed datasets to expand their capabilities and optimize themselves in real-time based on their environment.
-- q: What is the role of Test-Time Training (TTT)?
-  a: It is a core technology that allows a model to fine-tune its internal parameters in real-time when encountering new data during inference, enabling immediate adaptation to field conditions.
-- q: How does the dual-structure self-learning system work?
-  a: It operates through an 'Inner Loop' that reflects task execution data immediately and an 'Outer Loop' (Meta-Learning) that modifies the learning strategy itself to improve efficiency.
-- q: What is the biggest advantage over traditional static models?
-  a: Unlike traditional models whose intelligence remains fixed after deployment, these agents autonomously update their intelligence and design optimal paths according to business variables.
-- q: How are security threats managed during the autonomous evolution process?
-  a: Physical isolation is used, where a policy engine within an external sandbox validates and blocks actions in real-time when an agent writes code or changes permissions.
-- q: What are the characteristics of the MTTT-MLP architecture?
-  a: It solves complex computational processes within linear complexity, maintaining stable self-evolution even in large-scale enterprise environments processing tens of thousands of tokens.
-- q: What are the key infrastructure elements required for practical implementation?
-  a: Three main pillars are needed: dynamic sandboxes to isolate agent activities, management protocols to define update thresholds, and efficient data routing systems.
-- q: Why is autonomous code generation by agents potentially dangerous?
-  a: As agents remember context across sessions, abnormal API access or privilege escalation can occur, making physical security beyond simple prompt control essential.
-- q: What is the routing strategy for efficient data management?
-  a: Sensitive information should be processed by on-device local models, while complex logical reasoning is sent to the Cloud to ensure both data privacy and processing efficiency.
-- q: What is the ultimate goal of Self-Evolving AI systems?
-  a: To move beyond being simple tools and become partners that grow with the enterprise, maximizing business agility through a balance of technical autonomy and infrastructure stability.
+- q: "What are Self-Evolving Agents?"
+  a: "They are next-generation AI systems that go beyond learning from fixed datasets to expand their capabilities and optimize themselves in real-time based on their environment."
+- q: "What is the role of Test-Time Training (TTT)?"
+  a: "It is a core technology that allows a model to fine-tune its internal parameters in real-time when encountering new data during inference, enabling immediate adaptation to field conditions."
+- q: "How does the dual-structure self-learning system work?"
+  a: "It operates through an 'Inner Loop' that reflects task execution data immediately and an 'Outer Loop' (Meta-Learning) that modifies the learning strategy itself to improve efficiency."
+- q: "What is the biggest advantage over traditional static models?"
+  a: "Unlike traditional models whose intelligence remains fixed after deployment, these agents autonomously update their intelligence and design optimal paths according to business variables."
+- q: "How are security threats managed during the autonomous evolution process?"
+  a: "Physical isolation is used, where a policy engine within an external sandbox validates and blocks actions in real-time when an agent writes code or changes permissions."
+- q: "What are the characteristics of the MTTT-MLP architecture?"
+  a: "It solves complex computational processes within linear complexity, maintaining stable self-evolution even in large-scale enterprise environments processing tens of thousands of tokens."
+- q: "What are the key infrastructure elements required for practical implementation?"
+  a: "Three main pillars are needed: dynamic sandboxes to isolate agent activities, management protocols to define update thresholds, and efficient data routing systems."
+- q: "Why is autonomous code generation by agents potentially dangerous?"
+  a: "As agents remember context across sessions, abnormal API access or privilege escalation can occur, making physical security beyond simple prompt control essential."
+- q: "What is the routing strategy for efficient data management?"
+  a: "Sensitive information should be processed by on-device local models, while complex logical reasoning is sent to the Cloud to ensure both data privacy and processing efficiency."
+- q: "What is the ultimate goal of Self-Evolving AI systems?"
+  a: "To move beyond being simple tools and become partners that grow with the enterprise, maximizing business agility through a balance of technical autonomy and infrastructure stability."
 ---
 
 The era of intelligence that stops growing the moment it is deployed is coming to an end. Unlike the AI of the past, which only found answers within fixed datasets, the tech industry is shifting its focus toward "Self-Evolving Agentic Systems"—systems that expand their own functions and design optimal paths according to their environment. This marks a transition toward organic systems that break free from the limitations of fixed parameters to respond to real-time variables in business environments.
