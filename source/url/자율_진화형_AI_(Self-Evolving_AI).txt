@@ -1,0 +1,10 @@
+https://developer.nvidia.com/ko-kr/blog/run-autonomous-self-evolving-agents-more-safely-with-nvidia-openshell/
+https://arxiv.org/abs/2508.07407
+https://towardsdatascience.com/the-age-of-self-evolving-ai-is-here/
+https://arxiv.org/abs/2604.15034
+https://www.aiworldtoday.net/p/the-dawn-of-self-evolving-ai-agents
+https://digitalbourgeois.tistory.com/1725
+https://42morrow.tistory.com/entry/R-Zero-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%97%86%EC%9D%B4-%EC%8A%A4%EC%8A%A4%EB%A1%9C-%EC%A7%84%ED%99%94%ED%95%98%EB%8A%94-%EC%B6%94%EB%A1%A0%ED%98%95-%EB%8C%80%EA%B7%9C%EB%AA%A8-%EC%96%B8%EC%96%B4-%EB%AA%A8%EB%8D%B8
+https://www.themoonlight.io/ko/review/self-evolving-embodied-ai
+https://news.lguplus.com/21271
+https://discuss.pytorch.kr/t/genericagent-3-300-llm/9850
