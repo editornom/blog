@@ -1,5 +1,7 @@
 from google import genai
 import os
+import re
+import datetime
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -176,7 +178,6 @@ def translate_and_save(korean_draft, slug, folder, target_langs=None):
                 parts = txt.split("---", 2)
                 if len(parts) >= 3:
                     fm = parts[1]
-                    import re
                     # q: 와 a: 뒤의 값을 캡처하되, 이미 따옴표로 시작하지 않는 경우에만 처리
                     fm = re.sub(r'^(\s*(?:-\s*q:|a:)\s+)(?![("\'])(.*)$', 
                                 lambda m: m.group(1) + '"' + m.group(2).replace('"', "'") + '"', 
