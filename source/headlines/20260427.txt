@@ -27,12 +27,12 @@
 [https://techcrunch.com/2026/04/27/openai-ends-microsoft-legal-peril-over-its-50b-amazon-deal/] OpenAI ends Microsoft legal peril over its $50B Amazon deal - OpenAI has won major concessions from its largest shareholder, Microsoft, that will allow it to sell products on AWS, while Microsoft gets more cash in a revenue-share agreement.
 [https://techcrunch.com/2026/04/27/data-center-demand-drives-66-surge-in-natural-gas-power-plant-costs/] Data center demand drives 66% surge in natural gas power plant costs - Natural gas power plant costs have nearly doubled in two years and take 23% longer to build as data center electricity demand skyrockets.
 [https://www.bloomberg.com/news/articles/2026-04-27/microsoft-to-stop-sharing-revenue-with-main-ai-partner-openai] Microsoft and OpenAI end their exclusive and revenue-sharing deal - Comments
+[https://vivianvoss.net/blog/integrated-by-design-launch] New Integrated by Design FreeBSD Book - Comments
 [https://ismy.blue/] Is my blue your blue? - Comments
 [https://www.tps.ca/media-centre/stories/unprecedented-sms-blaster-arrests/] Three men are facing charges in Toronto SMS Blaster arrests - Comments
-[https://vivianvoss.net/blog/integrated-by-design-launch] New Integrated by Design FreeBSD Book - Comments
 [https://github.com/Hanqaqa/Easyduino] Easyduino: Open Source PCB Devboards for KiCad - Comments
-[https://www.theguardian.com/science/2026/apr/15/hidden-treasures-spanish-archaeologists-discover-trove-of-ancient-shipwrecks-in-bay-of-gibraltar] Spanish archaeologists discover trove of ancient shipwrecks in Bay of Gibraltar - Comments
 [https://atempleton.bearblog.dev/quiet-resurgence-of-rf-engineering/] The quiet resurgence of RF engineering - Comments
+[https://www.theguardian.com/science/2026/apr/15/hidden-treasures-spanish-archaeologists-discover-trove-of-ancient-shipwrecks-in-bay-of-gibraltar] Spanish archaeologists discover trove of ancient shipwrecks in Bay of Gibraltar - Comments
 [https://eclecticlight.co/2026/04/23/networking-changes-coming-in-macos-27/] Networking changes coming in macOS 27 - Comments
 [https://app.oravys.com/blog/mercor-breach-2026] 4TB of voice samples just stolen from 40k AI contractors at Mercor - Comments
 [https://www.cnbc.com/2026/04/27/meta-manus-china-blocks-acquisition-ai-startup.html] China blocks Meta's acquisition of AI startup Manus - Comments

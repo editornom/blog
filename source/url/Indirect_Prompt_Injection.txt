@@ -1,0 +1,10 @@
+https://www.microsoft.com/en-us/msrc/blog/2025/07/how-microsoft-defends-against-indirect-prompt-injection-attacks
+https://www.splunk.com/en_us/blog/learn/prompt-injection.html
+https://www.sentinelone.com/cybersecurity-101/cybersecurity/indirect-prompt-injection-attacks/
+https://www.catonetworks.com/blog/cato-ctrl-hashjack-first-known-indirect-prompt-injection/
+https://www.pillar.security/blog/anatomy-of-an-indirect-prompt-injection
+https://www.reversinglabs.com/blog/indirect-prompt-injections-target-llm-data
+https://www.crowdstrike.com/en-us/blog/indirect-prompt-injection-attacks-hidden-ai-risks/
+https://unit42.paloaltonetworks.com/ai-agent-prompt-injection/
+https://neuraltrust.ai/blog/indirect-prompt-injection-complete-guide
+https://www.forcepoint.com/blog/x-labs/indirect-prompt-injection-payloads
