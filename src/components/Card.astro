@@ -20,8 +20,10 @@ if (typeof initOgImage === "string") {
   thumbSrc = initOgImage.src;
 }
 
-// Detect language from post id for Supabase view count
-const lang = id.replace(/\\/g, "/").split("/")[0] || "ko";
+// Detect language and type from post id
+const normalizedId = id.replace(/\\/g, "/");
+const lang = normalizedId.split("/")[0] || "ko";
+const isGlossary = normalizedId.includes("/glossary/");
 ---
 
 <li class="group my-4">
@@ -30,20 +32,22 @@ const lang = id.replace(/\\/g, "/").split("/")[0] || "ko";
     class="flex gap-4 rounded-xl border border-border bg-muted/5 p-3 transition-all duration-200 hover:bg-muted/20 hover:shadow-sm no-underline sm:p-4"
   >
     <!-- Thumbnail -->
-    <div class="h-20 w-20 flex-none overflow-hidden rounded-lg bg-muted sm:h-24 sm:w-24">
-      {thumbSrc ? (
-        <img
-          src={thumbSrc}
-          alt={title}
-          class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-          loading="lazy"
-        />
-      ) : (
-        <div class="flex h-full w-full items-center justify-center bg-accent/10 text-2xl text-accent/40">
-          ✦
-        </div>
-      )}
-    </div>
+    {!isGlossary && (
+      <div class="h-20 w-20 flex-none overflow-hidden rounded-lg bg-muted sm:h-24 sm:w-24">
+        {thumbSrc ? (
+          <img
+            src={thumbSrc}
+            alt={title}
+            class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            loading="lazy"
+          />
+        ) : (
+          <div class="flex h-full w-full items-center justify-center bg-accent/10 text-2xl text-accent/40">
+            ✦
+          </div>
+        )}
+      </div>
+    )}
 
     <!-- Content -->
     <div class="flex min-w-0 flex-1 flex-col justify-between">
