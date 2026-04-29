@@ -1,5 +1,5 @@
 ---
-title: "SBOM (Software Bill of Materials) Definition and Its Role in Security Management"
+title: "What is SBOM?"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about

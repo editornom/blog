@@ -1,5 +1,5 @@
 ---
-title: "大语言模型 (LLM) 的定义及其基于 Transformer 架构的技术特征"
+title: "什么是 LLM？"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about

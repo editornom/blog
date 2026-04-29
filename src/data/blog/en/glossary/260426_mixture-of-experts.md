@@ -1,5 +1,5 @@
 ---
-title: "Mixture of Experts (MoE)"
+title: "What is Mixture of Experts (MoE)?"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about

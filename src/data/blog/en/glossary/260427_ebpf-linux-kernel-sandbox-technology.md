@@ -1,5 +1,5 @@
 ---
-title: "eBPF: Maximizing Linux Kernel Flexibility and Security with Sandbox Technology"
+title: "What is eBPF?"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about

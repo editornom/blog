@@ -1,5 +1,5 @@
 ---
-title: "JSON-RPC 2.0：远程过程调用标准规范"
+title: "什么是 JSON-RPC 2.0？"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about

@@ -1,5 +1,5 @@
 ---
-title: 'eBPF: 리눅스 커널의 유연성과 안전성을 극대화하는 샌드박스 기술'
+title: "eBPF란?"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about

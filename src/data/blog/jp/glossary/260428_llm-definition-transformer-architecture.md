@@ -1,5 +1,5 @@
 ---
-title: "LLM（大規模言語モデル）の定義とTransformerアーキテクチャに基づく技術的特徴"
+title: "LLMとは？"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about

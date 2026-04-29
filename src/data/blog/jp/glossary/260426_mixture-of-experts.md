@@ -1,5 +1,5 @@
 ---
-title: "混合専門家 (Mixture of Experts: MoE)"
+title: "混合エキスパート (MoE) とは？"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about

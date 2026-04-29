@@ -1,5 +1,5 @@
 ---
-title: TTP(Tactics, Techniques, and Procedures) 정의 및 사이버 보안 활용 가이드
+title: "TTP란?"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about

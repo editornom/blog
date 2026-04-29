@@ -1,5 +1,5 @@
 ---
-title: "SBOM（ソフトウェア部品構成表）の定義とセキュリティ管理における役割"
+title: "SBOMとは？"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about

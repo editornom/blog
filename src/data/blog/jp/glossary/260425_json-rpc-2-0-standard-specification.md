@@ -1,5 +1,5 @@
 ---
-title: "JSON-RPC 2.0: 遠隔手続き呼び出しの標準規格"
+title: "JSON-RPC 2.0とは？"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about

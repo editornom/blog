@@ -1,5 +1,5 @@
 ---
-title: "TTP(Tactics, Techniques, and Procedures) 定义及网络安全应用指南"
+title: "什么是 TTP？"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about

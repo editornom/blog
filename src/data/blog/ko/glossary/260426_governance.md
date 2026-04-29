@@ -1,5 +1,5 @@
 ---
-title: 거버넌스 (Governance)
+title: "거버넌스란?"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about

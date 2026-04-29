@@ -1,5 +1,5 @@
 ---
-title: 'JSON-RPC 2.0: 원격 프로시저 호출의 표준 규격'
+title: "JSON-RPC 2.0이란?"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about

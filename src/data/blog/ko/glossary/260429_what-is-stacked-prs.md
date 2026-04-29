@@ -1,5 +1,5 @@
 ---
-title: Stacked PRs이란?
+title: "Stacked PRs이란?"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about

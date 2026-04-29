@@ -1,5 +1,5 @@
 ---
-title: "SBOM (软件物料清单) 定义及其在安全管理中的作用"
+title: "什么是 SBOM？"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about

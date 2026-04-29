@@ -1,5 +1,5 @@
 ---
-title: "エージェンティック (Agentic) の定義と特徴"
+title: "エージェンティックとは？"
 author: editornom
 author_role: シニアテクニカルエディター
 author_url: https://editornom.com/about

@@ -1,5 +1,5 @@
 ---
-title: LLM(거대 언어 모델)의 정의와 트랜스포머 아키텍처 기반의 기술적 특징
+title: "LLM이란?"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about

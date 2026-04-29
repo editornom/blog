@@ -1,5 +1,5 @@
 ---
-title: "Definition of LLMs and Technical Characteristics Based on Transformer Architecture"
+title: "What is LLM?"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about

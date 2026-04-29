@@ -1,5 +1,5 @@
 ---
-title: "What is Agentic? Definition and Characteristics"
+title: "What is Agentic?"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about

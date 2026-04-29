@@ -1,5 +1,5 @@
 ---
-title: "eBPF：极大提升 Linux Kernel 灵活性与安全性的沙盒技术"
+title: "什么是 eBPF？"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about

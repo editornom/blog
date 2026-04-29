@@ -1,5 +1,5 @@
 ---
-title: 에이전틱 (Agentic) 정의와 특징
+title: "에이전틱이란?"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about

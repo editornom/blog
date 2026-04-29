@@ -1,5 +1,5 @@
 ---
-title: "Agentic (智能体化) 定义与特征"
+title: "什么是 Agentic？"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about

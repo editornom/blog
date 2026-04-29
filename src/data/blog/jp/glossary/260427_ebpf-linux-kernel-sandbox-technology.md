@@ -1,5 +1,5 @@
 ---
-title: "eBPF: Linuxカーネルの柔軟性と安全性を最大化するサンドボックス技術"
+title: "eBPFとは？"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about

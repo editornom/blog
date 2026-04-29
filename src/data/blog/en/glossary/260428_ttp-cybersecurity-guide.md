@@ -1,5 +1,5 @@
 ---
-title: "Defining TTP: A Guide to Tactics, Techniques, and Procedures in Cybersecurity"
+title: "What is TTP?"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about

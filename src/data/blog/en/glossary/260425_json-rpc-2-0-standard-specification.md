@@ -1,5 +1,5 @@
 ---
-title: "JSON-RPC 2.0: The Standard Specification for Remote Procedure Calls"
+title: "What is JSON-RPC 2.0?"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about

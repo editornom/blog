@@ -1,5 +1,5 @@
 ---
-title: "TTP(Tactics, Techniques, and Procedures)の定義とサイバーセキュリティ活用ガイド"
+title: "TTPとは？"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about

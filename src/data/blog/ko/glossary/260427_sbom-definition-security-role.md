@@ -1,5 +1,5 @@
 ---
-title: SBOM (소프트웨어 자재명세서) 정의와 보안 관리에서의 역할
+title: "SBOM이란?"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
