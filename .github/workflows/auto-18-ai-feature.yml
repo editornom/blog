@@ -1,15 +1,15 @@
-name: Daily Trend Blog Automation
+name: "18:00 KST - AI Feature"
 
 permissions:
   contents: write
 
 on:
   schedule:
-    - cron: '0 0,3,6,9 * * *' # 매일 09:00, 12:00, 15:00, 18:00 KST (UTC 00, 03, 06, 09)
-  workflow_dispatch: # 수동 실행 버튼
+    - cron: '0 9 * * *' # 18:00 KST = UTC 09:00
+  workflow_dispatch:
 
 jobs:
-  build:
+  generate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -29,13 +29,13 @@ jobs:
           pip install -r requirements.txt
           playwright install --with-deps chromium
 
-      - name: Run Trend Automation
+      - name: Run Pipeline (18 AI Feature)
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           SERPER_API_KEY: ${{ secrets.SERPER_API_KEY }}
           PUBLIC_SUPABASE_URL: ${{ secrets.PUBLIC_SUPABASE_URL }}
           PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.PUBLIC_SUPABASE_ANON_KEY }}
-        run: python scripts/main.py
+        run: python scripts/main.py --schedule 18_ai_feature
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -59,7 +59,7 @@ jobs:
           pnpm run build 2>&1 | tee build_log.txt
 
       - name: Push to GitHub (If build succeeded)
-        run: python scripts/publish.py "Auto-generate post and verified build"
+        run: python scripts/publish.py "Auto: 18 AI Feature post"
 
       - name: Self-Healing on Failure
         if: failure()
