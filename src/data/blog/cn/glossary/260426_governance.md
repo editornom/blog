@@ -1,4 +1,4 @@
-﻿---
+---
 title: "什么是治理？"
 author: editornom
 author_role: Senior Tech Editor

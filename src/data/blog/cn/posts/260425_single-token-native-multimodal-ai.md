@@ -39,7 +39,7 @@ faqs:
 
 一直以来，多模态 AI 更接近于在以文本为核心的大语言模型（LLM）上，通过适配器（Adapter）缝补处理视觉信息的独立视觉编码器（Vision Encoder）的结构。这建立在两种使用不同语言的模型之间存在不完全沟通的前提下。相比之下，近期崛起的原生多模态（Native Multimodal）架构从设计阶段起，就在同一令牌（Token）体系内同时训练文本、图像和视频。这意味着人工智能已经具备了像人类一样综合感知世界的结构性身份。
 
-![原生多模态 (Native Multimodal) - 比较了视觉与语言功能分离的传统 AI 方式与合二为一的下一代多模态 AI 方式的技术结构图。](../../../../../source/posts/네이티브_멀티모달_(Native_Multimodal)/4af4ae15-0.webp)
+![原生多模态 (Native Multimodal) - 比较了视觉与语言功能分离的传统 AI 方式与合二为一的下一代多模态 AI 方式的技术结构图。](../../../../../source/posts/네이티브_멀티모달_%28Native_Multimodal%29/4af4ae15-0.webp)
 
 **效率与扩展的共存：Qwen3.5 与 Emu3.5 的设计哲学**
 
@@ -65,7 +65,7 @@ SenseTime 与 NTU 合作的 NEO-unify 采取了更为彻底的方法。它果断
   - 优点：模态间相互理解能力和推理性能飞跃式提升
   - 缺点：庞大的训练成本及内部运算过程透明度降低
 
-![原生多模态 (Native Multimodal) - 展示了 Transformer 模型内部图像与文本信息如何相互关联并互动的热力图可视化。](../../../../../source/posts/네이티브_멀티모달_(Native_Multimodal)/b83548ee-1.webp)
+![原生多模态 (Native Multimodal) - 展示了 Transformer 模型内部图像与文本信息如何相互关联并互动的热力图可视化。](../../../../../source/posts/네이티브_멀티모달_%28Native_Multimodal%29/b83548ee-1.webp)
 
 **“窄门（Narrow Gate）”与基础设施的壁垒**
 

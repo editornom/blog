@@ -1,4 +1,4 @@
-﻿---
+---
 title: "ガバナンスとは？"
 author: editornom
 author_role: Senior Tech Editor

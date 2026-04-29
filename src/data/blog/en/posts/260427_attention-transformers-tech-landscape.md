@@ -43,7 +43,7 @@ It has been several years since the "Attention" mechanism took over the paradigm
 
 The essence of the Transformer lies in its ability to view an entire sentence simultaneously. While previous models scanned text from left to right, this architecture calculates the relationships between all word pairs in a sentence at once through "Self-Attention." The numerical interaction of three defined vectors—Query, Key, and Value—precisely identifies the semantic weight of a specific word within its context.
 
-![Transformer Architecture - A diagram showing the structural flow of the Transformer model where input data passes through multi-head self-attention and feed-forward networks.](../../../../../source/posts/트랜스포머(Transformer)/88847d3f-0.webp)
+![Transformer Architecture - A diagram showing the structural flow of the Transformer model where input data passes through multi-head self-attention and feed-forward networks.](../../../../../source/posts/트랜스포머%28Transformer%29/88847d3f-0.webp)
 
 In particular, the "Multi-Head" structure, which arranges multiple attention mechanisms in parallel, allows for a multi-dimensional analysis of grammatical relationships and semantic connections between words. However, this parallel processing power is gained in exchange for computational resources. Due to the nature of identifying correlations between all elements, the architecture possesses a high-cost structure where computational complexity increases quadratically ($O(n^2)$) relative to the sequence length.
 
@@ -65,7 +65,7 @@ The secret to maintaining sentence order while abandoning sequential structure l
 
 Furthermore, to prevent numerical values from becoming abnormally large during attention calculations—which could destabilize training—a "scaling" technique is applied by dividing the results by the square root of the dimension. Thanks to this mathematical precision, the architecture has been able to maintain consistent training performance even when stacking numerous layers.
 
-![Transformer Mechanism - Visual data showing how the Transformer AI model identifies grammatical and semantic relationships between words in long texts.](../../../../../source/posts/트랜스포머(Transformer)/895a6735-1.webp)
+![Transformer Mechanism - Visual data showing how the Transformer AI model identifies grammatical and semantic relationships between words in long texts.](../../../../../source/posts/트랜스포머%28Transformer%29/895a6735-1.webp)
 
 ### Practical Challenges and ROI Beyond Technical Achievement
 

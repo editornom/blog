@@ -1,4 +1,4 @@
-﻿---
+---
 title: "What is Governance?"
 author: editornom
 author_role: Senior Tech Editor

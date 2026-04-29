@@ -39,7 +39,7 @@ faqs:
 
 Until recently, multimodal AI functioned more like a text-centric Large Language Model (LLM) with a separate vision encoder "stitched" on as an adapter to process visual information. This setup assumes a degree of imperfect communication between two models speaking different languages. In contrast, the recently surging native multimodal architecture trains text, images, and video simultaneously within the same token system from the design stage. This marks a shift where AI has secured a structural identity capable of perceiving the world holistically, much like a human.
 
-![Native Multimodal - A technical diagram comparing traditional AI with separate vision and language functions against next-generation integrated multimodal AI.](../../../../../source/posts/네이티브_멀티모달_(Native_Multimodal)/4af4ae15-0.webp)
+![Native Multimodal - A technical diagram comparing traditional AI with separate vision and language functions against next-generation integrated multimodal AI.](../../../../../source/posts/네이티브_멀티모달_%28Native_Multimodal%29/4af4ae15-0.webp)
 
 **The Coexistence of Efficiency and Expansion: Design Philosophies of Qwen3.5 and Emu3.5**
 
@@ -65,7 +65,7 @@ However, this unified structure presents new challenges in terms of system contr
   - Advantages: Drastic improvement in mutual understanding and reasoning performance across modalities.
   - Disadvantages: Massive training costs and increased opacity of internal computational processes.
 
-![Native Multimodal - Heatmap visualization showing how image and text information correlate and interact within a Transformer model.](../../../../../source/posts/네이티브_멀티모달_(Native_Multimodal)/b83548ee-1.webp)
+![Native Multimodal - Heatmap visualization showing how image and text information correlate and interact within a Transformer model.](../../../../../source/posts/네이티브_멀티모달_%28Native_Multimodal%29/b83548ee-1.webp)
 
 **The "Narrow Gate" and Infrastructure Barriers**
 
