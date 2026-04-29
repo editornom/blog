@@ -1,0 +1,10 @@
+https://developer.nvidia.com/ko-kr/blog/develop-native-multimodal-agents-with-qwen3-5-vlm-using-nvidia-gpu-accelerated-endpoints/
+https://arxiv.org/abs/2510.26583
+https://huggingface.co/blog/sensenova/neo-unify
+https://tuna-ai.org/
+https://neurips.cc/virtual/2025/poster/116175
+https://github.com/baaivision/Emu3.5
+https://internvl.github.io/blog/2025-10-10-NaViL/
+https://blog.google/intl/ko-kr/company-news/technology/google-gemini-3/
+https://qwen.ai/blog?id=qwen3.5
+https://www.kim2kie.com/res/html/0_formula/00%20AI/Gemini.html

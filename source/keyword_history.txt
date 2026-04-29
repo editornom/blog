@@ -1,1 +1,2 @@
 [2026-04-28] [AI추천_37점] MCP (Model Context Protocol)
+[2026-04-29] [AI추천_38점] 네이티브 멀티모달 (Native Multimodal)
