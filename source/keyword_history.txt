@@ -1,3 +1,7 @@
 [2026-04-28] [AI추천_37점] MCP (Model Context Protocol)
 [2026-04-29] [AI추천_38점] 네이티브 멀티모달 (Native Multimodal)
 [2026-04-29] [AI추천_37점] eBPF (extended Berkeley Packet Filter)
+[2026-04-29] [AI추천_39점] Software Supply Chain Security
+[2026-04-29] [AI추천_39점] 에이전틱 사이버 보안 (Agentic Cybersecurity)
+[2026-04-29] [AI추천_39점] 트랜스포머(Transformer)
+[2026-04-29] [AI추천_39점] Stacked PRs

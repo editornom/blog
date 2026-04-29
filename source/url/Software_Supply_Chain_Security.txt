@@ -1,0 +1,10 @@
+https://www.oligo.security/academy/ultimate-guide-to-software-supply-chain-security-in-2025
+https://www.redhat.com/en/topics/security/what-is-software-supply-chain-security
+https://about.gitlab.com/blog/software-supply-chain-security-guide-why-organizations-struggle/
+https://www.chainguard.dev/supply-chain-security-101/understanding-software-supply-chain-security
+https://www.forrester.com/blogs/make-no-mistake-software-is-a-supply-chain-and-its-under-attack/
+https://www.sentinelone.com/cybersecurity-101/cybersecurity/software-supply-chain-security/
+https://cycode.com/blog/software-supply-chain/
+https://www.wiz.io/academy/application-security/software-supply-chain-security
+https://www.vulncheck.com/blog/understanding-software-supply-chain-security
+https://cloudsmith.com/blog/the-devops-guide-to-mitigating-software-supply-chain-risks

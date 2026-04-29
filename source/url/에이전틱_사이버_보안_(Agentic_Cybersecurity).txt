@@ -1,0 +1,10 @@
+https://www.ibm.com/think/insights/agentic-ai-security
+https://safe.security/resources/insights/understanding-agentic-ai-and-its-cybersecurity-applications/
+https://www.rapid7.com/fundamentals/agentic-ai/
+https://blogs.nvidia.co.kr/blog/agentic-ai-cybersecurity/
+https://www.cio.com/article/4065336/%EC%97%90%EC%9D%B4%EC%A0%84%ED%8B%B1-ai-it-%EB%B3%B4%EC%95%88-%ED%98%81%EC%8B%A0%EC%9D%B8%EA%B0%80-%EC%9D%BC%EC%8B%9C%EC%A0%81-%EC%9C%A0%ED%96%89%EC%9D%B8%EA%B0%80.html
+https://www.igloo.co.kr/newsroom/press/2026%EB%85%84-%EC%82%AC%EC%9D%B4%EB%B2%84-%EB%B3%B4%EC%95%88-%EC%9C%84%ED%98%91-%EB%B0%8F-%EA%B8%B0%EC%88%A0-%EC%A0%84%EB%A7%9D-%EB%B3%B4%EA%B3%A0%EC%84%9C-%EB%B0%9C%ED%91%9C/
+https://cloud.google.com/transform/ko/how-google-does-it-building-ai-agents-cybersecurity-defense/
+https://content.rview.com/ko/blog/rv-ot-security/
+https://www.samsungsds.com/kr/insights/security-threats-in-the-agentic-ai-era.html
+https://www.ahnlab.com/ko/contents/content-center/35863

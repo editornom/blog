@@ -1,0 +1,9 @@
+https://swizec.com/blog/in-praise-of-the-stacked-pull-request/
+https://www.davepacheco.net/blog/2025/stacked-prs-on-github/
+https://andrewlock.net/working-with-stacked-branches-in-git-part-1/
+https://www.awesomecodereviews.com/best-practices/stacked-prs/
+https://github.com/github/gh-stack
+https://dev.to/semgrep/a-guide-to-using-graphites-stacked-prs-for-github-users-5c47
+https://discourse.llvm.org/t/state-of-spr-based-stacked-reviews/89033
+https://news.hada.io/topic?id=28508
+https://news.hada.io/comment?id=55265
