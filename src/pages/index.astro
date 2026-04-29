@@ -19,6 +19,20 @@ const bentoRow2 = normalPosts.slice(4, 8);
 ---
 
 <Layout>
+  <script is:inline>
+    // 브라우저 언어 감지 자동 리다이렉트 (복구됨)
+    if (window.location.pathname === '/' || window.location.pathname === '') {
+      const lang = navigator.language || navigator.userLanguage;
+      const shortLang = lang ? lang.split('-')[0].toLowerCase() : 'en';
+      
+      let target = '/en';
+      if (shortLang === 'ko') target = '/ko';
+      else if (shortLang === 'ja') target = '/jp';
+      else if (shortLang === 'zh') target = '/cn';
+      
+      window.location.replace(target);
+    }
+  </script>
   <Header />
   <main id="main-content" data-layout="index" class="app-layout">
     {
