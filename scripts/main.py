@@ -693,8 +693,7 @@ if __name__ == "__main__":
         }
         
         try:
-            from datetime import datetime, timezone, timedelta
-            now_kst = datetime.now(timezone.utc) + timedelta(hours=9)
+            now_kst = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=9)
             hour = now_kst.hour
             
             if 8 <= hour < 11:
