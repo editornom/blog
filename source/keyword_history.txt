@@ -5,3 +5,4 @@
 [2026-04-29] [AI추천_39점] 에이전틱 사이버 보안 (Agentic Cybersecurity)
 [2026-04-29] [AI추천_39점] 트랜스포머(Transformer)
 [2026-04-29] [AI추천_39점] Stacked PRs
+[2026-04-29] [AI추천_38점] Managed Multicloud

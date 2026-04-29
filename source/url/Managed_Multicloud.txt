@@ -1,0 +1,10 @@
+https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-multi-cloud
+https://docs.oracle.com/en-us/iaas/Content/multicloud/get-started-management.htm
+https://www.infoworld.com/article/4006297/top-6-multicloud-management-systems.html
+https://www.softwebsolutions.com/multicloud-managed-services/
+https://www.cloudzero.com/blog/multi-cloud-management-tools/
+https://blog.workday.com/en-us/managed-vs-cloud-service-provider.html
+https://ternary.app/blog/top-multi-cloud-management-platforms/
+https://www.cloud4c.com/blogs/top-10-multi-cloud-management-tools-in-2025
+https://sedai.io/blog/multi-cloud-management-tools
+https://cloudaware.com/blog/multi-cloud-management-platforms/
