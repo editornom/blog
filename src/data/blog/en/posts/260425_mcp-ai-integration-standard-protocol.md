@@ -1,9 +1,9 @@
----
+﻿---
 title: "MCP: A Blueprint for the Standard Protocol Navigating AI Integration Complexity"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
-pubDatetime: 2026-04-28 15:03:30.800242+09:00
+pubDatetime: 2026-04-25 09:00:00+09:00
 slug: mcp-ai-standard-protocol-integration-blueprint
 featured: false
 draft: false

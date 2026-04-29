@@ -3,7 +3,7 @@ title: "eBPF: Breaking the Linux Kernel Fortress - The Ideals and Realities of O
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
-pubDatetime: 2026-04-29 16:33:13.079653+09:00
+pubDatetime: 2026-04-26 09:00:00+09:00
 slug: ebpf-linux-kernel-observability-benefits-risks
 featured: false
 draft: false

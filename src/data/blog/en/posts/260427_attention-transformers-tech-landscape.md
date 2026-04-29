@@ -3,7 +3,7 @@ title: "The Shifting Tech Landscape and the Duality of Transformers"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
-pubDatetime: 2026-04-29 17:04:51.461457+09:00
+pubDatetime: 2026-04-27 15:00:00+09:00
 slug: transformer-architecture-self-attention-llm-evolution
 featured: false
 draft: false

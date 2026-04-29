@@ -3,7 +3,7 @@ title: "单令牌的统治：原生多模态如何重定义人工智能指标"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
-pubDatetime: 2026-04-29 15:50:01.846375+09:00
+pubDatetime: 2026-04-25 15:00:00+09:00
 slug: native-multimodal-ai-qwen-emu-architecture
 featured: false
 draft: false

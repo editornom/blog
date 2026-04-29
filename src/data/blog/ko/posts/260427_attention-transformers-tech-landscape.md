@@ -3,7 +3,7 @@ title: 어텐션이 재편한 기술 지형과 트랜스포머의 명암
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
-pubDatetime: 2026-04-29 17:04:51.461457+09:00
+pubDatetime: 2026-04-27 15:00:00+09:00
 slug: attention-transformers-tech-landscape
 featured: false
 draft: false

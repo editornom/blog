@@ -3,7 +3,7 @@ title: "The Collapse of Assembled Trust: Software Supply Chain Security Beyond t
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
-pubDatetime: 2026-04-29 16:52:36.299978+09:00
+pubDatetime: 2026-04-26 15:00:00+09:00
 slug: sscs-software-supply-chain-security-governance
 featured: false
 draft: false

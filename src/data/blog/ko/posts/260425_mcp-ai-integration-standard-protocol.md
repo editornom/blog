@@ -3,7 +3,7 @@ title: MCP, AI 통합의 복잡성을 관통하는 표준 프로토콜의 설계
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
-pubDatetime: 2026-04-28 15:03:30.800242+09:00
+pubDatetime: 2026-04-25 09:00:00+09:00
 slug: mcp-ai-integration-standard-protocol
 featured: false
 draft: false

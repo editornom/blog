@@ -3,7 +3,7 @@ title: "単一トークンの支配：ネイティブマルチモーダルが再
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
-pubDatetime: 2026-04-29 15:50:01.846375+09:00
+pubDatetime: 2026-04-25 15:00:00+09:00
 slug: native-multimodal-ai-vision-language-integration
 featured: false
 draft: false

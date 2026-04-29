@@ -3,7 +3,7 @@ title: "The Reign of Single Tokens: How Native Multimodal AI is Redefining AI Be
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
-pubDatetime: 2026-04-29 15:50:01.846375+09:00
+pubDatetime: 2026-04-25 15:00:00+09:00
 slug: native-multimodal-ai-single-token-architecture-evolution
 featured: false
 draft: false

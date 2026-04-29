@@ -3,7 +3,7 @@ title: "打破 Linux 内核边界：eBPF 在可观测性中的理想与现实"
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
-pubDatetime: 2026-04-29 16:33:13.079653+09:00
+pubDatetime: 2026-04-26 09:00:00+09:00
 slug: ebpf-linux-kernel-observability-analysis
 featured: false
 draft: false

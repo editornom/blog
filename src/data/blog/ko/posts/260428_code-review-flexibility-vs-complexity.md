@@ -3,7 +3,7 @@ title: 코드 리뷰의 병목을 해결하는 유연함인가, 복잡성의 전
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
-pubDatetime: 2026-04-29 17:11:51.923891+09:00
+pubDatetime: 2026-04-28 09:00:00+09:00
 slug: code-review-flexibility-vs-complexity
 featured: false
 draft: false

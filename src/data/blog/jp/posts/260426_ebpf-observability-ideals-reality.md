@@ -3,7 +3,7 @@ title: "Linuxカーネルの障壁を打ち破るコード、eBPFが直面する
 author: editornom
 author_role: シニアテックエディター
 author_url: https://editornom.com/about
-pubDatetime: 2026-04-29 16:33:13.079653+09:00
+pubDatetime: 2026-04-26 09:00:00+09:00
 slug: ebpf-linux-kernel-observability-pros-cons
 featured: false
 draft: false

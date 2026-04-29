@@ -3,7 +3,7 @@ title: "エージェンティック・サイバーセキュリティ：自律型
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
-pubDatetime: 2026-04-29 16:58:52.782809+09:00
+pubDatetime: 2026-04-27 09:00:00+09:00
 slug: agentic-cybersecurity-autonomous-defense-paradox
 featured: false
 draft: false
