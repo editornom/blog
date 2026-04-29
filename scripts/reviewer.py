@@ -117,6 +117,11 @@ def review_manuscript(draft_data, folder="posts"):
         if result_text.count("```") % 2 != 0:
             print("  ⚠️ [Detox] 마크다운 코드 블록 닫기(```) 누락 감지. 자동 복구합니다.")
             result_text += "\n```\n"
+            
+        # 잘못 생성된 이미지 태그(!![...]) 수정
+        if "!![" in result_text:
+            print("  ⚠️ [Detox] 잘못된 이미지 태그(!![) 감지. 자동 복구합니다.")
+            result_text = result_text.replace("!![", "![")
 
         return {
             "title": refined_title,

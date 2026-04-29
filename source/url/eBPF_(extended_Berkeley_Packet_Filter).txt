@@ -1,0 +1,10 @@
+https://newrelic.com/blog/observability/what-is-ebpf
+https://isovalent.com/blog/post/what-is-ebpf/
+https://oneuptime.com/blog/post/2025-12-10-what-is-ebpf-and-how-does-it-work/view
+https://www.sentinelone.com/cybersecurity-101/cybersecurity/what-is-extended-berkeley-packet-filter-ebpf/
+https://ebpf.io/get-started/
+https://newsletter.signoz.io/p/what-is-ebpf-and-what-does-it-mean
+https://www.tigera.io/blog/how-to-turbocharge-your-kubernetes-networking-with-ebpf/
+https://www.kentik.com/kentipedia/what-is-ebpf-extended-berkeley-packet-filter/
+https://www.contrastsecurity.com/glossary/ebpf
+https://linuxsecurity.com/features/ebpf-security-tools-rootkit-evasion

@@ -557,7 +557,7 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
             print(f"Warning: FAQ file not found or empty for keyword '{keyword}'")
 
     # 4. Process Images
-    image_placeholders = re.findall(r'(?:!\[이미지\]\(|\[이미지: )(.*?)(?:\)|\])', draft)
+    image_placeholders = re.findall(r'(?:!*\[이미지\]\(|!*\[이미지:\s*)(.*?)(?:\)|\])', draft)
     
     source_folder_name = keyword if keyword else "general"
     source_folder_name = re.sub(r'[\s\\/:*?"<>|]+', '_', source_folder_name).strip('_')
@@ -587,8 +587,8 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
             alt_keyword = keyword if keyword else "IT 트렌드"
             md_img_link = f"![{alt_keyword} - {translated_alt}]({rel_path})"
             
-            # 정규표현식을 사용하여 [이미지: ...] 형태를 유연하게 찾아 치환합니다. (공백/줄바꿈 대응)
-            pattern = r"\[이미지:\s*" + re.escape(prompt) + r"\s*\]"
+            # 정규표현식을 사용하여 [이미지: ...] 또는 ![이미지](...) 형태를 유연하게 찾아 치환합니다.
+            pattern = r"!*\[이미지\]\(\s*" + re.escape(prompt) + r"\s*\)|!*\[이미지:\s*" + re.escape(prompt) + r"\s*\]"
             draft = re.sub(pattern, md_img_link, draft)
             
             if i == 0:
@@ -637,6 +637,7 @@ if __name__ == "__main__":
     parser.add_argument("--folder", help="Target folder")
     parser.add_argument("--lang", help="Target language")
     parser.add_argument("--auto-glossary", action="store_true", help="Automated glossary generation mode")
+    parser.add_argument("--schedule", help="Override schedule type (e.g. 09_tech_news, 12_tech_feature)")
 
     args = parser.parse_args()
 
@@ -693,21 +694,25 @@ if __name__ == "__main__":
         }
         
         try:
-            now_kst = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=9)
-            hour = now_kst.hour
-            
-            if 8 <= hour < 11:
-                schedule_type = "09_tech_news"
-            elif 11 <= hour < 14:
-                schedule_type = "12_tech_feature"
-            elif 14 <= hour < 17:
-                schedule_type = "15_ai_news"
-            elif 17 <= hour < 20:
-                schedule_type = "18_ai_feature"
+            if args.schedule:
+                schedule_type = args.schedule
+                print(f"🕒 Schedule overridden by argument: {schedule_type}")
             else:
-                schedule_type = "09_tech_news" # default
+                now_kst = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=9)
+                hour = now_kst.hour
                 
-            print(f"🕒 Current KST Hour: {hour} -> Schedule Type: {schedule_type}")
+                if 8 <= hour < 11:
+                    schedule_type = "09_tech_news"
+                elif 11 <= hour < 14:
+                    schedule_type = "12_tech_feature"
+                elif 14 <= hour < 17:
+                    schedule_type = "15_ai_news"
+                elif 17 <= hour < 20:
+                    schedule_type = "18_ai_feature"
+                else:
+                    schedule_type = "09_tech_news" # default
+                    
+                print(f"🕒 Current KST Hour: {hour} -> Schedule Type: {schedule_type}")
 
             daily_file = None
             if "news" in schedule_type:
