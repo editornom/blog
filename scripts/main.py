@@ -16,7 +16,7 @@ from translator import translate_and_save, translate_text
 from publish import push_to_github
 from accordian import load_faq_content, prepare_faq_data
 from headline_crawler import generate_daily_headlines_file
-from trend_catcher import get_daily_topic_from_file, save_keyword_to_history
+from trend_catcher import save_keyword_to_history
 from search_expert import deep_search_and_filter
 from faq_expert import generate_faq
 from api_utils import gemini_tracker
