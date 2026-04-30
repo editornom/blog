@@ -557,7 +557,8 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
             print(f"Warning: FAQ file not found or empty for keyword '{keyword}'")
 
     # 4. Process Images
-    image_placeholders = re.findall(r'(?:!*\[이미지\]\(|!*\[이미지:\s*)(.*?)(?:\)|\])', draft)
+    # [이미지: ...], ![이미지](...), ![설명] 등 다양한 형태를 유연하게 감지
+    image_placeholders = re.findall(r'(?:!*\[이미지\]\(|!*\[이미지:\s*|!\[)(.*?)(?:\)|\])', draft)
     
     source_folder_name = keyword if keyword else "general"
     source_folder_name = re.sub(r'[\s\\/:*?"<>|]+', '_', source_folder_name).strip('_')

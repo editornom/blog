@@ -7,7 +7,7 @@ pubDatetime: 2026-04-30 08:55:14.864652+09:00
 slug: imperfect-trust-asymmetric-encryption
 featured: false
 draft: false
-ogImage: ../../../../assets/images/placeholder.png
+ogImage: "../../../../../source/posts/Asymmetric_Encryption/9b498bbf-0.webp"
 description: 현대 디지털 보안의 핵심인 공개키 암호화(PKI) 기술의 원리와 비즈니스 신뢰 구축에서의 중요성을 살펴봅니다. 비대칭 암호화가
   어떻게 네트워크 무결성을 보장하고 기업의 디지털 자산을 보호하는지 확인해 보세요.
 references:
@@ -52,7 +52,7 @@ faqs:
 
 비대칭 암호화 메커니즘의 핵심은 수학적으로 연결된 공개키와 개인키의 쌍입니다. 누구나 접근할 수 있는 공개키로 정보를 암호화하면, 오직 그에 대응하는 개인키를 보유한 수신자만이 내용을 복호화할 수 있습니다. 과거 대칭형 암호 체계가 가졌던 키 전달 과정의 보안 취약점을 극복했다는 점에서 이 시스템은 현대 네트워크 보안의 기점이 되었습니다. 하지만 기술적 무결성이 곧 실무 환경에서의 편의성이나 안전을 보장하는 것은 아닙니다.
 
-![A high-tech digital security architecture diagram showing the relationship between a public key and a private key using abstract geometric shapes and neon glowing lines on a dark server background.]
+![공개 키와 개인 키의 관계를 나타내는 디지털 보안 아키텍처 다이어그램](../../../../../source/posts/Asymmetric_Encryption/9b498bbf-0.webp)
 
 ### 디지털 비즈니스를 지탱하는 조용한 신뢰의 기반
 
@@ -67,7 +67,7 @@ faqs:
 | 연산 효율성 | 상대적으로 낮음 | 높음 (모바일 및 IoT 적합) |
 | 주요 특징 | 높은 호환성과 표준화 수준 | 짧은 키 길이와 적은 전력 소모 |
 
-![A sophisticated visualization of an elliptic curve mathematical function used in ECC cryptography with clean white lines on a professional blue grid background.]
+![ECC 암호학에 사용되는 타원 곡선 수학 함수 요약 시각화](../../../../../source/posts/Asymmetric_Encryption/4dfbf392-1.webp)
 
 기술적으로는 ECC가 적은 연산 자원으로도 높은 보안 수준을 제공하지만, 레거시 시스템과의 호환성이나 구현상의 복잡성 때문에 현장에서는 여전히 RSA가 널리 쓰입니다. 이는 기술적 우위보다 시스템 안정성과 연속성을 중시하는 IT 실무의 특성을 반영합니다.
 
@@ -81,7 +81,7 @@ faqs:
 
 미래의 위협 또한 현재 진행형입니다. 양자 컴퓨팅의 발전은 쇼어(Shor) 알고리즘을 통해 현재의 RSA나 ECC 체계를 단시간 내에 무력화할 잠재적 위험을 안고 있습니다. 보안 업계가 격자 기반 암호(Lattice-based Cryptography)와 같은 양자 내성 암호(PQC)로의 전환을 서두르는 이유도 여기에 있습니다. 현재의 암호화 구조가 가진 시한부적 성격을 인지하고 이에 대비하는 과정입니다.
 
-![A futuristic and clean editorial concept representing the threat of quantum computing to encryption with a visual of a quantum circuit pattern integrated into a padlock icon.]
+![자물쇠 아이콘에 양자 회로 패턴을 결합하여 양자 컴퓨팅이 암호화에 미치는 위협을 표현함.](../../../../../source/posts/Asymmetric_Encryption/57227c6e-2.webp)
 
 비대칭 암호화는 인류가 이룩한 정교한 수학적 성취이지만, 사용자에게 친절한 기술은 아닙니다. 기술적 난공불락의 요새를 짓는 것도 중요하지만, 그 안에서 활동하는 인간이 사소한 실수로 인해 시스템 밖으로 밀려나지 않도록 돕는 안전장치가 병행되어야 합니다. 결국 차세대 보안 기술이 지향해야 할 지점은 수학적 무결성을 유지하면서도 인간의 취약성을 보완할 수 있는 유연한 설계에 있을 것입니다.
 
