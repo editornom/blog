@@ -1,0 +1,10 @@
+https://azure.microsoft.com/en-us/blog/agentic-cloud-operations-a-new-way-to-run-the-cloud/
+https://www.cio.com/article/4079008/8-ways-agentic-ai-will-transform-it-operations.html
+https://onereach.ai/blog/ai-agents-in-it-operations-automating-incident-resolution-and-monitoring/
+https://www.logicmonitor.com/blog/aiops-devops-mlops-and-agentic-aiops
+https://medium.com/@er.roshan.linux/agentic-ai-aiops-the-next-evolution-in-cloud-ops-67205108c9c6
+https://www.fiddler.ai/articles/agentic-aiops
+https://inform.tmforum.org/features-and-opinion/the-agentic-era-of-telco-aiops-unifying-it-and-network-operations-with-human-oversight
+https://www.logicmonitor.com/blog/agent-driven-aiops-is-defining-future-of-it-operations
+https://www.bigpanda.io/blog/agentic_itops_aiops_evolution/
+https://docs.bmc.com/xwiki/bin/view/IT-Operations-Management/Operations-Management/BMC-Helix-AIOps/aiops253/Agentic-AI-capabilities-in-BMC-Helix-AIOps/

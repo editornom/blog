@@ -7,3 +7,4 @@
 [2026-04-29] [AI추천_39점] Stacked PRs
 [2026-04-30] [AI추천_39점] Public Key Cryptography
 [2026-04-30] [AI추천_39점] Memory Safety
+[2026-04-30] [AI추천_39점] Agentic AIOps
