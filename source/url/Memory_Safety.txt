@@ -1,0 +1,10 @@
+https://www.cs.cornell.edu/courses/cs3410/2025sp/notes/memory_safe_langs.html
+https://runsafesecurity.com/blog/memory-safety-kevs-increasing/
+https://medium.com/@Adekola_Olawale/memory-safety-and-performance-rust-explained-for-developers-fb32bd9b8bab
+https://security.apple.com/blog/memory-integrity-enforcement/
+https://verdagon.dev/blog/group-borrowing
+https://www.iar.com/blog/empower-your-teams-to-deliver-memory-safe-c-c-applications-without-changing-programming-languages
+https://bbiguduk.gitbook.io/swift/language-guide-1/memory-safety
+https://www.ralfj.de/blog/2025/07/24/memory-safety.html
+https://www.societybyte.swiss/en/2025/11/27/memory-safety-opportunities-and-challenges-for-the-software-security-of-the-future/
+https://blog.adobe.com/security/adobes-memory-safety-roadmap-securing-creativity-by-design
