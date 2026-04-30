@@ -1,0 +1,9 @@
+https://www.bleap.finance/blog/public-and-private-key
+https://biztechmagazine.com/article/2026/01/how-can-public-and-private-key-encryption-protect-private-data
+https://crypto.stackexchange.com/questions/117315/hash-based-public-key-encryption
+https://www.keyfactor.com/blog/best-practices-for-public-key-vs-private-key-management/
+https://nordpass.com/blog/public-key-encryption/
+https://developer.mozilla.org/ko/docs/Glossary/Public-key_cryptography
+https://link.springer.com/chapter/10.1007/978-981-96-6681-2_11
+https://medium.com/@isiahjohnstone/public-key-cryptography-basics-2ca42016ea52
+https://www.kiteworks.com/cmmc-compliance/cryptography-public-key-private-key/

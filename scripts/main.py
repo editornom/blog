@@ -581,11 +581,13 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
         if generated_path:
             report["images"]["success"] += 1
             rel_path = f"../../../../../source/{folder}/{source_folder_name}/{img_uuid}-{i}.webp"
+            # Markdown link fix: encode parentheses in path
+            encoded_rel_path = rel_path.replace('(', '%28').replace(')', '%29')
             
             alt_clean_prompt = f"다음 이미지 생성용 프롬프트에서 시각적 스타일 키워드(4k, 해상도 등)를 제외하고, 초보자도 이해할 수 있는 핵심 의미만 한 문장으로 요약해서 ko로 번역해줘:\n{prompt}"
             translated_alt = translate_text(alt_clean_prompt, "ko")
             alt_keyword = keyword if keyword else "IT 트렌드"
-            md_img_link = f"![{alt_keyword} - {translated_alt}]({rel_path})"
+            md_img_link = f"![{alt_keyword} - {translated_alt}]({encoded_rel_path})"
             
             # 정규표현식을 사용하여 [이미지: ...] 또는 ![이미지](...) 형태를 유연하게 찾아 치환합니다.
             pattern = r"!*\[이미지\]\(\s*" + re.escape(prompt) + r"\s*\)|!*\[이미지:\s*" + re.escape(prompt) + r"\s*\]"
