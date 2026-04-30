@@ -7,7 +7,7 @@ pubDatetime: 2026-04-27 09:00:00+09:00
 slug: agentic-cybersecurity-autonomous-defense
 featured: false
 draft: false
-ogImage: ../../../../assets/images/placeholder.png
+ogImage: "../../../../../source/posts/에이전틱_사이버_보안_(Agentic_Cybersecurity)/6b54f49e-0.webp"
 description: 단순 자동화를 넘어 스스로 추론하고 행동하는 에이전틱 사이버 보안의 개념과 자율형 보안 시스템이 주도하는 미래 보안 생태계의
   변화를 소개합니다. 맥락 인식과 독립적인 의사결정을 통해 고도화된 위협에 선제적으로 대응하는 차세대 보안 기술의 핵심 원리를 확인해 보세요.
 references:
@@ -54,7 +54,7 @@ faqs:
 
 전통적인 보안 자동화가 '조건부 실행(If-Then)' 논리에 기반했다면, 에이전틱 구조의 AI는 인간 분석가의 사고 과정을 모방합니다. 상위 목표가 주어지면 이를 달성하기 위한 세부 과제를 스스로 분해하고, 필요한 도구를 동적으로 호출하며, 상황 변화에 따라 실시간으로 계획을 수정합니다.
 
-![A high-tech cybersecurity command center visualization showing an autonomous AI agent architecture diagram with blocks representing perception, persistent memory, tool orchestration, and multi-step reasoning loops. Professional architectural style with clean blue and silver lines on a dark background.]
+![인식, 지속성 메모리, 도구 오케스트레이션, 다단계 추론 루프를 포함하는 자율 AI 에이전트 아키텍처 다이어그램](../../../../../source/posts/에이전틱_사이버_보안_%28Agentic_Cybersecurity%29/6b54f49e-0.webp)
 
 이러한 시스템의 핵심 동력은 맥락 인식과 지속성입니다. 단발적인 응답에 그치지 않고 벡터 임베딩 기반의 영구 메모리를 활용해 과거의 대응 사례와 비즈니스 로직을 학습합니다. 클라우드 환경에서 데이터 유출 징후가 포착될 경우, 단순히 계정을 차단하는 단편적 조치를 넘어 로그를 정밀 분석하고 공격자의 전술 및 절차(<a href="/ko/glossary/ttp-cybersecurity-guide" class="glossary-tooltip" data-definition="사이버 공격자가 공격을 수행할 때 사용하는 전술(Tactics), 기술(Techniques), 절차(Procedures)의 약자로, 공격자의 고유한 행동 패턴을 의미합니다. 이를 분석하면 공격 수법과 의도를 파악할 수 있어 침해 사고 탐지 및 선제적인 방어 전략 수립에 중요한 지표로 활용됩니다.">TTP</a>)를 식별하여 인프라 전반에 걸친 선제적 격리 조치를 단행합니다. 이 모든 과정에서 인간의 개입은 최소화됩니다.
 
@@ -83,7 +83,7 @@ faqs:
 
 소프트웨어적 취약점을 보완하기 위해 하드웨어 수준의 보안 강화는 필수적입니다. 에이전트가 구동되는 환경 자체를 보호하기 위한 NVIDIA BlueField DPU나 기밀 컴퓨팅 기술이 주목받는 이유가 여기에 있습니다. 민감 데이터를 물리적 계층에서 격리하고 AI 모델의 무결성을 실시간으로 검증하는 장치가 전제되어야만 자율형 보안은 실질적인 방어 체계로서 가치를 지닙니다.
 
-![A professional server rack overview diagram highlighting the integration of a BlueField DPU hardware layer and Confidential Computing modules. Realistic data center equipment style, clearly labeled components without extra artistic effects.]
+![BlueField DPU 하드웨어 계층과 컨피덴셜 컴퓨팅 모듈의 통합을 나타내는 서버 랙 개요도.](../../../../../source/posts/에이전틱_사이버_보안_%28Agentic_Cybersecurity%29/650ae95f-2.webp)
 
 결국 자율적 방어 시스템의 안착은 고도화된 제동 장치와 가드레일의 확보에 달려 있습니다. NeMo Guardrails와 같은 런타임 정책 관리나 인간의 최종 승인을 병행하는 하이브리드 모델이 강조되는 것은 기술의 종착지가 결국 책임의 영역이기 때문입니다.
 
