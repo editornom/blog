@@ -8,3 +8,4 @@
 [2026-04-30] [AI추천_39점] Public Key Cryptography
 [2026-04-30] [AI추천_39점] Memory Safety
 [2026-04-30] [AI추천_39점] Agentic AIOps
+[2026-04-30] [AI추천_39점] RLHF (Reinforcement Learning from Human Feedback)
