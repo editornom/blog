@@ -1,0 +1,8 @@
+https://medium.com/@anupchakole/understanding-the-cap-theorem-why-your-system-cant-have-it-all-4004c25e021f
+https://blog.levelupcoding.com/p/cap-theorem-explained
+https://www.mongodb.com/resources/basics/databases/cap-theorem
+https://hackernoon.com/cap-theorem-explained-part-1-the-problem-with-pick-two
+https://towardsaws.com/cap-theorem-explained-how-to-choose-between-consistency-availability-and-partition-tolerance-c35571bb6d35
+https://medium.com/@kiranpuli/the-cap-theorem-understanding-the-trade-offs-in-distributed-systems-6d39fb871fc9
+https://www.min.io/learn/cap-theorem
+https://bool.dev/blog/detail/cap-theorem
