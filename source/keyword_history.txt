@@ -9,3 +9,4 @@
 [2026-04-30] [AI추천_39점] Memory Safety
 [2026-04-30] [AI추천_39점] Agentic AIOps
 [2026-04-30] [AI추천_39점] RLHF (Reinforcement Learning from Human Feedback)
+[2026-05-01] [AI추천_38점] DPoP (RFC 9449)
