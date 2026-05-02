@@ -12,3 +12,4 @@
 [2026-05-01] [AI추천_38점] DPoP (RFC 9449)
 [2026-05-01] [AI추천_39점] CAP Theorem
 [2026-05-01] [AI추천_39점] 잠재 공간 추론 (Latent Space Reasoning)
+[2026-05-02] [AI추천_39점] PQC (Post-Quantum Cryptography)
