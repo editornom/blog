@@ -67,7 +67,7 @@ Despite building these defenses, structural limitations still exist. The PQC pro
 
 Even if the WARP client transmits data through a post-quantum tunnel, if it is converted back to classical encryption for the final segment from the Cloudflare edge server to the origin server, security uncertainty increases once again. The entrance to the tunnel is a solid fortress, but the exit is left in a vulnerable state. Furthermore, ML-DSA, a core component of the authentication system, is still in the process of standardization, making a technical gap inevitable until a complete trust system is secured.
 
-![A realistic 3D infographic showing a secure tunnel with a transparent section revealing the internal data flow, one end glowing with advanced blue light (PQC) and the other end fading into dim orange (Legacy), emphasizing the security gap.](../../../../../source/posts/PQC_%28Post-Quantum_Cryptography%29/e863a673-0.webp)
+![PQC (Post-Quantum Cryptography) - 기존 보안 방식과 양자 내성 암호 방식 간의 보안 격차를 나타낸 인포그래픽입니다.](../../../../../source/posts/PQC_%28Post-Quantum_Cryptography%29/745212b3-1.webp)
 
 **Downgrade Inducement and Operational Challenges**
 

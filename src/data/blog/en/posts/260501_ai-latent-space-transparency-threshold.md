@@ -62,7 +62,7 @@ In agent systems performing precision legal interpretations or reviewing the app
 | **Debugging & Verification** | Step-by-step logical error correction | Post-hoc debugging practically impossible |
 | **Primary Use Cases** | Precision tasks requiring security/transparency | Real-time agents requiring scale and speed |
 
-[Image: A side-by-side comparison visualization: on the left, a linear chain of text tokens (Explicit CoT); on the right, a multi-dimensional probability cloud representing latent superposition and parallel reasoning paths.]
+![잠재 공간 추론 (Latent Space Reasoning) - 명시적 추론(Explicit CoT)과 잠재 공간 추론의 구조적 차이를 비교한 그림입니다.](../../../../../source/posts/잠재_공간_추론_%28Latent_Space_Reasoning%29/c15c5eca-1.webp)
 
 ### Logical Drift in a Space Without Structural Constraints
 

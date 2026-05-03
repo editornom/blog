@@ -67,7 +67,7 @@ A common mistake in designing agent systems is granting excessive permissions to
 
 Security control plane solutions for agent orchestration are emerging in the market, but the computational cost and latency incurred during real-time validation of all communications remain practical hurdles. As statistics suggest that 82% of development sites have already adopted AI tools, the pace of technology adoption is very fast. However, many companies are facing difficulties in decision-making at the point where system performance must be partially sacrificed for enhanced security.
 
-![A high-tech security operations center (SOC) dashboard showing a complex graph of agent interactions, with a magnifying glass icon hovering over a suspicious 'agent-to-agent' communication log, photorealistic editorial photography style.](../../../../../source/posts/Multi-Agent_System_%28MAS%29_Security/1a93ddb7-0.webp)
+![Multi-Agent System Security - 에이전트 간 통신 로그 및 상호작용 그래프를 분석하는 SOC 대시보드 화면입니다.](../../../../../source/posts/Multi-Agent_System_%28MAS%29_Security/audit-viz-2.png)
 
 ### Design Direction for Zero Trust Agent Architecture
 

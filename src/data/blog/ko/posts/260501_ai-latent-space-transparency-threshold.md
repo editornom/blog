@@ -72,7 +72,7 @@ faqs:
 | 디버깅 및 사후 검증 | 단계별 논리 오류 수정 가능 | 사실상 사후 디버깅 불가능 |
 | 주요 활용 분야 | 보안 및 투명성이 중요한 정밀 업무 | 대규모 연산 및 속도가 중요한 실시간 에이전트 |
 
-[이미지: A side-by-side comparison visualization: on the left, a linear chain of text tokens (Explicit CoT); on the right, a multi-dimensional probability cloud representing latent superposition and parallel reasoning paths.]
+![잠재 공간 추론 (Latent Space Reasoning) - 명시적 추론(Explicit CoT)과 잠재 공간 추론의 구조적 차이를 비교한 그림입니다.](../../../../../source/posts/잠재_공간_추론_%28Latent_Space_Reasoning%29/c15c5eca-1.webp)
 
 ### 구조적 규약이 사라진 공간에서의 논리적 이탈
 

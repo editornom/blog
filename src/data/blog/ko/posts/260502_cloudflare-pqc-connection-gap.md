@@ -79,7 +79,7 @@ Cloudflare의 데이터에 따르면 현재 자사 네트워크로 유입되는 
 
 WARP 클라이언트가 데이터를 양자 내성 터널로 전송하더라도, Cloudflare 엣지 서버를 통과해 오리진 서버로 향하는 최종 구간에서 고전 암호로 변환된다면 보안상의 불확실성은 다시 증가하게 됩니다. 터널의 입구는 견고한 요새지만 출구는 취약한 상태로 방치된 셈입니다. 또한 인증 체계의 핵심인 ML-DSA는 아직 표준화 과정에 있어, 완전한 신뢰 체계를 확보하기까지는 기술적 공백이 불가피합니다.
 
-[이미지: A realistic 3D infographic showing a secure tunnel with a transparent section revealing the internal data flow, one end glowing with advanced blue light (PQC) and the other end fading into dim orange (Legacy), emphasizing the security gap.]
+![PQC (Post-Quantum Cryptography) - 기존 보안 방식과 양자 내성 암호 방식 간의 보안 격차를 나타낸 인포그래픽입니다.](../../../../../source/posts/PQC_%28Post-Quantum_Cryptography%29/745212b3-1.webp)
 
 **다운그레이드 유도와 운영상의 도전 과제**
 

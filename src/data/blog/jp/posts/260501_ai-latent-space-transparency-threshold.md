@@ -62,7 +62,7 @@ Metaが公開したCoconutフレームワークや、ICLR 2026に提出された
 | デバッグおよび事後検証 | 段階的な論理エラーの修正が可能 | 事実上、事後のデバッグが不可能 |
 | 主な活用分野 | セキュリティと透明性が重要な精密業務 | 大規模演算と速度が重要なリアルタイムエージェント |
 
-[画像: A side-by-side comparison visualization: on the left, a linear chain of text tokens (Explicit CoT); on the right, a multi-dimensional probability cloud representing latent superposition and parallel reasoning paths.]
+![잠재 공간 추론 (Latent Space Reasoning) - 명시적 추론(Explicit CoT)과 잠재 공간 추론의 구조적 차이를 비교한 그림입니다.](../../../../../source/posts/잠재_공간_추론_%28Latent_Space_Reasoning%29/c15c5eca-1.webp)
 
 ### 構造的規約が消失した空間での論理的逸脱
 

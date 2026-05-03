@@ -75,7 +75,7 @@ faqs:
 
 현재 시장에는 에이전트 오케스트레이션을 위한 보안 제어 평면 솔루션들이 등장하고 있으나, 모든 통신을 실시간으로 검증하는 과정에서 발생하는 연산 비용과 지연 시간(Latency)은 실무적인 걸림돌이 됩니다. 개발 현장의 82%가 이미 AI 도구를 도입했다는 통계가 시사하듯 기술 도입 속도는 매우 빠르지만, 보안 강화를 위해 시스템 성능을 일부 희생해야 하는 지점에서 많은 기업이 의사결정의 난항을 겪고 있습니다.
 
-[이미지: A high-tech security operations center (SOC) dashboard showing a complex graph of agent interactions, with a magnifying glass icon hovering over a suspicious 'agent-to-agent' communication log, photorealistic editorial photography style.]
+![Multi-Agent System Security - 에이전트 간 통신 로그 및 상호작용 그래프를 분석하는 SOC 대시보드 화면입니다.](../../../../../source/posts/Multi-Agent_System_%28MAS%29_Security/audit-viz-2.png)
 
 ### 제로 트러스트 에이전트 아키텍처의 설계 방향
 
