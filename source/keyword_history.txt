@@ -16,3 +16,4 @@
 [2026-05-02] [AI추천_39점] eBPF
 [2026-05-02] [AI추천_39점] AI Security Auditing
 [2026-05-03] [AI추천_39점] Multi-Agent System (MAS) Security
+[2026-05-03] [AI추천_40점] Transformer
