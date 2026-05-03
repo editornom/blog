@@ -1,0 +1,10 @@
+https://arxiv.org/abs/2505.02077
+https://www.knostic.ai/blog/multi-agent-security
+https://torq.io/blog/the-multi-agent-system-a-new-era-for-secops/
+https://galileo.ai/blog/multi-agent-systems-exploits
+https://arxiv.org/abs/2603.09002
+https://codelabs.developers.google.com/codelabs/production-ready-ai-roadshow/3-securing-a-multi-agent-system/securing-a-multi-agent-system
+https://medium.com/@sausingh0110/security-in-multi-agent-system-chapter-1-283a27156f89
+https://openreview.net/forum?id=LfdFnakqGJ
+https://arxiv.org/abs/2603.15408
+https://www.lumenova.ai/blog/taming-complexity-governing-multi-agent-systems-guide/
