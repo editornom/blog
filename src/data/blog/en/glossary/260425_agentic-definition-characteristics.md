@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-04-25 15:10:00+09:00
-slug: understanding-agentic-ai-definition-and-key-features
+slug: agentic-definition-characteristics
 featured: false
 draft: false
 ogImage: ../../../../assets/images/placeholder.png

@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-05-02 14:25:25.212265+09:00
-slug: understanding-context-switching-overhead-optimization
+slug: context-switching-overhead-optimization
 featured: false
 draft: false
 ogImage: ../../../../assets/images/placeholder.png

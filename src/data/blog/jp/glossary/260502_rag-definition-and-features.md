@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-05-02 16:39:28.925152+09:00
-slug: rag-definition-and-technical-features
+slug: rag-definition-and-features
 featured: false
 draft: false
 ogImage: ../../../../assets/images/placeholder.png

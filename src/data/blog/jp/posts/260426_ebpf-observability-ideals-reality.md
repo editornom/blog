@@ -4,7 +4,7 @@ author: editornom
 author_role: シニアテックエディター
 author_url: https://editornom.com/about
 pubDatetime: 2026-04-26 09:00:00+09:00
-slug: ebpf-linux-kernel-observability-pros-cons
+slug: ebpf-observability-ideals-reality
 featured: false
 draft: false
 ogImage: "../../../../../source/posts/eBPF_(extended_Berkeley_Packet_Filter)/e031c061-0.webp"

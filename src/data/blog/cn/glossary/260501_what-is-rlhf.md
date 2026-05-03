@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-05-01 00:24:21.461709+09:00
-slug: what-is-rlhf-ai-alignment
+slug: what-is-rlhf
 featured: false
 draft: false
 ogImage: ../../../../assets/images/placeholder.png

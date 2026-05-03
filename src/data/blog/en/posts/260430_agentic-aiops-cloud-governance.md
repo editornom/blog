@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-04-30 20:49:09.628386+09:00
-slug: agentic-aiops-cloud-governance-risks-and-opportunities
+slug: agentic-aiops-cloud-governance
 featured: false
 draft: false
 ogImage: "../../../../../source/posts/Agentic_AIOps/b485ceb2-0.webp"

@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-05-03 16:56:38.246485+09:00
-slug: mas-security-vulnerabilities-architectural-flaws
+slug: multi-agent-system-security-flaws
 featured: false
 draft: false
 ogImage: "../../../../../source/posts/Multi-Agent_System_(MAS)_Security/1a93ddb7-0.webp"

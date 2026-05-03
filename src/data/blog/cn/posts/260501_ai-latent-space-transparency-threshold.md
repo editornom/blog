@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-05-01 19:48:02.438659+09:00
-slug: ai-latent-space-reasoning-efficiency-and-transparency
+slug: ai-latent-space-transparency-threshold
 featured: false
 draft: false
 ogImage: "../../../../../source/posts/잠재_공간_추론_(Latent_Space_Reasoning)/7ef12d1c-0.webp"

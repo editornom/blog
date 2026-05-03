@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-04-29 09:10:00+09:00
-slug: stacked-prs-git-workflow-guide
+slug: what-is-stacked-prs
 featured: false
 draft: false
 ogImage: ../../../../assets/images/placeholder.png

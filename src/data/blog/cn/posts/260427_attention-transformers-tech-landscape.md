@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-04-27 15:00:00+09:00
-slug: attention-transformer-architecture-evolution
+slug: attention-transformers-tech-landscape
 featured: false
 draft: false
 ogImage: "../../../../../source/posts/트랜스포머(Transformer)/88847d3f-0.webp"

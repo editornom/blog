@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-05-02 11:08:19.091152+09:00
-slug: understanding-quic-next-generation-protocol
+slug: what-is-quic
 featured: false
 draft: false
 ogImage: ../../../../assets/images/placeholder.png

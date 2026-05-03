@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-04-25 15:00:00+09:00
-slug: native-multimodal-ai-vision-language-integration
+slug: single-token-native-multimodal-ai
 featured: false
 draft: false
 ogImage: "../../../../../source/posts/네이티브_멀티모달_(Native_Multimodal)/4af4ae15-0.webp"

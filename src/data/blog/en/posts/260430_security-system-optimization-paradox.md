@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-04-30 19:14:42.272983+09:00
-slug: memory-safety-vs-performance-optimization-paradox
+slug: security-system-optimization-paradox
 featured: false
 draft: false
 ogImage: "../../../../../source/posts/Memory_Safety/d58ab33d-0.webp"

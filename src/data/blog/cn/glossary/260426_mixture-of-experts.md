@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-04-26 15:10:00+09:00
-slug: "understanding-moe-architecture-guide"
+slug: mixture-of-experts
 featured: false
 draft: false
 ogImage: ../../../../assets/images/placeholder.png

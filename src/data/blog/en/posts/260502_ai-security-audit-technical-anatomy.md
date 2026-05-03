@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-05-02 16:39:05.867567+09:00
-slug: ai-security-auditing-technical-anatomy-non-deterministic-models
+slug: ai-security-audit-technical-anatomy
 featured: false
 draft: false
 ogImage: "../../../../../source/posts/AI_Security_Auditing/a8ca6ebd-0.webp"

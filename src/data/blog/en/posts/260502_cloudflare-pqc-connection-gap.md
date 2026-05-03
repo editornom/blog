@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-05-02 11:07:45.171268+09:00
-slug: cloudflare-warp-pqc-quantum-security-gap
+slug: cloudflare-pqc-connection-gap
 featured: false
 draft: false
 ogImage: "../../../../../source/posts/PQC_(Post-Quantum_Cryptography)/e863a673-0.webp"

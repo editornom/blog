@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-05-03 18:50:46.444040+09:00
-slug: transformer-probabilistic-logic-computational-business-costs
+slug: transformer-grammar-computation-cost
 featured: false
 draft: false
 ogImage: "../../../../../source/posts/Transformer/488b9307-0.webp"

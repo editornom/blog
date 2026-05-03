@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-05-01 00:23:41.080686+09:00
-slug: llm-alignment-rlhf-reward-modeling
+slug: llm-alignment-rlhf-mechanism
 featured: false
 draft: false
 ogImage: "../../../../../source/posts/RLHF_(Reinforcement_Learning_from_Human_Feedback)/cd9c2545-0.webp"

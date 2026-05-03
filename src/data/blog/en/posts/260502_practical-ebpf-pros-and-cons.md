@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-05-02 14:24:59.887069+09:00
-slug: ebpf-practical-observability-benefits-and-challenges
+slug: practical-ebpf-pros-and-cons
 featured: false
 draft: false
 ogImage: "../../../../../source/posts/eBPF/86045162-0.webp"

@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-04-27 09:00:00+09:00
-slug: agentic-cybersecurity-autonomous-ai-defense-guide
+slug: agentic-cybersecurity-autonomous-defense
 featured: false
 draft: false
 ogImage: ../../../../assets/images/placeholder.png

@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-05-01 18:13:15.639307+09:00
-slug: cap-theorem-distributed-systems-tradeoffs
+slug: cap-theorem-distributed-architecture
 featured: false
 draft: false
 ogImage: "../../../../../source/posts/CAP_Theorem/a8c05114-0.webp"

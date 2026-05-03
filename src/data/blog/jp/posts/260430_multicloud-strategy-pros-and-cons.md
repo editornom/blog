@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-04-30 08:41:38.349748+09:00
-slug: multicloud-strategy-benefits-risks-management
+slug: multicloud-strategy-pros-and-cons
 featured: false
 draft: false
 ogImage: ../../../../assets/images/placeholder.png

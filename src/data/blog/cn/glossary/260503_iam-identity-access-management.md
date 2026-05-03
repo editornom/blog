@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-05-03 16:57:08.573311+09:00
-slug: understanding-iam-identity-and-access-management
+slug: iam-identity-access-management
 featured: false
 draft: false
 ogImage: ../../../../assets/images/placeholder.png

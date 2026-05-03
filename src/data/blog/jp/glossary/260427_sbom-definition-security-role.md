@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-04-27 15:10:00+09:00
-slug: what-is-sbom-definition-security-supply-chain-role
+slug: sbom-definition-security-role
 featured: false
 draft: false
 ogImage: ../../../../assets/images/placeholder.png

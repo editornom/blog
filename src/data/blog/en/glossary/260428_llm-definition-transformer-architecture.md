@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-04-28 15:10:00+09:00
-slug: what-is-llm-transformer-architecture-technical-overview
+slug: llm-definition-transformer-architecture
 featured: false
 draft: false
 ogImage: ../../../../assets/images/placeholder.png

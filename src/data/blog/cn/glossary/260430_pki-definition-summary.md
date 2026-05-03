@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-04-30 08:55:37.007710+09:00
-slug: pki-fundamentals-digital-security-guide
+slug: pki-definition-summary
 featured: false
 draft: false
 ogImage: ../../../../assets/images/placeholder.png

@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-04-30 08:42:27.616629+09:00
-slug: understanding-spof-prevention-strategies
+slug: spof-definition-management-strategy
 featured: false
 draft: false
 ogImage: ../../../../assets/images/placeholder.png

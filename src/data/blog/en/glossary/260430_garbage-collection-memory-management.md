@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-04-30 19:15:10.110202+09:00
-slug: what-is-garbage-collection-and-how-it-works
+slug: garbage-collection-memory-management
 featured: false
 draft: false
 ogImage: ../../../../assets/images/placeholder.png

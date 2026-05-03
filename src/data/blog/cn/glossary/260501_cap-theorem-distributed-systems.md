@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-05-01 18:13:42.707068+09:00
-slug: understanding-cap-theorem-distributed-systems
+slug: cap-theorem-distributed-systems
 featured: false
 draft: false
 ogImage: ../../../../assets/images/placeholder.png

@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-04-26 15:00:00+09:00
-slug: rethinking-software-supply-chain-security-governance
+slug: software-supply-chain-security-beyond-visibility
 featured: false
 draft: false
 ogImage: "../../../../../source/posts/Software_Supply_Chain_Security/83dd6885-0.webp"

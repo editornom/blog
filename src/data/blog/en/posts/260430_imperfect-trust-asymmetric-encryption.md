@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-04-30 08:55:14.864652+09:00
-slug: asymmetric-encryption-pki-digital-trust-paradox
+slug: imperfect-trust-asymmetric-encryption
 featured: false
 draft: false
 ogImage: ../../../../assets/images/placeholder.png

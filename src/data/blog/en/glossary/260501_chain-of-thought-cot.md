@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-05-01 19:48:22.446382+09:00
-slug: explaining-chain-of-thought-prompting-in-llm
+slug: chain-of-thought-cot
 featured: false
 draft: false
 ogImage: ../../../../assets/images/placeholder.png

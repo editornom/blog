@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-05-01 16:47:12.606269+09:00
-slug: dpop-rfc-9449-proof-of-possession-web-security
+slug: dpop-proof-based-web-authentication
 featured: false
 draft: false
 ogImage: "../../../../../source/posts/DPoP_(RFC_9449)/29edb26c-0.webp"

@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-04-28 09:10:00+09:00
-slug: guide-to-cybersecurity-ttp-tactics-techniques-procedures
+slug: ttp-cybersecurity-guide
 featured: false
 draft: false
 ogImage: ../../../../assets/images/placeholder.png
