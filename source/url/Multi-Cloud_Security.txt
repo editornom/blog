@@ -1,0 +1,9 @@
+https://www.fortinet.com/resources/cyberglossary/multi-cloud-security
+https://live.paloaltonetworks.com/t5/community-blogs/a-unified-architecture-for-multi-cloud-security-from-visibility/ba-p/1236819
+https://www.sentinelone.com/cybersecurity-101/cloud-security/multi-cloud-security/
+https://www.deloitte.com/us/en/alliances/articles/red-hat-alliance-multi-cloud-solutions.html
+https://www.nops.io/blog/multicloud-strategy-pros-and-cons/
+https://www.sentinelone.com/cybersecurity-101/cloud-security/multi-cloud-security-solutions/
+https://cloudsecurityalliance.org/blog/2026/03/02/securing-the-modern-cloud-5-best-practices-for-protecting-multi-cloud-workloads
+https://www.bitlyft.com/resources/securing-multi-cloud-environments-with-unified-security
+https://arxiv.org/abs/2506.00426

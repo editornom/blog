@@ -462,26 +462,32 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
         report["draft"]["warning"] = density_warning
     
     # 3.5 Stage 3.5: Manuscript Inspection (Detox)
-    print(f"\n=== Stage 3.5: Manuscript Inspection (Detox) ===")
-    
-    max_retries = 3
-    reviewed_data = None
-    for attempt in range(max_retries):
-        print(f"  [Attempt {attempt+1}/{max_retries}] Starting detox...")
-        reviewed_data = review_manuscript(draft_data, folder=folder)
-        if reviewed_data and reviewed_data != draft_data:
-            report["detox"]["success"] = True
-            print(f"  ✅ Detox successful.")
-            break
-        else:
-            print(f"  ⚠️ Detox attempt {attempt+1} failed or returned no changes.")
-            if attempt < max_retries - 1:
-                time.sleep(5) # Wait before retry
-    
-    if not report["detox"]["success"]:
-        report["detox"]["error"] = "Detox failed after all retries, keeping original parts"
-        print(f"  ❌ All detox attempts failed. Using original parts.")
+    # [Optimized] Multi-agent generator's 'General Editor' phase already performs detox/polishing.
+    # We only run the additional reviewer script for other folders or as a fallback.
+    if folder != "posts":
+        print(f"\n=== Stage 3.5: Manuscript Inspection (Detox) ===")
+        max_retries = 3
+        reviewed_data = None
+        for attempt in range(max_retries):
+            print(f"  [Attempt {attempt+1}/{max_retries}] Starting detox...")
+            reviewed_data = review_manuscript(draft_data, folder=folder)
+            if reviewed_data and reviewed_data != draft_data:
+                report["detox"]["success"] = True
+                print(f"  ✅ Detox successful.")
+                break
+            else:
+                print(f"  ⚠️ Detox attempt {attempt+1} failed or returned no changes.")
+                if attempt < max_retries - 1:
+                    time.sleep(5) # Wait before retry
+        
+        if not report["detox"]["success"]:
+            report["detox"]["error"] = "Detox failed after all retries, keeping original parts"
+            print(f"  ❌ All detox attempts failed. Using original parts.")
+            reviewed_data = draft_data
+    else:
+        print(f"\n=== Stage 3.5: Skipping Redundant Detox (Handled by General Editor) ===")
         reviewed_data = draft_data
+        report["detox"]["success"] = True
 
     # NEW STEP: Stage 3.7: Metadata Assembly & Slug Generation
     print(f"\n=== Stage 3.7: Metadata Assembly & Slug Generation ===")

@@ -18,3 +18,6 @@
 [2026-05-03] [AI추천_39점] Multi-Agent System (MAS) Security
 [2026-05-03] [AI추천_40점] Transformer
 [2026-05-04] [AI추천_40점] Containerization
+[2026-05-04] [수동선정] SearchGPT
+[2026-05-04] [수동선정] Agentic AI
+[2026-05-04] [수동선정] Multi-Cloud Security

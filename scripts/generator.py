@@ -16,45 +16,175 @@ if sys.platform == "win32":
     # Ensure terminal can handle UTF-8/Emojis on Windows
     sys.stdout.reconfigure(encoding='utf-8')
 
-class BlogPostSchema(BaseModel):
-    title: str = Field(description="최적화된 제목")
-    content: str = Field(description="마크다운 형식의 본문 내용")
+class PlanningOutput(BaseModel):
+    strategy: str = Field(description="페르소나, 목표, 차별화 요소 등 전략 요약")
+    outline: str = Field(description="H1~H3 구조의 목차")
+    expert_guidelines: str = Field(description="SEO/AEO/GEO 전문가를 위한 개별 지시사항")
 
-def generate_blog_post(crawled_content, folder="posts", additional_instructions="", keyword="", stance=""):
+class SpecialistOutput(BaseModel):
+    seo_part: str = Field(description="SEO 최적화된 제목, 메타 디스크립션, 본문 요소")
+    aeo_part: str = Field(description="AEO 최적화된 BLUF, FAQ, 구조화 데이터 요소")
+    geo_part: str = Field(description="GEO 최적화된 데이터 밀도, 신뢰 신호, 표 요소")
+
+class BlogPostSchema(BaseModel):
+    title: str = Field(description="최종 완성된 제목")
+    content: str = Field(description="마크다운 형식의 최종 완성된 본문")
+
+def generate_blog_post_multi_agent(crawled_content, folder="posts", keyword="", stance=""):
     """
-    Generates a blog post using the Gemini API with Structured Outputs (JSON) and Keyword Density validation.
-    Returns:
-        tuple: (markdown_draft, density_warning_message)
+    Generates a blog post using a Multi-Agent Orchestration pipeline:
+    1. Planning Director: Strategy & Outline
+    2. Specialist Trio (SEO/AEO/GEO): Optimized elements
+    3. General Editor: Final consolidation and polishing
     """
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
         print("Error: GEMINI_API_KEY not found in .env")
-        return None, None
-
+        return None
+        
     client = genai.Client(api_key=api_key)
-
     primary_topic = keyword if keyword else crawled_content['title']
-
+    
     data_block = f"""
 ### 🎯 핵심 타겟 키워드:
 {primary_topic}
 
 ### 📄 수집된 본문 데이터:
 출처 URL: {crawled_content['url']}
-본문 내용(수집된 여러 소스 통합):
+본문 내용:
 {crawled_content['body']}
 """
 
-    utc_now = datetime.datetime.now(datetime.timezone.utc)
-    seoul_tz = datetime.timezone(datetime.timedelta(hours=9))
-    seoul_now = datetime.datetime.now(seoul_tz)
-    pub_time = seoul_now - datetime.timedelta(minutes=10)
+    # --- PHASE 1: Planning Director ---
+    print("\n🏗️ [Phase 1] 기획국장: 전략 수립 및 목차 설계 중...")
+    planning_prompt = f"""
+너는 블로그 콘텐츠 전략의 사령탑인 '기획국장(Planning Director)'이다. 너의 임무는 단순한 키워드 나열이 아니라, 시장 데이터와 경쟁사 분석을 바탕으로 '필승의 글쓰기 전략'을 수립하는 것이다.
+
+{data_block}
+
+[지시사항]
+1. 시장 데이터와 페르소나를 분석하여 독보적인 전략을 수립하라.
+2. H1~H3 구조의 목차를 설계하라.
+3. SEO/AEO/GEO 전문가가 반드시 다루어야 할 핵심 논점을 정리하라.
+4. 이번 글의 핵심 논조(Stance)는 다음과 같다: "{stance}"
+"""
     
-    print(f"--- Time Synchronization ---")
-    print(f"Current UTC:   {utc_now.strftime('%Y-%m-%d %H:%M:%S')} Z")
-    print(f"Current Seoul: {seoul_now.strftime('%Y-%m-%d %H:%M:%S')} +09:00")
-    print(f"Publication:   {pub_time.strftime('%Y-%m-%d %H:%M:%S')} +09:00 (Buffered)")
-    print(f"----------------------------")
+    @gemini_retry
+    def call_planner():
+        gemini_limiter.consume()
+        return client.models.generate_content(
+            model='models/gemini-3-flash-preview', # Latest flash for planning
+            contents=planning_prompt,
+            config={'response_mime_type': 'application/json', 'response_schema': PlanningOutput}
+        )
+    
+    plan_resp = call_planner()
+    plan_data = json.loads(plan_resp.text)
+    print(f"  ✅ 기획 완료: {plan_data['strategy'][:50]}...")
+
+    # --- PHASE 2: Specialist Trio (SEO / AEO / GEO) ---
+    print("🔍 [Phase 2] 전문가 3인방: 영역별 최적화 요소 생성 중...")
+    specialist_prompt = f"""
+너는 'SEO 전문가', 'AEO 전문가', 'GEO 전문가' 3인방의 역할을 동시에 수행하여 기획국장의 오더에 맞춘 최상의 콘텐츠 요소를 생성해야 한다.
+
+[기획국장의 가이드라인]
+전략: {plan_data['strategy']}
+목차: {plan_data['outline']}
+추가 지시: {plan_data['expert_guidelines']}
+
+{data_block}
+
+---
+[각 전문가별 페르소나 및 핵심 지침]
+
+🔍 블로그 전담 SEO 전문가
+- 목표: 검색 의도 파악, 키워드 전략, 제목 및 메타디스크립션 최적화, H태그 설계, E-E-A-T 강화.
+- 구체적 예시와 실무적 판단 기준을 포함하라.
+
+💡 블로그 전담 AEO 전문가
+- 목표: 구글 AI 오버뷰, 퍼플렉시티 등이 인용하기 좋은 형태로 최적화.
+- BLUF(결론부터) 방식 적용, 질문형 구조 설계, FAQ 섹션 최적화, 신뢰 요소 및 데이터 구조화.
+
+🌐 블로그 전담 GEO 전문가
+- 목표: 생성형 AI 엔진이 가장 신뢰할 만한 출처로 판단하도록 신뢰도와 문맥 극대화.
+- 추상적 일반론 배제(Anti-Fluff), 구체적인 수치/데이터/출처 명시, AI가 요약하기 좋은 논리적 구조 설계.
+"""
+
+    @gemini_retry
+    def call_specialists():
+        gemini_limiter.consume()
+        return client.models.generate_content(
+            model='models/gemini-3-pro-preview', # Latest pro for specialist expertise
+            contents=specialist_prompt,
+            config={'response_mime_type': 'application/json', 'response_schema': SpecialistOutput}
+        )
+
+    spec_resp = call_specialists()
+    spec_data = json.loads(spec_resp.text)
+    print(f"  ✅ 전문가 3인방 작업 완료 (SEO/AEO/GEO elements ready)")
+
+    # --- PHASE 3: General Editor ---
+    print("🖋️ [Phase 3] 총괄 편집장: 최종 원고 집필 및 윤문 중...")
+    editor_prompt = f"""
+너는 블로그 자동화 파이프라인의 최종 문지기인 '총괄 편집장(Editor-in-Chief)'이다. 너의 목표는 전문가들이 생성한 정보들을 취합하여, 독자가 읽었을 때 "사람이 쓴 고품질 전문가 칼럼"이라고 느낄 만큼 자연스럽고 유려한 문장으로 완성하는 것이다.
+
+[입력 데이터]
+기획국장 전략: {plan_data['strategy']}
+SEO 전문가 결과: {spec_data['seo_part']}
+AEO 전문가 결과: {spec_data['aeo_part']}
+GEO 전문가 결과: {spec_data['geo_part']}
+
+---
+[총괄 편집장 핵심 지침]
+1. 통합 및 흐름(Flow) 최적화: 3인의 결과물 중 중복 제거 및 논리적 재배치.
+2. 톤앤매너 및 윤문: 기계적 문체 탈피, 지적이고 유려한 '해요체' 활용, AI 특유의 상투적 표현(도입부/결론부) 금지.
+3. 모바일 가독성 및 스타일 (핵심 지침):
+   - 한 문단은 반드시 2~3문장 이내로 짧게 구성하여 모바일에서의 가독성을 극대화하라.
+   - 모든 문단의 첫 시작은 반드시 한 칸의 공백(' ')을 삽입하여 들여쓰기를 명확히 적용하라. (텍스트 상에서 한 칸 띄우고 시작)
+   - 핵심 주장, 통찰력 있는 결론, 또는 중요한 인용구는 마크다운 인용 블록(`>`)을 사용하여 시각적으로 강렬하게 강조하라.
+4. 기술적 요소의 자연스러운 삽입: 표, 인용구 등이 맥락 속에 녹아들게 배치. (**주의: FAQ 섹션은 별도 시스템에서 생성하므로 본문에 직접 작성하지 마십시오.**)
+5. [이미지 삽입]: 본문 내 적절한 위치에 **[이미지: 영어로 된 상세한 Editorial Style 생성 프롬프트]** 형식을 2~3곳 삽입하라.
+6. 분량: 공백 제외 3,500자 이상의 심층 분석글.
+7. 결과물 형식: HTML 태그와 마크다운이 혼용된 원고 본문만 출력하라. (제목과 프론트매터 제외)
+"""
+
+    @gemini_retry
+    def call_editor():
+        gemini_limiter.consume()
+        return client.models.generate_content(
+            model='models/gemini-3-pro-preview', # Latest pro for final quality
+            contents=editor_prompt,
+            config={'response_mime_type': 'application/json', 'response_schema': BlogPostSchema}
+        )
+
+    final_resp = call_editor()
+    final_data = json.loads(final_resp.text)
+    print(f"  ✅ 최종 원고 완성: {final_data['title']}")
+
+    return final_data, None
+
+def generate_blog_post(crawled_content, folder="posts", additional_instructions="", keyword="", stance=""):
+    """
+    Original generation function (Legacy/Fallback)
+    Now redirects to multi-agent for 'posts' folder.
+    """
+    if folder == "posts":
+        return generate_blog_post_multi_agent(crawled_content, folder, keyword, stance)
+    
+    # Glossary logic remains same for now as it's a specific simple task
+    api_key = os.getenv("GEMINI_API_KEY")
+    client = genai.Client(api_key=api_key)
+    primary_topic = keyword if keyword else crawled_content['title']
+    
+    data_block = f"""
+### 🎯 핵심 타겟 키워드:
+{primary_topic}
+
+### 📄 수집된 본문 데이터:
+출처 URL: {crawled_content['url']}
+본문 내용:
+{crawled_content['body']}
+"""
 
     if folder == "glossary":
         prompt = f"""
@@ -80,55 +210,9 @@ def generate_blog_post(crawled_content, folder="posts", additional_instructions=
 당신의 내부 시스템에서 평가 과정이나 메타 코멘트를 절대 노출하지 마십시오. 본문(content) 내부에 <script> 태그나 JSON-LD(application/ld+json) 코드를 절대 포함하지 마십시오. 요구된 JSON 스키마 필드만 엄격히 반환하십시오.
 """
     else:
-        prompt = f"""
-# 페르소나 (Persona)
-당신은 IT 트렌드, 보안 위협, 인공지능(AI) 혁신, 차세대 테크를 깊이 있게 분석하여 칼럼을 기고하는 15년 차 '수석 기술 전문 에디터'입니다. 
-최신 기술 혁신에는 열광하지만, 실제 기업 도입 시의 한계점, 보안 리스크, 그리고 비용(가성비) 문제는 매우 냉정하고 비판적으로 꼬집는 까다로운 성향을 가지고 있습니다.
-당신의 글은 글로벌 테크 미디어(Wired, TechCrunch)의 수준에 맞춰 기술적 깊이와 대중적 통찰력을 동시에 갖춰야 합니다.
-제목(title) 작성 시 작위적인 수식어를 배제하고, 독자의 호기심을 자극하면서도 기술의 핵심을 관통하는 세련된 제목을 작성하십시오.
-
-{data_block}
-
-# 핵심 작성 원칙 (Writing Principles)
-1. 말투: "~입니다", "~습니다" 문어체를 기본으로 하되, 지적이고 친근한 '해요체'를 섞어 사용하세요.
-2. 금지어 및 금지 패턴 (Negative Prompt): 
-   - 거창하고 작위적인 표현 절대 금지.
-   - [Deep Dive], [The Mechanism] 같은 불필요한 영문 소제목 병기 금지.
-   - **강조 남발 금지 (중요)**: 문장 마다 주요 키워드나 명사에 볼드체(`**텍스트**`)를 입히는 'AI 특유의 강조 습관'을 절대 피하십시오. 
-3. 강조 가이드라인 (Smart Emphasis): 
-   - 강조는 전체 글에서 **최초 등장하는 핵심 용어**에 대해 단 1~2회만 사용하세요. 
-   - 조사(~는, ~를)까지 볼드체에 포함하지 마십시오. 
-   - "A는 **B**이다"와 같은 인위적인 강조 패턴보다, 문맥의 흐름에 따라 꼭 필요한 정보에만 자연스럽고 드물게 볼드체를 사용하십시오. 사람이 직접 쓴 칼럼처럼 강조를 아끼세요.
-4. 고유명사 강제: 외국 IT 기업이나 서비스명 표기 시 오류를 주의하세요.
-5. 분량 및 깊이: 공백 제외 최소 3,500자 이상, 최대 4,000자 미만의 심층 분석 글로 작성하며, 일반인이 모르는 기술적 디테일을 최소 2개 이상 자연스럽게 녹여내세요.
-
-# 칼럼 구조 (Logical Structure)
-## [작성 지침 - 절대 준수]
-1. 모든 포스팅의 중심 주제는 반드시 **"{primary_topic}"**이어야 합니다. 
-2. 제공된 소스 자료에 하드웨어 장비 정보가 많더라도, 이를 주인공으로 삼지 마세요.
-3. 문단의 가독성을 위해 적절한 소제목(H2, H3)과 불릿 포인트를 활용하세요.
-4. 전문적인 톤앤매너를 유지하세요.
-5. 서론 -> 본문 심층 분석 -> 전망 -> 결론 구조.
-   - 단, 마지막 결론 부분은 절대로 별도의 소제목(헤더, ## 등)을 달지 마십시오. 글의 흐름상 자연스럽게 에디터의 시선으로 넘어가야 합니다.
-   - 결론부의 시작은 기계적인 요약("결론적으로...")을 철저히 배제하십시오. 대신, 앞선 본문 내용과 자연스럽게 이어지면서도 칼럼니스트 본인의 주관적이고 비판적인 시각이 드러나는 연결 문장을 스스로 창작하여 결론을 시작하십시오.
-   - 결론에는 이 기술이 향후 시장에 미칠 영향에 대한 비판적인 통찰을 정확히 3문장으로 압축하여 작성하십시오.
-
-# 톤앤매너 샘플 (Few-Shot Examples)
-아래는 당신이 작성해야 할 글의 문체와 비판적 시각을 보여주는 샘플입니다. 이 샘플들의 어조(지적이고 단호하면서도 자연스러운 구어체)를 철저히 모방하십시오.
-- 샘플 1: "스펙상으로는 완벽해 보입니다. 초당 만 개의 토큰을 처리하는 속도는 확실히 매력적이죠. 하지만 엔터프라이즈 환경에서 이 솔루션을 메인으로 올리기엔 보안 격리가 너무나 허술합니다. 기술적 진보에 박수를 보내기 전에, 과연 이 비용을 태우면서까지 고객 데이터를 위험에 노출할 가치가 있는지 냉정하게 따져볼 때입니다."
-- 샘플 2: "놀라운 혁신인 건 분명해요. 하지만 늘 그렇듯 '어떻게 쓸 것인가'는 다른 문제입니다. 현장에서는 화려한 AI 모델보다 투박하더라도 안정적으로 돌아가는 레거시 연동이 더 아쉬울 때가 많으니까요. 결국 이 거대한 인프라도 기업의 실제 비즈니스 로직에 스며들지 못한다면 비싼 장난감에 불과할 수밖에 없습니다."
-
-# GEO & E-E-A-T 강화 요소
-- 인용구(Blockquote): **절대 가상의 인물이나 출처 없는 명언을 지어내지 마십시오.** 제공된 소스 데이터(crawled_content)에 실제 기업명, 연구소, 전문가의 발언이나 통계 수치가 있을 경우에만 인용구를 사용하고, 없다면 인용구를 아예 생략하십시오.
-- 수치/통계 인용 강제: 주장의 신뢰도를 높이기 위해, 제공된 소스 데이터 내에 존재하는 '최근 1~2년 이내의 통계 수치, 벤치마크 데이터, 또는 구체적인 기대 효과 수치'를 최소 1회 이상 반드시 본문에 인용하십시오.
-- 마크다운 표(Table) 삽입: 두 가지 이상의 기술, 모델, 또는 장단점을 비교/대조하는 설명이 나올 경우, 독자의 가독성과 AI 검색엔진 최적화를 위해 반드시 **마크다운 형태의 표(Table)**를 1개 이상 삽입하십시오.
-- 데이터 시각화 지시: 본문 전체에서 가장 중요한 맥락을 보여줄 수 있는 지점 **2~3곳**을 자유롭게 선정하여 에디토리얼 이미지 프롬프트를 삽입하십시오. (형식: **[이미지: 영어로 된 상세한 Editorial Style 생성 프롬프트]**). 
-- **이미지 프롬프트 주의사항**: 은유적이거나 시적인 묘사("그림자가 드리워진...")를 철저히 배제하고, 사실적인 키워드("서버 아키텍처 다이어그램", "보안 아이콘") 위주로 작성하십시오. AI가 생성한 가짜 데이터가 노출되는 것을 방지해야 합니다.
-
-### ⚠️ 주의사항:
-본문(content) 내부에 <script> 태그나 JSON-LD(application/ld+json) 코드를 절대 포함하지 마십시오. 이는 시스템 오류를 유발하며 절대 허용되지 않습니다. 오직 JSON 스키마에 정의된 마크다운 데이터만 출력해야 합니다.
-- 이미지 삽입 시 반드시 `[이미지: 영어 프롬프트]` 형식을 유지하세요. `![]()`와 같은 마크다운 이미지 문법을 미리 사용하지 마십시오.
-"""
+        # This part should ideally not be reached if folder is 'posts' due to redirect, 
+        # but kept for robustness if other folders are added later.
+        prompt = f"Write a professional blog post about {primary_topic} using the following data:\n{data_block}"
 
     if additional_instructions:
         prompt += f"\n### 추가 지시사항:\n{additional_instructions}\n"
