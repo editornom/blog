@@ -15,8 +15,42 @@ load_dotenv()
 def enhance_image_prompt(base_prompt, client, context=None):
     """
     기호나 짧은 단어로 이루어진 초기 프롬프트를 고품질 이미지 생성을 위한 상세 영문 프롬프트로 증강합니다.
-    context가 제공되면 해당 포스팅의 제목/키워드를 참고하여 맥락에 맞는 이미지를 구상합니다.
+    시각적 단조로움을 피하기 위해 스타일 랜덤 셀렉터를 도입합니다.
     """
+    import random
+    
+    # --- 스타일 라이브러리 정의 ---
+    styles = [
+        {
+            "name": "Glassmorphism & Frosty Texture",
+            "desc": "Translucent glass textures, frosted surfaces, soft refractions, depth of field, high-end tech magazine aesthetic, ethereal lighting."
+        },
+        {
+            "name": "Cyberpunk Minimalism",
+            "desc": "Dark matte background, sharp glowing neon lines, high contrast, minimalist tech blueprint, futuristic circuits, deep shadows."
+        },
+        {
+            "name": "Abstract Geometric Data Art",
+            "desc": "Fluid geometric shapes, 3D particles, data flow visualization, vibrant gradients, organic tech clusters, conceptual representation of information."
+        },
+        {
+            "name": "Macro Tech Close-up",
+            "desc": "Macro photography style, extreme close-up on futuristic hardware or fibers, bokeh effect, metallic textures, focus on intricate details."
+        }
+    ]
+    
+    # --- 구도 라이브러리 정의 ---
+    compositions = [
+        "Symmetrical centered layout",
+        "Top-down flat lay view",
+        "Dynamic low-angle perspective",
+        "Minimalist negative space composition",
+        "Cinematic wide-angle view"
+    ]
+    
+    selected_style = random.choice(styles)
+    selected_comp = random.choice(compositions)
+
     try:
         context_str = f"\n[현재 포스팅 문맥(제목/키워드)]: {context}" if context else ""
         enhance_prompt = f"""
@@ -25,12 +59,14 @@ def enhance_image_prompt(base_prompt, client, context=None):
 
 [지침]:
 1. 최고 품질의 이미지를 생성할 수 있는 매우 상세한 영문 프롬프트(Prompt)로 확장해주세요.
-2. 반드시 영어로만 출력하며, 뻔한 스톡 사진(Cinematic, Photorealistic) 느낌을 철저히 배제하십시오.
-3. **핵심 규칙**: 모든 이미지는 반드시 "Modern IT Tech Illustration" 컨셉을 유지해야 합니다. 
-   - **어떠한 경우에도 사람(인물, 캐릭터, 신체 부위 등)을 절대 그리지 마십시오.** (Strictly NO humans, NO characters, NO people)
-   - 절대 오토바이, 음식(햄버거 등), 무관한 사물, 평범한 자연 풍경 등을 그리지 마십시오.
-   - 대신 "High-quality modern tech illustration, engaging editorial style, conceptual flat design, clean background" 스타일을 사용하십시오.
-4. AI 텍스트 렌더링 오류를 막기 위해 "no text, no letters, no labels, no complex charts"라는 부정 프롬프트를 융합하십시오.{context_str}
+2. **핵심 스타일**: 이번 이미지의 스타일은 '{selected_style['name']}' ({selected_style['desc']}) 입니다.
+3. **핵심 구도**: 구도는 '{selected_comp}'를 적용하십시오.
+4. **절대 금지 사항**: 
+   - **사람(인물, 캐릭터, 신체 부위 등)을 절대 그리지 마십시오.** (Strictly NO humans, NO characters, NO people)
+   - **아이소메트릭(Isometric, 30-degree 3D view) 구도를 절대 사용하지 마십시오.** (Strictly NO isometric views)
+   - 뻔한 스톡 사진(Generic stock photo) 느낌을 배제하십시오.
+   - 텍스트 렌더링 오류 방지를 위해 "no text, no letters, no labels"를 포함하십시오.
+5. 반드시 영어로만 출력하며, 80자 이상의 상세한 서술형으로 작성하십시오.{context_str}
 
 [이미지 플레이스홀더 설명]: {base_prompt}
 """
@@ -39,7 +75,7 @@ def enhance_image_prompt(base_prompt, client, context=None):
             contents=enhance_prompt
         )
         enhanced = response.text.strip()
-        print(f"✨ 프롬프트 증강 완료 (문맥반영: {'O' if context else 'X'}): {enhanced[:80]}...")
+        print(f"✨ 스타일 적용 완료 ({selected_style['name']}): {enhanced[:80]}...")
         return enhanced
     except Exception as e:
         print(f"⚠️ 프롬프트 증강 실패, 원본을 사용합니다: {e}")
