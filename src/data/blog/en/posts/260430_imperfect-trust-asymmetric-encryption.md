@@ -43,7 +43,7 @@ The core of the asymmetric encryption mechanism is a pair of mathematically link
 
 ![A high-tech digital security architecture diagram showing the relationship between a public key and a private key using abstract geometric shapes and neon glowing lines on a dark server background.](../../../../assets/images/placeholder.png)
 
-### The Quiet Foundation of Trust Supporting Digital Business
+## The Quiet Foundation of Trust Supporting Digital Business
 
 <a href="/en/glossary/pki-definition-summary" class="glossary-tooltip" data-definition="A security infrastructure system that issues and manages digital certificates based on public key encryption. it serves as a core foundation of digital trust, verifying identities and ensuring data integrity across networks.">PKI</a> (Public Key Infrastructure) is the essential infrastructure of enterprise security. DigiCert, a global leader in digital security, defines it as the "Quiet Trust" operating behind the scenes. Websites without valid certificates trigger security warnings, damaging business credibility and leading to user churn and revenue loss. Modern financial services, such as e-commerce and online banking, rely entirely on this encryption framework. However, poor certificate management or key exposure can immediately compromise system availability.
 
@@ -60,13 +60,13 @@ The choice of encryption algorithms highlights the gap between technical efficie
 
 Technically, ECC provides high security with fewer computational resources. However, due to compatibility issues with legacy systems or implementation complexity, RSA is still widely used in the field. This reflects the reality of IT operations, which often prioritize system stability and continuity over technical superiority.
 
-### The Weight of Absolute Self-Responsibility: No More "Forgot Password"
+## The Weight of Absolute Self-Responsibility: No More "Forgot Password"
 
 Paradoxically, the greatest challenge facing asymmetric encryption lies in its perfect design. The expansion of the blockchain and virtual asset ecosystem has brought this issue to the forefront. Statistics show that there are approximately 28 million virtual asset users in Mexico, yet many do not fully realize the consequences of losing a private key. In a decentralized system without a governing body, losing a private key isn't just losing access; it means the permanent disappearance of the asset.
 
 The security guaranteed by mathematical completeness creates a harsh environment for users where "password resets" are impossible. A technical structure that does not account for human forgetfulness or physical negligence is incurring significant social costs during its mass adoption.
 
-### The Threat of Quantum Computing and the Future of Security
+## The Threat of Quantum Computing and the Future of Security
 
 Future threats are already in motion. The advancement of quantum computing, specifically through Shor's algorithm, carries the potential to neutralize current RSA and ECC systems in a very short time. This is why the security industry is racing toward Post-Quantum Cryptography (PQC), such as lattice-based cryptography. It is a proactive process to prepare for the "expiration date" of current encryption structures.
 
@@ -75,5 +75,6 @@ Future threats are already in motion. The advancement of quantum computing, spec
 Asymmetric encryption is a sophisticated mathematical achievement of humanity, but it is not a user-friendly technology. While building impregnable technical fortresses is vital, we must also develop safeguards to ensure that humans operating within them are not locked out due to minor mistakes. Ultimately, the next generation of security technology should aim for a flexible design that maintains mathematical integrity while compensating for human vulnerability.
 
 ## 🔗 Recommended Reading
+
 - [MCP: A Blueprint for Standard Protocols Navigating the Complexity of AI Integration](/en/posts/mcp-ai-integration-standard-protocol)
 - [The Landscape Reshaped by Attention: Pros and Cons of Transformers](/en/posts/attention-transformers-tech-landscape)

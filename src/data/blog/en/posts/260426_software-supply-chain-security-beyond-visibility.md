@@ -41,7 +41,7 @@ Modern software is no longer a realm of "writing" from scratch. We are living in
 
 The targets of attacks are no longer specific servers, but rather the trusted roots used by everyone. Injecting malicious code into a library shared by tens of thousands of companies has a massive ripple effect. The 2020 SolarWinds incident and the Log4j vulnerability proved that the tools we use every day can become conduits for neutralizing entire systems at any moment. Before embracing technological progress, we must soberly assess whether we truly control every brick in the fortress we have assembled.
 
-### The Invisible Designer: The Shackles of Dependency
+## The Invisible Designer: The Shackles of Dependency
 
 In a modern development process, the code written directly by a developer represents only a tiny fraction of the total application. The rest is filled with open-source packages, third-party libraries, and the automated CI/CD pipelines that distribute them. The problem is that these supply chain components are so extensively intertwined that a compromise at a single point can lead to a chain reaction of security breaches.
 
@@ -49,7 +49,7 @@ In a modern development process, the code written directly by a developer repres
 
 Recently, "package hallucination" attacks, which insert non-existent package names into AI-generated code, and "typosquatting" techniques, which use names similar to legitimate packages, have become frequent. These are risks brought about by the fragmentation of the development environment. In particular, if the build system itself is compromised, malicious code can be inserted into the resulting binaries even if the source code is intact. This signifies a loss of security governance that exceeds the scope of corporate control.
 
-### The Trap of the List: What the <a href="/en/glossary/sbom-definition-security-role" class="glossary-tooltip" data-definition="A Software Bill of Materials is a detailed inventory of all modules, open-source libraries, and dependencies that make up a software product, serving as an essential tool for identifying vulnerabilities and managing the supply chain.">SBOM</a> Doesn't Tell You
+## The Trap of the List: What the <a href="/en/glossary/sbom-definition-security-role" class="glossary-tooltip" data-definition="A Software Bill of Materials is a detailed inventory of all modules, open-source libraries, and dependencies that make up a software product, serving as an essential tool for identifying vulnerabilities and managing the supply chain.">SBOM</a> Doesn't Tell You
 
 Many companies are rushing to adopt a Software Bill of Materials (SBOM) for supply chain security. While attempting to catalog the ingredients in software is meaningful, obtaining a list and controlling those ingredients are two different matters.
 
@@ -62,7 +62,7 @@ Simply listing vulnerable packages is likely to end up as a mere post-mortem rec
 | Key Tools | SAST, DAST | SCA, SBOM, Code Signing, Attestation |
 | Trust Model | Presumed trust in the internal development environment | Continuous verification based on Zero Trust |
 
-### Kernel Sentinels and Encrypted Integrity
+## Kernel Sentinels and Encrypted Integrity
 
 Beyond simple vulnerability scanning, advanced technologies that monitor behavior in real-time during build and runtime are emerging as alternatives. A prime example is eBPF (extended Berkeley Packet Filter). By applying this technology, which monitors system calls at the kernel level, anomalies such as data being sent to an external network during compilation or unexpected file modifications can be captured immediately.
 
@@ -77,5 +77,6 @@ If software supply chain security remains at the level of purchasing tools and m
 Ultimately, the core of supply chain security lies not in tools, but in governance—a commitment to taking responsibility for every piece of code used until the very end. The market will reorganize around solutions that provide actual control beyond mere visibility, and companies must move away from the comfort provided by tools. True security innovation begins not with a flashy dashboard, but with the cold rationality of doubting and verifying even a single invisible line of dependency.
 
 ## 🔗 Recommended Reading
+
 - [Code That Breaks the Walls of the Linux Kernel: The Ideals and Reality of eBPF Observability](/en/posts/ebpf-observability-ideals-reality)
 - [The Rule of the Single Token: How Native Multimodal AI Redefines Artificial Intelligence Metrics](/en/posts/single-token-native-multimodal-ai)

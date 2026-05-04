@@ -65,5 +65,6 @@ Ultimately, the adoption of Agentic AIOps is a process of redefining organizatio
 Attempting to shroud system logic in an AI shell may result in surrendering operational sovereignty to technology providers. When technical debt is concealed within the flow of automation, human resilience will be rendered powerless in the face of a massive system failure. True technical progress should not begin with hiding complexity behind AI, but with building a transparent governance system where humans can clearly control and understand the entire architecture.
 
 ## 🔗 Recommended Reading
+
 - [The Landscape Reshaped by Attention: The Pros and Cons of Transformers](/en/posts/attention-transformers-tech-landscape)
 - [MCP: Designing a Standard Protocol to Pierce the Complexity of AI Integration](/en/posts/mcp-ai-integration-standard-protocol)

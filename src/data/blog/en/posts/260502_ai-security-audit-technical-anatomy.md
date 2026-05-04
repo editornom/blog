@@ -43,7 +43,7 @@ According to research by Deloitte and IBM, approximately 60% of enterprises that
 
 ![A high-tech digital dashboard displaying real-time AI data flow, security audit logs, and risk assessment metrics with minimalist icons and a dark theme.](../../../../../source/posts/AI_Security_Auditing/a8ca6ebd-0.webp)
 
-### The Grammar of Dynamic Validation for Probabilistic Inference
+## The Grammar of Dynamic Validation for Probabilistic Inference
 
 While traditional IT auditing was limited to checking static rules and access permissions, AI security auditing focuses on tracking the dynamic behavior of models. This is because LLMs possess non-deterministic characteristics, where output values can change whenever model weights are modified or fine-tuning is applied. This requires a sophisticated process that goes beyond simple source code reviews to validate the model's real-time responses.
 
@@ -61,7 +61,7 @@ From a technical perspective, there are two key focus areas:
 | **Evaluation Method** | Deterministic (Yes/No checklist) | Probabilistic (Statistical reliability & behavioral analysis) |
 | **Tools Used** | SIEM, solution log analysis | LLM-specific red teaming, Knowledge Layer analysis tools |
 
-### Practical Constraints and Response Strategies in Enterprise Environments
+## Practical Constraints and Response Strategies in Enterprise Environments
 
 Unlike theoretical completeness, there are limits to clearly identifying the internal training data and sharing scope of LLMs in actual field operations. The recurring incidents of internal confidential information leaking to external AI services are not just simple user errors, but stem from the lack of a structural real-time monitoring system.
 
@@ -78,5 +78,6 @@ A cold judgment regarding cost-efficiency is also necessary. It is important to 
 AI security auditing is no longer an option but a requirement for corporate survival. However, if it remains stuck in the static checklist methods of the past, it will be difficult to defend against the vulnerabilities of rapidly evolving models. It is time to move away from the vague sense of security provided by automation tools and focus on building dynamic monitoring systems for model outputs to secure practical risk control capabilities. Beyond simple snapshot-style audits, transitioning to a sustainable security operation system is the only path to safely utilizing the powerful tool that is AI.
 
 ## 🔗 Recommended Reading
+
 - [The Technological Landscape Reshaped by Attention and the Pros and Cons of Transformers](/en/posts/attention-transformers-tech-landscape)
 - [MCP: A Blueprint for Standard Protocols Piercing the Complexity of AI Integration](/en/posts/mcp-ai-integration-standard-protocol)

@@ -39,7 +39,7 @@ faqs:
 
 It is no exaggeration to say that the history of software architecture has been a constant struggle with memory management. The reason why C and C++, which have served as the backbone of system programming for decades, have recently come under intense scrutiny is clear: the potential for catastrophic system neutralization caused by a lack of Memory Safety. However, there are also growing concerns that modern defense mechanisms introduced for security are constraining the inherent efficiency of systems and the autonomy of design.
 
-### The 70% Metric and the $10 Billion Cost
+## The 70% Metric and the $10 Billion Cost
 
 According to research by Microsoft, approximately 70% of the security vulnerabilities discovered in its software stem from memory safety issues. Google has also admitted that the majority of critical security bugs within the Chromium project share the same cause. These technical flaws transcend simple errors and lead to massive economic losses.
 
@@ -47,13 +47,13 @@ The CrowdStrike outage in July 2024 vividly demonstrated the ripple effect of ca
 
 ![Memory Safety - A depiction of red light leaking through broken code lines on a motherboard, representing a buffer overflow security error.](../../../../../source/posts/Memory_Safety/d58ab33d-0.webp)
 
-### The Performance Tax Collected by Garbage Collection
+## The Performance Tax Collected by Garbage Collection
 
 Garbage Collection (GC), which emerged to solve the complexity of memory management, has become the standard for modern languages. Languages like Java, Python, and Go relieve developers of their burden by having the runtime system reclaim memory. However, this demands a non-negligible opportunity cost in terms of resource consumption.
 
 Even the most common Mark-and-Sweep algorithms or more efficient Tri-Color Marking techniques fundamentally occupy CPU cycles and degrade cache hit rates. In particular, the 'Stop-the-world' phenomenon, which temporarily suspends system execution, is a major cause of latency in high-performance systems requiring real-time responsiveness. Ultimately, in exchange for securing Memory Safety, developers have surrendered a significant portion of their agency in low-level optimization.
 
-### Ownership Models and Design Constraints
+## Ownership Models and Design Constraints
 
 Rust, which has recently gained significant attention, proposes an alternative: an Ownership system and a Borrow Checker that verify memory safety at compile time without a GC. While this is revolutionary in that it blocks memory errors at the source without runtime overhead, it can create another form of bottleneck in practice.
 
@@ -61,7 +61,7 @@ Rust's steep learning curve often forces developers to spend more energy satisfy
 
 ![Memory Safety - An illustration of a developer trapped in a complex maze of strict compiler rules in a modern programming environment.](../../../../../source/posts/Memory_Safety/54e3fcab-1.webp)
 
-### Defense Mechanisms Shifting to Hardware
+## Defense Mechanisms Shifting to Hardware
 
 To compensate for the limitations of software solutions, intervention at the hardware layer is also gaining momentum. A prime example is the Memory Integrity Enforcement (MIE) technology introduced by Apple in its latest chipsets. This is a silicon-level implementation of Arm's Enhanced Memory Tagging Extension (EMTE).
 
@@ -76,12 +76,13 @@ This method, which assigns specific tags during memory allocation and synchronou
 
 ![Memory Safety - A scene showing security mechanisms verifying memory safety information as the CPU and RAM exchange data.](../../../../../source/posts/Memory_Safety/8d5c37f0-2.webp)
 
-### The Flip Side of Technical Control and Essential Insight
+## The Flip Side of Technical Control and Essential Insight
 
 Automated tools and strict linguistic constraints designed to enhance security are undoubtedly contributing to the reduction of security blind spots. However, as the system's safety net becomes more robust, the phenomenon of developers becoming alienated from the operating principles of the system is also accelerating. While engineers of the past pondered architecture to maximize the efficiency of every single byte of memory, today's resources are focused on resolving the constraints presented by tools.
 
 Automated shields harbor the risk of becoming a veil that hides system inefficiencies. In the trend where hardware-based tagging or compiler enforcement replaces low-level optimization skills, we may be overlooking fundamental architectural design flaws that tools cannot solve. True technological progress will begin with the insight to see through the essence of the system controlled by the tool, moving beyond the mere safety the tool provides.
 
 ## 🔗 Recommended Reading
+
 - [The Technological Landscape Reshaped by Attention and the Pros and Cons of Transformers](/en/posts/attention-transformers-tech-landscape)
 - [MCP: The Blueprint of a Standard Protocol Piercing Through the Complexity of AI Integration](/en/posts/mcp-ai-integration-standard-protocol)

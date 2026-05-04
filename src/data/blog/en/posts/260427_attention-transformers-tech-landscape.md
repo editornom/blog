@@ -39,7 +39,7 @@ faqs:
 
 It has been several years since the "Attention" mechanism took over the paradigm of sequence data processing, a field once dominated by Recurrent Neural Networks (RNNs). The traditional method of processing sentences sequentially, word by word, seemed similar to how humans understand language. However, it faced structural limitations: a "volatility" issue where the model would forget earlier information as inputs grew longer, and an inability to perform parallel computation. The Transformer architecture, introduced in 2017, broke through this technical stagnation and set a new standard for deep learning. Today, this technology serves as the foundation for Large Language Models (<a href="/en/glossary/llm-definition-transformer-architecture" class="glossary-tooltip" data-definition="A large-scale language model designed to understand language and generate sentences similar to humans by learning from vast amounts of data.">LLM</a>), evolving beyond a simple algorithm to reshape the entire industrial infrastructure.
 
-### A Shift in Information Processing: Comprehensive Contextual Awareness
+## A Shift in Information Processing: Comprehensive Contextual Awareness
 
 The essence of the Transformer lies in its ability to view an entire sentence simultaneously. While previous models scanned text from left to right, this architecture calculates the relationships between all word pairs in a sentence at once through "Self-Attention." The numerical interaction of three defined vectors—Query, Key, and Value—precisely identifies the semantic weight of a specific word within its context.
 
@@ -47,7 +47,7 @@ The essence of the Transformer lies in its ability to view an entire sentence si
 
 In particular, the "Multi-Head" structure, which arranges multiple attention mechanisms in parallel, allows for a multi-dimensional analysis of grammatical relationships and semantic connections between words. However, this parallel processing power is gained in exchange for computational resources. Due to the nature of identifying correlations between all elements, the architecture possesses a high-cost structure where computational complexity increases quadratically ($O(n^2)$) relative to the sequence length.
 
-### Divergence of Architecture: Optimization Techniques by Purpose
+## Divergence of Architecture: Optimization Techniques by Purpose
 
 This technology has branched into three main forms depending on the intended use. This is why businesses do not necessarily need to insist on large-scale generative models for every domain.
 
@@ -59,7 +59,7 @@ This technology has branched into three main forms depending on the intended use
 
 Encoder-centric models are suitable for sophisticated classification tasks because they excel at extracting meaning by freely scanning context back and forth. On the other hand, the currently mainstream Generative AI utilizes a Decoder structure that maximizes the ability to predict the next word. Recently, as the market focuses excessively on the versatility of Decoder models, there has been an observed decline in resource efficiency, with high-cost generative models being deployed even for workflows that only require simple classification or analysis.
 
-### Contextual Identity Granted by Numerical Order
+## Contextual Identity Granted by Numerical Order
 
 The secret to maintaining sentence order while abandoning sequential structure lies in "Positional Encoding." The model recognizes relative positions within a sequence by adding unique position values, generated via trigonometric functions, to the word's semantic vectors.
 
@@ -67,7 +67,7 @@ Furthermore, to prevent numerical values from becoming abnormally large during a
 
 ![Transformer Mechanism - Visual data showing how the Transformer AI model identifies grammatical and semantic relationships between words in long texts.](../../../../../source/posts/트랜스포머%28Transformer%29/895a6735-1.webp)
 
-### Practical Challenges and ROI Beyond Technical Achievement
+## Practical Challenges and ROI Beyond Technical Achievement
 
 At this stage, enterprises looking to adopt Transformer-based large models face practical barriers: cost efficiency and data security. The cost of GPU resources required for infrastructure construction and maintenance has already reached a critical point, and the "hallucination" phenomenon—where the model generates information based solely on contextual statistical correlations—remains a challenge to be solved. This stems from the fundamental limitation that the architecture cannot guarantee causality or logical truth between data.
 
@@ -76,5 +76,6 @@ The security risks associated with sensitive data leaking to external models in 
 Ultimately, the utility of technology comes from optimization for business purposes rather than sheer scale. Instead of relying on a single massive model for every task, a strategy is needed to maximize cost-effectiveness by deploying Small Language Models (SLMs) tailored for specific uses. It is time to look through the lens of "appropriate technology"—creating practical value while minimizing data leak threats without getting lost in the flashy performance of the architecture.
 
 ## 🔗 Recommended Reading
+
 - [Agentic Cybersecurity: The Reality of Autonomous Defense and the Paradox of Control](/ko/posts/agentic-cybersecurity-autonomous-defense)
 - [The Collapse of Assembled Trust: Software Supply Chain Security, Beyond the Illusion of Visibility](/ko/posts/software-supply-chain-security-beyond-visibility)

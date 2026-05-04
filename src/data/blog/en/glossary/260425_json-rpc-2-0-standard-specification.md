@@ -15,13 +15,16 @@ modDatetime: 2026-04-28 15:14:18.960187+09:00
 
 # What is JSON-RPC 2.0?
 
-### Dictionary Definition
+## Dictionary Definition
+
 JSON-RPC 2.0 is a lightweight Remote Procedure Call (RPC) protocol encoded in JSON (JavaScript Object Notation). It is a stateless communication protocol designed for data exchange between a client and a server, supporting requests, responses, notifications, and batch processing. Because it is transport-independent, the protocol can be utilized across various network environments, including HTTP, WebSockets, and TCP.
 
-### Practical Use Case
+## Practical Use Case
+
 The Model Context Protocol (MCP), introduced by Anthropic, utilizes JSON-RPC 2.0 as its standard communication protocol to unify fragmented interfaces between AI models and external data sources. Clients request the execution of specific tools or query resources from the server using JSON-formatted messages. The server then responds with standardized JSON data, enabling seamless real-time interaction between AI agents and enterprise databases.
 
-### Related Words
+## Related Words
+
 - RPC (Remote Procedure Call)
 - JSON (JavaScript Object Notation)
 - MCP (Model Context Protocol)

@@ -16,12 +16,15 @@ modDatetime: 2026-04-30 20:59:36.649041+09:00
 # MTTRとは？
 
 ## 辞書的定義 (Dictionary Definition)
+
 MTTRは「Mean Time To Repair」または「Mean Time To Recovery」の略称で、システムや機器に障害が発生した時点から正常な稼働状態に復旧するまでにかかる平均時間を意味します。これは、ITサービスマネジメント（ITSM）およびインフラ運用において、システムの保守性（Maintainability）と可用性を測定するための主要業績評価指標（KPI）として活用されます。
 
 ## 実務での活用例 (Practical Use Case)
+
 Agentic AIOpsを導入した環境では、AIエージェントがテレメトリデータを分析して障害の根本原因を自律的に特定し、サーバーの再起動やサービスの再開といった復旧作業を自動で実行します。このような自動化プロセスは、運用チームによる手動介入の時間を削減することでMTTRを短縮し、サービスの可用性を高めることに大きく寄与します。
 
 ## 関連用語 (Related Words)
+
 - MTBF (Mean Time Between Failures)
 - MTTF (Mean Time To Failure)
 - SLA (Service Level Agreement)

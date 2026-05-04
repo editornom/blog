@@ -65,5 +65,6 @@ faqs:
 试图用 AI 外壳隐藏系统逻辑的行为，可能会导致运维主权向技术提供方转移。当技术债被隐匿在自动化洪流中时，面对巨大的系统故障，人类的应对能力将变得软弱无力。真正的技术进步不应是将复杂性隐藏在 AI 背后，而应是建立一个能让技术人员明确控制并理解整体结构的透明治理体系。
 
 ## 🔗 相关阅读
+
 - [Attention 重塑的技术版图与 Transformer 的光与影](/zh/posts/attention-transformers-tech-landscape)
 - [MCP：贯穿 AI 集成复杂性的标准协议蓝图](/zh/posts/mcp-ai-integration-standard-protocol)

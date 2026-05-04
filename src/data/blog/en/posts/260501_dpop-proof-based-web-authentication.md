@@ -22,7 +22,7 @@ DPoP takes the approach of directly proving token ownership at the application l
 
 ![DPoP (RFC 9449) - A technical architecture diagram showing how a client registers a self-generated key with an authorization server and receives a secure token usable only by the key holder.](../../../../../source/posts/DPoP_%28RFC_9449%29/29edb26c-0.webp)
 
-### Strong Ownership Binding Implemented at the Application Layer
+## Strong Ownership Binding Implemented at the Application Layer
 
 In the past, there were attempts to strengthen security through hardware and transport layer binding technologies such as mTLS (Mutual TLS). However, mTLS faced high barriers to entry for general web applications due to complex certificate management systems and implementation constraints in browser environments. In contrast, DPoP has secured a path to function flexibly across web browsers and mobile app environments by moving this logic to the application layer.
 
@@ -30,7 +30,7 @@ Looking at its operational principles, the client first generates its own public
 
 The core of this mechanism lies in the `htu` (target URI), `htm` (HTTP method), and `jti` (unique identifier) values included in the proof generated for each request. This information prevents a proof generated for a specific request from being reused for other API calls. Even if an attacker manages to obtain both the token and the proof at a specific point in time, they are blocked from using them to call APIs through different paths or replaying them after time has elapsed.
 
-### Performance Impact and Practical Implementation Considerations
+## Performance Impact and Practical Implementation Considerations
 
 The first factor to review when considering DPoP adoption is the additional computational cost. While asymmetric key signing and verification logic are added to both the frontend and backend, the hardware performance of modern devices is sufficient to process these operations in milliseconds (ms). Network overhead is also minimal, amounting to just an extra line in the HTTP header, and the cost of server-side JTI caching is not a significant burden on infrastructure due to the short lifecycle of the proofs.
 
@@ -43,7 +43,7 @@ However, the implementation phase requires sophisticated handling. One must cons
 
 ![DPoP (RFC 9449) - A comparison chart highlighting the differences between standard Bearer tokens and security-enhanced DPoP tokens, focusing on authentication factors and replay prevention.](../../../../../source/posts/DPoP_%28RFC_9449%29/b04236db-1.webp)
 
-### Expansion into Cloud-Native Ecosystems and Infrastructure
+## Expansion into Cloud-Native Ecosystems and Infrastructure
 
 Market interest in DPoP is evident in recent technical discussions within Istio, the open-source service mesh project. Organizations operating large-scale microservice architectures are actively demanding DPoP verification at the sidecar (Envoy) level rather than implementing complex verification logic in every individual service. This strategy aims to increase development efficiency by offloading security functions to the infrastructure layer.
 
@@ -52,5 +52,6 @@ It is also noteworthy that global IDPs (Identity Providers) are adopting DPoP su
 While DPoP effectively suppresses unauthorized reuse through token theft, it has limitations in scenarios where client control itself is compromised, such as through XSS (Cross-Site Scripting). If the private key itself is leaked, the security framework can be neutralized sequentially. Therefore, the center of gravity in security is shifting from "token protection" to "key store protection." Developers must establish key management strategies using the browser's Web Crypto API to ensure keys are non-extractable. More important than technical specifications will be the practical judgment of how much isolation can be secured for the key store in a real production environment.
 
 ## 🔗 Recommended Reading
+
 - [The Impact of Attention and Transformers on the Technological Landscape](/en/posts/attention-transformers-tech-landscape)
 - [MCP: A Blueprint for Standard Protocols Navigating AI Integration Complexity](/en/posts/mcp-ai-integration-standard-protocol)

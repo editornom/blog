@@ -59,5 +59,6 @@ This choice varies depending on the nature of the business. Take Netflix, for ex
 Ultimately, the CAP theorem is not just a matter of which technology to choose, but a process of finding the point of risk that a business can tolerate. The ability to clearly understand the trade-offs occurring in distributed systems and find the optimal compromise that fits the system's purpose has become the benchmark for the success or failure of modern software architecture.
 
 ## 🔗 Recommended Reads
+
 - [From Token-Holder Model to Proof-Based Security: How DPoP Redefines Trust in Web Authentication](/en/posts/dpop-proof-based-web-authentication)
 - [Alignment of Large Language Models: The Mechanism of RLHF Learning Human Preferences](/en/posts/llm-alignment-rlhf-mechanism)

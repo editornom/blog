@@ -15,13 +15,16 @@ modDatetime: 2026-04-30 08:52:27.616629+09:00
 
 # What is SPOF?
 
-### Dictionary Definition
+## Dictionary Definition
+
 A Single Point of Failure (SPOF) refers to a critical component within a system that, if it fails, causes the entire system to stop functioning. It is regarded as one of the most significant factors compromising system Availability and reliability, and it typically occurs when there is a lack of structural Redundancy.
 
-### Practical Use Case
+## Practical Use Case
+
 In modern IT infrastructure, if a company relies solely on a single Public Cloud Service Provider (CSP), any service outage or network failure from that specific vendor becomes an SPOF, potentially leading to a total shutdown of the business operations. To address this risk, organizations implement Multi-Cloud environments. This strategy ensures service continuity by allowing operations to switch to another Cloud provider even if one fails.
 
-### Key Terms
+## Key Terms
+
 - High Availability (HA)
 - Redundancy
 - Vendor Lock-in

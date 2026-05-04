@@ -39,7 +39,7 @@ faqs:
 
 Concerns that quantum computing could neutralize existing encryption systems are emerging as a realistic security threat. As the National Institute of Standards and Technology (NIST) has specified 2030 as the phase-out period for RSA and Elliptic Curve Cryptography (ECC), the industry's response is accelerating. Cloudflare's recent introduction of Post-Quantum Cryptography (PQC) technology to its WARP client is evaluated as a proactive measure reflecting this trend. However, looking into the technical implementation details, this is more of a transitional response during a period of major shift rather than the establishment of complete security.
 
-**Proactive Response to 'Harvest Now, Decrypt Later' Scenarios**
+## Proactive Response to 'Harvest Now, Decrypt Later' Scenarios
 
 The most alarming aspect for the security industry today is the "Harvest Now, Decrypt Later" (HNDL) strategy. This involves an attacker capturing and storing encrypted data now, with the intent of decrypting it en masse once sufficiently powerful quantum computers are developed in the future. Data requiring long-term security longevity, such as financial records or government secrets, is already within the potential risk group for exposure.
 
@@ -47,7 +47,7 @@ According to Cloudflare data, over 45% of general traffic currently entering its
 
 ![PQC (Post-Quantum Cryptography) - A structural diagram showing a secure connection between a remote worker's laptop and a corporate server via PQC and MASQUE technologies.](../../../../../source/posts/PQC_%28Post-Quantum_Cryptography%29/e863a673-0.webp)
 
-**Technical Combination of MASQUE Protocol and ML-KEM**
+## Technical Combination of MASQUE Protocol and ML-KEM
 
 The core of this PQC implementation is MASQUE (Multiplexed Application Substrate over QUIC Encryption) tunneling technology based on the <a href="/en/glossary/what-is-quic" class="glossary-tooltip" data-definition="A transport protocol designed based on UDP to reduce internet communication latency and enhance security, improving the speed and efficiency of modern web connections.">QUIC</a> protocol. It utilizes the ML-KEM (Module-Lattice-Based Key-Encapsulation Mechanism) algorithm, which uses lattice-based mathematical models. Notably, the current PQC application works in a 'Hybrid Mode' combined with the existing classical encryption, X25519. This strategy runs existing encryption systems in parallel as a safety net against potential defects that may arise in the new algorithm.
 
@@ -61,7 +61,7 @@ Internal benchmark results showed that the performance of applying ML-KEM-768 in
 | Primary Use | Key Exchange, Digital Signatures | Key Encapsulation (KEM), Digital Signatures |
 | Performance Impact | Relatively low computational load | Load increases due to larger key and signature sizes |
 
-**The Origin Server Gap and Segment Security Limitations**
+## The Origin Server Gap and Segment Security Limitations
 
 Despite building these defenses, structural limitations still exist. The PQC protection segment provided by Cloudflare is limited to the area between the client and the Cloudflare network. For true end-to-end encryption, the final destination—the origin server—must also support post-quantum cryptography. However, the majority of corporate and public web servers still remain within legacy systems.
 
@@ -69,7 +69,7 @@ Even if the WARP client transmits data through a post-quantum tunnel, if it is c
 
 ![PQC (Post-Quantum Cryptography) - 기존 보안 방식과 양자 내성 암호 방식 간의 보안 격차를 나타낸 인포그래픽입니다.](../../../../../source/posts/PQC_%28Post-Quantum_Cryptography%29/745212b3-1.webp)
 
-**Downgrade Inducement and Operational Challenges**
+## Downgrade Inducement and Operational Challenges
 
 The 'Allow Downgrade' policy, designed to ensure compatibility, is also a point that needs review from a security perspective. Cloudflare has set a phase 1 transition period until the summer of 2026, allowing connections to downgrade to classical encryption if PQC negotiation fails. While this is a desperate measure for service availability, it can become a path for downgrade attacks where an attacker intentionally interferes with the communication environment to force a lower security level.
 
@@ -78,5 +78,6 @@ Options to enforce PQC-only mode via MDM (Mobile Device Management) exist, but t
 Introducing PQC is a complex task that goes beyond simply replacing encryption algorithms; it requires redesigning the entire corporate infrastructure. Rather than being satisfied with strengthening security at the tunnel entrance, efforts must be made to uniformly raise the security level across the entire segment, including the origin server. Ultimately, true post-quantum security will be achieved only when all network nodes share the same security standards and the security blind spots left for backward compatibility are completely eliminated.
 
 ## 🔗 Recommended Reads
+
 - [The Technological Landscape Reshaped by Attention and the Pros and Cons of Transformers](/en/posts/attention-transformers-tech-landscape)
 - [MCP: The Blueprint for a Standard Protocol Navigating the Complexity of AI Integration](/en/posts/mcp-ai-integration-standard-protocol)

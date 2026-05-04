@@ -15,13 +15,16 @@ modDatetime: 2026-04-29 17:02:58.183611+09:00
 
 # What is SBOM?
 
-### Dictionary Definition
+## Dictionary Definition
+
 An SBOM (Software Bill of Materials) is a comprehensive inventory that details all open-source packages, libraries, modules, and the hierarchical dependencies that constitute a software product. Derived from the Bill of Materials (BOM) concept in manufacturing, it serves as a standardized list designed to ensure visibility into components and systematically manage security vulnerabilities within today's complex software supply chains.
 
-### Practical Use Case
+## Practical Use Case
+
 When a critical security vulnerability is discovered in a specific open-source library (such as Log4j), security operations teams can immediately search their pre-established SBOM database to identify which internal systems and applications contain that specific library. This drastically reduces the time required for manual audits and allows organizations to quickly prioritize responses, such as applying patches.
 
-### Related Terms
+## Related Terms
+
 * **Software Supply Chain Security (SSCS):** A framework for managing and controlling security threats throughout the entire software lifecycle, from initial design and development to deployment and operation.
 * **SCA (Software Composition Analysis):** A technology used to analyze security vulnerabilities and license risks associated with open-source components embedded in an application.
 * **SLSA (Supply-chain Levels for Software Artifacts):** A security framework proposed by Google to ensure the integrity of software artifacts throughout the supply chain.

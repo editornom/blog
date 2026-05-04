@@ -39,7 +39,7 @@ faqs:
 
 The Linux kernel has long been regarded as a sacrosanct domain, difficult to modify. However, the emergence of eBPF (Extended Berkeley Packet Filter) has transformed the heart of this massive operating system into a programmable realm. Deployed in production by global tech giants like Meta, Google, and Netflix, this technology serves as the foundation for tools like Cilium and Pixie, setting a new standard for system Observability. Yet, rushing into adoption without considering the operational complexity and arcane constraints behind its technical brilliance is a matter that requires careful thought.
 
-### A Programming Interface Opening the Heart of the System
+## A Programming Interface Opening the Heart of the System
 
 In short, eBPF is a technology that allows you to run custom programs safely inside the Linux kernel without the need for modifications or reboots. Previously, extending kernel functionality required writing and inserting kernel modules or enduring a years-long mainline patching process. eBPF, introduced in 2014, lowered these barriers by implementing a lightweight virtual machine within the kernel.
 
@@ -47,7 +47,7 @@ The core of this technology lies in ensuring stability. Before execution, a "Ver
 
 ![eBPF - A flowchart showing the entire process where an eBPF program written in C on a Linux server is compiled, verified by the kernel, and converted into machine code for execution.](../../../../../source/posts/eBPF/86045162-0.webp)
 
-### Direct Insights Beyond Data Copying
+## Direct Insights Beyond Data Copying
 
 Traditional monitoring involves agents operating in User Space, repeatedly copying data from Kernel Space. The <a href="/en/glossary/context-switching-overhead-optimization" class="glossary-tooltip" data-definition="Refers to the process where the operating system saves the state of a currently executing process or thread and switches to another; the CPU resources consumed during this process are considered overhead.">context switching</a> overhead generated here acts as a significant cost burden in modern Microservices Architectures (MSA) handling massive traffic. In contrast, eBPF processes data directly within the kernel without copying or transfers only the minimum necessary data to user space through efficient key-value stores called "Maps."
 
@@ -58,7 +58,7 @@ A notable technical detail is the extensibility of Hook points. Unlike the origi
 - **Visibility Scope**: Extends beyond application logic to system calls, networks, and hardware layers.
 - **Stability**: Ensures kernel protection and an isolated execution environment through the Verifier.
 
-### Capturing the Lifeblood of Cloud-Native
+## Capturing the Lifeblood of Cloud-Native
 
 The value of eBPF becomes even clearer in Kubernetes environments. In a setting where numerous pods are dynamically created and destroyed, security policies or monitoring based on simple IP addresses have clear limits. Platforms like Pixie, acquired by New Relic, leverage eBPF to automatically collect telemetry data across the entire cluster. The reason dependency maps can be drawn and HTTP/gRPC request success rates can be tracked in real-time without manual instrumentation is that eBPF observes all communication at the kernel level.
 
@@ -66,7 +66,7 @@ According to real-world data, infrastructures utilizing eBPF can secure stable v
 
 ![eBPF - A structure illustrating how eBPF technology directly monitors the network and security of a Kubernetes cluster at the kernel level, replacing the traditional sidecar proxy approach.](../../../../../source/posts/eBPF/7dc8057f-1.webp)
 
-### Walking the Tightrope Between Visibility and Operational Debt
+## Walking the Tightrope Between Visibility and Operational Debt
 
 However, before adopting this high-performance tool, operations teams must ask if they are ready to manage and debug kernel-level programs. While eBPF is powerful, mastering it requires a deep understanding of Linux kernel architecture. It uses a subset of the C language, and writing code that complies with strict memory access rules and a 512-byte stack limit requires significant expertise.
 
@@ -77,5 +77,6 @@ From a security perspective, a cautious approach is also necessary. If an attack
 The "no-code-change" visibility provided by eBPF is certainly an attractive alternative, but it is a reward that can only be fully reaped with solid engineering capabilities. To ensure that the ambition to oversee the entire infrastructure does not result in technical debt that only a few can manage, it is wise to approach it step-by-step, coldly evaluating its fit with business logic and operational visibility.
 
 ## 🔗 Recommended Reads
+
 - [Imperfect Trust Designed by Perfect Math: The Flip Side of Asymmetric Encryption](/en/posts/imperfect-trust-asymmetric-encryption)
 - [From Token-Holder Models to Proof-Based Security: How DPoP Redefines Trust in Web Authentication](/en/posts/dpop-proof-based-web-authentication)

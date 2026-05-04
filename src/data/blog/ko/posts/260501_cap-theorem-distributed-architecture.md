@@ -70,5 +70,6 @@ CAP 정리는 일관성(Consistency), 가용성(Availability), 분할 내성(Par
 결국 CAP 정리는 단순히 어떤 기술을 선택하느냐의 문제가 아니라, 비즈니스가 허용할 수 있는 리스크의 지점을 찾는 과정입니다. 분산 시스템에서 발생하는 트레이드오프를 명확히 이해하고, 시스템의 목적에 부합하는 최적의 타협점을 찾는 역량이 현대 소프트웨어 아키텍처의 성패를 가르는 척도가 됩니다.
 
 ## 🔗 함께 읽으면 좋은 글
+
 - [토큰 소지자 모델에서 증명 기반 보안으로: DPoP가 재정의하는 웹 인증의 신뢰 모델](/ko/posts/dpop-proof-based-web-authentication)
 - [거대 언어 모델의 정렬, 인간의 선호를 학습하는 RLHF의 메커니즘](/ko/posts/llm-alignment-rlhf-mechanism)

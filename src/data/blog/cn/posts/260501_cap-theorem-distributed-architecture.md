@@ -59,5 +59,6 @@ CAP 定理指出，一个分布式系统无法同时完美满足一致性 (Consi
 归根结底，CAP 定理不仅仅是关于技术选型的问题，更是一个寻找业务可承受风险点的过程。深入理解分布式系统中的权衡关系，并根据系统目标找到最佳平衡点，已成为衡量现代软件架构成败的关键尺度。
 
 ## 🔗 推荐阅读
+
 - [从令牌持有者模型到基于证明的安全：DPoP 如何重新定义 Web 认证的信任模型](/zh/posts/dpop-proof-based-web-authentication)
 - [大语言模型的对齐：学习人类偏好的 RLHF 机制](/zh/posts/llm-alignment-rlhf-mechanism)

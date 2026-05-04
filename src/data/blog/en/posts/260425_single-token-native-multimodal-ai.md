@@ -41,13 +41,13 @@ Until recently, multimodal AI functioned more like a text-centric Large Language
 
 ![Native Multimodal - A technical diagram comparing traditional AI with separate vision and language functions against next-generation integrated multimodal AI.](../../../../../source/posts/네이티브_멀티모달_%28Native_Multimodal%29/4af4ae15-0.webp)
 
-**The Coexistence of Efficiency and Expansion: Design Philosophies of Qwen3.5 and Emu3.5**
+## The Coexistence of Efficiency and Expansion: Design Philosophies of Qwen3.5 and Emu3.5
 
 Alibaba's Qwen3.5 clearly demonstrates the technical direction of unified models. While possessing approximately 397 billion parameters, it adopts a <a href="/en/glossary/mixture-of-experts" class="glossary-tooltip" data-definition="An architecture that selectively activates only a portion of the neural network (experts) suitable for the input data rather than using all parameters, maintaining performance while enhancing computational efficiency.">Mixture of Experts (MoE)</a> structure, activating only 4.28% (about 17 billion) of its parameters during actual inference. This design serves as the core engine for maximizing computational efficiency while maintaining the performance of a native vision-language model. Notably, its context length of 256K supports its potential as an Agentic AI capable of deeply navigating complex web interfaces or mobile UIs.
 
 BAAI’s Emu3.5 follows a similar path, reaching a pinnacle of data integration by training on over 10 trillion multimodal tokens. This model was trained with the objective of "Next-token Prediction" for both continuous video frames and scripts, achieving a level of performance where it predicts the next image frame as naturally as generating text. By introducing Discrete Diffusion Adaptation (DiDA), it transitioned traditional slow sequential decoding into parallel prediction, successfully increasing inference speed per image by approximately 20 times without sacrificing visual quality.
 
-**The Pros and Cons of the Encoder-less End-to-End Paradigm**
+## The Pros and Cons of the Encoder-less End-to-End Paradigm
 
 NEO-unify, a collaboration between SenseTime and NTU, takes an even more radical approach. It proposes an end-to-end method that eliminates the vision encoder and Variational Autoencoder (VAE)—once considered essential for multimodal AI—and directly connects pixel data with text. The NEO-unify 2B model recorded 31.56 PSNR and 0.85 SSIM on the MS COCO 2017 dataset, proving that precise visual implementation is possible even without a separate encoder.
 
@@ -67,7 +67,7 @@ However, this unified structure presents new challenges in terms of system contr
 
 ![Native Multimodal - Heatmap visualization showing how image and text information correlate and interact within a Transformer model.](../../../../../source/posts/네이티브_멀티모달_%28Native_Multimodal%29/b83548ee-1.webp)
 
-**The "Narrow Gate" and Infrastructure Barriers**
+## The "Narrow Gate" and Infrastructure Barriers
 
 Recent research titled "The Narrow Gate" provides interesting insights into the operational efficiency of native models. It revealed that when these models process images and text, the pathway for transferring visual information to the text domain is surprisingly narrow. Unlike non-native models that distribute information across numerous image tokens, native architectures tend to compress core information into a single "post-image" token.
 
@@ -76,4 +76,5 @@ While this compression technique is excellent for computational efficiency, it c
 Ultimately, behind the technical elegance of native multimodal AI lies a coexistence of astronomical infrastructure costs and the uncertainty of inference caused by removing proven modules. Companies must now consider realistic choices between flashy benchmark metrics and specialized models with proven cost-efficiency. The price of AI understanding the world through a single logic comes with much higher technical debt and operational risk than expected.
 
 ## 🔗 Recommended Reading
+
 - [MCP: A Blueprint for Standard Protocols Navigating the Complexity of AI Integration](/en/posts/mcp-ai-integration-standard-protocol)

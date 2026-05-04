@@ -18,7 +18,7 @@ modDatetime: 2026-04-28 15:13:30.800242+09:00
 
 The AI ecosystem is currently reliving the chaos of the early PC market before standards were established. Much like the era of mismatched cables and ports, developers are stuck in a cycle of writing individual integration code every time they need to connect a Large Language Model (LLM) to a corporate database or collaboration tool. The Model Context Protocol (MCP), unveiled by Anthropic, is an ambitious attempt to unify this fragmented connectivity. By providing a standardized language between AI models and external data, it functions as an interface standard that connects all devices into a single ecosystem.
 
-### The Art of Connection: Unifying Fragmented Interfaces
+## The Art of Connection: Unifying Fragmented Interfaces
 
 The biggest bottleneck in building traditional AI agents is scalability. If 10 AI applications need to connect to 10 enterprise tools, they theoretically require 100 individual interfaces. This structure, known in the tech industry as the 'N×M integration problem,' is the primary culprit behind high operational costs and maintenance difficulties.
 
@@ -32,7 +32,7 @@ The protocol follows a clear Client-Host-Server hierarchy. When the client (the 
 - **Resources**: Data and read-only information held by the server.
 - **Prompts**: Predefined templates for performing specific tasks.
 
-### Evolving Workflows: Beyond RAG to Real-Time Action
+## Evolving Workflows: Beyond RAG to Real-Time Action
 
 It is difficult to view MCP simply as an extension of APIs or a replacement for Retrieval-Augmented Generation (RAG). While they are technically complementary, their objectives differ.
 
@@ -47,7 +47,7 @@ While traditional RAG excels at retrieving past records to provide context, MCP 
 
 ![MCP (Model Context Protocol) - A conceptual diagram comparing RAG, symbolized by a static bookshelf, to MCP, symbolized by a high-speed fiber optic device.](../../../../../source/posts/MCP_%28Model_Context_Protocol%29/4ea970b7-1.webp)
 
-### Expanding to Enterprise Infrastructure and Practical Application
+## Expanding to Enterprise Infrastructure and Practical Application
 
 Support for MCP is expanding rapidly. Starting with Anthropic’s Claude, OpenAI’s Agents SDK and Microsoft’s Copilot Studio have joined the ranks. In particular, the involvement of open-source heavyweights like Red Hat marks a significant turning point for MCP to become a practical automation infrastructure in enterprise environments.
 
@@ -55,7 +55,7 @@ Consider a Security Operations Center (SOC) environment: when an analyst request
 
 ![MCP (Model Context Protocol) - An advanced digital dashboard where an AI agent integrates and manages multiple data sources.](../../../../../source/posts/MCP_%28Model_Context_Protocol%29/045d0ea0-2.webp)
 
-### The Governance Gap Behind Autonomy
+## The Governance Gap Behind Autonomy
 
 Despite its technical utility, MCP faces clear challenges. In terms of security and data control, MCP provides powerful features but leaves granular security <a href="/en/glossary/governance" class="glossary-tooltip" data-definition="A framework of policies, processes, and regulations for safely managing and controlling an organization's data and systems.">governance</a> entirely to individual implementations. The protocol itself currently lacks mandatory mechanisms to fundamentally block data exfiltration by malicious servers or unauthorized code execution.
 

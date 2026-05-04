@@ -15,13 +15,16 @@ modDatetime: 2026-04-28 15:15:48.794939+09:00
 
 # What is Agentic?
 
-### Definition
+## Definition
+
 The term "Agentic" refers to the autonomous property of an AI system that goes beyond simply retrieving information or generating text. It signifies the ability to make independent judgments to achieve a designated goal and utilize external tools or APIs to perform practical actions. This concept emphasizes the system's capability to function as an independent "agent."
 
-### Practical Example
+## Practical Example
+
 While a traditional chatbot might only provide information about shipping policies, an Agentic AI can access a real-time logistics database at the user's request, verify the delivery status, and directly initiate the return process, effectively completing the entire workflow end-to-end.
 
-### Related Terminology
+## Related Terminology
+
 - AI Agent
 - Tool Calling
 - MCP (Model Context Protocol)

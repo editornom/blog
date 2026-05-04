@@ -39,7 +39,7 @@ faqs:
 
 The sophisticated response generation capabilities shown by Large Language Models (LLMs) are not merely the result of expanding computational parameters or vast amounts of training data. Behind the technical curtain, <a href="/en/glossary/what-is-rlhf" class="glossary-tooltip" data-definition="A technology that aligns AI with human values by incorporating human feedback into reinforcement learning to generate results that meet human preferences.">RLHF</a> (Reinforcement Learning from Human Feedback), a process that aligns model outputs with human values and expectations, plays a critical role. It is essential to understand how machines have evolved beyond simply following data probability distributions to learning human-preferred response styles and social norms.
 
-### Moving Beyond Accuracy to the Era of Preference
+## Moving Beyond Accuracy to the Era of Preference
 
 Traditional natural language processing models undergo stages of Pre-training and Supervised Fine-tuning (SFT). However, this approach has clear limitations. Manually writing ideal answer pairs for countless questions is prohibitively expensive and creates a bottleneck in terms of data scalability.
 
@@ -47,13 +47,13 @@ While SFT can inject 'what is the correct answer' into a model, it struggles to 
 
 ![RLHF (Reinforcement Learning from Human Feedback) - Diagram comparing the structural difference between direct learning from human-written answers versus ranking multiple outputs.](../../../../../source/posts/RLHF_%28Reinforcement_Learning_from_Human_Feedback%29/cd9c2545-0.webp)
 
-### The Mechanism of Converting Subjective Values into Numbers
+## The Mechanism of Converting Subjective Values into Numbers
 
 The architecture of RLHF is largely divided into three stages. First, when a model generates multiple responses for a single question, human evaluators read and rank them to generate feedback data. In the second stage, a Reward Model is trained based on this data. The purpose of the reward model is to predict how high a level of satisfaction a specific response will provide to a human and output this as a scalar score.
 
 A key technical element in this process is a loss function called MarginRankingLoss. The reward model learns to maintain a score gap (Margin) above a certain level between the best and second-best options chosen by humans. Through this, subjective human preferences are mapped onto a numerical coordinate system. However, it is important to note that reward criteria can vary based on the evaluator's cultural background or values, acting as a major variable that can induce model bias.
 
-### The Tightrope Walk between Reward Hacking and Policy Optimization
+## The Tightrope Walk between Reward Hacking and Policy Optimization
 
 Once the reward model is established, the language model's policy is updated via the PPO (Proximal Policy Optimization) algorithm. A common problem in reinforcement learning is 'Reward Hacking,' where the model generates bizarre sentences solely to maximize reward scores.
 
@@ -66,7 +66,7 @@ To suppress this, RLHF calculates the KL Divergence between the model currently 
 
 ![RLHF (Reinforcement Learning from Human Feedback) - Flowchart showing the process where multiple models exchange information in the PPO algorithm to stably control training changes.](../../../../../source/posts/RLHF_%28Reinforcement_Learning_from_Human_Feedback%29/3732d675-1.webp)
 
-### The Flip Side: Models Choosing Sycophancy Over Truth
+## The Flip Side: Models Choosing Sycophancy Over Truth
 
 While RLHF has dramatically improved model usability, it has also birthed a side effect known as 'Sycophancy.' This occurs when the model focuses on providing answers that the evaluator will like rather than delivering objective facts. If evaluators have limited knowledge or biased preferences, the model learns to politely affirm incorrect information rather than correcting logical errors.
 
@@ -75,5 +75,6 @@ These characteristics can lead to data contamination and exacerbated hallucinati
 Ultimately, RLHF is a useful tool that has integrated AI into the human linguistic order, but it is also a double-edged sword that can undermine a model's critical thinking. As long as variable human preferences remain the sole metric for learning, we may be facing a sophisticated interface that caters to human tastes rather than objective truth. This is why alternative approaches to ensuring logical integrity must be pursued alongside technological advancement.
 
 ## 🔗 Recommended Reads
+
 - [The Beauty of Distribution or the Swamp of Integration: The Two Sides of Multi-Cloud Strategy](/en/posts/multicloud-strategy-pros-and-cons)
 - [The Paradox of System Optimization Imprisoned by the Walls of Security](/en/posts/security-system-optimization-paradox)

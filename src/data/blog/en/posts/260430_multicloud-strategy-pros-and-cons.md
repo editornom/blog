@@ -41,13 +41,13 @@ Building a multi-cloud environment to avoid the risk where a single point of fai
 
 ![A high-tech network architecture diagram displaying interconnected nodes between Azure, AWS, and private data centers, with a central monitoring shield icon, professional corporate blue tone.](../../../../assets/images/placeholder.png)
 
-### The Paradox of Distributed Resources and Operational Thresholds
+## The Paradox of Distributed Resources and Operational Thresholds
 
 According to 2025 data from Flexera, approximately 89% of enterprise companies have adopted a multi-cloud strategy, and Gartner forecasts that the global Cloud market will reach $723.4 billion this year. However, behind this quantitative expansion lies a chronic problem: a decline in management efficiency. As infrastructure is dispersed, companies must individually manage the unique APIs, security models, and operational workflows of each provider, which ultimately leads to an increase in operational debt.
 
 The attempt to avoid vendor lock-in often returns as harsh operational costs for learning and maintaining different sets of tools. In particular, the egress costs and network latency that occur when data crosses cloud boundaries act as variables that fundamentally threaten the economic viability of system architecture.
 
-### Technical Challenges in Cross-Cloud Environments: Latency and IAM
+## Technical Challenges in Cross-Cloud Environments: Latency and IAM
 
 The most technically demanding aspect of implementing multi-cloud is optimizing network performance between different environments. Latency occurring when applications requiring real-time data synchronization are spread across multiple regions directly degrades the user experience. To solve this, companies introduce dedicated private connectivity or edge computing nodes, which in turn triggers a chain reaction that increases infrastructure complexity and costs.
 
@@ -55,7 +55,7 @@ Ensuring consistency in security governance is another major challenge. Because 
 
 ![A professional dashboard interface showing cloud cost analytics across multiple providers with red and green bar charts, clean UI design, high resolution.](../../../../assets/images/placeholder.png)
 
-### Practical Limitations and License Risks of Major Management Tools
+## Practical Limitations and License Risks of Major Management Tools
 
 The market offers various integrated management tools to solve these complexities. However, each solution has limitations as distinct as its own philosophy.
 
@@ -66,7 +66,7 @@ The market offers various integrated management tools to solve these complexitie
 
 Recent changes in Terraform's licensing policy have caused a major stir in the open-source ecosystem, leading companies to seek alternatives like OpenTofu or return to commercial vendor platforms. Ultimately, one must not overlook the fact that a tool introduced for management can lead to another form of vendor lock-in.
 
-### FinOps and Realistic Human Resource Barriers
+## FinOps and Realistic Human Resource Barriers
 
 A barrier even larger than technical solutions is the people and costs involved in operating them. Even in 2025, specialized personnel who deeply understand the characteristics of each Cloud and can design optimal architectures are extremely rare. Amateur-level multi-cloud operation results in a waste of redundant resources, creating the worst outcomes from a FinOps perspective.
 
@@ -77,5 +77,6 @@ Theoretically, cost optimization through distributed infrastructure seems possib
 Before adopting the glamorous facade of multi-cloud, companies must objectively weigh the actual benefits against the operational complexity it brings. If technical flexibility cannot offset management costs and security risks, it is nothing more than the proliferation of fragmented technical debt rather than business value creation. A distribution strategy not backed by clear governance and high-level expertise is at high risk of degrading into a high-cost structure that eats away at corporate competitiveness. Now more than ever, a simple yet powerful infrastructure strategy that allows focus on the essence of the business is desperately needed.
 
 ## 🔗 Recommended Reading
+
 - [The Technical Landscape Reshaped by Attention and the Pros and Cons of Transformers](/en/posts/attention-transformers-tech-landscape)
 - [The Dominance of Single Tokens: How Native Multimodal AI is Redefining Artificial Intelligence Metrics](/en/posts/single-token-native-multimodal-ai)
