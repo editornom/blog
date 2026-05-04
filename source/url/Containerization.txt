@@ -1,0 +1,8 @@
+https://medium.com/@adaptit.telecoms/what-is-containerization-why-it-matters-in-telecoms-0eba2a29e048
+https://cloud.google.com/discover/what-is-containerization
+https://www.huntress.com/cybersecurity-101/topic/what-is-containerization-cybersecurity-guide
+https://cloud.google.com/discover/what-is-containerization?hl=ko
+https://news.hada.io/topic?id=21378
+https://github.com/apple/containerization
+https://www.docker.com/
+https://opensource.apple.com/projects/containerization
