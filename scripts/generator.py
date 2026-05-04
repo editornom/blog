@@ -30,7 +30,7 @@ class BlogPostSchema(BaseModel):
     title: str = Field(description="최종 완성된 제목")
     content: str = Field(description="마크다운 형식의 최종 완성된 본문")
 
-def generate_blog_post_multi_agent(crawled_content, folder="posts", keyword="", stance=""):
+def generate_blog_post_multi_agent(crawled_content, folder="posts", keyword="", stance="", schedule_type=None):
     """
     Generates a blog post using a Multi-Agent Orchestration pipeline:
     1. Planning Director: Strategy & Outline
@@ -56,14 +56,22 @@ def generate_blog_post_multi_agent(crawled_content, folder="posts", keyword="", 
 """
 
     # --- PHASE 1: Planning Director ---
-    print("\n🏗️ [Phase 1] 기획국장: 전략 수립 및 목차 설계 중...")
+    print(f"\n🏗️ [Phase 1] 기획국장: 전략 수립 및 목차 설계 중... (Schedule: {schedule_type if schedule_type else 'Manual'})")
+    
+    # Schedule-specific strategy enhancement
+    schedule_strategy = ""
+    if schedule_type in ["09_tech_news", "15_ai_news"]:
+        schedule_strategy = "이 글은 '최신 뉴스 분석'입니다. 현재 발생하는 트렌드와 기술적 이슈가 지금 당장 업계와 사용자에게 미치는 '즉각적인 영향'과 '시의성'에 집중하여 전략을 수립하세요."
+    elif schedule_type in ["12_tech_feature", "18_ai_feature"]:
+        schedule_strategy = "이 글은 '심층 특집(Feature)' 기사입니다. 이 기술이나 사건이 갖는 '역사적 맥락'과 '기념비적 가치', 그리고 장기적으로 IT 생태계에 미친 '거대한 파장'을 분석하는 거시적인 관점에서 전략을 수립하세요."
+
     planning_prompt = f"""
 너는 블로그 콘텐츠 전략의 사령탑인 '기획국장(Planning Director)'이다. 너의 임무는 단순한 키워드 나열이 아니라, 시장 데이터와 경쟁사 분석을 바탕으로 '필승의 글쓰기 전략'을 수립하는 것이다.
 
 {data_block}
 
 [지시사항]
-1. 시장 데이터와 페르소나를 분석하여 독보적인 전략을 수립하라.
+1. {schedule_strategy if schedule_strategy else '시장 데이터와 페르소나를 분석하여 독보적인 전략을 수립하라.'}
 2. H1~H3 구조의 목차를 설계하라.
 3. SEO/AEO/GEO 전문가가 반드시 다루어야 할 핵심 논점을 정리하라.
 4. 이번 글의 핵심 논조(Stance)는 다음과 같다: "{stance}"
@@ -163,13 +171,13 @@ GEO 전문가 결과: {spec_data['geo_part']}
 
     return final_data, None
 
-def generate_blog_post(crawled_content, folder="posts", additional_instructions="", keyword="", stance=""):
+def generate_blog_post(crawled_content, folder="posts", additional_instructions="", keyword="", stance="", schedule_type=None):
     """
     Original generation function (Legacy/Fallback)
     Now redirects to multi-agent for 'posts' folder.
     """
     if folder == "posts":
-        return generate_blog_post_multi_agent(crawled_content, folder, keyword, stance)
+        return generate_blog_post_multi_agent(crawled_content, folder, keyword, stance, schedule_type)
     
     # Glossary logic remains same for now as it's a specific simple task
     api_key = os.getenv("GEMINI_API_KEY")

@@ -253,7 +253,7 @@ def print_final_briefing(report):
     except Exception as e:
         print(f"⚠️ 보고서 파일 저장 중 오류 발생: {e}")
 
-def process_single_file(file_path, folder="posts", target_lang=None, include_faq=False):
+def process_single_file(file_path, folder="posts", target_lang=None, include_faq=False, schedule_type=None):
     """
     Bypass crawl/gen/review and only run translation for an existing .md file.
     """
@@ -366,7 +366,7 @@ def process_single_file(file_path, folder="posts", target_lang=None, include_faq
 
     print_final_briefing(report)
 
-def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
+def process_urls(keyword=None, folder="posts", include_faq=False, urls=None, schedule_type=None):
     """
     Main pipeline: (Crawl) -> Generate -> Review -> Image Gen -> Translate -> (Push)
     If 'urls' is provided as a list, it bypasses keyword-based file loading.
@@ -451,7 +451,7 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
         "body": combined_body[:30000] # Limit to avoid token issues
     }
     
-    draft_data, density_warning = generate_blog_post(crawled_summary, folder=folder, keyword=keyword, stance=dynamic_stance)
+    draft_data, density_warning = generate_blog_post(crawled_summary, folder=folder, keyword=keyword, stance=dynamic_stance, schedule_type=schedule_type)
     if not draft_data:
         print("Error: Failed to generate initial blog post parts.")
         report["draft"]["error"] = "Failed to generate initial blog post parts."
@@ -512,7 +512,7 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None):
                     "body": f"Please explain what '{term}' is based on this context: {draft[:3000]}"
                 }
                 g_final_slug_for_link = g_slug
-                g_draft_data, _ = generate_blog_post(g_summary, folder="glossary", keyword=term)
+                g_draft_data, _ = generate_blog_post(g_summary, folder="glossary", keyword=term, schedule_type=schedule_type)
                 if g_draft_data:
                     g_draft, g_prefix, g_final_slug = assemble_post_metadata(g_draft_data, folder="glossary", keyword=term)
                     g_final_slug_for_link = g_final_slug
@@ -673,7 +673,7 @@ if __name__ == "__main__":
     
     if input_arg and input_arg.endswith(".md"):
         # 기존 파일 재작업 모드
-        process_single_file(input_arg, folder, target_lang, include_faq=include_faq)
+        process_single_file(input_arg, folder, target_lang, include_faq=include_faq, schedule_type=args.schedule)
 
     elif input_arg:
         # 🚀 [MANUAL MODE] 수동 키워드 입력 시 DeepSearch 연동
@@ -686,7 +686,7 @@ if __name__ == "__main__":
         if top_urls:
             # 수동 모드 역사 기록
             save_keyword_to_history(input_arg, "수동선정")
-            process_urls(urls=top_urls, keyword=input_arg, folder=folder, include_faq=include_faq)
+            process_urls(urls=top_urls, keyword=input_arg, folder=folder, include_faq=include_faq, schedule_type=args.schedule)
         else:
             print(f"❌ '{input_arg}'에 대한 검색 결과에서 유효한 소스를 찾지 못했습니다.")
     else:
@@ -775,7 +775,7 @@ if __name__ == "__main__":
 
             if top_urls:
                 # 3. 선별된 고품질 URL들을 사용하여 포스팅 작성
-                process_urls(urls=top_urls, keyword=auto_keyword, folder=folder, include_faq=include_faq)
+                process_urls(urls=top_urls, keyword=auto_keyword, folder=folder, include_faq=include_faq, schedule_type=schedule_type)
                 # process_urls 내부에서 print_final_briefing을 호출하므로 여기서는 중복 호출하지 않기 위해 
                 # master_report를 직접 관리하는 방식 대신 process_urls의 결과를 받거나 
                 # 혹은 전역적인 상태 관리가 필요함. 
