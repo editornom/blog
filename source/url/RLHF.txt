@@ -1,0 +1,10 @@
+https://blog.ml.cmu.edu/2025/06/01/rlhf-101-a-technical-tutorial-on-reinforcement-learning-from-human-feedback/
+https://arxiv.org/html/2504.12501v2
+https://towardsdatascience.com/explained-simply-reinforcement-learning-from-human-feedback/
+https://wandb.ai/site/articles/what-is-rlhf/
+https://www.paloaltonetworks.com/cyberpedia/what-is-rlhf
+https://openreview.net/forum?id=EScatQaRxz
+https://medium.com/@vi.ha.engr/building-an-rlhf-pipeline-for-llms-a-beginner-friendly-tutorial-21112bfcff9b
+https://pub.towardsai.net/a-deep-dive-into-rlhf-eeee994b235b
+https://arxiv.org/abs/2511.03939
+https://www.gigaspaces.com/blog/rlhf-rag-and-instruction-fine-tuning
