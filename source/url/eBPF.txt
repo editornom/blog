@@ -1,10 +1,10 @@
 https://newrelic.com/blog/observability/what-is-ebpf
 https://oneuptime.com/blog/post/2025-12-10-what-is-ebpf-and-how-does-it-work/view
+https://www.kentik.com/kentipedia/what-is-ebpf-extended-berkeley-packet-filter/
+https://www.sentinelone.com/cybersecurity-101/cybersecurity/what-is-extended-berkeley-packet-filter-ebpf/
 https://www.paloaltonetworks.com/blog/network-security/beginners-guide-to-ai-security-with-ebpf/
 https://www.suse.com/c/ebpf-kubernetes/
-https://github.blog/engineering/infrastructure/how-github-uses-ebpf-to-improve-deployment-safety/
 https://seekerslab.com/en/resources/blog/ebpf-%EC%99%84%EC%A0%84-%EC%9E%85%EB%AC%B8-%EC%BB%A4%EB%84%90-%EC%BD%94%EB%93%9C-%EC%97%86%EC%9D%B4-%EC%BB%A4%EB%84%90%EC%9D%84-%EC%88%98%EC%A0%95%ED%95%98%EB%8A%94-%EB%A7%88%EB%B2%95-1771844642571
 https://gasbugs.tistory.com/68
-https://www.oreilly.com/library/view/ebpf-hagseub/9798341654310/ch01.html
+https://on.com2us.com/tech/ebpf-xdp-deep-dive/
 https://docs.newrelic.com/kr/docs/ebpf/overview/
-https://www.illumio.com/ko/blog/the-future-of-secure-code-execution-embracing-collaborative-ebpf-approaches
