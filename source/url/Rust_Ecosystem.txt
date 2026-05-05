@@ -1,0 +1,10 @@
+https://blog.jetbrains.com/rust/2026/02/11/state-of-rust-2025/
+https://blog.rust-lang.org/2026/03/20/rust-challenges/
+https://crocidb.com/post/rust-after-six-months-my-impressions/
+https://users.rust-lang.org/t/concerns-on-the-long-term-viability-of-rust-for-real-world-applications/134570
+https://corrode.dev/blog/foundational-software/
+https://thenewstack.io/rust-enterprise-developers/
+https://dev.to/sagge/why-rusts-ecosystem-is-a-game-changer-for-developers-5bhl
+https://00f.net/2025/10/17/state-of-the-rust-ecosystem/
+https://medium.com/@kanishks772/rusts-ecosystem-is-small-but-that-s-exactly-why-it-works-b7cf2a8df72f
+https://rustfoundation.org/2025/
