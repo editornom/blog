@@ -129,6 +129,18 @@
       @apply bg-muted/40 text-accent;
     }
 
+    .bluf {
+      @apply my-6 rounded-xl border border-accent/20 bg-accent/5 p-5 shadow-sm;
+      
+      strong {
+        @apply mb-2 block text-lg text-accent;
+      }
+      
+      p {
+        @apply m-0 text-foreground/90;
+      }
+    }
+
     pre {
       @apply focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-dashed;
     }

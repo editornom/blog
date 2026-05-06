@@ -41,10 +41,9 @@ If we were to pick the hottest topic in the developer community today, it would 
 
 The story we are covering today is not just about technical praise or syntax tutorials. For CTOs and senior architects standing at the crossroads of a tech stack transition, we intend to dissect this ecosystem strictly from a risk management perspective, based on the 'State of Rust 2025' data.
 
- <aside class="bluf" style="background-color: #f8f9fa; padding: 20px; border-left: 5px solid #ff4a00; margin-bottom: 30px; border-radius: 4px;">
-  <strong>[BLUF: The Harsh Reality Facing Rust Adoption]</strong><br><br>
-  According to the 2025 JetBrains Developer Ecosystem survey, while 65% of developers enjoy Rust for hobbies or side projects, the adoption rate in production environments is only 26%. Behind this stark discrepancy lie senior talent bottlenecks caused by a vertical learning curve, compile performance degradation that stifles CI/CD pipelines, and a fragmented asynchronous ecosystem. These factors ultimately act as critical risks that hinder immediate corporate productivity.
- </aside>
+ 
+
+<div class="bluf"><strong>[BLUF]</strong><p>According to the 2025 JetBrains Developer Ecosystem survey, while 65% of developers enjoy Rust for hobbies or side projects, the adoption rate in production environments is only 26%. Behind this stark discrepancy lie senior talent bottlenecks caused by a vertical learning curve, compile performance degradation that stifles CI/CD pipelines, and a fragmented asynchronous ecosystem. These factors ultimately act as critical risks that hinder immediate corporate productivity.</p></div>
 
 Now, let's examine what these numbers mean and uncover the reality lurking behind the ecosystem.
 
