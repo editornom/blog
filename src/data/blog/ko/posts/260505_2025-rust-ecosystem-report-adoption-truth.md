@@ -59,7 +59,7 @@ faqs:
 
  이제 이 수치들이 의미하는 바를 하나씩 짚어보며, 생태계 이면에 도사린 실체를 낱낱이 파헤쳐 볼게요.
 
- ![Rust Ecosystem - 어두운 배경 속에서 네온 오렌지와 진한 파란색 빛을 내는 추상적인 회로 기판이 압력을 받아 갈라지는 모습입니다.](../../../../../source/posts/Rust_Ecosystem/b8cb1bd7-0.webp)
+![Rust Ecosystem - 어두운 배경 속에서 네온 오렌지와 진한 파란색 빛을 내는 추상적인 회로 기판이 압력을 받아 갈라지는 모습입니다.](../../../../../source/posts/Rust_Ecosystem/b8cb1bd7-0.webp)
 
  ## State of Rust 2025: 숫자가 폭로하는 통계적 괴리
 
@@ -91,7 +91,7 @@ faqs:
 
  > "Ardan Labs의 컨설턴트 Herbert Wolverson은 정부 기관의 대규모 C/C++ 프로젝트 전환 사례를 통해, 초기 생산성 하락의 고통을 묵묵히 감수하지 않고서는 Rust의 진정한 가치를 끌어낼 수 없음을 명확히 지적했어요."
 
- ![Rust Ecosystem - 기업의 시스템 도입 과정이 겪는 어려움을 반투명 유리 미로를 통과하는 붉은 실로 표현한 것입니다.](../../../../../source/posts/Rust_Ecosystem/4b069995-1.webp)
+![Rust Ecosystem - 기업의 시스템 도입 과정이 겪는 어려움을 반투명 유리 미로를 통과하는 붉은 실로 표현한 것입니다.](../../../../../source/posts/Rust_Ecosystem/4b069995-1.webp)
 
  ## AI 의존도의 역설: '검증되지 않은 안전성'의 함정
 

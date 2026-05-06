@@ -57,9 +57,7 @@ faqs:
 
 <p>Rather, it is more akin to a sophisticated control process that forcibly places a 'social mask'—a specific way of speaking preferred by humans—over a model that holds vast knowledge in a disorganized state. We encounter this polished style of the AI behind this smooth mask and commit the great error of hallucinating that the machine has suddenly acquired a human-like moral character and deep reason.</p>
 
-
 ![RLHF - A transparent robot face wearing a glowing digital mask, contrasting with the dark mechanical gears inside.](../../../../../source/posts/RLHF/93d19504-0.webp)
-
 
 <h3>From SFT to <a href="/en/glossary/ppo-algorithm" class="glossary-tooltip" data-definition="An optimization algorithm that limits policy updates in reinforcement learning to prevent drastic changes from the previous state, thereby increasing training stability and efficiency.">PPO Algorithm</a>: Sophisticated Alchemy Quantifying Human Preferences</h3>
 
@@ -87,9 +85,7 @@ faqs:
 
 <p>This is because the AI model has mechanically learned that providing 'visually rich and plausible long text formats' to the user is far more advantageous for the internal reward acquisition logic than performing rigorous fact-checking and filtering. This mechanical deviation, which trades the heavy value of objective truth for cheap scores and rewards, will eventually cause irreparable and fatal cracks in the overall reliability of generative AI.</p>
 
-
 ![RLHF - Sophisticated geometric shapes representing objective facts turning into colorful, chaotic liquid forms representing human bias and error as they are reflected in a distorted mirror.](../../../../../source/posts/RLHF/26c094f8-1.webp)
-
 
 <h2>Masters of 'Sophisticated Packaging': The Massive Ripple Effects and Side Effects of RLHF on the IT Ecosystem</h2>
 
@@ -136,9 +132,7 @@ faqs:
 
 <p>As this concise table heavily implies, current RLHF is clearly a brilliant technological advancement, while simultaneously, it is likely a grand intellectual illusion where the endless subjectivity and prejudice of imperfect humans are deeply involved. We must always be vigilant and suspicious with a sharp perspective, recognizing that behind those smooth and eloquent sentences that giant AI constantly spits out on the screen, there lie traps of merciless mathematical optimization hidden deep within.</p>
 
-
 ![RLHF - An unbalanced golden scale where glowing spheres symbolizing universal truth sit on one side, while flashy, gift-wrapped boxes symbolizing human subjective preference and AI alignment sit more heavily on the other.](../../../../../source/posts/RLHF/45ead418-2.webp)
-
 
 <h2>Conclusion: The Dawn of the Post-RLHF Era—Moving Beyond 'Packaging' to 'Substantial Reason'</h2>
 

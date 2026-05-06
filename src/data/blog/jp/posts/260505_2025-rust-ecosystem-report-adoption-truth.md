@@ -48,7 +48,7 @@ faqs:
 
  では、これらの数値が意味するものを一つずつ確認しながら、エコシステムの裏側に潜む実態を明らかにしていきましょう。
 
- ![Rust Ecosystem - 暗い背景にネオンオレンジと濃い青色の光を放つ抽象的な回路基板が圧力を受けて亀裂が入っている様子です。](../../../../../source/posts/Rust_Ecosystem/b8cb1bd7-0.webp)
+![Rust Ecosystem - 暗い背景にネオンオレンジと濃い青色の光を放つ抽象的な回路基板が圧力を受けて亀裂が入っている様子です。](../../../../../source/posts/Rust_Ecosystem/b8cb1bd7-0.webp)
 
  ## State of Rust 2025：数字が暴露する統計的乖離
 
@@ -80,7 +80,7 @@ faqs:
 
  > 「Ardan Labs のコンサルタント Herbert Wolverson 氏は、政府機関の大規模な C/C++ プロジェクト転換事例を通じて、初期生産性の低下という苦痛を黙々と受け入れない限り、Rust の真の価値を引き出すことはできないと明確に指摘しました」
 
- ![Rust Ecosystem - 企業のシステム導入プロセスが経験する困難を、半透明のガラスの迷路を通過する赤い糸で表現したものです。](../../../../../source/posts/Rust_Ecosystem/4b069995-1.webp)
+![Rust Ecosystem - 企業のシステム導入プロセスが経験する困難を、半透明のガラスの迷路を通過する赤い糸で表現したものです。](../../../../../source/posts/Rust_Ecosystem/4b069995-1.webp)
 
  ## AI 依存のパラドックス：「検証されていない安全性」の罠
 
@@ -111,7 +111,7 @@ faqs:
  | **人材確保および学習曲線** | 優れた公式ドキュメントとコミュニティの助けで迅速に克服可能 | 深刻なシニア人材不足および既存 C/C++ 開発者の莫大な転換コスト |
  | **AI ツールの活用 (89% 依存)** | 複雑な文法とコンパイルエラーを魔法のように解決してくれる救世主 | ビジネスの欠陥を隠す「検証されていない安全性」および `unsafe` ブロック乱用のリスク |
 
- ![Split screen abstract concept, left side showing a bright structured clean geometric pattern (Hype), right side revealing a complex tangled web of glowing fibers with bottlenecks (Reality), glassmorphism, hyper-realistic macro photography, sophisticated magazine tone](../../../../../source/posts/Rust_Ecosystem/4b069995-1.webp)
+![Split screen abstract concept, left side showing a bright structured clean geometric pattern (Hype), right side revealing a complex tangled web of glowing fibers with bottlenecks (Reality), glassmorphism, hyper-realistic macro photography, sophisticated magazine tone](../../../../../source/posts/Rust_Ecosystem/4b069995-1.webp)
 
  ## 結びに：冷酷な指標の上に描く新しい技術戦略
 
