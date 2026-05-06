@@ -1,5 +1,4 @@
 https://blog.bytebytego.com/p/how-transformers-architecture-powers
 https://medium.com/@robin5002234/understanding-the-transformer-architecture-a-deep-dive-6e463f4f9649
-https://dilipkumar.medium.com/transformers-neural-network-architecture-a6fd825d2d5f
 https://pub.towardsai.net/the-transformer-architecture-a1caa330ddc6
 https://www.codecademy.com/article/transformer-architecture-self-attention-mechanism
