@@ -606,6 +606,9 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None, sch
         else:
             report["images"]["error"] = img_error if img_error else "Unknown Error"
 
+    # AI가 생성 과정에서 [이미지: ...]를 <p> 태그로 감싸버린 경우 마크다운 파서가 이미지를 렌더링하지 못하므로, 이를 제거합니다.
+    draft = re.sub(r'<p>\s*(!\[.*?\]\(.*?\))\s*</p>', r'\n\1\n', draft)
+
     # 5. Save the final draft
     target_dir = os.path.join("src", "data", "blog", "ko", folder)
     os.makedirs(target_dir, exist_ok=True)
