@@ -58,7 +58,7 @@ faqs:
 
  이제 이 수치들이 의미하는 바를 하나씩 짚어보며, 생태계 이면에 도사린 실체를 낱낱이 파헤쳐 볼게요.
 
-![Rust Ecosystem - 어두운 배경 속에서 네온 오렌지와 진한 파란색 빛을 내는 추상적인 회로 기판이 압력을 받아 갈라지는 모습입니다.](../../../../../source/posts/Rust_Ecosystem/b8cb1bd7-0.webp)
+![Rust 생태계 - 어두운 배경 속에서 네온 오렌지와 진한 파란색 빛을 내는 추상적인 회로 기판이 압력을 받아 갈라지는 모습입니다.](../../../../../source/posts/Rust_Ecosystem/b8cb1bd7-0.webp)
 
  ## State of Rust 2025: 숫자가 폭로하는 통계적 괴리
 
@@ -90,7 +90,7 @@ faqs:
 
  > "Ardan Labs의 컨설턴트 Herbert Wolverson은 정부 기관의 대규모 C/C++ 프로젝트 전환 사례를 통해, 초기 생산성 하락의 고통을 묵묵히 감수하지 않고서는 Rust의 진정한 가치를 끌어낼 수 없음을 명확히 지적했어요."
 
-![Rust Ecosystem - 기업의 시스템 도입 과정이 겪는 어려움을 반투명 유리 미로를 통과하는 붉은 실로 표현한 것입니다.](../../../../../source/posts/Rust_Ecosystem/4b069995-1.webp)
+![러스트 생태계 - 기업의 시스템 도입 과정이 겪는 어려움을 반투명 유리 미로를 통과하는 붉은 실로 표현한 것입니다.](../../../../../source/posts/Rust_Ecosystem/4b069995-1.webp)
 
  ## AI 의존도의 역설: '검증되지 않은 안전성'의 함정
 
@@ -121,7 +121,11 @@ faqs:
  | **인력 수급 및 학습 곡선** | 훌륭한 공식 문서와 커뮤니티의 도움으로 빠르게 극복 가능 | 극심한 시니어 인력 기근 및 기존 C/C++ 개발자의 막대한 전환 비용 |
  | **AI 도구 활용 (89% 의존)** | 복잡한 문법과 컴파일 에러를 마법처럼 해결해 줄 구원자 | 비즈니스 결함을 숨기는 '검증되지 않은 안전성' 및 `unsafe` 블록 남발 위험 |
 
- [이미지: Split screen abstract concept, left side showing a bright structured clean geometric pattern (Hype), right side revealing a complex tangled web of glowing fibers with bottlenecks (Reality), glassmorphism, hyper-realistic macro photography, sophisticated magazine tone]
+ 
+
+![Rust Ecosystem - A split screen contrasting a bright, orderly geometric exterior on the left with a complex, tangled, and obstructed reality on the right.](../../../../../source/posts/Rust_Ecosystem/d28e5b64-2.webp)
+
+
 
  ## 맺음말: 냉혹한 지표 위에서 그리는 새로운 기술 전략
 
