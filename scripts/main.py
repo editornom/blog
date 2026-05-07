@@ -294,7 +294,9 @@ def process_single_file(file_path, folder="posts", target_lang=None, include_faq
     with open(file_path, "w", encoding="utf-8") as f:
         f.write(draft)
 
-    slug = os.path.splitext(os.path.basename(file_path))[0]
+    slug_raw = os.path.splitext(os.path.basename(file_path))[0]
+    # Remove YYMMDD_ prefix if it exists to avoid double prefixes during translation
+    slug = slug_raw[7:] if re.match(r'^\d{6}_', slug_raw) else slug_raw
 
     # Add FAQ if requested (using slug as keyword)
     if include_faq:
@@ -563,8 +565,10 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None, sch
             print(f"Warning: FAQ file not found or empty for keyword '{keyword}'")
 
     # 4. Process Images
-    # [이미지: ...], ![이미지](...), ![설명] 등 다양한 형태를 유연하게 감지
-    image_placeholders = re.findall(r'(?:!*\[이미지\]\(|!*\[이미지:\s*|!\[)(.*?)(?:\)|\])', draft)
+    # [이미지: ...], ![이미지](...) 등 다양한 형태를 괄호가 포함된 프롬프트도 안전하게 추출하도록 정규식 개선
+    # 공백, 이스케이프된 괄호(\[ \]) 등도 처리 가능하도록 확장
+    image_pattern = re.compile(r'(?:\*\*|\_)?!*\\?\[\s*이미지\s*:\s*([^\]\\]+)\\?\](?:\*\*|\_)?|(?:\*\*|\_)?!*\[이미지\]\(([^)]+)\)(?:\*\*|\_)?')
+    image_matches = list(image_pattern.finditer(draft))
     
     source_folder_name = keyword if keyword else "general"
     source_folder_name = re.sub(r'[\s\\/:*?"<>|]+', '_', source_folder_name).strip('_')
@@ -572,12 +576,15 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None, sch
     source_img_dir = os.path.join("source", folder, source_folder_name)
     os.makedirs(source_img_dir, exist_ok=True)
     
-    print(f"Found {len(image_placeholders)} image placeholders.")
-    report["images"]["requested"] = len(image_placeholders)
+    print(f"Found {len(image_matches)} image placeholders.")
+    report["images"]["requested"] = len(image_matches)
 
     image_context = f"Post Title: {reviewed_data['title']} | Keyword: {keyword if keyword else 'Technology'}"
 
-    for i, prompt in enumerate(image_placeholders):
+    for i, match in enumerate(image_matches):
+        prompt = (match.group(1) or match.group(2)).strip()
+        full_match_str = match.group(0)
+        
         img_uuid = str(uuid.uuid4())[:8]
         img_filename = f"{img_uuid}-{i}.webp"
         img_path = os.path.join(source_img_dir, img_filename)
@@ -596,9 +603,8 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None, sch
             alt_keyword = keyword if keyword else "IT 트렌드"
             md_img_link = f"![{alt_keyword} - {translated_alt}]({encoded_rel_path})"
             
-            # 정규표현식을 사용하여 [이미지: ...] 또는 ![이미지](...) 형태를 유연하게 찾아 치환합니다.
-            pattern = r"!*\[이미지\]\(\s*" + re.escape(prompt) + r"\s*\)|!*\[이미지:\s*" + re.escape(prompt) + r"\s*\]"
-            draft = re.sub(pattern, md_img_link, draft)
+            # 직접 치환 (마크다운 ** 등 스타일 태그 포함 매칭되었으므로 그대로 치환하여 제거)
+            draft = draft.replace(full_match_str, md_img_link)
             
             if i == 0:
                 # 첫 번째 이미지를 ogImage로 자동 설정

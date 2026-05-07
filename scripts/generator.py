@@ -81,7 +81,7 @@ def generate_blog_post_multi_agent(crawled_content, folder="posts", keyword="", 
     def call_planner():
         gemini_limiter.consume()
         return client.models.generate_content(
-            model='models/gemini-3-flash-preview', # Latest flash for planning
+            model='models/gemini-3-pro-preview', # Latest flash for planning
             contents=planning_prompt,
             config={'response_mime_type': 'application/json', 'response_schema': PlanningOutput}
         )
@@ -241,7 +241,7 @@ def generate_blog_post(crawled_content, folder="posts", additional_instructions=
         def call_api(current_prompt):
             gemini_limiter.consume()
             return client.models.generate_content(
-                model='models/gemini-3-flash-preview',
+                model='models/gemini-3-pro-preview',
                 contents=current_prompt,
                 config={
                     'response_mime_type': 'application/json',

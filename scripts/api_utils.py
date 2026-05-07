@@ -2,7 +2,8 @@ import time
 import threading
 import logging
 from tenacity import retry, wait_exponential, stop_after_attempt, retry_if_exception_type, before_sleep_log
-from google.api_core import exceptions
+from google.api_core import exceptions as old_exceptions
+from google.genai import errors
 
 # 로깅 설정: 재시도 시도를 콘솔에서 확인 가능하도록 함
 logging.basicConfig(level=logging.INFO)
@@ -49,10 +50,11 @@ gemini_retry = retry(
     wait=wait_exponential(multiplier=2, min=5, max=60),
     stop=stop_after_attempt(5),
     retry=retry_if_exception_type((
-        exceptions.ResourceExhausted,
-        exceptions.ServiceUnavailable,
-        exceptions.InternalServerError,
-        exceptions.DeadlineExceeded
+        old_exceptions.ResourceExhausted,
+        old_exceptions.ServiceUnavailable,
+        old_exceptions.InternalServerError,
+        old_exceptions.DeadlineExceeded,
+        errors.APIError
     )),
     before_sleep=before_sleep_log(logger, logging.WARNING),
     reraise=True
