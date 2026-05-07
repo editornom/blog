@@ -1,0 +1,7 @@
+https://modelcontextprotocol.io/specification/2025-11-25
+https://www.redhat.com/en/topics/ai/what-is-model-context-protocol-mcp
+https://www.databricks.com/blog/what-is-model-context-protocol
+https://www.backslash.security/blog/what-is-mcp-model-context-protocol
+https://medium.com/womenintechnology/lets-learn-about-mcp-together-be1601dc7a81
+https://www.itential.com/blog/company/itential-mcp/mcp-101-understanding-the-model-context-protocol/
+https://admin.salesforce.com/blog/2025/what-is-mcp-a-simple-guide-to-model-context-protocol-for-salesforce-admins
