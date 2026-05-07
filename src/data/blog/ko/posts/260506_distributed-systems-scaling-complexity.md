@@ -7,7 +7,7 @@ pubDatetime: 2026-05-06 14:49:02.339155+09:00
 slug: distributed-systems-scaling-complexity
 featured: false
 draft: false
-ogImage: ../../../../assets/images/placeholder.png
+ogImage: '../../../../../source/posts/distributed-systems/2c7d25bb-0.webp'
 description: 현대 IT 인프라의 핵심인 분산 시스템 아키텍처가 제공하는 확장성의 이면과 그로 인해 발생하는 복잡성 비용, 데이터 무결성
   문제를 심도 있게 다룹니다. CAP 정리와 네트워크 장애 등 기술적 한계를 명확히 인식하고 시스템 안정성을 확보하기 위한 전략적 설계의 중요성을
   강조합니다.
@@ -75,7 +75,7 @@ faqs:
 
  결국 본말이 전도되어 비즈니스 로직보다 인프라 모니터링에 더 많은 엔지니어링 자원을 쏟아붓는 기형적인 구조가 탄생하는 것이에요.
 
-[이미지: Abstract art depicting the chaotic yet structured network nodes in a dark, high-tech environment. Glowing data streams illustrating the clash between infinite scalability and immense complexity, using glassmorphism effects and deep neon colors, editorial tech magazine style.]
+![분산 시스템 - 어두운 첨단 기술 환경 속에서 복잡하게 얽힌 데이터들이 빛을 내며 연결된 네트워크의 모습을 표현한 추상화입니다.](../../../../../source/posts/distributed-systems/2c7d25bb-0.webp)
 
  다음의 표는 우리가 거대한 분산화를 통해 쟁취하는 비즈니스적 이점과, 그 대가로 지불해야 하는 참혹한 비용을 극명하게 대조하여 보여주고 있어요.
 
