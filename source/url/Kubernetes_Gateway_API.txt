@@ -1,0 +1,10 @@
+https://kubernetes.io/docs/concepts/services-networking/gateway/
+https://www.digitalocean.com/community/tutorials/kubernetes-gateway-api-tutorial-cilium-ingress-alternative
+https://medium.com/@karasahinerdem/a-complete-guide-to-gateway-api-what-it-is-and-how-to-install-it-on-kubernetes-2a2e73d4dbcb
+https://www.solo.io/topics/api-gateway/kubernetes-api-gateway
+https://oneuptime.com/blog/post/2026-01-30-kubernetes-gateway-api/view
+https://gateway-api.sigs.k8s.io/geps/landing/tab/
+https://gateway.envoyproxy.io/docs/concepts/gateway-api/
+https://gateway-api.sigs.k8s.io/concepts/security/
+https://medium.com/@muppedaanvesh/kubernetes-gateway-api-a-hands-on-guide-to-modern-traffic-management-%EF%B8%8F-7d7dcb547db3
+https://kubernetes.io/blog/2026/01/28/experimenting-gateway-api-with-kind/
