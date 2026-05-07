@@ -32,6 +32,10 @@ def enhance_image_prompt(base_prompt, client, context=None):
         {
             "name": "Warm Pastel Colored Pencil Drawing",
             "desc": "Simple minimalistic illustration drawn with colored pencils, gentle cross-hatching textures, warm pastel palette, minimal details, elegant and clear symbolism, soft paper grain."
+        },
+        {
+            "name": "Modern 3D Isometric Stock Illustration",
+            "desc": "Professional vector-style isometric 3D stock illustration, clean geometry, vibrant modern tech color palette, subtle gradients, clean corporate tech stock asset feel, bright and clean presentation."
         }
     ]
     
@@ -40,7 +44,8 @@ def enhance_image_prompt(base_prompt, client, context=None):
         "Symmetrical centered layout",
         "Top-down flat lay view",
         "Minimalist negative space composition",
-        "Clean eye-level perspective"
+        "Clean eye-level perspective",
+        "3D Isometric perspective (30-degree orthographic angle)"
     ]
     
     selected_style = random.choice(styles)
@@ -58,8 +63,6 @@ def enhance_image_prompt(base_prompt, client, context=None):
 3. **핵심 구도**: 구도는 '{selected_comp}'를 적용하십시오.
 4. **절대 금지 사항**: 
    - **사람(인물, 캐릭터, 신체 부위 등)을 절대 그리지 마십시오.** (Strictly NO humans, NO characters, NO people)
-   - **아이소메트릭(Isometric, 30-degree 3D view) 구도를 절대 사용하지 마십시오.** (Strictly NO isometric views)
-   - 뻔한 스톡 사진(Generic stock photo) 느낌을 배제하십시오.
    - 텍스트 렌더링 오류 방지를 위해 "no text, no letters, no labels"를 포함하십시오.
 5. 반드시 영어로만 출력하며, 80자 이상의 상세한 서술형으로 작성하십시오.{context_str}
 
