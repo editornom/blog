@@ -31,3 +31,4 @@
 [2026-05-06] [AI추천_40점] 분산 시스템 아키텍처
 [2026-05-06] [AI추천_40점] Transformer
 [2026-05-07] [AI추천_39점] Kubernetes Gateway API
+[2026-05-07] [AI추천_40점] DNS Cache Poisoning
