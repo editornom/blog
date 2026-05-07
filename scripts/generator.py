@@ -81,7 +81,7 @@ def generate_blog_post_multi_agent(crawled_content, folder="posts", keyword="", 
     def call_planner():
         gemini_limiter.consume()
         return client.models.generate_content(
-            model='models/gemini-3-pro-preview', # Latest flash for planning
+            model='models/gemini-3-flash-preview', # Latest flash for planning
             contents=planning_prompt,
             config={'response_mime_type': 'application/json', 'response_schema': PlanningOutput}
         )
@@ -123,7 +123,7 @@ def generate_blog_post_multi_agent(crawled_content, folder="posts", keyword="", 
     def call_specialists():
         gemini_limiter.consume()
         return client.models.generate_content(
-            model='models/gemini-3-pro-preview', # Latest pro for specialist expertise
+            model='models/gemini-3-flash-preview', # Latest pro for specialist expertise
             contents=specialist_prompt,
             config={'response_mime_type': 'application/json', 'response_schema': SpecialistOutput}
         )
@@ -163,7 +163,7 @@ GEO 전문가 결과: {spec_data['geo_part']}
     def call_editor():
         gemini_limiter.consume()
         return client.models.generate_content(
-            model='models/gemini-3-pro-preview', # Latest pro for final quality
+            model='models/gemini-3-flash-preview', # Latest pro for final quality
             contents=editor_prompt,
             config={'response_mime_type': 'application/json', 'response_schema': BlogPostSchema}
         )
@@ -241,7 +241,7 @@ def generate_blog_post(crawled_content, folder="posts", additional_instructions=
         def call_api(current_prompt):
             gemini_limiter.consume()
             return client.models.generate_content(
-                model='models/gemini-3-pro-preview',
+                model='models/gemini-3-flash-preview',
                 contents=current_prompt,
                 config={
                     'response_mime_type': 'application/json',
