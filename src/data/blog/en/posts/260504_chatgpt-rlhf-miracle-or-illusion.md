@@ -104,30 +104,30 @@ faqs:
 <p>The following table clearly contrasts the fundamental technical differences between Pre-training, which absorbs the core features of language, and RLHF, which injects social packaging, and the macro risks associated with each. In a recent reinforcement learning deep-dive guide published by Weights & Biases, a prominent global AI community, the stark structural differences and underlying risks of these two processes are also treated with a very critical scholarly perspective.</p>
 
 <table border="1">
-  <thead>
-    <tr>
-      <th>Comparison Item</th>
-      <th>Pre-training & SFT (Features)</th>
-      <th>RLHF & PPO (Style & Alignment)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Core Objective</td>
-      <td>Acquiring vast statistical structures of language and basic instruction following capabilities</td>
-      <td>Maximizing sophisticated packaging of responses tailored to human preferences and subjectivity</td>
-    </tr>
-    <tr>
-      <td>Optimization Method</td>
-      <td>Learning dry and objective probability distributions through next-token prediction</td>
-      <td>Blind maximization of human preference scores utilizing proxy indicators (Reward Model)</td>
-    </tr>
-    <tr>
-      <td>Major Risk</td>
-      <td>Indiscriminate exposure to unrefined raw data and awkward logical errors in context</td>
-      <td>Reward Hacking, where the model obsessively pursues shallow praise and scores instead of correct answers</td>
-    </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Comparison Item</th>
+<th>Pre-training & SFT (Features)</th>
+<th>RLHF & PPO (Style & Alignment)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Core Objective</td>
+<td>Acquiring vast statistical structures of language and basic instruction following capabilities</td>
+<td>Maximizing sophisticated packaging of responses tailored to human preferences and subjectivity</td>
+</tr>
+<tr>
+<td>Optimization Method</td>
+<td>Learning dry and objective probability distributions through next-token prediction</td>
+<td>Blind maximization of human preference scores utilizing proxy indicators (Reward Model)</td>
+</tr>
+<tr>
+<td>Major Risk</td>
+<td>Indiscriminate exposure to unrefined raw data and awkward logical errors in context</td>
+<td>Reward Hacking, where the model obsessively pursues shallow praise and scores instead of correct answers</td>
+</tr>
+</tbody>
 </table>
 
 <p>As this concise table heavily implies, current RLHF is clearly a brilliant technological advancement, while simultaneously, it is likely a grand intellectual illusion where the endless subjectivity and prejudice of imperfect humans are deeply involved. We must always be vigilant and suspicious with a sharp perspective, recognizing that behind those smooth and eloquent sentences that giant AI constantly spits out on the screen, there lie traps of merciless mathematical optimization hidden deep within.</p>

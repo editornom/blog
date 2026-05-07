@@ -94,31 +94,31 @@ This is a technical learning curve far too steep for the average IT company's De
 <br>
 
 <table border="1">
-  <tr>
-    <th>Comparison Item</th>
-    <th>Traditional APM (Application Performance Monitoring)</th>
-    <th>eBPF-based Observability</th>
-  </tr>
-  <tr>
-    <td><strong>Data Collection Method</strong></td>
-    <td>Direct insertion of SDK/Agent into app code (Explicit)</td>
-    <td>Dynamic hooking in kernel space (Zero-instrumentation)</td>
-  </tr>
-  <tr>
-    <td><strong>Key Maintenance Risk</strong></td>
-    <td>Operational overhead of redeploying apps when logic changes</td>
-    <td>Risk of kprobe/uprobe compatibility break during kernel updates</td>
-  </tr>
-  <tr>
-    <td><strong>Troubleshooting Difficulty</strong></td>
-    <td>Relatively low (Developers can check stack traces/app logs)</td>
-    <td>Extremely high (Requires C skills, kernel structures, bytecode knowledge)</td>
-  </tr>
-  <tr>
-    <td><strong>System-wide Impact</strong></td>
-    <td>Limited to User Space (Simple recovery by restarting the app)</td>
-    <td>Directly shares kernel resources (Fatal memory leaks possible)</td>
-  </tr>
+<tr>
+<th>Comparison Item</th>
+<th>Traditional APM (Application Performance Monitoring)</th>
+<th>eBPF-based Observability</th>
+</tr>
+<tr>
+<td><strong>Data Collection Method</strong></td>
+<td>Direct insertion of SDK/Agent into app code (Explicit)</td>
+<td>Dynamic hooking in kernel space (Zero-instrumentation)</td>
+</tr>
+<tr>
+<td><strong>Key Maintenance Risk</strong></td>
+<td>Operational overhead of redeploying apps when logic changes</td>
+<td>Risk of kprobe/uprobe compatibility break during kernel updates</td>
+</tr>
+<tr>
+<td><strong>Troubleshooting Difficulty</strong></td>
+<td>Relatively low (Developers can check stack traces/app logs)</td>
+<td>Extremely high (Requires C skills, kernel structures, bytecode knowledge)</td>
+</tr>
+<tr>
+<td><strong>System-wide Impact</strong></td>
+<td>Limited to User Space (Simple recovery by restarting the app)</td>
+<td>Directly shares kernel resources (Fatal memory leaks possible)</td>
+</tr>
 </table>
 
 <br>

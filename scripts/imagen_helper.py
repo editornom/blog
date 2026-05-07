@@ -22,16 +22,16 @@ def enhance_image_prompt(base_prompt, client, context=None):
     # --- 스타일 라이브러리 정의 ---
     styles = [
         {
-            "name": "Minimal Colored Pencil Sketch",
-            "desc": "Delicate hand-drawn colored pencil sketch, minimal lines, subtle and soft pastel colors, plenty of clean white/off-white negative space, simple elegant concept, soft paper texture background."
+            "name": "Glassmorphic 3D Tech Art",
+            "desc": "Modern 3D rendering, elegant glassmorphic abstract shapes with frosted glass effect, glowing vibrant neon gradients, smooth clay textures, futuristic tech aesthetic, clean studio lighting, high resolution, professional presentation."
         },
         {
-            "name": "Abstract Fine-Line & Pastel Art",
-            "desc": "Thin minimalist fine-line drawing accented with gentle colored pencil shading, soft earthy tones, simple tech/scientific concept, clean aesthetic, textured sketch paper."
+            "name": "Minimalist Vector Flat Illustration",
+            "desc": "Clean flat vector illustration, simple minimalist shapes, harmonious modern palette (deep blues, vibrant teal, soft lavender), elegant corporate tech style, plenty of clean negative space, sharp vector edges."
         },
         {
-            "name": "Warm Pastel Colored Pencil Drawing",
-            "desc": "Simple minimalistic illustration drawn with colored pencils, gentle cross-hatching textures, warm pastel palette, minimal details, elegant and clear symbolism, soft paper grain."
+            "name": "Line Art & Abstract Geometry",
+            "desc": "Elegant minimalist line art combined with abstract geometric shapes, subtle gradients, clean tech color palette, sharp vector lines, modern tech corporate aesthetic, high contrast."
         },
         {
             "name": "Modern 3D Isometric Stock Illustration",
