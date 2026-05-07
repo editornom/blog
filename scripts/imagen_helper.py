@@ -15,64 +15,36 @@ load_dotenv()
 def enhance_image_prompt(base_prompt, client, context=None):
     """
     기호나 짧은 단어로 이루어진 초기 프롬프트를 고품질 이미지 생성을 위한 상세 영문 프롬프트로 증강합니다.
-    시각적 단조로움을 피하고 포스팅 맥락에 부합하는 프리미엄 스타일을 선택/적용합니다.
+    시각적 단조로움을 피하기 위해 스타일 랜덤 셀렉터를 도입합니다.
     """
-    import json
+    import random
     
-    # --- 프리미엄 스타일 라이브러리 (10종) ---
+    # --- 스타일 라이브러리 정의 ---
     styles = [
         {
-            "name": "Glassmorphism & Frosty Texture",
-            "desc": "Translucent glass layers, frosted surfaces, soft refractions, depth of field, high-end tech aesthetic, ethereal lighting."
+            "name": "Minimal Colored Pencil Sketch",
+            "desc": "Delicate hand-drawn colored pencil sketch, minimal lines, subtle and soft pastel colors, plenty of clean white/off-white negative space, simple elegant concept, soft paper texture background."
         },
         {
-            "name": "Cyberpunk Minimalism",
-            "desc": "Dark matte background, sharp glowing neon lines, high contrast, minimalist tech blueprint, futuristic circuits, deep shadows."
+            "name": "Abstract Fine-Line & Pastel Art",
+            "desc": "Thin minimalist fine-line drawing accented with gentle colored pencil shading, soft earthy tones, simple tech/scientific concept, clean aesthetic, textured sketch paper."
         },
         {
-            "name": "Abstract Geometric Data Art",
-            "desc": "Fluid geometric shapes, 3D particles, data flow visualization, vibrant gradients, organic tech clusters, conceptual representation of information."
-        },
-        {
-            "name": "Macro Tech Close-up",
-            "desc": "Macro photography style, extreme close-up on futuristic hardware or fibers, bokeh effect, metallic textures, focus on intricate details."
-        },
-        {
-            "name": "Claymorphic 3D Matte",
-            "desc": "Soft 3D matte textures, clay-like smooth shapes, premium pastel gradients, gentle studio lighting, clean and professional tech metaphors."
-        },
-        {
-            "name": "Papercut Overlay Depth",
-            "desc": "Layered paper-cut style with realistic drop shadows, textured cardstocks, depth-of-field, organic yet highly structured technical layouts."
-        },
-        {
-            "name": "Neo-Brutalist Grid Tech",
-            "desc": "High contrast, thick borders, solid pastel blocks, retro-futuristic grid system, minimalist clean UI elements, bold technical diagram style."
-        },
-        {
-            "name": "Bauhaus Retro-Modernism",
-            "desc": "Minimalist geometric compositions, primary muted colors (navy, terracotta, cream), strict grids, clean abstract technical representations."
-        },
-        {
-            "name": "Fluid Iridescent Hologram",
-            "desc": "Liquid metallic structures with iridescent rainbow oil-slick sheen, dark matte background, soft flowing network patterns, organic tech ripples."
-        },
-        {
-            "name": "Premium Flat Vector Editorial",
-            "desc": "Highly refined flat thin-line vector illustrations with solid premium color blocks, elegant corporate editorial style (Stripe/New Yorker aesthetic)."
+            "name": "Warm Pastel Colored Pencil Drawing",
+            "desc": "Simple minimalistic illustration drawn with colored pencils, gentle cross-hatching textures, warm pastel palette, minimal details, elegant and clear symbolism, soft paper grain."
         }
     ]
     
-    # --- 프리미엄 구도 라이브러리 (7종) ---
+    # --- 구도 라이브러리 정의 ---
     compositions = [
         "Symmetrical centered layout",
         "Top-down flat lay view",
-        "Dynamic low-angle perspective",
         "Minimalist negative space composition",
-        "Cinematic wide-angle view",
-        "Diagonal dynamic split view",
-        "Close-up macro offset composition"
+        "Clean eye-level perspective"
     ]
+    
+    selected_style = random.choice(styles)
+    selected_comp = random.choice(compositions)
 
     try:
         context_str = f"\n[현재 포스팅 문맥(제목/키워드)]: {context}" if context else ""
@@ -80,16 +52,10 @@ def enhance_image_prompt(base_prompt, client, context=None):
 당신은 DALL-E, Midjourney, Imagen 같은 AI 이미지 제너레이터 프롬프트 작성 전문가입니다.
 사용자가 IT 테크 블로그에 삽입할 이미지의 간략한 상황 설명이나 키워드를 줄 것입니다.
 
-[제공된 스타일 라이브러리]:
-{json.dumps(styles, ensure_ascii=False, indent=2)}
-
-[제공된 구도 라이브러리]:
-{json.dumps(compositions, ensure_ascii=False, indent=2)}
-
 [지침]:
 1. 최고 품질의 이미지를 생성할 수 있는 매우 상세한 영문 프롬프트(Prompt)로 확장해주세요.
-2. 아래 포스팅 문맥을 분석하여, 위의 스타일 라이브러리 중 **포스팅 주제에 가장 어울리는 핵심 스타일**을 스스로 판단하여 1가지 선택 적용하십시오. (예: 하드웨어/보안/성능은 Cyberpunk/Macro Close-up, 개념/소프트웨어/구조는 Glassmorphism/Flat Vector/Abstract 등)
-3. 구도 라이브러리 역시 주제의 역동성에 맞춰 가장 자연스럽고 잘 표현할 수 있는 것을 적용하십시오.
+2. **핵심 스타일**: 이번 이미지의 스타일은 '{selected_style['name']}' ({selected_style['desc']}) 입니다.
+3. **핵심 구도**: 구도는 '{selected_comp}'를 적용하십시오.
 4. **절대 금지 사항**: 
    - **사람(인물, 캐릭터, 신체 부위 등)을 절대 그리지 마십시오.** (Strictly NO humans, NO characters, NO people)
    - **아이소메트릭(Isometric, 30-degree 3D view) 구도를 절대 사용하지 마십시오.** (Strictly NO isometric views)
@@ -104,15 +70,7 @@ def enhance_image_prompt(base_prompt, client, context=None):
             contents=enhance_prompt
         )
         enhanced = response.text.strip()
-        
-        # 적용된 스타일 감지 로그 출력
-        detected_style = "Dynamic Selection"
-        for s in styles:
-            if s['name'].lower() in enhanced.lower():
-                detected_style = s['name']
-                break
-                
-        print(f"✨ 스마트 스타일 매칭 완료 ({detected_style}): {enhanced[:80]}...")
+        print(f"✨ 스타일 적용 완료 ({selected_style['name']}): {enhanced[:80]}...")
         return enhanced
     except Exception as e:
         print(f"⚠️ 프롬프트 증강 실패, 원본을 사용합니다: {e}")

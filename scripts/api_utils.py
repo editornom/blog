@@ -60,6 +60,30 @@ gemini_retry = retry(
     reraise=True
 )
 
+# --- Fallback Watchdog (Experimental Model Auto-Heal) ---
+import google.genai.models as gemini_models
+
+_original_generate_content = gemini_models.Models.generate_content
+
+def _patched_generate_content(self, model, contents, config=None, **kwargs):
+    try:
+        return _original_generate_content(self, model=model, contents=contents, config=config, **kwargs)
+    except (errors.APIError, old_exceptions.GoogleAPICallError) as e:
+        error_msg = str(e)
+        if any(err in error_msg for err in ["503", "429", "UNAVAILABLE", "RESOURCE_EXHAUSTED"]):
+            if "gemini-3" in model:
+                # Fallback to ultra-reliable production stable model
+                fallback_model = "models/gemini-2.5-flash"
+                print(f"\n⚠️ [Fallback Watchdog] '{model}' is overloaded (503/429). Dynamically falling back to stable '{fallback_model}' to prevent crash...")
+                try:
+                    return _original_generate_content(self, model=fallback_model, contents=contents, config=config, **kwargs)
+                except Exception as fe:
+                    print(f"❌ [Fallback Watchdog] Fallback to '{fallback_model}' also failed: {fe}")
+                    raise fe
+        raise e
+
+gemini_models.Models.generate_content = _patched_generate_content
+
 class TokenTracker:
     """
     모든 API 파이프라인에서 측정된 토큰 사용량과 이미지 생성 횟수를 합산하여

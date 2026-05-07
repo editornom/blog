@@ -15,6 +15,9 @@ if sys.platform == "win32":
     sys.stdout.reconfigure(encoding='utf-8')
 
 load_dotenv()
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+import api_utils
 
 def probe_url(r, index):
     """
