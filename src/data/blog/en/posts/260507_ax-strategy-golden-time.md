@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-05-07 15:43:30.706351+09:00
-slug: ax-transformation-strategy-technical-debt-execution
+slug: "ax-strategy-golden-time"
 featured: false
 draft: false
 ogImage: "../../../../../source/posts/AX를_위해_고려해야할_사항들/41699779-0.webp"
@@ -86,5 +86,5 @@ The role of a leader must now shift from a "counselor" who holds hands and persu
 In conclusion, the success formula for AX is clear: boldly cut out old systems, install the powerful engine of Agentic AI, and prove the difference in speed through the core 30% of your workforce. This is the only path that will transform your organization into a true AI leader.
 
 ## 🔗 Recommended Reading
-- [LLM Wiki Guide: Logical Hallucination Risks of Reasoning Models and the Necessity of Knowledge Accumulation](/ko/posts/llm-reasoning-hallucination-risk-knowledge)
-- [Distributed Systems Architecture: The Blessing and Curse of Complexity Brought by Infinite Scaling](/ko/posts/distributed-systems-scaling-complexity)
+- [LLM Wiki Guide: Logical Hallucination Risks of Reasoning Models and the Necessity of Knowledge Accumulation](/en/posts/llm-reasoning-hallucination-risk-knowledge)
+- [Distributed Systems Architecture: The Blessing and Curse of Complexity Brought by Infinite Scaling](/en/posts/distributed-systems-scaling-complexity)

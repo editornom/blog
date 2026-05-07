@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-05-07 16:32:53.141944+09:00
-slug: musk-terafab-semiconductor-yield-challenge
+slug: "elon-musk-terafab-ambition-or-illusion"
 featured: false
 draft: false
 ogImage: "../../../../../source/posts/일론머스크의_테라펩/bf9753e1-0.webp"
@@ -76,5 +76,5 @@ Terafab 构想的核心是压倒性的生产能力。然而，马斯克为了支
 我们现在必须直面埃隆·马斯克华丽宣言背后隐藏的冷酷物理数据和工程极限。Terafab 究竟会成为飞跃人类算力的钥匙，还是仅仅作为一个无法实现的工程幻象而存在，最终将取决于他如何翻越“良率”这道无形的墙。
 
 ## 🔗 推荐阅读
-- [AX（AI 转型）的必胜战略：超越以人为本，抢占技术执行的“黄金时间”](/zh/posts/ax-strategy-golden-time)
-- [LLM Wiki 指南：推理模型的逻辑幻觉风险与知识积累的必然性](/zh/posts/llm-reasoning-hallucination-risk-knowledge)
+- [AX（AI 转型）的必胜战略：超越以人为本，抢占技术执行的“黄金时间”](/cn/posts/ax-strategy-golden-time)
+- [LLM Wiki 指南：推理模型的逻辑幻觉风险与知识积累的必然性](/cn/posts/llm-reasoning-hallucination-risk-knowledge)

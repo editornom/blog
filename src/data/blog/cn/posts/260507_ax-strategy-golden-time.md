@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-05-07 15:43:30.706351+09:00
-slug: ax-transformation-strategy-agentic-ai-success
+slug: "ax-strategy-golden-time"
 featured: false
 draft: false
 ogImage: "../../../../../source/posts/AX를_위해_고려해야할_사항들/41699779-0.webp"
@@ -47,7 +47,7 @@ faqs:
 
 深入剖析组织内部对引入 AI 的阻力，你会发现这并非单纯对新技术的恐惧或排斥。更多时候，其本质在于积累了几十年的陈旧遗留系统（Legacy）与 AI 之间的不兼容所产生的极端工作疲劳。
 
-如果从过时的 <a href="/ko/glossary/what-is-erp" class="glossary-tooltip" data-definition="通过将企业内的生产、物流、财务、人事等核心业务流程整合到一个系统中进行管理，从而实现资源高效分配的企业资源计划解决方案。">ERP</a> 系统中提取和清理数据是一个痛苦的过程，那么在此基础上只披上一层 AI 的华丽外衣，成员们自然会感到疲惫不堪。我们必须正视，80% 的人为阻力其实源于不便的系统所带来的物理限制。
+如果从过时的 <a href="/cn/glossary/what-is-erp" class="glossary-tooltip" data-definition="通过将企业内的生产、物流、财务、人事等核心业务流程整合到一个系统中进行管理，从而实现资源高效分配的企业资源计划解决方案。">ERP</a> 系统中提取和清理数据是一个痛苦的过程，那么在此基础上只披上一层 AI 的华丽外衣，成员们自然会感到疲惫不堪。我们必须正视，80% 的人为阻力其实源于不便的系统所带来的物理限制。
 
 > "AX 时代的真正变革管理不是安抚人心，而是首先构建能够解放人类双手的高技术基础。"
 
@@ -86,5 +86,5 @@ faqs:
 综上所述，AX 的成功公式非常明确：果断切除陈旧系统，安装 Agentic AI 这一强大引擎，并通过 30% 的核心人力证明速度的差异。唯有此路，才能将您的组织真正蜕变为 AI 领先组织。
 
 ## 🔗 推荐阅读
-- [LLM Wiki 指南：推理模型的逻辑幻觉风险与知识积累的必然性](/ko/posts/llm-reasoning-hallucination-risk-knowledge)
-- [分布式系统架构：无限扩展带来的复杂性的祝福与诅咒](/ko/posts/distributed-systems-scaling-complexity)
+- [LLM Wiki 指南：推理模型的逻辑幻觉风险与知识积累的必然性](/cn/posts/llm-reasoning-hallucination-risk-knowledge)
+- [分布式系统架构：无限扩展带来的复杂性的祝福与诅咒](/cn/posts/distributed-systems-scaling-complexity)

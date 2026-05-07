@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-05-07 16:32:53.141944+09:00
-slug: elon-musk-terafab-semiconductor-manufacturing-challenges-power-yield
+slug: "elon-musk-terafab-ambition-or-illusion"
 featured: false
 draft: false
 ogImage: "../../../../../source/posts/일론머스크의_테라펩/bf9753e1-0.webp"
@@ -76,5 +76,5 @@ In conclusion, Musk’s Terafab may be an overextended ambition that overlooks t
 We must look past the flashy announcements and face the cold physical data and engineering limits. Whether the Terafab becomes the key to a leap in human computing power or remains an engineering illusion depends on how Musk intends to scale a wall as invisible yet solid as 'Yield.'
 
 ## 🔗 Recommended Reading
-- [AX (AI Transformation) Strategy: Securing the 'Golden Time' of Execution Beyond Human-Centricity](/ko/posts/ax-strategy-golden-time)
-- [LLM Wiki Guide: Logical Hallucination Risks in Reasoning Models and the Necessity of Knowledge Accumulation](/ko/posts/llm-reasoning-hallucination-risk-knowledge)
+- [AX (AI Transformation) Strategy: Securing the 'Golden Time' of Execution Beyond Human-Centricity](/en/posts/ax-strategy-golden-time)
+- [LLM Wiki Guide: Logical Hallucination Risks in Reasoning Models and the Necessity of Knowledge Accumulation](/en/posts/llm-reasoning-hallucination-risk-knowledge)

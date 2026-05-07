@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-05-07 15:43:30.706351+09:00
-slug: ax-transformation-strategy-execution-golden-time
+slug: "ax-strategy-golden-time"
 featured: false
 draft: false
 ogImage: "../../../../../source/posts/AX를_위해_고려해야할_사항들/41699779-0.webp"
@@ -47,7 +47,7 @@ faqs:
 
 組織内で発生するAI導入への抵抗の実体を深く掘り下げてみると、それは単なる新しい技術への恐怖や拒否感ではないことがわかります。むしろ、数十年間蓄積された古いレ거시（レガシー）システムとAIの不調和が生み出す、極度の業務疲労がその本質である場合が多いのです。
 
-旧式の <a href="/ko/glossary/what-is-erp" class="glossary-tooltip" data-definition="企業内の生産、物流、財務、人事など核心的なビジネスプロセスを一つの統合されたシステムで管理し、リソースを効率的に配分する全社的資源管理ソリューションです。">ERP</a> システムからデータを抽出してクレンジングするプロセスが苦痛であるのに、その上にAIという華やかな皮を被せただけでは、構成員が疲弊を感じるのは当然です。人的抵抗の80%は、実は不便なシステムがもたらす物理的な制約に起因しているという点に、私たちは直面しなければなりません。
+旧式の <a href="/jp/glossary/what-is-erp" class="glossary-tooltip" data-definition="企業内の生産、物流、財務、人事など核心的なビジネスプロセスを一つの統合されたシステムで管理し、リソースを効率的に配分する全社的資源管理ソリューションです。">ERP</a> システムからデータを抽出してクレンジングするプロセスが苦痛であるのに、その上にAIという華やかな皮を被せただけでは、構成員が疲弊を感じるのは当然です。人的抵抗の80%は、実は不便なシステムがもたらす物理的な制約に起因しているという点に、私たちは直面しなければなりません。
 
 > 「AX時代の真の変化管理とは、心をなだめることではなく、人間の手を自由にできる技術的土台を真っ先に構築することです。」
 
@@ -86,5 +86,5 @@ AIが実質的な成果物を出せるよう、クリーンで高品質なデー
 結論として、AXの成功方程式は明確です。古いシステムを果敢に切り捨て、エージェンティックAIという強力なエンジンを装着し、30%の核心人材を通じてスピードの差を証明することです。この道こそが、貴方の組織を真のAI先導組織へと変貌させるでしょう。
 
 ## 🔗 あわせて読みたい記事
-- [LLM Wikiガイド：推論モデルの論理的ハルシネーションリスクと知識蓄積の必然性](/ko/posts/llm-reasoning-hallucination-risk-knowledge)
-- [分散システムアーキテクチャ：無限の拡張がもたらした複雑性の祝福と呪い](/ko/posts/distributed-systems-scaling-complexity)
+- [LLM Wikiガイド：推論モデルの論理的ハルシネーションリスクと知識蓄積の必然性](/jp/posts/llm-reasoning-hallucination-risk-knowledge)
+- [分散システムアーキテクチャ：無限の拡張がもたらした複雑性の祝福と呪い](/jp/posts/distributed-systems-scaling-complexity)

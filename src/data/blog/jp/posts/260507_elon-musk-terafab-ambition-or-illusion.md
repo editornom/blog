@@ -4,7 +4,7 @@ author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
 pubDatetime: 2026-05-07 16:32:53.141944+09:00
-slug: elon-musk-terafab-semiconductor-limit-analysis
+slug: "elon-musk-terafab-ambition-or-illusion"
 featured: false
 draft: false
 ogImage: "../../../../../source/posts/일론머스크의_테라펩/bf9753e1-0.webp"
@@ -76,5 +76,5 @@ faqs:
  私たちは今、イーロン・マスクの華やかな宣言の向こう側に隠された冷徹な物理データと工学的限界を直視しなければなりません。テラファブが本当に人類のコンピューティングパワーを飛躍させる鍵となるのか、それとも実現不可能な工学的虚像に終わるのかは、結局彼が「歩留まり」という見えない壁をどう乗り越えるかにかかっているでしょう。
 
 ## 🔗 あわせて読みたい
-- [AX (AI 転換) の必勝戦略：人間中心を超え、技術的実行の『ゴールデンタイム』を死守せよ](/ja/posts/ax-strategy-golden-time)
-- [LLM Wiki ガイド：推論モデルの論理的ハルシネーション・リスクと知識蓄積の必然性](/ja/posts/llm-reasoning-hallucination-risk-knowledge)
+- [AX (AI 転換) の必勝戦略：人間中心を超え、技術的実行の『ゴールデンタイム』を死守せよ](/jp/posts/ax-strategy-golden-time)
+- [LLM Wiki ガイド：推論モデルの論理的ハルシネーション・リスクと知識蓄積の必然性](/jp/posts/llm-reasoning-hallucination-risk-knowledge)

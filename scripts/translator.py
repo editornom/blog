@@ -15,7 +15,7 @@ LANGUAGES = {
     "jp": "Japanese (日本語)",
 }
 
-def translate_post(korean_markdown, target_lang):
+def translate_post(korean_markdown, target_lang, slug=None):
     """
     Translates a Korean blog post markdown into the target language using Gemini.
     Preserves frontmatter structure and markdown formatting.
@@ -23,6 +23,7 @@ def translate_post(korean_markdown, target_lang):
     Args:
         korean_markdown: The full markdown content (with frontmatter) in Korean.
         target_lang: Language code ('en', 'cn', 'jp').
+        slug: The original Korean post slug.
     
     Returns:
         Translated markdown string, or None on failure.
@@ -35,16 +36,18 @@ def translate_post(korean_markdown, target_lang):
     lang_name = LANGUAGES.get(target_lang, target_lang)
     client = genai.Client(api_key=api_key)
 
+    slug_info = f"'{slug}'" if slug else "원본 한국어 원고의 slug"
+
     prompt = f"""
 당신은 전문 기술 번역가입니다. 아래의 한국어 블로그 원고를 {lang_name}로 번역하십시오.
 
 ### 번역 규칙:
 1. **Frontmatter 유지**: YAML frontmatter(--- 사이의 영역)의 구조는 그대로 유지하되, title, description, 그리고 faqs(배열 내의 q와 a) 항목을 각 언어에 맞게 번역하십시오.
-   - 🚨 **[중요]**: 번역된 title과 description의 값은 반드시 큰따옴표(" ")로 감싸야 하며, 문자열 내부에는 절대 큰따옴표나 줄바꿈을 넣지 마십시오. (필요시 홑따옴표 사용)
+   - 🚨 **[중요]**: 번역된 title and description의 값은 반드시 큰따옴표(" ")로 감싸야 하며, 문자열 내부에는 절대 큰따옴표나 줄바꿈을 넣지 마십시오. (필요시 홑따옴표 사용)
    - 🚨 **[FAQ 번역]**: faqs 배열 내부의 각 객체에서 `q`와 `a`의 모든 텍스트를 대상 언어의 뉘앙스에 맞게 자연스럽게 번역하십시오. YAML 문법(하이픈 `-` 및 들여쓰기)을 엄수하되, 반드시 **`q`와 `a`의 값은 모두 큰따옴표(" ")로 감싸서 출력**하십시오! (예: `a: "This is an answer."`)
    - 🚨 **[참고 문헌 유지]**: `references` 항목은 외부 URL 리스트이므로 절대 번역하거나 수정하지 말고 그대로 유지하십시오.
    - 🚨 **[날짜 형식 엄수]**: `pubDatetime` 및 `modDatetime` 값에는 절대 큰따옴표(" ")나 홑따옴표(' ')를 붙이지 마십시오. 반드시 YAML 날짜 형식(예: 2024-04-22 17:00:00+09:00)을 유지해야 합니다.
-2. **Slug 현지화 (SEO 최적화)**: slug 값은 기존 영어 slug를 복사하지 마세요. 번역된 {lang_name} 원문에서의 핵심 키워드를 기반으로 해당 국가의 SEO에 가장 유리한 형태의 영문 단어 조합(소문자와 하이픈만 사용, 알파벳 표기 또는 직관적 의미역)으로 완전히 새롭게 창작하여 부여하십시오.
+2. **Slug 동일성 유지**: frontmatter의 `slug` 값은 기존 영어 slug를 복사하거나 번역하지 말고, 반드시 **{slug_info} 값을 한 글자도 바꾸지 말고 그대로 유지**하십시오. (언어 전환 시 URL 매핑과 내부 링크 무결성을 보장하기 위함)
 3. **이미지 경로 유지**: 이미지 경로(../../../../assets/images/... 또는 ../../../../../source/...)는 절대 변경하지 마십시오. UUID가 포함된 경로는 오타처럼 보여도 절대로 수정해서는 안 됩니다.
 4. **마크다운 문법 유지**: 헤더(#, ##, ###), 볼드(**), 리스트(-), 인용(>), 코드블록(```) 등 마크다운 문법을 그대로 유지하십시오.
    - 🚨 **[Glossary 표 번역 주의]**: 원문 표에 있는 `| **한글명** | ... |` 등의 항목은 다른 국가의 독자에게 불필요하므로, 표 번역 시 해당 행(Row)은 아예 삭제하십시오.
@@ -53,6 +56,9 @@ def translate_post(korean_markdown, target_lang):
 6. **고유명사 보호 (Glossary Enforcement)**: 다음 목록의 브랜드명과 IT 솔루션 전문 용어들은 엉뚱한 현지어로 직역하지 말고 반드시 영문 스펠링을 그대로 유지하거나 업계 표준 표기를 가장 우선시하십시오.
    - [보호 사전]: Editornom, VPN, UTM, API, SSL, B2B, AI, LLM, RAG, NVIDIA, CDN, SD-WAN, Playwright, Cloud, On-Premise, Node, React, Next.js
 7. **이미지 알트태그 번역**: `![alt text](path)` 형식에서 `alt text` 부분을 대상 언어로 자연스럽게 번역하십시오.
+8. **내부 링크 경로 및 슬러그 보존**: 원고 본문 중 `[텍스트](/ko/posts/슬러그)` 또는 `[텍스트](/ko/glossary/슬러그)` 형식의 내부 링크가 있다면, 국가 코드 부분만 대상 국가 코드(예: `en`, `cn`, `jp`)로 변경하고, 슬러그 부분은 절대로 번역하거나 임의로 변경하지 마십시오.
+   - 예: `/ko/posts/ax-strategy-golden-time` -> `/en/posts/ax-strategy-golden-time`
+   - 중국어 번역 시에는 `/zh/posts/`가 아닌 반드시 **/cn/posts/** 또는 **/cn/glossary/** 형식을 사용하여 번역하십시오! (절대 `/zh/` 경로를 사용하지 마십시오)
 
 ### 원본 한국어 원고:
 {korean_markdown}
@@ -133,7 +139,7 @@ def translate_and_save(korean_draft, slug, folder, target_langs=None):
             
             for attempt in range(max_retries + 1):
                 try:
-                    translated = translate_post(korean_draft, lang_code)
+                    translated = translate_post(korean_draft, lang_code, slug=slug)
                     if translated:
                         break
                     else:
@@ -189,8 +195,8 @@ def translate_and_save(korean_draft, slug, folder, target_langs=None):
                 return txt
             translated = fix_faq_quotes(translated)
             
-            # 신규 생성된 다국어 맞춤형 Slug 추출 (정규식 활용)
-            new_slug_match = re.search(r'slug:\s*["\'](.*?)["\']', translated)
+            # Force the frontmatter slug to match the original Korean slug (enabling unbroken internal links and perfect language switcher mapping)
+            translated = re.sub(r'^slug:\s*.*$', f'slug: "{slug}"', translated, flags=re.MULTILINE)
             
             # 강제로 원본 한국어 slug를 사용하도록 고정 (언어 전환 시 url 매핑을 위해)
             target_slug = slug
