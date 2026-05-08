@@ -41,3 +41,4 @@
 [2026-05-07] [수동선정] 오픈AI MCR
 [2026-05-07] [AI추천_38점] Model Context Protocol (MCP)
 [2026-05-07] [AI추천_40점] Transformer Architecture
+[2026-05-08] [AI추천_39점] CVE-2026-31431
