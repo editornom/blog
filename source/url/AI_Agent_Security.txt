@@ -1,0 +1,10 @@
+https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html
+https://www.obsidiansecurity.com/blog/security-for-ai-agents
+https://www.checkpoint.com/cyber-hub/cyber-security/what-is-ai-security/ai-agent-security/
+https://www.gravitee.io/state-of-ai-agent-security
+https://www.beyondtrust.com/solutions/ai-security
+https://www.workato.com/the-connector/ai-agent-security/
+https://www.samsungsds.com/kr/insights/security-threats-in-the-agentic-ai-era.html
+https://www.sailpoint.com/ko/identity-library/securing-ai-agents-enterprise
+https://www.wiz.io/academy/ai-security/ai-agent-security
+https://github.blog/security/hack-the-ai-agent-build-agentic-ai-security-skills-with-the-github-secure-code-game/
