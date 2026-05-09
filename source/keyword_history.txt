@@ -48,3 +48,4 @@
 [2026-05-09] [AI추천_37점] Rowhammer
 [2026-05-09] [AI추천_40점] Zero Trust Architecture
 [2026-05-09] [AI추천_40점] GKE Agent Sandbox
+[2026-05-09] [AI추천_40점] Scaling Laws
