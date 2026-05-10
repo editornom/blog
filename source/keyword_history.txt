@@ -51,3 +51,4 @@
 [2026-05-09] [AI추천_40점] Scaling Laws
 [2026-05-10] [AI추천_37점] 클라우드 인프라 안정성
 [2026-05-10] [AI추천_40점] Asymmetric Cryptography
+[2026-05-10] [AI추천_40점] Model Context Protocol

@@ -1,0 +1,10 @@
+https://modelcontextprotocol.io/specification/2025-11-25
+https://modelcontextprotocol.io/docs/getting-started/intro
+https://modelcontextprotocol.io/specification/2025-11-25/server/tools
+https://www.blackhillsinfosec.com/model-context-protocol/
+https://authzed.com/docs/mcp
+https://cloud.google.com/discover/what-is-model-context-protocol
+https://www.redhat.com/en/topics/ai/what-is-model-context-protocol-mcp
+https://www.databricks.com/blog/what-is-model-context-protocol
+https://s2w.inc/ko/resource/detail/824
+https://www.redhat.com/en/blog/model-context-protocol-mcp-understanding-security-risks-and-controls
