@@ -49,3 +49,4 @@
 [2026-05-09] [AI추천_40점] Zero Trust Architecture
 [2026-05-09] [AI추천_40점] GKE Agent Sandbox
 [2026-05-09] [AI추천_40점] Scaling Laws
+[2026-05-10] [AI추천_37점] 클라우드 인프라 안정성
