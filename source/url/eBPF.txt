@@ -1,10 +1,10 @@
 https://oneuptime.com/blog/post/2025-12-10-what-is-ebpf-and-how-does-it-work/view
 https://www.kentik.com/kentipedia/what-is-ebpf-extended-berkeley-packet-filter/
-https://www.suse.com/c/ebpf-kubernetes/
+https://eunomia.dev/tutorials/1-helloworld/
+https://medium.com/@Ibraheemcisse/ebpf-fundamentals-what-it-is-why-it-matters-and-how-it-changes-infrastructure-557545986af0
 https://www.sentinelone.com/ko/cybersecurity-101/cybersecurity/what-is-extended-berkeley-packet-filter-ebpf/
+https://seekerslab.com/ko/resources/blog/ebpf-%EC%99%84%EC%A0%84-%EC%9E%85%EB%AC%B8-%EC%BB%A4%EB%84%90-%EC%BD%94%EB%93%9C-%EC%97%86%EC%9D%B4-%EC%BB%A4%EB%84%90%EC%9D%84-%EC%88%98%EC%A0%95%ED%95%98%EB%8A%94-%EB%A7%88%EB%B2%95-1771844642571
 https://gasbugs.tistory.com/68
-https://seekerslab.com/en/resources/blog/ebpf-%EC%99%84%EC%A0%84-%EC%9E%85%EB%AC%B8-%EC%BB%A4%EB%84%90-%EC%BD%94%EB%93%9C-%EC%97%86%EC%9D%B4-%EC%BB%A4%EB%84%90%EC%9D%84-%EC%88%98%EC%A0%95%ED%95%98%EB%8A%94-%EB%A7%88%EB%B2%95-1771844642571
 https://velog.io/@frostchoi/%EC%9B%8C%ED%81%AC%EB%A1%9C%EB%93%9C-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81%EC%9D%84-%EC%9C%84%ED%95%B4-eBPF-%EC%B0%8D%EB%A8%B9%ED%95%98%EA%B8%B0
-https://tech.ktcloud.com/entry/2025-05-ktcloud-cgroup-ebpf-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%EB%B3%B4%EC%95%88-%EA%B0%80%EC%9D%B4%EB%93%9C
-https://on.com2us.com/tech/ebpf-xdp-deep-dive/
 https://www.oreilly.com/library/view/ebpf-hagseub/9798341654310/ch01.html
+https://on.com2us.com/tech/ebpf-xdp-deep-dive/
