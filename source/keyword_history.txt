@@ -53,3 +53,4 @@
 [2026-05-10] [AI추천_40점] Asymmetric Cryptography
 [2026-05-10] [AI추천_40점] Model Context Protocol
 [2026-05-10] [AI추천_40점] Transformer
+[2026-05-11] [AI추천_39점] AgentOps
