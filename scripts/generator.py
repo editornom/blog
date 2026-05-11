@@ -189,6 +189,55 @@ GEO 전문가 결과: {spec_data['geo_part']}
     final_data = json.loads(final_resp.text)
     print(f"  ✅ 최종 원고 완성: {final_data['title']}")
 
+    # --- Self-Healing Pipeline ---
+    content = final_data.get('content', '')
+    
+    # 1. Fix double-escaped literal \n characters (e.g., AgentOps post issue)
+    if '\\n' in content:
+        print("  🔧 [Self-Healing] Detected literal '\\n' sequences. Converting to actual newlines...")
+        content = content.replace('\\n', '\n')
+        
+    # 2. Fix completely collapsed single-line content (e.g., eBPF post issue)
+    if content.count('\n') < 10:
+        print("  🔧 [Self-Healing] Detected collapsed content (very few newlines). Restoring layout using Gemini-2.5-flash...")
+        restore_prompt = f"""
+You are an expert technical editor and layout formatter. The input text has lost its paragraph breaks and newlines, collapsing into a single or very few continuous lines. 
+Your task is to re-insert proper paragraph breaks (double newlines) and restore a beautiful, readable Markdown layout, while preserving all of the exact words, links, images, tables, blockquotes, and headings.
+
+[UNFORMATTED TEXT]
+{content}
+
+[INSTRUCTIONS]
+1. Output the fully formatted Markdown text with proper newlines.
+2. Put headings (##, ###), list items (-), blockquotes (>), images (![), and tables (|) on their own lines, separated by appropriate newlines (usually double newlines for sections, single newlines for table rows and list items).
+3. Do not modify, rephrase, or translate a single word or link. Every single word of the input text must be preserved.
+4. Do not output any markdown code blocks (fenced backticks) or explanation. Output ONLY the raw markdown content.
+"""
+        try:
+            gemini_limiter.consume()
+            formatter_resp = client.models.generate_content(
+                model='gemini-2.5-flash',
+                contents=restore_prompt
+            )
+            reconstructed = formatter_resp.text.strip()
+            if reconstructed.startswith("```"):
+                lines = reconstructed.split("\n")
+                if lines[0].strip().startswith("```"):
+                    lines = lines[1:]
+                if lines and lines[-1].strip() == "```":
+                    lines = lines[:-1]
+                reconstructed = "\n".join(lines).strip()
+            if len(reconstructed) > len(content) * 0.8:  # Safety check
+                content = reconstructed
+                print("  ✅ [Self-Healing] Successfully restored layout formatting!")
+            else:
+                print("  ⚠️ [Self-Healing] Formatting response seemed too short. Skipping.")
+        except Exception as e:
+            print(f"  ⚠️ [Self-Healing] Failed to restore formatting: {e}")
+            
+    final_data['content'] = content
+    # -----------------------------
+
     return final_data, None
 
 def generate_blog_post(crawled_content, folder="posts", additional_instructions="", keyword="", stance="", schedule_type=None):
