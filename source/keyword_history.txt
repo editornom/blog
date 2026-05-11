@@ -56,3 +56,4 @@
 [2026-05-11] [AI추천_39점] AgentOps
 [2026-05-11] [AI추천_38점] MySQL LTS
 [2026-05-11] [AI추천_40점] eBPF
+[2026-05-11] [AI추천_40점] Agentic Version Control

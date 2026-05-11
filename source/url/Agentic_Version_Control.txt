@@ -1,0 +1,10 @@
+https://medium.com/@nraman.n6/versioning-rollback-lifecycle-management-of-ai-agents-treating-intelligence-as-deployable-deac757e4dea
+https://arxiv.org/abs/2511.00628
+https://mlflow.org/docs/latest/genai/version-tracking/
+https://github.blog/changelog/2026-02-26-enterprise-ai-controls-agent-control-plane-now-generally-available/
+https://www.infoq.com/news/2026/05/cloudflare-artifacts-ai-agents/
+https://pepicrft.me/blog/rethinking-version-control-for-agents/
+https://blog.metamirror.io/an-ai-world-breaks-your-version-control-f3679795e08a
+https://allthingsopen.org/articles/version-control-agentic-ai-git-limits
+https://arxiv.org/html/2508.00031v2
+https://runloop.ai/media/for-agentic-ai-other-disciplines-need-their-own-git-wlfqi
