@@ -13,9 +13,7 @@ description: Rowhammer는 DRAM의 특정 행을 반복 활성화하여 인접 �
   핵심적인 보안 위협과 방어 전략을 상세히 분석합니다.
 references: []
 modDatetime: 2026-05-09 11:33:04.486265+09:00
----
-
-# Rowhammer이란?
+---# Rowhammer이란?
 
 ### 사전적 정의 (Dictionary Definition)
 DRAM(Dynamic Random Access Memory)의 특정 메모리 행(Row)을 고속으로 반복 활성화하여 인접한 행의 전하 간섭을 유도하고, 이로 인해 저장된 데이터의 비트가 반전(Bit-flip)되는 하드웨어 보안 취약점입니다. 이는 미세 공정화된 반도체 소자 간의 물리적 간섭 현상을 악용한 것으로, 소프트웨어적 접근 권한을 우회하여 메모리 데이터를 변조하거나 시스템 권한을 탈취하는 데 악용될 수 있습니다.

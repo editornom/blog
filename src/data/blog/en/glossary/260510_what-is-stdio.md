@@ -11,9 +11,7 @@ ogImage: ../../../../assets/images/placeholder.png
 description: "Explore the core principles of Inter-Process Communication (IPC) through the concept of STDIO (Standard Input/Output) and practical use cases in MCP environments. Learn how to implement secure and efficient data exchange using standard system streams without the need for separate network ports."
 references: []
 modDatetime: 2026-05-10 17:13:53.759572+09:00
----
-
-### What is STDIO?
+---### What is STDIO?
 
 #### Dictionary Definition
 STDIO (Standard Input/Output) refers to the standard streams that serve as the default input and output channels for data exchange between a program and its external environment in a computer operating system. It generally consists of three channels—Standard Input (stdin), Standard Output (stdout), and Standard Error (stderr)—acting as an abstracted interface that allows programs to read and write data regardless of specific hardware or network configurations.

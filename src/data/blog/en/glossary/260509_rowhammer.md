@@ -11,9 +11,7 @@ ogImage: ../../../../assets/images/placeholder.png
 description: "Rowhammer is a hardware vulnerability where repeatedly activating specific DRAM rows induces bit-flips in adjacent rows, leading to severe security threats such as privilege escalation and data tampering. This article analyzes key threats and defense strategies, covering attacks on DDR5 and GPUs as well as practical mitigation technologies like TRR and PRAC."
 references: []
 modDatetime: 2026-05-09 11:33:04.486265+09:00
----
-
-# What is Rowhammer?
+---# What is Rowhammer?
 
 ### Dictionary Definition
 Rowhammer is a hardware security vulnerability where a specific memory row in DRAM (Dynamic Random Access Memory) is repeatedly activated at high speeds to induce charge interference in adjacent rows, causing stored logical data bits to invert (Bit-flip). This exploits physical interference between semiconductor components resulting from miniaturization processes. It can be used to bypass software-level access controls, manipulate memory data, or seize system privileges.

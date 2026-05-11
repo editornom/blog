@@ -35,31 +35,37 @@ faqs:
   a: "If the memory refresh interval is set to be about three times shorter than usual for security reasons, overall system performance may drop by approximately 8.4%."
 - q: "Is DDR5 memory truly safe from Rowhammer attacks?"
   a: "While it was previously believed to be safe, the emergence of the Phoenix attack and GPUBreach techniques means that DDR5 and GPU memory can no longer be considered secure."
----
+---<div class="bluf"><strong>[BLUF]</strong><p>Optimism that DDR5 would be safe from <a href="/en/glossary/rowhammer" class="glossary-tooltip" data-definition="A hardware security vulnerability where electromagnetic interference, caused by repeatedly activating a specific row in a memory chip, physically alters data in adjacent cells.">Rowhammer</a> is no longer valid. The Phoenix attack and GPUBreach have neutralized hardware-level defense mechanisms, and alternatives like PRAC are failing to fully block real-world threats due to a lack of standardization. Immediate practical responses, such as shortening the refresh interval (tREFI), are urgent even if they come at the cost of performance.</p></div>
 
-<div class="bluf"><strong>[BLUF]</strong><p>Optimism that DDR5 would be safe from <a href="/en/glossary/rowhammer" class="glossary-tooltip" data-definition="A hardware security vulnerability where electromagnetic interference, caused by repeatedly activating a specific row in a memory chip, physically alters data in adjacent cells.">Rowhammer</a> is no longer valid. The Phoenix attack and GPUBreach have neutralized hardware-level defense mechanisms, and alternatives like PRAC are failing to fully block real-world threats due to a lack of standardization. Immediate practical responses, such as shortening the refresh interval (tREFI), are urgent even if they come at the cost of performance.</p></div>
+## 1. Memory Scaling and the Return of Rowhammer
 
-For some time, the hardware security industry believed that the arrival of DDR5 would signal the end of the Rowhammer threat. This expectation was fueled by the Target Row Refresh (TRR) technology integrated into memory modules, which was supposed to form an impenetrable fortress of defense.
+ For some time, the hardware security industry believed that the arrival of DDR5 would signal the end of the Rowhammer threat. This expectation was fueled by the Target Row Refresh (TRR) technology integrated into memory modules, which was supposed to form an impenetrable fortress of defense.
 
-However, a series of recent studies have vividly demonstrated how dangerously optimistic that belief was. We are now at a point where we must move beyond blind trust in the "inherent safety of hardware" and confront increasingly sophisticated attack vectors.
+ However, a series of recent studies have vividly demonstrated how dangerously optimistic that belief was. We are now at a point where we must move beyond blind trust in the "inherent safety of hardware" and confront increasingly sophisticated attack vectors.
 
 ![Rowhammer - A close-up of a semiconductor wafer with neon lights glowing at the point where a data error has occurred.](../../../../../source/posts/Rowhammer/647f00a3-0.webp)
 
-One of the core threats that shook the security ecosystem in 2025 was the emergence of the Phoenix attack. This technique induces bit-flips by precisely exploiting loopholes in the sampling-based defense logic adopted by current TRR implementations.
+### Core Analysis from a Technical Perspective
 
-In particular, comprehensive testing conducted on 15 types of SK Hynix DDR5 modules revealed that every single model was vulnerable to the Phoenix attack. This symbolically demonstrates how easily "security mitigations" hidden by manufacturers as black boxes can collapse.
+ One of the core threats that shook the security ecosystem in 2025 was the emergence of the Phoenix attack. This technique induces bit-flips by precisely exploiting loopholes in the sampling-based defense logic adopted by current TRR implementations.
+
+ In particular, comprehensive testing conducted on 15 types of SK Hynix DDR5 modules revealed that every single model was vulnerable to the Phoenix attack. This symbolically demonstrates how easily "security mitigations" hidden by manufacturers as black boxes can collapse.
 
 > "A manufacturer's closed defense strategy only increases security opacity and can never be a fundamental solution. We must now move the hardware security model from the realm of 'trust' to the realm of 'verification.'"
 
-The scope of these attacks is not limited to main system memory. "GPUBreach," published by researchers at the University of Toronto, proved that GDDR6 memory in GPUs is also not immune to Rowhammer attacks.
+## 2. Collapse of DDR5 TRR Hardware Defense
 
-Contamination of GPU memory goes beyond simple data tampering; it provides a fatal path for seizing root privileges of a system. This poses an unprecedented threat to Cloud service providers operating High-Performance Computing (HPC) and AI infrastructure.
+ The scope of these attacks is not limited to main system memory. "GPUBreach," published by researchers at the University of Toronto, proved that GDDR6 memory in GPUs is also not immune to Rowhammer attacks.
+
+ Contamination of GPU memory goes beyond simple data tampering; it provides a fatal path for seizing root privileges of a system. This poses an unprecedented threat to Cloud service providers operating High-Performance Computing (HPC) and AI infrastructure.
 
 ![Rowhammer - An abstract representation of information disparity, with light pouring through broken crystal shards against a dark background.](../../../../../source/posts/Rowhammer/3db7938d-1.webp)
 
-To address these security blind spots, Microsoft proposed an ambitious technology called PRAC (Per-Row Activation Counting). Based on Project STEMA (Panopticon) technology, this method seeks to block attacks proactively by directly counting the activation frequency of each row within the DRAM.
+## 3. Practical Defensive Strategy and Effectiveness of PRAC
 
-However, PRAC is also facing limitations in field application due to friction in the standardization process. The vacuum in JEDEC standards and differences in implementation among manufacturers are providing attackers with yet another pretext for bypass routes.
+ To address these security blind spots, Microsoft proposed an ambitious technology called PRAC (Per-Row Activation Counting). Based on Project STEMA (Panopticon) technology, this method seeks to block attacks proactively by directly counting the activation frequency of each row within the DRAM.
+
+ However, PRAC is also facing limitations in field application due to friction in the standardization process. The vacuum in JEDEC standards and differences in implementation among manufacturers are providing attackers with yet another pretext for bypass routes.
 
 | Attack Technique | Key Features and Target | Security Blind Spot |
 | :--- | :--- | :--- |
@@ -67,18 +73,16 @@ However, PRAC is also facing limitations in field application due to friction in
 | **GPUBreach** | Gains root access via NVIDIA GDDR6 | Lack of defense in GPU memory architecture |
 | **PRAC** | In-DRAM counting technology proposed by MS | Lack of interoperability due to incomplete standardization |
 
-We must fundamentally change our perspective on hardware security. The latest vulnerabilities, epitomized by the CVE-2025-6202 identifier, warn that software patches alone can no longer provide a complete solution.
+## 4. Future Silicon-Level Memory Security Architecture
 
-From a practical standpoint, the most reliable countermeasure is to shorten the memory refresh interval (tREFI) to more than three times its original frequency, despite the performance trade-off. While this will result in a performance loss of approximately 8.4%, it is an unavoidable choice to ensure data integrity and system stability.
+ We must fundamentally change our perspective on hardware security. The latest vulnerabilities, epitomized by the CVE-2025-6202 identifier, warn that software patches alone can no longer provide a complete solution.
+
+ From a practical standpoint, the most reliable countermeasure is to shorten the memory refresh interval (tREFI) to more than three times its original frequency, despite the performance trade-off. While this will result in a performance loss of approximately 8.4%, it is an unavoidable choice to ensure data integrity and system stability.
 
 ![Rowhammer - An abstract representation of cyber security resilience, with golden data streams pushing through a digital security mesh.](../../../../../source/posts/Rowhammer/26e3b4b2-2.webp)
 
-Furthermore, CTOs and security architects must establish a hardware verification system based on "Zero Trust." Rather than relying on manufacturer marketing, processes are needed to constantly check for vulnerabilities in their own hardware through independent security audits.
+ Furthermore, CTOs and security architects must establish a hardware verification system based on "Zero Trust." Rather than relying on manufacturer marketing, processes are needed to constantly check for vulnerabilities in their own hardware through independent security audits.
 
-Close cooperation with the global security ecosystem, such as the responsible disclosure process of the Swiss National Cyber Security Centre (NCSC), is also essential. Only by resolving information asymmetry and sharing threat intelligence in real-time can we transcend the critical limits of hardware security.
+ Close cooperation with the global security ecosystem, such as the responsible disclosure process of the Swiss National Cyber Security Centre (NCSC), is also essential. Only by resolving information asymmetry and sharing threat intelligence in real-time can we transcend the critical limits of hardware security.
 
-Hardware security is not a static wall; it is a dynamic battlefield where attackers and defenders constantly engage in a game of wits. Taking the limitations shown by DDR5 and PRAC as a lesson, we must design a more robust and transparent security ecosystem.
-
-## 🔗 Recommended Reading
-- [RLHF: The Final Piece for AI Intelligence, or a Sophisticated Mirror Reflecting Human Bias?](/en/posts/rlhf-ai-intelligence-human-bias)
-- [The Paradox of Transformer Architecture: A Triumph of Parallelism or a Bankruptcy of Efficiency?](/en/posts/transformer-architecture-paradox)
+ Hardware security is not a static wall; it is a dynamic battlefield where attackers and defenders constantly engage in a game of wits. Taking the limitations shown by DDR5 and PRAC as a lesson, we must design a more robust and transparent security ecosystem.

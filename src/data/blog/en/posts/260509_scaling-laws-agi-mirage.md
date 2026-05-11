@@ -35,50 +35,54 @@ faqs:
   a: "Yes, we have entered a phase where the margin of performance improvement relative to invested capital is shrinking. It is now a time when sophisticated reasoning with limited data and efficient architecture are much more important than a competition over parameter counts."
 - q: "If training data becomes scarce, will future AI models find it harder to become smarter?"
   a: "It is true that performance gains have become difficult due to the exhaustion of high-quality data. However, if we acknowledge the limits of current methods and introduce new training algorithms or reasoning technologies, intelligence can evolve in ways different from the past data-dependent approach."
----
+---<div class="bluf"><strong>[BLUF]</strong><p>The AI industry has entered a phase of 'diminishing returns,' where the growth of intelligence is slowing down compared to the capital and data being invested. The infinite expansion of intelligence promised by 'Scaling Laws' has hit the walls of data exhaustion and physical limits. We are now at a point where we must consider a fundamental architectural shift rather than mere competition in scale.</p></div>
 
-<div class="bluf"><strong>[BLUF]</strong><p>The AI industry has entered a phase of 'diminishing returns,' where the growth of intelligence is slowing down compared to the capital and data being invested. The infinite expansion of intelligence promised by 'Scaling Laws' has hit the walls of data exhaustion and physical limits. We are now at a point where we must consider a fundamental architectural shift rather than mere competition in scale.</p></div>
+## 1. Limits of Scaling Laws and the Rise of Skepticism
 
-For the past several years, humanity has been intoxicated by the miraculous pace of artificial intelligence development. The prevailing belief was that by simply increasing model size and pouring in more data, we could reach General Artificial Intelligence (<a href="/en/glossary/what-is-agi" class="glossary-tooltip" data-definition="Artificial General Intelligence (AGI) refers to a type of AI that can understand, learn, and apply its intelligence to solve any problem, much like a human.">AGI</a>) that surpasses human capabilities.
+ For the past several years, humanity has been intoxicated by the miraculous pace of artificial intelligence development. The prevailing belief was that by simply increasing model size and pouring in more data, we could reach General Artificial Intelligence (<a href="/en/glossary/what-is-agi" class="glossary-tooltip" data-definition="Artificial General Intelligence (AGI) refers to a type of AI that can understand, learn, and apply its intelligence to solve any problem, much like a human.">AGI</a>) that surpasses human capabilities.
 
-However, cracks are beginning to appear in this optimism across the industry. Doubts are rising that the 'Scaling Laws' we so faithfully worshipped might have been a grand illusion.
+ However, cracks are beginning to appear in this optimism across the industry. Doubts are rising that the 'Scaling Laws' we so faithfully worshipped might have been a grand illusion.
 
 ![A macro close-up shot of complex crystalline structures with internal light refractions, representing dense data clusters and the fragility of technological growth, cinematic lighting, deep blue and silver color palette, 8k resolution, editorial style](../../../../assets/images/placeholder.png)
 
-The 2020 paper published by Jared Kaplan completely shifted the paradigm of AI research. He demonstrated that as compute, data, and model parameters increase, the error rate decreases linearly on a log scale.
+ The 2020 paper published by Jared Kaplan completely shifted the paradigm of AI research. He demonstrated that as compute, data, and model parameters increase, the error rate decreases linearly on a log scale.
 
-This discovery served as the starting gun for the Large Language Model (LLM) race, leading to trillions of won in capital being poured into infrastructure. It was the moment when the logic of 'economies of scale'—that scaling up is the only path to intelligence—took over the AI ecosystem.
+### Core Analysis from a Technical Perspective
+
+ This discovery served as the starting gun for the Large Language Model (LLM) race, leading to trillions of won in capital being poured into infrastructure. It was the moment when the logic of 'economies of scale'—that scaling up is the only path to intelligence—took over the AI ecosystem.
 
 > "Scaling laws are not just formulas. They were a technical conviction that capital could be converted into intelligence, a modern-day alchemical incantation toward the holy land of AGI."
 
-However, this solid faith underwent a revision with the emergence of DeepMind's 'Chinchilla Laws' in 2022. It was revealed that high-quality data is just as important as model size, highlighting the importance of efficient resource allocation.
+ However, this solid faith underwent a revision with the emergence of DeepMind's 'Chinchilla Laws' in 2022. It was revealed that high-quality data is just as important as model size, highlighting the importance of efficient resource allocation.
 
-The core takeaway was that simply increasing the number of parameters is inefficient; there must be a balance between the quantity and quality of the input data. From that point, AI researchers began focusing on sophisticated designs to find optimal training efficiency rather than unconditional expansion.
+ The core takeaway was that simply increasing the number of parameters is inefficient; there must be a balance between the quantity and quality of the input data. From that point, AI researchers began focusing on sophisticated designs to find optimal training efficiency rather than unconditional expansion.
 
-But now, we are facing a much larger and more physical limit: the 'Data Wall.' The high-quality text data existing on the internet is already beginning to run dry.
+## 2. Data Depletion and High Computational Efficiency Issues
+
+ But now, we are facing a much larger and more physical limit: the 'Data Wall.' The high-quality text data existing on the internet is already beginning to run dry.
 
 ![Abstract glassmorphism art showing a decaying light curve intersecting with a solid vertical plane, representing the collision between scaling laws and the physical limits of data, ethereal textures, high contrast, minimalist editorial layout](../../../../assets/images/placeholder.png)
 
-Attempts to maintain intelligence using synthetic data are ongoing, but this is unlikely to be a fundamental solution. The 'intellectual degeneration'—a phenomenon where AI performance degrades by learning from data generated by other AI—threatens the sustainability of the ecosystem.
+ Attempts to maintain intelligence using synthetic data are ongoing, but this is unlikely to be a fundamental solution. The 'intellectual degeneration'—a phenomenon where AI performance degrades by learning from data generated by other AI—threatens the sustainability of the ecosystem.
 
-In fact, while compute power increased exponentially during the transition from GPT-3 to GPT-4, many evaluate that the improvement in performance did not meet expectations. This is strong evidence that the law of 'Diminishing Returns' is now in effect.
+ In fact, while compute power increased exponentially during the transition from GPT-3 to GPT-4, many evaluate that the improvement in performance did not meet expectations. This is strong evidence that the law of 'Diminishing Returns' is now in effect.
+
+## 3. The AGI Mirage and Actual Intelligence of Frontier AI
 
 > "We may be building a massive 'digital cathedral.' A grand facade with a hollow interior—an illusion of intelligence built on astronomical capital."
 
-Industry titans are sharply divided on this issue. Sam Altman and Dario Amodei remain optimistic, claiming that AGI can be reached within a few years.
+ Industry titans are sharply divided on this issue. Sam Altman and Dario Amodei remain optimistic, claiming that AGI can be reached within a few years.
 
-On the other hand, scholars like Yann LeCun warn that current LLM structures have limits in achieving true intelligence. They argue that scaling up is merely the process of creating more sophisticated probabilistic machines, which does not guarantee the ability to think like a human.
+ On the other hand, scholars like Yann LeCun warn that current LLM structures have limits in achieving true intelligence. They argue that scaling up is merely the process of creating more sophisticated probabilistic machines, which does not guarantee the ability to think like a human.
 
-Dominant analysis suggests that the current improvement in reasoning ability is more of a 'refinement' process through Reinforcement Learning from Human Feedback (RLHF). This may be less of a fundamental leap in intelligence and more about polishing the technique of selecting the best answer from already learned knowledge.
+ Dominant analysis suggests that the current improvement in reasoning ability is more of a 'refinement' process through Reinforcement Learning from Human Feedback (RLHF). This may be less of a fundamental leap in intelligence and more about polishing the technique of selecting the best answer from already learned knowledge.
+
+## 4. A Major Transition to New Architectural Paradigms
 
 ![Deep indigo and teal abstract waves of light converging towards a central void, representing the search for a new architectural paradigm beyond current limitations, sophisticated editorial magazine style, macro photography feel](../../../../assets/images/placeholder.png)
 
-If we remain buried in technical optimism, the consequences will return as economic risks. If a qualitative leap in intelligence does not occur despite astronomical infrastructure costs, the bubble could burst in an instant.
+ If we remain buried in technical optimism, the consequences will return as economic risks. If a qualitative leap in intelligence does not occur despite astronomical infrastructure costs, the bubble could burst in an instant.
 
-Ultimately, what is needed is a paradigm shift, not just an expansion of 'scale.' We urgently need new algorithmic innovations that can perform efficient reasoning with fewer resources without relying solely on data volume.
+ Ultimately, what is needed is a paradigm shift, not just an expansion of 'scale.' We urgently need new algorithmic innovations that can perform efficient reasoning with fewer resources without relying solely on data volume.
 
-The end of Scaling Laws is not the end of the AI industry, but rather a rite of passage toward a more mature stage. We must face the reality that it is time to stop gambling on mirages and reconsider the true essence of intelligence.
-
-## 🔗 Recommended Reading
-- [RLHF: The Final Piece of AI Intelligence, or a Sophisticated Mirror of Human Bias?](/en/posts/rlhf-ai-intelligence-human-bias)
-- [The Paradox of Transformer Architecture: A Triumph of Parallelism or a Bankruptcy of Efficiency?](/en/posts/transformer-architecture-paradox)
+ The end of Scaling Laws is not the end of the AI industry, but rather a rite of passage toward a more mature stage. We must face the reality that it is time to stop gambling on mirages and reconsider the true essence of intelligence.

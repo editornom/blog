@@ -11,9 +11,7 @@ ogImage: ../../../../assets/images/placeholder.png
 description: "AF_ALG 是一个 Linux 内核接口，允许用户空间应用程序通过标准 Socket API 访问加密算法和硬件加速。本概览涵盖了其技术实现、使用 splice() 等系统调用的实际用法，以及其与 CVE-2026-31431 等安全漏洞的相关性。"
 references: []
 modDatetime: 2026-05-08 11:40:06.736176+09:00
----
-
-## 什么是 AF_ALG？
+---## 什么是 AF_ALG？
 
 ### 定义 (Definition)
 AF_ALG 是 Linux 内核提供的一个用于访问加密子系统的用户空间 (User-space) 接口。它是“Address Family - Algorithm”的缩写，是专为用户空间应用程序设计的通道，使其能够通过标准 Socket API 调用内核中实现的加密算法（如 AES、SHA、HMAC 等）。它支持利用硬件加速器等内核级资源，从而实现高效的加密运算。

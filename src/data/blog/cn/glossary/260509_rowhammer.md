@@ -11,9 +11,7 @@ ogImage: "../../../../assets/images/placeholder.png"
 description: "Rowhammer 是一种硬件安全漏洞，通过高速重复激活 DRAM 的特定行来诱发相邻行的比特翻转，从而导致系统权限夺取和数据篡改等严重安全威胁。本文深入分析了针对最新 DDR5 和 GPU 的攻击案例，以及从 TRR 到 PRAC 等实务性应对技术和防御策略。"
 references: []
 modDatetime: 2026-05-09 11:33:04.486265+09:00
----
-
-# 什么是 Rowhammer？
+---# 什么是 Rowhammer？
 
 ### 词典定义 (Dictionary Definition)
 Rowhammer 是一种硬件安全漏洞，通过高速重复激活 DRAM (Dynamic Random Access Memory) 的特定内存行 (Row) 来诱发相邻行的电荷干扰，从而导致存储的数据发生比特翻转 (Bit-flip)。这是利用了微细加工后的半导体器件之间的物理干扰现象，可被用于绕过软件访问权限，篡改内存数据或夺取系统权限。

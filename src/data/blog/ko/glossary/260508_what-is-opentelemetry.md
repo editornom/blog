@@ -13,9 +13,7 @@ description: OpenTelemetry(오픈텔레메트리)는 CNCF의 오픈 소스 관�
   제공합니다.
 references: []
 modDatetime: 2026-05-08 14:29:31.002554+09:00
----
-
-# OpenTelemetry이란?
+---# OpenTelemetry이란?
 
 ### 사전적 정의 (Dictionary Definition)
 오픈텔레메트리(OpenTelemetry, OTel)는 클라우드 네이티브 컴퓨팅 재단(CNCF)에서 주도하는 오픈 소스 관측성(Observability) 프레임워크입니다. 소프트웨어의 성능 및 상태를 분석하기 위해 필요한 트레이스(Traces), 메트릭(Metrics), 로그(Logs) 등의 텔레메트리 데이터를 생성, 수집, 처리, 전송하기 위한 표준화된 API, SDK 및 도구 모음을 제공합니다. 특정 벤더에 종속되지 않는 데이터 표준을 수립하여 분산 시스템 환경에서의 통합적인 가시성 확보를 목적으로 합니다.

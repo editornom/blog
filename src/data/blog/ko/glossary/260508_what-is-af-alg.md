@@ -15,9 +15,7 @@ description: AF_ALG is a Linux kernel interface that allows user-space applicati
   CVE-2026-31431.
 references: []
 modDatetime: 2026-05-08 11:40:06.736176+09:00
----
-
-## AF_ALG이란?
+---## AF_ALG이란?
 
 ### 사전적 정의 (Dictionary Definition)
 AF_ALG는 리눅스 커널(Linux Kernel)에서 제공하는 암호화 서브시스템에 접근하기 위한 사용자 공간(User-space) 인터페이스입니다. 'Address Family - Algorithm'의 약칭이며, 사용자 공간의 애플리케이션이 표준 소켓 API(Socket API)를 통해 커널 내부에 구현된 암호화 알고리즘(AES, SHA, HMAC 등)을 직접 호출하고 활용할 수 있도록 설계된 통로입니다. 하드웨어 가속기 등 커널 수준의 자원을 활용하여 효율적인 암호화 연산을 수행할 수 있게 지원합니다.

@@ -11,9 +11,7 @@ ogImage: ../../../../assets/images/placeholder.png
 description: "SSL/TLS is a cryptographic protocol designed for network communication security, acting as the core technology that protects data between web browsers and servers via HTTPS. It ensures data confidentiality and integrity while preventing sensitive information leaks."
 references: []
 modDatetime: 2026-05-10 15:04:36.932330+09:00
----
-
-# What is SSL/TLS?
+---# What is SSL/TLS?
 
 ### Dictionary Definition
 SSL (Secure Sockets Layer) and its successor, TLS (Transport Layer Security), are cryptographic protocols designed to provide communication security over computer networks. These protocols utilize asymmetric encryption technology to authenticate the identities of the communicating parties and safely exchange the session keys required for data encryption. Subsequently, they employ highly efficient symmetric encryption during the actual data transfer process to ensure both the confidentiality and integrity of the data. To address security vulnerabilities discovered in the early SSL protocols, the IETF (Internet Engineering Task Force) standardized TLS, and virtually all modern secure communications are now based on TLS.

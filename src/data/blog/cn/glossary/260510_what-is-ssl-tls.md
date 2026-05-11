@@ -11,9 +11,7 @@ ogImage: ../../../../assets/images/placeholder.png
 description: "SSL/TLS 是为网络通信安全而设计的加密协议，是通过 HTTPS 安全保护 Web 浏览器与服务器之间数据的核心技术。它利用非对称和对称加密方式保证数据的机密性和完整性，防止敏感信息泄露。"
 references: []
 modDatetime: 2026-05-10 15:04:36.932330+09:00
----
-
-# 什么是 SSL/TLS？
+---# 什么是 SSL/TLS？
 
 ### 词典定义 (Dictionary Definition)
 SSL（安全套接层，Secure Sockets Layer）及其后续版本 TLS（传输层安全，Transport Layer Security）是为在计算机网络上提供通信安全而设计的加密协议。该协议利用非对称加密技术对通信双方的身份进行验证，并安全地交换加密数据所需的会话密钥。随后，在实际数据传输过程中，使用效率较高的对称加密方式来确保数据的机密性和完整性。为了解决早期 SSL 协议中发现的安全漏洞，IETF（互联网工程任务组）对 TLS 进行了标准化，现代所有的安全通信基本上都是基于 TLS 实现的。

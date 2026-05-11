@@ -11,9 +11,7 @@ ogImage: ../../../../assets/images/placeholder.png
 description: "Explore the definition and core mechanisms of Long Short-Term Memory (LSTM) and learn how it addresses long-term dependency issues in NLP and time-series analysis."
 references: []
 modDatetime: 2026-05-10 19:08:15.655275+09:00
----
-
-### Dictionary Definition
+---### Dictionary Definition
 LSTM (Long Short-Term Memory) is an artificial neural network architecture specifically designed to overcome the "Vanishing Gradient Problem," a significant structural limitation of standard Recurrent Neural Networks (RNNs). By introducing a "Gate" mechanism that can selectively store, update, or discard information, LSTM overcomes the difficulties of learning long-term dependencies that occur as sequence data grows longer. This allows the model to maintain critical contextual information over extended periods.
 
 ### Practical Use Case

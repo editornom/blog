@@ -12,9 +12,7 @@ description: LSTM(Long Short-Term Memory)의 정의와 핵심 메커니즘을 �
   처리 및 시계열 데이터 분석에서 활용되는 실무 사례를 소개합니다.
 references: []
 modDatetime: 2026-05-10 19:08:15.655275+09:00
----
-
-### 사전적 정의 (Dictionary Definition)
+---### 사전적 정의 (Dictionary Definition)
 LSTM(Long Short-Term Memory)은 순환 신경망(RNN)의 구조적 한계인 기울기 소멸 문제(Vanishing Gradient Problem)를 해결하기 위해 고안된 인공 신경망 아키텍처입니다. 정보를 선택적으로 저장하거나 삭제할 수 있는 '게이트(Gate)' 메커니즘을 도입하여, 시퀀스 데이터가 길어질 때 발생하는 장기 의존성(Long-term Dependency) 학습의 어려움을 극복하고 중요한 맥락 정보를 장기간 유지할 수 있는 특징을 가집니다.
 
 ### 실무 사용 예시 (Practical Use Case)

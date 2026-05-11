@@ -11,9 +11,7 @@ ogImage: ../../../../assets/images/placeholder.png
 description: "Model Context Protocol (MCP) 是一种开放标准协议，旨在让 AI 模型能够与各种数据源和工具无缝交互。通过 MCP，可以标准化 AI 代理的数据集成方式，并实现高效的安全与运行时治理。"
 references: []
 modDatetime: 2026-05-08 16:47:42.041662+09:00
----
-
-# MCP (Model Context Protocol)
+---# MCP (Model Context Protocol)
 
 ### 词典定义 (Dictionary Definition)
 Model Context Protocol (MCP) 是一种开放标准协议，旨在让 AI 模型能够与各种数据源和工具进行无缝交互。该协议标准化了 AI 代理访问本地文件系统、数据库、API 等外部环境数据并将其集成到模型上下文中的方式。其目的是提高不同平台和应用程序之间的互操作性，并减少开发人员为每个工具编写独立集成逻辑的繁琐工作。

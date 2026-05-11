@@ -11,9 +11,7 @@ ogImage: ../../../../assets/images/placeholder.png
 description: "本文探讨了 STDIO（标准输入输出）的概念，并结合 MCP 环境下的实际应用案例，深入分析了进程间通信（IPC）的核心原理。介绍了如何利用系统的标准流实现安全高效的数据交换，而无需额外的网络端口。"
 references: []
 modDatetime: 2026-05-10 17:13:53.759572+09:00
----
-
-### 什么是 STDIO？
+---### 什么是 STDIO？
 
 #### 词典定义 (Dictionary Definition)
 STDIO（Standard Input/Output，标准输入输出）是指计算机操作系统中，为了处理程序与外部环境之间的数据交换而默认连接的输入输出通道，即标准流（Standard Streams）。它通常由标准输入 (stdin)、标准输出 (stdout) 和标准错误 (stderr) 三个通道组成。作为一个抽象接口，STDIO 允许程序在无需关心具体硬件或网络配置的情况下进行数据读写。

@@ -35,39 +35,39 @@ faqs:
   a: "An anomaly detection system is needed to capture cases where an agent calls APIs in unusual patterns or accesses large volumes of data in real-time. Additionally, final human approval must be required for accessing critical data."
 - q: "Is it safe to simply follow guidelines like NIST or OWASP to strengthen AI agent security?"
   a: "Following standard guides is fundamental, but since the MCP environments and workflows used vary by company, they must be flexibly adapted to the organization's characteristics rather than just copied. Design capabilities for building real-time governance systems are more important."
----
+---<div class="bluf"><strong>[BLUF]</strong><p>The core threat to AI agent security begins with the 'Paradox of Autonomy,' where as an agent's intelligence increases, it becomes uncontrollable by existing deterministic security systems. We must abandon the illusion of control—the idea of perfect blocking—and shift to a resilience-centered design through Zero Trust architecture and real-time runtime governance optimized for MCP environments.</p></div>
 
-<div class="bluf"><strong>[BLUF]</strong><p>The core threat to AI agent security begins with the 'Paradox of Autonomy,' where as an agent's intelligence increases, it becomes uncontrollable by existing deterministic security systems. We must abandon the illusion of control—the idea of perfect blocking—and shift to a resilience-centered design through Zero Trust architecture and real-time runtime governance optimized for MCP environments.</p></div>
+ The dawn of the 'agent economy,' where AI judges and acts on its own, has arrived. However, we are alarmingly defenseless against the destructive flip side that this autonomy brings. Security at the level of filtering a few lines of prompts is insufficient to handle the complex threats ahead.
 
-The dawn of the 'agent economy,' where AI judges and acts on its own, has arrived. However, we are alarmingly defenseless against the destructive flip side that this autonomy brings. Security at the level of filtering a few lines of prompts is insufficient to handle the complex threats ahead.
-
-While companies are competitively adopting AI agents to boost productivity, a massive trap called the 'illusion of control' lurks beneath the surface. We must face the reality that the authority granted to agents can become a boomerang at any time.
+ While companies are competitively adopting AI agents to boost productivity, a massive trap called the 'illusion of control' lurks beneath the surface. We must face the reality that the authority granted to agents can become a boomerang at any time.
 
 ![AI Agent Security - Multiple layers of transparent glass plates intertwined with glowing optical fibers, representing complex digital neural networks and hidden vulnerabilities.](../../../../../source/posts/AI_Agent_Security/8aa16c2d-0.webp)
 
 ## The Massive Gap Proven by the 2026 Reality Report
 
-Statistics from the recently released 2026 Security Status Report show an embarrassing reality. While organizations run an average of 37 agents to accelerate business automation, the percentage of agents with actual security monitoring applied is only 47.1%.
+ Statistics from the recently released 2026 Security Status Report show an embarrassing reality. While organizations run an average of 37 agents to accelerate business automation, the percentage of agents with actual security monitoring applied is only 47.1%.
 
-This is a dangerous signal that more than half of the agents in the field are operating in security blind spots, accessing the core assets of enterprises. The speed of technology adoption is overwhelmingly outpacing the speed of establishing security governance.
+### Core Analysis from a Technical Perspective
+
+ This is a dangerous signal that more than half of the agents in the field are operating in security blind spots, accessing the core assets of enterprises. The speed of technology adoption is overwhelmingly outpacing the speed of establishing security governance.
 
 > "The fact that 80.9% of companies have entered the agent adoption phase, yet only 14.4% have completed security approvals, proves how precariously we are standing on the 'wave of autonomy.'"
 
-The explosively growing fleet of agents has now moved beyond the range that managers can control individually. As interactions between agents become more complex, security loopholes are bound to be hidden even more subtly.
+ The explosively growing fleet of agents has now moved beyond the range that managers can control individually. As interactions between agents become more complex, security loopholes are bound to be hidden even more subtly.
 
-Ultimately, security blind spots left neglected under the name of 'autonomy' are like time bombs that can collapse a company's entire supply chain. We must now treat agents not as mere tools, but as 'unstructured members' requiring strict supervision.
+ Ultimately, security blind spots left neglected under the name of 'autonomy' are like time bombs that can collapse a company's entire supply chain. We must now treat agents not as mere tools, but as 'unstructured members' requiring strict supervision.
 
 ## Why Do Existing Security Frameworks Fail Against AI Agents?
 
-The deterministic code-based security systems we have trusted do not understand the 'non-deterministic reasoning' of AI agents. Traditional firewalls or checklists follow fixed rules, but AI thinks differently every time based on statistical probabilities.
+ The deterministic code-based security systems we have trusted do not understand the 'non-deterministic reasoning' of AI agents. Traditional firewalls or checklists follow fixed rules, but AI thinks differently every time based on statistical probabilities.
 
-This characteristic creates an environment highly vulnerable to a new form of attack called 'Authority Spoofing.' If an attacker sophisticatedly mimics a manager's persona, the agent interprets this as a statistical pattern and hands over authority without suspicion.
+ This characteristic creates an environment highly vulnerable to a new form of attack called 'Authority Spoofing.' If an attacker sophisticatedly mimics a manager's persona, the agent interprets this as a statistical pattern and hands over authority without suspicion.
 
 ![AI Agent Security - An abstract depiction of a shattered crystal ball reflecting distorted binary code in deep blue and silver.](../../../../../source/posts/AI_Agent_Security/23806c4c-1.webp)
 
-In particular, 'Instruction Hijacking' is a far more cunning and lethal threat than traditional prompt injection. By inserting malicious commands in the middle of an agent's workflow, the entire autonomous system is relegated to an attacker's tool.
+ In particular, 'Instruction Hijacking' is a far more cunning and lethal threat than traditional prompt injection. By inserting malicious commands in the middle of an agent's workflow, the entire autonomous system is relegated to an attacker's tool.
 
-The risks in the recently highlighted MCP (Model Context Protocol) environment cannot be overlooked either. As agents gain freer access to more tools and data, the 'Blast Radius'—the scope of damage when an attack is successful—inevitably grows exponentially.
+ The risks in the recently highlighted MCP (Model Context Protocol) environment cannot be overlooked either. As agents gain freer access to more tools and data, the 'Blast Radius'—the scope of damage when an attack is successful—inevitably grows exponentially.
 
 | Threat Type | Agent Behavior Pattern | Security Risk |
 | :--- | :--- | :--- |
@@ -78,29 +78,29 @@ The risks in the recently highlighted MCP (Model Context Protocol) environment c
 
 ## The Paradox of Autonomy: Is Security Possible Without Castrating Utility?
 
-Here we face a practical dilemma called the 'Paradox of Autonomy.' If we extremely limit permissions to strengthen an agent's security, the so-called 'Agent IQ'—the agent's context understanding and problem-solving ability—plummets.
+ Here we face a practical dilemma called the 'Paradox of Autonomy.' If we extremely limit permissions to strengthen an agent's security, the so-called 'Agent IQ'—the agent's context understanding and problem-solving ability—plummets.
 
-A trade-off relationship is formed: if you want a capable agent, you must grant autonomy; if you want security, you must suppress that autonomy. The more we try to lock AI's intelligence into a deterministic sandbox, the more productivity will hit rock bottom.
+ A trade-off relationship is formed: if you want a capable agent, you must grant autonomy; if you want security, you must suppress that autonomy. The more we try to lock AI's intelligence into a deterministic sandbox, the more productivity will hit rock bottom.
 
 > "Excessive permission restriction relegates an agent to a mere macro level. True security should not be a 'lock' that stops growth, but a 'track' that helps it run safely."
 
-Ultimately, we must stop trying to control what cannot be controlled. Forcing fixed rules on an agent with non-deterministic intelligence is no different from trying to catch a flowing river with your bare hands.
+ Ultimately, we must stop trying to control what cannot be controlled. Forcing fixed rules on an agent with non-deterministic intelligence is no different from trying to catch a flowing river with your bare hands.
 
 ![AI Agent Security - Rainbow-colored liquid metal flowing and colliding with static geometric blocks in a digital space.](../../../../../source/posts/AI_Agent_Security/38c98f2b-2.webp)
 
 ## Next-Generation Security Strategy Abandoning the Illusion of Control
 
-The paradigm of security must now completely shift from 'prevention' to 'resilience.' Under the premise that perfect defense is impossible, runtime governance that detects anomalous behavior in real-time and responds immediately must become the core.
+ The paradigm of security must now completely shift from 'prevention' to 'resilience.' Under the premise that perfect defense is impossible, runtime governance that detects anomalous behavior in real-time and responds immediately must become the core.
 
-To achieve this, the first thing to introduce is a 'Zero Trust-based non-human IAM architecture.' Every request performed by an agent must be verified at every moment, and a final approval stage must be secured by strategically placing Human-in-the-Loop.
+ To achieve this, the first thing to introduce is a 'Zero Trust-based non-human IAM architecture.' Every request performed by an agent must be verified at every moment, and a final approval stage must be secured by strategically placing Human-in-the-Loop.
 
-Furthermore, a mechanism is needed through a real-time anomaly detection system to immediately block an agent when it attempts API calls or requests data access in patterns different from its usual behavior. This is dynamic governance operating in real-time, not a post-mortem fix.
+ Furthermore, a mechanism is needed through a real-time anomaly detection system to immediately block an agent when it attempts API calls or requests data access in patterns different from its usual behavior. This is dynamic governance operating in real-time, not a post-mortem fix.
 
-Complying with NIST AI RMF or OWASP guides is the most basic requirement. However, rather than applying these mechanically, insight is needed to flexibly modify and apply them according to the MCP environment and workflow characteristics of each company.
+ Complying with NIST AI RMF or OWASP guides is the most basic requirement. However, rather than applying these mechanically, insight is needed to flexibly modify and apply them according to the MCP environment and workflow characteristics of each company.
 
-In conclusion, security in the era of the agent economy is not merely the act of locking a door, but a 'matter of design'—implanting security DNA into the system's veins. Only a mature security culture that can manage risks while respecting autonomy can guarantee a company's survival.
+ In conclusion, security in the era of the agent economy is not merely the act of locking a door, but a 'matter of design'—implanting security DNA into the system's veins. Only a mature security culture that can manage risks while respecting autonomy can guarantee a company's survival.
 
-To fully enjoy the fruits of infinite productivity that agents will bring, we must shatter the illusion of control right now. Shifting to a more flexible and robust resilience-centered architecture is the only way we can overcome the Paradox of Autonomy.
+ To fully enjoy the fruits of infinite productivity that agents will bring, we must shatter the illusion of control right now. Shifting to a more flexible and robust resilience-centered architecture is the only way we can overcome the Paradox of Autonomy.
 
 ## 🔗 Recommended Reading
 - [Distributed System Architecture: The Blessing and Curse of Complexity Brought by Infinite Scaling](/en/posts/distributed-systems-scaling-complexity)

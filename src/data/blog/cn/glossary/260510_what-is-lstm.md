@@ -11,9 +11,7 @@ ogImage: ../../../../assets/images/placeholder.png
 description: "深入了解 LSTM (Long Short-Term Memory) 的定义及其核心机制，探讨其如何解决长程依赖问题，并介绍在自然语言处理及时间序列数据分析中的实际应用案例。"
 references: []
 modDatetime: 2026-05-10 19:08:15.655275+09:00
----
-
-### 词典定义 (Dictionary Definition)
+---### 词典定义 (Dictionary Definition)
 LSTM (Long Short-Term Memory，长短期记忆网络) 是一种旨在解决循环神经网络 (RNN) 结构性局限——梯度消失问题 (Vanishing Gradient Problem) 而设计的人工神经网络架构。通过引入能够选择性地存储或删除信息的“门 (Gate)”机制，LSTM 克服了在处理长序列数据时难以学习长程依赖 (Long-term Dependency) 的困境，使其具备了长时间保留重要上下文信息的能力。
 
 ### 实际应用案例 (Practical Use Case)
