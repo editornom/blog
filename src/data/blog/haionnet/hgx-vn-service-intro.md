@@ -3,8 +3,8 @@ title: '[하이온넷] 하이온넷의 기업전용 베트남 전용 회선 서�
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
-pubDatetime: 2026-05-12 15:00:00+09:00
-modDatetime: 2026-05-12 15:00:00+09:00
+pubDatetime: 2026-05-04 15:00:00+09:00
+modDatetime: 2026-05-04 15:00:00+09:00
 slug: hgx-vn
 description: '하이온넷의 한-베트남 기업 전용 하이브리드 직결망 서비스 HGX-VN의 상세 서비스 가이드 및 타사 비교 분석 정보입니다.'
 ogImage: "./HGX-VN/HGX_VN_main.png"

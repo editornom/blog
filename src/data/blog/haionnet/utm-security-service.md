@@ -3,8 +3,8 @@ title: '[하이온넷] 기업 종합 정보보안부터 학원 안심 면학망�
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
-pubDatetime: 2026-05-12 15:40:00+09:00
-modDatetime: 2026-05-12 15:40:00+09:00
+pubDatetime: 2026-05-05 15:40:00+09:00
+modDatetime: 2026-05-05 15:40:00+09:00
 slug: utm-security
 description: 'CC인증 EAL4 등급 고성능 UTM 장비 임대와 3중 보안 결합 패키지 및 관리형 학원 전용 유해 사이트 화이트리스트 차단 제어 솔루션 상세 가이드입니다.'
 ogImage: "./UTM/UTM_main.png"

@@ -3,8 +3,8 @@ title: '[하이온넷] 하이온넷의 기업전용 중국 전용 회선 서비�
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
-pubDatetime: 2026-05-12 13:30:00+09:00
-modDatetime: 2026-05-12 13:30:00+09:00
+pubDatetime: 2026-05-03 13:30:00+09:00
+modDatetime: 2026-05-03 13:30:00+09:00
 slug: hgx-cn
 description: '하이온넷의 한-중 기업 전용 하이브리드 직결망 서비스 HGX-CN의 상세 서비스 가이드 및 타사 비교 분석 정보입니다.'
 ogImage: "./HGX-CN/HGX_CN_main.png"

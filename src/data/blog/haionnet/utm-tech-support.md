@@ -3,8 +3,8 @@ title: '[하이온넷] 지능형 UTM 방화벽 기술지원: 장애 제로를 �
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
-pubDatetime: 2026-05-12 16:15:00+09:00
-modDatetime: 2026-05-12 16:15:00+09:00
+pubDatetime: 2026-05-08 16:15:00+09:00
+modDatetime: 2026-05-08 16:15:00+09:00
 slug: utm-tech-support
 description: 'FortiAnalyzer 연동 정밀 트래픽 분석 리포팅과 24시간 365일 실시간 관제 연계 이중화(HA) 셋업 및 펌웨어 기술 지원 상세 안내서입니다.'
 ogImage: "./UTM기술지원/UTM 기술지원_main.png"

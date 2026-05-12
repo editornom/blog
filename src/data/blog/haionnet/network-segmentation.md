@@ -3,8 +3,8 @@ title: '[하이온넷] 완벽한 기업 보안 망분리: 단 1대의 VPN 장비
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
-pubDatetime: 2026-05-12 16:20:00+09:00
-modDatetime: 2026-05-12 16:20:00+09:00
+pubDatetime: 2026-05-09 16:20:00+09:00
+modDatetime: 2026-05-09 16:20:00+09:00
 slug: network-segmentation
 description: '개인정보보호법 완벽 대응을 위한 VPN 망분리 터널링 암호화 기술 및 업무용 내부망과 초고속 인터넷망의 분리 구성 가이드입니다.'
 ogImage: "./망분리/망분리_main.png"

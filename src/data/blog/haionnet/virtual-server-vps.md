@@ -3,8 +3,8 @@ title: '[하이온넷] 합리적인 기업용 가상서버 임대: 제온 물리
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
-pubDatetime: 2026-05-12 16:05:00+09:00
-modDatetime: 2026-05-12 16:05:00+09:00
+pubDatetime: 2026-05-06 16:05:00+09:00
+modDatetime: 2026-05-06 16:05:00+09:00
 slug: virtual-server-vps
 description: '제온 16코어 고성능 원격 가상서버 임대 요금제와 KT 고정 IP 본사 직공급 50개 패키지 및 24시간 무중단 스마트 젠서버 운용 기술 가이드입니다.'
 ogImage: "./가상서버/가상서버_main.png"

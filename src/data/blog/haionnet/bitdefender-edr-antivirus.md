@@ -3,8 +3,8 @@ title: '[하이온넷] 비트디펜더 차세대 EDR 백신 솔루션: 랜섬웨
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
-pubDatetime: 2026-05-12 16:25:00+09:00
-modDatetime: 2026-05-12 16:25:00+09:00
+pubDatetime: 2026-05-10 16:25:00+09:00
+modDatetime: 2026-05-10 16:25:00+09:00
 slug: bitdefender-edr-antivirus
 description: 'AI 머신러닝 HyperDetect 기반 신종 랜섬웨어 실시간 탐지 및 감염 파일 무손실 롤백(Rollback) 자동 복구 시스템 상세 매뉴얼입니다.'
 ogImage: "./비트디펜더EDR/비트디펜더EDR_main.png"

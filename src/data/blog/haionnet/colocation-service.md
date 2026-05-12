@@ -3,8 +3,8 @@ title: '[하이온넷] 하이온넷의 하이엔드 기업 서버 IDC 코로케�
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
-pubDatetime: 2026-05-12 15:10:00+09:00
-modDatetime: 2026-05-12 15:10:00+09:00
+pubDatetime: 2026-05-02 15:10:00+09:00
+modDatetime: 2026-05-02 15:10:00+09:00
 slug: colocation
 description: '하이온넷의 무중단 이중화 전력 및 초고속 백본 백터망 기반 고성능 기업 전용 IDC 코로케이션 서비스 상세 안내서입니다.'
 ogImage: "./colocation/colocation_main.png"

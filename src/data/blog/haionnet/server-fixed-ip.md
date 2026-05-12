@@ -3,8 +3,8 @@ title: '[하이온넷] 안정성이 보장된 기업 서버용 고정 IP: KT 데
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
-pubDatetime: 2026-05-12 16:10:00+09:00
-modDatetime: 2026-05-12 16:10:00+09:00
+pubDatetime: 2026-05-07 16:10:00+09:00
+modDatetime: 2026-05-07 16:10:00+09:00
 slug: server-fixed-ip
 description: 'KT 데이터센터 IDC 고품질 백본망 연동 서버용 고정 IP 발급 방식 및 365일 24시간 보안 관제가 장착된 VPN 고정 IP 마케팅·보안 접속 구축안입니다.'
 ogImage: "./서버용 고정아이피/서버용 고정아이피_하이온넷_main.png"

@@ -3,8 +3,8 @@ title: '[하이온넷] 무중단 네트워크를 위한 하이온넷 특허 지�
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
-pubDatetime: 2026-05-12 15:15:00+09:00
-modDatetime: 2026-05-12 15:15:00+09:00
+pubDatetime: 2026-05-01 15:15:00+09:00
+modDatetime: 2026-05-01 15:15:00+09:00
 slug: 4depth
 description: '단 1초의 단선도 용납하지 않는 기업을 위한 하이온넷 독자 개발 특허 4중 백업 라우팅 기술 포뎁스(4depth) 상세 솔루션 가이드입니다.'
 ogImage: "./4depth/4depth_main.png"
