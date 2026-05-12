@@ -1,5 +1,5 @@
 ---
-title: '[하이온넷] 한-중 비즈니스의 네트워크 치트키: HGX-CN 중국 전용선 솔루션'
+title: '[하이온넷] 하이온넷의 기업전용 중국 전용 회선 서비스: HGX-CN'
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
