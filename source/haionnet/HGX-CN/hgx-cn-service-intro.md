@@ -1,9 +1,5 @@
-# [하이온넷] 한-중 비즈니스의 네트워크 치트키: HGX-CN 중국 전용선 솔루션 완벽 가이드
+# [하이온넷] 한-중 비즈니스의 네트워크 치트키: HGX-CN 중국 전용선 솔루션
 
-> **본 문서의 저작권 및 발행 권한은 하이온넷(Hionnet)에 있습니다.**  
-> 본 가이드는 한-중 본·지사 간 고속 데이터 통신과 안정적인 업무 인프라를 보장하는 **HGX-CN 하이브리드 전용회선 서비스**의 핵심 가치와 10단계 특징을 카드뉴스 이미지와 함께 알기 쉽게 정리한 프리미엄 기술 해설서입니다.
-
----
 
 ## 🚀 INTRO: 왜 중국 비즈니스 네트워크는 이토록 끊기고 느릴까요?
 
@@ -49,17 +45,17 @@
 
 ---
 
-### 05. 중국 1티어 ISP(CT, CU, CM) 백본과의 다이렉트 직결
+### 05. 중국 1티어 ISP(차이나텔레콤, 차이나유니콤) 백본과의 다이렉트 직결
 ![중국 1티어 ISP 백본 다이렉트 직결](./HGX_CN-05.jpg)
 
-중국 최대 국영 통신사인 차이나텔레콤(China Telecom), 차이나유니콤(China Unicom), 차이나모바일(China Mobile)의 핵심 1티어 백본망과 다이렉트 가속 경로로 직결되어 있습니다. 물리적으로 가장 빠른 최단 경로만을 찾아 전송하므로, 일반 가상 사설망(VPN)과는 비교 불가능한 차원의 속도적 차별성을 선사합니다.
+중국 대표 국영 통신사인 차이나텔레콤(China Telecom) 및 차이나유니콤(China Unicom)의 핵심 1티어 백본망과 다이렉트 가속 경로로 직결되어 있습니다. 물리적으로 가장 빠른 최단 경로만을 찾아 전송하므로, 일반 가상 사설망(VPN)과는 비교 불가능한 차원의 속도적 차별성을 선사합니다.
 
 ---
 
-### 06. IPLC 국제전용회선 대비 최대 75% 비용 절감 효과
+### 06. 해외전용선 대비 최대 90% 비용 절감 효과
 ![IPLC 국제전용선 대비 압도적 비용 효율](./HGX_CN-06.jpg)
 
-수천만 원을 웃도는 기존의 국제전용회선(IPLC / IEPL)의 높은 비용 부담 때문에 도입을 망설이셨나요? **HGX-CN**은 기존의 초고속 인터넷 회선을 그대로 활용하면서도 고품질 전용선 효과를 내는 하이브리드 가속 망을 구축하여, **동일 성능 기준 IPLC 비용 대비 무려 50%~75%의 극적인 예산 절감 효과**를 약속드립니다.
+수천만 원을 웃도는 기존의 국제전용회선(IPLC / IEPL)의 높은 비용 부담 때문에 도입을 망설이셨나요? **HGX-CN**은 기존의 초고속 인터넷 회선을 그대로 활용하면서도 고품질 전용선 효과를 내는 하이브리드 가속 망을 구축하여, **동일 성능 기준 해외전용선 대비 최대 90%의 극적인 예산 절감(1/10 가격, 2Mbps 기준 약 350만 원에서 35만 원으로 축소) 효과**를 약속드립니다.
 
 ---
 
@@ -80,7 +76,7 @@
 ### 09. 선 테스트 후 도입: 100% 무상 데모 서비스 제공
 ![선 테스트 후 도입 무상 데모](./HGX_CN-09.jpg)
 
-**"우리 사무실에서도 정말 속도가 개선될까?"** 걱정하실 필요 전혀 없습니다. 하이온넷은 고객사의 실제 네트워크 환경에 장비를 무상으로 먼저 설치하여 충분히 속도 향상과 핑(Ping) 개선율을 체감하신 후 정식 도입을 결정하실 수 있도록 **100% 무료 장비 임대 및 데모 테스트 서비스**를 상시 지원합니다.
+**"우리 사무실에서도 정말 속도가 개선될까?"** 걱정하실 필요 전혀 없습니다. 하이온넷은 고객사의 실제 네트워크 환경에 장비를 무상으로 먼저 설치하여 충분히 속도 향상과 핑(Ping) 개선율을 체감하신 후 정식 도입을 결정하실 수 있도록 **100% 무료 장비 임대 및 데모 테스트 서비스**를 상시 지원합니다. **특히 신청 후 단 5분 이내 즉시 개통이 가능하며, 소규모 사업장의 경우 평균 10분 내에 모든 설치를 마칠 수 있는 업계 최속의 기동력**을 갖추고 있습니다.
 
 ---
 
@@ -107,7 +103,7 @@
 <tbody>
 <tr>
 <td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold;">한-중 평균 레이턴시(Ping)</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #10b981; background-color: #f0fdf4;">30ms ~ 45ms 내외 (매우 안정적)</td>
+<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #10b981; background-color: #f0fdf4;">35ms ~ 50ms (공식 스펙 보장 수치로 매우 안정적)</td>
 <td style="padding: 12px; border: 1px solid #cbd5e1;">80ms ~ 200ms 이상 (잦은 스파이크)</td>
 <td style="padding: 12px; border: 1px solid #cbd5e1;">30ms ~ 40ms 내외 (안정적)</td>
 </tr>
@@ -119,13 +115,13 @@
 </tr>
 <tr>
 <td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold;">인프라 구축 비용</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #10b981; background-color: #f0fdf4;">IPLC 대비 최고 75% 비용 절감</td>
+<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #10b981; background-color: #f0fdf4;">기존 해외전용선 대비 최대 90% 비용 절감 (1/10 가격)</td>
 <td style="padding: 12px; border: 1px solid #cbd5e1;">아주 저렴함 (그러나 업무 성능 불량)</td>
 <td style="padding: 12px; border: 1px solid #cbd5e1; color: #ef4444;">매우 높음 (수백 ~ 수천만 원/월)</td>
 </tr>
 <tr>
 <td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold;">설치 및 긴급 개통 기간</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #10b981; background-color: #f0fdf4;">장비 임대 후 즉시 가상 개통 (1~3일)</td>
+<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #10b981; background-color: #f0fdf4;">신청 후 5분 이내 즉시 개통 (소규모 10분 내 세팅 완료)</td>
 <td style="padding: 12px; border: 1px solid #cbd5e1;">자가 설치 즉시 개통</td>
 <td style="padding: 12px; border: 1px solid #cbd5e1; color: #ef4444;">실제 광케이블 포설 및 심사 필요 (4~8주)</td>
 </tr>
