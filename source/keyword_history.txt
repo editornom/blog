@@ -59,3 +59,4 @@
 [2026-05-11] [AI추천_40점] Agentic Version Control
 [2026-05-11] [AI추천_40점] RLHF
 [2026-05-11] [수동선정] gpt5.5 vs opus 4.7
+[2026-05-12] [AI추천_38점] Kernel Runtime Security

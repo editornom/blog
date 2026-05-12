@@ -1,0 +1,9 @@
+https://www.datadoghq.com/blog/engineering/ebpf-workload-protection-lessons/
+https://www.kusari.dev/learning-center/kernel-protection
+https://isovalent.com/blog/post/what-is-runtime-security/
+https://thamizhelango.medium.com/linux-runtime-kernel-guard-a-comprehensive-guide-4607637833fb
+https://www.wiz.io/academy/container-security/container-runtime-security
+https://ciq.com/blog/a-deep-dive-into-linux-kernel-runtime-guard-lkrg/
+https://source.android.com/docs/security/overview/kernel-security
+https://platformengineering.org/blog/runtime-security-monitoring-and-threat-detection-protecting-production-without-slowing-developers
+https://www.sysdig.com/learn-cloud-native/what-is-runtime-security
