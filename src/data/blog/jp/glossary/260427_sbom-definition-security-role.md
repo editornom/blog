@@ -25,6 +25,6 @@ SBOM（Software Bill of Materials、ソフトウェア部品構成表）とは�
 
 ## 関連用語
 
-* **ソフトウェアサプライチェーンセキュリティ (SSCS):** ソフトウェアの設計から配布、運用に至る全プロセスにおけるセキュリティ脅威を管理・制御する体系です。
-* **SCA (Software Composition Analysis):** アプリケーションに含まれるオープンソースのセキュリティ脆弱性やライセンスリスクを分析する技術です。
-* **SLSA (Supply-chain Levels for Software Artifacts):** ソフトウェア成果物の完全性を保証するためにGoogleが提案したセキュリティフレームワークです。
+* <b>ソフトウェアサプライチェーンセキュリティ (SSCS):</b> ソフトウェアの設計から配布、運用に至る全プロセスにおけるセキュリティ脅威を管理・制御する体系です。
+* <b>SCA (Software Composition Analysis):</b> アプリケーションに含まれるオープンソースのセキュリティ脆弱性やライセンスリスクを分析する技術です。
+* <b>SLSA (Supply-chain Levels for Software Artifacts):</b> ソフトウェア成果物の完全性を保証するためにGoogleが提案したセキュリティフレームワークです。

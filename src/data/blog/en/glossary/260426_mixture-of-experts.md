@@ -25,6 +25,6 @@ Qwen3.5, a state-of-the-art Large Language Model (LLM), is a prime example of a 
 
 ## Related Terms
 
-- **Gating Network**: A control neural network that decides which expert to send the input tokens to and assigns weights accordingly.
-- **Sparse Activation**: A method of reducing resource consumption by activating only specific parts of the neural network that meet certain conditions.
-- **Parameter Efficiency**: A performance metric for optimizing the resources actually used in computation while increasing the model's overall size.
+- <b>Gating Network</b>: A control neural network that decides which expert to send the input tokens to and assigns weights accordingly.
+- <b>Sparse Activation</b>: A method of reducing resource consumption by activating only specific parts of the neural network that meet certain conditions.
+- <b>Parameter Efficiency</b>: A performance metric for optimizing the resources actually used in computation while increasing the model's overall size.

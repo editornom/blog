@@ -51,17 +51,17 @@ In practice, forced synchronization using commands such as `git merge -X ours` i
 
 When comparing the traditional feature branch method with the Stacked PRs workflow, the costs and benefits of each approach are starkly different.
 
-- **Traditional Feature Branch**
-  - **Review Size**: Large (often over 1,000 lines, leading to high review fatigue)
-  - **Development Flow**: Difficult to proceed with follow-up work until the PR is approved
-  - **History Management**: Relatively simple, as standard Git functions are sufficient
-  - **Risk of Human Error**: Relatively low, following standard merge processes
+- <b>Traditional Feature Branch</b>
+  - <b>Review Size</b>: Large (often over 1,000 lines, leading to high review fatigue)
+  - <b>Development Flow</b>: Difficult to proceed with follow-up work until the PR is approved
+  - <b>History Management</b>: Relatively simple, as standard Git functions are sufficient
+  - <b>Risk of Human Error</b>: Relatively low, following standard merge processes
 
-- **Stacked PRs Workflow**
-  - **Review Size**: Small (segmented into logical units, providing high readability)
-  - **Development Flow**: Work on upper layers can continue even while waiting for approval
-  - **History Management**: Highly complex, requiring frequent rebasing and reference updates
-  - **Risk of Human Error**: High potential for manual conflict resolution and branch pointing errors
+- <b>Stacked PRs Workflow</b>
+  - <b>Review Size</b>: Small (segmented into logical units, providing high readability)
+  - <b>Development Flow</b>: Work on upper layers can continue even while waiting for approval
+  - <b>History Management</b>: Highly complex, requiring frequent rebasing and reference updates
+  - <b>Risk of Human Error</b>: High potential for manual conflict resolution and branch pointing errors
 
 The 'fast feedback loop' promised by Stacked PRs is attractive, but the lack of a robust toolchain to support it is a major obstacle. While tools like Graphite and jj are being proposed as alternatives, issues with universal accessibility—such as installation constraints on certain operating systems or forced Node.js environments—persist. Attempting to maintain this system manually without dedicated tools is akin to betting the fate of the system on the technical virtuosity of individuals rather than an automated pipeline.
 

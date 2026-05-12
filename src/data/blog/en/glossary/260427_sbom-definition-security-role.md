@@ -25,6 +25,6 @@ When a critical security vulnerability is discovered in a specific open-source l
 
 ## Related Terms
 
-* **Software Supply Chain Security (SSCS):** A framework for managing and controlling security threats throughout the entire software lifecycle, from initial design and development to deployment and operation.
-* **SCA (Software Composition Analysis):** A technology used to analyze security vulnerabilities and license risks associated with open-source components embedded in an application.
-* **SLSA (Supply-chain Levels for Software Artifacts):** A security framework proposed by Google to ensure the integrity of software artifacts throughout the supply chain.
+* <b>Software Supply Chain Security (SSCS):</b> A framework for managing and controlling security threats throughout the entire software lifecycle, from initial design and development to deployment and operation.
+* <b>SCA (Software Composition Analysis):</b> A technology used to analyze security vulnerabilities and license risks associated with open-source components embedded in an application.
+* <b>SLSA (Supply-chain Levels for Software Artifacts):</b> A security framework proposed by Google to ensure the integrity of software artifacts throughout the supply chain.

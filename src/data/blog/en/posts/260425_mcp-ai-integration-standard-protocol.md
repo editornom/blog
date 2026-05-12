@@ -28,9 +28,9 @@ MCP transforms this into an 'N+M' architecture. By implementing a standard proto
 
 The protocol follows a clear Client-Host-Server hierarchy. When the client (the AI application) sends a request, the host (managed as a virtual machine or container) handles it, and the MCP server containing the actual data responds. The core of this system lies in the dynamic discovery of three key functions:
 
-- **Tools**: Definitions of executable functions the server can perform.
-- **Resources**: Data and read-only information held by the server.
-- **Prompts**: Predefined templates for performing specific tasks.
+- <b>Tools</b>: Definitions of executable functions the server can perform.
+- <b>Resources</b>: Data and read-only information held by the server.
+- <b>Prompts</b>: Predefined templates for performing specific tasks.
 
 ## Evolving Workflows: Beyond RAG to Real-Time Action
 

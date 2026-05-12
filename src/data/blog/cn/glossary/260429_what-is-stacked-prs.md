@@ -23,6 +23,6 @@ Stacked PRs 是一种工作流策略，它将大型功能拆分为逻辑上完�
 
 ## 相关术语 (Related Words)
 
-- **Rebase（变基）**: 一种 Git 命令，通过重新设置分支的基准提交来整理提交历史，是维持 Stacked PRs 一致性的核心工具。
-- **Squash Merge（压缩合并）**: 一种将多个提交合并为一个提交进行合并的方式，在 Stacked PRs 结构中，有时会成为导致与上层分支连接断开的技术债原因。
-- **Feature Branch（功能分支）**: 在一个分支中管理整个功能的传统方式，是与 Stacked PRs 相对的概念。
+- <b>Rebase（变基）</b>: 一种 Git 命令，通过重新设置分支的基准提交来整理提交历史，是维持 Stacked PRs 一致性的核心工具。
+- <b>Squash Merge（压缩合并）</b>: 一种将多个提交合并为一个提交进行合并的方式，在 Stacked PRs 结构中，有时会成为导致与上层分支连接断开的技术债原因。
+- <b>Feature Branch（功能分支）</b>: 在一个分支中管理整个功能的传统方式，是与 Stacked PRs 相对的概念。

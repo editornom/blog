@@ -25,6 +25,6 @@ SBOM (Software Bill of Materials，软件物料清单) 是详细记录构成软�
 
 ## 相关术语
 
-* **软件供应链安全 (SSCS)：** 指从软件设计、开发、发布到运营的全过程，对安全威胁进行管理和控制的体系。
-* **SCA (Software Composition Analysis)：** 软件成分分析，是一种用于分析应用程序中所含开源组件的安全漏洞和许可证风险的技术。
-* **SLSA (Supply-chain Levels for Software Artifacts)：** 由 Google 提出的安全框架，旨在确保软件产出物的完整性。
+* <b>软件供应链安全 (SSCS)：</b> 指从软件设计、开发、发布到运营的全过程，对安全威胁进行管理和控制的体系。
+* <b>SCA (Software Composition Analysis)：</b> 软件成分分析，是一种用于分析应用程序中所含开源组件的安全漏洞和许可证风险的技术。
+* <b>SLSA (Supply-chain Levels for Software Artifacts)：</b> 由 Google 提出的安全框架，旨在确保软件产出物的完整性。

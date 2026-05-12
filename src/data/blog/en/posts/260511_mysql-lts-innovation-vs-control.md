@@ -71,10 +71,10 @@ While this may be a desperate measure to maintain service availability, from an 
 
 | Category | MySQL Innovation Track | MySQL LTS Track (8.4/9.7) | AWS RDS MySQL 8.0 (EOL Response) |
 | :--- | :--- | :--- | :--- |
-| **Primary Objective** | Latest features & rapid adoption | Stability & bug fix-centric | Legacy maintenance & migration prep |
-| **Support Period** | Until next minor version release | Up to 8 years (5yr Premier + 3yr Extended) | Standard support ends July 2026 |
-| **Cost Risk** | High effort due to frequent updates | Optimized costs via long-term support | Extra charges per <a href="/en/glossary/what-is-vcpu" class="glossary-tooltip" data-definition="A Virtual Central Processing Unit, which is a unit of a physical processor's resources logically partitioned and allocated to a user in a cloud environment.">vCPU</a> after EOL (Extended) |
-| **Update Method** | Quarterly new feature additions | Security patches without functional changes | Forced transition to paid support after Aug 2026 |
+| <b>Primary Objective</b> | Latest features & rapid adoption | Stability & bug fix-centric | Legacy maintenance & migration prep |
+| <b>Support Period</b> | Until next minor version release | Up to 8 years (5yr Premier + 3yr Extended) | Standard support ends July 2026 |
+| <b>Cost Risk</b> | High effort due to frequent updates | Optimized costs via long-term support | Extra charges per <a href="/en/glossary/what-is-vcpu" class="glossary-tooltip" data-definition="A Virtual Central Processing Unit, which is a unit of a physical processor's resources logically partitioned and allocated to a user in a cloud environment.">vCPU</a> after EOL (Extended) |
+| <b>Update Method</b> | Quarterly new feature additions | Security patches without functional changes | Forced transition to paid support after Aug 2026 |
 
 ### AWS RDS MySQL 8.0 EOL and the Extended Support 'Cost Bomb'
 
@@ -98,11 +98,11 @@ The upcoming year 2026 is expected to be a major turning point for MySQL users. 
 
 What is needed now is not vague optimism, but a thorough assessment of the current status and the design of an actionable migration roadmap. It is a time that demands a strategic approach that goes beyond simply bumping a version to ensuring infrastructure stability for years to come.
 
-*   **April 2026**: Official End of Life (EOL) for MySQL 8.0 Community Support.
-*   **July 31, 2026**: End date for Amazon RDS MySQL 8.0 Standard Support.
-*   **$0.235 (vCPU/hour)**: Cost of AWS RDS Extended Support in Year 3 for the eu-west-2 region (a 100% increase over Year 1-2).
-*   **8 Years (96 Months)**: Total technical support period provided by MySQL 8.4 LTS.
-*   **7 Days Prior**: The notification period sent to users before Oracle HeatWave performs a forced update.
+*   <b>April 2026</b>: Official End of Life (EOL) for MySQL 8.0 Community Support.
+*   <b>July 31, 2026</b>: End date for Amazon RDS MySQL 8.0 Standard Support.
+*   <b>$0.235 (vCPU/hour)</b>: Cost of AWS RDS Extended Support in Year 3 for the eu-west-2 region (a 100% increase over Year 1-2).
+*   <b>8 Years (96 Months)</b>: Total technical support period provided by MySQL 8.4 LTS.
+*   <b>7 Days Prior</b>: The notification period sent to users before Oracle HeatWave performs a forced update.
 
 For a stable migration, you must first conduct a full inventory of the versions and dependencies of all currently used instances. Since transitioning to the 8.4 LTS version is the most certain way to secure long-term stability, it is wise to set up a test environment early and begin compatibility verification.
 

@@ -55,7 +55,7 @@ What makes this situation even more terrifying is that the system doesn't crash;
 
 ### Performance Bottlenecks: The Impact of Syscall Interception on Throughput
 
-The act of intercepting every system call for security purposes often becomes the primary culprit for **Resource Exhaustion** in high-load environments. The fleeting moments an eBPF program executes, when multiplied by tens of thousands of requests, can drive up overall service latency uncontrollably.
+The act of intercepting every system call for security purposes often becomes the primary culprit for <b>Resource Exhaustion</b> in high-load environments. The fleeting moments an eBPF program executes, when multiplied by tens of thousands of requests, can drive up overall service latency uncontrollably.
 
 System availability reaches a breaking point especially when helper functions are called excessively or when contention occurs over shared data maps. We must remember that the price of failing to optimize security performance is much higher than a simple increase in CPU usage.
 
@@ -63,7 +63,7 @@ System availability reaches a breaking point especially when helper functions ar
 
 ### Risks of Dynamic Rule Deployment: When Security Tools Halt the Entire System
 
-Many organizations prefer updating security rules dynamically to respond nimbly to threats. However, unverified logic deployed without meticulous consideration of **Workload Protection Performance** can cause unexpected overhead at the kernel level, potentially leading to system panics.
+Many organizations prefer updating security rules dynamically to respond nimbly to threats. However, unverified logic deployed without meticulous consideration of <b>Workload Protection Performance</b> can cause unexpected overhead at the kernel level, potentially leading to system panics.
 
 If the load generated when a single rule is applied to millions of packets or system calls isn't simulated in advance, the security tool itself becomes a weapon that dismantles your infrastructure. We must strictly control the availability risks hidden behind the convenience of real-time response.
 

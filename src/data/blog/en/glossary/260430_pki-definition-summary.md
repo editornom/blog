@@ -21,12 +21,12 @@ PKI (Public Key Infrastructure) is a comprehensive framework consisting of hardw
 
 ## Practical Use Cases
 
-- **HTTPS Secure Communication**: Used in SSL/TLS communication—symbolized by the padlock icon in browser address bars—to verify server authenticity and encrypt data transmission.
-- **Digital Signatures**: Applied to guarantee the integrity of electronic documents and verify the identity of the signatory, providing them with legal validity.
-- **Enterprise Security**: Serves as the backbone for corporate email encryption, user authentication for VPN access, and internal system access control.
+- <b>HTTPS Secure Communication</b>: Used in SSL/TLS communication—symbolized by the padlock icon in browser address bars—to verify server authenticity and encrypt data transmission.
+- <b>Digital Signatures</b>: Applied to guarantee the integrity of electronic documents and verify the identity of the signatory, providing them with legal validity.
+- <b>Enterprise Security</b>: Serves as the backbone for corporate email encryption, user authentication for VPN access, and internal system access control.
 
 ## Related Terms
 
-- **Asymmetric Encryption**: An encryption method that uses a pair of different keys—a public key and a private key—to perform encryption and decryption.
-- **Certificate Authority (CA)**: A trusted third-party entity that issues and manages digital certificates while certifying the ownership of public keys.
-- **RSA/ECC**: The primary representative algorithms widely used for generating certificates and encrypting data within a PKI environment.
+- <b>Asymmetric Encryption</b>: An encryption method that uses a pair of different keys—a public key and a private key—to perform encryption and decryption.
+- <b>Certificate Authority (CA)</b>: A trusted third-party entity that issues and manages digital certificates while certifying the ownership of public keys.
+- <b>RSA/ECC</b>: The primary representative algorithms widely used for generating certificates and encrypting data within a PKI environment.

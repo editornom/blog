@@ -21,12 +21,12 @@ Governance refers to the collection of processes, rules, and institutional frame
 
 ## Practical Use Cases
 
-1. **Data Governance**: The process of establishing data standards and management workflows to ensure the quality, availability, security, and integrity of data scattered across an organization.
-2. **AI Governance**: A framework for setting ethical standards, controlling for bias, and supervising compliance with model connection protocols (such as MCP) during the development and deployment of AI models.
-3. **IT Governance**: A strategic management approach that ensures IT initiatives align with business objectives while maintaining efficient IT resource allocation and robust risk management systems.
+1. <b>Data Governance</b>: The process of establishing data standards and management workflows to ensure the quality, availability, security, and integrity of data scattered across an organization.
+2. <b>AI Governance</b>: A framework for setting ethical standards, controlling for bias, and supervising compliance with model connection protocols (such as MCP) during the development and deployment of AI models.
+3. <b>IT Governance</b>: A strategic management approach that ensures IT initiatives align with business objectives while maintaining efficient IT resource allocation and robust risk management systems.
 
 ## Related Terminology
 
-1. **Compliance**: The state of adhering to external regulations, laws, guidelines, and industry practices, as well as internal corporate rules.
-2. **Risk Management**: A strategic process of identifying, assessing, and responding to factors that could potentially hinder the achievement of an organization's goals.
-3. **Interoperability**: The ability of different systems or software to exchange information and perform joint functions—a critical technical value that is secured through effective governance.
+1. <b>Compliance</b>: The state of adhering to external regulations, laws, guidelines, and industry practices, as well as internal corporate rules.
+2. <b>Risk Management</b>: A strategic process of identifying, assessing, and responding to factors that could potentially hinder the achievement of an organization's goals.
+3. <b>Interoperability</b>: The ability of different systems or software to exchange information and perform joint functions—a critical technical value that is secured through effective governance.

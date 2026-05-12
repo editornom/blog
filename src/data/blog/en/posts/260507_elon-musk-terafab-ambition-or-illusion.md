@@ -51,9 +51,9 @@ The absurdity of the 1-terawatt figure becomes clear when compared to the total 
 
 | Comparison Item | Total Power Capacity (South Korea) | Musk’s Terafab Goal |
 | :--- | :--- | :--- |
-| **Power Capacity** | Approx. 100 ~ 150 GW | 1,000 GW (1 TW) |
-| **Comparative Scale** | National-level grid standard | Needs ~7-10x Korea's total power |
-| **Feasibility Assessment** | Stable supply possible | Physically impossible for a single site |
+| <b>Power Capacity</b> | Approx. 100 ~ 150 GW | 1,000 GW (1 TW) |
+| <b>Comparative Scale</b> | National-level grid standard | Needs ~7-10x Korea's total power |
+| <b>Feasibility Assessment</b> | Stable supply possible | Physically impossible for a single site |
 
 As shown, for a single manufacturing facility to consume ten times the power of an entire industrialized nation, it would require dozens of dedicated nuclear power plants situated right next to the factory. Considering grid overhead and transmission efficiency, experts agree this is not a "technical challenge" but a physical impossibility.
 

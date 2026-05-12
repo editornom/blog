@@ -59,10 +59,10 @@ Ensuring consistency in security governance is another major challenge. Because 
 
 The market offers various integrated management tools to solve these complexities. However, each solution has limitations as distinct as its own philosophy.
 
-- **Google Cloud Anthos**: Provides powerful orchestration based on Kubernetes, but its flexibility in other cloud environments is limited as it is optimized for the GKE environment.
-- **HCP Terraform**: The industry standard for defining infrastructure through declarative code, but uncertainty in the ecosystem has grown following the transition to a Business Source License (BSL).
-- **HPE Morpheus**: Specialized in enterprise governance and cost analysis, but it has high initial introduction costs and a degree of platform closedness.
-- **Spectro Cloud Palette**: Allows for flexible management based on Cluster APIs, but requires high technical proficiency from operational personnel.
+- <b>Google Cloud Anthos</b>: Provides powerful orchestration based on Kubernetes, but its flexibility in other cloud environments is limited as it is optimized for the GKE environment.
+- <b>HCP Terraform</b>: The industry standard for defining infrastructure through declarative code, but uncertainty in the ecosystem has grown following the transition to a Business Source License (BSL).
+- <b>HPE Morpheus</b>: Specialized in enterprise governance and cost analysis, but it has high initial introduction costs and a degree of platform closedness.
+- <b>Spectro Cloud Palette</b>: Allows for flexible management based on Cluster APIs, but requires high technical proficiency from operational personnel.
 
 Recent changes in Terraform's licensing policy have caused a major stir in the open-source ecosystem, leading companies to seek alternatives like OpenTofu or return to commercial vendor platforms. Ultimately, one must not overlook the fact that a tool introduced for management can lead to another form of vendor lock-in.
 

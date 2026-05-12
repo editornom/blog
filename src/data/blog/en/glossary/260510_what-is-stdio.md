@@ -20,6 +20,6 @@ STDIO (Standard Input/Output) refers to the standard streams that serve as the d
 In the Model Context Protocol (MCP) specification, when client and server processes installed in a local environment communicate, they use the system's STDIO as the primary transport channel instead of opening separate network ports. This approach is utilized to reduce data transmission latency through direct input/output between processes and to enhance security in local environments by fundamentally blocking potential external access through the network layer.
 
 #### Related Words
-- **IPC (Inter-Process Communication)**: Refers to the mechanisms within an operating system that allow processes to exchange data; STDIO is one of the most fundamental communication methods among them.
-- **JSON-RPC**: A lightweight remote procedure call protocol used to exchange structured commands and responses via STDIO streams.
-- **Standard Stream**: A collective term for the standard model of data flow connecting a program to a system terminal or input/output devices.
+- <b>IPC (Inter-Process Communication)</b>: Refers to the mechanisms within an operating system that allow processes to exchange data; STDIO is one of the most fundamental communication methods among them.
+- <b>JSON-RPC</b>: A lightweight remote procedure call protocol used to exchange structured commands and responses via STDIO streams.
+- <b>Standard Stream</b>: A collective term for the standard model of data flow connecting a program to a system terminal or input/output devices.

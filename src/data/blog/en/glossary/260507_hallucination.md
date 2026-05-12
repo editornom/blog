@@ -22,6 +22,6 @@ Hallucination refers to a phenomenon where a Large Language Model (LLM) generate
 A practical example of hallucination in a professional setting includes an AI describing a non-existent award or educational background in detail when asked for a specific person's biography. Another instance is when an AI cites non-existent clauses or legal precedents as the basis for a legal review.
 
 ### Related Words
-* **Stochastic Parrot**: A metaphorical term describing the characteristic of an LLM to generate language through mechanical statistical learning without any actual understanding of meaning.
-* **Retrieval-Augmented Generation (RAG)**: A technical alternative that increases the accuracy of answers and suppresses hallucinations by referencing reliable external information in real-time.
-* **Transformer Architecture**: A model structure that understands context based on the attention mechanism but inherently contains the root cause of hallucinations due to its probability-based computational system.
+* <b>Stochastic Parrot</b>: A metaphorical term describing the characteristic of an LLM to generate language through mechanical statistical learning without any actual understanding of meaning.
+* <b>Retrieval-Augmented Generation (RAG)</b>: A technical alternative that increases the accuracy of answers and suppresses hallucinations by referencing reliable external information in real-time.
+* <b>Transformer Architecture</b>: A model structure that understands context based on the attention mechanism but inherently contains the root cause of hallucinations due to its probability-based computational system.

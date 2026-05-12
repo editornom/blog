@@ -103,10 +103,10 @@ The comparative analysis table below synthesizes the latest survey indicators an
 
 | Category | Perception of the Rust Ecosystem (Hype) | Reality of Enterprise Adoption (Reality) |
 | :--- | :--- | :--- |
-| **Adoption Rate & Community** | A popular and hip latest technology that 65% are enthusiastic about | A narrow and closed professional ecosystem where only 26% apply it to production |
-| **Dev Productivity & Architecture** | Perfect and elegant maintainability guaranteed by memory safety | CI/CD feedback loop delays due to specific runtime dependencies and compile bottlenecks |
-| **Talent Supply & Learning Curve** | Quickly surmountable with excellent official documentation and community help | Extreme shortage of senior talent and massive transition costs for existing C/C++ developers |
-| **AI Tool Utilization (89% Reliance)** | A savior that will magically solve complex syntax and compile errors | Risks of 'unverified safety' hiding business flaws and reckless use of `unsafe` blocks |
+| <b>Adoption Rate & Community</b> | A popular and hip latest technology that 65% are enthusiastic about | A narrow and closed professional ecosystem where only 26% apply it to production |
+| <b>Dev Productivity & Architecture</b> | Perfect and elegant maintainability guaranteed by memory safety | CI/CD feedback loop delays due to specific runtime dependencies and compile bottlenecks |
+| <b>Talent Supply & Learning Curve</b> | Quickly surmountable with excellent official documentation and community help | Extreme shortage of senior talent and massive transition costs for existing C/C++ developers |
+| <b>AI Tool Utilization (89% Reliance)</b> | A savior that will magically solve complex syntax and compile errors | Risks of 'unverified safety' hiding business flaws and reckless use of `unsafe` blocks |
 
 ![Rust Ecosystem - A split screen contrasting a bright, orderly geometric exterior on the left with a complex, tangled, and obstructed reality on the right.](../../../../../source/posts/Rust_Ecosystem/d28e5b64-2.webp)
 

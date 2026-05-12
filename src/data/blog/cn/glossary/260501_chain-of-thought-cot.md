@@ -25,6 +25,6 @@ modDatetime: 2026-05-01 19:58:22.446382+09:00
 
 ## 相关术语 (Related Words)
 
-- **潜在空间推理 (Latent Space Reasoning)**：一种通过模型内部的向量运算而非文本 Token 来处理推理过程，以实现效率最大化的技术。
-- **可解释性 (Interpretability)**：指人工智能得出特定结论的原因能够被人类理解并说明的性质。
-- **提示工程 (Prompt Engineering)**：为了获得理想结果而对输入模型的内容、指令或示例进行优化的技术。
+- <b>潜在空间推理 (Latent Space Reasoning)</b>：一种通过模型内部的向量运算而非文本 Token 来处理推理过程，以实现效率最大化的技术。
+- <b>可解释性 (Interpretability)</b>：指人工智能得出特定结论的原因能够被人类理解并说明的性质。
+- <b>提示工程 (Prompt Engineering)</b>：为了获得理想结果而对输入模型的内容、指令或示例进行优化的技术。

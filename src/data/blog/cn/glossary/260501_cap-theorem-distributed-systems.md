@@ -21,8 +21,8 @@ CAP 定理是分布式计算系统中的一项基本原则，指出系统无法�
 
 ## 实际应用案例 (Practical Use Case)
 
-- **CP (Consistency + Partition Tolerance) 模型**：适用于对数据准确性和完整性要求极高的金融交易、资产管理和库存系统等。当发生网络分区时，系统为了防止数据不一致会拒绝响应或延迟响应，以维持一致性。Google Spanner、MongoDB、ZooKeeper 等均属于此类。
-- **AP (Availability + Partition Tolerance) 模型**：适用于强调服务不间断响应和用户体验的社交媒体、内容流媒体和购物车系统等。当发生网络故障时，即使部分数据不是最新状态，系统也会从可用节点立即提供响应，以保证服务的连续性。Apache Cassandra、Amazon DynamoDB 是其中的代表。
+- <b>CP (Consistency + Partition Tolerance) 模型</b>：适用于对数据准确性和完整性要求极高的金融交易、资产管理和库存系统等。当发生网络分区时，系统为了防止数据不一致会拒绝响应或延迟响应，以维持一致性。Google Spanner、MongoDB、ZooKeeper 等均属于此类。
+- <b>AP (Availability + Partition Tolerance) 模型</b>：适用于强调服务不间断响应和用户体验的社交媒体、内容流媒体和购物车系统等。当发生网络故障时，即使部分数据不是最新状态，系统也会从可用节点立即提供响应，以保证服务的连续性。Apache Cassandra、Amazon DynamoDB 是其中的代表。
 
 ## 相关词汇 (Related Words)
 

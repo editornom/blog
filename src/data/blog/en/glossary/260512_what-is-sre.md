@@ -22,6 +22,6 @@ Site Reliability Engineering (SRE) is a system operation methodology created by 
 When implementing security technologies such as eBPF, SREs measure the load that security logic places on system availability and establish monitoring frameworks. If a drop in system call processing speed is detected after a security program deployment—risking the depletion of a pre-defined Error Budget—the SRE team may decide to halt the deployment or prioritize performance optimization to ensure system availability.
 
 ## Related Terms
-* **DevOps**: A cultural philosophy that emphasizes collaboration between software development and operations. SRE is often viewed as a specific implementation model of DevOps through engineering techniques.
-* **SLO (Service Level Objective)**: Specific target values for performance and availability that a service provider aims to achieve.
-* **Error Budget**: The total amount of allowable system downtime or performance degradation while still meeting the SLO. It serves as a benchmark for deciding whether to release new features or focus on stability.
+* <b>DevOps</b>: A cultural philosophy that emphasizes collaboration between software development and operations. SRE is often viewed as a specific implementation model of DevOps through engineering techniques.
+* <b>SLO (Service Level Objective)</b>: Specific target values for performance and availability that a service provider aims to achieve.
+* <b>Error Budget</b>: The total amount of allowable system downtime or performance degradation while still meeting the SLO. It serves as a benchmark for deciding whether to release new features or focus on stability.

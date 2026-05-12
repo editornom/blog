@@ -88,11 +88,11 @@ To secure practical <a href="/en/glossary/ai-readiness" class="glossary-tooltip"
 
 Complete autonomy is premature; the 'Human-on-the-loop' model, where humans guard the gates of critical decision-making, is the only alternative for managing risk. Instead of uncritically accepting every action proposed by an agent, the orchestration layer must be thickly designed to operate only within a verified governance framework.
 
-**[Data-driven AgentOps Performance and Market Outlook]**
-- **IBM IBV Report Data**: Companies adopting AI agents are recording an average ROI of 1.7x, with optimized cases reaching up to 30:1 within 18 months.
-- **Operational Efficiency**: Infrastructure failure rates can decrease by 73% and maintenance costs can be reduced by 10-40% when predictive maintenance agents are introduced.
-- **Market Trend**: According to Gartner, inquiries related to 'Agentic AI' exploded by 750% in Q4 compared to Q2 2024, emerging as a top strategic technology.
-- **Security Risk**: While detection speed improves with AI SOC adoption, the probability of audit non-compliance increases if transparency is lacking.
+<b>[Data-driven AgentOps Performance and Market Outlook]</b>
+- <b>IBM IBV Report Data</b>: Companies adopting AI agents are recording an average ROI of 1.7x, with optimized cases reaching up to 30:1 within 18 months.
+- <b>Operational Efficiency</b>: Infrastructure failure rates can decrease by 73% and maintenance costs can be reduced by 10-40% when predictive maintenance agents are introduced.
+- <b>Market Trend</b>: According to Gartner, inquiries related to 'Agentic AI' exploded by 750% in Q4 compared to Q2 2024, emerging as a top strategic technology.
+- <b>Security Risk</b>: While detection speed improves with AI SOC adoption, the probability of audit non-compliance increases if transparency is lacking.
 
 > "The autonomy of agentic AI implies a vacuum of responsibility, which is the most fatal vulnerability of modern corporate governance."
 

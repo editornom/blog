@@ -19,9 +19,9 @@ modDatetime: 2026-04-29 17:09:43.972005+09:00
 
 TTP is an acronym for Tactics, Techniques, and Procedures. In the field of cybersecurity, it is a conceptual framework used to systematize the unique behavioral patterns and strategic methodologies exhibited by attackers or specific threat groups during a cyberattack. Rather than simply identifying fragmented Indicators of Compromise (IoC)—such as IP addresses or file hashes—TTP focuses on analyzing the logical flow and execution structure an attacker employs to reach their objective. 
 
-*   **Tactics** represent the high-level strategic goals or the 'why' behind an attack.
-*   **Techniques** describe the specific methods or the 'how' used to achieve those tactical objectives.
-*   **Procedures** refer to the detailed, step-by-step sequences of actions taken to execute those techniques.
+*   <b>Tactics</b> represent the high-level strategic goals or the 'why' behind an attack.
+*   <b>Techniques</b> describe the specific methods or the 'how' used to achieve those tactical objectives.
+*   <b>Procedures</b> refer to the detailed, step-by-step sequences of actions taken to execute those techniques.
 
 ## Practical Application
 
@@ -29,6 +29,6 @@ Security Operations Centers (SOC) and threat analysts identify an attacker's TTP
 
 ## Related Concepts
 
-*   **IoC (Indicators of Compromise):** Technical markers such as IP addresses, domains, and file hashes that serve as forensic evidence of a potential security breach.
-*   **MITRE ATT&CK:** A globally accessible knowledge base and framework that classifies and standardizes adversary tactics and techniques based on real-world observations.
-*   **Cyber Kill Chain:** A model that breaks down the stages of a cyberattack from initial reconnaissance to the final completion of the attacker's objective.
+*   <b>IoC (Indicators of Compromise):</b> Technical markers such as IP addresses, domains, and file hashes that serve as forensic evidence of a potential security breach.
+*   <b>MITRE ATT&CK:</b> A globally accessible knowledge base and framework that classifies and standardizes adversary tactics and techniques based on real-world observations.
+*   <b>Cyber Kill Chain:</b> A model that breaks down the stages of a cyberattack from initial reconnaissance to the final completion of the attacker's objective.

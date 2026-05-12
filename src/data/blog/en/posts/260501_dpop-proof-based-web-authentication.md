@@ -36,10 +36,10 @@ The first factor to review when considering DPoP adoption is the additional comp
 
 However, the implementation phase requires sophisticated handling. One must construct an accurate `htu` excluding the query string from the URL path, and a precise synchronization strategy is needed to prevent `iat` (issued at) verification errors caused by system clock discrepancies between the client and server. In particular, how to securely preserve the private key within the browser in an SPA (Single Page Application) environment remains a key design challenge.
 
-- **Security Model**: While the existing Bearer method is simple possession-based, DPoP aims for a robust model based on proof-of-issuer.
-- **Theft Mitigation**: Even if a token is leaked, it cannot be reused without the private key, preventing sequential security breaches.
-- **Implementation Complexity**: It has a moderate level of complexity as it requires the implementation of key management and signing logic.
-- **Primary Targets**: Suitable for financial, healthcare, and enterprise security environments where a high level of trust is required.
+- <b>Security Model</b>: While the existing Bearer method is simple possession-based, DPoP aims for a robust model based on proof-of-issuer.
+- <b>Theft Mitigation</b>: Even if a token is leaked, it cannot be reused without the private key, preventing sequential security breaches.
+- <b>Implementation Complexity</b>: It has a moderate level of complexity as it requires the implementation of key management and signing logic.
+- <b>Primary Targets</b>: Suitable for financial, healthcare, and enterprise security environments where a high level of trust is required.
 
 ![DPoP (RFC 9449) - A comparison chart highlighting the differences between standard Bearer tokens and security-enhanced DPoP tokens, focusing on authentication factors and replay prevention.](../../../../../source/posts/DPoP_%28RFC_9449%29/b04236db-1.webp)
 

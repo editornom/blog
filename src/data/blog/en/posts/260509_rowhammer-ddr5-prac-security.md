@@ -69,9 +69,9 @@ faqs:
 
 | Attack Technique | Key Features and Target | Security Blind Spot |
 | :--- | :--- | :--- |
-| **Phoenix** | Bypasses all tested SK Hynix DDR5 models | Exploits blind spots in TRR sampling logic |
-| **GPUBreach** | Gains root access via NVIDIA GDDR6 | Lack of defense in GPU memory architecture |
-| **PRAC** | In-DRAM counting technology proposed by MS | Lack of interoperability due to incomplete standardization |
+| <b>Phoenix</b> | Bypasses all tested SK Hynix DDR5 models | Exploits blind spots in TRR sampling logic |
+| <b>GPUBreach</b> | Gains root access via NVIDIA GDDR6 | Lack of defense in GPU memory architecture |
+| <b>PRAC</b> | In-DRAM counting technology proposed by MS | Lack of interoperability due to incomplete standardization |
 
 ## 4. Future Silicon-Level Memory Security Architecture
 

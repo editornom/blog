@@ -74,9 +74,9 @@ faqs:
 
 | 공격 기법 | 주요 특징 및 위협 대상 | 보안 사각지대 |
  | :--- | :--- | :--- |
- | **Phoenix** | SK Hynix DDR5 전 모델 우회 | TRR 샘플링 로직의 사각지대 활용 |
- | **GPUBreach** | NVIDIA GDDR6 루트 권한 탈취 | GPU 메모리 아키텍처의 방어 부재 |
- | **PRAC** | MS 제안 DRAM 내 카운팅 기술 | 미완의 표준화로 인한 상호 운용성 결여 |
+ | <b>Phoenix</b> | SK Hynix DDR5 전 모델 우회 | TRR 샘플링 로직의 사각지대 활용 |
+ | <b>GPUBreach</b> | NVIDIA GDDR6 루트 권한 탈취 | GPU 메모리 아키텍처의 방어 부재 |
+ | <b>PRAC</b> | MS 제안 DRAM 내 카운팅 기술 | 미완의 표준화로 인한 상호 운용성 결여 |
 
 ## 4. 미래의 실리콘 레벨 메모리 보안 아키텍처
 

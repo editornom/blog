@@ -62,10 +62,10 @@ faqs:
 
 | 구분 | Classic BPF (1992) | Extended BPF (2014) | Sidecar/Agent (기존 방식) |
 | :--- | :--- | :--- | :--- |
-| **레지스터 구조** | 2개 (32-bit) | 10개 (64-bit) | N/A (Userland) |
-| **주요 용도** | 네트워크 패킷 필터링 | 네트워킹, 보안, 관측성 | 앱 레지스트리, 로그 수집 |
-| **유연성** | 매우 낮음 (고정 기능) | 매우 높음 (Programmable) | 중간 (코드 수정 필요) |
-| **성능 오버헤드** | 최소 | Near-Native (<a href="/ko/glossary/what-is-jit" class="glossary-tooltip" data-definition="프로그램을 실행하는 시점에 바이트코드를 기계어로 직접 번역하여 하드웨어에서 즉시 실행될 수 있도록 함으로써 실행 성능을 최적화하는 기술입니다.">JIT</a> 적용) | 높음 (Context Switch 발생) |
+| <b>레지스터 구조</b> | 2개 (32-bit) | 10개 (64-bit) | N/A (Userland) |
+| <b>주요 용도</b> | 네트워크 패킷 필터링 | 네트워킹, 보안, 관측성 | 앱 레지스트리, 로그 수집 |
+| <b>유연성</b> | 매우 낮음 (고정 기능) | 매우 높음 (Programmable) | 중간 (코드 수정 필요) |
+| <b>성능 오버헤드</b> | 최소 | Near-Native (<a href="/ko/glossary/what-is-jit" class="glossary-tooltip" data-definition="프로그램을 실행하는 시점에 바이트코드를 기계어로 직접 번역하여 하드웨어에서 즉시 실행될 수 있도록 함으로써 실행 성능을 최적화하는 기술입니다.">JIT</a> 적용) | 높음 (Context Switch 발생) |
 
 ## 2. 기술적 메커니즘: 샌드박싱과 검증기가 보장하는 안전한 혁신
 
@@ -92,10 +92,10 @@ eBPF가 제공하는 강력한 관측성 이면에는 우리가 흔히 놓치는
 ### 4.1. BCC와 bpftrace를 활용한 시스템 통찰의 실제
 eBPF를 실제 업무에 적용하기 위해 가장 먼저 접하게 되는 도구는 BCC와 bpftrace입니다. BCC는 파이썬과 C를 결합하여 복잡한 시스템 분석 도구를 개발할 수 있게 해주며, bpftrace는 한 줄의 명령어로 커널 내부의 상태를 들여다볼 수 있는 강력한 인터페이스를 제공합니다. 이러한 도구들은 성능 병목 현상을 진단하고 보안 위협을 실시간으로 감지하는 데 있어 대체 불가능한 무기가 되어줍니다.
 
-* **1992년**: Steven McCanne 등에 의해 BPF(Berkeley Packet Filter) 최초 논문 발표.
-* **2014년**: Alexei Starovoitov가 eBPF를 리눅스 커널 3.18에 도입하여 범용 런타임으로 확장.
-* **2020년**: CO-RE(Compile Once, Run Everywhere) 기술을 통해 커널 버전 독립적 배포 실현.
-* **빅테크 도입 사례**: Meta(L4 로드밸런서 Katran), Google(GKE 네트워킹), Netflix(Brendan Gregg의 성능 분석 도구).
+* <b>1992년</b>: Steven McCanne 등에 의해 BPF(Berkeley Packet Filter) 최초 논문 발표.
+* <b>2014년</b>: Alexei Starovoitov가 eBPF를 리눅스 커널 3.18에 도입하여 범용 런타임으로 확장.
+* <b>2020년</b>: CO-RE(Compile Once, Run Everywhere) 기술을 통해 커널 버전 독립적 배포 실현.
+* <b>빅테크 도입 사례</b>: Meta(L4 로드밸런서 Katran), Google(GKE 네트워킹), Netflix(Brendan Gregg의 성능 분석 도구).
 
 ### 4.2. 커널 버전 의존성과 CO-RE(Compile Once, Run Everywhere)의 현실적 과제
 하지만 실무 현장에서는 커널 버전마다 달라지는 구조체 정보 때문에 eBPF 프로그램을 배포하는 것이 결코 쉽지 않았습니다. 이를 해결하기 위해 등장한 CO-RE 기술은 컴파일 시점이 아닌 실행 시점에 커널의 레이아웃을 동적으로 조정하여 '한 번의 컴파일로 어디서든 실행'하는 이상을 실현하고자 노력하고 있습니다. 그럼에도 불구하고 여전히 운영 환경의 파편화된 커널 버전은 엔지니어들에게 큰 도전 과제로 남아 있습니다.

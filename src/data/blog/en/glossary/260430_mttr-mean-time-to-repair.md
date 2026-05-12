@@ -25,6 +25,6 @@ In environments where Agentic AIOps is implemented, AI agents analyze telemetry 
 
 ## Related Terms
 
-- **MTBF (Mean Time Between Failures)**
-- **MTTF (Mean Time To Failure)**
-- **SLA (Service Level Agreement)**
+- <b>MTBF (Mean Time Between Failures)</b>
+- <b>MTTF (Mean Time To Failure)</b>
+- <b>SLA (Service Level Agreement)</b>

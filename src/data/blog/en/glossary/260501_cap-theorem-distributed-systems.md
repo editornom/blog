@@ -21,8 +21,8 @@ The CAP theorem is a fundamental principle in distributed computing which states
 
 ## Practical Implementation & Real-World Examples
 
-- **CP (Consistency + Partition Tolerance) Model**: This model is prioritized in systems where data accuracy and integrity are paramount, such as financial transactions, asset management, and inventory systems. In the event of a network partition, the system maintains consistency by refusing or delaying responses to prevent data discrepancies. Notable examples include Google Spanner, MongoDB, and ZooKeeper.
-- **AP (Availability + Partition Tolerance) Model**: This model is ideal for services where uninterrupted uptime and a seamless user experience are critical, such as social media feeds, content streaming, and shopping cart systems. When a network failure occurs, the system ensures service continuity by providing immediate responses from available nodes, even if some data might not be perfectly up-to-date. Apache Cassandra and Amazon DynamoDB are representative examples.
+- <b>CP (Consistency + Partition Tolerance) Model</b>: This model is prioritized in systems where data accuracy and integrity are paramount, such as financial transactions, asset management, and inventory systems. In the event of a network partition, the system maintains consistency by refusing or delaying responses to prevent data discrepancies. Notable examples include Google Spanner, MongoDB, and ZooKeeper.
+- <b>AP (Availability + Partition Tolerance) Model</b>: This model is ideal for services where uninterrupted uptime and a seamless user experience are critical, such as social media feeds, content streaming, and shopping cart systems. When a network failure occurs, the system ensures service continuity by providing immediate responses from available nodes, even if some data might not be perfectly up-to-date. Apache Cassandra and Amazon DynamoDB are representative examples.
 
 ## Related Key Terms
 

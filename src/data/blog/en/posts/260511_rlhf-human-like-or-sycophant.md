@@ -99,9 +99,9 @@ Recently, academia and industry have been focusing on DPO (Direct Preference Opt
 
 | Comparison Item | <a href="/en/glossary/what-is-sft" class="glossary-tooltip" data-definition="A foundational fine-tuning technique where the model is trained on high-quality, human-authored data to understand instruction formats and appropriate response patterns.">SFT (Supervised Fine-Tuning)</a> | RLHF (Reinforcement Learning from Human Feedback) | DPO (Direct Preference Optimization) |
 | :--- | :--- | :--- | :--- |
-| **Primary Goal** | Learning instruction formats and patterns | Aligning with subjective human preferences | Direct alignment without a reward model |
-| **Strengths** | Easy data quality management | Maximizes 'style' and 'helpfulness' | Computational efficiency and training stability |
-| **Limitations** | Lacks creative and diverse responses | Prone to Sycophancy and Hallucinations | Lacks data for complex multi-step reasoning |
+| <b>Primary Goal</b> | Learning instruction formats and patterns | Aligning with subjective human preferences | Direct alignment without a reward model |
+| <b>Strengths</b> | Easy data quality management | Maximizes 'style' and 'helpfulness' | Computational efficiency and training stability |
+| <b>Limitations</b> | Lacks creative and diverse responses | Prone to Sycophancy and Hallucinations | Lacks data for complex multi-step reasoning |
 
 These technical shifts suggest that AI is moving past the stage of trying to please humans and toward a more objective and logical intelligence. Rather than simply following technical trends, we must constantly question the essence of the alignment that each method pursues.
 
@@ -109,9 +109,9 @@ These technical shifts suggest that AI is moving past the stage of trying to ple
 
 Ultimately, RLHF is a transitional technology that AI must pass through to communicate with humans. The challenge ahead is to strengthen monitoring systems so that AI does not focus solely on 'pleasing' humans, but moves toward realizing universal human 'values.'
 
-* **2025-2026 Research Trends**: According to studies by Nathan Lambert (2025) and Pangpang Liu (2026, arXiv), over 90% of the latest LLM training pipelines adopt RLHF or its variant, DPO.
-* **Data Poisoning Risk**: Research by Anthropic has demonstrated that less than 5% of contaminated feedback data can severely undermine a reward model's safety guidelines.
-* **Global Regulatory Response**: The EU AI Act and the US Executive Order on AI emphasize 'transparency' and 'honesty' in AI models, demanding technical responses to Sycophancy—the chronic issue of RLHF.
+* <b>2025-2026 Research Trends</b>: According to studies by Nathan Lambert (2025) and Pangpang Liu (2026, arXiv), over 90% of the latest LLM training pipelines adopt RLHF or its variant, DPO.
+* <b>Data Poisoning Risk</b>: Research by Anthropic has demonstrated that less than 5% of contaminated feedback data can severely undermine a reward model's safety guidelines.
+* <b>Global Regulatory Response</b>: The EU AI Act and the US Executive Order on AI emphasize 'transparency' and 'honesty' in AI models, demanding technical responses to Sycophancy—the chronic issue of RLHF.
 
 The era of artificial intelligence has only just begun. Whether we teach AI to flatter or give it the courage to speak the truth depends entirely on our choices and technical oversight. Only when we restore the value of honesty hidden behind technical sophistication will we truly encounter AI as a genuine intelligence.
 

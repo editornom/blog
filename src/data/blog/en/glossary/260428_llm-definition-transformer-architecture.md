@@ -21,12 +21,12 @@ A Large Language Model (LLM) is a deep neural network model designed to understa
 
 ## Practical Use Cases
 
-- **Natural Language Generation and Conversational Systems**: By utilizing decoder-only structures to predict the next word based on previous tokens, LLMs are used for operating chatbots and facilitating automated code completion.
-- **Document Summarization and Machine Translation**: Using a combined encoder-decoder structure, these models understand the context of input information and output it in a different language or as a condensed summary.
-- **Text Classification and Analysis**: Encoder-only models are employed to grasp context bidirectionally, performing sophisticated data analysis tasks such as spam filtering, sentiment analysis, and Named Entity Recognition (NER).
+- <b>Natural Language Generation and Conversational Systems</b>: By utilizing decoder-only structures to predict the next word based on previous tokens, LLMs are used for operating chatbots and facilitating automated code completion.
+- <b>Document Summarization and Machine Translation</b>: Using a combined encoder-decoder structure, these models understand the context of input information and output it in a different language or as a condensed summary.
+- <b>Text Classification and Analysis</b>: Encoder-only models are employed to grasp context bidirectionally, performing sophisticated data analysis tasks such as spam filtering, sentiment analysis, and Named Entity Recognition (NER).
 
 ## Key Terminology
 
-- **Transformer**: The deep learning architecture centered on the attention mechanism that has become the industry standard for modern LLMs.
-- **Self-Attention**: A technique that numerically calculates the semantic weight and relevance of each word relative to every other word within a sentence.
-- **Multi-Head Attention**: A structural approach that performs multiple attention operations in parallel to analyze grammatical and semantic relationships from various dimensional perspectives.
+- <b>Transformer</b>: The deep learning architecture centered on the attention mechanism that has become the industry standard for modern LLMs.
+- <b>Self-Attention</b>: A technique that numerically calculates the semantic weight and relevance of each word relative to every other word within a sentence.
+- <b>Multi-Head Attention</b>: A structural approach that performs multiple attention operations in parallel to analyze grammatical and semantic relationships from various dimensional perspectives.

@@ -89,14 +89,14 @@ Instead of scrambling to prevent an agent's erratic behavior, we should now focu
 
 | Element | Traditional Version Control (e.g., Git) | Agentic Version Control (AgentGit/MLflow) |
 | :--- | :--- | :--- |
-| **Core Management Target** | Deterministic Source Code | Non-deterministic Reasoning Logic & Prompts |
-| **Causes of Failure** | Logical Errors, Human Errors | Model Drift, Intelligence Regression, External Dependencies |
-| **Recovery Mechanism** | Code Revert | Stateful Revert & Branching based on Trajectories |
-| **Primary Metrics** | Build Success Rate, Test Coverage | Behavioral Accuracy, Reasoning Latency, Safety Score |
+| <b>Core Management Target</b> | Deterministic Source Code | Non-deterministic Reasoning Logic & Prompts |
+| <b>Causes of Failure</b> | Logical Errors, Human Errors | Model Drift, Intelligence Regression, External Dependencies |
+| <b>Recovery Mechanism</b> | Code Revert | Stateful Revert & Branching based on Trajectories |
+| <b>Primary Metrics</b> | Build Success Rate, Test Coverage | Behavioral Accuracy, Reasoning Latency, Safety Score |
 
 ### - Building a State Commit and Rollback System Based on AgentGit
 
-The **AgentGit (2511.00628)** paper, recently published on arXiv, proposes an innovative framework that inherits Git's philosophy for multi-agent systems. It provides the ability to commit an agent's state at specific points and immediately rollback to the reasoning trajectory of that point if an error occurs.
+The <b>AgentGit (2511.00628)</b> paper, recently published on arXiv, proposes an innovative framework that inherits Git's philosophy for multi-agent systems. It provides the ability to commit an agent's state at specific points and immediately rollback to the reasoning trajectory of that point if an error occurs.
 
 This enables 'cognitive recovery' rather than a simple process restart when an agent falls into a loop of incorrect judgment. Through the branching feature, strategies to explore various reasoning paths in parallel and select the optimal result also become possible.
 
@@ -109,9 +109,9 @@ In particular, by utilizing the LoggedModel feature provided by MLflow 3.0+, pro
 ![Agentic Version Control - An abstract representation of intelligence trajectories with overlapping glass paths glowing in amber and cyan on a dark navy background.](../../../../../source/posts/Agentic_Version_Control/f64cb98b-1.webp)
 
 The urgency of agent management can be seen in the following figures:
-- **40%**: The proportion of AI agent failures in production environments caused by model drift. (Source: MLflow Industry Report)
-- **arXiv:2511.00628**: The 'AgentGit' paper published in November 2025, which is the standard technology for implementing branching and rollback functions in Multi-Agent Systems (MAS).
-- **MLflow 3.0+**: The industry standard for managing LLM lifecycles by integrating prompts and evaluation metrics into a single artifact.
+- <b>40%</b>: The proportion of AI agent failures in production environments caused by model drift. (Source: MLflow Industry Report)
+- <b>arXiv:2511.00628</b>: The 'AgentGit' paper published in November 2025, which is the standard technology for implementing branching and rollback functions in Multi-Agent Systems (MAS).
+- <b>MLflow 3.0+</b>: The industry standard for managing LLM lifecycles by integrating prompts and evaluation metrics into a single artifact.
 
 ## 4. Conclusion: Engineer the Agent, or Be Engineered by Chaos?
 

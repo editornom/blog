@@ -75,9 +75,9 @@ However, these attempts do not necessarily solve the network latency or orchestr
 
 Security in a container environment should focus on building dynamic surveillance systems rather than setting up static barriers. If focus is placed solely on deployment speed, the following threats may arise:
 
-- **Continuous Vulnerability Management of Container Images**: Images composed of layer structures are prone to security holes over time, making real-time scanning pipelines essential.
-- **Adherence to the Principle of Least Privilege**: The practice of granting root privileges to processes inside a container for operational convenience often leads to the neutralization of the isolation environment.
-- **Runtime Security Monitoring**: To detect threats not found during static analysis, system calls occurring in running containers must be monitored in real-time.
+- <b>Continuous Vulnerability Management of Container Images</b>: Images composed of layer structures are prone to security holes over time, making real-time scanning pipelines essential.
+- <b>Adherence to the Principle of Least Privilege</b>: The practice of granting root privileges to processes inside a container for operational convenience often leads to the neutralization of the isolation environment.
+- <b>Runtime Security Monitoring</b>: To detect threats not found during static analysis, system calls occurring in running containers must be monitored in real-time.
 
 ![Containerization - Digital locks combined with circuit boards and laser scanners constantly inspecting rows of containers to maintain security.](../../../../../source/posts/Containerization/fc3cdf6b-2.webp)
 

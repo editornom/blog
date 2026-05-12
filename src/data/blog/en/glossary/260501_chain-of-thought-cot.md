@@ -25,6 +25,6 @@ CoT is primarily utilized in fields requiring multi-stage logical structures, su
 
 ## Related Words
 
-- **Latent Space Reasoning**: A technology that maximizes efficiency by processing reasoning through internal vector operations within the model rather than using text tokens.
-- **Interpretability**: The degree to which a human can understand and explain the logic behind how an AI reached a specific conclusion.
-- **Prompt Engineering**: The practice of optimizing instructions and examples provided to a model to elicit the most accurate and desired outputs.
+- <b>Latent Space Reasoning</b>: A technology that maximizes efficiency by processing reasoning through internal vector operations within the model rather than using text tokens.
+- <b>Interpretability</b>: The degree to which a human can understand and explain the logic behind how an AI reached a specific conclusion.
+- <b>Prompt Engineering</b>: The practice of optimizing instructions and examples provided to a model to elicit the most accurate and desired outputs.

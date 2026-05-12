@@ -47,11 +47,11 @@ Self-attention, the core mechanism of the Transformer, solved information bottle
 
 From a business perspective, economic stability is just as vital as the model's intellectual capability. The following points illustrate the technical position of Transformers compared to previous generation architectures:
 
-- **Data Processing**: RNN/LSTM processes data sequentially, whereas Transformers process in parallel.
-- **Long-range Dependencies**: Self-attention enables the capturing of long-term context.
-- **Training Speed**: Optimized for GPU utilization, making it advantageous for large-scale training.
-- **Inference Cost**: There is a cost-efficiency issue as computation increases exponentially with input length.
-- **Major Constraints**: Processing longer contexts results in massive memory usage and computational overhead.
+- <b>Data Processing</b>: RNN/LSTM processes data sequentially, whereas Transformers process in parallel.
+- <b>Long-range Dependencies</b>: Self-attention enables the capturing of long-term context.
+- <b>Training Speed</b>: Optimized for GPU utilization, making it advantageous for large-scale training.
+- <b>Inference Cost</b>: There is a cost-efficiency issue as computation increases exponentially with input length.
+- <b>Major Constraints</b>: Processing longer contexts results in massive memory usage and computational overhead.
 
 ![Transformer - A conceptual diagram representing semantic relationships between words like 'king', 'queen', 'man', and 'woman' as points in a 3D vector space.](../../../../../source/posts/Transformer/75bd69f9-1.webp)
 

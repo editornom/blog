@@ -23,6 +23,6 @@ When developing a large new feature, it is divided into logical units such as da
 
 ## Related Words
 
-- **Rebase**: A Git command that resets the base of a branch to another commit to align commit history; it is a core tool for maintaining the integrity of Stacked PRs.
-- **Squash Merge**: A method of merging that combines multiple commits into one; in a Stacked PRs structure, it can sometimes become a source of technical debt by breaking the connection with upstream branches.
-- **Feature Branch**: The traditional method of managing an entire feature in a single branch, which stands in contrast to the Stacked PRs approach.
+- <b>Rebase</b>: A Git command that resets the base of a branch to another commit to align commit history; it is a core tool for maintaining the integrity of Stacked PRs.
+- <b>Squash Merge</b>: A method of merging that combines multiple commits into one; in a Stacked PRs structure, it can sometimes become a source of technical debt by breaking the connection with upstream branches.
+- <b>Feature Branch</b>: The traditional method of managing an entire feature in a single branch, which stands in contrast to the Stacked PRs approach.

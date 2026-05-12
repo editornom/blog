@@ -37,17 +37,17 @@ faqs:
   a: "Currently, immediate verification is difficult because internal operations act as a black box. Supplementary monitoring tools that can translate latent states into language for verification are required."
 ---
 
-The ability of Large Language Models (LLMs) to implement complex logical systems—once a uniquely human domain—has been rooted in '<a href="/en/glossary/chain-of-thought-cot" class="glossary-tooltip" data-definition="A technique that induces large language models to solve complex problems by generating step-by-step intermediate reasoning text before reaching a final answer.">Chain-of-Thought (CoT)</a>.' While this method of having the model output its reasoning process as text helped improve accuracy, it also revealed clear limitations. The massive computational cost and latency incurred during the generation of human-readable tokens became significant hurdles for scaling real-time services. To address these cost and technical bottlenecks, the concept of **Latent Space Reasoning** has emerged.
+The ability of Large Language Models (LLMs) to implement complex logical systems—once a uniquely human domain—has been rooted in '<a href="/en/glossary/chain-of-thought-cot" class="glossary-tooltip" data-definition="A technique that induces large language models to solve complex problems by generating step-by-step intermediate reasoning text before reaching a final answer.">Chain-of-Thought (CoT)</a>.' While this method of having the model output its reasoning process as text helped improve accuracy, it also revealed clear limitations. The massive computational cost and latency incurred during the generation of human-readable tokens became significant hurdles for scaling real-time services. To address these cost and technical bottlenecks, the concept of <b>Latent Space Reasoning</b> has emerged.
 
-The **Coconut** framework released by Meta and the latest research submitted to ICLR 2026 are shifting the computational paradigm of language models. These models no longer generate intermediate reasoning steps as text tokens. Instead, they perform thousands of consecutive operations within the model's **Hidden State** and decode the results back into linguistic form only when a final conclusion is reached. While this is a major achievement in efficiency, it introduces a new risk from a technical transparency perspective: the invisibility of the thought process.
+The <b>Coconut</b> framework released by Meta and the latest research submitted to ICLR 2026 are shifting the computational paradigm of language models. These models no longer generate intermediate reasoning steps as text tokens. Instead, they perform thousands of consecutive operations within the model's <b>Hidden State</b> and decode the results back into linguistic form only when a final conclusion is reached. While this is a major achievement in efficiency, it introduces a new risk from a technical transparency perspective: the invisibility of the thought process.
 
 ## Efficiency of High-Dimensional Operations Beyond the Shackles of Text
 
-Latent Space Reasoning is gaining attention primarily due to its overwhelming resource efficiency. Where a traditional CoT approach might generate 100 tokens to reason through a problem step-by-step, Latent Space Reasoning can process the same logical progression using only a few **Latent Tokens**. According to recent benchmark data, the latent reasoning method succeeded in compressing the length of reasoning chains by up to 4 times while maintaining accuracy comparable to traditional CoT on the GSM8k evaluation. In terms of infrastructure operations, this translates to a potential cost reduction of approximately 75%.
+Latent Space Reasoning is gaining attention primarily due to its overwhelming resource efficiency. Where a traditional CoT approach might generate 100 tokens to reason through a problem step-by-step, Latent Space Reasoning can process the same logical progression using only a few <b>Latent Tokens</b>. According to recent benchmark data, the latent reasoning method succeeded in compressing the length of reasoning chains by up to 4 times while maintaining accuracy comparable to traditional CoT on the GSM8k evaluation. In terms of infrastructure operations, this translates to a potential cost reduction of approximately 75%.
 
 ![Latent Space Reasoning - A flowchart showing the AI inference process where input data undergoes iterative internal calculations to reach a final answer.](../../../../../source/posts/잠재_공간_추론_%28Latent_Space_Reasoning%29/7ef12d1c-0.webp)
 
-Furthermore, the latent space is not bound by the constraints of the structured framework of language. Text-based reasoning must follow a single, probabilistically most likely path every time a word is chosen. However, in latent space, multiple computational possibilities can be maintained in a state of **Superposition** within the vector space. This allows the model to perform a type of internal "tree search" rather than following a single path, leading to an optimal answer. In fact, analysis of a model's latent state during a specific mathematical problem confirmed that it proceeded with calculations while simultaneously considering more than three top solution paths.
+Furthermore, the latent space is not bound by the constraints of the structured framework of language. Text-based reasoning must follow a single, probabilistically most likely path every time a word is chosen. However, in latent space, multiple computational possibilities can be maintained in a state of <b>Superposition</b> within the vector space. This allows the model to perform a type of internal "tree search" rather than following a single path, leading to an optimal answer. In fact, analysis of a model's latent state during a specific mathematical problem confirmed that it proceeded with calculations while simultaneously considering more than three top solution paths.
 
 ## The Disappearance of Interpretability and the Deepening Black Box
 
@@ -57,16 +57,16 @@ In agent systems performing precision legal interpretations or reviewing the app
 
 | Category | Explicit CoT | Latent Space Reasoning |
 | :--- | :--- | :--- |
-| **Visibility of Thought Process** | Fully disclosed via text tokens | Hidden in internal states (Black Box) |
-| **Reasoning Speed & Cost** | Proportional to generated tokens (High) | Very fast due to 4x+ compression |
-| **Debugging & Verification** | Step-by-step logical error correction | Post-hoc debugging practically impossible |
-| **Primary Use Cases** | Precision tasks requiring security/transparency | Real-time agents requiring scale and speed |
+| <b>Visibility of Thought Process</b> | Fully disclosed via text tokens | Hidden in internal states (Black Box) |
+| <b>Reasoning Speed & Cost</b> | Proportional to generated tokens (High) | Very fast due to 4x+ compression |
+| <b>Debugging & Verification</b> | Step-by-step logical error correction | Post-hoc debugging practically impossible |
+| <b>Primary Use Cases</b> | Precision tasks requiring security/transparency | Real-time agents requiring scale and speed |
 
 ![잠재 공간 추론 (Latent Space Reasoning) - 명시적 추론(Explicit CoT)과 잠재 공간 추론의 구조적 차이를 비교한 그림입니다.](../../../../../source/posts/잠재_공간_추론_%28Latent_Space_Reasoning%29/c15c5eca-1.webp)
 
 ## Logical Drift in a Space Without Structural Constraints
 
-Language has served as a logical safeguard refined by humanity over thousands of years. Just as we follow rules of grammar and vocabulary when constructing sentences, LLMs anchor their own thinking on a specific track by generating text. However, in the latent space where this "logical anchor" is removed, the model gains computational freedom but risks getting lost in an unstructured space—a phenomenon known as **Logical Drift**.
+Language has served as a logical safeguard refined by humanity over thousands of years. Just as we follow rules of grammar and vocabulary when constructing sentences, LLMs anchor their own thinking on a specific track by generating text. However, in the latent space where this "logical anchor" is removed, the model gains computational freedom but risks getting lost in an unstructured space—a phenomenon known as <b>Logical Drift</b>.
 
 When training data is insufficient or the complexity of a problem is extremely high, tokens within the latent space begin to gradually deviate from the correct trajectory. Control mechanisms to detect or correct this in advance are still in their infancy. Even at the point where reasoning accuracy breaks down, the system may output a plausible-looking but incorrect answer, posing a fatal threat to professionals who must guarantee system stability.
 

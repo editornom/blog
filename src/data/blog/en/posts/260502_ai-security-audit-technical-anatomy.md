@@ -51,15 +51,15 @@ This context explains why specialized courses, such as the Certified AI Security
 
 From a technical perspective, there are two key focus areas:
 
-- **Functional Testing Based on Non-deterministic Traits**: According to research from Stanford University, even with the application of <a href="/en/glossary/rag-definition-and-features" class="glossary-tooltip" data-definition="A technology that improves accuracy and reduces hallucinations by retrieving relevant information from external trusted knowledge bases and reflecting it in the AI's responses.">Retrieval-Augmented Generation (RAG)</a>, model hallucinations occur at a certain rate. Audits must relentlessly verify how the model reacts in these situations using prompt fuzzing techniques.
-- **Data Privacy Protection Technology**: The European Data Protection Board (EDPB) has made it clear that data within AI models cannot be assumed to be fully anonymized. This is because sensitive information from training datasets can be leaked through membership inference or model inversion attacks. Audits must technically prove that data mapping and sensitivity labeling remain effective during the inference stage.
+- <b>Functional Testing Based on Non-deterministic Traits</b>: According to research from Stanford University, even with the application of <a href="/en/glossary/rag-definition-and-features" class="glossary-tooltip" data-definition="A technology that improves accuracy and reduces hallucinations by retrieving relevant information from external trusted knowledge bases and reflecting it in the AI's responses.">Retrieval-Augmented Generation (RAG)</a>, model hallucinations occur at a certain rate. Audits must relentlessly verify how the model reacts in these situations using prompt fuzzing techniques.
+- <b>Data Privacy Protection Technology</b>: The European Data Protection Board (EDPB) has made it clear that data within AI models cannot be assumed to be fully anonymized. This is because sensitive information from training datasets can be leaked through membership inference or model inversion attacks. Audits must technically prove that data mapping and sensitivity labeling remain effective during the inference stage.
 
 | Category | Traditional IT Audit | AI Security Audit |
 | :--- | :--- | :--- |
-| **Verification Subject** | Static code, access control, network settings | Dynamic model behavior, data flow, prompt response |
-| **Major Risks** | System downtime, data theft | Hallucination, bias, prompt injection, data leakage |
-| **Evaluation Method** | Deterministic (Yes/No checklist) | Probabilistic (Statistical reliability & behavioral analysis) |
-| **Tools Used** | SIEM, solution log analysis | LLM-specific red teaming, Knowledge Layer analysis tools |
+| <b>Verification Subject</b> | Static code, access control, network settings | Dynamic model behavior, data flow, prompt response |
+| <b>Major Risks</b> | System downtime, data theft | Hallucination, bias, prompt injection, data leakage |
+| <b>Evaluation Method</b> | Deterministic (Yes/No checklist) | Probabilistic (Statistical reliability & behavioral analysis) |
+| <b>Tools Used</b> | SIEM, solution log analysis | LLM-specific red teaming, Knowledge Layer analysis tools |
 
 ## Practical Constraints and Response Strategies in Enterprise Environments
 

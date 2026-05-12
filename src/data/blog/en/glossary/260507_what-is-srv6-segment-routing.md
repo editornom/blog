@@ -23,6 +23,6 @@ SRv6 (IPv6 Segment Routing) is a next-generation network protocol that implement
 OpenAI's Multipath Reliable Connection (MCR) architecture is a prominent example of adopting SRv6 to maximize communication efficiency within massive GPU clusters. By flattening the traditional complex network hierarchy into a 2-tier architecture, it enables low-latency connectivity for tens of thousands of GPUs while significantly reducing power consumption. However, since the sender retains full control over path selection, there is a potential for bypassing traditional centralized network security policies. Therefore, a rigorous security review is essential when designing infrastructure with SRv6.
 
 ### Related Words
-- **IPv6**: The next-generation Internet Protocol address system that serves as the foundation for SRv6 technology.
-- **Segment Routing (SR)**: A technology that enables source-based routing by defining a network path as an ordered list of segments.
-- **MCR (Multipath Reliable Connection)**: A protocol that utilizes SRv6-based network optimization to enhance performance for AI model training and inference.
+- <b>IPv6</b>: The next-generation Internet Protocol address system that serves as the foundation for SRv6 technology.
+- <b>Segment Routing (SR)</b>: A technology that enables source-based routing by defining a network path as an ordered list of segments.
+- <b>MCR (Multipath Reliable Connection)</b>: A protocol that utilizes SRv6-based network optimization to enhance performance for AI model training and inference.

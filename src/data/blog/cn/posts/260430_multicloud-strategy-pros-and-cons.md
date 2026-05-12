@@ -59,10 +59,10 @@ faqs:
 
 市场为了解决这些复杂性，提出了各种集成管理工具。然而，每种解决方案都有其独特的哲学，也存在明显的局限性。
 
-- **Google Cloud Anthos**: 提供基于 Kubernetes 的强大编排能力，但由于针对 GKE 环境进行了优化，在其他云环境中的灵活性受到限制。
-- **HCP Terraform**: 通过声明式代码定义基础架构的行业标准，但在转向 BSL (Business Source License) 后，生态系统的不确定性增加。
-- **HPE Morpheus**: 专注于企业级治理和成本分析，但初期引入成本较高，且平台存在一定的封闭性。
-- **Spectro Cloud Palette**: 虽然可以基于 Cluster API 进行灵活管理，但对运维人员的技术熟练度要求极高。
+- <b>Google Cloud Anthos</b>: 提供基于 Kubernetes 的强大编排能力，但由于针对 GKE 环境进行了优化，在其他云环境中的灵活性受到限制。
+- <b>HCP Terraform</b>: 通过声明式代码定义基础架构的行业标准，但在转向 BSL (Business Source License) 后，生态系统的不确定性增加。
+- <b>HPE Morpheus</b>: 专注于企业级治理和成本分析，但初期引入成本较高，且平台存在一定的封闭性。
+- <b>Spectro Cloud Palette</b>: 虽然可以基于 Cluster API 进行灵活管理，但对运维人员的技术熟练度要求极高。
 
 近期 Terraform 的许可证政策变更在开源生态系统中引起了巨大震动，这导致企业开始寻找 OpenTofu 等替代方案，或回归供应商的商用平台。最终，我们不能忽视的是，为了管理而引入的工具可能会引发另一种形式的供应商锁定。
 

@@ -22,7 +22,7 @@ kprobe (Kernel Probe) 是一种轻量级机制，允许在 Linux 内核执行特
 kprobe 常与 eBPF (extended Berkeley Packet Filter) 结合使用，在“无侵入 (Zero-instrumentation)”环境下监控系统调用 (System Call)。例如，当特定进程创建网络套接字或向文件系统的特定区域执行写入操作时，可以将 kprobe 附加到处理这些操作的内核函数上。通过实时记录参数值和返回值，开发人员或系统管理员可以进行安全审计，或精准识别性能瓶颈所在。
 
 ### 相关词汇 (Related Words)
-* **eBPF (Extended Berkeley Packet Filter):** 一种允许在不修改内核源码的情况下在内核级运行程序的技术，它将 kprobe 作为主要的跟踪手段之一。
-* **uprobe (User Probe):** 一种用于跟踪用户空间 (User Space) 应用程序函数而非内核空间函数的机制。
-* **Tracepoint:** 预先定义在内核源代码中的静态跟踪点。与 kprobe 相比，它的开销更小且更稳定，但灵活性较低（无法像 kprobe 那样动态设置）。
-* **System Call:** 用户空间进程向内核请求特定服务的接口，是 kprobe 最主要的跟踪对象。
+* <b>eBPF (Extended Berkeley Packet Filter):</b> 一种允许在不修改内核源码的情况下在内核级运行程序的技术，它将 kprobe 作为主要的跟踪手段之一。
+* <b>uprobe (User Probe):</b> 一种用于跟踪用户空间 (User Space) 应用程序函数而非内核空间函数的机制。
+* <b>Tracepoint:</b> 预先定义在内核源代码中的静态跟踪点。与 kprobe 相比，它的开销更小且更稳定，但灵活性较低（无法像 kprobe 那样动态设置）。
+* <b>System Call:</b> 用户空间进程向内核请求特定服务的接口，是 kprobe 最主要的跟踪对象。

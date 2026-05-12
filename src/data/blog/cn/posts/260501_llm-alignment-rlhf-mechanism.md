@@ -59,10 +59,10 @@ RLHF 的架构大致分为三个阶段。首先，模型针对一个问题生成
 
 为了抑制这种情况，RLHF 计算当前训练模型与初始 SFT 模型之间的 KL 散度 (KL Divergence)，并将其作为正则项。这相当于引入了一种裁剪 (Clipping) 机制，让模型在追求奖励的同时，不至于大幅偏离先前学到的语言知识范畴。
 
-- **数据性质**：SFT 使用专家编写的正确答案对，而 RLHF 利用响应间的比较数据。
-- **学习目标**：SFT 旨在复制数据分布，而 RLHF 旨在最大化人类偏好分数 (Reward)。
-- **算法**：SFT 基于交叉熵损失，而 RLHF 基于 PPO 算法。
-- **资源消耗**：由于 RLHF 需要同时运行奖励模型和价值模型等多个模型，其计算成本显著更高。
+- <b>数据性质</b>：SFT 使用专家编写的正确答案对，而 RLHF 利用响应间的比较数据。
+- <b>学习目标</b>：SFT 旨在复制数据分布，而 RLHF 旨在最大化人类偏好分数 (Reward)。
+- <b>算法</b>：SFT 基于交叉熵损失，而 RLHF 基于 PPO 算法。
+- <b>资源消耗</b>：由于 RLHF 需要同时运行奖励模型和价值模型等多个模型，其计算成本显著更高。
 
 ![RLHF (Reinforcement Learning from Human Feedback) - PPO 算法中多个模型互通信息并稳定调节学习变化的流程图。](../../../../../source/posts/RLHF_%28Reinforcement_Learning_from_Human_Feedback%29/3732d675-1.webp)
 

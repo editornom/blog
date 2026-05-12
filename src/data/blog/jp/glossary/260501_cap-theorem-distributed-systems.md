@@ -21,8 +21,8 @@ CAP定理は、分散コンピューティングシステムにおいて、一�
 
 ## 実務での活用事例 (Practical Use Case)
 
-- **CP（Consistency + Partition Tolerance）モデル**: データの正確性と整合性が最優先される金融取引、資産管理、在庫システムなどで活用されます。ネットワーク分断が発生した際、データの不一致を防ぐためにシステムは応答を拒否または遅延させ、一貫性を維持します。Google Spanner、MongoDB、ZooKeeperなどがこれに該当します。
-- **AP（Availability + Partition Tolerance）モデル**: サービスの停止がない応答とユーザー体験が重要なソーシャルメディア、コンテンツストリーミング、ショッピングカートシステムなどで活用されます。ネットワーク障害時、一部のデータが最新状態でなくても、利用可能なノードから即座に応答を提供することでサービスの継続性を保証します。Apache Cassandra、Amazon DynamoDBなどが代表的です。
+- <b>CP（Consistency + Partition Tolerance）モデル</b>: データの正確性と整合性が最優先される金融取引、資産管理、在庫システムなどで活用されます。ネットワーク分断が発生した際、データの不一致を防ぐためにシステムは応答を拒否または遅延させ、一貫性を維持します。Google Spanner、MongoDB、ZooKeeperなどがこれに該当します。
+- <b>AP（Availability + Partition Tolerance）モデル</b>: サービスの停止がない応答とユーザー体験が重要なソーシャルメディア、コンテンツストリーミング、ショッピングカートシステムなどで活用されます。ネットワーク障害時、一部のデータが最新状態でなくても、利用可能なノードから即座に応答を提供することでサービスの継続性を保証します。Apache Cassandra、Amazon DynamoDBなどが代表的です。
 
 ## 関連用語 (Related Words)
 

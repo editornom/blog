@@ -41,14 +41,14 @@ If you suddenly noticed nearly 4GB of storage space vanish from your hard drive,
 
 To power its local AI tools, Google quietly began downloading the <a href="/en/glossary/gemini-nano" class="glossary-tooltip" data-definition="Google's optimized, lightweight large language model designed to run locally on devices, enabling private, low-latency AI operations like text summarization, smart replies, and proofreading without requiring an active cloud connection.">Gemini Nano</a> model onto qualifying local machines.
 
-The background download appears in Chrome's component page (`chrome://components`) under the nondescript name **'Optimization Guide On Device Model.'** Once completed, it saves a massive ~4GB file named `weights.bin` in the user's local Chrome User Data directory.
+The background download appears in Chrome's component page (`chrome://components`) under the nondescript name <b>'Optimization Guide On Device Model.'</b> Once completed, it saves a massive ~4GB file named `weights.bin` in the user's local Chrome User Data directory.
 
 ### 1.2 "I Never Agreed to This": Why Users Are Outraged
 On-device AI offers undeniable benefits, including high-speed processing and robust privacy. However, Google's silent distribution method has committed a major misstep by bypassing basic user transparency.
 
-* **Unauthorized Bandwidth Usage:** For users on metered connections, mobile hotspots, or in regions with slower internet speeds, a silent 4GB download can cause unexpected data overage charges and severe network congestion.
-* **Disk Space Monopolization:** On laptops with smaller 128GB or 256GB SSDs (such as entry-level Macbooks or Windows laptops), 4GB is a precious chunk of storage that can directly impact system stability.
-* **Loss of User Control:** Chrome scanned local hardware specifications (especially GPU VRAM and performance) and initiated the massive download automatically without displaying a single prompt or asking "Would you like to enable AI features?" This forced adoption is driving some users to switch to Firefox or Safari.
+* <b>Unauthorized Bandwidth Usage:</b> For users on metered connections, mobile hotspots, or in regions with slower internet speeds, a silent 4GB download can cause unexpected data overage charges and severe network congestion.
+* <b>Disk Space Monopolization:</b> On laptops with smaller 128GB or 256GB SSDs (such as entry-level Macbooks or Windows laptops), 4GB is a precious chunk of storage that can directly impact system stability.
+* <b>Loss of User Control:</b> Chrome scanned local hardware specifications (especially GPU VRAM and performance) and initiated the massive download automatically without displaying a single prompt or asking "Would you like to enable AI features?" This forced adoption is driving some users to switch to Firefox or Safari.
 
 ---
 
@@ -59,7 +59,7 @@ On-device AI offers undeniable benefits, including high-speed processing and rob
 ### 2.1 Local Processing vs. Resource Hijacking
 Google justifies the silent install by explaining it is required for Chrome's native AI features, such as 'Help me write,' 'Tab organizer,' and AI-powered 'History search.' Processing these tasks locally ensures that personal user data is never sent to Google's cloud servers.
 
-However, this privacy benefit comes with a clear trade-off. While cloud AI shifts processing costs and storage overhead to the service provider, on-device AI shifts the storage, memory (RAM), and GPU burden directly onto the **user's hardware** and **battery life.**
+However, this privacy benefit comes with a clear trade-off. While cloud AI shifts processing costs and storage overhead to the service provider, on-device AI shifts the storage, memory (RAM), and GPU burden directly onto the <b>user's hardware</b> and <b>battery life.</b>
 
  ![on device ai private - A sophisticated dark-gold themed computer processor chip shining inside an offline laptop, computing AI inference locally with its network cable visibly disconnected.](../../../../../source/posts/chrome_silent_gemini_nano/on-device-ai.webp)
 
@@ -74,22 +74,22 @@ Let's analyze the direct trade-offs between cloud-based AI processing and the si
 
 Google has made manual removal tricky. If you simply navigate to the file path and delete `weights.bin`, the browser's on-device AI features remain active, and Chrome will immediately re-download the massive files in the background.
 
-To permanently remove the model and block future downloads, you must follow this **2-step process: Disable the experimental flags first, then delete the folder.**
+To permanently remove the model and block future downloads, you must follow this <b>2-step process: Disable the experimental flags first, then delete the folder.</b>
 
 ### Step 1: Disable On-Device AI in Chrome Flags
 1. Type `chrome://flags` in your Chrome address bar and press Enter.
 2. In the search box at the top, type `on-device` or `optimization`.
-3. Locate the following experimental flags and change their values to **[Disabled]**:
+3. Locate the following experimental flags and change their values to <b>[Disabled]</b>:
    * `Enables optimization guide on device`
    * `Prompt API for Gemini Nano`
-4. Click the **[Relaunch]** button in the bottom right corner to restart Chrome.
+4. Click the <b>[Relaunch]</b> button in the bottom right corner to restart Chrome.
 
 ### Step 2: Delete the Local 4GB Folder
 Once the experimental flags are disabled, Chrome's automatic background download logic is deactivated. Now, you can safely delete the local files to reclaim your storage space. Delete the entire `OptGuideOnDeviceModel` folder from your system.
 
-* **Windows OS Path:**
+* <b>Windows OS Path:</b>
   `%LOCALAPPDATA%\Google\Chrome\User Data\OptGuideOnDeviceModel`
-* **macOS Path:**
+* <b>macOS Path:</b>
   `~/Library/Application Support/Google/Chrome/OptGuideOnDeviceModel`
 
 *After completing these steps, you can verify success by visiting `chrome://on-device-internals` in your browser. The model load status should display as inactive or empty.*
@@ -98,7 +98,7 @@ Once the experimental flags are disabled, Chrome's automatic background download
 
 ## 4. Conclusion: Innovation Without Transparency is a Double-Edged Sword
 
-Google's silent 4GB deployment serves as a cautionary tale for tech companies aiming to roll out local AI models. No matter how beneficial local computing or data privacy is, **"a user's storage and bandwidth must remain under their own absolute control."** 
+Google's silent 4GB deployment serves as a cautionary tale for tech companies aiming to roll out local AI models. No matter how beneficial local computing or data privacy is, <b>"a user's storage and bandwidth must remain under their own absolute control."</b> 
 
 To regain user trust, tech giants must prioritize transparency and user consent, asking a simple, honest question before downloading gigabytes of data: "Would you like to install our local AI model to enable smarter features?"
 

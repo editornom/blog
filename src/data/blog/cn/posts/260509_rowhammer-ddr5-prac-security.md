@@ -69,9 +69,9 @@ faqs:
 
 | 攻击技术 | 主要特征及威胁对象 | 安全盲区 |
  | :--- | :--- | :--- |
- | **Phoenix** | 绕过 SK Hynix DDR5 全型号 | 利用 TRR 采样逻辑的盲区 |
- | **GPUBreach** | NVIDIA GDDR6 获取 Root 权限 | GPU 内存架构防御缺失 |
- | **PRAC** | 微软提议的 DRAM 内部计数技术 | 因标准未完成导致的互操作性缺乏 |
+ | <b>Phoenix</b> | 绕过 SK Hynix DDR5 全型号 | 利用 TRR 采样逻辑的盲区 |
+ | <b>GPUBreach</b> | NVIDIA GDDR6 获取 Root 权限 | GPU 内存架构防御缺失 |
+ | <b>PRAC</b> | 微软提议的 DRAM 内部计数技术 | 因标准未完成导致的互操作性缺乏 |
 
 ## 4. 未来的硅级内存安全架构
 

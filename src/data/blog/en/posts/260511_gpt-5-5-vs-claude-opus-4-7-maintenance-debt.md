@@ -93,11 +93,11 @@ In short-term tool-use capabilities, such as terminal control or file system nav
 
 The true return on investment (ROI) we should pursue is not the amount on the API bill at the end of the month. Rather, performance should be measured based on 'the total time taken from the moment code is generated to its actual deployment in service.'
 
-* **Maintenance Risk Data by the Numbers**:
-    * **72%**: The amount of output tokens GPT-5.5 reduced compared to Opus 4.7, meaning 'Accountability' is reduced by this same figure.
-    * **3x (300%)**: The estimated additional time senior developers spend reviewing AI code where explanations are omitted (Black Box Barrier effect).
-    * **$5 vs $30**: While the input token cost ($5) is the same for both models, GPT-5.5 is 20% more expensive in output costs—a structure designed to encourage token efficiency.
-    * **ARC-AGI-3 Contrast**: GPT-5.5 wanders by 'failing to compress' while expanding hypotheses, whereas Opus 4.7 tends to fall into confirmation bias through 'incorrect compression.'
+* <b>Maintenance Risk Data by the Numbers</b>:
+    * <b>72%</b>: The amount of output tokens GPT-5.5 reduced compared to Opus 4.7, meaning 'Accountability' is reduced by this same figure.
+    * <b>3x (300%)</b>: The estimated additional time senior developers spend reviewing AI code where explanations are omitted (Black Box Barrier effect).
+    * <b>$5 vs $30</b>: While the input token cost ($5) is the same for both models, GPT-5.5 is 20% more expensive in output costs—a structure designed to encourage token efficiency.
+    * <b>ARC-AGI-3 Contrast</b>: GPT-5.5 wanders by 'failing to compress' while expanding hypotheses, whereas Opus 4.7 tends to fall into confirmation bias through 'incorrect compression.'
 
 ### 4.2 Hybrid Routing Strategy: 'Simple Tasks' to 5.5, 'Core Logic' to Opus
 

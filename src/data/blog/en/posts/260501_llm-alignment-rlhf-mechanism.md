@@ -59,10 +59,10 @@ Once the reward model is established, the language model's policy is updated via
 
 To suppress this, RLHF calculates the KL Divergence between the model currently being trained and the initial SFT model, using it as a regularization term. This applies a clipping mechanism to ensure the model pursues rewards without straying significantly from its previously learned linguistic knowledge.
 
-- **Data Nature**: SFT uses expert-written correct answer pairs, while RLHF utilizes comparison data between responses.
-- **Training Goal**: SFT aims for data distribution replication, whereas RLHF aims to maximize human preference scores (Reward).
-- **Algorithm**: SFT is based on cross-entropy loss, while RLHF is based on the PPO algorithm.
-- **Resource Consumption**: RLHF incurs significantly higher computational costs because it requires simultaneously operating multiple models, such as reward and value models.
+- <b>Data Nature</b>: SFT uses expert-written correct answer pairs, while RLHF utilizes comparison data between responses.
+- <b>Training Goal</b>: SFT aims for data distribution replication, whereas RLHF aims to maximize human preference scores (Reward).
+- <b>Algorithm</b>: SFT is based on cross-entropy loss, while RLHF is based on the PPO algorithm.
+- <b>Resource Consumption</b>: RLHF incurs significantly higher computational costs because it requires simultaneously operating multiple models, such as reward and value models.
 
 ![RLHF (Reinforcement Learning from Human Feedback) - Flowchart showing the process where multiple models exchange information in the PPO algorithm to stably control training changes.](../../../../../source/posts/RLHF_%28Reinforcement_Learning_from_Human_Feedback%29/3732d675-1.webp)
 

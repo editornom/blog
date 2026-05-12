@@ -51,10 +51,10 @@ In 1992, the Linux ecosystem faced the massive challenge of network traffic anal
 
 | Category | Classic BPF (1992) | Extended BPF (2014) | Sidecar/Agent (Legacy) |
 | :--- | :--- | :--- | :--- |
-| **Register Architecture** | 2 (32-bit) | 10 (64-bit) | N/A (Userland) |
-| **Primary Use** | Network Packet Filtering | Networking, Security, Observability | App Registry, Log Collection |
-| **Flexibility** | Very Low (Fixed Function) | Very High (Programmable) | Medium (Requires Code Change) |
-| **Performance Overhead** | Minimal | Near-Native (Utilizes <a href="/en/glossary/what-is-jit" class="glossary-tooltip" data-definition="A technology that optimizes execution performance by translating bytecode directly into machine code at runtime so it can be executed immediately on hardware.">JIT</a>) | High (Context Switches Occur) |
+| <b>Register Architecture</b> | 2 (32-bit) | 10 (64-bit) | N/A (Userland) |
+| <b>Primary Use</b> | Network Packet Filtering | Networking, Security, Observability | App Registry, Log Collection |
+| <b>Flexibility</b> | Very Low (Fixed Function) | Very High (Programmable) | Medium (Requires Code Change) |
+| <b>Performance Overhead</b> | Minimal | Near-Native (Utilizes <a href="/en/glossary/what-is-jit" class="glossary-tooltip" data-definition="A technology that optimizes execution performance by translating bytecode directly into machine code at runtime so it can be executed immediately on hardware.">JIT</a>) | High (Context Switches Occur) |
 
 ## 2. Technical Mechanisms: Safe Innovation Guaranteed by Sandboxing and Verifiers
 
@@ -81,10 +81,10 @@ In practical environments, eBPF pours out thousands of metrics, but data lacking
 ### 4.1. System Insight in Practice using BCC and bpftrace
 The first tools you encounter when applying eBPF to real-world tasks are BCC and bpftrace. BCC allows for the development of complex system analysis tools by combining Python and C, while bpftrace provides a powerful interface to peer into the kernel's internal state with a single line of command. These tools are irreplaceable weapons for diagnosing performance bottlenecks and detecting security threats in real-time.
 
-* **1992**: First BPF (Berkeley Packet Filter) paper published by Steven McCanne and others.
-* **2014**: Alexei Starovoitov introduced eBPF to Linux Kernel 3.18, expanding it into a universal runtime.
-* **2020**: Achievement of kernel-version-independent deployment through CO-RE (Compile Once, Run Everywhere) technology.
-* **Big Tech Adoption**: Meta (Katran L4 load balancer), Google (GKE networking), Netflix (Brendan Gregg's performance analysis tools).
+* <b>1992</b>: First BPF (Berkeley Packet Filter) paper published by Steven McCanne and others.
+* <b>2014</b>: Alexei Starovoitov introduced eBPF to Linux Kernel 3.18, expanding it into a universal runtime.
+* <b>2020</b>: Achievement of kernel-version-independent deployment through CO-RE (Compile Once, Run Everywhere) technology.
+* <b>Big Tech Adoption</b>: Meta (Katran L4 load balancer), Google (GKE networking), Netflix (Brendan Gregg's performance analysis tools).
 
 ### 4.2. Kernel Version Dependency and the Practical Challenges of CO-RE
 However, in practice, deploying eBPF programs was never easy due to internal structure information that changed with every kernel version. CO-RE technology emerged to solve this by dynamically adjusting the kernel layout at execution time rather than compile time, striving to realize the ideal of 'compile once, run everywhere'. Nevertheless, fragmented kernel versions in production environments remain a significant challenge for engineers.

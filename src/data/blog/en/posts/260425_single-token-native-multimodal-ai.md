@@ -53,13 +53,13 @@ NEO-unify, a collaboration between SenseTime and NTU, takes an even more radical
 
 However, this unified structure presents new challenges in terms of system controllability. In traditional modular structures, it was possible to verify the output of a vision encoder or intervene at specific points. In an environment where all computations occur within a single neural network, identifying or correcting internal logical errors becomes much more difficult.
 
-- **Traditional Approach (Modular/Adapter)**
+- <b>Traditional Approach (Modular/Adapter)</b>
   - Architecture: LLM and an independent vision encoder connected via an interface.
   - Data Processing: Uses separate embedding spaces for each modality.
   - Advantages: Faster development; easy to optimize or replace individual components.
   - Disadvantages: Limitations in organic information integration and sophisticated intent grasping between modalities.
 
-- **Native Multimodal (Native Unified)**
+- <b>Native Multimodal (Native Unified)</b>
   - Architecture: Integrated training and inference for all data types within a single neural network.
   - Data Processing: Secures a unified token layout and shared embedding space.
   - Advantages: Drastic improvement in mutual understanding and reasoning performance across modalities.

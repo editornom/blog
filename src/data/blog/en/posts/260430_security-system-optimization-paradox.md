@@ -69,10 +69,10 @@ This method, which assigns specific tags during memory allocation and synchronou
 
 | Category | C/C++ (Manual) | Java/Go (GC) | Rust (Ownership) | Apple MIE (Hardware) |
 | :--- | :--- | :--- | :--- | :--- |
-| **Safety Assurance** | Developer Responsibility | Runtime (Continuous) | Compile-time | Runtime (Hardware Verified) |
-| **Performance Overhead** | None (Optimizable) | High (GC Pauses) | Low (Compile-time Cost) | Very Low (Silicon Overhead) |
-| **Dev Difficulty** | Very High (Error-prone) | Low | Very High (Learning Curve) | Medium (Requires API Support) |
-| **Primary Risk** | Security Vulnerabilities | Unpredictable Latency | Reduced Flexibility/Delay | Hardware Dependency |
+| <b>Safety Assurance</b> | Developer Responsibility | Runtime (Continuous) | Compile-time | Runtime (Hardware Verified) |
+| <b>Performance Overhead</b> | None (Optimizable) | High (GC Pauses) | Low (Compile-time Cost) | Very Low (Silicon Overhead) |
+| <b>Dev Difficulty</b> | Very High (Error-prone) | Low | Very High (Learning Curve) | Medium (Requires API Support) |
+| <b>Primary Risk</b> | Security Vulnerabilities | Unpredictable Latency | Reduced Flexibility/Delay | Hardware Dependency |
 
 ![Memory Safety - A scene showing security mechanisms verifying memory safety information as the CPU and RAM exchange data.](../../../../../source/posts/Memory_Safety/8d5c37f0-2.webp)
 

@@ -22,7 +22,7 @@ kprobe (Kernel Probe) is a lightweight mechanism that allows developers to trace
 kprobes are widely used in conjunction with eBPF (extended Berkeley Packet Filter) to monitor system calls in 'zero-instrumentation' environments. For example, when a specific process creates a network socket or performs a write operation on a particular area of the file system, a kprobe can be attached to the kernel function responsible for that task. This allows for real-time logging of arguments and return values, which is critical for performing security audits or identifying performance bottlenecks.
 
 ### Related Words
-* **eBPF (Extended Berkeley Packet Filter):** A technology that allows programs to run at the kernel level without modifying kernel source code, frequently utilizing kprobes as its primary tracing mechanism.
-* **uprobe (User Probe):** A mechanism designed to trace functions within User Space applications rather than the kernel space.
-* **Tracepoint:** Static tracing points predefined within the kernel source code. While they offer lower overhead and greater stability than kprobes, they are less flexible because they must be compiled into the kernel.
-* **System Call:** An interface through which user-space processes request services from the kernel, serving as one of the most common targets for kprobe attachment.
+* <b>eBPF (Extended Berkeley Packet Filter):</b> A technology that allows programs to run at the kernel level without modifying kernel source code, frequently utilizing kprobes as its primary tracing mechanism.
+* <b>uprobe (User Probe):</b> A mechanism designed to trace functions within User Space applications rather than the kernel space.
+* <b>Tracepoint:</b> Static tracing points predefined within the kernel source code. While they offer lower overhead and greater stability than kprobes, they are less flexible because they must be compiled into the kernel.
+* <b>System Call:</b> An interface through which user-space processes request services from the kernel, serving as one of the most common targets for kprobe attachment.

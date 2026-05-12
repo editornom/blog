@@ -51,10 +51,10 @@ faqs:
 
 | 类别 | 经典 BPF (1992) | 扩展 BPF (2014) | 边车/代理 (传统方式) |
 | :--- | :--- | :--- | :--- |
-| **寄存器结构** | 2个 (32-bit) | 10个 (64-bit) | 不适用 (Userland) |
-| **主要用途** | 网络封包过滤 | 网络、安全、可观测性 | 应用注册表、日志收集 |
-| **灵活性** | 非常低 (固定功能) | 非常高 (可编程) | 中等 (需修改代码) |
-| **性能开销** | 极小 | 接近原生 (应用 <a href="/cn/glossary/what-is-jit" class="glossary-tooltip" data-definition="在程序运行过程中，将字节码直接翻译成机器码并在硬件上立即执行，以此优化执行性能的技术。">JIT</a>) | 高 (产生上下文切换) |
+| <b>寄存器结构</b> | 2个 (32-bit) | 10个 (64-bit) | 不适用 (Userland) |
+| <b>主要用途</b> | 网络封包过滤 | 网络、安全、可观测性 | 应用注册表、日志收集 |
+| <b>灵活性</b> | 非常低 (固定功能) | 非常高 (可编程) | 中等 (需修改代码) |
+| <b>性能开销</b> | 极小 | 接近原生 (应用 <a href="/cn/glossary/what-is-jit" class="glossary-tooltip" data-definition="在程序运行过程中，将字节码直接翻译成机器码并在硬件上立即执行，以此优化执行性能的技术。">JIT</a>) | 高 (产生上下文切换) |
 
 ## 2. 技术机制：沙盒与验证器保障的安全创新
 
@@ -81,10 +81,10 @@ eBPF 惊人的性能源于 JIT (Just-In-Time) 编译器。通过将内核虚拟�
 ### 4.1. 利用 BCC 和 bpftrace 实现系统洞察的实践
 要在实际工作中应用 eBPF，最先接触到的工具就是 BCC 和 bpftrace。BCC 通过结合 Python 和 C，允许开发复杂的系统分析工具；而 bpftrace 则提供了一个强大的接口，可以通过一行命令洞察内核内部状态。这些工具在诊断性能瓶颈和实时检测安全威胁方面，已成为不可替代的武器。
 
-* **1992年**：Steven McCanne 等人发表了关于 BPF (Berkeley Packet Filter) 的首篇论文。
-* **2014年**：Alexei Starovoitov 将 eBPF 引入 Linux 内核 3.18，并扩展为通用运行时。
-* **2020年**：通过 CO-RE (Compile Once, Run Everywhere) 技术实现跨内核版本的独立部署。
-* **大厂应用案例**：Meta (L4 负载均衡器 Katran)、Google (GKE 网络)、Netflix (Brendan Gregg 的性能分析工具)。
+* <b>1992年</b>：Steven McCanne 等人发表了关于 BPF (Berkeley Packet Filter) 的首篇论文。
+* <b>2014年</b>：Alexei Starovoitov 将 eBPF 引入 Linux 内核 3.18，并扩展为通用运行时。
+* <b>2020年</b>：通过 CO-RE (Compile Once, Run Everywhere) 技术实现跨内核版本的独立部署。
+* <b>大厂应用案例</b>：Meta (L4 负载均衡器 Katran)、Google (GKE 网络)、Netflix (Brendan Gregg 的性能分析工具)。
 
 ### 4.2. 内核版本依赖性与 CO-RE (Compile Once, Run Everywhere) 的现实挑战
 然而在实际工作中，由于内核版本不同导致结构体信息发生变化，部署 eBPF 程序绝非易事。为解决这一问题而出现的 CO-RE 技术，试图通过在运行而非编译时动态调整内核布局，来实现“一次编译，到处运行”的理想。尽管如此，生产环境中碎片化的内核版本对于工程师来说依然是一个巨大的挑战。

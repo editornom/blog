@@ -22,6 +22,6 @@ GA (General Availability) refers to the stage in the software development lifecy
 When a technology company announces a specific solution or feature as 'GA', it formalizes that the tool has reached a level of maturity that can be trusted and used in enterprise-grade production environments, moving beyond experimental stages. The GA announcement of GitHub Enterprise AI Controls mentioned in the text signifies that corporate customers can now officially adopt AI agent governance features under their security policies.
 
 ### Related Words
-- **Beta**: A trial version provided on a limited basis to fix errors and collect feedback before the official release.
-- **Release Candidate (RC)**: The final candidate version determined to be ready for official release after beta testing.
-- **EOL (End of Life)**: The point at which the sale and technical support of a product officially end.
+- <b>Beta</b>: A trial version provided on a limited basis to fix errors and collect feedback before the official release.
+- <b>Release Candidate (RC)</b>: The final candidate version determined to be ready for official release after beta testing.
+- <b>EOL (End of Life)</b>: The point at which the sale and technical support of a product officially end.

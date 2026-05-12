@@ -55,7 +55,7 @@ Therefore, the first task for university presidents or C-level executives should
 
 When infrastructure is in place to provide clean, high-quality data so that AI can produce tangible results, members will finally begin to perceive AI not as a "threat to their jobs" but as a "powerful tool that enhances their productivity."
 
-Now is the time to look beyond simple chatbots and consider the transition to **Agentic AI**, which can make judgments and perform tasks autonomously. Agentic AI does not stop at following instructions; it designs autonomous workflows, drastically increasing the speed of decision-making.
+Now is the time to look beyond simple chatbots and consider the transition to <b>Agentic AI</b>, which can make judgments and perform tasks autonomously. Agentic AI does not stop at following instructions; it designs autonomous workflows, drastically increasing the speed of decision-making.
 
 ![AX Considerations - Liquid mercury flowing over a transparent glass circuit board, representing the speed and flexibility of Agentic AI.](../../../../../source/posts/AX를_위해_고려해야할_사항들/eb5afb2d-1.webp)
 

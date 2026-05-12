@@ -53,10 +53,10 @@ Traditional monitoring involves agents operating in User Space, repeatedly copyi
 
 A notable technical detail is the extensibility of Hook points. Unlike the original BPF, which only filtered network packets, eBPF can access nearly all system events, including kprobes (kernel functions), uprobes (user-space functions), and tracepoints. Specifically, the CO-RE (Compile Once, Run Everywhere) technology established in 2020 resolved dependencies on specific kernel versions, enhancing portability. This makes it possible to analyze encrypted traffic or track disk I/O latency in microseconds without ever touching the application code.
 
-- **Instrumentation Method**: Operates through kernel-level hooking without code modification, unlike traditional library injection.
-- **Performance Efficiency**: Reduces context switching and data copying overhead via direct kernel execution.
-- **Visibility Scope**: Extends beyond application logic to system calls, networks, and hardware layers.
-- **Stability**: Ensures kernel protection and an isolated execution environment through the Verifier.
+- <b>Instrumentation Method</b>: Operates through kernel-level hooking without code modification, unlike traditional library injection.
+- <b>Performance Efficiency</b>: Reduces context switching and data copying overhead via direct kernel execution.
+- <b>Visibility Scope</b>: Extends beyond application logic to system calls, networks, and hardware layers.
+- <b>Stability</b>: Ensures kernel protection and an isolated execution environment through the Verifier.
 
 ## Capturing the Lifeblood of Cloud-Native
 
