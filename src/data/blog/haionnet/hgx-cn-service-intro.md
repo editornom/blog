@@ -3,7 +3,7 @@ title: '[하이온넷] 한-중 비즈니스의 네트워크 치트키: HGX-CN �
 pubDatetime: 2026-05-12 13:30:00+09:00
 slug: hgx-cn-service-intro
 description: '하이온넷의 한-중 기업 전용 하이브리드 직결망 서비스 HGX-CN의 상세 서비스 가이드 및 타사 비교 분석 정보입니다.'
-draft: true
+draft: false
 featured: false
 author: editornom
 ---

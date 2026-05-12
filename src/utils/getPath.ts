@@ -24,7 +24,16 @@ export function getPath(
   const slug = segments.pop() || "";
 
   if (!includeBase) {
+    // If we only need the slug/sub-path without base prefix, for haionnet we strip 'haionnet/' as well if needed
+    if (normalizedId.startsWith("haionnet/")) {
+      return normalizedId.replace("haionnet/", "");
+    }
     return slug;
+  }
+
+  // Prepend /ko/ for haionnet posts so they are mapped to the Korean haionnet board
+  if (normalizedId.startsWith("haionnet/")) {
+    return "/ko/" + normalizedId;
   }
 
   // Prepend / for absolute internal URL
