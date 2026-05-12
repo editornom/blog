@@ -50,7 +50,7 @@ faqs:
 
 생성형 AI(GenAI)가 엔터프라이즈 운영의 핵심 동력으로 자리 잡으면서, 기술의 화려한 외형만큼이나 그 이면에 숨겨진 취약점을 검증하려는 움직임이 분주합니다. 도입 속도가 거버넌스의 정립 속도를 압도하고 있는 현재, 많은 기업이 보안 가이드라인이 부재한 상태에서 시스템을 가동하고 있습니다.
 
-딜로이트와 IBM의 조사에 따르면, 생성형 AI 도구를 도입한 엔터프라이즈의 약 60%가 공식적인 감사 프로세스 없이 운영 중인 것으로 나타났습니다. 특히 데이터 기밀성이 엄격히 요구되는 금융, 의료, 국방 분야에서도 상당수의 사용자가 적절한 통제 장치 없이 거대 언어 모델(LLM)에 접근하고 있습니다. 이러한 거버넌스의 공백을 기술적으로 메우기 위해 부상한 개념이 바로 AI 보안 감사(AI Security Auditing)입니다.
+딜로이트와 IBM의 조사에 따르면, 생성형 AI 도구를 도입한 엔터프라이즈의 약 60%가 공식적인 감사 프로세스 없이 운영 중인 것으로 나타났습니다. 특히 데이터 기밀성이 엄격히 요구되는 금융, 의료, 국방 분야에서도 상당수의 사용자가 적절한 통제 장치 없이 거대 언어 모델(<b>LLM</b>)에 접근하고 있습니다. 이러한 거버넌스의 공백을 기술적으로 메우기 위해 부상한 개념이 바로 AI 보안 감사(AI <b>Security</b> Auditing)입니다.
 
 ![A high-tech digital dashboard displaying real-time AI data flow, security audit logs, and risk assessment metrics with minimalist icons and a dark theme.]
 
@@ -91,4 +91,4 @@ AI 보안 감사는 이제 선택사항이 아닌 기업의 생존을 위한 필
 ## 🔗 함께 읽으면 좋은 글
 
 - [어텐션이 재편한 기술 지형과 트랜스포머의 명암](/ko/posts/attention-transformers-tech-landscape)
-- [MCP, AI 통합의 복잡성을 관통하는 표준 프로토콜의 설계도](/ko/posts/mcp-ai-integration-standard-protocol)
+- [<b>MCP</b>, AI 통합의 복잡성을 관통하는 표준 프로토콜의 설계도](/ko/posts/mcp-ai-integration-standard-protocol)
