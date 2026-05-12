@@ -116,43 +116,43 @@ faqs:
 
 <table style="width:100%; border-collapse: collapse; margin: 20px 0;">
 <thead>
-<tr style="background-color: #0f172a; color: #ffffff;">
-<th style="padding: 12px; border: 1px solid #cbd5e1;">평가 기준 및 요소</th>
-<th style="padding: 12px; border: 1px solid #cbd5e1; background-color: #1e293b;">하이온넷 HGX-CN 서비스</th>
-<th style="padding: 12px; border: 1px solid #cbd5e1;">일반 하드웨어 VPN (공용망)</th>
-<th style="padding: 12px; border: 1px solid #cbd5e1;">고비용 국제전용회선 (IPLC)</th>
+<tr style="background-color: #1e293b;">
+<th style="padding: 12px; border: 1px solid #cbd5e1; color: #ffffff !important; font-weight: bold; text-align: center;">평가 기준 및 요소</th>
+<th style="padding: 12px; border: 1px solid #cbd5e1; background-color: #0f172a; color: #34d399 !important; font-weight: bold; text-align: center;">하이온넷 HGX-CN 서비스</th>
+<th style="padding: 12px; border: 1px solid #cbd5e1; color: #ffffff !important; font-weight: bold; text-align: center;">일반 하드웨어 VPN (공용망)</th>
+<th style="padding: 12px; border: 1px solid #cbd5e1; color: #ffffff !important; font-weight: bold; text-align: center;">고비용 국제전용회선 (IPLC)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold;">한-중 평균 레이턴시(Ping)</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #10b981; background-color: #f0fdf4;">35ms ~ 50ms (공식 스펙 보장 수치로 매우 안정적)</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1;">80ms ~ 200ms 이상 (잦은 스파이크)</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1;">30ms ~ 40ms 내외 (안정적)</td>
+<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #059669; background-color: rgba(16, 185, 129, 0.08); text-align: center;">35ms ~ 50ms (공식 스펙 보장 수치로 매우 안정적)</td>
+<td style="padding: 12px; border: 1px solid #cbd5e1; text-align: center;">80ms ~ 200ms 이상 (잦은 스파이크)</td>
+<td style="padding: 12px; border: 1px solid #cbd5e1; text-align: center;">30ms ~ 40ms 내외 (안정적)</td>
 </tr>
 <tr>
 <td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold;">패킷 손실률 (Packet Loss)</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #10b981; background-color: #f0fdf4;">0.1% 미만 (무손실 전송 보장)</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1;">5% ~ 20% 이상 (잦은 패킷 탈락)</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1;">0.1% 미만 (무손실 전송 보장)</td>
+<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #059669; background-color: rgba(16, 185, 129, 0.08); text-align: center;">0.1% 미만 (무손실 전송 보장)</td>
+<td style="padding: 12px; border: 1px solid #cbd5e1; text-align: center;">5% ~ 20% 이상 (잦은 패킷 탈락)</td>
+<td style="padding: 12px; border: 1px solid #cbd5e1; text-align: center;">0.1% 미만 (무손실 전송 보장)</td>
 </tr>
 <tr>
 <td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold;">인프라 구축 비용</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #10b981; background-color: #f0fdf4;">기존 해외전용선 대비 최대 90% 비용 절감 (1/10 가격)</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1;">아주 저렴함 (그러나 업무 성능 불량)</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; color: #ef4444;">매우 높음 (수백 ~ 수천만 원/월)</td>
+<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #059669; background-color: rgba(16, 185, 129, 0.08); text-align: center;">기존 해외전용선 대비 최대 90% 비용 절감 (1/10 가격)</td>
+<td style="padding: 12px; border: 1px solid #cbd5e1; text-align: center;">아주 저렴함 (그러나 업무 성능 불량)</td>
+<td style="padding: 12px; border: 1px solid #cbd5e1; color: #ef4444; text-align: center;">매우 높음 (수백 ~ 수천만 원/월)</td>
 </tr>
 <tr>
 <td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold;">설치 및 긴급 개통 기간</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #10b981; background-color: #f0fdf4;">신청 후 5분 이내 즉시 개통 (소규모 10분 내 세팅 완료)</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1;">자가 설치 즉시 개통</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; color: #ef4444;">실제 광케이블 포설 및 심사 필요 (4~8주)</td>
+<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #059669; background-color: rgba(16, 185, 129, 0.08); text-align: center;">신청 후 5분 이내 즉시 개통 (소규모 10분 내 세팅 완료)</td>
+<td style="padding: 12px; border: 1px solid #cbd5e1; text-align: center;">자가 설치 즉시 개통</td>
+<td style="padding: 12px; border: 1px solid #cbd5e1; color: #ef4444; text-align: center;">실제 광케이블 포설 및 심사 필요 (4~8주)</td>
 </tr>
 <tr>
 <td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold;">사후 장애 예방 대응</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #10b981; background-color: #f0fdf4;">24시간 365일 실시간 관제 및 즉시 패치</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1;">장애 시 자체 해결 (대응 부재)</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1;">통신사 고객센터 SLA 대응 (다소 느림)</td>
+<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #059669; background-color: rgba(16, 185, 129, 0.08); text-align: center;">24시간 365일 실시간 관제 및 즉시 패치</td>
+<td style="padding: 12px; border: 1px solid #cbd5e1; text-align: center;">장애 시 자체 해결 (대응 부재)</td>
+<td style="padding: 12px; border: 1px solid #cbd5e1; text-align: center;">통신사 고객센터 SLA 대응 (다소 느림)</td>
 </tr>
 </tbody>
 </table>
