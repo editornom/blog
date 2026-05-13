@@ -1,5 +1,5 @@
 ---
-title: '아태 지역 기업 81%가 무너졌다: 아카마이 리포트로 본 AI 시대 API 보안 위기 실태와 기술 대책'
+title: 'AI 생태계의 숨은 아킬레스건 섀도우 API: 아카마이 리포트로 본 엔터프라이즈 보안 위기와 시프트 레프트 전략'
 author: editornom
 author_role: Senior Tech Editor
 author_url: https://editornom.com/about
