@@ -64,3 +64,4 @@
 [2026-05-13] [AI추천_39점] Page-Cache
 [2026-05-13] [AI추천_40점] Memory Safety
 [2026-05-13] [AI추천_40점] Model Context Protocol
+[2026-05-13] [AI추천_39점] Transformer

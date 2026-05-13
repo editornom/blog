@@ -1,4 +1,6 @@
 https://hai.stanford.edu/ai-definitions/what-is-a-transformer
-https://medium.com/softaai-blogs/transformer-architecture-explained-simply-the-ai-breakthrough-behind-chatgpt-modern-nlp-5a524c8e4e86
+https://atlan.com/know/what-is-a-transformer-model/
+https://medium.com/@ai.zeynepaslan/transformer-architecture-9876c2e5ac19
+https://www.artiba.org/blog/how-transformer-models-work-architecture-attention-and-applications
+https://blog.bytebytego.com/p/how-transformers-architecture-powers
 https://www.codecademy.com/article/transformer-architecture-self-attention-mechanism
-https://medium.com/@iammasariya/transformer-architecture-explained-with-code-359259db460f
