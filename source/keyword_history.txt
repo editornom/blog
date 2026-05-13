@@ -63,3 +63,4 @@
 [2026-05-12] [Fallback] CNAPP(Cloud-Native Application Protection Platform) 통합 보안 아키텍처
 [2026-05-13] [AI추천_39점] Page-Cache
 [2026-05-13] [AI추천_40점] Memory Safety
+[2026-05-13] [AI추천_40점] Model Context Protocol
