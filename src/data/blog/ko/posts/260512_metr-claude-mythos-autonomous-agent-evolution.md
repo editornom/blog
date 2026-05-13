@@ -79,7 +79,7 @@ Claude Mythos가 증명한 16시간의 자율 연속 작동 능력은 테크 산
 ### 3.2 전 세계 보안 체계의 전면 개편과 긴박한 현상들
 이러한 파괴적 성능 앞에 기존의 보안 프레임워크들은 순식간에 종이호랑이로 전락하고 있습니다. 전 세계 보안 업계는 현재 다음과 같은 즉각적인 변화와 비상 대책 수립에 돌입했습니다.
 
-<table style="width:100%; border-collapse: collapse;"><thead><tr style="background-color: #f2f2f2;"><th>구분 및 분석 요소</th><th>전통적 사이버 보안 패러다임</th><th>Claude Mythos 출현 이후의 보안 패러다임</th></tr></thead><tbody><tr><td>핵심 방어 대상</td><td>알려진 패턴 기반 악성코드 및 침투 탐지</td><td><strong>지속적이고 자율 추론을 수행하는 AI 에이전트의 흐름</strong></td></tr><tr><td>대응 및 격리 속도</td><td>인간 관제사(SOC)가 로그 확인 후 평균 수 분 ~ 수 시간 내 차단</td><td><strong>초 단위 자율 디버깅 및 봉쇄 체계 (Autonomous SOAR)</strong></td></tr><tr><td>공격 무력화 검증</td><td>주기적인 모의 해킹 및 자산 스캔 취약점 패치</td><td><strong>AI Red Teaming을 통한 상시 공격 가상 시나리오 자동 연산</strong></td></tr><tr><td>방어 설계 인프라</td><td>방화벽, WAF 및 백신 중심 물리적 분리 장벽</td><td>실시간 AI 방어 비서가 탑재된 행위 제약 및 제로트러스트 샌드박스</td></tr></tbody></table>
+<table><thead><tr><th>구분 및 분석 요소</th><th>전통적 사이버 보안 패러다임</th><th>Claude Mythos 출현 이후의 보안 패러다임</th></tr></thead><tbody><tr><td>핵심 방어 대상</td><td>알려진 패턴 기반 악성코드 및 침투 탐지</td><td><strong>지속적이고 자율 추론을 수행하는 AI 에이전트의 흐름</strong></td></tr><tr><td>대응 및 격리 속도</td><td>인간 관제사(SOC)가 로그 확인 후 평균 수 분 ~ 수 시간 내 차단</td><td><strong>초 단위 자율 디버깅 및 봉쇄 체계 (Autonomous SOAR)</strong></td></tr><tr><td>공격 무력화 검증</td><td>주기적인 모의 해킹 및 자산 스캔 취약점 패치</td><td><strong>AI Red Teaming을 통한 상시 공격 가상 시나리오 자동 연산</strong></td></tr><tr><td>방어 설계 인프라</td><td>방화벽, WAF 및 백신 중심 물리적 분리 장벽</td><td>실시간 AI 방어 비서가 탑재된 행위 제약 및 제로트러스트 샌드박스</td></tr></tbody></table>
 
 * <b>AI를 잡는 AI: 능동적 자율 방어 체계의 필수화</b>:
   사람의 판단을 기다린 뒤 대응하는 것은 이미 늦습니다. 이제 방어 진영 역시 스스로 침투 징후를 감지하고 가상 환경에 악성 요소를 고립(Sandboxing)시켜 해결책을 도출하는 <b>'AI 기반의 능동적 실시간 자동 방어(Autonomous Cyber Defense)'</b> 솔루션 도입에 명운을 걸고 있습니다.

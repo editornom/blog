@@ -94,7 +94,7 @@ faqs:
 
  ### 3.2 도구 사용 능력과 <b>아키텍처</b> 이해도의 트레이드오프
 
-<table style="width:100%; border-collapse: collapse;"><thead><tr style="background-color: #f2f2f2;"><th>비교 항목</th><th>GPT-5.5 (OpenAI)</th><th><b>Claude</b> Opus 4.7 (Anthropic)</th></tr></thead><tbody><tr><td>출력 토큰 효율성</td><td><strong>72% 절감 (초압축형)</strong></td><td>기존 수준 유지 (설명 포함)</td></tr><tr><td>ARC-AGI-3 점수</td><td>0.43% (추론 압축 실패)</td><td>0.18% (잘못된 압축/가설 집착)</td></tr><tr><td>주요 실패 모드</td><td>가설 생성은 넓으나 실행 계획 부족</td><td>강한 가설 기반의 공격적 실행 오류</td></tr><tr><td>1M 토큰당 비용(Output)</td><td>$30 (단가는 높으나 사용량 적음)</td><td>$25 (단가는 낮으나 사용량 많음)</td></tr><tr><td>권장 용도</td><td>고속 에이전트 루프, 단위 기능 구현</td><td>대규모 아키텍처 리뷰, XAI 필요 과제</td></tr></tbody></table>
+<table><thead><tr><th>비교 항목</th><th>GPT-5.5 (OpenAI)</th><th><b>Claude</b> Opus 4.7 (Anthropic)</th></tr></thead><tbody><tr><td>출력 토큰 효율성</td><td><strong>72% 절감 (초압축형)</strong></td><td>기존 수준 유지 (설명 포함)</td></tr><tr><td>ARC-AGI-3 점수</td><td>0.43% (추론 압축 실패)</td><td>0.18% (잘못된 압축/가설 집착)</td></tr><tr><td>주요 실패 모드</td><td>가설 생성은 넓으나 실행 계획 부족</td><td>강한 가설 기반의 공격적 실행 오류</td></tr><tr><td>1M 토큰당 비용(Output)</td><td>$30 (단가는 높으나 사용량 적음)</td><td>$25 (단가는 낮으나 사용량 많음)</td></tr><tr><td>권장 용도</td><td>고속 에이전트 루프, 단위 기능 구현</td><td>대규모 아키텍처 리뷰, XAI 필요 과제</td></tr></tbody></table>
 
  터미널 제어나 파일 시스템 탐색 같은 단기적인 도구 사용 능력에서는 GPT-5.5가 압도적인 성능을 뽐내요. 그러나 1만 라인이 넘어가는 대규모 레포지토리의 전체 구조를 이해해야 하는 SWE-Bench Pro 환경에서는 여전히 Opus 4.7의 깊이 있는 분석력이 우위를 점하고 있지요.
 

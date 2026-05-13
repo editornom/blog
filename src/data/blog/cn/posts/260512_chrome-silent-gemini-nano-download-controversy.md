@@ -66,7 +66,7 @@ faqs:
 ### 2.2 系统性能影响及资源指标对比
 我们可以对传统的云端AI功能与强行下载在本地运行的Gemini Nano，在其对系统资源的消耗上进行对比分析：
 
-<table style="width:100%; border-collapse: collapse;"><thead><tr style="background-color: #f2f2f2;"><th>资源评估指标</th><th>基于云端的传统AI功能</th><th>强行下载的本地Gemini Nano (Chrome)</th></tr></thead><tbody><tr><td>磁盘存储开销</td><td><strong>0 MB (无任何影响)</strong></td><td>约3.8GB 至 4.2GB (`weights.bin` 文件)</td></tr><tr><td>首次下载占用流量</td><td>无 (仅有轻微的API请求传输)</td><td>至少1.5GB 至 2.0GB的压缩包静默下载</td></tr><tr><td>运行时对RAM的占用</td><td>微乎其微 (仅处理基础的HTTP连接)</td><td>运行推理时，至少会强行霸占1GB 至 2GB以上的系统空闲内存</td></tr><tr><td>电池续航与硬件发热</td><td>极低</td><td>在本地进行密集推理计算时，会导致功耗骤增并伴随发热</td></tr><tr><td>数据隐私保障级别</td><td>标准 (数据必须发往云端)</td><td><strong>极佳 (完全在本地的安全沙箱中封闭处理)</strong></td></tr></tbody></table>
+<table><thead><tr><th>资源评估指标</th><th>基于云端的传统AI功能</th><th>强行下载的本地Gemini Nano (Chrome)</th></tr></thead><tbody><tr><td>磁盘存储开销</td><td><strong>0 MB (无任何影响)</strong></td><td>约3.8GB 至 4.2GB (`weights.bin` 文件)</td></tr><tr><td>首次下载占用流量</td><td>无 (仅有轻微的API请求传输)</td><td>至少1.5GB 至 2.0GB的压缩包静默下载</td></tr><tr><td>运行时对RAM的占用</td><td>微乎其微 (仅处理基础的HTTP连接)</td><td>运行推理时，至少会强行霸占1GB 至 2GB以上的系统空闲内存</td></tr><tr><td>电池续航与硬件发热</td><td>极低</td><td>在本地进行密集推理计算时，会导致功耗骤增并伴随发热</td></tr><tr><td>数据隐私保障级别</td><td>标准 (数据必须发往云端)</td><td><strong>极佳 (完全在本地的安全沙箱中封闭处理)</strong></td></tr></tbody></table>
 
 ---
 

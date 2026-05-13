@@ -93,7 +93,7 @@ eBPFロジックのエラーによって発生した予期せぬネットワー�
 
 <br>
 
-<table border="1">
+<table>
 <tr>
 <th>比較項目</th>
 <th>従来のAPM (Application Performance Monitoring)</th>

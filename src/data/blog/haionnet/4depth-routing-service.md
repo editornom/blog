@@ -98,39 +98,39 @@ faqs:
 
 네트워크 가용율을 극적으로 끌어올려 장애 리스크를 제로화하려는 실무자분들을 위해 수치 지표 기준의 사양 대조표를 전해 드립니다.
 
-<table style="width: 100%; border-collapse: collapse; border: 1px solid #cbd5e1; text-align: left; font-size: 15px; margin-bottom: 24px;">
+<table>
 <thead>
-<tr style="background-color: #0f172a;">
-<th style="padding: 12px; border: 1px solid #cbd5e1; color: #ffffff !important; font-weight: bold; text-align: center;">비교 평가 기준</th>
-<th style="padding: 12px; border: 1px solid #cbd5e1; color: #ffffff !important; font-weight: bold; text-align: center;">하이온넷 포뎁스(4depth) 특허 라우팅</th>
-<th style="padding: 12px; border: 1px solid #cbd5e1; color: #ffffff !important; font-weight: bold; text-align: center;">기존 수동형 이중화 (Active-Backup)</th>
+<tr>
+<th>비교 평가 기준</th>
+<th>하이온넷 포뎁스(4depth) 특허 라우팅</th>
+<th>기존 수동형 이중화 (Active-Backup)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold;">장애 회선 자동 절체 속도</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #059669; background-color: rgba(16, 185, 129, 0.08); text-align: center;">단 0.1초 미만 (데이터 무손실 순각 우회)</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; color: #ef4444; text-align: center;">최소 30초 ~ 2분 상당 소요 (세션 강제 폭파)</td>
+<td>장애 회선 자동 절체 속도</td>
+<td>단 0.1초 미만 (데이터 무손실 순각 우회)</td>
+<td>최소 30초 ~ 2분 상당 소요 (세션 강제 폭파)</td>
 </tr>
 <tr>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold;">실질 패킷 유실률 (Packet Loss)</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #059669; background-color: rgba(16, 185, 129, 0.08); text-align: center;">0.00% 수렴 (중복 패킷 보정 테크놀로지)</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; text-align: center;">장애 구간 통과 시 무더기 패킷 소멸</td>
+<td>실질 패킷 유실률 (Packet Loss)</td>
+<td>0.00% 수렴 (중복 패킷 보정 테크놀로지)</td>
+<td>장애 구간 통과 시 무더기 패킷 소멸</td>
 </tr>
 <tr>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold;">백업 회선 대역폭 합산 가속</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #059669; background-color: rgba(16, 185, 129, 0.08); text-align: center;">지원 (Active-Active 묶음으로 전체 속도 증속)</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; text-align: center;">미지원 (평소에는 백업 회선 유휴 및 방치)</td>
+<td>백업 회선 대역폭 합산 가속</td>
+<td>지원 (Active-Active 묶음으로 전체 속도 증속)</td>
+<td>미지원 (평소에는 백업 회선 유휴 및 방치)</td>
 </tr>
 <tr>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold;">차세대 방화벽 보안 일체화</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #059669; background-color: rgba(16, 185, 129, 0.08); text-align: center;">기본 탑재 (Fortinet 고성능 보안 엔진 연동)</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; text-align: center;">별도 방화벽 고가 추가 도입 및 라이센스 요구</td>
+<td>차세대 방화벽 보안 일체화</td>
+<td>기본 탑재 (Fortinet 고성능 보안 엔진 연동)</td>
+<td>별도 방화벽 고가 추가 도입 및 라이센스 요구</td>
 </tr>
 <tr>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold;">트래픽 가시성 웹포털</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #059669; background-color: rgba(16, 185, 129, 0.08); text-align: center;">기본 제공 (실시간 세션 가시 대시보드 무료)</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; text-align: center;">수동 로그 대조 또는 시중 고가 관제 연동 요망</td>
+<td>트래픽 가시성 웹포털</td>
+<td>기본 제공 (실시간 세션 가시 대시보드 무료)</td>
+<td>수동 로그 대조 또는 시중 고가 관제 연동 요망</td>
 </tr>
 </tbody>
 </table>

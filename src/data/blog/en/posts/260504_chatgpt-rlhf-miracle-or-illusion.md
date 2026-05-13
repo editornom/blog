@@ -103,7 +103,7 @@ faqs:
 
 <p>The following table clearly contrasts the fundamental technical differences between Pre-training, which absorbs the core features of language, and RLHF, which injects social packaging, and the macro risks associated with each. In a recent reinforcement learning deep-dive guide published by Weights & Biases, a prominent global AI community, the stark structural differences and underlying risks of these two processes are also treated with a very critical scholarly perspective.</p>
 
-<table border="1">
+<table>
 <thead>
 <tr>
 <th>Comparison Item</th>

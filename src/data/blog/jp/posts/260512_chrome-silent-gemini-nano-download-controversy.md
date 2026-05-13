@@ -66,7 +66,7 @@ Googleは、このモデルがChromeの文章作成アシスト（「Help me wri
 ### 2.2 リソース消費とシステムへの影響分析
 クラウドAI機能と、ローカルに強制ダウンロードされるGemini Nanoによる影響の違いを比較した表が以下になります。
 
-<table style="width:100%; border-collapse: collapse;"><thead><tr style="background-color: #f2f2f2;"><th>リソース指標</th><th>クラウドAIベース機能</th><th>オンデバイス Gemini Nano（Chrome）</th></tr></thead><tbody><tr><td>ディスク容量の消費</td><td><strong>0 MB（影響なし）</strong></td><td>約3.8GB 〜 4.2GB（`weights.bin` ファイル）</td></tr><tr><td>初期ダウンロード容量</td><td>なし（APIを都度呼び出すのみ）</td><td>圧縮状態で少なくとも1.5GB 〜 2GB以上の無断ダウンロード</td></tr><tr><td>推論実行時のメモリ占有</td><td>ごく僅か（HTTP通信のオーバーヘッドのみ）</td><td>起動中、少なくとも1GB 〜 2GB以上のシステムRAMを独占</td></tr><tr><td>バッテリー及び発熱への影響</td><td>極めて低い</td><td>ローカルで演算が集中する際、一時的に消費電力が急増し発熱が発生</td></tr><tr><td>データプライバシー強度</td><td>標準的（サーバーへテキストが送信される）</td><td><strong>極めて優れている（ローカルの安全なサンドボックス内のみで完結）</strong></td></tr></tbody></table>
+<table><thead><tr><th>リソース指標</th><th>クラウドAIベース機能</th><th>オンデバイス Gemini Nano（Chrome）</th></tr></thead><tbody><tr><td>ディスク容量の消費</td><td><strong>0 MB（影響なし）</strong></td><td>約3.8GB 〜 4.2GB（`weights.bin` ファイル）</td></tr><tr><td>初期ダウンロード容量</td><td>なし（APIを都度呼び出すのみ）</td><td>圧縮状態で少なくとも1.5GB 〜 2GB以上の無断ダウンロード</td></tr><tr><td>推論実行時のメモリ占有</td><td>ごく僅か（HTTP通信のオーバーヘッドのみ）</td><td>起動中、少なくとも1GB 〜 2GB以上のシステムRAMを独占</td></tr><tr><td>バッテリー及び発熱への影響</td><td>極めて低い</td><td>ローカルで演算が集中する際、一時的に消費電力が急増し発熱が発生</td></tr><tr><td>データプライバシー強度</td><td>標準的（サーバーへテキストが送信される）</td><td><strong>極めて優れている（ローカルの安全なサンドボックス内のみで完結）</strong></td></tr></tbody></table>
 
 ---
 

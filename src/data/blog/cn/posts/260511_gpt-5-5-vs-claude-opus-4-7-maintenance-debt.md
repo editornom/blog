@@ -83,7 +83,7 @@ GPT-5.5 生成的极度压缩的代码给人类开发人员带来了所谓的“
 
 ### 3.2 工具使用能力与架构理解能力的权衡 (Trade-off)
 
-<table style="width:100%; border-collapse: collapse;"><thead><tr style="background-color: #f2f2f2;"><th>比较项目</th><th>GPT-5.5 (OpenAI)</th><th>Claude Opus 4.7 (Anthropic)</th></tr></thead><tbody><tr><td>输出 Token 效率</td><td><strong>节省 72% (超压缩型)</strong></td><td>维持现有水平 (包含解释)</td></tr><tr><td>ARC-AGI-3 分数</td><td>0.43% (推理压缩失败)</td><td>0.18% (错误压缩/执着于假设)</td></tr><tr><td>主要失败模式</td><td>假设生成广泛但缺乏执行计划</td><td>基于强假设的激进执行错误</td></tr><tr><td>每 1M Token 成本 (Output)</td><td>$30 (单价高但使用量少)</td><td>$25 (单价低但使用量多)</td></tr><tr><td>建议用途</td><td>高速 Agent 循环、单元功能实现</td><td>大规模架构审查、需要 XAI 的任务</td></tr></tbody></table>
+<table><thead><tr><th>比较项目</th><th>GPT-5.5 (OpenAI)</th><th>Claude Opus 4.7 (Anthropic)</th></tr></thead><tbody><tr><td>输出 Token 效率</td><td><strong>节省 72% (超压缩型)</strong></td><td>维持现有水平 (包含解释)</td></tr><tr><td>ARC-AGI-3 分数</td><td>0.43% (推理压缩失败)</td><td>0.18% (错误压缩/执着于假设)</td></tr><tr><td>主要失败模式</td><td>假设生成广泛但缺乏执行计划</td><td>基于强假设的激进执行错误</td></tr><tr><td>每 1M Token 成本 (Output)</td><td>$30 (单价高但使用量少)</td><td>$25 (单价低但使用量多)</td></tr><tr><td>建议用途</td><td>高速 Agent 循环、单元功能实现</td><td>大规模架构审查、需要 XAI 的任务</td></tr></tbody></table>
 
 在终端控制或文件系统导航等短期工具使用能力方面，GPT-5.5 表现出了压倒性的性能。然而，在需要理解超过 1 万行的庞大代码库整体结构的 SWE-Bench Pro 环境中，Opus 4.7 深度分析能力的优势依然存在。
 

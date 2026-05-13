@@ -93,7 +93,7 @@ This is a technical learning curve far too steep for the average IT company's De
 
 <br>
 
-<table border="1">
+<table>
 <tr>
 <th>Comparison Item</th>
 <th>Traditional APM (Application Performance Monitoring)</th>

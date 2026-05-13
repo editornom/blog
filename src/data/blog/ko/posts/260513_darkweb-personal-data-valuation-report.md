@@ -42,51 +42,51 @@ faqs:
 
 아래는 노드VPN 연구 결과 밝혀진 주요 품목별 평균 다크웹 거래 가격(단위: USD) 대조표입니다.
 
-<table style="width:100%; border-collapse: collapse; margin-bottom: 24px;">
+<table>
   <thead>
-    <tr style="background-color: #1e1e2e; color: #ffffff;">
-      <th style="padding: 12px; border: 1px solid #444; text-align: left;">자산 카테고리</th>
-      <th style="padding: 12px; border: 1px solid #444; text-align: left;">세부 유출 품목</th>
-      <th style="padding: 12px; border: 1px solid #444; text-align: center;">평균 거래 단가 (USD)</th>
-      <th style="padding: 12px; border: 1px solid #444; text-align: left;">주요 악용 시나리오</th>
+    <tr>
+      <th>자산 카테고리</th>
+      <th>세부 유출 품목</th>
+      <th>평균 거래 단가 (USD)</th>
+      <th>주요 악용 시나리오</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="padding: 12px; border: 1px solid #444; font-weight: bold;">최고가 금융 자산</td>
-      <td style="padding: 12px; border: 1px solid #444;">바이낸스/코인베이스 검증 계정</td>
-      <td style="padding: 12px; border: 1px solid #444; text-align: center; color: #ff5555; font-weight: bold;">$100 ~ $150</td>
-      <td style="padding: 12px; border: 1px solid #444;">해킹 자금 세탁, 추적 불가능한 불법 송금 송출 통로</td>
-    </tr>
-    <tr style="background-color: #f9f9f9;">
-      <td style="padding: 12px; border: 1px solid #444; font-weight: bold;">실물 가치 수단</td>
-      <td style="padding: 12px; border: 1px solid #444;">실제 여권 고해상도 스캔 복사본</td>
-      <td style="padding: 12px; border: 1px solid #444; text-align: center;">$10 ~ $60</td>
-      <td style="padding: 12px; border: 1px solid #444;">온라인 은행 대출 개설, 가짜 신분 우회 가입, 위조지폐 연계</td>
+      <td>최고가 금융 자산</td>
+      <td>바이낸스/코인베이스 검증 계정</td>
+      <td>$100 ~ $150</td>
+      <td>해킹 자금 세탁, 추적 불가능한 불법 송금 송출 통로</td>
     </tr>
     <tr>
-      <td style="padding: 12px; border: 1px solid #444; font-weight: bold;">신용/지불 결제</td>
-      <td style="padding: 12px; border: 1px solid #444;">신용카드 (카드 번호 + CVV + 만료일)</td>
-      <td style="padding: 12px; border: 1px solid #444; text-align: center;">$10 ~ $20</td>
-      <td style="padding: 12px; border: 1px solid #444;">해외 사이트 무단 고액 결제, 상품권 대량 대리 깡</td>
-    </tr>
-    <tr style="background-color: #f9f9f9;">
-      <td style="padding: 12px; border: 1px solid #444; font-weight: bold;">관문 이메일</td>
-      <td style="padding: 12px; border: 1px solid #444;">지메일 (Gmail) 검증된 비밀번호 패키지</td>
-      <td style="padding: 12px; border: 1px solid #444; text-align: center;">$10 ~ $15</td>
-      <td style="padding: 12px; border: 1px solid #444;">타 금융사 비밀번호 찾기 우회 탈취, 2FA 우회 가로채기</td>
+      <td>실물 가치 수단</td>
+      <td>실제 여권 고해상도 스캔 복사본</td>
+      <td>$10 ~ $60</td>
+      <td>온라인 은행 대출 개설, 가짜 신분 우회 가입, 위조지폐 연계</td>
     </tr>
     <tr>
-      <td style="padding: 12px; border: 1px solid #444; font-weight: bold;">소셜 미디어</td>
-      <td style="padding: 12px; border: 1px solid #444;">인스타그램 / 페이스북 계정 로그인 정보</td>
-      <td style="padding: 12px; border: 1px solid #444; text-align: center;">$2 ~ $5</td>
-      <td style="padding: 12px; border: 1px solid #444;">실제 인맥 기반의 피싱 링크 살포, 지인 사칭 사기</td>
+      <td>신용/지불 결제</td>
+      <td>신용카드 (카드 번호 + CVV + 만료일)</td>
+      <td>$10 ~ $20</td>
+      <td>해외 사이트 무단 고액 결제, 상품권 대량 대리 깡</td>
     </tr>
-    <tr style="background-color: #f9f9f9;">
-      <td style="padding: 12px; border: 1px solid #444; font-weight: bold;">디지털 라이프</td>
-      <td style="padding: 12px; border: 1px solid #444;">넷플릭스 / 스포티파이 공유 구독 계정</td>
-      <td style="padding: 12px; border: 1px solid #444; text-align: center;">$1 ~ $3</td>
-      <td style="padding: 12px; border: 1px solid #444;">제3자 무단 쉐어링 불법 재판매, 프리미엄 멤버십 도용</td>
+    <tr>
+      <td>관문 이메일</td>
+      <td>지메일 (Gmail) 검증된 비밀번호 패키지</td>
+      <td>$10 ~ $15</td>
+      <td>타 금융사 비밀번호 찾기 우회 탈취, 2FA 우회 가로채기</td>
+    </tr>
+    <tr>
+      <td>소셜 미디어</td>
+      <td>인스타그램 / 페이스북 계정 로그인 정보</td>
+      <td>$2 ~ $5</td>
+      <td>실제 인맥 기반의 피싱 링크 살포, 지인 사칭 사기</td>
+    </tr>
+    <tr>
+      <td>디지털 라이프</td>
+      <td>넷플릭스 / 스포티파이 공유 구독 계정</td>
+      <td>$1 ~ $3</td>
+      <td>제3자 무단 쉐어링 불법 재판매, 프리미엄 멤버십 도용</td>
     </tr>
   </tbody>
 </table>

@@ -104,7 +104,7 @@ eBPF 로직 오류로 인해 발생한 예기치 않은 네트워크 패킷 드�
 
 <br>
 
-<table border="1">
+<table>
 <tr>
 <th>비교 항목</th>
 <th>기존 APM (Application Performance Monitoring)</th>

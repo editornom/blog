@@ -83,7 +83,7 @@ GPT-5.5が生成した極限まで圧縮されたコードは、人間の開発�
 
 ### 3.2 ツール活用能力とアーキテクチャ理解度のトレードオフ
 
-<table style="width:100%; border-collapse: collapse;"><thead><tr style="background-color: #f2f2f2;"><th>比較項目</th><th>GPT-5.5 (OpenAI)</th><th>Claude Opus 4.7 (Anthropic)</th></tr></thead><tbody><tr><td>出力トークン効率性</td><td><strong>72%削減（超圧縮型）</strong></td><td>従来水準を維持（説明を含む）</td></tr><tr><td>ARC-AGI-3 スコア</td><td>0.43%（推論圧縮の失敗）</td><td>0.18%（誤った圧縮/仮説への執着）</td></tr><tr><td>主な失敗モード</td><td>仮説生成は広いが実行計画が不足</td><td>強力な仮説に基づく攻撃的な実行エラー</td></tr><tr><td>1Mトークンあたりのコスト(Output)</td><td>$30（単価は高いが使用量は少ない）</td><td>$25（単価は低いが使用量は多い）</td></tr><tr><td>推奨用途</td><td>高速エージェントループ、単一機能の実装</td><td>大規模アーキテクチャレビュー、XAIが必要な課題</td></tr></tbody></table>
+<table><thead><tr><th>比較項目</th><th>GPT-5.5 (OpenAI)</th><th>Claude Opus 4.7 (Anthropic)</th></tr></thead><tbody><tr><td>出力トークン効率性</td><td><strong>72%削減（超圧縮型）</strong></td><td>従来水準を維持（説明を含む）</td></tr><tr><td>ARC-AGI-3 スコア</td><td>0.43%（推論圧縮の失敗）</td><td>0.18%（誤った圧縮/仮説への執着）</td></tr><tr><td>主な失敗モード</td><td>仮説生成は広いが実行計画が不足</td><td>強力な仮説に基づく攻撃的な実行エラー</td></tr><tr><td>1Mトークンあたりのコスト(Output)</td><td>$30（単価は高いが使用量は少ない）</td><td>$25（単価は低いが使用量は多い）</td></tr><tr><td>推奨用途</td><td>高速エージェントループ、単一機能の実装</td><td>大規模アーキテクチャレビュー、XAIが必要な課題</td></tr></tbody></table>
 
 ターミナル制御やファイルシステム探索のような短期的なツール活用能力においては、GPT-5.5が圧倒的な性能を誇ります。しかし、1万行を超える大規模リポジトリの全体構造を理解しなければならないSWE-Bench Pro環境では、依然としてOpus 4.7の深い分析力が優位を保っています。
 

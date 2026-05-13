@@ -106,44 +106,44 @@ PQC leverages existing classical internet architectures and fiber backbones but 
 
 Choosing between QKD and PQC is a trade-off between absolute physical security and deployment scalability.
 
-<table style="width:100%; border-collapse: collapse; margin-bottom: 24px;">
+<table>
   <thead>
-    <tr style="background-color: #1e1e2e; color: #ffffff;">
-      <th style="padding: 12px; border: 1px solid #444; text-align: left;">Metric</th>
-      <th style="padding: 12px; border: 1px solid #444; text-align: left;">🛡️ Quantum Key Distribution (QKD)</th>
-      <th style="padding: 12px; border: 1px solid #444; text-align: left;">🔑 Post-Quantum Cryptography (PQC)</th>
+    <tr>
+      <th>Metric</th>
+      <th>🛡️ Quantum Key Distribution (QKD)</th>
+      <th>🔑 Post-Quantum Cryptography (PQC)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="padding: 12px; border: 1px solid #444; font-weight: bold;">Security Foundation</td>
-      <td style="padding: 12px; border: 1px solid #444;"><strong>Laws of Physics</strong> (Quantum No-Cloning)</td>
-      <td style="padding: 12px; border: 1px solid #444;"><strong>Mathematical Complexity</strong> (Multi-Dimensional Lattices)</td>
-    </tr>
-    <tr style="background-color: #f9f9f9;">
-      <td style="padding: 12px; border: 1px solid #444; font-weight: bold;">Infrastructure Requirements</td>
-      <td style="padding: 12px; border: 1px solid #444;"><strong>Specialized optical transmitters, quantum receivers, dedicated dark fiber networks</strong></td>
-      <td style="padding: 12px; border: 1px solid #444;"><strong>Standard public networks, existing data centers, legacy cloud servers</strong></td>
+      <td>Security Foundation</td>
+      <td><strong>Laws of Physics</strong> (Quantum No-Cloning)</td>
+      <td><strong>Mathematical Complexity</strong> (Multi-Dimensional Lattices)</td>
     </tr>
     <tr>
-      <td style="padding: 12px; border: 1px solid #444; font-weight: bold;">Cost and Scalability</td>
-      <td style="padding: 12px; border: 1px solid #444;"><strong>High CAPEX</strong> (Requires major physical hardware investments and dedicated lines)</td>
-      <td style="padding: 12px; border: 1px solid #444;"><strong>Low CAPEX</strong> (Deploys via software updates, firmware patches, and software libraries)</td>
-    </tr>
-    <tr style="background-color: #f9f9f9;">
-      <td style="padding: 12px; border: 1px solid #444; font-weight: bold;">Distance Limitations</td>
-      <td style="padding: 12px; border: 1px solid #444;"><strong>Significant</strong> (Signal attenuation limits transmission to ~100-150km without trusted repeaters)</td>
-      <td style="padding: 12px; border: 1px solid #444;"><strong>Unlimited</strong> (Fully compatible with global routing and edge networks)</td>
+      <td>Infrastructure Requirements</td>
+      <td><strong>Specialized optical transmitters, quantum receivers, dedicated dark fiber networks</strong></td>
+      <td><strong>Standard public networks, existing data centers, legacy cloud servers</strong></td>
     </tr>
     <tr>
-      <td style="padding: 12px; border: 1px solid #444; font-weight: bold;">Primary Use Case</td>
-      <td style="padding: 12px; border: 1px solid #444;">Military command links, bank central vaults, hyper-scale data center trunks</td>
-      <td style="padding: 12px; border: 1px solid #444;">Web browsers, mobile banking, V2X connected vehicles, mass IoT devices</td>
+      <td>Cost and Scalability</td>
+      <td><strong>High CAPEX</strong> (Requires major physical hardware investments and dedicated lines)</td>
+      <td><strong>Low CAPEX</strong> (Deploys via software updates, firmware patches, and software libraries)</td>
     </tr>
-    <tr style="background-color: #f9f9f9;">
-      <td style="padding: 12px; border: 1px solid #444; font-weight: bold;">Metaphorical Analogy</td>
-      <td style="padding: 12px; border: 1px solid #444;"><strong>"A self-destructing letter that vaporizes the moment an eavesdropper looks at it."</strong></td>
-      <td style="padding: 12px; border: 1px solid #444;"><strong>"An intricate mathematical maze that even an alien supercomputer cannot navigate."</strong></td>
+    <tr>
+      <td>Distance Limitations</td>
+      <td><strong>Significant</strong> (Signal attenuation limits transmission to ~100-150km without trusted repeaters)</td>
+      <td><strong>Unlimited</strong> (Fully compatible with global routing and edge networks)</td>
+    </tr>
+    <tr>
+      <td>Primary Use Case</td>
+      <td>Military command links, bank central vaults, hyper-scale data center trunks</td>
+      <td>Web browsers, mobile banking, V2X connected vehicles, mass IoT devices</td>
+    </tr>
+    <tr>
+      <td>Metaphorical Analogy</td>
+      <td><strong>"A self-destructing letter that vaporizes the moment an eavesdropper looks at it."</strong></td>
+      <td><strong>"An intricate mathematical maze that even an alien supercomputer cannot navigate."</strong></td>
     </tr>
   </tbody>
 </table>

@@ -79,7 +79,7 @@ Claude Mythos 展现出的 16 小时完全自主运作能力，固然让各大�
 ### 3.2 迫在眉睫：全球网络攻防体系的全面升级
 在这种能够在数分钟内自律编排数十步攻击行动的 AI 面前，传统的防火墙和静态扫描规则漏洞补救机制已经脆弱得如同白纸。全球网络安全防御力量正被迫进行一场史无前例的主动变革：
 
-<table style="width:100%; border-collapse: collapse;"><thead><tr style="background-color: #f2f2f2;"><th>攻防指标对比</th><th>传统的边界静态安全防御</th><th>基于 Mythos 的次世代自律攻防</th></tr></thead><tbody><tr><td>主导攻防对象</td><td>已知木马特征库与静态攻击入侵指纹</td><td><strong>拥有深度自律推理、不断自主变更策略的AI智能体</strong></td></tr><tr><td>响应与阻断速度</td><td>安全分析师收到警告后，进行人工日志排查与拦截</td><td><strong>毫秒级别的异常智能流拦截及沙箱隔离 (Autonomous SOAR)</strong></td></tr><tr><td>系统裂隙普查</td><td>定期的红队人工渗透测试及静态系统漏洞扫描</td><td><strong>自发部署攻击智能体，常态化对防御网进行 24 小时 AI 敲打</strong></td></tr><tr><td>核心防御基础设施</td><td>防火墙、静态漏洞探针、物理白名单机制</td><td>实时配置动态 AI 护栏与自适应零信任策略沙箱</td></tr></tbody></table>
+<table><thead><tr><th>攻防指标对比</th><th>传统的边界静态安全防御</th><th>基于 Mythos 的次世代自律攻防</th></tr></thead><tbody><tr><td>主导攻防对象</td><td>已知木马特征库与静态攻击入侵指纹</td><td><strong>拥有深度自律推理、不断自主变更策略的AI智能体</strong></td></tr><tr><td>响应与阻断速度</td><td>安全分析师收到警告后，进行人工日志排查与拦截</td><td><strong>毫秒级别的异常智能流拦截及沙箱隔离 (Autonomous SOAR)</strong></td></tr><tr><td>系统裂隙普查</td><td>定期的红队人工渗透测试及静态系统漏洞扫描</td><td><strong>自发部署攻击智能体，常态化对防御网进行 24 小时 AI 敲打</strong></td></tr><tr><td>核心防御基础设施</td><td>防火墙、静态漏洞探针、物理白名单机制</td><td>实时配置动态 AI 护栏与自适应零信任策略沙箱</td></tr></tbody></table>
 
 * <b>以 AI 阻击 AI：实时自律防御成为生死线</b>：
   靠人工安全运营中心（SOC）的专家发现警报、开会研判后再去手动关闭服务器，其间留下的巨大空隙已经足够 AI 智能体发起数万次攻击。因此，防御端必须立刻普及具有同等甚至更高推理深度的<b>自律网络防御系统（Autonomous Cyber Defense, ACD）</b>，使其能实时识破攻击智能体的意图，瞬间将其诱骗进虚拟蜜罐，并自动为系统实时动态生成防御代码补丁。

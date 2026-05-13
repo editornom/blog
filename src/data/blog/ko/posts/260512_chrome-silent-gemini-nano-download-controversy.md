@@ -66,7 +66,7 @@ faqs:
 ### 2.2 메인 성능 데이터 비교 분석
 크롬의 Gemini Nano 자동 탑재가 시스템 자원에 미치는 영향력과 리스크 요소를 비교해 보면 다음과 같습니다.
 
-<table style="width:100%; border-collapse: collapse;"><thead><tr style="background-color: #f2f2f2;"><th>리소스 지표</th><th>클라우드 AI 기반 기능</th><th>온디바이스 Gemini Nano 탑재</th></tr></thead><tbody><tr><td>디스크 용량 소모</td><td><strong>0 MB (영향 없음)</strong></td><td>약 3.8GB ~ 4.2GB (`weights.bin` 파일)</td></tr><tr><td>초기 다운로드 대역폭</td><td>없음 (API 호출만 수행)</td><td>최소 1.5GB ~ 2GB 이상의 압축 파일 무단 다운로드</td></tr><tr><td>추론 연산 시 RAM 점유</td><td>미미함 (HTTP 응답 대기 수준)</td><td>구동 시 최소 1GB ~ 2GB 이상의 가용 시스템 메모리 독점</td></tr><tr><td>배터리 및 CPU/GPU 발열</td><td>지극히 낮음</td><td>온디바이스 연산 집중 시 순간 전력 소비 급증 및 발열 발생</td></tr><tr><td>데이터 프라이버시 등급</td><td>보통 (데이터가 외부 서버로 전송됨)</td><td><strong>매우 우수 (로컬 샌드박스 내부에서만 순수 처리)</strong></td></tr></tbody></table>
+<table><thead><tr><th>리소스 지표</th><th>클라우드 AI 기반 기능</th><th>온디바이스 Gemini Nano 탑재</th></tr></thead><tbody><tr><td>디스크 용량 소모</td><td><strong>0 MB (영향 없음)</strong></td><td>약 3.8GB ~ 4.2GB (`weights.bin` 파일)</td></tr><tr><td>초기 다운로드 대역폭</td><td>없음 (API 호출만 수행)</td><td>최소 1.5GB ~ 2GB 이상의 압축 파일 무단 다운로드</td></tr><tr><td>추론 연산 시 RAM 점유</td><td>미미함 (HTTP 응답 대기 수준)</td><td>구동 시 최소 1GB ~ 2GB 이상의 가용 시스템 메모리 독점</td></tr><tr><td>배터리 및 CPU/GPU 발열</td><td>지극히 낮음</td><td>온디바이스 연산 집중 시 순간 전력 소비 급증 및 발열 발생</td></tr><tr><td>데이터 프라이버시 등급</td><td>보통 (데이터가 외부 서버로 전송됨)</td><td><strong>매우 우수 (로컬 샌드박스 내부에서만 순수 처리)</strong></td></tr></tbody></table>
 
 ---
 

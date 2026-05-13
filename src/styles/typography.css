@@ -62,13 +62,19 @@
     }
 
     table {
+      @apply w-full border-collapse my-6 text-sm leading-relaxed overflow-hidden rounded-lg;
+
       th,
       td {
-        @apply border border-border p-2;
+        @apply border border-border p-3 text-left;
       }
 
       th {
-        @apply py-1.5;
+        @apply py-2.5 font-semibold bg-muted/50 text-foreground;
+      }
+
+      tr:nth-child(even) {
+        @apply bg-muted/15;
       }
 
       code {

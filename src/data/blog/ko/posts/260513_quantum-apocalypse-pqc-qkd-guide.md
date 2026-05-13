@@ -106,44 +106,44 @@ PQC는 기존의 클래식 컴퓨터 인프라와 현재 사용 중인 광대역
 
 각 인프라의 아키텍처 특성과 비용, 구축 복잡도에 따라 기업의 선택지가 확실하게 나뉩니다.
 
-<table style="width:100%; border-collapse: collapse; margin-bottom: 24px;">
+<table>
   <thead>
-    <tr style="background-color: #1e1e2e; color: #ffffff;">
-      <th style="padding: 12px; border: 1px solid #444; text-align: left;">평가 비교 지표</th>
-      <th style="padding: 12px; border: 1px solid #444; text-align: left;">🛡️ 양자키분배 (QKD)</th>
-      <th style="padding: 12px; border: 1px solid #444; text-align: left;">🔑 양자내성암호 (PQC)</th>
+    <tr>
+      <th>평가 비교 지표</th>
+      <th>🛡️ 양자키분배 (QKD)</th>
+      <th>🔑 양자내성암호 (PQC)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="padding: 12px; border: 1px solid #444; font-weight: bold;">보안의 본질적 원천</td>
-      <td style="padding: 12px; border: 1px solid #444;"><strong>물리학 법칙</strong> (광자 불확정성)</td>
-      <td style="padding: 12px; border: 1px solid #444;"><strong>수학적 난이도</strong> (초고차원 격자 행렬)</td>
-    </tr>
-    <tr style="background-color: #f9f9f9;">
-      <td style="padding: 12px; border: 1px solid #444; font-weight: bold;">필수 요구 인프라</td>
-      <td style="padding: 12px; border: 1px solid #444;"><strong>전용 광수신기, 고가 양자 소자 칩셋, 다이렉트 전용 광케이블 단독망</strong></td>
-      <td style="padding: 12px; border: 1px solid #444;"><strong>기존 공용 인터넷 망, 기존 데이터 센터 장비, 가상 클라우드 그대로 사용</strong></td>
+      <td>보안의 본질적 원천</td>
+      <td><strong>물리학 법칙</strong> (광자 불확정성)</td>
+      <td><strong>수학적 난이도</strong> (초고차원 격자 행렬)</td>
     </tr>
     <tr>
-      <td style="padding: 12px; border: 1px solid #444; font-weight: bold;">구축 비용 및 경제성</td>
-      <td style="padding: 12px; border: 1px solid #444;"><strong>매우 높음</strong> (수억~수십억 원 대 대형 국가 통신 백본 하드웨어 개량 필요)</td>
-      <td style="padding: 12px; border: 1px solid #444;"><strong>현저히 저렴함</strong> (기존 인프라 위의 패치 배포 및 알고리즘 소프트웨어 업데이트)</td>
-    </tr>
-    <tr style="background-color: #f9f9f9;">
-      <td style="padding: 12px; border: 1px solid #444; font-weight: bold;">물리적 전송 거리 장벽</td>
-      <td style="padding: 12px; border: 1px solid #444;"><strong>한계 뚜렷</strong> (빛의 감쇄 현상으로 약 100~150km마다 중계기 기지 가설 필수)</td>
-      <td style="padding: 12px; border: 1px solid #444;"><strong>무제한</strong> (기존 글로벌 백본망 인프라 데이터 전송 구조에 완벽 호환)</td>
+      <td>필수 요구 인프라</td>
+      <td><strong>전용 광수신기, 고가 양자 소자 칩셋, 다이렉트 전용 광케이블 단독망</strong></td>
+      <td><strong>기존 공용 인터넷 망, 기존 데이터 센터 장비, 가상 클라우드 그대로 사용</strong></td>
     </tr>
     <tr>
-      <td style="padding: 12px; border: 1px solid #444; font-weight: bold;">주요 타겟 군</td>
-      <td style="padding: 12px; border: 1px solid #444;">군 사령부 전술 백본망, 금융 중앙 전산 허브, 하이퍼 스케일 데이터 센터 코어망</td>
-      <td style="padding: 12px; border: 1px solid #444;">웹 브라우저, 모바일 금융 앱, 자율주행 차량 통신(V2X), IoT 대량 단말기</td>
+      <td>구축 비용 및 경제성</td>
+      <td><strong>매우 높음</strong> (수억~수십억 원 대 대형 국가 통신 백본 하드웨어 개량 필요)</td>
+      <td><strong>현저히 저렴함</strong> (기존 인프라 위의 패치 배포 및 알고리즘 소프트웨어 업데이트)</td>
     </tr>
-    <tr style="background-color: #f9f9f9;">
-      <td style="padding: 12px; border: 1px solid #444; font-weight: bold;">한 줄 직관 비유</td>
-      <td style="padding: 12px; border: 1px solid #444;"><strong>"중간에 가로채는 즉시 불타 사라지는 마법의 광선 편지"</strong></td>
-      <td style="padding: 12px; border: 1px solid #444;"><strong>"초고속 연산력을 가진 외계인도 풀지 못하게 설계된 기하학 수학 성벽"</strong></td>
+    <tr>
+      <td>물리적 전송 거리 장벽</td>
+      <td><strong>한계 뚜렷</strong> (빛의 감쇄 현상으로 약 100~150km마다 중계기 기지 가설 필수)</td>
+      <td><strong>무제한</strong> (기존 글로벌 백본망 인프라 데이터 전송 구조에 완벽 호환)</td>
+    </tr>
+    <tr>
+      <td>주요 타겟 군</td>
+      <td>군 사령부 전술 백본망, 금융 중앙 전산 허브, 하이퍼 스케일 데이터 센터 코어망</td>
+      <td>웹 브라우저, 모바일 금융 앱, 자율주행 차량 통신(V2X), IoT 대량 단말기</td>
+    </tr>
+    <tr>
+      <td>한 줄 직관 비유</td>
+      <td><strong>"중간에 가로채는 즉시 불타 사라지는 마법의 광선 편지"</strong></td>
+      <td><strong>"초고속 연산력을 가진 외계인도 풀지 못하게 설계된 기하학 수학 성벽"</strong></td>
     </tr>
   </tbody>
 </table>

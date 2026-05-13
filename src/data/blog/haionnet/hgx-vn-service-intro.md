@@ -111,45 +111,45 @@ faqs:
 
 현업 네트워크 담당자분들이 각 솔루션 도입 전 의사결정을 빠르고 정합하게 내리실 수 있도록, 실제 운영 수치 기반의 솔루션 사양 대조표를 아래와 같이 엄숙히 선사해 드립니다.
 
-<table style="width: 100%; border-collapse: collapse; border: 1px solid #cbd5e1; text-align: left; font-size: 15px; margin-bottom: 24px;">
+<table>
 <thead>
-<tr style="background-color: #0f172a;">
-<th style="padding: 12px; border: 1px solid #cbd5e1; color: #ffffff !important; font-weight: bold; text-align: center;">비교 평가 항목</th>
-<th style="padding: 12px; border: 1px solid #cbd5e1; color: #ffffff !important; font-weight: bold; text-align: center;">하이온넷 HGX-VN 하이브리드 전용망</th>
-<th style="padding: 12px; border: 1px solid #cbd5e1; color: #ffffff !important; font-weight: bold; text-align: center;">일반 소프트웨어 VPN 솔루션</th>
-<th style="padding: 12px; border: 1px solid #cbd5e1; color: #ffffff !important; font-weight: bold; text-align: center;">일반 국제전용선 (IPLC 물리 회선)</th>
+<tr>
+<th>비교 평가 항목</th>
+<th>하이온넷 HGX-VN 하이브리드 전용망</th>
+<th>일반 소프트웨어 VPN 솔루션</th>
+<th>일반 국제전용선 (IPLC 물리 회선)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold;">한-베트남 실측 Ping 수치</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #059669; background-color: rgba(16, 185, 129, 0.08); text-align: center;">최상의 레이턴시 극대화 단축 보장</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; text-align: center;">중간 우회 서버 정체로 잦은 속도 급감</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; text-align: center;">최상의 레이턴시 고정 보장</td>
+<td>한-베트남 실측 Ping 수치</td>
+<td>최상의 레이턴시 극대화 단축 보장</td>
+<td>중간 우회 서버 정체로 잦은 속도 급감</td>
+<td>최상의 레이턴시 고정 보장</td>
 </tr>
 <tr>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold;">패킷 유실률 (Packet Loss)</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #059669; background-color: rgba(16, 185, 129, 0.08); text-align: center;">0.1% 미만 (무손실 전송 보장)</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; text-align: center;">해외망 병목 시간대 10%~30% 폭증</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; text-align: center;">0.1% 미만 (무손실 전송 보장)</td>
+<td>패킷 유실률 (Packet Loss)</td>
+<td>0.1% 미만 (무손실 전송 보장)</td>
+<td>해외망 병목 시간대 10%~30% 폭증</td>
+<td>0.1% 미만 (무손실 전송 보장)</td>
 </tr>
 <tr>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold;">인프라 구축 예산</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #059669; background-color: rgba(16, 185, 129, 0.08); text-align: center;">기존 해외전용선 대비 최대 90% 이상 예산 세이브</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; text-align: center;">매우 저렴 (품질 및 보안 무보장)</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; color: #ef4444; text-align: center;">매우 비쌈 (월 수백 ~ 수천만 원 상당 부과)</td>
+<td>인프라 구축 예산</td>
+<td>기존 해외전용선 대비 최대 90% 이상 예산 세이브</td>
+<td>매우 저렴 (품질 및 보안 무보장)</td>
+<td>매우 비쌈 (월 수백 ~ 수천만 원 상당 부과)</td>
 </tr>
 <tr>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold;">선로 개통 및 세팅 기일</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #059669; background-color: rgba(16, 185, 129, 0.08); text-align: center;">즉시 5분 내 가상 개통 (지사 10분 설정 마감)</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; text-align: center;">프로그램 다운로드 후 즉각 연동</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; color: #ef4444; text-align: center;">굴착 공사 및 각국 승인 필요 (4주~8주 이상)</td>
+<td>선로 개통 및 세팅 기일</td>
+<td>즉시 5분 내 가상 개통 (지사 10분 설정 마감)</td>
+<td>프로그램 다운로드 후 즉각 연동</td>
+<td>굴착 공사 및 각국 승인 필요 (4주~8주 이상)</td>
 </tr>
 <tr>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold;">전문 실시간 트래픽 관제</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #059669; background-color: rgba(16, 185, 129, 0.08); text-align: center;">365일 24시간 실시간 전문 관제 및 예방 패치</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; text-align: center;">사용자 자체 수동 해결 (기술 지원 무)</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; text-align: center;">해당 국가 기간 망 통신사 SLA 지원 (다소 긴 복구)</td>
+<td>전문 실시간 트래픽 관제</td>
+<td>365일 24시간 실시간 전문 관제 및 예방 패치</td>
+<td>사용자 자체 수동 해결 (기술 지원 무)</td>
+<td>해당 국가 기간 망 통신사 SLA 지원 (다소 긴 복구)</td>
 </tr>
 </tbody>
 </table>

@@ -93,7 +93,7 @@ eBPF 的第三个、也是最让人对引入犹豫不决的致命风险，就是
 
 <br>
 
-<table border="1">
+<table>
 <tr>
 <th>比较项目</th>
 <th>传统 APM (Application Performance Monitoring)</th>

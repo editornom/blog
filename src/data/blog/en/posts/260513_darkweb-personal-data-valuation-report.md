@@ -42,51 +42,51 @@ The dark web market is not a chaotic bazaar; it operates on the established rule
 
 Here is a summary table of the average trading prices (in USD) for key digital assets, as revealed by NordVPN’s research:
 
-<table style="width:100%; border-collapse: collapse; margin-bottom: 24px;">
+<table>
   <thead>
-    <tr style="background-color: #1e1e2e; color: #ffffff;">
-      <th style="padding: 12px; border: 1px solid #444; text-align: left;">Asset Category</th>
-      <th style="padding: 12px; border: 1px solid #444; text-align: left;">Stolen Item Details</th>
-      <th style="padding: 12px; border: 1px solid #444; text-align: center;">Average Price (USD)</th>
-      <th style="padding: 12px; border: 1px solid #444; text-align: left;">Primary Criminal Exploitation</th>
+    <tr>
+      <th>Asset Category</th>
+      <th>Stolen Item Details</th>
+      <th>Average Price (USD)</th>
+      <th>Primary Criminal Exploitation</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="padding: 12px; border: 1px solid #444; font-weight: bold;">Premium Financial</td>
-      <td style="padding: 12px; border: 1px solid #444;">Verified Binance / Coinbase Accounts</td>
-      <td style="padding: 12px; border: 1px solid #444; text-align: center; color: #ff5555; font-weight: bold;">$100 ~ $150</td>
-      <td style="padding: 12px; border: 1px solid #444;">Ransomware money laundering, untraceable currency conversion</td>
-    </tr>
-    <tr style="background-color: #f9f9f9;">
-      <td style="padding: 12px; border: 1px solid #444; font-weight: bold;">Physical Identity</td>
-      <td style="padding: 12px; border: 1px solid #444;">High-Resolution Passport Scans</td>
-      <td style="padding: 12px; border: 1px solid #444; text-align: center;">$10 ~ $60</td>
-      <td style="padding: 12px; border: 1px solid #444;">Online bank account creation, digital identity spoofing, fraud bypass</td>
+      <td>Premium Financial</td>
+      <td>Verified Binance / Coinbase Accounts</td>
+      <td>$100 ~ $150</td>
+      <td>Ransomware money laundering, untraceable currency conversion</td>
     </tr>
     <tr>
-      <td style="padding: 12px; border: 1px solid #444; font-weight: bold;">Payment Methods</td>
-      <td style="padding: 12px; border: 1px solid #444;">Credit Cards (Card No. + CVV + Expiry)</td>
-      <td style="padding: 12px; border: 1px solid #444; text-align: center;">$10 ~ $20</td>
-      <td style="padding: 12px; border: 1px solid #444;">Unauthorized card-not-present shopping, gift card bulk liquidation</td>
-    </tr>
-    <tr style="background-color: #f9f9f9;">
-      <td style="padding: 12px; border: 1px solid #444; font-weight: bold;">Gateway Email</td>
-      <td style="padding: 12px; border: 1px solid #444;">Verified Gmail Account Packs (Credentials)</td>
-      <td style="padding: 12px; border: 1px solid #444; text-align: center;">$10 ~ $15</td>
-      <td style="padding: 12px; border: 1px solid #444;">Account recovery takeover, interception of temporary 2FA codes</td>
+      <td>Physical Identity</td>
+      <td>High-Resolution Passport Scans</td>
+      <td>$10 ~ $60</td>
+      <td>Online bank account creation, digital identity spoofing, fraud bypass</td>
     </tr>
     <tr>
-      <td style="padding: 12px; border: 1px solid #444; font-weight: bold;">Social Media</td>
-      <td style="padding: 12px; border: 1px solid #444;">Instagram / Facebook Login Credentials</td>
-      <td style="padding: 12px; border: 1px solid #444; text-align: center;">$2 ~ $5</td>
-      <td style="padding: 12px; border: 1px solid #444;">Spear-phishing campaigns targeting real friends, impersonation scams</td>
+      <td>Payment Methods</td>
+      <td>Credit Cards (Card No. + CVV + Expiry)</td>
+      <td>$10 ~ $20</td>
+      <td>Unauthorized card-not-present shopping, gift card bulk liquidation</td>
     </tr>
-    <tr style="background-color: #f9f9f9;">
-      <td style="padding: 12px; border: 1px solid #444; font-weight: bold;">Digital Entertainment</td>
-      <td style="padding: 12px; border: 1px solid #444;">Netflix / Spotify Subscription Accounts</td>
-      <td style="padding: 12px; border: 1px solid #444; text-align: center;">$1 ~ $3</td>
-      <td style="padding: 12px; border: 1px solid #444;">Unauthorized premium sharing, account hijacking, and illicit resale</td>
+    <tr>
+      <td>Gateway Email</td>
+      <td>Verified Gmail Account Packs (Credentials)</td>
+      <td>$10 ~ $15</td>
+      <td>Account recovery takeover, interception of temporary 2FA codes</td>
+    </tr>
+    <tr>
+      <td>Social Media</td>
+      <td>Instagram / Facebook Login Credentials</td>
+      <td>$2 ~ $5</td>
+      <td>Spear-phishing campaigns targeting real friends, impersonation scams</td>
+    </tr>
+    <tr>
+      <td>Digital Entertainment</td>
+      <td>Netflix / Spotify Subscription Accounts</td>
+      <td>$1 ~ $3</td>
+      <td>Unauthorized premium sharing, account hijacking, and illicit resale</td>
     </tr>
   </tbody>
 </table>

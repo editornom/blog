@@ -77,24 +77,24 @@ faqs:
 
 중소기업 네트워크 관리자분들의 기안 예산 승인을 도울 수 있도록, 실제 장비 대수 및 소프트웨어 라이센스 수량이 모두 매칭된 정량 패키지 가격 대조표를 아래와 같이 투명하게 대령해 드립니다.
 
-<table style="width: 100%; border-collapse: collapse; border: 1px solid #cbd5e1; text-align: left; font-size: 15px; margin-bottom: 24px;">
+<table>
 <thead>
-<tr style="background-color: #0f172a;">
-<th style="padding: 12px; border: 1px solid #cbd5e1; color: #ffffff !important; font-weight: bold; text-align: center;">패키지 분류</th>
-<th style="padding: 12px; border: 1px solid #cbd5e1; color: #ffffff !important; font-weight: bold; text-align: center;">결합 제공 스펙 및 솔루션 수량</th>
-<th style="padding: 12px; border: 1px solid #cbd5e1; color: #ffffff !important; font-weight: bold; text-align: center;">월 서비스 요금 (VAT 별도)</th>
+<tr>
+<th>패키지 분류</th>
+<th>결합 제공 스펙 및 솔루션 수량</th>
+<th>월 서비스 요금 (VAT 별도)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; text-align: center; background-color: rgba(15, 23, 42, 0.02);">소규모 전산망 (5인 패키지)</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1;">- CC인증 엔터프라이즈형 고성능 UTM 장비 1대 임대<br/>- 최신 랜섬웨어 차단 비트디펜더 백신 에이전트 5 Copy<br/>- 기밀 문서유출방지 DLP 지란지교 에이전트 5 Copy</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #059669; background-color: rgba(16, 185, 129, 0.08); text-align: center;">73,000 원</td>
+<td>소규모 전산망 (5인 패키지)</td>
+<td>- CC인증 엔터프라이즈형 고성능 UTM 장비 1대 임대<br/>- 최신 랜섬웨어 차단 비트디펜더 백신 에이전트 5 Copy<br/>- 기밀 문서유출방지 DLP 지란지교 에이전트 5 Copy</td>
+<td>73,000 원</td>
 </tr>
 <tr>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; text-align: center; background-color: rgba(15, 23, 42, 0.02);">중소형 사무실 (30인 패키지)</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1;">- CC인증 엔터프라이즈형 고성능 UTM 장비 1대 임대<br/>- 최신 랜섬웨어 차단 비트디펜더 백신 에이전트 30 Copy<br/>- 기밀 문서유출방지 DLP 지란지교 에이전트 30 Copy</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #059669; background-color: rgba(16, 185, 129, 0.08); text-align: center;">223,000 원</td>
+<td>중소형 사무실 (30인 패키지)</td>
+<td>- CC인증 엔터프라이즈형 고성능 UTM 장비 1대 임대<br/>- 최신 랜섬웨어 차단 비트디펜더 백신 에이전트 30 Copy<br/>- 기밀 문서유출방지 DLP 지란지교 에이전트 30 Copy</td>
+<td>223,000 원</td>
 </tr>
 </tbody>
 </table>
@@ -152,39 +152,39 @@ faqs:
 
 업무 전산실 담당자 및 학원 행정 실무자분들이 직관적인 차이점을 한눈에 파악할 수 있도록 솔루션별 특화 지표를 선사합니다.
 
-<table style="width: 100%; border-collapse: collapse; border: 1px solid #cbd5e1; text-align: left; font-size: 15px; margin-bottom: 24px;">
+<table>
 <thead>
-<tr style="background-color: #0f172a;">
-<th style="padding: 12px; border: 1px solid #cbd5e1; color: #ffffff !important; font-weight: bold; text-align: center;">비교 평가 영역</th>
-<th style="padding: 12px; border: 1px solid #cbd5e1; color: #ffffff !important; font-weight: bold; text-align: center;">하이온넷 지능형 관리형 UTM 서비스</th>
-<th style="padding: 12px; border: 1px solid #cbd5e1; color: #ffffff !important; font-weight: bold; text-align: center;">일반 소프트웨어형 웹 필터 방식</th>
-<th style="padding: 12px; border: 1px solid #cbd5e1; color: #ffffff !important; font-weight: bold; text-align: center;">시중 가정용 공유기 간이 차단</th>
+<tr>
+<th>비교 평가 영역</th>
+<th>하이온넷 지능형 관리형 UTM 서비스</th>
+<th>일반 소프트웨어형 웹 필터 방식</th>
+<th>시중 가정용 공유기 간이 차단</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold;">공인 보안 인증 신뢰성</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #059669; background-color: rgba(16, 185, 129, 0.08); text-align: center;">CC인증 (EAL4 등급) 최고 안심 마크 획득</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; text-align: center;">없음 (단순 소프트웨어 조작 방식)</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; color: #ef4444; text-align: center;">전무 (보안성 검증 및 해킹 취약)</td>
+<td>공인 보안 인증 신뢰성</td>
+<td>CC인증 (EAL4 등급) 최고 안심 마크 획득</td>
+<td>없음 (단순 소프트웨어 조작 방식)</td>
+<td>전무 (보안성 검증 및 해킹 취약)</td>
 </tr>
 <tr>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold;">화이트리스트 통제 강도</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #059669; background-color: rgba(16, 185, 129, 0.08); text-align: center;">네트워크 관문 단독 제어로 100% 차단 완결</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; text-align: center;">우회 프로그램 설치 시 손쉽게 무력화</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; color: #ef4444; text-align: center;">미지원 또는 극히 초보적 키워드 제한</td>
+<td>화이트리스트 통제 강도</td>
+<td>네트워크 관문 단독 제어로 100% 차단 완결</td>
+<td>우회 프로그램 설치 시 손쉽게 무력화</td>
+<td>미지원 또는 극히 초보적 키워드 제한</td>
 </tr>
 <tr>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold;">DLP / 백신 시너지 결합</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #059669; background-color: rgba(16, 185, 129, 0.08); text-align: center;">지란지교 DLP & 비트디펜더 백신 3중 정합 지원</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; text-align: center;">개별 소스 구매 필요 (대형 추가 예산 발생)</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; text-align: center;">개별 에이전트 연동 불가 (방치 상태 유지)</td>
+<td>DLP / 백신 시너지 결합</td>
+<td>지란지교 DLP & 비트디펜더 백신 3중 정합 지원</td>
+<td>개별 소스 구매 필요 (대형 추가 예산 발생)</td>
+<td>개별 에이전트 연동 불가 (방치 상태 유지)</td>
 </tr>
 <tr>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold;">24시간 실시간 전문 관제</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; font-weight: bold; color: #059669; background-color: rgba(16, 185, 129, 0.08); text-align: center;">하이온넷 전용 관제 센터 365일 실시간 관제 연동</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; text-align: center;">장애 시 고객이 직접 자체 복구 시도</td>
-<td style="padding: 12px; border: 1px solid #cbd5e1; color: #ef4444; text-align: center;">기술 지원 전무 (공유기 리셋 외 조치 불가)</td>
+<td>24시간 실시간 전문 관제</td>
+<td>하이온넷 전용 관제 센터 365일 실시간 관제 연동</td>
+<td>장애 시 고객이 직접 자체 복구 시도</td>
+<td>기술 지원 전무 (공유기 리셋 외 조치 불가)</td>
 </tr>
 </tbody>
 </table>
