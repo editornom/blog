@@ -61,3 +61,4 @@
 [2026-05-11] [수동선정] gpt5.5 vs opus 4.7
 [2026-05-12] [AI추천_38점] Kernel Runtime Security
 [2026-05-12] [Fallback] CNAPP(Cloud-Native Application Protection Platform) 통합 보안 아키텍처
+[2026-05-13] [AI추천_39점] Page-Cache
