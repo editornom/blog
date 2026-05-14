@@ -1,10 +1,10 @@
-https://blog.ml.cmu.edu/2025/06/01/rlhf-101-a-technical-tutorial-on-reinforcement-learning-from-human-feedback/
 https://arxiv.org/html/2504.12501v2
 https://www.paloaltonetworks.com/cyberpedia/what-is-rlhf
 https://www.tredence.com/blog/reinforcement-learning-human-feedback
 https://arxiv.org/abs/2604.02507
 https://wikidocs.net/blog/@jaehong/7071/
-https://www.mediacorpus.net/BLOG/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=169165867&t=board
+https://www.alchera.ai/resource/blog/RLHF-data-production-process
 https://turingpost.co.kr/p/topic-45-dpo-rrhf-rlaif-rlhf-ai
-https://velog.io/@hbcho/%EC%82%AC%EB%9E%8C%EC%B2%98%EB%9F%BC-%EB%8C%80%EB%8B%B5%ED%95%98%EB%8A%94-AI%EC%9D%98-%EB%B9%84%EB%B0%80-RLHF%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80
 https://kr.appen.com/blog/rlvr/
+https://couplewith.tistory.com/833
+https://wikidocs.net/333748
