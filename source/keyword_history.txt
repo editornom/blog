@@ -67,3 +67,4 @@
 [2026-05-13] [AI추천_39점] Transformer
 [2026-05-14] [AI추천_39점] Copy.Fail
 [2026-05-14] [AI추천_40점] Distributed Consensus
+[2026-05-14] [AI추천_37점] AI Agent Legacy Integration
