@@ -69,3 +69,4 @@
 [2026-05-14] [AI추천_40점] Distributed Consensus
 [2026-05-14] [AI추천_37점] AI Agent Legacy Integration
 [2026-05-14] [AI추천_40점] RLHF
+[2026-05-15] [AI추천_38점] Kubernetes 1.36
