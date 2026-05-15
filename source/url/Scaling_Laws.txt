@@ -1,10 +1,10 @@
 https://www.hec.edu/en/dare/tech-ai/ai-beyond-scaling-laws
 https://kempnerinstitute.harvard.edu/news/the-power-of-scale-in-machine-learning/
 https://medium.com/@pacosun/beyond-the-parameter-count-8ba5bb3a5543
-https://podcasts.apple.com/us/podcast/scaling-laws/id1607949880
 https://jaehoonstudy.tistory.com/69
-https://arxiv.org/abs/2510.18245
+https://arxiv.org/abs/2510.03313
 https://minhyuk0914.tistory.com/66
-https://nairl.kr/ko/beyond-scaling-laws-ko/
-https://aimultiple.com/llm-scaling-laws
 https://arxiv.org/abs/2512.13472
+https://www.interconnects.ai/p/the-new-rl-scaling-laws
+https://openreview.net/forum?id=TPTtWC0pGk
+https://aimultiple.com/llm-scaling-laws

@@ -72,3 +72,4 @@
 [2026-05-15] [AI추천_38점] Kubernetes 1.36
 [2026-05-15] [AI추천_40점] Git
 [2026-05-15] [AI추천_40점] AI-Driven Vulnerability Discovery
+[2026-05-15] [AI추천_40점] Scaling Laws
