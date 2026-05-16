@@ -1,0 +1,6 @@
+https://extension.harvard.edu/blog/cybersecuritys-first-responders-managing-incident-response/
+https://www.eccu.edu/blog/cyber-incident-response-guide/
+https://www.cynet.com/security-foundations/incident-response/what-is-incident-response/#:~:text=An%20effective%20incident%20response%20process,swift%20return%20to%20normal%20operations.
+https://securityscorecard.com/blog/what-is-cyber-incident-response-and-why-it-matters/
+https://optro.ai/blog/nist-incident-response
+https://www.sentinelone.com/cybersecurity-101/services/incident-response-steps-phases/
