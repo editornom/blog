@@ -76,3 +76,5 @@
 [2026-05-16] [AI추천_39점] Circular Dependency
 [2026-05-16] [AI추천_40점] Cybersecurity Incident Response
 [2026-05-16] [AI추천_39점] Agentic Reliability
+[2026-05-16] [AI추천_40점] Transformer
+[2026-05-16] [Fallback_DeepSearchFail] SD-WAN에서 SASE(Secure Access Service Edge)로의 진화 방향
