@@ -75,3 +75,4 @@
 [2026-05-15] [AI추천_40점] Scaling Laws
 [2026-05-16] [AI추천_39점] Circular Dependency
 [2026-05-16] [AI추천_40점] Cybersecurity Incident Response
+[2026-05-16] [AI추천_39점] Agentic Reliability
