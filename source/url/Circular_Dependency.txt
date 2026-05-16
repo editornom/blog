@@ -1,0 +1,6 @@
+https://dulanwirajith.medium.com/dealing-with-circular-dependencies-in-node-js-after-upgrading-from-12-to-22-8913cf63afef
+https://oneuptime.com/blog/post/2025-12-22-spring-circular-reference-errors/view
+https://medium.com/@aman.deep291098/untangling-circular-dependencies-in-python-61316529c1f6
+https://dev.to/mikesplore/breaking-circular-dependencies-in-kotlin-with-the-mediator-pattern-136d
+https://forum.godotengine.org/t/circular-dependencies-and-best-practises-to-avoid-them/125357
+https://stackoverflow.com/questions/79771726/resolving-a-circular-recursive-dependency-with-dependency-injection
