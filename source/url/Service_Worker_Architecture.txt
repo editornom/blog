@@ -1,0 +1,5 @@
+https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
+https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers
+https://dev.to/mvahedii/service-workers-deep-dive-what-actually-happens-in-the-browser-e1l
+https://www.magicbell.com/blog/offline-first-pwas-service-worker-caching-strategies
+https://webreflection.medium.com/some-service-worker-absurdity-344fca5ecdea
