@@ -80,3 +80,4 @@
 [2026-05-16] [Fallback_DeepSearchFail] SD-WAN에서 SASE(Secure Access Service Edge)로의 진화 방향
 [2026-05-17] [AI추천_37점] Service Worker Architecture
 [2026-05-17] [AI추천_40점] RDBMS
+[2026-05-17] [AI추천_39점] SLM (Small Language Model)
