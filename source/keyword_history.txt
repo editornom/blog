@@ -82,3 +82,4 @@
 [2026-05-17] [AI추천_40점] RDBMS
 [2026-05-17] [AI추천_39점] SLM (Small Language Model)
 [2026-05-17] [AI추천_40점] RLHF
+[2026-05-18] [AI추천_38점] Data Mesh
