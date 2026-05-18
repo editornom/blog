@@ -1,6 +1,7 @@
 import os
 import re
 import yaml
+import urllib.parse
 
 # Directories to search
 BLOG_DIR = r"c:\Users\haionnet\Desktop\editornom\src\data\blog"
@@ -63,7 +64,7 @@ for root, dirs, files in os.walk(BLOG_DIR):
                 total_images_checked += 1
                 # Standardize path
                 # Clean query params or anchors if any (unlikely in local images, but good practice)
-                clean_img_path = img_path.split('?')[0].split('#')[0]
+                clean_img_path = urllib.parse.unquote(img_path.split('?')[0].split('#')[0])
                 
                 # Check if it is a local relative path
                 if not (clean_img_path.startswith("http://") or clean_img_path.startswith("https://") or clean_img_path.startswith("//")):

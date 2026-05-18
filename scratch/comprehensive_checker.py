@@ -77,7 +77,7 @@ def check_markdown_file(file_path):
                 frontmatter = yaml.safe_load(parts[1]) or {}
                 body_text = parts[2]
             except Exception as e:
-                return False, [f"YAML Frontmatter parsing error: {e}"], []
+                return False, [f"YAML Frontmatter parsing error: {e}"], [], {}, [], []
     
     errors = []
     warnings = []
