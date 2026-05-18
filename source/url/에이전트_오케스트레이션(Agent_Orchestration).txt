@@ -1,0 +1,10 @@
+https://redis.io/blog/ai-agent-orchestration-platforms/
+https://www.talkdesk.com/blog/multi-agent-orchestration/
+https://www.technologyreview.com/2026/04/21/1135654/agent-orchestration-ai-artificial-intelligence/
+https://www.deloitte.com/us/en/insights/industry/technology/technology-media-and-telecom-predictions/2026/ai-agent-orchestration.html
+https://arxiv.org/abs/2601.02577
+https://yoonschallenge.tistory.com/1186
+https://contents.premium.naver.com/vbcoding/vibecoding/contents/260312212620613ry
+https://discuss.pytorch.kr/t/gn/9654
+https://www.cio.com/article/4023098/ai-%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8-%EC%98%A4%EC%BC%80%EC%8A%A4%ED%8A%B8%EB%A0%88%EC%9D%B4%EC%85%98-cio%EC%9D%98-%EB%8B%A4%EC%9D%8C-%ED%95%B5%EC%8B%AC-%EA%B3%BC%EC%A0%9C.html
+https://javaexpert.tistory.com/1599
