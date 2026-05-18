@@ -1,0 +1,10 @@
+https://nishanthan-k.medium.com/backpropagation-in-deep-learning-a-complete-intuitive-and-practical-guide-d1136de493de
+https://python.plainenglish.io/backpropagation-explained-so-clearly-youll-never-forget-it-cca852376bc5
+https://www.nature.com/articles/s41467-025-66666-z
+https://www.learningfromexamples.com/p/backpropagation-is-older-than-you
+https://medium.com/@igquinteroch/backpropagation-how-neural-networks-learned-to-learn-8f0d6654e914
+https://wg-cy.tistory.com/408
+https://go-gradually.tistory.com/m/entry/%EB%B0%91%EB%B0%94%EB%8B%A5%EB%B6%80%ED%84%B0-%EC%8B%9C%EC%9E%91%ED%95%98%EB%8A%94-%EB%94%A5%EB%9F%AC%EB%8B%9D-%EC%97%AD%EC%A0%84%ED%8C%8C
+https://aideveloper-mylee.tistory.com/40
+https://inner-game.tistory.com/781
+https://hgk5722.tistory.com/613

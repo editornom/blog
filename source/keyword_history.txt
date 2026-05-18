@@ -85,3 +85,4 @@
 [2026-05-18] [AI추천_38점] Data Mesh
 [2026-05-18] [AI추천_40점] Containerization
 [2026-05-18] [AI추천_39점] 에이전트 오케스트레이션(Agent Orchestration)
+[2026-05-18] [AI추천_38점] 역전파
