@@ -115,7 +115,3 @@ We must not forget the core value of 'control' while being intoxicated by the co
 ### 4.2. The World After SASE: The Need for a Hybrid Strategy Beyond Dependency
 
 Rather than indiscriminate integration, a 'hybrid strategy' is needed to find the optimal combination for our specific environment. A sense of balance is required to take the flexibility of the Cloud while maintaining core control internally. We must remember that infrastructure sovereignty depends not on the technology itself, but on the will of the enterprise operating that technology.
-
-## 🔗 Recommended Reading
-- [The Cruel History of AI Agent Reliability: Why Requirements Destroy Autonomy](/en/posts/why-requirements-destroy-ai-autonomy)
-- [From the Golden Age of Scaling Laws to the Tipping Point: The Great Paradigm Shift in the AI Industry](/en/posts/ai-scaling-laws-paradigm-shift)

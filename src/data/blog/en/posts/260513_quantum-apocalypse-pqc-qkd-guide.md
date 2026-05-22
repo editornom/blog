@@ -160,7 +160,3 @@ Modern cybersecurity leaders are moving away from treating QKD and PQC as compet
 This hybrid approach is already materializing in production. Apple deployed <strong>'PQ3'</strong>, a state-of-the-art cryptographic protocol, to protect its iMessage communications, while Google Chrome integrated NIST-approved PQC key exchange mechanisms natively. The countdown to Y2Q has begun, and the architects who fortify their systems today will hold the keys to a secure, quantum-safe future.
 
 ---
-
-## 🔗 Recommended Reading
-- [Cloudflare PQC Connection Gap: Transitioning to Post-Quantum Cryptography and the Latency Trade-Offs in Edge Networks](/en/posts/cloudflare-pqc-connection-gap)
-- [The Imperfect Trust of Asymmetric Encryption: Analyzing Mathematical Limits and the Future Security Barrier](/en/posts/imperfect-trust-asymmetric-encryption)

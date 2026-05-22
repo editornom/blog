@@ -136,7 +136,3 @@ Furthermore, they must wrestle daily with the Verifier's strict 512-byte limit a
 Therefore, if your organization is currently considering the preemptive adoption of eBPF-based solutions or open source, you must ask yourself a deep question before being seduced by the flashy dashboard screens of sales marketing: Does our engineering team have the capability to fully control and debug the unexpected black-box risks occurring at the kernel level, and is there a realistic Plan B to firmly guarantee stability at the front lines of operation?
 
 Like all innovative and disruptive technologies in IT history, eBPF cannot be a panacea for all infrastructure problems. Recognizing the shadows of operation that will inevitably darken alongside the overwhelming and shining value the technology brings, and preparing for them meticulously—perhaps that is the true meaning of 'Observability' that senior engineers and system architects should possess first in this flood of brilliant technology.
-
-## 🔗 Recommended Reading
-- [The Flip Side of Autonomous Collaboration: Structural Flaws and Responses in Multi-Agent System Security](/en/posts/multi-agent-system-security-flaws)
-- [Transformer's Stochastic Grammar and the Computational Costs Facing Business](/en/posts/transformer-grammar-computation-cost)

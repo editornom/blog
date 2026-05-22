@@ -123,7 +123,3 @@ faqs:
 * **보안 데이터:** 전체 컨테이너 보안 위협의 약 **45%**가 이미지 취약점 및 잘못된 권한 설정에서 기인함 (Gartner 리서치 참조).
 
  결국 중요한 것은 기술에 대한 맹목적인 신뢰가 아니라, 그 이면의 한계를 명확히 인지하고 보완하는 전략적 안목이에요. 속도라는 달콤한 유혹에서 잠시 벗어나, 우리 인프라의 기초 체력을 점검해야 할 때가 바로 지금이랍니다.
-
-## 🔗 함께 읽으면 좋은 글
-- [Service Worker Architecture: 오프라인 제어권과 성능 사이의 위태로운 균형](/ko/posts/service-worker-architecture-offline-performance-balance)
-- [SLM의 역설: 인프라 비용 절감이 '엔지니어링 부채'로 이어지는 이유](/ko/posts/slm-paradox-engineering-debt)

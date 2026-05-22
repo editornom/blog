@@ -102,7 +102,3 @@ The Kubernetes Gateway API certainly points us toward a very positive and inevit
 However, please keep one thing in mind. In the cold world of systems infrastructure where zero error is the requirement, there is no such thing as a 'Silver Bullet' that solves all problems at once. There is no reason to blindly overturn a stable Ingress environment that works perfectly fine just to chase a trend or an attractive 'vendor-neutral standard.' Instead, a system architect must coldly face the harsh reality of increased resource management complexity and functional fragmentation among controllers.
 
 Ultimately, the key to a successful and noise-free infrastructure transition lies in the persistence of objectively assessing the traffic control complexity and essential requirements of your cluster, and pre-verifying the gap between 'Extended Conformance' certification and actual behavior for each controller vendor. This is a time when the sharp sense of balance characteristic of a senior engineer—willingly accepting technological progress while refusing to compromise even 1% on operational stability and visibility—is needed more than ever.
-
-## 🔗 Recommended Reading
-- [Distributed System Architecture: The Blessing and Curse of Complexity Brought by Infinite Scaling](/ko/posts/distributed-systems-scaling-complexity)
-- [[Post-Mortem] Claude Code's AI DoS Vulnerability: Amateur Design Flaws Hidden Behind Innovation](/ko/posts/claude-code-ai-dos-vulnerability)

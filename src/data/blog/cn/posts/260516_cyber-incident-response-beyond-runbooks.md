@@ -115,7 +115,3 @@ SOAR (Security Orchestration, Automation, and Response) 技术将碎片化的安
 * **威胁检测现状**：根据 EC-Council 的分析，超过 70% 的攻击者正在利用隐写术或基于 AI 的身份操纵技术来规避检测。
 * **响应阈值**：IBM 的研究表明，利用高级 XDR 系统的组织可以将涉及数千个端点的威胁缓解时间缩短至 2 小时以内。
 * **核心能力分布**：当具备架构设计、渗透测试和安全软件开发能力的跨学科专家占整个组织的 40% 以上时，未来的 IR 团队将发挥出最强的防御效率。
-
-## 🔗 推荐阅读
-- [从缩放定律的黄金时代到临界点：AI 产业的巨型范式转移](/cn/posts/ai-scaling-laws-paradigm-shift)
-- [Kubernetes 1.36：华丽功能背后的“配置过载”与迁移风险深度分析](/cn/posts/kubernetes-1-36-configuration-overload-migration-risks)

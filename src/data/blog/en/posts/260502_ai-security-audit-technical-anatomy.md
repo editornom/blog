@@ -76,8 +76,3 @@ A cold judgment regarding cost-efficiency is also necessary. It is important to 
 ![A professional server room environment with a focus on a security hardware module, featuring clean lines and blue ambient lighting.](../../../../../source/posts/AI_Security_Auditing/a8ca6ebd-0.webp)
 
 AI security auditing is no longer an option but a requirement for corporate survival. However, if it remains stuck in the static checklist methods of the past, it will be difficult to defend against the vulnerabilities of rapidly evolving models. It is time to move away from the vague sense of security provided by automation tools and focus on building dynamic monitoring systems for model outputs to secure practical risk control capabilities. Beyond simple snapshot-style audits, transitioning to a sustainable security operation system is the only path to safely utilizing the powerful tool that is AI.
-
-## 🔗 Recommended Reading
-
-- [The Technological Landscape Reshaped by Attention and the Pros and Cons of Transformers](/en/posts/attention-transformers-tech-landscape)
-- [MCP: A Blueprint for Standard Protocols Piercing the Complexity of AI Integration](/en/posts/mcp-ai-integration-standard-protocol)

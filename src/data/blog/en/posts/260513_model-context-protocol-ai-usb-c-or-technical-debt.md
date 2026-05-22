@@ -112,7 +112,3 @@ We have summarized the figures and facts to consider as we prepare for the futur
 *   **Security Concerns:** Risks of unauthorized tool calls via 'Jailbreaking' persist if data governance is insufficient.
 
 Do not get lost in technical optimism or settle for the word "standardization." As connection becomes easier, the intuition of the architect—who must decide when to sever those connections—will become even more critical.
-
-## 🔗 Recommended Reading
-- [Quantum Apocalypse (Y2Q) and HNDL Threats: A Complete Technical Analysis of Quantum Security (QKD vs PQC)](/en/posts/quantum-apocalypse-pqc-qkd-guide)
-- [The Crusade for Memory Safety: The Cost of Giving Up System Design Freedom and Performance Limits](/en/posts/memory-safety-system-design-performance)

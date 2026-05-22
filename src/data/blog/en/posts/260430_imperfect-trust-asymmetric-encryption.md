@@ -73,8 +73,3 @@ Future threats are already in motion. The advancement of quantum computing, spec
 ![A futuristic and clean editorial concept representing the threat of quantum computing to encryption with a visual of a quantum circuit pattern integrated into a padlock icon.](../../../../assets/images/placeholder.png)
 
 Asymmetric encryption is a sophisticated mathematical achievement of humanity, but it is not a user-friendly technology. While building impregnable technical fortresses is vital, we must also develop safeguards to ensure that humans operating within them are not locked out due to minor mistakes. Ultimately, the next generation of security technology should aim for a flexible design that maintains mathematical integrity while compensating for human vulnerability.
-
-## 🔗 Recommended Reading
-
-- [MCP: A Blueprint for Standard Protocols Navigating the Complexity of AI Integration](/en/posts/mcp-ai-integration-standard-protocol)
-- [The Landscape Reshaped by Attention: Pros and Cons of Transformers](/en/posts/attention-transformers-tech-landscape)

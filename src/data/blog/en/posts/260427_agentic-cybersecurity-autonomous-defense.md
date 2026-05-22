@@ -77,8 +77,3 @@ To complement software vulnerabilities, hardware-level security enhancement is e
 Ultimately, the successful integration of autonomous defense systems depends on securing advanced brakes and guardrails. The emphasis on runtime policy management, such as NeMo Guardrails, and hybrid models that include final human approval, stems from the fact that the final destination of technology is the realm of responsibility.
 
 Agentic cybersecurity requires humans to surrender a significant portion of their control to machines. Whether this radical transition becomes a blessing or an unmanageable technical debt will be determined not by the intelligence of the system, but by the rigor of human oversight. Now more than ever, it is vital to face the risks of autonomous errors hidden behind the sweetness of efficiency and to constantly validate the decisions of the algorithm.
-
-## 🔗 Recommended Reading
-
-- [The Collapse of Assembled Trust: Software Supply Chain Security Beyond the Illusion of Visibility](/en/posts/software-supply-chain-security-beyond-visibility)
-- [Codes that Breach the Walls of the Linux Kernel: The Ideals and Reality of eBPF Observability](/en/posts/ebpf-observability-ideals-reality)

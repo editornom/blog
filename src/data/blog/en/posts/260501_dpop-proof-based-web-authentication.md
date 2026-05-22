@@ -50,8 +50,3 @@ Market interest in DPoP is evident in recent technical discussions within Istio,
 It is also noteworthy that global IDPs (Identity Providers) are adopting DPoP support as a standard specification. Especially for long-lived Refresh Tokens, where a single theft can lead to persistent unauthorized access, binding through DPoP is becoming an essential element of security design rather than an option.
 
 While DPoP effectively suppresses unauthorized reuse through token theft, it has limitations in scenarios where client control itself is compromised, such as through XSS (Cross-Site Scripting). If the private key itself is leaked, the security framework can be neutralized sequentially. Therefore, the center of gravity in security is shifting from "token protection" to "key store protection." Developers must establish key management strategies using the browser's Web Crypto API to ensure keys are non-extractable. More important than technical specifications will be the practical judgment of how much isolation can be secured for the key store in a real production environment.
-
-## 🔗 Recommended Reading
-
-- [The Impact of Attention and Transformers on the Technological Landscape](/en/posts/attention-transformers-tech-landscape)
-- [MCP: A Blueprint for Standard Protocols Navigating AI Integration Complexity](/en/posts/mcp-ai-integration-standard-protocol)

@@ -103,7 +103,3 @@ Google's silent 4GB deployment serves as a cautionary tale for tech companies ai
 To regain user trust, tech giants must prioritize transparency and user consent, asking a simple, honest question before downloading gigabytes of data: "Would you like to install our local AI model to enable smarter features?"
 
 ---
-
-## 🔗 Recommended Reading
-- [GPT-5.5 vs Claude Opus 4.7: The 'Maintenance Debt' Warning Hidden Behind 72% Token Savings](/en/posts/gpt-5-5-vs-claude-opus-4-7-maintenance-debt)
-- [AgentOps: The Dawn of Autonomous Management or an Uncontrollable 'Black Box'?](/en/posts/agentops-autonomy-or-black-box)

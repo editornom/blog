@@ -104,7 +104,3 @@ faqs:
   Ultimately, great architecture does not come from using the most complex algorithms, but from the insight to adjust the strength of consistency based on business value. Rather than the unconditional pursuit of consensus, it is time to coldly judge whether our service needs 'absolute truth' or 'acceptable latency.'
  
   When designing a distributed system, the question we should ask is not "Which consensus algorithm should we use?" but "What do we gain by giving up consensus?" That will be the first step toward building a sustainable system and escaping the swamp of overengineering.
-
-## 🔗 Recommended Reading
-- [The Quantum Apocalypse (Y2Q) and HNDL Threats: A Complete Technical Analysis of Quantum Security (QKD vs PQC)](/en/posts/quantum-apocalypse-pqc-qkd-guide)
-- [The Betrayal of OS Page Cache: From Efficient Automation to a Boomerang of Performance Monopoly](/en/posts/os-page-cache-performance-betrayal)

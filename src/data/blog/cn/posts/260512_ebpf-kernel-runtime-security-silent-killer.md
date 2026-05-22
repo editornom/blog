@@ -105,7 +105,3 @@ Datadog 在发布新的 eBPF 代理时，首先会经历内部 Dogfooding 过程
 eBPF 确实是强大的工具，但绝不是魔杖。我们追求的方向不应是完美的安保，而是在不损害系统可用性的范围内保持可控的风险。
 
 Datadog 在过去五年中学到的最大教训是：运营的稳健性比技术的华丽程度更能决定安全的成败。请不要安于验证器这一安全装置，通过彻底的监控和渐进式发布，保护您的基础设施免受“无声杀手”的侵害。
-
-## 🔗 推荐阅读
-- [RLHF：是让 AI 更像“人”了，还是把它变成了“谄媚者”？](/cn/posts/rlhf-human-like-or-sycophant)
-- [eBPF 给 Linux 内核带来的巨大冲击与“语义鸿沟”的警告](/cn/posts/ebpf-linux-kernel-semantic-gap)

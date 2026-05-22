@@ -76,8 +76,3 @@ faqs:
 ![专业的服务器机房环境，聚焦于安全硬件模块，线条整洁，带有蓝色环境光。](../../../../../source/posts/AI_Security_Auditing/a8ca6ebd-0.webp)
 
 AI 安全审计现在已不是可选项，而是企业生存的必选项。如果仍停留在过去静态检查表的方式，将难以防御飞速演进的模型漏洞。现在是时候摆脱自动化工具带来的虚假安全感，集中力量构建对模型输出结果的动态监控体系，并确保实质性的风险控制能力。超越单纯的快照式审计，转向可持续的安全运营体系，是安全利用 AI 这一强大工具的唯一路径。
-
-## 🔗 相关阅读
-
-- [Attention重塑的技术格局与Transformer的利弊](/ko/posts/attention-transformers-tech-landscape)
-- [MCP：穿透AI集成复杂性的标准协议蓝图](/ko/posts/mcp-ai-integration-standard-protocol)

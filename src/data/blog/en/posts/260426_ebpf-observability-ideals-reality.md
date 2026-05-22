@@ -69,8 +69,3 @@ The pros and cons are also distinct from a security perspective. eBPF fundamenta
 Ultimately, adopting eBPF is a strategic choice to shift the responsibility of infrastructure operation from the application layer to the depths of the system. Behind the efficiency of reduced monitoring overhead lies the requirement for high-level engineering resources to manage kernel-level complexity. If a company becomes preoccupied only with flashy dashboards and visibility while overlooking the risks associated with the system-wide control this technology possesses, it may eventually face uncontrollable "black box" risks.
 
 To ensure that attempts to observe the deepest parts of the system do not lead to operational opacity, a cold calculation of profits and losses between technical efficiency and security responsibility must come first. The organizational capacity to effectively control this power will be the key to turning the potent tool of eBPF into real business value.
-
-## 🔗 Recommended Reading
-
-- [Dominance of the Single Token: How Native Multimodal AI Redefines Artificial Intelligence Metrics](/en/posts/single-token-native-multimodal-ai)
-- [MCP: A Blueprint for Standard Protocols Navigating the Complexity of AI Integration](/en/posts/mcp-ai-integration-standard-protocol)

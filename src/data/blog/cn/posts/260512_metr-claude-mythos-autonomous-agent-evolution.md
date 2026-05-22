@@ -97,7 +97,3 @@ Claude Mythos 展现出的 16 小时完全自主运作能力，固然让各大�
 在这场席卷整片数字世界的智能体海啸面前，全球的网络安全防御力量能否以同样甚至更快的速度完成自适应演化，将直接决定未来的人工智能是一个造福全人类的科技乌托邦，还是一个无法收拾的数字荒原。
 
 ---
-
-## 🔗 推荐阅读
-- [在用户不知情下下载4GB：谷歌Chrome“悄然”安装Gemini Nano与端侧AI的悖论](/cn/posts/chrome-silent-gemini-nano-download-controversy)
-- [GPT-5.5 vs Claude Opus 4.7：72%的标记节约所隐藏的“技术负债”警告](/cn/posts/gpt-5-5-vs-claude-opus-4-7-maintenance-debt)

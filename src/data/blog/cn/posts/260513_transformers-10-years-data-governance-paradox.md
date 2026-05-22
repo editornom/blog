@@ -152,7 +152,3 @@ Transformer赋予了我们技术上的自由，但同时也给我们留下了一
 > “2026年的赢家将不是拥有最大模型的企业，而是建立了能够实时提供最精炼上下文（Context）基础设施的企业。”
 
 未来AI时代的真正胜负手，将不再是算法的复杂性，而是数据的可靠性。回归本源，构建我们自己坚固的数据治理体系，这不正是Transformer十年历程向我们提出的最沉重命题吗？
-
-## 🔗 推荐阅读
-- [量子浩劫（Y2Q）与HNDL威胁：引领下一代安全创新的量子安全（QKD vs PQC）技术剖析](/cn/posts/quantum-apocalypse-pqc-qkd-guide)
-- [内存安全性的圣战：放弃系统设计自由的代价与性能的局限](/cn/posts/memory-safety-system-design-performance)

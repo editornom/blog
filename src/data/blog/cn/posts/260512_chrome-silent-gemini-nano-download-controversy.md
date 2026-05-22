@@ -103,7 +103,3 @@ faqs:
 科技巨头在推出这些开创性功能前，理应拿出应有的坦诚与责任感，在下载数GB文件前向用户询问一句最基本的常识性问题：“为了体验更智能的写作与搜索功能，我们需要为您额外下载4GB的本地AI模型，请问您同意吗？”
 
 ---
-
-## 🔗 推荐阅读
-- [GPT-5.5 vs Claude Opus 4.7：72%的标记节约所隐藏的“技术负债”警告](/cn/posts/gpt-5-5-vs-claude-opus-4-7-maintenance-debt)
-- [AgentOps：是自主化管理时代的到来，还是无法掌控的“黑匣子”？](/cn/posts/agentops-autonomy-or-black-box)

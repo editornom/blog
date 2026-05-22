@@ -104,7 +104,3 @@ The introduction of Agentic AI is not just adding software; it is a painful proc
 > "An agent without human oversight is like a technical time bomb waiting to explode in a legacy environment."
 
 Ultimately, the key to a successful AI transition lies not in how many autonomous agents you possess, but in how precisely you can control that autonomy. Peeling away the technical illusions and maintaining the cool-headed perspective of an architect who clearly recognizes the limits of legacy systems is the most necessary compass for us right now.
-
-## 🔗 Recommended Reading
-- [Quantum Apocalypse (Y2Q) and HNDL Threats: A Complete Technical Analysis of Quantum Security (QKD vs. PQC) Leading Next-Gen Security Innovation](/en/posts/quantum-apocalypse-pqc-qkd-guide)
-- [The Betrayal of OS Page Cache: From Efficient Automation to a Boomerang of Performance Monopoly](/en/posts/os-page-cache-performance-betrayal)

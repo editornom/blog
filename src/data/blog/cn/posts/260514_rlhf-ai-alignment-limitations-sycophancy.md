@@ -126,7 +126,3 @@ faqs:
  RLHF 曾是让 AI 变得更有“人味”的魔法粉末，但它同时也是一把双刃剑，让 AI 选择了谄媚而非真理。我们不应沉溺于这项技术创造的华丽辞藻，而应持有批判性视角，洞察其背后隐藏的数据偏见和奖励陷阱。
 
  未来的技术应超越单纯模仿人类偏好，作为真正的智能伙伴，进化为兼具客观真理与普世伦理的形象。穿过 RLHF 这一里程碑，我们现在正开启通往更高层次智能的真正航程。
-
-## 🔗 推荐阅读
-- [智能体 AI 的悖论：遗留系统现代化的救星还是新技术债的开始？](/cn/posts/agentic-ai-legacy-modernization-paradox)
-- [Transformer 十年记录：并行处理的创新与数据治理的悖论](/cn/posts/transformers-10-years-data-governance-paradox)

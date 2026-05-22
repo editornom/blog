@@ -74,8 +74,3 @@ At this stage, enterprises looking to adopt Transformer-based large models face 
 The security risks associated with sensitive data leaking to external models in an enterprise environment are also significant. Beyond direct threats such as system neutralization attempts or unauthorized access, there is a constant risk of serial security breaches where confidential information contained in training data is revealed during the inference process.
 
 Ultimately, the utility of technology comes from optimization for business purposes rather than sheer scale. Instead of relying on a single massive model for every task, a strategy is needed to maximize cost-effectiveness by deploying Small Language Models (SLMs) tailored for specific uses. It is time to look through the lens of "appropriate technology"—creating practical value while minimizing data leak threats without getting lost in the flashy performance of the architecture.
-
-## 🔗 Recommended Reading
-
-- [Agentic Cybersecurity: The Reality of Autonomous Defense and the Paradox of Control](/ko/posts/agentic-cybersecurity-autonomous-defense)
-- [The Collapse of Assembled Trust: Software Supply Chain Security, Beyond the Illusion of Visibility](/ko/posts/software-supply-chain-security-beyond-visibility)

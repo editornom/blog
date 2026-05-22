@@ -73,8 +73,3 @@ faqs:
 ![潜空间推理 (Latent Space Reasoning) - 标注为“不可解释的状态错误”的仪表盘画面，表现了人工智能内部推理过程失败且难以排查原因的状态。](../../../../../source/posts/잠재_공간_추론_(Latent_Space_Reasoning)/d510afa5-2.webp)
 
 潜空间推理是语言模型从单纯的文本生成器进化为高维思考机器过程中不可避免的选择。虽然克服运算资源限制并实现多路径推理极具魅力，但透明度的丧失仍将是其进入企业级环境的高门槛。在思考过程彻底不可见的黑盒中发生的逻辑偏移和事后验证的缺失，支持了技术引入的谨慎论调。最终，这项技术若要成为事实上的标准，必须先建立起至少能够将潜在思考轨迹还原为人类语言进行监测的“技术安全装置”。
-
-## 🔗 推荐阅读
-
-- [Attention 重塑的技术版图与 Transformer 的光影](/zh/posts/attention-transformers-tech-landscape)
-- [MCP：穿透 AI 集成复杂性的标准协议蓝图](/zh/posts/mcp-ai-integration-standard-protocol)

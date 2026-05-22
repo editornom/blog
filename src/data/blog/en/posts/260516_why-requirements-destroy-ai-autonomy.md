@@ -140,7 +140,3 @@ Agent reliability is proven not by being trapped within a developer's predictabi
 ![Agentic Reliability - A bird made of light escaping an open glass cage, flying toward a digital grid, symbolizing the ideal balance of autonomy and trust.](../../../../../source/posts/Agentic_Reliability/f941bb6d-2.webp)
 
 Our way forward is clear. We should embrace the convenience of declarative rules while guarding against the trap of autonomy destruction hidden behind them. Only when we build a trust system based on data and metrics can we form a true partnership with AI agents.
-
-## 🔗 Recommended Reading
-- [From the Golden Age of Scaling Laws to the Critical Point: A Massive Paradigm Shift in the AI Industry](/en/posts/ai-scaling-laws-paradigm-shift)
-- [Kubernetes 1.36: Deep Dive into 'Configuration Overload' and Migration Risks Behind Flashy Features](/en/posts/kubernetes-1-36-configuration-overload-migration-risks)

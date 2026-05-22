@@ -91,7 +91,3 @@ faqs:
  In conclusion, cloud stability is not a service promised by hyperscalers, but a business capability we must achieve ourselves. The disaster of 2025 is a stern warning to face the risks hidden within the illusion of cloud standardization and redefine them at the governance level.
 
  Future IT infrastructure strategies should focus not on 'which cloud to use,' but on 'how we will continue when the cloud stops.' I am confident that only companies that wake up from technical illusions and build practical survival strategies will be able to sustain their business without shaking in the coming era of uncertainty.
-
-## 🔗 Recommended Reading
-- [The Zero Trust Paradox: Single Points of Failure Missed by NIST 800-207 and the Future of Cyber Resilience](/en/posts/zero-trust-paradox-nist-800-207-cyber-resilience)
-- [The Threshold of Scaling Laws: The AGI Mirage and the Massive Miscalculation of the AI Industry](/en/posts/scaling-laws-agi-mirage)

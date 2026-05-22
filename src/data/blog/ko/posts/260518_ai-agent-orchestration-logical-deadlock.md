@@ -123,7 +123,3 @@ faqs:
  ![에이전트 오케스트레이션(Agent Orchestration) - 빠른 속도(1ms)보다 논리적 무결성이 훨씬 더 중요함을 보여주는 저울의 모습.](../../../../../source/posts/에이전트_오케스트레이션(Agent_Orchestration)/1f361b78-2.webp)
 
  이제는 1ms의 환상에서 벗어나야 합니다. 인프라의 속도가 논리의 오류를 결코 보상해 주지 않기 때문입니다. 우리가 집중해야 할 곳은 서버의 지연 시간이 아니라, 복잡하게 얽힌 에이전트들의 지능적인 협업이 얼마나 질서 있게 유지되는가 하는 실질적인 운영 거버넌스의 영역입니다.
-
-## 🔗 함께 읽으면 좋은 글
-- [Service Worker Architecture: 오프라인 제어권과 성능 사이의 위태로운 균형](/ko/posts/service-worker-architecture-offline-performance-balance)
-- [SLM의 역설: 인프라 비용 절감이 '엔지니어링 부채'로 이어지는 이유](/ko/posts/slm-paradox-engineering-debt)

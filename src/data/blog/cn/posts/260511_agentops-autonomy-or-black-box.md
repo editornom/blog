@@ -99,7 +99,3 @@ IBM IBV 报告声称，AI 代理在 18 个月内最高可实现 30:1 的收益�
 ![AgentOps - 闪耀的人类之手直接引导并管理着错综复杂的数据流。](../../../../../source/posts/AgentOps/1aa662f8-2.webp)
 
 我们绝不能因陶醉于技术的华丽外表而忘记基本功。真正的智能运营时代，不在于代理的数量，而在于你如何精准地控制它们，并保持运营的透明。现在，你的代理是在接受管控，还是被放任自流？
-
-## 🔗 推荐阅读
-- [Transformer 革命 7 年的悖论：概率巨人的诞生与不可解释性的屏障](/cn/posts/transformer-revolution-7-years-paradox)
-- [非对称加密的兴衰：当数学信任遭遇量子这一物理实体](/cn/posts/birth-fall-asymmetric-encryption-quantum)

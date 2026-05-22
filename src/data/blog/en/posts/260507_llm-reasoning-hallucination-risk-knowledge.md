@@ -85,7 +85,3 @@ AI adoption strategies must now shift from 'which model to use' to 'how to accum
 Technological progress is dazzling, but it is the power of architecture that turns that technology into a tangible organizational asset. The LLM Wiki will be the most potent design tool for controlling the uncertainty of reasoning and ensuring sustainable growth in the AI era.
 
 Is your team wasting budget on one-off reasoning, or are you building a fortress of knowledge for the future? As Karpathy suggests, it is time to seriously consider the LLM Wiki as your 'compiler of intelligence.'
-
-## 🔗 Recommended Reading
-- [Distributed System Architecture: The Blessing and Curse of Complexity Brought by Infinite Scaling](/en/posts/distributed-systems-scaling-complexity)
-- [Kubernetes Gateway API: A Savior? The 'Standard Trap' and Operational Reality](/en/posts/kubernetes-gateway-api-standards-vs-reality)

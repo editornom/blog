@@ -74,7 +74,3 @@ Ultimately, the biggest bottlenecks for the Terafab project are 'Time' and 'Peop
 In conclusion, Musk’s Terafab may be an overextended ambition that overlooks the physical realities and economic logic of the semiconductor industry. The optimistic belief that the "economies of scale" formula—which worked in the past—will apply to a market requiring atomic-level precision could lead to a "cost trap" that threatens the financial stability of Tesla and xAI as a whole.
 
 We must look past the flashy announcements and face the cold physical data and engineering limits. Whether the Terafab becomes the key to a leap in human computing power or remains an engineering illusion depends on how Musk intends to scale a wall as invisible yet solid as 'Yield.'
-
-## 🔗 Recommended Reading
-- [AX (AI Transformation) Strategy: Securing the 'Golden Time' of Execution Beyond Human-Centricity](/en/posts/ax-strategy-golden-time)
-- [LLM Wiki Guide: Logical Hallucination Risks in Reasoning Models and the Necessity of Knowledge Accumulation](/en/posts/llm-reasoning-hallucination-risk-knowledge)

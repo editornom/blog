@@ -114,7 +114,3 @@ Ultimately, RLHF is a transitional technology that AI must pass through to commu
 * <b>Global Regulatory Response</b>: The EU AI Act and the US Executive Order on AI emphasize 'transparency' and 'honesty' in AI models, demanding technical responses to Sycophancy—the chronic issue of RLHF.
 
 The era of artificial intelligence has only just begun. Whether we teach AI to flatter or give it the courage to speak the truth depends entirely on our choices and technical oversight. Only when we restore the value of honesty hidden behind technical sophistication will we truly encounter AI as a genuine intelligence.
-
-## 🔗 Recommended Reading
-- [The Massive Impact of eBPF on the Linux Kernel and the Warning of 'Semantic Gaps'](/en/posts/ebpf-linux-kernel-semantic-gap)
-- [MySQL LTS: Innovation or Compulsion? The Paradox of Infrastructure Control in the Cloud Era](/en/posts/mysql-lts-innovation-vs-control)

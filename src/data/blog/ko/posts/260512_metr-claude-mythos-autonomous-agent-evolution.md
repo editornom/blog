@@ -97,7 +97,3 @@ Claude Mythos가 증명한 16시간의 자율 연속 작동 능력은 테크 산
 보안 업계와 각국 정부가 이 거대한 에이전트 파도의 압도적인 속도에 맞춰 방어벽을 얼마나 빠르고 민감하게 진화시킬 수 있느냐에 따라, 우리가 맞이할 AI의 미래가 기술적 유토피아가 될지, 아니면 통제 불가능한 사이버 혼돈이 될지가 결정될 것입니다.
 
 ---
-
-## 🔗 함께 읽으면 좋은 글
-- [사용자 동의 없는 4GB 다운로드: 구글 크롬이 몰래 설치한 Gemini Nano와 온디바이스 AI의 역설](/ko/posts/chrome-silent-gemini-nano-download-controversy)
-- [GPT-5.5 vs Claude Opus 4.7: 72%의 토큰 절감이 숨긴 '유지보수 부채'의 경고](/ko/posts/gpt-5-5-vs-claude-opus-4-7-maintenance-debt)

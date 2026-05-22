@@ -115,7 +115,3 @@ Future Incident Response must not be a mechanical execution of set rules, but an
 * **Threat Detection Status**: According to EC-Council analysis, more than 70% of attackers utilize steganography or AI-based identity manipulation to evade detection.
 * **Response Threshold**: IBM research confirmed that organizations using advanced XDR systems can reduce threat mitigation time across thousands of endpoints to as little as two hours.
 * **Core Competency Distribution**: Future IR teams exhibit the strongest defense efficiency when multidisciplinary experts—skilled in architecture design, penetration testing, and security software development—account for more than 40% of the organization.
-
-## 🔗 Recommended Reading
-- [From the Golden Age of Scaling Laws to the Critical Point: The Massive Paradigm Shift in the AI Industry](/en/posts/ai-scaling-laws-paradigm-shift)
-- [Deep Dive into Kubernetes 1.36: 'Configuration Overload' and Migration Risks Behind Flashy Features](/en/posts/kubernetes-1-36-configuration-overload-migration-risks)

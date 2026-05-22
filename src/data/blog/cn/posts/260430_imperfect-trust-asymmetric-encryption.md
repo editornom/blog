@@ -73,8 +73,3 @@ faqs:
 ![代表量子计算对加密威胁的未来感编辑概念图，展示了集成到挂锁图标中的量子电路图案](../../../../assets/images/placeholder.png)
 
 非对称加密是人类取得的精巧数学成就，但它对用户并不算友好。虽然建造技术上攻不破的堡垒很重要，但也必须并行开发安全机制，帮助在其中活动的人类不因微小的失误而被排斥在系统之外。最终，下一代安全技术的目标，应当是在保持数学完整性的同时，能够弥补人类脆弱性的灵活设计。
-
-## 🔗 推荐阅读
-
-- [MCP：贯穿 AI 集成复杂性的标准协议蓝图](/zh/posts/mcp-ai-integration-standard-protocol)
-- [Attention 重塑的技术版图与 Transformer 的光影](/zh/posts/attention-transformers-tech-landscape)

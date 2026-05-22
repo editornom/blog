@@ -112,7 +112,3 @@ MCP 旨在克服传统检索增强生成 (RAG) 的先天局限性。与检索静
 * 安全担忧：若数据治理不足，通过“越狱”调用未经授权工具的风险将长期存在
 
 请不要沉溺于技术乐观主义，安于“标准化”这个词。连接变得越容易，决定何时切断连接的架构师直觉就越重要。
-
-## 🔗 相关阅读
-- [量子大灾难 (Y2Q) 与 HNDL 威胁：深入剖析引领下一代安全创新的量子安全 (QKD vs PQC) 技术](/cn/posts/quantum-apocalypse-pqc-qkd-guide)
-- [内存安全之圣战：放弃系统设计自由的代价与性能极限](/cn/posts/memory-safety-system-design-performance)

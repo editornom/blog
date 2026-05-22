@@ -117,7 +117,3 @@ We have examined the critical issues submerged beneath the sweet messages whispe
 A light approach like "Let's try using the safe and trendy latest language too" is the fastest shortcut to instantly destroying a team's hard-earned productivity. Architects and CTOs must rigorously ask themselves whether the organization can tolerate the sharp drop in development speed during the initial adoption phase and whether they can protect their own robust code review culture amidst the surging waves of AI.
 
 Ultimately, a successful tech stack transition depends less on the academic excellence of the language itself and more on how harmoniously that language can blend with the business's agility and the organization's capabilities. When we face this cold statistical truth head-on without evasion, we can finally take the first confident step toward system advancement that captures both safety and productivity.
-
-## 🔗 Recommended Reading
-- [[Post-Mortem] Claude Code's AI DoS Vulnerability: Amateur Design Flaws Behind Innovation](/en/posts/claude-code-ai-dos-vulnerability)
-- [Between Efficiency and Security in Telecom Infrastructure: The Realistic Limits Faced by Containerization](/en/posts/telecom-containerization-efficiency-vs-security)

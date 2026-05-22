@@ -112,7 +112,3 @@ faqs:
 * **安全数据：** 约 **45%** 的容器安全威胁源于镜像漏洞及错误的权限设置（参考 Gartner 研究）。
 
 归根结底，重要的不是对技术的盲目信任，而是清晰认知其局限性并加以弥补的战略眼光。现在是时候暂时从速度的诱惑中抽身，检查我们基础设施的底层实力了。
-
-## 🔗 推荐阅读
-- [Service Worker Architecture: 在离线控制权与性能之间的危险平衡](/cn/posts/service-worker-architecture-offline-performance-balance)
-- [SLM 的悖论：基础设施成本削减为何会导致“工程债”](/cn/posts/slm-paradox-engineering-debt)

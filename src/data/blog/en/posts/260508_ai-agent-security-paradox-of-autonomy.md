@@ -101,7 +101,3 @@ faqs:
  In conclusion, security in the era of the agent economy is not merely the act of locking a door, but a 'matter of design'—implanting security DNA into the system's veins. Only a mature security culture that can manage risks while respecting autonomy can guarantee a company's survival.
 
  To fully enjoy the fruits of infinite productivity that agents will bring, we must shatter the illusion of control right now. Shifting to a more flexible and robust resilience-centered architecture is the only way we can overcome the Paradox of Autonomy.
-
-## 🔗 Recommended Reading
-- [Distributed System Architecture: The Blessing and Curse of Complexity Brought by Infinite Scaling](/en/posts/distributed-systems-scaling-complexity)
-- [The Paradox of Transformer Architecture: A Victory for Parallelism or a Bankruptcy of Efficiency?](/en/posts/transformer-architecture-paradox)

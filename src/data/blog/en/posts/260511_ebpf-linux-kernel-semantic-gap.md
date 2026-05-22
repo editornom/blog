@@ -96,7 +96,3 @@ Ultimately, the only way to overcome eBPF's limitations is to join forces with a
 
 ### 5.2. The True Position of eBPF in the Next-Generation Linux Ecosystem
 eBPF is no longer an experimental technology; it has become a core pillar supporting modern infrastructure. Beyond being a tool for performance optimization, it stands at the center of a massive shift that maximizes system transparency and changes the security paradigm. When we clearly recognize both the possibilities and limitations of this technology, we can fully enjoy the fruits of true innovation provided by the Linux kernel.
-
-## 🔗 Recommended Reading
-- [The Paradox of 7 Years of Transformer Revolution: The Birth of Probabilistic Giants and the Barrier of Unexplainability](/en/posts/transformer-revolution-7-years-paradox)
-- [The Birth and Fall of Asymmetric Encryption: The Physical Reality of Quantum Facing Mathematical Trust](/en/posts/birth-fall-asymmetric-encryption-quantum)

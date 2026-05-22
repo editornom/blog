@@ -139,7 +139,3 @@ To stay safe from automated cybercrime rings, integrate these five core defense 
   * Abandoned accounts on forums or old shopping sites are low-hanging fruit for hackers. Periodically audit your old registrations and request complete account deletion (reducing your overall digital attack surface).
 
 ---
-
-## 🔗 Recommended Reading
-- [Silent 4GB Download: Google Chrome Quietly Installs Gemini Nano and the Paradox of On-Device AI](/en/posts/chrome-silent-gemini-nano-download-controversy)
-- [The Zero Trust Paradox: Analyzing Continuous Verification and Resilience under NIST 800-207](/en/posts/zero-trust-paradox-nist-800-207-cyber-resilience)

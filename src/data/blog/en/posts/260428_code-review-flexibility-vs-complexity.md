@@ -70,8 +70,3 @@ Improving the efficiency of a review system is not just about reducing the volum
 ![Stacked PRs - A human hand barely supporting a pillar made of glowing code, illustrating how precarious a complex development process can be when relying on manual labor.](../../../../../source/posts/Stacked_PRs/fab00fa7-2.webp)
 
 Ultimately, attempting to overcome system limitations through individual proficiency will likely remain a precarious art for a few experts without the support of mature, dedicated tools. If an obsession with linear history is hindering the collaboration efficiency of the entire team, priority should be given to the essential simplification of the workflow itself rather than the choice of tools. Unautomated complexity can never be true innovation; one must remember that it can become a silent variable that threatens system stability from within.
-
-## 🔗 Recommended Reading
-
-- [The Technological Landscape Reshaped by Attention and the Pros and Cons of Transformers](/en/posts/attention-transformers-tech-landscape)
-- [Agentic Cybersecurity: The Reality of Autonomous Defense and the Paradox of Control](/en/posts/agentic-cybersecurity-autonomous-defense)

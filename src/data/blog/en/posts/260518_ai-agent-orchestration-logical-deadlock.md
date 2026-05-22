@@ -112,7 +112,3 @@ faqs:
  ![Agent Orchestration - A scale showing that logical integrity is far more important than high speed (1ms).](../../../../../source/posts/에이전트_오케스트레이션(Agent_Orchestration)/1f361b78-2.webp)
 
  It is time to move beyond the illusion of 1ms. Infrastructure speed can never compensate for errors in logic. Where we must focus is not on server latency, but on the realm of practical operational governance—ensuring how orderly the intelligent collaboration of complex, intertwined agents is maintained.
-
-## 🔗 Recommended Reading
-- [Service Worker Architecture: The Precarious Balance Between Offline Control and Performance](/en/posts/service-worker-architecture-offline-performance-balance)
-- [The SLM Paradox: Why Infrastructure Cost Reduction Leads to 'Engineering Debt'](/en/posts/slm-paradox-engineering-debt)

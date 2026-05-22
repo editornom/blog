@@ -116,7 +116,3 @@ Rather than being satisfied with the fact that a site works offline, you must ve
 * **Security Requirements**: Service workers operate strictly within an HTTPS secure context, with local development on localhost being the only exception.
 
 When precisely refined, a service worker will become a reliable foundation for providing users with a seamless and perfect web experience. We encourage you to make wise decisions that find the balance between business value and user performance, rather than getting lost in technical flashiness.
-
-## 🔗 Recommended Reading
-- [The Brutality of AI Agent Reliability: Why Requirements Destroy Autonomy](/en/posts/why-requirements-destroy-ai-autonomy)
-- [Historical Inflection Points and Survival Strategies in Cyber Incident Response: Strategic Resilience Beyond Runbooks](/en/posts/cyber-incident-response-beyond-runbooks)

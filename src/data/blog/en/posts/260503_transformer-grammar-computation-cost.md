@@ -60,8 +60,3 @@ Transformer inference follows an autoregressive structure, where the next token 
 The industry's focus is now shifting beyond the competition for model parameters toward context control technologies. Utilizing vector stores and external memory devices to reflect real-time data and suppress hallucinations is becoming increasingly important. Instead of model retraining, which can cost millions of dollars, the success of an actual service depends on how accurately information can be filtered and injected within a given context window. Even a model with the most sophisticated layers cannot avoid threats of data leakage or loss of credibility if it is fed the wrong context.
 
 The separation of training and inference is another crucial point for enterprises to understand. A model with fixed weights from the training process cannot acquire new knowledge at the time of inference. The information entered by a user does not become part of the model's permanent intelligence; it remains only in a temporary session state before disappearing. Ultimately, integrating Transformers into a business must move beyond admiring technical marvels and into the pragmatic realm of controlling the risks posed by probabilistic limitations and calculating cold, hard cost-efficiency.
-
-## 🔗 Recommended Reading
-
-- [The Flip Side of Autonomous Collaboration: Structural Flaws and Security Challenges in Multi-Agent Systems](/en/posts/multi-agent-system-security-flaws)
-- [From Token-Holder Models to Proof-Based Security: How DPoP Redefines Trust in Web Authentication](/en/posts/dpop-proof-based-web-authentication)

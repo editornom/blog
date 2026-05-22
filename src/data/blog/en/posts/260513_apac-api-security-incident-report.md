@@ -118,8 +118,3 @@ Traditional Web Application Firewalls (WAF) are no longer sufficient for API tra
 If an endpoint suddenly requests large batches of LLM training embeddings or begins exporting bulk files to anomalous IPs, the system must immediately terminate the session and isolate the affected containers using zero-trust segmentation, protecting the wider network from catastrophic compromise.
 
 ---
-
-## 🔗 Recommended Reading
-- [The Zero Trust Paradox: Analyzing Continuous Verification and Resilience under NIST 800-207](/en/posts/zero-trust-paradox-nist-800-207-cyber-resilience)
-- [The Quantum Apocalypse (Y2Q) and HNDL Threat: Technical Deep Dive into Quantum Security (QKD vs PQC)](/en/posts/quantum-apocalypse-pqc-qkd-guide)
----

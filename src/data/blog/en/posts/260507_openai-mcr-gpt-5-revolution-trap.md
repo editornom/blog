@@ -41,8 +41,4 @@ faqs:
 
 ![OpenAI MCR - An abstract image representing sophisticated connectivity through complexly connected dots and glowing lines, expressing deep connectivity through transparent glass textures and light flow.](../../../../../source/posts/오픈AI_MCR/cb8328b3-0.webp)
 
-<h2> The Achilles' Heel of the GPT-5 Agent Ecosystem: Security and Fragmentation</h2> <p> The emergence of GPT-5 is accelerating the expansion of the agent-based AI ecosystem. However, this progress is simultaneously bringing new security vulnerabilities and data governance issues to the surface. In particular, while the Model Context Protocol (MCP) is a core link in this ecosystem, there are critical warnings regarding its stability and security.</p> <h3> Warnings on MCP (Model Context Protocol): 
-
-## 🔗 Recommended Reads
-- [Elon Musk's 'Terafab': A 1-Terawatt Ambition or an Engineering Illusion?](/en/posts/elon-musk-terafab-ambition-or-illusion)
-- [Winning Strategy for AX (AI Transformation): Secure the 'Golden Time' of Technical Execution Beyond People-Centricity](/en/posts/ax-strategy-golden-time)
+<h2> The Achilles' Heel of the GPT-5 Agent Ecosystem: Security and Fragmentation</h2> <p> The emergence of GPT-5 is accelerating the expansion of the agent-based AI ecosystem. However, this progress is simultaneously bringing new security vulnerabilities and data governance issues to the surface. In particular, while the Model Context Protocol (MCP) is a core link in this ecosystem, there are critical warnings regarding its stability and security.</p> <h3> Warnings on MCP (Model Context Protocol):

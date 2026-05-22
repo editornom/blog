@@ -63,8 +63,3 @@ The "Token Trap" in terms of cost efficiency is another variable that cannot be 
 Ultimately, the adoption of Agentic AIOps is a process of redefining organizational accountability that goes beyond a mere technical transition. When a failure occurs in an operational environment due to an agent's misjudgment, clear guidelines are needed to determine whether responsibility lies with the designer, the operator who approved the action, or the platform provider. Implementing technology without a systematic governance framework is like pressing the accelerator on a vehicle without a steering wheel.
 
 Attempting to shroud system logic in an AI shell may result in surrendering operational sovereignty to technology providers. When technical debt is concealed within the flow of automation, human resilience will be rendered powerless in the face of a massive system failure. True technical progress should not begin with hiding complexity behind AI, but with building a transparent governance system where humans can clearly control and understand the entire architecture.
-
-## 🔗 Recommended Reading
-
-- [The Landscape Reshaped by Attention: The Pros and Cons of Transformers](/en/posts/attention-transformers-tech-landscape)
-- [MCP: Designing a Standard Protocol to Pierce the Complexity of AI Integration](/en/posts/mcp-ai-integration-standard-protocol)

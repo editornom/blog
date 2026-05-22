@@ -112,7 +112,3 @@ Sandbox technologies like Kata Containers are meaningful attempts to combine the
 *   **Security Data:** Approximately **45%** of all container security threats stem from image vulnerabilities and improper permission settings (Ref: Gartner Research).
 
 Ultimately, what matters is not blind trust in technology, but a strategic perspective that clearly recognizes and compensates for its underlying limitations. It is time to step away from the sweet temptation of speed and check the fundamental strength of our infrastructure.
-
-## 🔗 Recommended Reading
-- [Service Worker Architecture: The Precarious Balance Between Offline Control and Performance](/en/posts/service-worker-architecture-offline-performance-balance)
-- [The SLM Paradox: Why Reducing Infrastructure Costs Leads to Engineering Debt](/en/posts/slm-paradox-engineering-debt)

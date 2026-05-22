@@ -104,7 +104,3 @@ Kubernetes v1.36 “Haru” 在向我们展示技术进步的同时，也提出�
 > "为解决安全债务而永久删除 gitRepo，不是选择，而是为了生存的强制性转折点。"
 
 归根结底，成功运营 v1.36 的核心在于“简化”。抵御新功能提供的诱惑，将集群的复杂度保持在可控范围内，同时迅速清除构成安全威胁的遗留系统，这正是当代 Kubernetes 架构师被赋予的真正能力。
-
-## 🔗 推荐阅读
-- [RLHF 的明与暗：AI 对齐革命与阿谀奉承式智能的本质局限性分析](/cn/posts/rlhf-ai-alignment-limitations-sycophancy)
-- [分布式共识的悖论：数学上的完美带来的过度工程陷阱](/cn/posts/distributed-consensus-overengineering-paradox)

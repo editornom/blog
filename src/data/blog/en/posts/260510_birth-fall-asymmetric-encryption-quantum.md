@@ -94,7 +94,3 @@ faqs:
  We must now abandon the illusion of 'permanent security.' Instead, it is time to prepare for a major transition to a dynamic defense system that constantly updates and evolves in line with changing threats.
 
  The value of digital democracy opened by asymmetric encryption remains valid. However, to protect that value, we must exercise a cold-headed critical spirit that does not settle for past success and make the cryptographic decisions necessary for a new era.
-
-## 🔗 Recommended Reading
-- [RLHF: The Final Piece for AI Intelligence, or a Sophisticated Mirror Reflecting Human Bias?](/en/posts/rlhf-ai-intelligence-human-bias)
-- [The Paradox of Transformer Architecture: A Victory for Parallelism or a Bankruptcy of Efficiency?](/en/posts/transformer-architecture-paradox)

@@ -142,7 +142,3 @@ However, we must simultaneously be wary of the fundamental limitations of backpr
 > Backpropagation is a paradox. It is a monumental tool born of humanity's obsession with optimization, but at the same time, it is a double-edged sword that defines the black-box limitations of modern AI.
 
 Ultimately, the post-backpropagation era will be a new exploration toward AI that is 'explainable,' 'understandable,' and 'accountable,' borrowing insights from biological intelligence to go beyond merely finding the 'optimal' answer. Critically analyzing the pros and cons of backpropagation is our essential first step in this journey.
-
-## 🔗 Recommended Reading
-- [Service Worker Architecture: The Precarious Balance Between Offline Control and Performance](/en/posts/service-worker-architecture-offline-performance-balance)
-- [The SLM Paradox: Why Reducing Infrastructure Costs Leads to 'Engineering Debt'](/en/posts/slm-paradox-engineering-debt)

@@ -119,7 +119,3 @@ faqs:
  ### Integration is certainly a powerful weapon, but the hand holding that weapon must not become subordinate to the platform. C-level leaders in 2025 must be wary of the dependency trap hidden behind the sweet fruit of efficiency and focus all efforts on securing the resilience of the entire system.
 
 > "The visibility offered by Wiz and Orca is powerful, but an architecture that fails to understand the gap between the post-hoc visibility of agentless methods and real-time defense is only half-secure."
-
-## 🔗 Recommended Reading
-- [RLHF: Did It Make AI More 'Human' or Just a 'Sycophant'?](/en/posts/rlhf-human-like-or-sycophant)
-- [4GB Download Without Consent: The Paradox of Google Chrome's Silent Gemini Nano Installation and On-Device AI](/en/posts/chrome-silent-gemini-nano-download-controversy)

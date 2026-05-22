@@ -101,7 +101,3 @@ faqs:
  In the name of security, we are surrendering the 'complete control' that has been the foundation of computer science for the past 50 years back to the system. This is akin to giving up free highway driving and installing checkpoints at every interval. However, in today's complex, interconnected society, the cost of an accident has exceeded what an individual can bear.
 
  Ultimately, memory safety symbolizes a paradigm shift from 'maximizing efficiency' to 'maximizing trust.' Although developer sovereignty has been somewhat diminished and runtime performance losses are unavoidable, we have gained a robust digital sanctuary where we no longer need to fear unpredictable collapse.
-
-## 🔗 Recommended Reading
-- [Quantum Apocalypse (Y2Q) and HNDL Threats: A Technical Deep Dive into Next-Gen Quantum Security (QKD vs PQC)](/en/posts/quantum-apocalypse-pqc-qkd-guide)
-- [The Underground Market for Digital Assets: NordVPN Analyzes Dark Web Pricing for Personal Data and Accounts](/en/posts/darkweb-personal-data-valuation-report)

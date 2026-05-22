@@ -75,8 +75,3 @@ The opacity of debugging is another challenge to overcome. Error messages produc
 From a security perspective, a cautious approach is also necessary. If an attacker gains system privileges and injects a malicious eBPF program, it could be exploited as a stealthy path to exfiltrate data at the kernel level or disable existing security tools. It is vital to remember that as the authority of a technology grows, the security risks and management responsibilities increase proportionally.
 
 The "no-code-change" visibility provided by eBPF is certainly an attractive alternative, but it is a reward that can only be fully reaped with solid engineering capabilities. To ensure that the ambition to oversee the entire infrastructure does not result in technical debt that only a few can manage, it is wise to approach it step-by-step, coldly evaluating its fit with business logic and operational visibility.
-
-## 🔗 Recommended Reads
-
-- [Imperfect Trust Designed by Perfect Math: The Flip Side of Asymmetric Encryption](/en/posts/imperfect-trust-asymmetric-encryption)
-- [From Token-Holder Models to Proof-Based Security: How DPoP Redefines Trust in Web Authentication](/en/posts/dpop-proof-based-web-authentication)

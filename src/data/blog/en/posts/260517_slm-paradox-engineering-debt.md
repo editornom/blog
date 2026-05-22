@@ -118,7 +118,3 @@ To design a successful architecture, you must assess your resource situation bef
 > "The numbers on the infrastructure bill might go down, but the issue tickets in your Slack channels will multiply exponentially."
 
 For a sustainable AI system, one must first understand the total capacity of the organization's engineering skills rather than obsessing over model size. Remember that an SLM is never a skeleton key; it can sometimes be the starting point of a heavy debt.
-
-## 🔗 Recommended Reading
-- [Service Worker Architecture: The Precarious Balance Between Offline Control and Performance](/en/posts/service-worker-architecture-offline-performance-balance)
-- [The Reliability Horror Story of AI Agents: Why Requirements Destroy Autonomy](/en/posts/why-requirements-destroy-ai-autonomy)

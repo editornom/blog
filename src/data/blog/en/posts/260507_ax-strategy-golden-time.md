@@ -84,7 +84,3 @@ The role of a leader must now shift from a "counselor" who holds hands and persu
 > "The golden time for AI transformation does not wait. Resolving technical debt to provide immediate work efficacy to members—that is the beginning of the most innovative change management."
 
 In conclusion, the success formula for AX is clear: boldly cut out old systems, install the powerful engine of Agentic AI, and prove the difference in speed through the core 30% of your workforce. This is the only path that will transform your organization into a true AI leader.
-
-## 🔗 Recommended Reading
-- [LLM Wiki Guide: Logical Hallucination Risks of Reasoning Models and the Necessity of Knowledge Accumulation](/en/posts/llm-reasoning-hallucination-risk-knowledge)
-- [Distributed Systems Architecture: The Blessing and Curse of Complexity Brought by Infinite Scaling](/en/posts/distributed-systems-scaling-complexity)

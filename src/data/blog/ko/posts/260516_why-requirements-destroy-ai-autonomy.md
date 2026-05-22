@@ -152,7 +152,3 @@ faqs:
 ![Agentic Reliability - 열린 유리 새장에서 나온 빛의 새가 디지털 격자를 향해 날아가며 자율성과 신뢰의 이상적인 균형을 보여줍니다.](../../../../../source/posts/Agentic_Reliability/f941bb6d-2.webp)
 
  우리가 나아갈 방향은 명확합니다. 선언적 규칙의 편리함은 취하되, 그 뒤에 숨은 자율성 파괴의 덫을 경계해야 합니다. 데이터와 지표에 기반한 신뢰 시스템을 구축할 때 비로소 우리는 AI 에이전트와 진정한 파트너십을 맺을 수 있을 것입니다.
-
-## 🔗 함께 읽으면 좋은 글
-- [스케일링 법칙의 황금기에서 임계점까지: AI 산업의 거대한 패러다임 전환](/ko/posts/ai-scaling-laws-paradigm-shift)
-- [Kubernetes 1.36, 화려한 기능 뒤에 숨겨진 '설정 과부하'와 마이그레이션 리스크 심층 분석](/ko/posts/kubernetes-1-36-configuration-overload-migration-risks)

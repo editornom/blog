@@ -122,7 +122,3 @@ faqs:
 * **2025年展望**：根据 Gartner 预测，超过 30% 的 AI 驱动型企业将采用知识图谱技术，以强化结构化与非结构化数据间的语义连接。
 
  在长达 50 年的岁月里，RDBMS 支撑着这个世界。现在，我们应该在尊重这一秩序遗产的同时，发挥全新的架构想象力，去突破已达临界点的局限。从关系走向语义，从秩序走向灵活，这段旅程将是现代架构师们面临的最迷人的挑战。
-
-## 🔗 相关阅读
-- [Service Worker Architecture：在离线控制权与性能之间的危险平衡](/cn/posts/service-worker-architecture-offline-performance-balance)
-- [AI 智能体的可靠性惨剧：为什么规则（Requirements）会破坏自主性](/cn/posts/why-requirements-destroy-ai-autonomy)

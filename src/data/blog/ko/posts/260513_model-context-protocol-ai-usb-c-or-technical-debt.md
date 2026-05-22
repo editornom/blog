@@ -124,7 +124,3 @@ faqs:
 * 보안 우려: 데이터 거버넌스 미흡 시 'Jailbreaking'을 통한 비인증 도구 호출 리스크 상존
 
  기술적 낙관주의에 매몰되어 '표준화'라는 단어에 안주하지 마세요. 연결이 쉬워질수록, 그 연결을 끊어야 할 시점을 결정하는 아키텍트의 직관은 더욱 중요해질 것입니다.
-
-## 🔗 함께 읽으면 좋은 글
-- [양자 대재앙(Y2Q)과 HNDL 위협: 차세대 보안 혁신을 이끌 양자보안(QKD vs PQC) 완벽 기술 해부](/ko/posts/quantum-apocalypse-pqc-qkd-guide)
-- [메모리 안전성이라는 성전: 시스템 설계의 자유를 포기한 대가와 성능의 한계](/ko/posts/memory-safety-system-design-performance)

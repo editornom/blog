@@ -120,7 +120,3 @@ While the Transformer is undoubtedly the massive engine driving modern AI, we mu
 It is time to declare the bankruptcy of efficiency and pull out the wisdom of linear complexity that stopped in the 90s. Beyond the benefits of the hardware lottery, we look forward to the emergence of elegant architectures that truly pierce the essence of intelligence.
 
 Now is the time to think about "how to be smarter" rather than "unconditionally bigger." Facing the shadows of inefficiency hidden behind the Transformer's flashy exterior will be the first step toward opening a new era of AI.
-
-## 🔗 Recommended Reading
-- [OpenAI MCR and GPT-5: A Revolution in Intelligence or a Giant Infrastructure Trap?](/en/posts/openai-mcr-gpt-5-revolution-trap)
-- [LLM Wiki Guide: Logic Hallucination Risks in Reasoning Models and the Necessity of Knowledge Accumulation](/en/posts/llm-reasoning-hallucination-risk-knowledge)

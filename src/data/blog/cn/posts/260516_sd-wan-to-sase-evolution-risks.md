@@ -115,7 +115,3 @@ Fortinet 或 HPE 等大型厂商竞相强调集成的便利性。在单一平台
 ### 4.2. SASE 之后的世界：超越依赖的混合策略之必要性
 
 比起盲目的集成，我们需要找到适合自身环境的最佳组合的“混合策略”。既要利用 Cloud 的灵活性，又要保持内部的核心控制力。必须记住，基础设施的主权不在于技术，而在于运营该技术的企业的意志。
-
-## 🔗 相关阅读
-- [AI 智能体的信任危机：为什么规则 (Requirements) 会破坏自主性？](/cn/posts/why-requirements-destroy-ai-autonomy)
-- [从缩放定律的黄金时代到临界点：AI 产业的宏大范式转移](/cn/posts/ai-scaling-laws-paradigm-shift)

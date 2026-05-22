@@ -114,7 +114,3 @@ faqs:
 | **GRPO** | Group Relative Policy Optimization | 可选（可基于规则） | 尚处于初期阶段，局限于数学/代码等可验证领域 |
 
 最终，未来 AI 的竞争将不再是“谁说话更合人类胃口”，而是“谁能基于客观依据验证自身的错误”。清算 RLHF 这一巨额债务，迈向实质性的智能进化，这一时刻已然临近。
-
-## 🔗 推荐阅读
-- [Service Worker Architecture：在离线控制权与性能之间的危险平衡](/cn/posts/service-worker-architecture-offline-performance-balance)
-- [SLM 的悖论：为何降低基础设施成本会导致“工程债务”](/cn/posts/slm-paradox-engineering-debt)

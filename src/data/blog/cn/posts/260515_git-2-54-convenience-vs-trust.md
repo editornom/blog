@@ -113,7 +113,3 @@ Git 2.54 确实承诺给我们一个更快、更便利的开发环境。但作�
 > “阴影逻辑的扩散将加剧调试的痛苦，并导致安全可见边界的瓦解。”
 
 最终，这次更新是福音还是灾难，取决于我们以多大的批判性态度去接纳这个工具。请更严格地管理全局配置，并不断质疑隐藏在便利命令背后的数据流。因为这正是我们作为系统架构师必须守护的最后自尊与责任。
-
-## 🔗 相关阅读
-- [Kubernetes 1.36，华丽功能背后隐藏的‘配置过载’与迁移风险深度分析](/cn/posts/kubernetes-1-36-configuration-overload-migration-risks)
-- [Transformer 十年记录：并行处理的创新与数据治理的悖论](/cn/posts/transformers-10-years-data-governance-paradox)

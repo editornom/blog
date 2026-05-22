@@ -140,7 +140,3 @@ IBM 的 <a href="/cn/glossary/beeai-framework" class="glossary-tooltip" data-def
 ![Agentic Reliability - 从打开的玻璃鸟笼中飞出的光之鸟飞向数字网格，展示了自主性与信任的理想平衡。](../../../../../source/posts/Agentic_Reliability/f941bb6d-2.webp)
 
 我们要前进的方向很明确。在享受声明式规则便利的同时，必须警惕其背后隐藏的摧毁自主性的陷阱。只有构建基于数据和指标的信任系统，我们才能真正与 AI Agent 建立伙伴关系。
-
-## 🔗 相关阅读
-- [从缩放法则的黄金时代到临界点：AI 产业的巨大范式转移](/cn/posts/ai-scaling-laws-paradigm-shift)
-- [Kubernetes 1.36，华丽功能背后隐藏的 '配置超载' 与迁移风险深度分析](/cn/posts/kubernetes-1-36-configuration-overload-migration-risks)

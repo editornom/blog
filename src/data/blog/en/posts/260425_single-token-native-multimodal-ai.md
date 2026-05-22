@@ -74,7 +74,3 @@ Recent research titled "The Narrow Gate" provides interesting insights into the 
 While this compression technique is excellent for computational efficiency, it can cause security and reliability issues; even minor noise introduced to that specific token can cause the entire visual interpretation to collapse. Furthermore, the cost structure—requiring high-end infrastructure based on NVIDIA Blackwell—is a practical barrier to technology adoption. While the situational awareness shown by Google Gemini is impressive, the costs of building and operating the data centers to support it are beyond the reach of typical enterprise environments.
 
 Ultimately, behind the technical elegance of native multimodal AI lies a coexistence of astronomical infrastructure costs and the uncertainty of inference caused by removing proven modules. Companies must now consider realistic choices between flashy benchmark metrics and specialized models with proven cost-efficiency. The price of AI understanding the world through a single logic comes with much higher technical debt and operational risk than expected.
-
-## 🔗 Recommended Reading
-
-- [MCP: A Blueprint for Standard Protocols Navigating the Complexity of AI Integration](/en/posts/mcp-ai-integration-standard-protocol)

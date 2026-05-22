@@ -104,7 +104,3 @@ Kubernetes v1.36 'Haru' is presenting us with a question that tests our operatio
 > "The permanent removal of gitRepo to resolve security debt is not a choice, but a mandatory turning point for survival."
 
 Ultimately, the key to successful v1.36 operation lies in 'simplification.' Resisting the temptation of new features, maintaining cluster complexity at a manageable level, and quickly stripping away legacy that poses security threats—this is the true capability required of a Kubernetes architect in this era.
-
-## 🔗 Recommended Reading
-- [The Two Sides of RLHF: Revolutionizing AI Alignment and Analyzing the Inherent Limits of Sycophantic Intelligence](/en/posts/rlhf-ai-alignment-limitations-sycophancy)
-- [The Paradox of Distributed Consensus: How Mathematical Perfection Led to the Trap of Over-Engineering](/en/posts/distributed-consensus-overengineering-paradox)

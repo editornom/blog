@@ -120,7 +120,3 @@ Transformer 固然是引领现代 AI 的强大引擎，但我们必须承认它�
 是时候宣布效率的破产，重新拾起在 90 年代停滞不前的线性复杂度智慧了。期待在超越硬件彩票的惠泽后，能够出现真正洞察智能本质的优雅架构。
 
 现在的重点不再是“无条件做大”，而是“如何变得更聪明”。直面隐藏在 Transformer 华丽外表下的低效阴影，我相信这将是开启 AI 新时代的第一步。
-
-## 🔗 相关阅读
-- [OpenAI MCR 与 GPT-5：智能的革命，还是基础设施的巨大陷阱？](/cn/posts/openai-mcr-gpt-5-revolution-trap)
-- [LLM Wiki 指南：推理模型的逻辑幻觉风险与知识积累的必然性](/cn/posts/llm-reasoning-hallucination-risk-knowledge)

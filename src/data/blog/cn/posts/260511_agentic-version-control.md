@@ -122,7 +122,3 @@ Agentic Version Control 不仅仅是一个技术趋势，它是每一位必须�
 > “模型漂移是代理可靠性的隐形杀手，放任自流无异于在没有版本控制的生产服务器上上传代码。”
 
 ![Agentic Version Control - 通过玻璃棱镜将一束光分散成多种颜色的景象，象征性地表达了复杂的 AI 智能被分解为易于管理的多个阶段的过程。](../../../../../source/posts/Agentic_Version_Control/871ab5d6-2.webp)
-
-## 🔗 推荐阅读
-- [Transformer 革命七年的悖论：概率巨人的诞生与不可解释性的屏障](/cn/posts/transformer-revolution-7-years-paradox)
-- [eBPF 给 Linux 内核带来的巨大波澜与“语义鸿沟”的警告](/cn/posts/ebpf-linux-kernel-semantic-gap)

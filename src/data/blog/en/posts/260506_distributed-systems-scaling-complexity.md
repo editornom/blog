@@ -131,7 +131,3 @@ No matter how perfect the mathematical consistency of papers on rigorously verif
 However, in extreme chaos where network packets are randomly lost, disk write delays (fsync) occur, and CPU throttling kicks in, the constant "ping-pong" of changing leader nodes can throw the distributed system into an uncontrollable state. The entire cluster may stop processing client requests to elect a new leader, which for financial or real-time trading systems where even a 0.1-second delay is unacceptable, means a catastrophe directly linked to massive financial loss.
 
 I earnestly urge you: do not be blinded by the brilliant illusion of innovation and intoxicated by the sweet temptation of infinite scalability to the point of recklessly fragmenting your company's core architecture. Unless a highly mature engineering culture that can willingly handle and fiercely control the absolute preservation of data integrity and the resulting massive complexity cost is firmly established internally, a distributed system will eventually become the most flamboyant and destructive curse, slowly strangling the life out of your enterprise.
-
-## 🔗 Recommended Reading
-- [[Post-Mortem] Claude Code's AI DoS Vulnerability: Amateur Design Flaws Hidden Behind Innovation](/ko/posts/claude-code-ai-dos-vulnerability)
-- [The Shadow Behind eBPF Benefits: Technical Debt and Operational Risks Caused by Zero-instrumentation](/ko/posts/ebpf-zero-instrumentation-risks-technical-debt)

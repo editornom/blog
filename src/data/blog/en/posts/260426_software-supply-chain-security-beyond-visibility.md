@@ -75,8 +75,3 @@ Building a sophisticated security system comes with realistic constraints, such 
 If software supply chain security remains at the level of purchasing tools and managing lists, the business is built on a house of cards that could collapse at any time. A passive attitude of delegating security sovereignty to others within complex dependency structures and relying only on automated tool alerts is a blind spot in modern security. The moment we mistake the transparency provided by technical achievement for actual control, the supply chain will once again become our Achilles' heel.
 
 Ultimately, the core of supply chain security lies not in tools, but in governance—a commitment to taking responsibility for every piece of code used until the very end. The market will reorganize around solutions that provide actual control beyond mere visibility, and companies must move away from the comfort provided by tools. True security innovation begins not with a flashy dashboard, but with the cold rationality of doubting and verifying even a single invisible line of dependency.
-
-## 🔗 Recommended Reading
-
-- [Code That Breaks the Walls of the Linux Kernel: The Ideals and Reality of eBPF Observability](/en/posts/ebpf-observability-ideals-reality)
-- [The Rule of the Single Token: How Native Multimodal AI Redefines Artificial Intelligence Metrics](/en/posts/single-token-native-multimodal-ai)

@@ -84,7 +84,3 @@ faqs:
 > "AI 转型的黄金时间不会等人。通过解决技术债务，为成员提供即时的工作效能感，这才是最具创新性的变革管理的开始。"
 
 综上所述，AX 的成功公式非常明确：果断切除陈旧系统，安装 Agentic AI 这一强大引擎，并通过 30% 的核心人力证明速度的差异。唯有此路，才能将您的组织真正蜕变为 AI 领先组织。
-
-## 🔗 推荐阅读
-- [LLM Wiki 指南：推理模型的逻辑幻觉风险与知识积累的必然性](/cn/posts/llm-reasoning-hallucination-risk-knowledge)
-- [分布式系统架构：无限扩展带来的复杂性的祝福与诅咒](/cn/posts/distributed-systems-scaling-complexity)

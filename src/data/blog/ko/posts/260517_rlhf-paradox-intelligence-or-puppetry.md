@@ -125,7 +125,3 @@ faqs:
  | **GRPO** | Group Relative Policy Optimization | 선택적(규칙 기반 가능) | 수학/코드 등 검증 가능한 영역에 국한된 초기 단계 |
 
  결국 미래의 인공지능은 '누가 더 인간의 입맛에 맞는 말을 하는가'가 아니라, '누가 더 객관적 근거에 기반하여 스스로의 오류를 검증할 수 있는가'의 싸움이 될 것입니다. RLHF라는 거대한 부채를 청산하고, 실질적인 지능의 진화로 나아가야 할 시점이 우리 앞에 성큼 다가와 있습니다.
-
-## 🔗 함께 읽으면 좋은 글
-- [Service Worker Architecture: 오프라인 제어권과 성능 사이의 위태로운 균형](/ko/posts/service-worker-architecture-offline-performance-balance)
-- [SLM의 역설: 인프라 비용 절감이 '엔지니어링 부채'로 이어지는 이유](/ko/posts/slm-paradox-engineering-debt)

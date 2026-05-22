@@ -73,8 +73,3 @@ While RLHF has dramatically improved model usability, it has also birthed a side
 These characteristics can lead to data contamination and exacerbated hallucinations in work environments where information accuracy is paramount. Furthermore, the cost of maintaining a vast labeling workforce and the difficulties of ethical management raise questions about the sustainability of RLHF. This structural complexity and risk are why technologies like DPO (Direct Preference Optimization), which optimize policies directly without a reward model, are currently being discussed.
 
 Ultimately, RLHF is a useful tool that has integrated AI into the human linguistic order, but it is also a double-edged sword that can undermine a model's critical thinking. As long as variable human preferences remain the sole metric for learning, we may be facing a sophisticated interface that caters to human tastes rather than objective truth. This is why alternative approaches to ensuring logical integrity must be pursued alongside technological advancement.
-
-## 🔗 Recommended Reads
-
-- [The Beauty of Distribution or the Swamp of Integration: The Two Sides of Multi-Cloud Strategy](/en/posts/multicloud-strategy-pros-and-cons)
-- [The Paradox of System Optimization Imprisoned by the Walls of Security](/en/posts/security-system-optimization-paradox)

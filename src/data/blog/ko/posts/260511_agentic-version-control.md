@@ -136,7 +136,3 @@ faqs:
 > "모델 드리프트는 에이전트 신뢰성의 조용한 살인마이며, 이를 방치하는 것은 버전 제어 없는 운영 서버에 코드를 올리는 것과 다름없다."
 
 ![Agentic Version Control - 유리 프리즘이 한 줄기 빛을 여러 색깔로 분산시키는 모습을 통해 복잡한 인공지능의 지능이 관리하기 쉬운 여러 단계로 분해되는 과정을 상징적으로 표현한 장면입니다.](../../../../../source/posts/Agentic_Version_Control/871ab5d6-2.webp)
-
-## 🔗 함께 읽으면 좋은 글
-- [트랜스포머 혁명 7년의 역설: 확률적 거인의 탄생과 설명 불가능성의 장벽](/ko/posts/transformer-revolution-7-years-paradox)
-- [eBPF가 리눅스 커널에 가져온 거대한 파장과 '세만틱 공백'의 경고](/ko/posts/ebpf-linux-kernel-semantic-gap)

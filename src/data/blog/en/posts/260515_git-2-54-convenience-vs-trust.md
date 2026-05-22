@@ -113,7 +113,3 @@ faqs:
 > "The spread of Shadow Logic will increase the pain of debugging and result in the collapse of visible security boundaries."
 
  Ultimately, whether this update becomes a blessing or a disaster depends on how critically we accept this tool. Manage global configurations more strictly and constantly question the flow of data hidden behind convenient commands. That is the final pride and responsibility we must uphold as system architects.
-
-## 🔗 Recommended Reading
-- [Kubernetes 1.36: Deep Analysis of 'Configuration Overload' and Migration Risks Behind Flashy Features](/en/posts/kubernetes-1-36-configuration-overload-migration-risks)
-- [A 10-Year Record of Transformers: Innovation in Parallel Processing and the Paradox of Data Governance](/en/posts/transformers-10-years-data-governance-paradox)

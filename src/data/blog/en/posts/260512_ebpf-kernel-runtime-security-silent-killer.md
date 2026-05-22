@@ -105,7 +105,3 @@ If a security agent exceeds allowed resource thresholds, it should have an inter
 eBPF is undoubtedly a powerful tool, but it is by no means a magic wand. Our goal should not be perfect security, but rather maintaining manageable risk within a range that does not compromise system availability.
 
 The greatest lesson Datadog has learned over the past five years is that the robustness of operations, rather than the flashiness of technology, determines the success of security. Do not grow complacent with the safety net of the verifier; protect your infrastructure from 'silent killers' through rigorous monitoring and incremental deployment.
-
-## 🔗 Recommended Reading
-- [RLHF: Making AI 'Human-like' or Just a 'Sycophant'?](/en/posts/rlhf-human-like-or-sycophant)
-- [The Massive Impact of eBPF on the Linux Kernel and the Warning of the 'Semantic Gap'](/en/posts/ebpf-linux-kernel-semantic-gap)

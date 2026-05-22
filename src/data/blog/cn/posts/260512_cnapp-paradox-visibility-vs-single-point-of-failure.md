@@ -119,7 +119,3 @@ faqs:
  ### 整合无疑是一件强大的武器，但握住这件武器的手不应受制于平台。2025 年的 C-Level 领导者们必须警惕效率这一诱人果实背后的依赖陷阱，全力确保整个系统的韧性。
 
 > “Wiz 和 Orca 提供的可见性虽然强大，但如果不理解无代理方式提供的事后可见性与实时防御之间的差距，那样的架构只能算是一半的安全。”
-
-## 🔗 推荐阅读
-- [RLHF：是让 AI 更像“人”，还是把它变成了“马屁精”？](/cn/posts/rlhf-human-like-or-sycophant)
-- [未经用户同意的 4GB 下载：谷歌 Chrome 偷装 Gemini Nano 与端侧 AI 的悖论](/cn/posts/chrome-silent-gemini-nano-download-controversy)

@@ -99,7 +99,3 @@ Complete autonomy is premature; the 'Human-on-the-loop' model, where humans guar
 ![AgentOps - A glowing human hand directly leading and managing a complex flow of data.](../../../../../source/posts/AgentOps/1aa662f8-2.webp)
 
 We must not make the mistake of forgetting the basics while intoxicated by the flashy appearance of technology. The era of true intelligent operations depends not on the number of agents, but on how sophisticatedly they are controlled and how transparently they are operated. Is your agent being controlled, or is it being neglected?
-
-## 🔗 Recommended Reading
-- [The Paradox of 7 Years of Transformer Revolution: The Birth of Stochastic Giants and the Barrier of Unexplainability](/en/posts/transformer-revolution-7-years-paradox)
-- [The Birth and Fall of Asymmetric Encryption: The Physical Reality of Quantum Facing Mathematical Trust](/en/posts/birth-fall-asymmetric-encryption-quantum)

@@ -114,7 +114,3 @@ The table below shows the key differences between the next-generation algorithms
 | **GRPO** | Group Relative Policy Optimization | Optional (Rule-based possible) | Early stage, currently limited to verifiable domains (math/code) |
 
 Ultimately, the future of AI will not be a battle over 'who sounds more human,' but rather 'who can better verify their own errors based on objective evidence.' The time has come to pay off the massive debt of RLHF and move toward a true evolution of intelligence.
-
-## 🔗 Recommended Reading
-- [Service Worker Architecture: The Precarious Balance Between Offline Control and Performance](/en/posts/service-worker-architecture-offline-performance-balance)
-- [The SLM Paradox: Why Infrastructure Cost Savings Lead to 'Engineering Debt'](/en/posts/slm-paradox-engineering-debt)

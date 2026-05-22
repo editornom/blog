@@ -117,7 +117,3 @@ The most powerful and recommended solution is to completely eliminate the depend
 We must no longer dismiss circular dependency as a simple coding mistake. It is an honest indicator of how sick our architecture has become. Modern technical environments no longer tolerate lazy and complacent designs.
 
 It is time to boldly discard the temporary fix of `@Lazy` and reclaim the robustness of our systems through fundamental solutions like interface segregation and event-driven communication. Please remember that great engineering begins not with the ability to hide problems, but with the courage to find and remove their root causes.
-
-## 🔗 Recommended Reading
-- [From the Golden Age of Scaling Laws to the Critical Point: The Massive Paradigm Shift in the AI Industry](/en/posts/ai-scaling-laws-paradigm-shift)
-- [Kubernetes 1.36: Deep Dive into 'Configuration Overload' and Migration Risks Behind Flashy Features](/en/posts/kubernetes-1-36-configuration-overload-migration-risks)

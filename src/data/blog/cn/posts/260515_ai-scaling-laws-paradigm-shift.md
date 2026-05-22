@@ -106,7 +106,3 @@ faqs:
 后缩放时代并非单纯的技术停滞，而是迈向更聪明、更高效智能的新创新起点。现在比任何时候都更需要拨开资本推动的“战略性泡沫”迷雾，洞察智能本质的慧眼。
 
 ![一幅精致的概念艺术作品，展示了一个平衡的天平，一侧是巨大的服务器机房，另一侧是一个闪烁着灿烂光芒的灯泡，采用简洁的玻璃拟态风格，带有空灵的光影效果。](../../../../../source/posts/Scaling_Laws/b40ec4bb-1.webp)
-
-## 🔗 推荐阅读
-- [AI 驱动漏洞检测的悖论：为什么更快的发现会让安全更危险？](/cn/posts/ai-vulnerability-detection-paradox)
-- [深度分析 Kubernetes 1.36 华丽功能背后的“配置过载”与迁移风险](/cn/posts/kubernetes-1-36-configuration-overload-migration-risks)

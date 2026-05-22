@@ -116,7 +116,3 @@ faqs:
 * **安全要求**：Service Worker 必须且只能在 HTTPS 安全上下文中运行，例外情况仅允许在 localhost 环境下进行开发。
 
  经过精雕细琢的 Service Worker 将成为坚实的基石，为用户提供无缝、完美的 Web 体验。希望大家不要沉溺于技术的华丽，而是做出明智的决策，在业务价值与用户性能之间找到平衡点。
-
-## 🔗 相关阅读
-- [AI 代理的可靠性残酷史：为什么规则 (Requirements) 会破坏自主性？](/cn/posts/why-requirements-destroy-ai-autonomy)
-- [网络安全事件响应的历史转折点与生存策略：超越运行手册的战略韧性](/cn/posts/cyber-incident-response-beyond-runbooks)

@@ -111,7 +111,3 @@ For a stable migration, you must first conduct a full inventory of the versions 
 Maintaining control over infrastructure in the Cloud era is no easy task. However, rather than being passively dragged along by provider policies, reading the flow of change in advance and responding preemptively is the only way to protect business safety.
 
 MySQL's new versioning model sends us a clear message. Whether you choose innovation or stability, remember that the subject of that decision must be you, not the cloud vendor.
-
-## 🔗 Recommended Reading
-- [The Paradox of 7 Years of Transformer Revolution: The Birth of Stochastic Giants and the Barrier of Unexplainability](/en/posts/transformer-revolution-7-years-paradox)
-- [AgentOps: The Prelude to Autonomous Management or an Uncontrollable 'Black Box'?](/en/posts/agentops-autonomy-or-black-box)

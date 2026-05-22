@@ -108,7 +108,3 @@ faqs:
 *   **기술적 권위 지표**: PostgreSQL 18은 '탈 커널(Bypass Kernel)' 흐름에 따라 비동기 I/O 서브시스템을 도입, 운영체제의 추상화 계층이 유발하는 성능 부채를 해결하고자 함.
 
 이제 개발자와 엔지니어는 시스템의 자동화된 추상화 계층 너머를 꿰뚫어 보아야 합니다. 정교한 수동 제어와 자원 격리 전략이야말로 자동화의 역설을 극복하고 진정한 고성능 시스템을 구축하는 유일한 열쇠가 될 것입니다.
-
-## 🔗 함께 읽으면 좋은 글
-- [양자 대재앙(Y2Q)과 HNDL 위협: 차세대 보안 혁신을 이끌 양자보안(QKD vs PQC) 완벽 기술 해부](/ko/posts/quantum-apocalypse-pqc-qkd-guide)
-- [디지털 자산의 지하 시장: 노드VPN이 분석한 다크웹 개인정보 및 계정 가격표](/ko/posts/darkweb-personal-data-valuation-report)

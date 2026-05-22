@@ -76,8 +76,3 @@ The 'Allow Downgrade' policy, designed to ensure compatibility, is also a point 
 Options to enforce PQC-only mode via MDM (Mobile Device Management) exist, but this is an alternative limited to enterprise environments with professional management capabilities. For general users or small organizations, such settings are likely to act as an operational burden. The reason Google integrated ML-DSA-based digital signatures into Android 17 and set a goal for full transition by 2029 is the judgment that it is difficult to fundamentally block quantum threats through the fragmented responses of individual companies alone.
 
 Introducing PQC is a complex task that goes beyond simply replacing encryption algorithms; it requires redesigning the entire corporate infrastructure. Rather than being satisfied with strengthening security at the tunnel entrance, efforts must be made to uniformly raise the security level across the entire segment, including the origin server. Ultimately, true post-quantum security will be achieved only when all network nodes share the same security standards and the security blind spots left for backward compatibility are completely eliminated.
-
-## 🔗 Recommended Reads
-
-- [The Technological Landscape Reshaped by Attention and the Pros and Cons of Transformers](/en/posts/attention-transformers-tech-landscape)
-- [MCP: The Blueprint for a Standard Protocol Navigating the Complexity of AI Integration](/en/posts/mcp-ai-integration-standard-protocol)

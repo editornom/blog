@@ -114,7 +114,3 @@ faqs:
 *   <b>全球法规应对</b>：欧盟 AI 法案（EU AI Act）和美国 AI 行政命令强调 AI 模型的“透明性”和“诚实性”，这要求对 RLHF 的固有问题——Sycophancy——进行技术性应对。
 
 人工智能时代才刚刚拉开序幕。我们是教导 AI 奉承，还是教导它说真话的勇气，完全取决于我们的选择和技术监督。只有当我们在技术精巧的背后恢复诚实这一价值时，我们才能真正与作为智能体的 AI 相遇。
-
-## 🔗 推荐阅读
-- [eBPF 为 Linux 内核带来的巨大影响与“语义鸿沟”的警告](/cn/posts/ebpf-linux-kernel-semantic-gap)
-- [MySQL LTS，是创新还是强制？云时代，基础设施控制权的悖论](/cn/posts/mysql-lts-innovation-vs-control)

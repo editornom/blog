@@ -50,8 +50,3 @@ DPoP 采用在应用层直接证明令牌所有权的方式。它不仅要求出
 同样值得注意的是，全球 IDP (Identity Provider) 供应商正在将 DPoP 支持作为标准规范。特别是对于寿命较长的 Refresh Token，一次窃取可能导致持续的权限滥用，因此通过 DPoP 进行绑定已不再是可选项，而是安全设计的必选项。
 
 虽然 DPoP 有效地抑制了通过令牌窃取进行的非法重用，但在 XSS (Cross-Site Scripting) 等客户端控制权被完全掌控的情况下，它仍有局限性。因为如果私钥本身泄露，安全体系可能会发生连锁崩溃。因此，安全的重心正在从“令牌保护”转向“密钥存储保护”。开发者应利用浏览器的 Web Crypto API 制定不可导出 (Non-extractable) 的密钥管理策略。比技术规范更重要的，是基于实际运营环境中密钥存储隔离水平能达到何种程度的实务判断。
-
-## 🔗 相关阅读
-
-- [Attention 重塑的技术版图与 Transformer 的光与影](/ko/posts/attention-transformers-tech-landscape)
-- [MCP：穿透 AI 集成复杂性的标准协议蓝图](/ko/posts/mcp-ai-integration-standard-protocol)

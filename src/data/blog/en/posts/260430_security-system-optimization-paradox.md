@@ -81,8 +81,3 @@ This method, which assigns specific tags during memory allocation and synchronou
 Automated tools and strict linguistic constraints designed to enhance security are undoubtedly contributing to the reduction of security blind spots. However, as the system's safety net becomes more robust, the phenomenon of developers becoming alienated from the operating principles of the system is also accelerating. While engineers of the past pondered architecture to maximize the efficiency of every single byte of memory, today's resources are focused on resolving the constraints presented by tools.
 
 Automated shields harbor the risk of becoming a veil that hides system inefficiencies. In the trend where hardware-based tagging or compiler enforcement replaces low-level optimization skills, we may be overlooking fundamental architectural design flaws that tools cannot solve. True technological progress will begin with the insight to see through the essence of the system controlled by the tool, moving beyond the mere safety the tool provides.
-
-## 🔗 Recommended Reading
-
-- [The Technological Landscape Reshaped by Attention and the Pros and Cons of Transformers](/en/posts/attention-transformers-tech-landscape)
-- [MCP: The Blueprint of a Standard Protocol Piercing Through the Complexity of AI Integration](/en/posts/mcp-ai-integration-standard-protocol)

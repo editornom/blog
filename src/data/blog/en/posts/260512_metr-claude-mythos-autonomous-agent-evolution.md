@@ -97,7 +97,3 @@ Yet, this achievement serves as a stark warning. <b>An agent that can navigate n
 The future of digital security now rests on a razor's edge: how quickly the global defensive community can evolve its systems to match the velocity of these autonomous agents. The race is no longer simply about building smarter software, but about who commands the most intelligent, autonomous guardian.
 
 ---
-
-## 🔗 Recommended Reading
-- [The 4GB Silent Download: Google Chrome's Stealth Installation of Gemini Nano and the Paradox of On-Device AI](/en/posts/chrome-silent-gemini-nano-download-controversy)
-- [GPT-5.5 vs Claude Opus 4.7: The 'Maintenance Debt' Warning Hidden Behind 72% Token Savings](/en/posts/gpt-5-5-vs-claude-opus-4-7-maintenance-debt)

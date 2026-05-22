@@ -120,7 +120,3 @@ flowchart LR
 특히 특정 API 엔드포인트가 비정상적으로 대량의 LLM 임베딩 데이터를 조회하거나 특정 IP 구간으로 벌크 유출을 시도할 경우, 시스템이 즉각 세션을 차단하고 전산 노드를 격리하는 제로 트러스트 세그멘테이션 기법을 적용해야만 다가올 AI 보안 대혼란 세대 속에서 비즈니스 영토를 안전하게 영속 보존해 낼 수 있습니다.
 
 ---
-
-## 🔗 함께 읽으면 좋은 글
-- [Zero Trust 역설: NIST 800-207로 바라본 지속적 검증과 엔터프라이즈의 보안 탄력성](/ko/posts/zero-trust-paradox-nist-800-207-cyber-resilience)
-- [양자 대재앙(Y2Q)과 HNDL 위협: 차세대 보안 혁신을 이끌 양자보안(QKD vs PQC) 완벽 기술 해부](/ko/posts/quantum-apocalypse-pqc-qkd-guide)

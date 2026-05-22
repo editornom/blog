@@ -139,7 +139,3 @@ faqs:
   * 과거 한두 번 이용하고 잊어버린 채 방치된 수십 개의 소형 쇼핑몰이나 가입 사이트들이 해커들의 가장 만만한 백도어 침공 타겟입니다. 가용한 웹 정보 삭제 포털(예: e프라이버시 클린서비스)을 주기적으로 방문하여 미사용 휴면 가입 정보를 완전히 지워 유출 면적(Attack Surface) 자체를 영구 축소해야 합니다.
 
 ---
-
-## 🔗 함께 읽으면 좋은 글
-- [사용자 동의 없는 4GB 다운로드: 구글 크롬이 몰래 설치한 Gemini Nano와 온디바이스 AI의 역설](/ko/posts/chrome-silent-gemini-nano-download-controversy)
-- [Zero Trust 역설: NIST 800-207로 바라본 지속적 검증과 엔터프라이즈의 보안 탄력성](/ko/posts/zero-trust-paradox-nist-800-207-cyber-resilience)

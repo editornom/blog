@@ -103,7 +103,3 @@ faqs:
 진정한 기술 대기업이라면 혁신적인 기능을 선보이기에 앞서, "더 스마트한 사용을 위해 4GB 모델 설치가 필요합니다. 동의하십니까?"라는 극히 상식적인 질문을 먼저 던지는 정직함과 투명성(Accountability)을 갖추어야 할 것입니다. 
 
 ---
-
-## 🔗 함께 읽으면 좋은 글
-- [GPT-5.5 vs Claude Opus 4.7: 72%의 토큰 절감이 숨긴 '유지보수 부채'의 경고](/ko/posts/gpt-5-5-vs-claude-opus-4-7-maintenance-debt)
-- [AgentOps, 자율 경영의 서막인가 아니면 통제 불능의 '블랙박스'인가?](/ko/posts/agentops-autonomy-or-black-box)

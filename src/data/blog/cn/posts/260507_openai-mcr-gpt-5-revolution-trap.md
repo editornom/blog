@@ -42,7 +42,3 @@ faqs:
 ![OpenAI MCR - 一个由复杂的连接点和闪烁的线条组成精细网络的抽象图像，用透明的玻璃质感和光流表达深度的连接。](../../../../../source/posts/오픈AI_MCR/cb8328b3-0.webp)
 
 <h2> GPT-5 智能体生态系统的阿喀琉斯之踵：安全与碎片化</h2> <p> GPT-5 的出现正在加速基于智能体的 AI 生态系统的扩张。然而，这种进步同时也让新的安全漏洞和数据治理问题浮出水面。特别是 Model Context Protocol (MCP) 虽然是该生态系统的核心纽带，但其稳定性和安全性正面临致命的警告。</p> <h3> MCP (Model Context Protocol) 的警示：
-
-## 🔗 推荐阅读
-- [埃隆·马斯克的“Terafab”：是 1 兆瓦的野心，还是工程学幻觉？](/cn/posts/elon-musk-terafab-ambition-or-illusion)
-- [AX (AI 转型) 的必胜战略：超越以人为本，守住技术执行的“黄金时间”](/cn/posts/ax-strategy-golden-time)

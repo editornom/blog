@@ -133,7 +133,3 @@ faqs:
 * **2025년 전망**: Gartner에 따르면 AI 기반 엔터프라이즈의 30% 이상이 지식 그래프 기술을 채택하여 정형-비정형 데이터 간의 의미론적 연결을 강화할 것으로 예측됨.
 
  50년이라는 긴 세월 동안 RDBMS는 세상을 지탱해 왔어요. 이제 우리는 그 질서의 유산을 존중하면서도, 임계점에 도달한 한계를 넘어서기 위한 새로운 아키텍처적 상상력을 발휘해야 할 때입니다. 관계를 넘어 의미로, 질서를 넘어 유연함으로 나아가는 여정이야말로 현대 아키텍트들이 마주한 가장 매혹적인 도전이 될 것이에요.
-
-## 🔗 함께 읽으면 좋은 글
-- [Service Worker Architecture: 오프라인 제어권과 성능 사이의 위태로운 균형](/ko/posts/service-worker-architecture-offline-performance-balance)
-- [AI 에이전트의 신뢰성 잔혹사: 왜 규칙(Requirements)은 자율성을 파괴하는가](/ko/posts/why-requirements-destroy-ai-autonomy)

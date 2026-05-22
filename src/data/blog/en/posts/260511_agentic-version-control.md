@@ -122,7 +122,3 @@ Only an architecture that acknowledges the non-determinism of intelligence and r
 > "Model drift is the silent killer of agent reliability; neglecting it is no different from pushing code to a production server without version control."
 
 ![Agentic Version Control - A glass prism dispersing a beam of light into multiple colors, symbolizing the decomposition of complex AI intelligence into manageable layers.](../../../../../source/posts/Agentic_Version_Control/871ab5d6-2.webp)
-
-## 🔗 Recommended Reading
-- [The Paradox of 7 Years of Transformer Revolution: The Birth of Stochastic Giants and the Barrier of Unexplainability](/en/posts/transformer-revolution-7-years-paradox)
-- [The Massive Impact of eBPF on the Linux Kernel and the Warning of the 'Semantic Gap'](/en/posts/ebpf-linux-kernel-semantic-gap)

@@ -122,7 +122,3 @@ Knowledge Graphs encompass the precision of RDBMS and the flexibility of NoSQL, 
 * **2025 Outlook**: According to Gartner, more than 30% of AI-based enterprises are predicted to adopt Knowledge Graph technology to strengthen semantic connections between structured and unstructured data.
 
 For 50 long years, RDBMS has supported the world. Now, while respecting that legacy of order, it is time for us to exercise new architectural imagination to move beyond the limits we have reached. The journey from relationship to meaning, and from order to flexibility, will be the most fascinating challenge facing modern architects.
-
-## 🔗 Recommended Reading
-- [Service Worker Architecture: The Precarious Balance Between Offline Control and Performance](/en/posts/service-worker-architecture-offline-performance-balance)
-- [The Reliability Cruelty of AI Agents: Why Requirements Destroy Autonomy](/en/posts/why-requirements-destroy-ai-autonomy)

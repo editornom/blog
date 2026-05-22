@@ -118,7 +118,3 @@ SLM 最大的魅力在于它可以在低规格硬件上运行。随着 VRAM 占�
 > “基础设施账单上的数字可能会减少，但 Slack 频道里的 Issue 工单将会呈指数级增长。”
 
 为了构建可持续的 AI 系统，我们不应执着于模型的大小，而应首先了解组织所能承担的工程能力总量。必须记住，SLM 绝非万能钥匙，有时它可能正是沉重债务的起点。
-
-## 🔗 推荐阅读
-- [Service Worker Architecture：在离线控制权与性能之间的危险平衡](/cn/posts/service-worker-architecture-offline-performance-balance)
-- [AI 智能体的可靠性惨剧：为什么规则（Requirements）会破坏自主性](/cn/posts/why-requirements-destroy-ai-autonomy)

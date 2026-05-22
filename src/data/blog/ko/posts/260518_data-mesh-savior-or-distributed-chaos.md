@@ -134,7 +134,3 @@ faqs:
  > "표준화 없는 자율성은 결국 기술적 부채의 총합인 '분산된 혼돈'으로 귀결될 위험이 크다."
 
  2025년과 그 이후의 데이터 전략을 준비하는 기업이라면, 기술의 화려함 이면에 숨겨진 '운영의 실제'를 직시해야 합니다. 데이터 메시를 향한 여정은 단순히 시스템을 바꾸는 일이 아니라, 우리 조직이 데이터를 대하는 성숙도를 시험하는 가장 강력한 리트머스 시험지가 될 것입니다.
-
-## 🔗 함께 읽으면 좋은 글
-- [SLM의 역설: 인프라 비용 절감이 '엔지니어링 부채'로 이어지는 이유](/ko/posts/slm-paradox-engineering-debt)
-- [Service Worker Architecture: 오프라인 제어권과 성능 사이의 위태로운 균형](/ko/posts/service-worker-architecture-offline-performance-balance)

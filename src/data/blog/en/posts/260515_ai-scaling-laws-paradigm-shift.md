@@ -106,7 +106,3 @@ We are standing at the first major turning point of the AI industry. The low-han
 The post-scaling era is not a technical stagnation but the beginning of a new innovation toward smarter, more efficient intelligence. It is time to clear the fog of the 'strategic bubble' pushed by capital and look deeper into the essence of intelligence.
 
 ![A sophisticated conceptual artwork showing a balanced scale, with a massive server farm on one side and a single brilliantly glowing lightbulb on the other, executed in a clean glassmorphic style with ethereal lighting and deep shadows.](../../../../../source/posts/Scaling_Laws/6ad03ad9-0.webp)
-
-## 🔗 Recommended Reading
-- [The Paradox of AI-Powered Vulnerability Detection: Why Faster Discovery Could Make Security More Precarious](/en/posts/ai-vulnerability-detection-paradox)
-- [Kubernetes 1.36: In-Depth Analysis of 'Configuration Overload' and Migration Risks Hidden Behind Flashy Features](/en/posts/kubernetes-1-36-configuration-overload-migration-risks)

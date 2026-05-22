@@ -130,7 +130,3 @@ faqs:
 > "인프라 고지서의 숫자는 줄어들지 모르나, 슬랙(Slack) 채널의 이슈 티켓은 기하급수적으로 늘어날 것이다."
 
  지속 가능한 AI 시스템을 위해서는 모델의 크기에 집착하기보다, 우리 조직이 감당할 수 있는 엔지니어링 역량의 총량을 먼저 파악해야 합니다. SLM은 결코 만능열쇠가 아니며, 때로는 무거운 부채의 시작점일 수 있음을 기억해야 할 것입니다.
-
-## 🔗 함께 읽으면 좋은 글
-- [Service Worker Architecture: 오프라인 제어권과 성능 사이의 위태로운 균형](/ko/posts/service-worker-architecture-offline-performance-balance)
-- [AI 에이전트의 신뢰성 잔혹사: 왜 규칙(Requirements)은 자율성을 파괴하는가](/ko/posts/why-requirements-destroy-ai-autonomy)

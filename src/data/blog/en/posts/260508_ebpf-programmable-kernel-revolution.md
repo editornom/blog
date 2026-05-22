@@ -113,7 +113,3 @@ faqs:
 > "Innovation in technology is not about replacing an object, but about complementing existing limitations and expanding the realm of new possibilities. The combination of eBPF and application visibility is exactly that point."
 
  Only when you understand the sharp edges of this technology beyond simple praise can your infrastructure evolve to the next level. Remember, eBPF is just the beginning of a revolution, not the final destination.
-
-## 🔗 Recommended Reading
-- [Distributed System Architecture: The Blessing and Curse of Complexity Brought by Infinite Scaling](/en/posts/distributed-systems-scaling-complexity)
-- [The Paradox of Transformer Architecture: A Victory for Parallelism or a Bankruptcy of Efficiency?](/en/posts/transformer-architecture-paradox)

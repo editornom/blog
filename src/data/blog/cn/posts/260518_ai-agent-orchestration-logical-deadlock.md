@@ -112,7 +112,3 @@ faqs:
  ![智能体编排 (Agent Orchestration) - 天平展示了逻辑完整性远比 1ms 的速度更重要。](../../../../../source/posts/에이전트_오케스트레이션(Agent_Orchestration)/1f361b78-2.webp)
 
  现在我们必须摆脱 1ms 的幻象。因为基础设施的速度永远无法补偿逻辑的错误。我们需要关注的不是服务器的延迟时间，而是如何维持错综复杂的智能体间智能化协作的秩序，即实际运营治理的领域。
-
-## 🔗 相关阅读
-- [Service Worker Architecture: 离线控制权与性能之间的危险平衡](/cn/posts/service-worker-architecture-offline-performance-balance)
-- [SLM 的悖论：为何削减基础设施成本会导致“工程债”](/cn/posts/slm-paradox-engineering-debt)

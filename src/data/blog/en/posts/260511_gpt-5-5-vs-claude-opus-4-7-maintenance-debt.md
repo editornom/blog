@@ -106,7 +106,3 @@ The true return on investment (ROI) we should pursue is not the amount on the AP
 A wise technical decision-maker will adopt a hybrid strategy, placing each model where it fits best rather than choosing between them dichotomously. It is advantageous to utilize GPT-5.5 for simple unit test generation or standardized data transformation to drastically reduce costs.
 
 Conversely, when designing core business logic or reviewing complex system architectures, one should utilize Opus 4.7 to secure 'explainable code.' Ultimately, minimizing technical debt and creating a sustainable development culture will be the true competitive edge in the AI era.
-
-## 🔗 Recommended Reading
-- [The Massive Ripple Effect of eBPF on the Linux Kernel and the 'Semantic Gap' Warning](/en/posts/ebpf-linux-kernel-semantic-gap)
-- [AgentOps: The Dawn of Autonomous Management or an Uncontrollable 'Black Box'?](/en/posts/agentops-autonomy-or-black-box)

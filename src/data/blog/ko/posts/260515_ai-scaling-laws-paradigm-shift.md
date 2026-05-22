@@ -117,7 +117,3 @@ faqs:
  포스트 스케일링 시대는 단순한 기술적 정체가 아니라, 더 똑똑하고 효율적인 지능을 향한 새로운 혁신의 시작이에요. 자본의 힘으로 밀어붙이는 '전략적 버블'의 안개를 걷어내고, 지능의 본질을 꿰뚫는 혜안이 그 어느 때보다 필요한 시점입니다.
 
 [이미지: A sophisticated conceptual artwork showing a balanced scale, with a massive server farm on one side and a single brilliantly glowing lightbulb on the other, executed in a clean glassmorphic style with ethereal lighting and deep shadows.]
-
-## 🔗 함께 읽으면 좋은 글
-- [AI 기반 취약점 탐지의 역설: 더 빨라진 발견이 왜 보안을 더 위태롭게 하는가?](/ko/posts/ai-vulnerability-detection-paradox)
-- [Kubernetes 1.36, 화려한 기능 뒤에 숨겨진 '설정 과부하'와 마이그레이션 리스크 심층 분석](/ko/posts/kubernetes-1-36-configuration-overload-migration-risks)
