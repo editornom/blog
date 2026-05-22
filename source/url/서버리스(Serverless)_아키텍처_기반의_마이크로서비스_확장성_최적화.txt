@@ -1,0 +1,5 @@
+https://www.meegle.com/en_us/topics/serverless-architecture/serverless-architecture-and-cloud-computing
+https://newrelic.com/blog/infrastructure-monitoring/what-is-serverless-architecture
+https://jetbase.io/blog/benefits-of-using-a-serverless-architecture-pros-and-cons-reviewed
+https://www.icapsolutions.com/future-serverless-architectures-optimizing-microservices.html
+https://railsware.com/blog/the-future-of-serverless-architecture/

@@ -86,3 +86,5 @@
 [2026-05-18] [AI추천_40점] Containerization
 [2026-05-18] [AI추천_39점] 에이전트 오케스트레이션(Agent Orchestration)
 [2026-05-18] [AI추천_38점] 역전파
+[2026-05-22] [AI추천_39점] Software Supply Chain Security
+[2026-05-22] [Fallback_DeepSearchFail] 서버리스(Serverless) 아키텍처 기반의 마이크로서비스 확장성 최적화
