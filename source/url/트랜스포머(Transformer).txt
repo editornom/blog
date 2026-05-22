@@ -1,8 +1,6 @@
-https://dev.to/sreeni5018/understanding-transformer-model-types-the-evolution-from-rnn-to-modern-ai-1j4i
-https://aisera.com/blog/transformer-model/
-https://namu.wiki/w/%ED%8A%B8%EB%9E%9C%EC%8A%A4%ED%8F%AC%EB%A8%B8(%EC%9D%B8%EA%B3%B5%EC%8B%A0%EA%B2%BD%EB%A7%9D)
-https://seul1230.github.io/blog/AI-transformer
-https://ko.wikipedia.org/wiki/%ED%8A%B8%EB%9E%9C%EC%8A%A4%ED%8F%AC%EB%A8%B8_(%EA%B8%B0%EA%B3%84_%ED%95%99%EC%8A%B5)
-https://developers.google.com/machine-learning/crash-course/llm/transformers?hl=ko
-https://royzero.tistory.com/entry/ai-transformer-basics
-https://news.hada.io/topic?id=25272
+https://outcomeschool.com/blog/decoding-transformer-architecture
+https://dilipkumar.medium.com/transformers-neural-network-architecture-a6fd825d2d5f
+https://www.artiba.org/blog/how-transformer-models-work-architecture-attention-and-applications
+https://blog.bytebytego.com/p/how-transformers-architecture-powers
+https://www.codecademy.com/article/transformer-architecture-self-attention-mechanism
+https://pub.towardsai.net/understanding-the-transformer-architecture-the-foundation-of-modern-ai-5331018e002d
