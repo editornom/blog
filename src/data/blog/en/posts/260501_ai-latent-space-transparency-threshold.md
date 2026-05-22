@@ -45,7 +45,7 @@ The <b>Coconut</b> framework released by Meta and the latest research submitted 
 
 Latent Space Reasoning is gaining attention primarily due to its overwhelming resource efficiency. Where a traditional CoT approach might generate 100 tokens to reason through a problem step-by-step, Latent Space Reasoning can process the same logical progression using only a few <b>Latent Tokens</b>. According to recent benchmark data, the latent reasoning method succeeded in compressing the length of reasoning chains by up to 4 times while maintaining accuracy comparable to traditional CoT on the GSM8k evaluation. In terms of infrastructure operations, this translates to a potential cost reduction of approximately 75%.
 
-![Latent Space Reasoning - A flowchart showing the AI inference process where input data undergoes iterative internal calculations to reach a final answer.](../../../../../source/posts/잠재_공간_추론_%28Latent_Space_Reasoning%29/7ef12d1c-0.webp)
+![Latent Space Reasoning - A flowchart showing the AI inference process where input data undergoes iterative internal calculations to reach a final answer.](../../../../../source/posts/잠재_공간_추론_(Latent_Space_Reasoning)/7ef12d1c-0.webp)
 
 Furthermore, the latent space is not bound by the constraints of the structured framework of language. Text-based reasoning must follow a single, probabilistically most likely path every time a word is chosen. However, in latent space, multiple computational possibilities can be maintained in a state of <b>Superposition</b> within the vector space. This allows the model to perform a type of internal "tree search" rather than following a single path, leading to an optimal answer. In fact, analysis of a model's latent state during a specific mathematical problem confirmed that it proceeded with calculations while simultaneously considering more than three top solution paths.
 
@@ -62,7 +62,7 @@ In agent systems performing precision legal interpretations or reviewing the app
 | <b>Debugging & Verification</b> | Step-by-step logical error correction | Post-hoc debugging practically impossible |
 | <b>Primary Use Cases</b> | Precision tasks requiring security/transparency | Real-time agents requiring scale and speed |
 
-![잠재 공간 추론 (Latent Space Reasoning) - 명시적 추론(Explicit CoT)과 잠재 공간 추론의 구조적 차이를 비교한 그림입니다.](../../../../../source/posts/잠재_공간_추론_%28Latent_Space_Reasoning%29/c15c5eca-1.webp)
+![잠재 공간 추론 (Latent Space Reasoning) - 명시적 추론(Explicit CoT)과 잠재 공간 추론의 구조적 차이를 비교한 그림입니다.](../../../../../source/posts/잠재_공간_추론_(Latent_Space_Reasoning)/c15c5eca-1.webp)
 
 ## Logical Drift in a Space Without Structural Constraints
 
@@ -70,7 +70,7 @@ Language has served as a logical safeguard refined by humanity over thousands of
 
 When training data is insufficient or the complexity of a problem is extremely high, tokens within the latent space begin to gradually deviate from the correct trajectory. Control mechanisms to detect or correct this in advance are still in their infancy. Even at the point where reasoning accuracy breaks down, the system may output a plausible-looking but incorrect answer, posing a fatal threat to professionals who must guarantee system stability.
 
-![Latent Space Reasoning - A dashboard screen displaying an "Uninterpretable State Error," illustrating the difficulty of identifying causes when internal AI reasoning fails.](../../../../../source/posts/잠재_공간_추론_%28Latent_Space_Reasoning%29/d510afa5-2.webp)
+![Latent Space Reasoning - A dashboard screen displaying an "Uninterpretable State Error," illustrating the difficulty of identifying causes when internal AI reasoning fails.](../../../../../source/posts/잠재_공간_추론_(Latent_Space_Reasoning)/d510afa5-2.webp)
 
 Latent Space Reasoning is an inevitable choice in the evolution of language models from simple text generators to high-dimensional thinking machines. While the ability to overcome computational resource limits and enable multi-path reasoning is attractive, the loss of transparency remains a high barrier to entry in enterprise environments. The logical drift occurring within an invisible black box and the impossibility of post-hoc verification support a cautious approach to adoption. Ultimately, for this technology to be established as a practical standard, it must be preceded by at least minimal "technical safeguards" that can monitor or reverse-calculate latent thought trajectories into human language.
 

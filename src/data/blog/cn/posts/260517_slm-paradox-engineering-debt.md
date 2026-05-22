@@ -55,7 +55,7 @@ faqs:
 
 大多数企业选择 SLM 的表面原因无疑是经济性。他们的战略是通过减少云端 API 调用成本，并在公司内部基础设施上直接运行模型，从而同时兼顾安全和成本。但这很可能只是计算了可见硬件成本的片面看法。
 
-![SLM (Small Language Model) - 半透明的玻璃盒子里装着发光的神经网络，深蓝色和绿色光芒交织出神秘的景象。](../../../../../source/posts/SLM_%28Small_Language_Model%29/9436e820-0.webp)
+![SLM (Small Language Model) - 半透明的玻璃盒子里装着发光的神经网络，深蓝色和绿色光芒交织出神秘的景象。](../../../../../source/posts/SLM_(Small_Language_Model)/9436e820-0.webp)
 
 ## 2. 引入 SLM 的美好幻象：GPU 降本的甜蜜诱惑
 
@@ -85,7 +85,7 @@ SLM 最大的魅力在于它可以在低规格硬件上运行。随着 VRAM 占�
 
 将原本由一个大模型处理的工作拆分给多个 SLM 智能体处理的“多智能体系统（Multi-agent System）”，简直是管理者的噩梦。在定义各智能体间的通信协议、追踪错误以及优化整体工作流的过程中，通过缩小模型尺寸获得的收益往往会变质为<a href="/cn/glossary/technical-debt" class="glossary-tooltip" data-definition="为了短期便利而做出的决定，导致日后维护和修改成本激增的现象">工程债（Technical Debt）</a>。
 
-![SLM (Small Language Model) - 象征精密的系统结构，由磨砂玻璃和金色灯光组成的复杂钟表齿轮装置。](../../../../../source/posts/SLM_%28Small_Language_Model%29/26ca2ce1-1.webp)
+![SLM (Small Language Model) - 象征精密的系统结构，由磨砂玻璃和金色灯光组成的复杂钟表齿轮装置。](../../../../../source/posts/SLM_(Small_Language_Model)/26ca2ce1-1.webp)
 
 ## 4. 主要 SLM 模型局限性分析 (Qwen vs Gemma vs Phi vs SmolLM)
 

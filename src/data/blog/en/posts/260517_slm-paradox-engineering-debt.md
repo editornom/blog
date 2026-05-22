@@ -55,7 +55,7 @@ The slogan "Smaller is Smarter" is spreading like a trend among engineers. Yet, 
 
 The superficial reason most companies choose SLMs is, undoubtedly, economy. The strategy is to hit two birds with one stone: reducing cloud API costs and running models directly on internal infrastructure to secure both data privacy and cost efficiency. However, this is likely a fragmented approach that only calculates visible hardware costs.
 
-![SLM (Small Language Model) - A glowing neural network inside a translucent glass box, with mysterious deep blue and green lights blending together.](../../../../../source/posts/SLM_%28Small_Language_Model%29/9436e820-0.webp)
+![SLM (Small Language Model) - A glowing neural network inside a translucent glass box, with mysterious deep blue and green lights blending together.](../../../../../source/posts/SLM_(Small_Language_Model)/9436e820-0.webp)
 
 ## 2. The Rosy Illusion of SLM Adoption: The Sweet Temptation of GPU Cost Reduction
 
@@ -85,7 +85,7 @@ To make an SLM perform specific tasks, simple prompt engineering is not enough. 
 
 "Multi-agent systems," where a task previously handled by a single large model is split among multiple SLM agents, present a management nightmare. Defining communication protocols between agents, tracking errors, and optimizing the overall workflow turns the benefits of reduced model size into <a href="/en/glossary/technical-debt" class="glossary-tooltip" data-definition="A phenomenon where decisions made for immediate convenience lead to an explosion in maintenance and modification costs later.">Engineering Debt (Technical Debt)</a>.
 
-![SLM (Small Language Model) - A complex clockwork mechanism made of opaque glass and golden lighting, symbolizing a sophisticated system structure.](../../../../../source/posts/SLM_%28Small_Language_Model%29/26ca2ce1-1.webp)
+![SLM (Small Language Model) - A complex clockwork mechanism made of opaque glass and golden lighting, symbolizing a sophisticated system structure.](../../../../../source/posts/SLM_(Small_Language_Model)/26ca2ce1-1.webp)
 
 ## 4. Limitation Analysis by Major SLM Model (Qwen vs. Gemma vs. Phi vs. SmolLM)
 

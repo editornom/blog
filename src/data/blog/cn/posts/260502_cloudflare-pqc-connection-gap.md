@@ -45,7 +45,7 @@ faqs:
 
 根据 Cloudflare 的数据，目前进入其网络的普通流量中，已有超过 45% 受到后量子加密的保护。这一进度领先于 NIST 建议的时间表，其意义在于无需用户承担额外的硬件成本或费用即可提供 PQC 环境。特别是将该技术同时应用于消费者版 WARP (1.1.1.1) 和企业版 Cloudflare One 代理，精准瞄准了端点安全的重要性。
 
-![PQC (Post-Quantum Cryptography) - 远程办公者的笔记本电脑与公司服务器通过安全技术（PQC、MASQUE）安全连接的架构图。](../../../../../source/posts/PQC_%28Post-Quantum_Cryptography%29/e863a673-0.webp)
+![PQC (Post-Quantum Cryptography) - 远程办公者的笔记本电脑与公司服务器通过安全技术（PQC、MASQUE）安全连接的架构图。](../../../../../source/posts/PQC_(Post-Quantum_Cryptography)/e863a673-0.webp)
 
 ## MASQUE 协议与 ML-KEM 的技术结合
 

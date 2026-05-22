@@ -24,7 +24,7 @@ AI 生态系统目前正在重现早期 PC 市场在标准确立之前的混乱�
 
 MCP 将客户端和服务器转变为只需实现一次基于 <a href="/zh/glossary/json-rpc-2-0-standard-specification" class="glossary-tooltip" data-definition="在网络通信时使用 JSON 格式调用其他系统功能或交换数据的轻量级远程过程调用协议。">JSON-RPC 2.0</a> 的标准协议，即可让任何模型与数据源即时沟通的 'N+M' 结构。对于开发者而言，这省去了因特定服务 API 变更而不得不每次修改桥接代码的麻烦。
 
-![MCP (Model Context Protocol) - 展示了以 MCP 为核心枢纽，将复杂的多对多连接结构简化为简单连接方式的架构图。](../../../../../source/posts/MCP_%28Model_Context_Protocol%29/4a8139a4-0.webp)
+![MCP (Model Context Protocol) - 展示了以 MCP 为核心枢纽，将复杂的多对多连接结构简化为简单连接方式的架构图。](../../../../../source/posts/MCP_(Model_Context_Protocol)/4a8139a4-0.webp)
 
 该协议具有清晰的客户端-主机-服务器（Client-Host-Server）分层结构。当作为 AI 应用程序的客户端发送请求时，以虚拟机或容器形式存在的主机进行管理，而拥有实际数据的 MCP 服务器则做出响应。这里的核心是以下三项功能的动态发现：
 
@@ -45,7 +45,7 @@ MCP 将客户端和服务器转变为只需实现一次基于 <a href="/zh/gloss
 
 如果说传统的 RAG 擅长通过查找历史记录来增强上下文，那么 MCP 则更适合读取此时此刻的数据并直接采取行动。在实现超越查询客户订单记录、能实时确认当前配送状态甚至执行退货流程的 <a href="/zh/glossary/agentic-definition-characteristics" class="glossary-tooltip" data-definition="指 AI 在无需人工干预的情况下，自主设定目标并执行任务的自主特性。">Agentic</a> AI 时，其效率将得到充分证明。
 
-![MCP (Model Context Protocol) - 该概念图通过将 RAG 比作静态书架，将 MCP 比作高速光纤设备，展示了两者之间的差异。](../../../../../source/posts/MCP_%28Model_Context_Protocol%29/4ea970b7-1.webp)
+![MCP (Model Context Protocol) - 该概念图通过将 RAG 比作静态书架，将 MCP 比作高速光纤设备，展示了两者之间的差异。](../../../../../source/posts/MCP_(Model_Context_Protocol)/4ea970b7-1.webp)
 
 ## 向企业级基础设施扩展与实务应用
 
@@ -53,7 +53,7 @@ MCP 将客户端和服务器转变为只需实现一次基于 <a href="/zh/gloss
 
 以实际的安全运营中心 (SOC) 环境为例，当分析师请求摘要可疑 IP 日志时，AI 会通过 MCP 查询威胁情报数据库，执行日志分析工具，并调用事故响应模板。开发者不再需要亲自编写复杂的集成逻辑，而是像插件一样连接并运行已经过验证的 MCP 服务器。
 
-![MCP (Model Context Protocol) - 展示了 AI Agent 集成并管理多种数据的先进数字仪表盘界面。](../../../../../source/posts/MCP_%28Model_Context_Protocol%29/045d0ea0-2.webp)
+![MCP (Model Context Protocol) - 展示了 AI Agent 集成并管理多种数据的先进数字仪表盘界面。](../../../../../source/posts/MCP_(Model_Context_Protocol)/045d0ea0-2.webp)
 
 ## 自主性背后的治理空白
 

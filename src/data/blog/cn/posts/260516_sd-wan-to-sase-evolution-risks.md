@@ -57,7 +57,7 @@ faqs:
 
 正是在这种背景下，将网络和安全装入 Cloud 这一单一容器的 SASE 出现了。Gartner 提出的这一概念，通过将碎片化的安全解决方案整合到一个逻辑架构中，成为了一个里程碑式的转折点。然而，这种智能集成也反过来成为了将企业核心基础设施的控制权全盘交给特定服务提供商的契机。
 
-![从 SD-WAN 到 SASE (Secure Access Service Edge) 的演进方向 - 一个象征云端的透明球体正从倒塌的石墙中吸收金色数据线，表现出网络主权的概念。](../../../../../source/posts/SD-WAN에서_SASE%28Secure_Access_Service_Edge%29로의_진화_방향/ab677132-0.webp)
+![从 SD-WAN 到 SASE (Secure Access Service Edge) 的演进方向 - 一个象征云端的透明球体正从倒塌的石墙中吸收金色数据线，表现出网络主权的概念。](../../../../../source/posts/SD-WAN에서_SASE(Secure_Access_Service_Edge)로의_진화_방향/ab677132-0.webp)
 
 ## 2. SASE 赞歌的背面：被特定厂商抵押的企业基础设施主权
 
@@ -87,7 +87,7 @@ Fortinet 或 HPE 等大型厂商竞相强调集成的便利性。在单一平台
 
 通过一个仪表盘控制一切的幻象，有时反而会导致实际运营团队工作强度的增加。在理解和适应不同厂商迥异的 Cloud 架构的过程中，所产生的试错成为了阻碍网络稳定性的另一个因素。
 
-![从 SD-WAN 到 SASE (Secure Access Service Edge) 的演进方向 - 许多错综复杂且闪烁的玻璃管汇聚到一个脆弱的水晶柱上。](../../../../../source/posts/SD-WAN에서_SASE%28Secure_Access_Service_Edge%29로의_진화_방향/7e1b3b2a-1.webp)
+![从 SD-WAN 到 SASE (Secure Access Service Edge) 的演进方向 - 许多错综复杂且闪烁的玻璃管汇聚到一个脆弱的水晶柱上。](../../../../../source/posts/SD-WAN에서_SASE(Secure_Access_Service_Edge)로의_진화_방향/7e1b3b2a-1.webp)
 
 > “向 SASE 的转型可能不是基础设施的简化，而是控制权的放弃，是提供集中式攻击面的危险赌博。”
 > “‘统一管理’这一营销幻象不仅没有降低实际运营现场的复杂度，反而会导致企业未来的发展被抵押给特定厂商的生态系统。”

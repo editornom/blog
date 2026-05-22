@@ -26,7 +26,7 @@ AI 생태계는 현재 표준이 정립되기 전 초기 PC 시장의 혼란을 
 
 MCP는 클라이언트와 서버가 <a href="/ko/glossary/json-rpc-2-0-standard-specification" class="glossary-tooltip" data-definition="네트워크 통신 시 JSON 형식을 사용하여 다른 시스템의 기능을 호출하거나 데이터를 교환하는 가벼운 원격 프로시저 호출 규약입니다.">JSON-RPC 2.0</a> 기반의 표준 프로토콜을 한 번만 구현하면, 어떤 모델이든 데이터 소스와 즉각적으로 소통할 수 있는 'N+M' 구조로 전환한다. 개발자 입장에서는 특정 서비스의 <b>API</b> 변경에 맞춰 매번 브릿지 코드를 수정해야 하는 수고를 덜 수 있다.
 
-![<b>MCP</b> (Model Context Protocol) - MCP를 중심 허브로 활용하여 복잡한 다대다 연결 구조를 단순한 연결 방식으로 개선한 <b>아키텍처</b>를 보여주는 구성도입니다.](../../../../../source/posts/MCP_%28Model_Context_Protocol%29/4a8139a4-0.webp)
+![<b>MCP</b> (Model Context Protocol) - MCP를 중심 허브로 활용하여 복잡한 다대다 연결 구조를 단순한 연결 방식으로 개선한 <b>아키텍처</b>를 보여주는 구성도입니다.](../../../../../source/posts/MCP_(Model_Context_Protocol)/4a8139a4-0.webp)
 
 이 프로토콜은 클라이언트-호스트-서버라는 명확한 계층 구조를 지닌다. AI 애플리케이션인 클라이언트가 요청을 보내면 가상 머신이나 <b>컨테이너</b> 형태의 호스트가 이를 관리하고, 실제 데이터를 보유한 <b>MCP</b> 서버가 응답한다. 여기서 핵심은 다음 세 가지 기능의 동적 발견이다.
 
@@ -47,7 +47,7 @@ MCP를 단순한 API의 연장선이나 검색 증강 생성(RAG)의 대체재�
 
 기존 RAG가 과거의 기록을 찾아 맥락을 보강하는 데 특화되었다면, MCP는 지금 이 순간의 데이터를 읽고 직접 행동하는 데 최적화되어 있다. 고객의 주문 이력을 조회하는 수준을 넘어 현재 배송 상태를 실시간으로 확인하고 반품 프로세스까지 실행하는 <a href="/ko/glossary/agentic-definition-characteristics" class="glossary-tooltip" data-definition="AI가 인간의 개입 없이 스스로 목표를 설정하고 작업을 수행하는 자율적 특성을 의미합니다.">에이전틱(Agentic)</a> AI를 구현할 때 그 효율성이 증명된다.
 
-![<b>MCP</b> (Model Context Protocol) - 정적인 책장으로 비유된 RAG와 고속 광케이블 장치로 비유된 MCP의 차이를 비교하여 보여주는 개념도입니다.](../../../../../source/posts/MCP_%28Model_Context_Protocol%29/4ea970b7-1.webp)
+![<b>MCP</b> (Model Context Protocol) - 정적인 책장으로 비유된 RAG와 고속 광케이블 장치로 비유된 MCP의 차이를 비교하여 보여주는 개념도입니다.](../../../../../source/posts/MCP_(Model_Context_Protocol)/4ea970b7-1.webp)
 
 ## 엔터프라이즈 인프라로의 확장과 실무적 적용
 
@@ -55,7 +55,7 @@ MCP를 단순한 API의 연장선이나 검색 증강 생성(RAG)의 대체재�
 
 실제 보안 관제센터(SOC) 환경을 예로 들면, 분석가가 의심스러운 IP 로그 요약을 요청할 때 AI는 MCP를 통해 위협 인텔리전스 데이터베이스를 쿼리하고 로그 분석 도구를 실행하며 사고 대응 템플릿을 호출한다. 개발자가 복잡한 통합 로직을 직접 짜는 대신, 이미 검증된 MCP 서버들을 플러그인처럼 연결하여 가동하는 방식이다.
 
-![<b>MCP</b> (Model Context Protocol) - AI 에이전트가 여러 데이터를 통합하여 관리하는 첨단 디지털 대시보드 화면입니다.](../../../../../source/posts/MCP_%28Model_Context_Protocol%29/045d0ea0-2.webp)
+![<b>MCP</b> (Model Context Protocol) - AI 에이전트가 여러 데이터를 통합하여 관리하는 첨단 디지털 대시보드 화면입니다.](../../../../../source/posts/MCP_(Model_Context_Protocol)/045d0ea0-2.webp)
 
 ## 자율성의 이면에 숨겨진 거버넌스의 공백
 

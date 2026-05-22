@@ -46,7 +46,7 @@ faqs:
 
  Technical marketing in the current market seems obsessed only with 'faster connections.' Numerous engineering blogs celebrate achieving sub-millisecond latency at the infrastructure layer, yet they overlook the fact that the bottlenecks encountered in real-world environments occur in entirely different places, not the network layer.
 
- ![Agent Orchestration - An illustration of a digital brain trapped in a glass prism, representing the gap between AI computation latency and infrastructure speed.](../../../../../source/posts/에이전트_오케스트레이션%28Agent_Orchestration%29/663f218b-0.webp)
+ ![Agent Orchestration - An illustration of a digital brain trapped in a glass prism, representing the gap between AI computation latency and infrastructure speed.](../../../../../source/posts/에이전트_오케스트레이션(Agent_Orchestration)/663f218b-0.webp)
 
  ### 1.2. The Sub-millisecond Paradox: The Elephant in the Room is LLM Inference Latency
  Let's look at this objectively. Even if we adopt Redis to reduce state access speed to 0.1ms, the inference time of the LLM (Large Language Model) processing that data usually exceeds 500ms to 2,000ms. Infrastructure accounts for less than 1% of the total workflow time.
@@ -79,7 +79,7 @@ faqs:
 
  Simply pushing data into Redis won't solve the problem. Sophisticated protocol design must come first to define each agent's 'Source of Truth' and guarantee the sequence of data in an asynchronous communication environment to prevent data corruption.
 
- ![Agent Orchestration - Multiple glowing nodes connected by thin lines, with some lines interlocking in a loop to represent a logical deadlock.](../../../../../source/posts/에이전트_오케스트레이션%28Agent_Orchestration%29/70635939-1.webp)
+ ![Agent Orchestration - Multiple glowing nodes connected by thin lines, with some lines interlocking in a loop to represent a logical deadlock.](../../../../../source/posts/에이전트_오케스트레이션(Agent_Orchestration)/70635939-1.webp)
 
  ### 2.3. The Absence of Operational Governance: More Critical than Infra Efficiency
  Gartner warned that about 40% of agent projects could be discontinued by 2027 due to unexpected operational costs and logical complexity. This isn't because of a lack of technical prowess, but because there is no 'governance architecture' to control the exceptions that occur when agents act autonomously.
@@ -109,7 +109,7 @@ faqs:
  - Infrastructure latency accounts for less than 1% of the total pipeline, while LLM inference and logic control occupy over 99% of the time.
  - Infrastructure vendors emphasize 87% faster execution, but this does not shorten the actual 'thinking time' of the agent.
 
- ![Agent Orchestration - A scale showing that logical integrity is far more important than high speed (1ms).](../../../../../source/posts/에이전트_오케스트레이션%28Agent_Orchestration%29/1f361b78-2.webp)
+ ![Agent Orchestration - A scale showing that logical integrity is far more important than high speed (1ms).](../../../../../source/posts/에이전트_오케스트레이션(Agent_Orchestration)/1f361b78-2.webp)
 
  It is time to move beyond the illusion of 1ms. Infrastructure speed can never compensate for errors in logic. Where we must focus is not on server latency, but on the realm of practical operational governance—ensuring how orderly the intelligent collaboration of complex, intertwined agents is maintained.
 

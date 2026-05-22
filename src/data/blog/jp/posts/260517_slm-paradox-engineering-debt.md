@@ -55,7 +55,7 @@ faqs:
 
  大多数の企業がSLMを選択する表面的な理由は、言うまでもなく経済性です。クラウドAPIの呼び出しコストを減らし、社内インフラでモデルを直接駆動させることで、セキュリティとコストという二兎を追う戦略です。しかし、これは目に見えるハードウェアコストのみを計算した断片的なアプローチである可能性が高いのです。
 
-![SLM (Small Language Model) - 半透明のガラスケースの中に輝く神経網が入っており、濃いブルーとグリーンの光が神秘的に調和している様子です。](../../../../../source/posts/SLM_%28Small_Language_Model%29/9436e820-0.webp)
+![SLM (Small Language Model) - 半透明のガラスケースの中に輝く神経網が入っており、濃いブルーとグリーンの光が神秘的に調和している様子です。](../../../../../source/posts/SLM_(Small_Language_Model)/9436e820-0.webp)
 
 ## 2. SLM導入のバラ色の幻想：GPUコスト削減の甘い誘惑
 
@@ -85,7 +85,7 @@ faqs:
 
  一つの巨大なモデルが処理していた仕事を複数のSLMエージェントに分割して処理する「マルチエージェントシステム」は、管理の地獄をもたらします。各エージェント間の通信規約を定義し、エラーを追跡し、ワークフロー全体を最適化する過程で、モデルサイズの縮小によって得た利点は <a href="/jp/glossary/technical-debt" class="glossary-tooltip" data-definition="当面の便宜のために下された決定が、後にメンテナンスや修正コストの激増として返ってくる現象">エンジニアリング負債（Technical Debt）</a> へと変質します。
 
-![SLM (Small Language Model) - 精巧なシステム構造を象徴する、不透明なガラスと金色の照明で構成された複雑な時計の歯車仕掛けです。](../../../../../source/posts/SLM_%28Small_Language_Model%29/26ca2ce1-1.webp)
+![SLM (Small Language Model) - 精巧なシステム構造を象徴する、不透明なガラスと金色の照明で構成された複雑な時計の歯車仕掛けです。](../../../../../source/posts/SLM_(Small_Language_Model)/26ca2ce1-1.webp)
 
 ## 4. 主要SLMモデル別の限界点分析 (Qwen vs Gemma vs Phi vs SmolLM)
 

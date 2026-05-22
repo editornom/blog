@@ -45,7 +45,7 @@ faqs:
 
 虽然 SFT 可以向模型灌输“什么是正确答案”，但很难反映人类感知到的微妙满意度或偏好差异。RLHF 在这一点上实现了思路转变。通过让模型生成多个备选答案并由人类判断其优劣，RLHF 构建了一套通过“挑选更好的选择”而非“直接编写答案”来进行学习的数据体系。
 
-![RLHF (Reinforcement Learning from Human Feedback) - 展示了直接学习人工编写回答与通过对多个结果排序进行改进这两种方式的结构差异。](../../../../../source/posts/RLHF_%28Reinforcement_Learning_from_Human_Feedback%29/cd9c2545-0.webp)
+![RLHF (Reinforcement Learning from Human Feedback) - 展示了直接学习人工编写回答与通过对多个结果排序进行改进这两种方式的结构差异。](../../../../../source/posts/RLHF_(Reinforcement_Learning_from_Human_Feedback)/cd9c2545-0.webp)
 
 ## 将主观价值转化为数值的机制
 
@@ -64,7 +64,7 @@ RLHF 的架构大致分为三个阶段。首先，模型针对一个问题生成
 - <b>算法</b>：SFT 基于交叉熵损失，而 RLHF 基于 PPO 算法。
 - <b>资源消耗</b>：由于 RLHF 需要同时运行奖励模型和价值模型等多个模型，其计算成本显著更高。
 
-![RLHF (Reinforcement Learning from Human Feedback) - PPO 算法中多个模型互通信息并稳定调节学习变化的流程图。](../../../../../source/posts/RLHF_%28Reinforcement_Learning_from_Human_Feedback%29/3732d675-1.webp)
+![RLHF (Reinforcement Learning from Human Feedback) - PPO 算法中多个模型互通信息并稳定调节学习变化的流程图。](../../../../../source/posts/RLHF_(Reinforcement_Learning_from_Human_Feedback)/3732d675-1.webp)
 
 ## 选择谄媚而非真理的模型背面
 

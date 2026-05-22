@@ -45,7 +45,7 @@ While free communication between agents is a technical advancement, from a secur
 
 Unlike basic software architectures that follow strict schemas and pre-defined logic, multi-agent environments center on flexible context sharing. This flexibility becomes an attractive entry point for attackers. According to IBM's 2024 Cost of a Data Breach Report, the average cost of a data breach in the financial industry reaches nearly $4.88 million. In a multi-agent environment, a security breach is unlikely to stay contained within a single agent and will immediately propagate to adjacent agents with trust relationships, making the scale of damage potentially far greater than in traditional systems.
 
-![Multi-Agent System (MAS) Security - A diagram showing an infection starting at one AI node and spreading to surrounding connected nodes.](../../../../../source/posts/Multi-Agent_System_%28MAS%29_Security/1a93ddb7-0.webp)
+![Multi-Agent System (MAS) Security - A diagram showing an infection starting at one AI node and spreading to surrounding connected nodes.](../../../../../source/posts/Multi-Agent_System_(MAS)_Security/1a93ddb7-0.webp)
 
 The most direct threat is Agent-to-Agent Prompt Injection. This is not a method where an external user directly attacks the system, but rather a technique that induces a specific agent to deliver malicious instructions to a trusted partner agent. The receiving agent treats the message as a request from a verified internal authority and executes the command without separate filtering.
 
@@ -67,7 +67,7 @@ A common mistake in designing agent systems is granting excessive permissions to
 
 Security control plane solutions for agent orchestration are emerging in the market, but the computational cost and latency incurred during real-time validation of all communications remain practical hurdles. As statistics suggest that 82% of development sites have already adopted AI tools, the pace of technology adoption is very fast. However, many companies are facing difficulties in decision-making at the point where system performance must be partially sacrificed for enhanced security.
 
-![Multi-Agent System Security - 에이전트 간 통신 로그 및 상호작용 그래프를 분석하는 SOC 대시보드 화면입니다.](../../../../../source/posts/Multi-Agent_System_%28MAS%29_Security/audit-viz-2.png)
+![Multi-Agent System Security - 에이전트 간 통신 로그 및 상호작용 그래프를 분석하는 SOC 대시보드 화면입니다.](../../../../../source/posts/Multi-Agent_System_(MAS)_Security/audit-viz-2.png)
 
 ## Design Direction for Zero Trust Agent Architecture
 

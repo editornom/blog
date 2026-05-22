@@ -41,7 +41,7 @@ faqs:
 
 eBPF 的根源可以追溯到 1992 年为了数据包过滤而设计的 BPF。此后，在 2014 年的 Linux 内核 3.18 版本中，它经历了大规模扩展，重生为涵盖网络、安全、系统剖析的通用工具。这项技术充当了沙盒虚拟机的角色，无需修改内核源码或重启系统，即可实时观测和控制系统的内部行为。
 
-![eBPF (extended Berkeley Packet Filter) - 技术架构图，展示了从用户空间到内核空间的 eBPF 执行过程、验证器、编译器以及主要的挂钩点 (Hook)。](../../../../../source/posts/eBPF_%28extended_Berkeley_Packet_Filter%29/e031c061-0.webp)
+![eBPF (extended Berkeley Packet Filter) - 技术架构图，展示了从用户空间到内核空间的 eBPF 执行过程、验证器、编译器以及主要的挂钩点 (Hook)。](../../../../../source/posts/eBPF_(extended_Berkeley_Packet_Filter)/e031c061-0.webp)
 
 ## 沙盒结构保障的内核安全性
 
@@ -60,7 +60,7 @@ eBPF 的根源可以追溯到 1992 年为了数据包过滤而设计的 BPF。�
 
 在表面的高效背后，企业需要承担相应的技术债。为了直接优化 eBPF 程序，深厚的 Linux 内核结构知识是必不可少的。虽然近期 libbpf 等框架降低了准入门槛，但解读并解决验证器产生的晦涩错误消息仍然需要资深工程师的能力。设计不当的程序，原本是为了获取系统性能的可视化，反而可能成为过度占用 CPU 资源的元凶。
 
-![eBPF (extended Berkeley Packet Filter) - 对比图，展示了从外部监控应用的传统方式与直接在 Linux 内核内部运行的 eBPF 方式之间的差异。](../../../../../source/posts/eBPF_%28extended_Berkeley_Packet_Filter%29/daff7c0c-1.webp)
+![eBPF (extended Berkeley Packet Filter) - 对比图，展示了从外部监控应用的传统方式与直接在 Linux 内核内部运行的 eBPF 方式之间的差异。](../../../../../source/posts/eBPF_(extended_Berkeley_Packet_Filter)/daff7c0c-1.webp)
 
 从安全角度来看，利弊同样明显。eBPF 基本上基于 root 权限运行，对整个系统拥有强大的控制权。矛盾的是，这使其成为了攻击者眼中极具吸引力的目标。如果有人成功利用验证器的漏洞将恶意程序植入内核，就有可能产生传统安全方案难以检测的隐蔽型 Rootkit。此外，针对不同内核版本或发行版的依赖问题也是运维中的障碍。虽然 CO-RE (Compile Once, Run Everywhere) 技术被视作解决方案，但在拥有多种遗留环境的企业系统中，仍难以完全排除因版本不一致导致的运行时错误。
 

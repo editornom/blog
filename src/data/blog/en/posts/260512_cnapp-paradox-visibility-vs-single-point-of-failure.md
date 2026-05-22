@@ -55,7 +55,7 @@ faqs:
 
   Modern security architecture must be able to track in real-time how configuration errors in code lead to permission hijacking in production. This organic connectivity is the core of visibility and the greatest value championed by integrated architectures.
 
-![CNAPP (Cloud-Native Application Protection Platform) Integrated Security Architecture - Cloud security components are tightly interconnected like a neural network.](../../../../../source/posts/CNAPP%28Cloud-Native_Application_Protection_Platform%29_통합_보안_아키텍처/1cd0b8b0-0.webp)
+![CNAPP (Cloud-Native Application Protection Platform) Integrated Security Architecture - Cloud security components are tightly interconnected like a neural network.](../../../../../source/posts/CNAPP(Cloud-Native_Application_Protection_Platform)_통합_보안_아키텍처/1cd0b8b0-0.webp)
 
  ### 1.3 AI Workload Security: New Attack Surfaces CNAPP Must Absorb
 
@@ -87,7 +87,7 @@ faqs:
 
   Architects must grapple with how to bridge the gap between having visibility and lagging in response. Being satisfied with a flashy dashboard while losing real-time control is a departure from the essence of security.
 
-![CNAPP (Cloud-Native Application Protection Platform) Integrated Security Architecture - A glass shield shattering into digital particles to represent the vulnerability of a centralized security system.](../../../../../source/posts/CNAPP%28Cloud-Native_Application_Protection_Platform%29_통합_보안_아키텍처/cb6a061d-1.webp)
+![CNAPP (Cloud-Native Application Protection Platform) Integrated Security Architecture - A glass shield shattering into digital particles to represent the vulnerability of a centralized security system.](../../../../../source/posts/CNAPP(Cloud-Native_Application_Protection_Platform)_통합_보안_아키텍처/cb6a061d-1.webp)
 
 ## 3. A 'Winning' CNAPP Strategy Beyond Risk: Hybrid Governance
 

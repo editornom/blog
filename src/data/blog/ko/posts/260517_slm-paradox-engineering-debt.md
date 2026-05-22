@@ -67,7 +67,7 @@ faqs:
 
  대다수 기업이 SLM을 선택하는 표면적인 이유는 단연 경제성입니다. 클라우드 API 호출 비용을 줄이고 사내 인프라에서 모델을 직접 구동하여 보안과 비용이라는 두 마리 토끼를 잡겠다는 전략이죠. 하지만 이것은 눈에 보이는 하드웨어 비용만 계산한 단편적인 접근일 가능성이 큽니다.
 
-![SLM (Small Language Model) - 반투명한 유리 상자 안에 빛나는 신경망이 들어 있고, 짙은 파란색과 초록색 빛이 신비롭게 어우러진 모습입니다.](../../../../../source/posts/SLM_%28Small_Language_Model%29/9436e820-0.webp)
+![SLM (Small Language Model) - 반투명한 유리 상자 안에 빛나는 신경망이 들어 있고, 짙은 파란색과 초록색 빛이 신비롭게 어우러진 모습입니다.](../../../../../source/posts/SLM_(Small_Language_Model)/9436e820-0.webp)
 
 ## 2. SLM 도입의 장밋빛 환상: GPU 비용 절감의 달콤한 유혹
 
@@ -97,7 +97,7 @@ faqs:
 
  하나의 거대 모델이 처리하던 일을 여러 개의 SLM 에이전트로 쪼개어 처리하는 '멀티 에이전트 시스템'은 관리의 지옥을 선사합니다. 각 에이전트 간의 통신 규약을 정의하고 에러를 추적하며 전체적인 워크플로우를 최적화하는 과정에서 모델 크기 축소로 얻은 이점은 <a href="/ko/glossary/technical-debt" class="glossary-tooltip" data-definition="당장의 편리함을 위해 내린 결정이 추후 유지보수와 수정 비용의 폭증으로 돌아오는 현상">엔지니어링 부채(Technical Debt)</a>로 변질됩니다.
 
-![SLM (Small Language Model) - 정교한 시스템 구조를 상징하는, 불투명 유리와 금빛 조명으로 된 복잡한 시계 태엽 장치입니다.](../../../../../source/posts/SLM_%28Small_Language_Model%29/26ca2ce1-1.webp)
+![SLM (Small Language Model) - 정교한 시스템 구조를 상징하는, 불투명 유리와 금빛 조명으로 된 복잡한 시계 태엽 장치입니다.](../../../../../source/posts/SLM_(Small_Language_Model)/26ca2ce1-1.webp)
 
 ## 4. 주요 SLM 모델별 한계점 분석 (Qwen vs Gemma vs Phi vs SmolLM)
 

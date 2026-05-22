@@ -57,7 +57,7 @@ SD-WAN was the first to fill the void left by the crumbling boundaries. Software
 
 At this juncture, SASE emerged, containing both networking and security within the single vessel of the Cloud. This concept, proposed by Gartner, became a monumental milestone in that it integrated fragmented security solutions into a single logical architecture. Paradoxically, however, this intelligent integration also served as a catalyst for enterprises to hand over total control of their core infrastructure to specific service providers.
 
-![Evolution from SD-WAN to SASE (Secure Access Service Edge) - A scene expressing the concept of network sovereignty, where a transparent sphere symbolizing the Cloud absorbs golden data threads from a crumbling stone fortress wall.](../../../../../source/posts/SD-WAN에서_SASE%28Secure_Access_Service_Edge%29로의_진화_방향/ab677132-0.webp)
+![Evolution from SD-WAN to SASE (Secure Access Service Edge) - A scene expressing the concept of network sovereignty, where a transparent sphere symbolizing the Cloud absorbs golden data threads from a crumbling stone fortress wall.](../../../../../source/posts/SD-WAN에서_SASE(Secure_Access_Service_Edge)로의_진화_방향/ab677132-0.webp)
 
 ## 2. Behind the SASE Eulogy: Enterprise Infrastructure Sovereignty Mortgaged to Specific Vendors
 
@@ -87,7 +87,7 @@ Cost reduction was one of the biggest justifications for adopting SASE. However,
 
 The illusion of controlling everything through a single dashboard often results in an increased workload for the actual operations team. The trial and error that occurs while trying to understand and adapt to different Cloud architectures across vendors becomes another factor hindering network stability.
 
-![Evolution from SD-WAN to SASE (Secure Access Service Edge) - Numerous glowing glass tubes, intricately intertwined, converging into a single, fragile crystal pillar.](../../../../../source/posts/SD-WAN에서_SASE%28Secure_Access_Service_Edge%29로의_진화_방향/7e1b3b2a-1.webp)
+![Evolution from SD-WAN to SASE (Secure Access Service Edge) - Numerous glowing glass tubes, intricately intertwined, converging into a single, fragile crystal pillar.](../../../../../source/posts/SD-WAN에서_SASE(Secure_Access_Service_Edge)로의_진화_방향/7e1b3b2a-1.webp)
 
 > "The transition to SASE is not a simplification of infrastructure, but rather a dangerous gamble that involves surrendering control and providing a centralized attack surface."
 > "The marketing mirage of unified management ends up mortgaging the company's future to a specific vendor's ecosystem instead of lowering the complexity of the actual operational field."

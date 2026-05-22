@@ -55,7 +55,7 @@ faqs:
 
   现代安全架构必须能够实时追踪代码配置错误如何导致实际运行时的权限被窃。这种有机连通性正是可见性的核心，也是统一架构所倡导的最大价值。
 
-![CNAPP (Cloud-Native Application Protection Platform) 统一安全架构 - 云安全系统的各组件像神经网络一样紧密连接在一起。](../../../../../source/posts/CNAPP%28Cloud-Native_Application_Protection_Platform%29_통합_보안_아키텍처/1cd0b8b0-0.webp)
+![CNAPP (Cloud-Native Application Protection Platform) 统一安全架构 - 云安全系统的各组件像神经网络一样紧密连接在一起。](../../../../../source/posts/CNAPP(Cloud-Native_Application_Protection_Platform)_통합_보안_아키텍처/1cd0b8b0-0.webp)
 
  ### 1.3 AI 工作负载安全：CNAPP 必须吸收的新攻击面
 
@@ -87,7 +87,7 @@ faqs:
 
   如何弥补获取了可见性但响应滞后之间的差距，应该是架构师思考的问题。仅仅满足于华丽的仪表盘而失去实时控制力，是偏离安全本质的道路。
 
-![CNAPP (Cloud-Native Application Protection Platform) 统一安全架构 - 为了表现中心化安全系统的脆弱性，玻璃盾牌像数字粒子一样碎裂的画面。](../../../../../source/posts/CNAPP%28Cloud-Native_Application_Protection_Platform%29_통합_보안_아키텍처/cb6a061d-1.webp)
+![CNAPP (Cloud-Native Application Protection Platform) 统一安全架构 - 为了表现中心化安全系统的脆弱性，玻璃盾牌像数字粒子一样碎裂的画面。](../../../../../source/posts/CNAPP(Cloud-Native_Application_Protection_Platform)_통합_보안_아키텍처/cb6a061d-1.webp)
 
 ## 3. 超越风险的“必胜”CNAPP 策略：混合治理
 

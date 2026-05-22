@@ -66,7 +66,7 @@ faqs:
 
   현대적인 보안 아키텍처는 코드의 설정 오류가 어떻게 실제 런타임의 권한 탈취로 이어지는지를 실시간으로 추적할 수 있어야 합니다. 이러한 유기적 연결성이야말로 가시성의 핵심이자 통합 아키텍처가 표방하는 가장 큰 가치라고 할 수 있습니다.
 
-![CNAPP(Cloud-Native Application Protection Platform) 통합 보안 아키텍처 - 클라우드 보안 시스템의 구성 요소들이 신경망처럼 서로 촘촘하게 연결되어 있는 모습입니다.](../../../../../source/posts/CNAPP%28Cloud-Native_Application_Protection_Platform%29_통합_보안_아키텍처/1cd0b8b0-0.webp)
+![CNAPP(Cloud-Native Application Protection Platform) 통합 보안 아키텍처 - 클라우드 보안 시스템의 구성 요소들이 신경망처럼 서로 촘촘하게 연결되어 있는 모습입니다.](../../../../../source/posts/CNAPP(Cloud-Native_Application_Protection_Platform)_통합_보안_아키텍처/1cd0b8b0-0.webp)
 
  ### 1.3 AI 워크로드 보안: CNAPP이 흡수해야 할 새로운 공격 표면
 
@@ -98,7 +98,7 @@ faqs:
 
   가시성은 확보했지만 대응은 늦어지는 이 간극을 어떻게 메울 것인가가 아키텍트의 고민이 되어야 합니다. 겉모습만 화려한 대시보드에 만족하며 실시간 통제력을 상실하는 것은 보안의 본질에서 멀어지는 길이지요.
 
-![CNAPP(Cloud-Native Application Protection Platform) 통합 보안 아키텍처 - 중앙 집중식 보안 시스템의 취약성을 나타내기 위해 유리 방패가 디지털 입자로 산산조각 나는 모습입니다.](../../../../../source/posts/CNAPP%28Cloud-Native_Application_Protection_Platform%29_통합_보안_아키텍처/cb6a061d-1.webp)
+![CNAPP(Cloud-Native Application Protection Platform) 통합 보안 아키텍처 - 중앙 집중식 보안 시스템의 취약성을 나타내기 위해 유리 방패가 디지털 입자로 산산조각 나는 모습입니다.](../../../../../source/posts/CNAPP(Cloud-Native_Application_Protection_Platform)_통합_보안_아키텍처/cb6a061d-1.webp)
 
 ## 3. 리스크를 넘어선 '필승'의 CNAPP 전략: 하이브리드 거버넌스
 

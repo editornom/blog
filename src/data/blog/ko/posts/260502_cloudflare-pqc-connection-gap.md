@@ -57,7 +57,7 @@ faqs:
 
 Cloudflare의 데이터에 따르면 현재 자사 네트워크로 유입되는 일반 트래픽의 45% 이상이 이미 양자 내성 암호화의 보호를 받고 있습니다. 이는 NIST의 권고 일정보다 앞선 속도로, 추가적인 하드웨어 도입이나 비용 부담 없이 사용자에게 PQC 환경을 제공한다는 점에서 의미가 있습니다. 특히 소비자용 WARP(1.1.1.1)와 기업용 Cloudflare One 에이전트 모두에 해당 기술을 적용한 것은 엔드포인트 보안의 중요성을 정확히 겨냥한 판단입니다.
 
-![<b>PQC</b> (Post-Quantum Cryptography) - 원격 근무자의 노트북과 회사 서버가 보안 기술(PQC, MASQUE)을 통해 안전하게 연결된 모습을 나타낸 구조도입니다.](../../../../../source/posts/PQC_%28Post-Quantum_Cryptography%29/e863a673-0.webp)
+![<b>PQC</b> (Post-Quantum Cryptography) - 원격 근무자의 노트북과 회사 서버가 보안 기술(PQC, MASQUE)을 통해 안전하게 연결된 모습을 나타낸 구조도입니다.](../../../../../source/posts/PQC_(Post-Quantum_Cryptography)/e863a673-0.webp)
 
 ## MASQUE 프로토콜과 ML-KEM의 기술적 결합
 
@@ -79,7 +79,7 @@ Cloudflare의 데이터에 따르면 현재 자사 네트워크로 유입되는 
 
 WARP 클라이언트가 데이터를 양자 내성 터널로 전송하더라도, Cloudflare 엣지 서버를 통과해 오리진 서버로 향하는 최종 구간에서 고전 암호로 변환된다면 보안상의 불확실성은 다시 증가하게 됩니다. 터널의 입구는 견고한 요새지만 출구는 취약한 상태로 방치된 셈입니다. 또한 인증 체계의 핵심인 ML-DSA는 아직 표준화 과정에 있어, 완전한 신뢰 체계를 확보하기까지는 기술적 공백이 불가피합니다.
 
-![<b>PQC</b> (Post-Quantum Cryptography) - 기존 보안 방식과 양자 내성 암호 방식 간의 보안 격차를 나타낸 인포그래픽입니다.](../../../../../source/posts/PQC_%28Post-Quantum_Cryptography%29/745212b3-1.webp)
+![<b>PQC</b> (Post-Quantum Cryptography) - 기존 보안 방식과 양자 내성 암호 방식 간의 보안 격차를 나타낸 인포그래픽입니다.](../../../../../source/posts/PQC_(Post-Quantum_Cryptography)/745212b3-1.webp)
 
 ## 다운그레이드 유도와 운영상의 도전 과제
 

@@ -55,7 +55,7 @@ faqs:
 
   現代的なセキュリティアーキテクチャは、コードの設定ミスがどのように実際のランタイムの権限奪取につながるかをリアルタイムで追跡できなければなりません。このような有機的な連結性こそが可視化の核心であり、統合アーキテクチャが標榜する最大の価値と言えます。
 
-![CNAPP(Cloud-Native Application Protection Platform) 統合セキュリティアーキテクチャ - クラウドセキュリティシステムの構成要素が神経網のように密接に繋がっている様子です。](../../../../../source/posts/CNAPP%28Cloud-Native_Application_Protection_Platform%29_통합_보안_아키텍처/1cd0b8b0-0.webp)
+![CNAPP(Cloud-Native Application Protection Platform) 統合セキュリティアーキテクチャ - クラウドセキュリティシステムの構成要素が神経網のように密接に繋がっている様子です。](../../../../../source/posts/CNAPP(Cloud-Native_Application_Protection_Platform)_통합_보안_아키텍처/1cd0b8b0-0.webp)
 
  ### 1.3 AIワークロードセキュリティ：CNAPPが吸収すべき新たな攻撃対象領域
 
@@ -87,7 +87,7 @@ faqs:
 
   可視性は確保したが対応は遅れるという、このギャップをどう埋めるかがアーキテクトの悩みどころであるべきです。見た目だけ派手なダッシュボードに満足し、リアルタイムの統制力を喪失することは、セキュリティの本質から遠ざかる道です。
 
-![CNAPP(Cloud-Native Application Protection Platform) 統合セキュリティアーキテクチャ - 中央集中型セキュリティシステムの脆弱性を表現するため、ガラスの盾がデジタル粒子となって砕け散る様子です。](../../../../../source/posts/CNAPP%28Cloud-Native_Application_Protection_Platform%29_통합_보안_아키텍처/cb6a061d-1.webp)
+![CNAPP(Cloud-Native Application Protection Platform) 統合セキュリティアーキテクチャ - 中央集中型セキュリティシステムの脆弱性を表現するため、ガラスの盾がデジタル粒子となって砕け散る様子です。](../../../../../source/posts/CNAPP(Cloud-Native_Application_Protection_Platform)_통합_보안_아키텍처/cb6a061d-1.webp)
 
 ## 3. リスクを超えた「必勝」のCNAPP戦略：ハイブリッドガバナンス
 

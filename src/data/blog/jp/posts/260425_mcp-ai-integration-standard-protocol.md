@@ -24,7 +24,7 @@ AIエコシステムは現在、標準が確立される前の初期PC市場の�
 
 MCPは、クライアントとサーバーが <a href="/ja/glossary/json-rpc-2-0-standard-specification" class="glossary-tooltip" data-definition="ネットワーク通信時にJSON形式を使用して他のシステムの機能を呼び出したりデータを交換したりするための軽量なリモートプロシージャコール（RPC）プロトコルです。">JSON-RPC 2.0</a> ベースの標準プロトコルを一度実装すれば、どのモデルでもデータソースと即座に対話できる「N+M」構造へと転換する。開発者の立場からは、特定のサービスのAPI変更に合わせて毎回ブリッジコードを修正する手間を省くことができる。
 
-![MCP (Model Context Protocol) - MCPをハブとして活用し、複雑な多対多の接続構造を簡素な接続方式に改善したアーキテクチャ図です。](../../../../../source/posts/MCP_%28Model_Context_Protocol%29/4a8139a4-0.webp)
+![MCP (Model Context Protocol) - MCPをハブとして活用し、複雑な多対多の接続構造を簡素な接続方式に改善したアーキテクチャ図です。](../../../../../source/posts/MCP_(Model_Context_Protocol)/4a8139a4-0.webp)
 
 このプロトコルは、クライアント-ホスト-サーバーという明確な階層構造を持つ。AIアプリケーションであるクライアントがリクエストを送ると、仮想マシンやコンテナ形式のホストがこれを管理し、実際のデータを保有するMCPサーバーが応答する。ここで核心となるのは、以下の3つの機能の動的発見（Dynamic Discovery）だ。
 
@@ -45,7 +45,7 @@ MCPを単なるAPIの延長線上や、検索拡張生成(RAG)の代替品と見
 
 既存のRAGが過去の記録を探して文脈を補強することに特化していたのに対し、MCPは「今この瞬間」のデータを読み取り、直接行動することに最適化されている。顧客の注文履歴を照会するレベルを超え、現在の配送状況をリアルタイムで確認し、返品プロセスまで実行する <a href="/ja/glossary/agentic-definition-characteristics" class="glossary-tooltip" data-definition="AIが人間の介入なしに自ら目標を設定しタスクを遂行する自律的な特性を意味します。">エージェンティック(Agentic)</a> AIを実装する際に、その効率性が証明される。
 
-![MCP (Model Context Protocol) - 静的な本棚に例えられるRAGと、高速光ファイバーに例えられるMCPの違いを比較した概念図です。](../../../../../source/posts/MCP_%28Model_Context_Protocol%29/4ea970b7-1.webp)
+![MCP (Model Context Protocol) - 静的な本棚に例えられるRAGと、高速光ファイバーに例えられるMCPの違いを比較した概念図です。](../../../../../source/posts/MCP_(Model_Context_Protocol)/4ea970b7-1.webp)
 
 ## エンタープライズインフラへの拡張と実務的適用
 
@@ -53,7 +53,7 @@ MCPを単なるAPIの延長線上や、検索拡張生成(RAG)の代替品と見
 
 実際のセキュリティ監視センター(SOC)環境を例に挙げると、アナリストが不審なIPログの要約を要求した際、AIはMCPを通じて脅威インテリジェンスデータベースをクエリし、ログ分析ツールを実行して、インシデント対応テンプレートを呼び出す。開発者が複雑な統合ロジックを直接組む代わりに、すでに検証済みのMCPサーバーをプラグインのように接続して稼働させる方式だ。
 
-![MCP (Model Context Protocol) - AIエージェントが複数のデータを統合管理する高度なデジタルダッシュボード画面です。](../../../../../source/posts/MCP_%28Model_Context_Protocol%29/045d0ea0-2.webp)
+![MCP (Model Context Protocol) - AIエージェントが複数のデータを統合管理する高度なデジタルダッシュボード画面です。](../../../../../source/posts/MCP_(Model_Context_Protocol)/045d0ea0-2.webp)
 
 ## 自律性の裏に隠されたガバナンスの空白
 

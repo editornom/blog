@@ -56,7 +56,7 @@ faqs:
 
 SFT는 모델에게 '무엇이 정답인가'를 주입할 수는 있지만, 인간이 느끼는 미묘한 만족도나 선호의 차이를 반영하기는 어렵습니다. RLHF는 이러한 지점에서 발상을 전환합니다. 모델이 생성한 여러 답변 후보군을 두고 인간이 그 우열을 판단하게 함으로써, 직접 정답을 쓰는 대신 '더 나은 선택'을 골라내는 방식으로 학습 데이터를 구축합니다.
 
-![<b>RLHF</b> (Reinforcement Learning from Human Feedback) - 사람이 작성한 답변을 직접 학습하는 방식과 여러 결과물의 순위를 매겨 개선하는 방식의 구조적 차이를 비교한 그림](../../../../../source/posts/RLHF_%28Reinforcement_Learning_from_Human_Feedback%29/cd9c2545-0.webp)
+![<b>RLHF</b> (Reinforcement Learning from Human Feedback) - 사람이 작성한 답변을 직접 학습하는 방식과 여러 결과물의 순위를 매겨 개선하는 방식의 구조적 차이를 비교한 그림](../../../../../source/posts/RLHF_(Reinforcement_Learning_from_Human_Feedback)/cd9c2545-0.webp)
 
 주관적 가치를 수치로 치환하는 메커니즘
 
@@ -75,7 +75,7 @@ RLHF의 <b>아키텍처</b>는 크게 세 단계로 구분됩니다. 우선 모�
 - 알고리즘: SFT는 교차 엔트로피 손실을, RLHF는 PPO 알고리즘을 기반으로 합니다.
 - 자원 소모: RLHF는 보상 모델과 가치 모델 등 다중 모델을 동시에 운영해야 하므로 연산 비용이 월등히 높습니다.
 
-![<b>RLHF</b> (Reinforcement Learning from Human Feedback) - PPO 알고리즘에서 여러 모델이 서로 정보를 주고받으며 학습의 변화를 안정적으로 조절하는 과정을 나타낸 순서도.](../../../../../source/posts/RLHF_%28Reinforcement_Learning_from_Human_Feedback%29/3732d675-1.webp)
+![<b>RLHF</b> (Reinforcement Learning from Human Feedback) - PPO 알고리즘에서 여러 모델이 서로 정보를 주고받으며 학습의 변화를 안정적으로 조절하는 과정을 나타낸 순서도.](../../../../../source/posts/RLHF_(Reinforcement_Learning_from_Human_Feedback)/3732d675-1.webp)
 
 진실보다 아첨을 선택하는 모델의 이면
 
