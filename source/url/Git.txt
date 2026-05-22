@@ -1,3 +1,9 @@
+https://research.wou.edu/git
 https://git-scm.com/
+https://www.mindstudio.ai/blog/what-is-git-version-control-explained/
+https://docs.getdbt.com/docs/platform/git/version-control-basics
+https://medium.com/@morepravin1989/mastering-git-essential-commands-for-efficient-version-control-85b1e3ef37a5
+https://rhodecode.com/blog/159/git-version-control-system-secure-scalable-code-management
 https://github.blog/open-source/git/highlights-from-git-2-54/
 https://about.gitlab.com/blog/whats-new-in-git-2-52-0/
+https://blog.devgenius.io/git-confused-me-for-years-until-i-found-this-simple-guide-a45223bebb40
