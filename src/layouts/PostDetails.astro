@@ -1,5 +1,5 @@
 ---
-import { render, type CollectionEntry } from "astro:content";
+import { render, type CollectionEntry, getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
@@ -7,6 +7,7 @@ import Datetime from "@/components/Datetime.astro";
 import EditPost from "@/components/EditPost.astro";
 import ShareLinks from "@/components/ShareLinks.astro";
 import BackButton from "@/components/BackButton.astro";
+import getSortedPosts from "@/utils/getSortedPosts";
 
 import { getPath } from "@/utils/getPath";
 import { slugifyStr } from "@/utils/slugify";
@@ -86,17 +87,24 @@ const layoutProps = {
   faqSchema,
 };
 
-/* ========== Post List for bottom navigation ========== */
+/* ========== Post List for bottom navigation (Only posts/ collection) ========== */
 const ITEMS_PER_PAGE = 4;
-
-// Detect which board the current post belongs to (posts/ or haionnet/ or glossary/)
+const currentLang = Astro.url.pathname.split("/")[1] || "ko";
 const normalizedId = post.id.replace(/\\/g, "/");
 const currentBoard = normalizedId.includes("haionnet/") ? "haionnet/" 
   : normalizedId.includes("glossary/") ? "glossary/" 
   : "posts/";
 
-const postListData = posts
-  .filter(p => p.id !== post.id && p.id.replace(/\\/g, "/").includes(currentBoard))
+// Fetch all non-draft posts for the current language strictly under the posts/ directory
+const allLangPosts = await getCollection("blog", ({ id, data }) => {
+  const normalized = id.replace(/\\/g, "/");
+  return !data.draft && normalized.startsWith(`${currentLang}/posts/`);
+});
+
+const sortedBlogPosts = getSortedPosts(allLangPosts);
+
+const postListData = sortedBlogPosts
+  .filter(p => p.id !== post.id)
   .map(p => {
     let thumb = "";
     if (typeof p.data.ogImage === "string") {
@@ -115,13 +123,12 @@ const postListData = posts
   });
 
 const totalPages = Math.ceil(postListData.length / ITEMS_PER_PAGE);
-const currentLang = Astro.url.pathname.split("/")[1] || "ko";
 
 const UI_TEXT = {
-  ko: { otherPosts: "다른 글 보기", prev: "← 이전", next: "다음 →" },
-  en: { otherPosts: "Other Posts", prev: "← Prev", next: "Next →" },
-  jp: { otherPosts: "他の記事", prev: "← 前へ", next: "次へ →" },
-  cn: { otherPosts: "其他文章", prev: "← 上一页", next: "下一页 →" },
+  ko: { otherPosts: "🔗 함께 읽으면 좋은 글", prev: "← 이전", next: "다음 →" },
+  en: { otherPosts: "🔗 Recommended Articles", prev: "← Prev", next: "Next →" },
+  jp: { otherPosts: "🔗 おすすめ記事", prev: "← 前へ", next: "次へ →" },
+  cn: { otherPosts: "🔗 推荐阅读", prev: "← 上一页", next: "下一页 →" },
 };
 const t = UI_TEXT[currentLang as keyof typeof UI_TEXT] || UI_TEXT.ko;
 ---
