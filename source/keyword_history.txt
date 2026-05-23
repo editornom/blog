@@ -94,3 +94,4 @@
 [2026-05-23] [AI추천_38점] Secure Boot
 [2026-05-23] [Fallback_DeepSearchFail] 엔터프라이즈 생성형 AI 도입 시 데이터 거버넌스 및 프라이버시 보호
 [2026-05-23] [AI추천_40점] Public Key Cryptography
+[2026-05-23] [AI추천_36점] AI 사이버 보안
