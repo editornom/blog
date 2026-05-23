@@ -1,0 +1,10 @@
+https://www.opsinsecurity.com/learn/ai-governance
+https://domino.ai/blog/generative-ai-governance-frameworks-risks-and-best-practices
+https://www.proofpoint.com/us/resources/white-papers/securing-governing-ai-data-guide
+https://www.ewsolutions.com/how-generative-ai-helps-data-governance/
+https://insightsoftware.com/encyclopedia/ai-powered-data-governance/
+https://www.ahead.com/resources/ai-governance-and-ai-security-in-practice/
+https://www.databricks.com/kr/blog/practical-ai-governance-framework-enterprises
+https://www.cio.com/article/4002185/%EC%86%94%EB%A3%A8%EC%85%98%EB%8F%84-%EA%B8%B0%EC%97%85%EB%8F%84-%EC%95%84%EC%A7%81%EC%9D%80-%EC%B4%88%EA%B8%B0-ai-%EA%B1%B0%EB%B2%84%EB%84%8C%EC%8A%A4-%ED%94%8C%EB%9E%AB%ED%8F%BC.html
+https://www.gttkorea.com/news/articleView.html?idxno=19853
+https://edbkorea.com/blog/what-is-ai-governance-guide-for-it-teams/
