@@ -1,8 +1,5 @@
+https://medium.com/@harshithgowdakt/consensus-protocols-in-distributed-systems-the-foundation-of-modern-cloud-infrastructure-6e51aaf03cac
+https://www.designgurus.io/answers/detail/what-is-distributed-consensus-and-why-is-it-important-in-multi-node-systems
 https://medium.com/@alxkm/ensuring-consistency-and-consensus-in-distributed-systems-bafedac21e60
 https://arpitbhayani.me/blogs/why-consensus/
-https://www.designgurus.io/answers/detail/what-is-distributed-consensus-and-why-is-it-important-in-multi-node-systems
-https://medium.com/@harshithgowdakt/consensus-protocols-in-distributed-systems-the-foundation-of-modern-cloud-infrastructure-6e51aaf03cac
-https://medium.com/@razkevich8/distributed-consensus-explained-from-paxos-theory-to-real-world-systems-2836a578eefc
 https://cefboud.com/posts/distributed-consensus-raft-kafka/
-https://en.wikipedia.org/wiki/Consensus_(computer_science)
-https://dev.to/vincenttommi/understanding-distributed-consensus-and-data-replication-day-17-of-learning-system-design-c2n
