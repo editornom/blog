@@ -96,3 +96,5 @@
 [2026-05-23] [AI추천_40점] Public Key Cryptography
 [2026-05-23] [AI추천_36점] AI 사이버 보안
 [2026-05-24] [AI추천_39점] Distributed Consensus
+[2026-05-24] [AI추천_37점] AI Engineering MLOps
+[2026-05-24] [Fallback_DeepSearchFail] eBPF 기반 클라우드 네이티브 관측성(Observability) 혁신

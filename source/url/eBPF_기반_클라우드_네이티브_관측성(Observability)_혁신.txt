@@ -1,0 +1,10 @@
+https://cloudnativenow.com/editorial-calendar/best-of-2025/ebpf-the-silent-power-behind-cloud-natives-next-phase-2/
+https://newrelic.com/blog/observability/what-is-ebpf
+https://www.suse.com/c/ebpf-kubernetes/
+https://isovalent.com/blog/post/what-is-ebpf/
+https://trainingportal.linuxfoundation.org/courses/ebpf-essentials-security-and-observability-lfws304
+https://thenewstack.io/how-ebpf-is-powering-the-next-generation-of-observability/
+https://www.upwind.io/feed/how-upwind-uses-ebpf-to-bring-real-time-security-to-cloud-native-environments
+https://www.cncf.co.kr/ebook/kubernetes/part-1-introduction-to-cloud-native-and-containers/chapter-1-transition-to-cloud-native-era/1-3-cloud-native-computing-foundation-cncf/1-3-2-relationship-between-cncf-and-cloud-native/
+https://editornom.com/ko/posts/serverless-microservices-scalability-liberation-vs-control
+https://kcse.sigsoft.or.kr/2026/
