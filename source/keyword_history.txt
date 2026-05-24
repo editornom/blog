@@ -98,3 +98,5 @@
 [2026-05-24] [AI추천_39점] Distributed Consensus
 [2026-05-24] [AI추천_37점] AI Engineering MLOps
 [2026-05-24] [Fallback_DeepSearchFail] eBPF 기반 클라우드 네이티브 관측성(Observability) 혁신
+[2026-05-24] [AI추천_40점] RLHF
+[2026-05-24] [Fallback_DeepSearchFail] SD-WAN에서 SASE(Secure Access Service Edge)로의 진화 방향
