@@ -103,3 +103,4 @@
 [2026-05-25] [AI추천_38점] Secrets Management
 [2026-05-25] [AI추천_40점] Open Source
 [2026-05-25] [AI추천_38점] Agentic AI Infrastructure
+[2026-05-25] [AI추천_40점] Transformer
