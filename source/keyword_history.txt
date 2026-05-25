@@ -102,3 +102,4 @@
 [2026-05-24] [Fallback_DeepSearchFail] SD-WAN에서 SASE(Secure Access Service Edge)로의 진화 방향
 [2026-05-25] [AI추천_38점] Secrets Management
 [2026-05-25] [AI추천_40점] Open Source
+[2026-05-25] [AI추천_38점] Agentic AI Infrastructure

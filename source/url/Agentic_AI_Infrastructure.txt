@@ -1,0 +1,7 @@
+https://www.mindstudio.ai/blog/agent-infrastructure-stack-six-layers-explained
+https://medium.com/data-science-collective/the-3-layer-of-the-ai-agents-stack-9e94a4be457c
+https://www.cbinsights.com/research/ai-agent-tech-stack/
+https://thenewstack.io/what-does-it-take-for-ai-agents-to-deploy-infrastructure/
+https://aimultiple.com/agentic-ai-stack
+https://www.circle.com/pressroom/circle-launches-ai-infrastructure-to-power-the-agentic-economy
+https://machinelearningmastery.com/deploying-ai-agents-to-production-architecture-infrastructure-and-implementation-roadmap/
