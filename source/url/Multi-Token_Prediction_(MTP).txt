@@ -1,0 +1,7 @@
+https://blog.google/innovation-and-ai/technology/developers-tools/multi-token-prediction-gemma-4/
+https://ai.google.dev/gemma/docs/mtp/overview
+https://neurips.cc/virtual/2025/poster/120311
+https://arxiv.org/abs/2604.11912
+https://docs.vllm.ai/projects/ascend/en/main/user_guide/feature_guide/Multi_Token_Prediction.html
+https://openreview.net/forum?id=aeYIFVn4vb
+https://github.com/Xiaohao-Liu/Awesome-Multi-Token-Prediction
