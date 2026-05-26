@@ -104,3 +104,5 @@
 [2026-05-25] [AI추천_40점] Open Source
 [2026-05-25] [AI추천_38점] Agentic AI Infrastructure
 [2026-05-25] [AI추천_40점] Transformer
+[2026-05-26] [AI추천_36점] Platform Engineering
+[2026-05-26] [Fallback_DeepSearchFail] 네트워크 슬라이싱(Network Slicing) 기술의 비즈니스 활용 사례
