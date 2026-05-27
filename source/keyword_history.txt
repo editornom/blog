@@ -108,3 +108,4 @@
 [2026-05-26] [Fallback_DeepSearchFail] 네트워크 슬라이싱(Network Slicing) 기술의 비즈니스 활용 사례
 [2026-05-26] [AI추천_39점] Rust
 [2026-05-26] [AI추천_39점] Multi-Token Prediction (MTP)
+[2026-05-27] [AI추천_37점] Post-Quantum Cryptography
