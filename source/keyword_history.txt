@@ -109,3 +109,4 @@
 [2026-05-26] [AI추천_39점] Rust
 [2026-05-26] [AI추천_39점] Multi-Token Prediction (MTP)
 [2026-05-27] [AI추천_37점] Post-Quantum Cryptography
+[2026-05-27] [AI추천_39점] 샌드박스형 코드 실행 (Sandboxed Code Execution)
