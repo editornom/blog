@@ -110,3 +110,4 @@
 [2026-05-26] [AI추천_39점] Multi-Token Prediction (MTP)
 [2026-05-27] [AI추천_37점] Post-Quantum Cryptography
 [2026-05-27] [AI추천_39점] 샌드박스형 코드 실행 (Sandboxed Code Execution)
+[2026-05-28] [AI추천_38점] 제로 트러스트 구현
