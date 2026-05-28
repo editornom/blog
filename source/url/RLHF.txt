@@ -1,5 +1,10 @@
 https://blog.ml.cmu.edu/2025/06/01/rlhf-101-a-technical-tutorial-on-reinforcement-learning-from-human-feedback/
-https://toloka.ai/blog/what-is-rlhf/
-https://pub.towardsai.net/a-deep-dive-into-rlhf-eeee994b235b
-https://medium.com/upon-wisdom/the-reality-check-what-rlhf-workers-actually-do-and-its-not-that-mysterious-56220e049089
 https://arxiv.org/html/2504.12501v2
+https://medium.com/@tahirbalarabe2/what-is-reinforcement-learning-human-feedback-and-how-it-works-cb91d4841b5e
+https://towardsdatascience.com/explained-simply-reinforcement-learning-from-human-feedback/
+https://www.paloaltonetworks.com/cyberpedia/what-is-rlhf
+https://arxiv.org/abs/2604.02507
+https://www.tredence.com/blog/reinforcement-learning-human-feedback
+https://openreview.net/forum?id=EScatQaRxz
+https://toloka.ai/blog/what-is-rlhf/
+https://medium.com/@vi.ha.engr/building-an-rlhf-pipeline-for-llms-a-beginner-friendly-tutorial-21112bfcff9b
