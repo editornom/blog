@@ -115,3 +115,4 @@
 [2026-05-28] [AI추천_39점] SilverTorch
 [2026-05-28] [AI추천_40점] RLHF
 [2026-05-29] [AI추천_37점] Hedged Requests
+[2026-05-29] [AI추천_40점] C10K Problem

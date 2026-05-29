@@ -1,0 +1,5 @@
+https://medium.com/@m-ibrahim.research/demystifying-select-poll-kernel-internals-and-the-c10k-challenge-6f3f5b5cd632
+https://en.wiktionary.org/wiki/C10k_problem
+https://fr.wikipedia.org/wiki/C10k_problem
+https://jaminzhang.github.io/web/C10K-problem/
+https://migratorydata.com/blog/
