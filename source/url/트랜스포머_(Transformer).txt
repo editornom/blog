@@ -1,0 +1,5 @@
+https://atlan.com/know/what-is-a-transformer-model/
+https://medium.com/@pacosun/the-architecture-that-changed-ai-5b588a4e2cb9
+https://arxiv.org/abs/2510.03989
+https://developers.google.com/machine-learning/crash-course/llm/transformers
+https://dev.to/sreeni5018/understanding-transformer-model-types-the-evolution-from-rnn-to-modern-ai-1j4i
