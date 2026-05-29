@@ -1,0 +1,6 @@
+https://medium.com/@mr.sourav.raj/request-hedging-vs-request-coalescing-a-software-engineers-guide-to-optimizing-distributed-fdcc6590ba9d
+https://www.infoq.com/articles/adaptive-hedged-requests-p99-latency/
+https://medium.com/@connect.hashblock/top-7-hedged-request-patterns-to-tame-the-tails-1cb74a58bc8e
+https://oneuptime.com/blog/post/2026-02-24-how-to-implement-request-hedging-with-istio/view
+https://dev.to/silentwatcher_95/supercharge-your-nodejs-application-with-hedge-fetch-eliminating-tail-latency-with-speculative-37d5
+https://github.com/bhope/hedge
