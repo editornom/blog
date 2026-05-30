@@ -119,3 +119,4 @@
 [2026-05-29] [AI추천_40점] Model Context Protocol (MCP)
 [2026-05-29] [AI추천_40점] 트랜스포머 (Transformer)
 [2026-05-30] [AI추천_36점] Azure Linux
+[2026-05-30] [AI추천_40점] 공개키 암호화
