@@ -1,10 +1,5 @@
+https://hai.stanford.edu/news/new-approach-to-scaling-laws-could-change-how-ai-models-are-trained
 https://www.hec.edu/en/dare/tech-ai/ai-beyond-scaling-laws
-https://kempnerinstitute.harvard.edu/news/the-power-of-scale-in-machine-learning/
+https://arxiv.org/abs/2605.26248
 https://medium.com/@pacosun/beyond-the-parameter-count-8ba5bb3a5543
-https://jaehoonstudy.tistory.com/69
-https://arxiv.org/abs/2510.03313
-https://minhyuk0914.tistory.com/66
-https://arxiv.org/abs/2512.13472
-https://www.interconnects.ai/p/the-new-rl-scaling-laws
-https://openreview.net/forum?id=TPTtWC0pGk
 https://aimultiple.com/llm-scaling-laws

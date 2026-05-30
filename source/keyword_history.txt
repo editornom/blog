@@ -122,3 +122,4 @@
 [2026-05-30] [AI추천_40점] 공개키 암호화
 [2026-05-30] [AI추천_40점] AI-Powered Vulnerability Remediation
 [2026-05-30] [Fallback_DeepSearchFail] SD-WAN에서 SASE(Secure Access Service Edge)로의 진화 방향
+[2026-05-30] [AI추천_40점] Scaling Laws
