@@ -1,0 +1,5 @@
+https://www.wiz.io/academy/container-security/containerization-vs-virtualization
+https://trilio.io/resources/containerization-vs-virtualization/
+https://www.rockwellautomation.com/en-us/company/news/blogs/intro-to-containerization-bridging-it-and-ot.html
+https://medium.com/@secshubhamsharma/understanding-virtualization-hypervisors-and-containers-322f6b525856
+https://blog.bytebytego.com/p/ep191-virtualization-vs-containerization
