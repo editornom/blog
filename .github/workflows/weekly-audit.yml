@@ -1,8 +1,8 @@
 name: Weekly Blog Post Audit
 
 on:
-  schedule:
-    - cron: '0 16 * * 0' # 01:00 KST Monday (16:00 UTC Sunday)
+  # schedule:
+  #   - cron: '0 16 * * 0' # 01:00 KST Monday (16:00 UTC Sunday)
   workflow_dispatch:
 
 jobs:

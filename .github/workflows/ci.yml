@@ -4,13 +4,14 @@ permissions:
   contents: read
 
 on:
-  pull_request:
-    types:
-      - opened
-      - edited
-      - synchronize
-      - reopened
-  workflow_call:
+  # pull_request:
+  #   types:
+  #     - opened
+  #     - edited
+  #     - synchronize
+  #     - reopened
+  # workflow_call:
+  workflow_dispatch:
 
 jobs:
   build:
