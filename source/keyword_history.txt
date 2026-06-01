@@ -127,3 +127,4 @@
 [2026-05-31] [AI추천_40점] 컨테이너 가상화 (Container Virtualization)
 [2026-05-31] [AI추천_40점] Universal Commerce Protocol
 [2026-05-31] [Fallback_DeepSearchFail] LLMOps(Large Language Model Operations) 체계 구축 가이드
+[2026-06-01] [AI추천_39점] DuckDB Quack
