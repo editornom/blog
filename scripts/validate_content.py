@@ -125,6 +125,13 @@ def validate(langs, report):
             seen_slug[(lang, slug)].append(rel)
             counts[lang][collection] += 1
 
+        # 8-1. 토픽 클러스터
+        cl = fm.get("cluster")
+        if not cl:
+            report.warn(rel, "cluster 누락 — 내부 링크와 다음 주제 선정에서 제외됩니다")
+        elif cl == "general":
+            report.warn(rel, "클러스터 미분류(general) — topics.yaml 에 클러스터 추가를 검토하세요")
+
         # 8. 태그
         tags = fm.get("tags")
         if not tags:

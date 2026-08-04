@@ -25,6 +25,11 @@ const blog = defineCollection({
       canonicalURL: z.string().optional(),
       hideEditPost: z.boolean().optional(),
       timezone: z.string().optional(),
+      // 토픽 클러스터 소속 (scripts/topics.yaml 의 id).
+      // 내부 링크 연결과 다음 주제 선정이 이 값을 읽습니다.
+      cluster: z.string().optional(),
+      // 이 글이 답하는 질문. 같은 클러스터 안에서 중복 주제를 피하는 데 씁니다.
+      question: z.string().optional(),
       faqs: z.array(z.object({
         q: z.string(),
         a: z.string(),

@@ -27,6 +27,7 @@ from google import genai
 import models
 import verifier
 import diagram
+import topics
 
 
 def slugify_fallback(title):
@@ -36,40 +37,33 @@ def slugify_fallback(title):
     return "-".join(words[:6])
 
 
-def inject_internal_links(draft, folder):
-    import glob
-    target_dir = os.path.join("src", "data", "blog", "ko", folder)
-    if not os.path.exists(target_dir):
+def inject_internal_links(draft, folder, cluster=None, exclude_slug=None):
+    """
+    같은 토픽 클러스터의 글을 연결합니다.
+
+    [수정 이전] 폴더 안 최신 2편을 기계적으로 붙였습니다. 그래서 서버리스 글 아래에
+    DDoS 글이 '함께 읽으면 좋은 글'로 붙는 일이 생겼고, 토픽 클러스터가 형성되지
+    않았습니다.
+    [수정 이후] 같은 클러스터를 우선 연결하고, 모자라면 다른 글로 채웁니다.
+    """
+    if folder != "posts":
         return draft
-        
-    md_files = glob.glob(os.path.join(target_dir, "*.md"))
-    # Sort files by modification time (most recent first)
-    md_files.sort(key=os.path.getmtime, reverse=True)
-    
-    # Take top 2 recent posts
-    related_links = []
-    for file_path in md_files[:2]:
-        try:
-            with open(file_path, 'r', encoding='utf-8') as f:
-                content = f.read()
-                if content.startswith("---"):
-                    parts = content.split("---", 2)
-                    if len(parts) >= 3:
-                        frontmatter = yaml.safe_load(parts[1])
-                        title = frontmatter.get("title")
-                        slug = frontmatter.get("slug")
-                        if title and slug:
-                            href = f"/ko/{folder}/{slug}"
-                            related_links.append(f"- [{title}]({href})")
-        except Exception as e:
-            print(f"Error parsing {file_path} for internal links: {e}")
-            continue
-            
-    if related_links:
-        links_md = "\n\n## 🔗 함께 읽으면 좋은 글\n" + "\n".join(related_links) + "\n"
-        draft += links_md
-        print(f"✅ Injected {len(related_links)} internal links.")
-        
+
+    try:
+        links = topics.related_links(cluster or "general", exclude_slug=exclude_slug, limit=3)
+    except Exception as e:
+        print(f"  ⚠️ 내부 링크 조회 실패: {e}")
+        return draft
+
+    if not links:
+        print("  · 연결할 기존 글이 없습니다 (첫 글이거나 클러스터가 비어 있음)")
+        return draft
+
+    lines = [f"- [{l['title']}]({l['href']})" for l in links]
+    draft += "\n\n## 🔗 함께 읽으면 좋은 글\n" + "\n".join(lines) + "\n"
+
+    same = sum(1 for l in links if l["same_cluster"])
+    print(f"  ✅ 내부 링크 {len(links)}개 (같은 클러스터 {same}개)")
     return draft
 
 class PostMeta(BaseModel):
@@ -78,7 +72,8 @@ class PostMeta(BaseModel):
     tags: List[str] = Field(description="이 글의 주제를 나타내는 소문자 영문 태그 2~4개 (예: zero-trust, sase)")
 
 
-def assemble_post_metadata(reviewed_data, folder="posts", keyword="", urls=None, draft=False):
+def assemble_post_metadata(reviewed_data, folder="posts", keyword="", urls=None, draft=False,
+                           cluster=None, question=None):
     """
     Creates final Frontmatter and combines it with refined content.
 
@@ -105,7 +100,8 @@ def assemble_post_metadata(reviewed_data, folder="posts", keyword="", urls=None,
 
 [규칙]
 - slug: 영문 소문자와 하이픈만. 5단어 이내. 한글 음차 금지.
-- description: 이 글이 어떤 질문에 답하는지 알 수 있게 1~2문장. 과장 표현 금지. 따옴표와 줄바꿈 금지.
+- description: **반드시 한국어로** 작성하라. 본문이 한국어이므로 검색 결과 설명도 한국어여야 한다.
+  이 글이 어떤 질문에 답하는지 알 수 있게 1~2문장. 과장 표현 금지. 따옴표와 줄바꿈 금지.
 - tags: 본문에서 실제로 다룬 기술 주제만. 소문자 영문 하이픈 표기. 2~4개.
   ("others", "it", "tech" 처럼 아무 정보도 주지 않는 태그 금지)
 """
@@ -155,6 +151,10 @@ def assemble_post_metadata(reviewed_data, folder="posts", keyword="", urls=None,
         "featured": False,
         "draft": draft,
         "tags": tags,
+        # 토픽 클러스터 소속. 내부 링크와 다음 주제 선정이 이 값을 읽습니다.
+        "cluster": cluster or "general",
+        # 이 글이 답하는 질문. 다음 선정 시 중복 회피에 쓰입니다.
+        "question": question or "",
         "ogImage": "../../../../assets/images/placeholder.png",
         "description": description,
         "references": urls[:3] if urls else []
@@ -439,7 +439,8 @@ def process_single_file(file_path, folder="posts", target_lang=None, include_faq
 
     print_final_briefing(report)
 
-def process_urls(keyword=None, folder="posts", include_faq=False, urls=None, schedule_type=None):
+def process_urls(keyword=None, folder="posts", include_faq=False, urls=None, schedule_type=None,
+                 question=None, reader=None, cluster=None):
     """
     Main pipeline: (Crawl) -> Generate -> Review -> Image Gen -> Translate -> (Push)
     If 'urls' is provided as a list, it bypasses keyword-based file loading.
@@ -515,7 +516,10 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None, sch
         "body": combined_body[:30000] # Limit to avoid token issues
     }
 
-    draft_data, gen_info = generate_blog_post(crawled_summary, folder=folder, keyword=keyword, schedule_type=schedule_type)
+    draft_data, gen_info = generate_blog_post(
+        crawled_summary, folder=folder, keyword=keyword, schedule_type=schedule_type,
+        question=question, reader=reader
+    )
 
     # [수리] 중단 경로. 소스로 답할 수 없으면 발행하지 않습니다.
     # 기존 파이프라인에는 "쓸 수 없음"이라는 결과가 없어서 소스가 부실해도 한 편을 뱉었습니다.
@@ -575,7 +579,8 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None, sch
     # NEW STEP: Stage 3.7: Metadata Assembly & Slug Generation
     print(f"\n=== Stage 3.7: Metadata Assembly & Slug Generation ===")
     draft, prefix, slug = assemble_post_metadata(
-        reviewed_data, folder=folder, keyword=keyword, urls=urls, draft=hold_for_review
+        reviewed_data, folder=folder, keyword=keyword, urls=urls, draft=hold_for_review,
+        cluster=cluster, question=gen_info.get("question") or question
     )
     print(f"  ✅ Metadata assembled. Final Slug: {slug}")
 
@@ -587,7 +592,7 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None, sch
 
     # 3.7.8 Inject Internal Links (SEO)
     print(f"\n=== Stage 3.7.8: Internal Linking ===")
-    draft = inject_internal_links(draft, folder)
+    draft = inject_internal_links(draft, folder, cluster=cluster, exclude_slug=slug)
 
     # 3.8 Add FAQ if requested (New YAML Frontmatter Architecture)
     if include_faq and keyword:
@@ -712,7 +717,8 @@ if __name__ == "__main__":
     parser.add_argument("--keyword", help="Target keyword")
     parser.add_argument("--folder", help="Target folder")
     parser.add_argument("--lang", help="Target language")
-    parser.add_argument("--schedule", help="Override schedule type (e.g. 09_tech_news, 12_tech_feature)")
+    parser.add_argument("--schedule", help="스케줄 라벨 (리포트 표기용)")
+    parser.add_argument("--cluster", help="특정 토픽 클러스터를 지정 (topics.yaml 의 id)")
 
     args = parser.parse_args()
 
@@ -757,86 +763,61 @@ if __name__ == "__main__":
         }
         
         try:
-            if args.schedule:
-                schedule_type = args.schedule
-                print(f"🕒 Schedule overridden by argument: {schedule_type}")
-            else:
-                now_kst = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=9)
-                hour = now_kst.hour
-                
-                if 8 <= hour < 11:
-                    schedule_type = "09_tech_news"
-                elif 11 <= hour < 14:
-                    schedule_type = "12_tech_feature"
-                elif 14 <= hour < 17:
-                    schedule_type = "15_ai_news"
-                elif 17 <= hour < 20:
-                    schedule_type = "18_ai_feature"
-                else:
-                    schedule_type = "09_tech_news" # default
-                    
-                print(f"🕒 Current KST Hour: {hour} -> Schedule Type: {schedule_type}")
+            schedule_type = args.schedule or "daily"
 
+            # 1. 뉴스 반영일에만 헤드라인을 수집합니다.
+            #    (뉴스 기반 글은 6개월이면 죽는 자산이라 topics.yaml 의 news_weekdays 로 제한)
+            cfg = topics.load_config()
             daily_file = None
-            if "news" in schedule_type:
-                # 1. 크롤러 실행: list.txt 읽어서 YYYYMMDD.txt 생성 (뉴스 기반일 때만)
+            headlines_text = None
+            if topics.is_news_day(cfg):
                 daily_file = generate_daily_headlines_file("list.txt")
-            
-            master_report["system"]["headlines_file_exists"] = os.path.exists(daily_file) if daily_file else False
-            
-            auto_keyword = None
-            # 2. 트렌드 캐처 실행: 스케줄에 맞춰 키워드 도출
-            from trend_catcher import get_topic_for_schedule
-            auto_keyword = get_topic_for_schedule(schedule_type, filename=daily_file)
-            
-            if not auto_keyword:
-                # 헤드라인 수집이 아예 안 됐거나, 키워드 추출 중 오류 발생 시 에버그린 fallback
-                print("⚠️ 헤드라인 기반 키워드 도출에 실패(또는 기사 없음). 즉시 Evergreen 키워드(Fallback) 모드로 전환합니다.")
-                master_report["system"]["skipped_reason"] = "헤드라인 수집 실패 또는 새로운 기사 없음 (에버그린 폴백 진행)"
-                from trend_catcher import get_evergreen_keywords, save_keyword_to_history
-                import random
-                
-                evergreen_pool = get_evergreen_keywords()
-                if evergreen_pool:
-                    auto_keyword = random.choice(evergreen_pool)
-                    print(f"🔄 대비책(Fallback) 가동: 상시 키워드 풀에서 '{auto_keyword}'(을)를 선택합니다.")
-                    save_keyword_to_history(auto_keyword, "Fallback_Auto_Pipeline")
-                else:
-                    error_msg = "상시 키워드 목록도 비어있어 파이프라인을 중단합니다."
-                    print(f"❌ {error_msg}")
-                    master_report["system"]["skipped_reason"] = error_msg
-                    sys.exit(1)
-                    
-            print(f"✨ Auto-selected Keyword: {auto_keyword}")
-            
-            # 🚀 [New Pipeline] DeepSearch & Filter
+                if daily_file and os.path.exists(daily_file):
+                    with open(daily_file, "r", encoding="utf-8") as f:
+                        headlines_text = f.read()
+
+            master_report["system"]["headlines_file_exists"] = bool(daily_file and os.path.exists(daily_file))
+
+            # 2. 토픽 클러스터에서 아직 답하지 않은 질문을 고릅니다.
+            #    화제성이 아니라 '이 영역에서 비어 있는 답'이 기준입니다.
+            topic = topics.select_topic(headlines_text=headlines_text, force_cluster=args.cluster)
+            if not topic:
+                error_msg = "주제 선정에 실패했습니다. 파이프라인을 중단합니다."
+                print(f"❌ {error_msg}")
+                master_report["system"]["skipped_reason"] = error_msg
+                sys.exit(1)
+
+            auto_keyword = topic["search_keyword"]
+            save_keyword_to_history(topic["question"], f"cluster:{topic['cluster']}")
+
+            # 3. 질문의 답을 찾을 소스를 수집합니다.
             top_urls = deep_search_and_filter(auto_keyword, num_results=100)
-            
-            # 검색 실패 시 한 번 더 에버그린 풀에서 다른 단어로 시도
+
             if not top_urls:
-                print(f"⚠️ '{auto_keyword}'에 대한 검색 결과가 빈약합니다. Evergreen 키워드로 2차 재시도합니다.")
-                master_report["system"]["skipped_reason"] = f"'{auto_keyword}' 검색 결과 부족 (2차 폴백 진행)"
-                from trend_catcher import get_evergreen_keywords, save_keyword_to_history
-                import random
-                evergreen_pool = get_evergreen_keywords()
-                if auto_keyword in evergreen_pool:
-                    evergreen_pool.remove(auto_keyword)
-                if evergreen_pool:
-                    auto_keyword = random.choice(evergreen_pool)
-                    print(f"🔄 2차 대비책(Fallback) 가동: '{auto_keyword}'(을)를 선택합니다.")
-                    save_keyword_to_history(auto_keyword, "Fallback_DeepSearchFail")
+                # 같은 클러스터 안에서 검색어만 바꿔 한 번 더 시도합니다.
+                print(f"⚠️ '{auto_keyword}' 검색 결과가 빈약합니다. 같은 클러스터에서 재시도합니다.")
+                master_report["system"]["skipped_reason"] = f"'{auto_keyword}' 검색 결과 부족 (재시도)"
+                retry = topics.select_topic(headlines_text=None, force_cluster=topic["cluster"])
+                if retry and retry["search_keyword"] != auto_keyword:
+                    topic = retry
+                    auto_keyword = topic["search_keyword"]
                     top_urls = deep_search_and_filter(auto_keyword, num_results=100)
 
             if top_urls:
-                # 3. 선별된 고품질 URL들을 사용하여 포스팅 작성
-                process_urls(urls=top_urls, keyword=auto_keyword, folder=folder, include_faq=include_faq, schedule_type=schedule_type)
-                # process_urls 내부에서 print_final_briefing을 호출하므로 여기서는 중복 호출하지 않기 위해 
-                # master_report를 직접 관리하는 방식 대신 process_urls의 결과를 받거나 
-                # 혹은 전역적인 상태 관리가 필요함. 
-                # 여기서는 단순화를 위해 process_urls가 끝난 후 return 하도록 함.
-                sys.exit(0) 
+                process_urls(
+                    urls=top_urls,
+                    keyword=auto_keyword,
+                    folder=folder,
+                    include_faq=include_faq,
+                    schedule_type=schedule_type,
+                    question=topic["question"],
+                    reader=topic["reader"],
+                    cluster=topic["cluster"],
+                )
+                # process_urls 내부에서 print_final_briefing 을 호출하므로 중복 출력하지 않습니다.
+                sys.exit(0)
             else:
-                error_msg = "검색 결과에서 유효한 소스를 끝내 찾지 못하여 파이프라인을 중단합니다."
+                error_msg = "질문에 답할 소스를 찾지 못해 파이프라인을 중단합니다."
                 print(f"❌ {error_msg}")
                 master_report["system"]["skipped_reason"] = error_msg
                 sys.exit(1)

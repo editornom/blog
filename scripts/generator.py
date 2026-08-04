@@ -93,14 +93,20 @@ def _abort(reason, question=None):
     }
 
 
-def generate_informational_post(crawled_content, keyword="", schedule_type=None):
+def generate_informational_post(crawled_content, keyword="", schedule_type=None,
+                                question=None, reader=None):
     """
     질문 정의 → 조사 → 집필.
+
+    Args:
+        question: 토픽 클러스터가 이미 정한 질문. 주어지면 그대로 씁니다.
+                  (topics.select_topic 이 클러스터 내 중복을 피해 뽑은 질문)
+        reader:   그 질문을 검색하는 사람의 상황.
 
     Returns:
         (data, info)
         data: {"title": ..., "content": ...} 또는 None(중단 시)
-        info: 중단 사유 / 커버리지 / 상충 목록 / 원본 소스 텍스트
+        info: 중단 사유 / 커버리지 / 상충 목록 / 원본 소스 텍스트 / 확정된 질문
     """
     client = _client()
     if client is None:
@@ -122,17 +128,31 @@ def generate_informational_post(crawled_content, keyword="", schedule_type=None)
     # ── PHASE 1: 질문 정의 ────────────────────────────────────────────
     print(f"\n❓ [1/3] 질문 정의: 답할 수 있는 형태로 주제를 좁히는 중... (Schedule: {schedule_type or 'Manual'})")
 
-    framing_prompt = f"""
-너는 기술 문서의 '질문 정의자'다. 블로그 주제로 던져진 명사형 키워드를,
-독자가 실제로 검색하고 답을 얻어갈 수 있는 '구체적인 질문'으로 바꾸는 것이 임무다.
+    if question:
+        given_block = f"""
+[확정된 질문 — 이것을 main_question 으로 그대로 쓴다. 바꾸지 마라]
+{question}
 
+[이 글을 읽을 사람]
+{reader or '해당 영역의 실무자'}
+"""
+        question_rule = ("1. main_question 은 위 [확정된 질문]을 **글자 그대로** 옮겨라. "
+                         "다듬거나 바꾸지 마라.")
+    else:
+        given_block = ""
+        question_rule = """1. main_question 은 반드시 물음표로 끝나는 하나의 질문이어야 한다.
+   - 나쁜 예: "멀티모달 AI" (명사. 범위가 무한해서 답할 수 없다)
+   - 좋은 예: "사내 문서 검색에 멀티모달 모델을 쓰면 텍스트 전용 대비 무엇이 달라지나?" """
+
+    framing_prompt = f"""
+너는 기술 문서의 '질문 정의자'다. 독자가 답을 얻어갈 수 있도록
+질문을 확정하고, 그 답에 도달하기 위한 하위 질문을 설계하는 것이 임무다.
+{given_block}
 {data_block}
 
 [규칙]
-1. main_question 은 반드시 물음표로 끝나는 하나의 질문이어야 한다.
-   - 나쁜 예: "멀티모달 AI" (명사. 범위가 무한해서 답할 수 없다)
-   - 좋은 예: "사내 문서 검색에 멀티모달 모델을 쓰면 텍스트 전용 대비 무엇이 달라지나?"
-2. 질문은 **주어진 소스로 답할 수 있는 범위** 안에서 만들어라.
+{question_rule}
+2. 하위 질문은 **주어진 소스로 답할 수 있는 범위** 안에서 만들어라.
    소스에 없는 내용을 묻는 질문을 만들면 안 된다.
 3. sub_questions 는 main_question 에 답하기 위해 순서대로 해결해야 할 것들이다.
    개념 정의 → 동작 방식 → 선택 기준 → 주의점 순으로 자연스럽게 이어지게 하라.
@@ -418,7 +438,8 @@ Re-insert proper newlines and restore a readable Markdown layout.
     return content
 
 
-def generate_blog_post(crawled_content, folder="posts", additional_instructions="", keyword="", schedule_type=None):
+def generate_blog_post(crawled_content, folder="posts", additional_instructions="", keyword="",
+                       schedule_type=None, question=None, reader=None):
     """
     진입점.
 
@@ -429,7 +450,8 @@ def generate_blog_post(crawled_content, folder="posts", additional_instructions=
     Returns:
         (data, info) — data 가 None 이면 발행하지 않아야 합니다. info["reason"] 에 사유가 있습니다.
     """
-    return generate_informational_post(crawled_content, keyword=keyword, schedule_type=schedule_type)
+    return generate_informational_post(crawled_content, keyword=keyword, schedule_type=schedule_type,
+                                       question=question, reader=reader)
 
 
 if __name__ == "__main__":
