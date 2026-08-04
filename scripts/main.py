@@ -17,11 +17,9 @@ from reviewer import review_manuscript
 from imagen_helper import generate_image
 from translator import translate_and_save, translate_text
 from publish import push_to_github
-from accordian import load_faq_content, prepare_faq_data
 from headline_crawler import generate_daily_headlines_file
 from trend_catcher import save_keyword_to_history
 from search_expert import deep_search_and_filter
-from faq_expert import generate_faq
 from api_utils import gemini_tracker
 from google import genai
 import models
@@ -149,8 +147,9 @@ def assemble_post_metadata(reviewed_data, folder="posts", keyword="", urls=None,
     # 4. Assemble YAML
     fm_data = {
         "title": title,
-        "author": "editornom",
-        "author_role": "Senior Tech Editor",
+        # 이 블로그는 비개발자가 먼저 배운 것을 기록하는 곳입니다.
+        # 'Senior Tech Editor' 같은 권위 표기는 컨셉과 맞지 않습니다.
+        "author": "Be Dev.Log",
         "author_url": "https://editornom.com/about",
         "pubDatetime": pub_time, # Pass datetime object directly
         "slug": slug,
@@ -330,7 +329,7 @@ def print_final_briefing(report):
     except Exception as e:
         print(f"⚠️ 보고서 파일 저장 중 오류 발생: {e}")
 
-def process_single_file(file_path, folder="posts", target_lang=None, include_faq=False, schedule_type=None):
+def process_single_file(file_path, folder="posts", target_lang=None, schedule_type=None):
     """
     Bypass crawl/gen/review and only run translation for an existing .md file.
     """
@@ -375,60 +374,6 @@ def process_single_file(file_path, folder="posts", target_lang=None, include_faq
     # Remove YYMMDD_ prefix if it exists to avoid double prefixes during translation
     slug = slug_raw[7:] if re.match(r'^\d{6}_', slug_raw) else slug_raw
 
-    # Add FAQ if requested (using slug as keyword)
-    if include_faq:
-        # Try finding FAQ by slug first, then fallback to parts of slug or manual check
-        # For TurboQuant, slug is 'google-turboquant-ai-efficiency-impact'
-        # But file is '터보퀀트.txt'
-        # mapping or manual input.
-        if "turboquant" in slug.lower():
-            keyword = "터보퀀트"
-        elif "gemma-4" in slug.lower():
-            keyword = "구글젬마4"
-        elif "utm" in slug.lower():
-            keyword = "UTM"
-        elif "colocation" in slug.lower():
-            keyword = "코로케이션"
-        elif "llm-wiki" in slug.lower():
-            keyword = "llmwiki"
-        else:
-            keyword = slug
-        
-        faqs = load_faq_content(keyword)
-        if faqs:
-            # First, strip existing legacy FAQ in body if any to avoid duplicates
-            if "## ✅ 자주 묻는 질문 (FAQ)" in draft:
-                draft = draft.split("## ✅ 자주 묻는 질문 (FAQ)")[0].strip()
-            
-            # Use prepare_faq_data to cleanup draft and get faq list
-            draft, faqs = prepare_faq_data(draft, faqs)
-            
-            # NOTE: For frontmatter insertion, we'll need a more robust check. 
-            # If the draft already has 'faqs:' in frontmatter, we might want to skip or update.
-            # For simplicity in this 'posts' mode, we trust the translator to handle frontmatter if it's there,
-            # or we manually inject if missing.
-            # [E-E-A-T] Update metadata for freshness and authority
-            parts = draft.split("---", 2)
-            if len(parts) >= 3:
-                fm = yaml.safe_load(parts[1])
-                if include_faq and faqs:
-                    fm['faqs'] = faqs
-                
-                fm['modDatetime'] = datetime.datetime.now().astimezone()
-                fm['author_role'] = "Senior Tech Editor"
-                fm['author_url'] = "https://editornom.com/about"
-                
-                new_fm = yaml.dump(fm, allow_unicode=True, sort_keys=False)
-                draft = f"---\n{new_fm}---\n{parts[2].strip()}"
-            
-            print(f"Ensured FAQ data for '{keyword}' is ready for translation.")
-            
-            # Save the updated Korean draft
-            with open(file_path, "w", encoding="utf-8") as f:
-                f.write(draft)
-        else:
-            print(f"Warning: FAQ content not found for {keyword}")
-    
     # Run Translation
     print(f"\n=== Translating to requested languages ===")
     target_langs = [target_lang] if target_lang else None
@@ -445,7 +390,7 @@ def process_single_file(file_path, folder="posts", target_lang=None, include_faq
 
     print_final_briefing(report)
 
-def process_urls(keyword=None, folder="posts", include_faq=False, urls=None, schedule_type=None,
+def process_urls(keyword=None, folder="posts", urls=None, schedule_type=None,
                  lesson_ctx=None):
     """
     Main pipeline: (Crawl) -> Generate -> Review -> Image Gen -> Translate -> (Push)
@@ -600,24 +545,6 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None, sch
     print(f"\n=== Stage 3.7.8: Internal Linking ===")
     draft = inject_internal_links(draft, folder, lesson_ctx=lesson_ctx)
 
-    # 3.8 Add FAQ if requested (New YAML Frontmatter Architecture)
-    if include_faq and keyword:
-        generate_faq(draft, keyword)
-        faqs = load_faq_content(keyword)
-        if faqs:
-            # 본문의 레거시 FAQ 태그 제거 및 데이터 확보
-            draft, faqs_data = prepare_faq_data(draft, faqs)
-            
-            # 프런트매터 영역에 YAML 배열 형태로 주입
-            faq_yaml = yaml.dump({"faqs": faqs_data}, allow_unicode=True, sort_keys=False, indent=2)
-            faq_yaml = faq_yaml.replace("---", "").strip()
-            
-            # Insert before the last Frontmatter separator
-            draft = re.sub(r'\n---', f'\n{faq_yaml}\n---', draft, count=1, flags=re.MULTILINE)
-            print(f"✅ Injected {len(faqs)} FAQ items into YAML Frontmatter.")
-        else:
-            print(f"Warning: FAQ file not found or empty for keyword '{keyword}'")
-
     # 3.9 Stage 3.9: 도해 렌더링 (결정론적, API 호출 없음)
     # [신설] 구조가 있는 내용은 생성 이미지가 아니라 HTML/CSS 도해로 표현합니다.
     #        생성 모델은 도해 안의 글자를 정확히 그리지 못하고, 장당 과금되며,
@@ -733,13 +660,9 @@ if __name__ == "__main__":
     folder = args.folder if args.folder else (args.p_folder if args.p_folder else "posts")
     target_lang = args.lang if args.lang else args.p_target_lang
     
-    # 🚀 무인 자동화 모드: 질문 없이 FAQ 생성 및 삽입을 기본값으로 설정
-    include_faq = True
-    print("\n✅ FAQ 자동 생성 모드가 활성화되었습니다.")
-    
     if input_arg and input_arg.endswith(".md"):
         # 기존 파일 재작업 모드
-        process_single_file(input_arg, folder, target_lang, include_faq=include_faq, schedule_type=args.schedule)
+        process_single_file(input_arg, folder, target_lang, schedule_type=args.schedule)
 
     elif input_arg:
         # 🚀 [MANUAL MODE] 수동 키워드 입력 시 DeepSearch 연동
@@ -752,7 +675,7 @@ if __name__ == "__main__":
         if top_urls:
             # 수동 모드 역사 기록
             save_keyword_to_history(input_arg, "수동선정")
-            process_urls(urls=top_urls, keyword=input_arg, folder=folder, include_faq=include_faq, schedule_type=args.schedule)
+            process_urls(urls=top_urls, keyword=input_arg, folder=folder, schedule_type=args.schedule)
         else:
             print(f"❌ '{input_arg}'에 대한 검색 결과에서 유효한 소스를 찾지 못했습니다.")
     else:
@@ -808,7 +731,6 @@ if __name__ == "__main__":
                 urls=top_urls or [],
                 keyword=search_query,
                 folder=folder,
-                include_faq=include_faq,
                 schedule_type="lesson",
                 lesson_ctx=lesson_ctx,
             )

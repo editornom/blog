@@ -230,7 +230,6 @@ def write_lesson(client, ctx, plan, sources_text):
    - 분량을 채우려고 일반론을 덧붙이지 마라.
 
 7. 출력
-   - FAQ 는 별도 시스템이 만든다. 본문에 쓰지 마라.
    - 제목과 본문만 출력하라. 프론트매터를 쓰지 마라.
 """
 

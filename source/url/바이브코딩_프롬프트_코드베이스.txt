@@ -1,10 +1,10 @@
-https://basta.substack.com/p/the-imminent-risk-of-vibe-coding
 https://dev.to/dumebii/the-ultimate-prompt-strategy-how-to-vibe-code-production-ready-websites-4e9
-https://www.augmentcode.com/learn/ai-prompting-techniques-vibe-coding-spec-driven-dev
-https://medium.com/@rentierdigital/i-stopped-vibe-coding-and-started-prompt-contracts-claude-code-went-from-gambling-to-shipping-4080ef23efac
+https://basta.substack.com/p/the-imminent-risk-of-vibe-coding
+https://www.augmentcode.com/learn/vibe-coding-prompts-for-spec-driven-prototyping
+https://annaarteeva.medium.com/the-vibe-coders-prompting-guide-e04ba0295a18
+https://www.raffertyuy.com/raztype/vibe-coding-plan-implement-run/
 https://strapi.io/blog/vibe-coding-prompt-techniques
-https://cloud.google.com/discover/what-is-vibe-coding?hl=ko
+https://dzone.com/articles/full-stack-app-with-vibe-coding-prompts
 https://www.donga.com/news/It/article/all/20260220/133387103/1
 https://brunch.co.kr/@abrahamsong/168
-https://qshop.ai/insights/2025-%ED%8A%B8%EB%A0%8C%EB%93%9C-%EA%B0%9C%EB%B0%9C%EC%9E%90-%EC%97%86%EC%9D%B4-%EB%82%B4-%EC%95%B1%EC%9D%84-%EB%B0%94%EC%9D%B4%EB%B8%8C-%EC%BD%94%EB%94%A9%EA%B3%BC-AI-%ED%88%B4-%EC%B4%9D%EC%A0%95%EB%A6%AC-1
-https://www.vooster.ai/ko/blog/what-is-vibe-coding
+https://roboco.io/posts/organizational-design-for-vibe-coding/

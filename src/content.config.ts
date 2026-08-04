@@ -30,10 +30,6 @@ const blog = defineCollection({
       cluster: z.string().optional(),
       // 이 글이 답하는 질문. 같은 클러스터 안에서 중복 주제를 피하는 데 씁니다.
       question: z.string().optional(),
-      faqs: z.array(z.object({
-        q: z.string(),
-        a: z.string(),
-      })).optional(),
       references: z.array(z.string()).optional(),
     }),
 });

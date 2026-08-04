@@ -43,9 +43,8 @@ def translate_post(korean_markdown, target_lang, slug=None):
 당신은 전문 기술 번역가입니다. 아래의 한국어 블로그 원고를 {lang_name}로 번역하십시오.
 
 ### 번역 규칙:
-1. **Frontmatter 유지**: YAML frontmatter(--- 사이의 영역)의 구조는 그대로 유지하되, title, description, 그리고 faqs(배열 내의 q와 a) 항목을 각 언어에 맞게 번역하십시오.
+1. **Frontmatter 유지**: YAML frontmatter(--- 사이의 영역)의 구조는 그대로 유지하되, title 과 description 항목을 각 언어에 맞게 번역하십시오.
    - 🚨 **[중요]**: 번역된 title and description의 값은 반드시 큰따옴표(" ")로 감싸야 하며, 문자열 내부에는 절대 큰따옴표나 줄바꿈을 넣지 마십시오. (필요시 홑따옴표 사용)
-   - 🚨 **[FAQ 번역]**: faqs 배열 내부의 각 객체에서 `q`와 `a`의 모든 텍스트를 대상 언어의 뉘앙스에 맞게 자연스럽게 번역하십시오. YAML 문법(하이픈 `-` 및 들여쓰기)을 엄수하되, 반드시 **`q`와 `a`의 값은 모두 큰따옴표(" ")로 감싸서 출력**하십시오! (예: `a: "This is an answer."`)
    - 🚨 **[참고 문헌 유지]**: `references` 항목은 외부 URL 리스트이므로 절대 번역하거나 수정하지 말고 그대로 유지하십시오.
    - 🚨 **[날짜 형식 엄수]**: `pubDatetime` 및 `modDatetime` 값에는 절대 큰따옴표(" ")나 홑따옴표(' ')를 붙이지 마십시오. 반드시 YAML 날짜 형식(예: 2024-04-22 17:00:00+09:00)을 유지해야 합니다.
 2. **Slug 동일성 유지**: frontmatter의 `slug` 값은 기존 영어 slug를 복사하거나 번역하지 말고, 반드시 **{slug_info} 값을 한 글자도 바꾸지 말고 그대로 유지**하십시오. (언어 전환 시 URL 매핑과 내부 링크 무결성을 보장하기 위함)
@@ -189,18 +188,6 @@ def translate_and_save(korean_draft, slug, folder, target_langs=None):
                 return txt[:match.start()] + match.group(1) + inner + match.group(3) + txt[match.end():]
             translated = fix_tags_array(translated)
             
-            # YAML 에러 방지를 위해 Frontmatter 내의 FAQ(q, a) 값이 따옴표로 감싸져 있지 않으면 강제로 감싸기
-            def fix_faq_quotes(txt):
-                parts = txt.split("---", 2)
-                if len(parts) >= 3:
-                    fm = parts[1]
-                    # q: 와 a: 뒤의 값을 캡처하되, 이미 따옴표로 시작하지 않는 경우에만 처리
-                    fm = re.sub(r'^(\s*(?:-\s*q:|a:)\s+)(?![("\'])(.*)$', 
-                                lambda m: m.group(1) + '"' + m.group(2).replace('"', "'") + '"', 
-                                fm, flags=re.MULTILINE)
-                    return f"---{fm}---{parts[2]}"
-                return txt
-            translated = fix_faq_quotes(translated)
             
             # Force the frontmatter slug to match the original Korean slug (enabling unbroken internal links and perfect language switcher mapping)
             translated = re.sub(r'^slug:\s*.*$', f'slug: "{slug}"', translated, flags=re.MULTILINE)
