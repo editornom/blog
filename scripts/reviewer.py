@@ -1,6 +1,7 @@
 from google import genai
 from google.api_core import exceptions
 from api_utils import gemini_retry, gemini_limiter, gemini_tracker
+import models
 import os
 import re
 import yaml
@@ -40,37 +41,16 @@ def review_manuscript(draft_data, folder="posts"):
             pass
 
     # ... (Prompt remains similar but assumes title/content separation) ...
-    if folder == "glossary":
-        prompt = f"""
-당신은 IT/테크 분야의 '수석 백과사전 편집자'입니다.
-주어진 초안은 용어 사전(Glossary)의 문서입니다. 
-당신의 임무는 원본의 정확한 기술적 데이터와 구조(사전적 정의, 실무 사용 예시, 관련 단어 등)를 엄격히 보전하면서, 어색한 기계적 문장이나 번역투를 자연스럽게 교정(Detox)하는 것입니다.
+    prompt = f"""
+당신은 기술 문서를 다듬는 '테크니컬 에디터'입니다. 이 블로그는 의견 칼럼이 아니라 정보성 문서입니다.
+독자는 질문의 답을 찾으러 왔고, 답을 얻으면 떠납니다. 당신의 목표는 그 답을 더 빨리, 더 명확하게 전달하는 것입니다.
+주어진 초안에는 AI가 쓴 티가 나는 기계적인 패턴과 상투적인 표현이 섞여 있습니다.
+당신의 임무는 **사실관계를 한 글자도 바꾸지 않으면서** 문장을 읽기 쉽게 다듬는 것입니다.
 
-아래 원칙을 엄격하게 준수하십시오:
-1. 제목: 절대로 거창한 수식어나 부제를 붙이지 마십시오. "{current_title}"의 핵심 용어를 파악하여 반드시 "용어명" 또는 "용어명이란?" 과 같이 가장 단순하고 직관적인 형태로만 작성하십시오.
-2. 어조: '~입니다', '~합니다' 형태의 건조하고 객관적인 백과사전식 문체를 완벽히 유지하십시오. 칼럼니스트처럼 주관적인 통찰이나 비평을 절대 덧붙이지 마십시오.
-3. {competitor_list_str}
-4. 마크다운 보존: 굵은 글씨(**텍스트**)가 너무 기계적으로 남발되어 있다면 꼭 필요한 1~2개만 남기고 정리하십시오.
-5. [중요] 표준 기술 용어 보존: '시스템', '클라우드', '데이터', '네트워크' 등 IT 표준 용어를 절대로 다른 단어나 어색한 발음으로 변형하지 마십시오.
-6. 어떠한 메타 코멘트(예: "수정된 원고입니다")도 출력하지 마십시오.
-
----
-[초안 제목]
-{current_title}
-
-[초안 본문]
-{body_content}
-
-# 최종 출력 형식 (지시사항 - 절대 준수)
-1. 첫 번째 줄에는 반드시 '다듬어진 단순한 제목'만 작성하십시오.
-2. 두 번째 줄은 비워두십시오.
-3. 세 번째 줄부터 '다듬어진 본문(마크다운)'을 작성하십시오.
-"""
-    else:
-        prompt = f"""
-당신은 IT 트렌드, 보안, 인공지능(AI), 차세대 소프트웨어 기술을 아우르는 15년 차 '수석 기술 전문 칼럼니스트'입니다. 당신의 글은 기술적 깊이를 놓치지 않으면서도, 현업 전문가부터 기술에 관심 있는 일반 독자들까지 매료시킬 수 있는 통찰력 넘치는 '테크 매거진 칼럼' 스타일이어야 합니다.
-주어진 초안은 데이터 중심의 팩트 나열로 인해 딱딱한 보고서 느낌이 들거나, AI가 작성하여 기계적인 패턴과 상투적인 표현이 섞여 있습니다.
-당신의 임무는 원본의 정확한 기술적 데이터는 보전하되, 독자가 끝까지 읽고 싶어질 만큼 세련되고 전문적인 '테크 매거진 칼럼'으로 전면 재작성(Rewriting)하는 것입니다.
+🚨 [최우선 규칙 — 사실 보존]
+- 새로운 사실, 수치, 연도, 제품명, 기관명을 **절대 추가하지 마십시오.** 이 단계는 문장을 다듬는 단계지 내용을 보태는 단계가 아닙니다.
+- 초안에 있는 수치와 고유명사를 임의로 바꾸거나 반올림하지 마십시오.
+- 문장을 매끄럽게 만들려고 없는 인과관계나 배경 설명을 지어내지 마십시오.
 
 아래의 [AI 냄새 제거 5대 원칙]을 엄격하게 준수하여 원고를 수정하십시오.
 
@@ -86,14 +66,16 @@ def review_manuscript(draft_data, folder="posts"):
 - 영어 단어를 불필요하게 섞어 쓰는 것을 지양하되, IT 업계 표준 용어(API, 클라우드, 온프레미스, 오픈소스 등)는 자연스럽게 사용하십시오.
 
 3. 자연스러운 문체와 리듬감 (Tone & Manner)
-- '~습니다', '~합니다' 형태의 깔끔한 문어체를 기본으로 하되, 테크 매거진 특유의 매끄럽고 세련된 어조를 유지하십시오.
-- 문장 사이의 논리적 연결이 매끄러워야 하며, 단순한 정보 전달을 넘어 "이 기술이 왜 중요한가?"에 대한 에디터의 통찰력이 배어 나오도록 표현하십시오.
-- 불필요하게 딱딱한 번역투 문장을 쪼개고, 독자와 직접 대화하는 듯한 읽기 쉬운 문형을 사용하십시오.
+- '~습니다', '~합니다' 형태의 깔끔한 문어체를 사용하십시오. 아는 사람이 차분히 설명해주는 톤입니다.
+- 주장이나 통찰을 덧붙이지 마십시오. 초안에 없는 평가("~는 중요합니다", "~가 관건입니다")를 새로 만들지 마십시오.
+- 불필요하게 딱딱한 번역투 문장을 쪼개고, 읽기 쉬운 문형을 사용하십시오. 한 문단은 2~4문장으로 유지하십시오.
 - 🚨 [키워드 스터핑 정제]: 초안에 특정 명사가 비정상적으로 반복되어 있다면, 과감하게 대명사로 대체하거나 아예 생략하여 글의 피로도를 낮추십시오.
 
 4. 구조 및 소제목 정제
 - 'Feature:', 'Key Insights:', '핵심 요약' 등 AI가 붙이는 뻔하고 작위적인 태그형 소제목을 삭제하십시오.
-- 대신 해당 섹션의 주제를 상징하는 짧고 강렬한, 혹은 호기심을 자극하는 '매거진 스타일'의 제목으로 변경하십시오.
+- 소제목은 그 섹션이 답하는 내용을 그대로 알려주는 것이어야 합니다. 호기심을 자극하려고 모호하게 만들지 마십시오.
+  ("숨겨진 함정" ✗ → "도입 시 확인할 항목" ○)
+- 헤딩 레벨을 건너뛰지 마십시오. H2 없이 H3가 나오면 안 됩니다.
 
 5. 마크다운 및 원본 요소 정제 (Refinement)
 - 원본에 포함된 이미지 태그, 코드 블록 등은 보존하되, **굵은 글씨(**강조**)**가 남발되어 기계적인 느낌(AI Smell)이 난다면 이를 과감히 삭제하거나 문맥상 꼭 필요한 곳에만 1~2회 남기고 일반 텍스트로 되돌리십시오.
@@ -119,7 +101,7 @@ def review_manuscript(draft_data, folder="posts"):
     def call_api():
         gemini_limiter.consume()
         return client.models.generate_content(
-            model='models/gemini-3-flash-preview', 
+            model=models.MAIN,
             contents=prompt
         )
 
@@ -128,15 +110,15 @@ def review_manuscript(draft_data, folder="posts"):
         response = call_api()
         gemini_tracker.add_text_usage(response)
         response_text = response.text.strip()
-        
+
         # 제목과 본문 분리 파싱
         parts = response_text.split("\n", 2)
         if len(parts) >= 3:
             refined_title = parts[0].strip().strip('"').strip("'")
             result_text = parts[2].strip()
         elif len(parts) == 2:
-             refined_title = parts[0].strip().strip('"').strip("'")
-             result_text = parts[1].strip()
+            refined_title = parts[0].strip().strip('"').strip("'")
+            result_text = parts[1].strip()
         else:
             refined_title = current_title
             result_text = response_text
@@ -145,7 +127,7 @@ def review_manuscript(draft_data, folder="posts"):
         if result_text.count("```") % 2 != 0:
             print("  ⚠️ [Detox] 마크다운 코드 블록 닫기(```) 누락 감지. 자동 복구합니다.")
             result_text += "\n```\n"
-            
+
         # 잘못 생성된 이미지 태그(!![...]) 수정
         if "!![" in result_text:
             print("  ⚠️ [Detox] 잘못된 이미지 태그(!![) 감지. 자동 복구합니다.")
@@ -155,10 +137,6 @@ def review_manuscript(draft_data, folder="posts"):
             "title": refined_title,
             "content": result_text
         }
-
-    except Exception as e:
-        print(f"❌ Gemini 디톡스 중 오류 발생: {e}")
-        return draft_data
 
     except Exception as e:
         print(f"❌ Gemini 디톡스 중 오류 발생: {e}")

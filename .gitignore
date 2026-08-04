@@ -12,6 +12,12 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+output.log
+build_log.txt
+
+# 작업용 임시 디렉터리 (커밋하지 않습니다)
+tmp/
+scratch/
 
 # environment variables
 .env

@@ -1,4 +1,0 @@
-https://arxiv.org/abs/2511.14881
-https://engineering.fb.com/2026/05/26/ml-applications/silvertorch-index-as-model-new-retrieval-paradigm-recommendation-systems/
-https://arxiv.org/html/2511.14881v1
-https://hub.baai.ac.cn/paper/9df8827e-062e-4381-8a47-de9f7039c6bb

@@ -1,3 +1,4 @@
+import models
 import os
 import re
 from google import genai
@@ -55,7 +56,7 @@ A2: 답변 내용
     def call_api():
         gemini_limiter.consume()
         return client.models.generate_content(
-            model='models/gemini-3-flash-preview',
+            model=models.MAIN,
             contents=prompt
         )
 

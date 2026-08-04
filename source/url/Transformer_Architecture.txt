@@ -1,8 +1,0 @@
-https://dilipkumar.medium.com/transformers-neural-network-architecture-a6fd825d2d5f
-https://people.idsia.ch/~juergen/who-invented-transformer-neural-networks.html
-https://arxiv.org/abs/2506.22084
-https://bactra.org/notebooks/nn-attention-and-transformers.html
-https://outcomeschool.com/blog/decoding-transformer-architecture
-https://pub.towardsai.net/understanding-the-transformer-architecture-the-foundation-of-modern-ai-5331018e002d
-https://www.codecademy.com/article/transformer-architecture-self-attention-mechanism
-https://aisera.com/blog/transformer-model/

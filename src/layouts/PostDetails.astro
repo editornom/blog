@@ -90,10 +90,6 @@ const layoutProps = {
 /* ========== Post List for bottom navigation (Only posts/ collection) ========== */
 const ITEMS_PER_PAGE = 4;
 const currentLang = Astro.url.pathname.split("/")[1] || "ko";
-const normalizedId = post.id.replace(/\\/g, "/");
-const currentBoard = normalizedId.includes("haionnet/") ? "haionnet/" 
-  : normalizedId.includes("glossary/") ? "glossary/" 
-  : "posts/";
 
 // Fetch all non-draft posts for the current language strictly under the posts/ directory
 const allLangPosts = await getCollection("blog", ({ id, data }) => {
@@ -256,15 +252,13 @@ const t = UI_TEXT[currentLang as keyof typeof UI_TEXT] || UI_TEXT.ko;
             style={i >= ITEMS_PER_PAGE ? "display:none" : ""}
           >
             <a href={p.href} class="flex items-center gap-3 p-2.5 no-underline sm:gap-4 sm:p-3">
-              {currentBoard !== "glossary/" && (
-                <div class="h-12 w-12 flex-none overflow-hidden rounded-md bg-muted sm:h-14 sm:w-14">
-                  {p.thumb ? (
-                    <img src={p.thumb} alt={p.title} class="h-full w-full object-cover" loading="lazy" />
-                  ) : (
-                    <div class="flex h-full w-full items-center justify-center bg-accent/10 text-xs text-accent">N</div>
-                  )}
-                </div>
-              )}
+              <div class="h-12 w-12 flex-none overflow-hidden rounded-md bg-muted sm:h-14 sm:w-14">
+                {p.thumb ? (
+                  <img src={p.thumb} alt={p.title} class="h-full w-full object-cover" loading="lazy" />
+                ) : (
+                  <div class="flex h-full w-full items-center justify-center bg-accent/10 text-xs text-accent">N</div>
+                )}
+              </div>
               <div class="flex min-w-0 flex-1 flex-col gap-0.5">
                 <span class="truncate text-sm font-medium text-foreground sm:text-base">{p.title}</span>
                 <div class="flex items-center gap-2 text-xs text-foreground/50">

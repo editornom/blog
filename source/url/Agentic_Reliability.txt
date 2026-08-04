@@ -1,8 +1,0 @@
-https://research.ibm.com/blog/ai-agent-reliability-beeai
-https://arxiv.org/abs/2602.16666
-https://medium.com/@Micheal-Lanham/agent-reliability-engineering-stop-your-ai-agents-from-failing-at-3-am-f10d1ac8d2ef
-https://cleanlab.ai/blog/emerging-reliability-layer-agent-stack/
-https://temporal.io/blog/ai-reliability-is-a-decade-old-problem
-https://www.montecarlodata.com/blog-why-you-cant-answer-how-reliable-is-this-agent/
-https://platformengineering.org/blog/the-agent-reliability-score-what-your-ai-platform-must-guarantee-before-agents-go-live
-https://www.requesty.ai/blog/ai-agent-reliability

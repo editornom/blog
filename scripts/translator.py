@@ -1,4 +1,5 @@
 from google import genai
+import models
 import os
 import re
 import datetime
@@ -56,9 +57,15 @@ def translate_post(korean_markdown, target_lang, slug=None):
 6. **고유명사 보호 (Glossary Enforcement)**: 다음 목록의 브랜드명과 IT 솔루션 전문 용어들은 엉뚱한 현지어로 직역하지 말고 반드시 영문 스펠링을 그대로 유지하거나 업계 표준 표기를 가장 우선시하십시오.
    - [보호 사전]: Editornom, VPN, UTM, API, SSL, B2B, AI, LLM, RAG, NVIDIA, CDN, SD-WAN, Playwright, Cloud, On-Premise, Node, React, Next.js
 7. **이미지 알트태그 번역**: `![alt text](path)` 형식에서 `alt text` 부분을 대상 언어로 자연스럽게 번역하십시오.
-8. **내부 링크 경로 및 슬러그 보존**: 원고 본문 중 `[텍스트](/ko/posts/슬러그)` 또는 `[텍스트](/ko/glossary/슬러그)` 형식의 내부 링크가 있다면, 국가 코드 부분만 대상 국가 코드(예: `en`, `cn`, `jp`)로 변경하고, 슬러그 부분은 절대로 번역하거나 임의로 변경하지 마십시오.
+8. **내부 링크 경로 및 슬러그 보존**: 원고 본문 중 `[텍스트](/ko/posts/슬러그)` 형식의 내부 링크가 있다면, 국가 코드 부분만 대상 국가 코드(예: `en`, `cn`, `jp`)로 변경하고, 슬러그 부분은 절대로 번역하거나 임의로 변경하지 마십시오.
    - 예: `/ko/posts/ax-strategy-golden-time` -> `/en/posts/ax-strategy-golden-time`
-   - 중국어 번역 시에는 `/zh/posts/`가 아닌 반드시 **/cn/posts/** 또는 **/cn/glossary/** 형식을 사용하여 번역하십시오! (절대 `/zh/` 경로를 사용하지 마십시오)
+   - 중국어 번역 시에는 `/zh/posts/`가 아닌 반드시 **/cn/posts/** 형식을 사용하여 번역하십시오! (절대 `/zh/` 경로를 사용하지 마십시오)
+9. **도해 블록 보존**: `<figure class="dgm ...">` 로 시작하는 도해 블록을 만나면 아래를 엄수하십시오.
+   - `<b class="dgm-label">` 와 `<span class="dgm-desc">` **안쪽 텍스트만** 번역하십시오.
+   - 태그 이름, class 속성값(`dgm`, `dgm-flow`, `dgm-stack`, `dgm-cycle`, `dgm-items`, `dgm-item`, `dgm-label`, `dgm-desc`), `role` 속성은 한 글자도 바꾸지 마십시오.
+   - `aria-label` 속성값은 도해의 요약이므로 함께 번역하되, 항목 구분 기호 ` → ` 는 그대로 두십시오.
+   - 도해 블록 전체를 **한 줄로 유지**하십시오. 태그 사이에 줄바꿈이나 빈 줄을 넣으면 렌더링이 깨집니다.
+   - 도해를 이미지(`![...](...)`)나 표로 바꾸지 마십시오.
 
 ### 원본 한국어 원고:
 {korean_markdown}
@@ -71,7 +78,7 @@ def translate_post(korean_markdown, target_lang, slug=None):
 
     try:
         response = client.models.generate_content(
-            model='models/gemini-3-flash-preview',
+            model=models.TRANSLATE,
             contents=prompt
         )
         return response.text
@@ -95,7 +102,7 @@ def translate_text(text, target_lang):
     for attempt in range(max_retries + 1):
         try:
             response = client.models.generate_content(
-                model='models/gemini-3-flash-preview',
+                model=models.TRANSLATE,
                 contents=prompt
             )
             return response.text.strip()

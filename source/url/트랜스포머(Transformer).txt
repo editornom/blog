@@ -1,6 +1,0 @@
-https://outcomeschool.com/blog/decoding-transformer-architecture
-https://dilipkumar.medium.com/transformers-neural-network-architecture-a6fd825d2d5f
-https://www.artiba.org/blog/how-transformer-models-work-architecture-attention-and-applications
-https://blog.bytebytego.com/p/how-transformers-architecture-powers
-https://www.codecademy.com/article/transformer-architecture-self-attention-mechanism
-https://pub.towardsai.net/understanding-the-transformer-architecture-the-foundation-of-modern-ai-5331018e002d

@@ -1,5 +1,0 @@
-https://hai.stanford.edu/news/new-approach-to-scaling-laws-could-change-how-ai-models-are-trained
-https://www.hec.edu/en/dare/tech-ai/ai-beyond-scaling-laws
-https://arxiv.org/abs/2605.26248
-https://medium.com/@pacosun/beyond-the-parameter-count-8ba5bb3a5543
-https://aimultiple.com/llm-scaling-laws

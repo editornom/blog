@@ -1,6 +1,0 @@
-https://hai.stanford.edu/ai-definitions/what-is-a-transformer
-https://atlan.com/know/what-is-a-transformer-model/
-https://medium.com/@ai.zeynepaslan/transformer-architecture-9876c2e5ac19
-https://www.artiba.org/blog/how-transformer-models-work-architecture-attention-and-applications
-https://blog.bytebytego.com/p/how-transformers-architecture-powers
-https://www.codecademy.com/article/transformer-architecture-self-attention-mechanism

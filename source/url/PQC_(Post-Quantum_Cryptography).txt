@@ -1,6 +1,0 @@
-https://blog.cloudflare.com/post-quantum-warp/
-https://blog.google/innovation-and-ai/technology/safety-security/cryptography-migration-timeline/
-https://www.keyfactor.com/education-center/what-is-post-quantum-cryptography-and-why-does-it-matter/
-https://www.paloaltonetworks.com/cyberpedia/pqc-standards
-https://www.redhat.com/en/blog/post-quantum-cryptography-red-hat-enterprise-linux-10
-https://www.redhat.com/en/topics/security/post-quantum-cryptography

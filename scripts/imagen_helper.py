@@ -2,6 +2,7 @@ from google import genai
 from google.api_core import exceptions
 from api_utils import gemini_retry, gemini_limiter
 from dotenv import load_dotenv
+import models
 import os
 import sys
 from PIL import Image
@@ -69,7 +70,7 @@ def enhance_image_prompt(base_prompt, client, context=None):
 [이미지 플레이스홀더 설명]: {base_prompt}
 """
         response = client.models.generate_content(
-            model='models/gemini-3-flash-preview',
+            model=models.MAIN,
             contents=enhance_prompt
         )
         enhanced = response.text.strip()

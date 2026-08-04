@@ -1,9 +1,0 @@
-https://en.wikipedia.org/wiki/Category:Large_language_models
-https://www.elastic.co/what-is/large-language-models
-https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
-https://www.mindstudio.ai/blog/andrej-karpathy-llm-wiki-knowledge-base-claude-code/
-https://github.com/nashsu/llm_wiki
-https://medium.com/@urvvil08/andrej-karpathys-llm-wiki-create-your-own-knowledge-base-8779014accd5
-https://aimaker.substack.com/p/llm-wiki-obsidian-knowledge-base-andrej-karphaty
-https://pub.towardsai.net/i-used-karpathys-llm-wiki-to-build-a-research-brain-that-updates-itself-ff02dda47335
-https://datasciencedojo.com/blog/llm-wiki-tutorial/

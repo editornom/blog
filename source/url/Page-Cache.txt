@@ -1,9 +1,0 @@
-https://www.nas.nasa.gov/hecc/support/kb/checking-and-managing-page-cache-usage_505.html
-https://medium.com/@amanpatel.workid/os-page-cache-what-it-is-and-what-it-is-not-51178d52913b
-https://developer.adobe.com/commerce/frontend-core/guide/caching
-https://biriukov.dev/docs/page-cache/2-essential-page-cache-theory/
-https://www.p99conf.io/2025/05/22/databases-linux-page-cache/
-https://levelup.gitconnected.com/the-ram-you-didnt-know-you-were-using-page-cache-explained-57e0b3813b3e
-https://www.sqlpassion.at/archive/2026/02/17/the-linux-page-cache-and-postgresql/
-https://serverfault.com/questions/1190253/kubernetes-oomkill-due-to-page-cache-is-there-a-solution
-https://tideways.com/profiler/blog/a-multi-step-strategy-for-better-full-page-caching

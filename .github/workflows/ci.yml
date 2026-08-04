@@ -4,20 +4,28 @@ permissions:
   contents: read
 
 on:
-  # pull_request:
-  #   types:
-  #     - opened
-  #     - edited
-  #     - synchronize
-  #     - reopened
-  # workflow_call:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+  push:
+    branches:
+      - main
+  workflow_call:
   workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
     name: Code standards & build
     runs-on: ubuntu-latest
-    timeout-minutes: 3
+    # 마크다운 910편 + pagefind 인덱싱 + sharp 이미지 처리를 3분 안에 끝내라는
+    # 설정이었습니다. 로컬 기준 빌드만 36초이고 CI 는 의존성 설치가 더 걸립니다.
+    timeout-minutes: 20
 
     strategy:
       matrix:
@@ -40,6 +48,23 @@ jobs:
 
       - name: "📦 Install dependencies"
         run: pnpm install
+
+      - name: "🐍 Set up Python"
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # 1층 기계 검증 — 모델 미개입 결정론적 검사.
+      # 프론트매터 / slug 중복 / 언어별 편수 / 내부 링크 / 이미지 경로 / 도해 무결성.
+      #
+      # --baseline: reports/content-baseline.json 에 기록된 기존 부채(52건)는 통과시키고
+      # 이번 변경으로 '새로 생긴' 오류만 차단합니다. 레거시 때문에 모든 PR 이
+      # 빨간불이 되는 것을 막으면서도 신규 회귀는 잡습니다.
+      # 부채를 갚은 뒤에는 `python scripts/validate_content.py --write-baseline` 으로 갱신하세요.
+      - name: "🔬 Validate content"
+        run: |
+          pip install "PyYAML==6.0.3"
+          python scripts/validate_content.py --baseline
 
       - name: "🔎 Lint code"
         run: pnpm run lint

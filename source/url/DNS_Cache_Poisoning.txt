@@ -1,4 +1,0 @@
-https://www.huntress.com/cybersecurity-101/topic/what-is-dns-poisoning-cybersecurity-guide
-https://netlas.io/blog/dns_spoofing_nowadays/
-https://twit.tv/posts/tech/dns-cache-poisoning-why-old-threat-back-and-what-it-means-your-security
-https://www.dnsfilter.com/glossary/dns-poisoning

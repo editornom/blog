@@ -1,2 +1,0 @@
-https://blog.levelupcoding.com/p/cap-theorem-explained
-https://medium.com/@anupchakole/understanding-the-cap-theorem-why-your-system-cant-have-it-all-4004c25e021f

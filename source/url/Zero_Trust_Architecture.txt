@@ -1,7 +1,0 @@
-https://www.microsoft.com/ko-kr/security/business/security-101/what-is-zero-trust-architecture
-https://www.nist.gov/news-events/news/2025/06/nist-offers-19-ways-build-zero-trust-architectures
-https://zeronetworks.com/resource-center/topics/zero-trust-security-a-complete-guide-to-principles-architecture-and-best-practices
-https://www.paloaltonetworks.com/cyberpedia/what-is-a-zero-trust-architecture
-https://seceon.com/zero-trust-architecture/
-https://en.wikipedia.org/wiki/Zero_trust_architecture
-https://medium.com/@tahirbalarabe2/what-is-zero-trust-architecture-zta-nist-800-207-zero-trust-architecture-2816a9430ea6

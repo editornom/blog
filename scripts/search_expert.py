@@ -1,3 +1,4 @@
+import models
 import os
 import requests
 import json
@@ -61,7 +62,7 @@ def deep_search_and_filter(keyword, num_results=100):
     client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
     try:
         res = client.models.generate_content(
-            model='models/gemini-3-flash-preview',
+            model=models.MAIN,
             contents=f"Translate this IT keyword to a short English search query (just the words, no symbols): {keyword}"
         )
         keyword_en = res.text.strip()
@@ -241,9 +242,9 @@ def deep_search_and_filter(keyword, num_results=100):
 """
 
     try:
-        # 모델명은 프로젝트 통합을 위해 gemini-3-flash-preview 사용
+        # 모델 ID는 models.py 에서 중앙 관리합니다
         response = client.models.generate_content(
-            model='models/gemini-3-flash-preview',
+            model=models.MAIN,
             contents=prompt
         )
         
@@ -344,7 +345,7 @@ def select_best_from_list(urls, keyword):
 
     try:
         response = client.models.generate_content(
-            model='models/gemini-3-flash-preview',
+            model=models.MAIN,
             contents=prompt
         )
         selection_text = response.text.strip()

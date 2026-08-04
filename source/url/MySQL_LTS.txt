@@ -1,9 +1,0 @@
-https://docs.oracle.com/en-us/iaas/mysql-database/doc/mysql-server-versions.html
-https://endoflife.date/mysql
-https://sinovi.uk/articles/amazon-rds-mysql-8-0-deprecation-extended-support
-https://repost.aws/questions/QUe4MHd242RVatKjWdgOthMw/mysql-8-end-of-support
-https://www.amazonaws.cn/en/new/2025/announcing-amazon-aurora-mysql-3-10-as-long-term-support-release/
-https://rheodata.com/en-us/blog/mysql-8-0-and-beyond-lifecycle-support
-https://effortguy.tistory.com/516
-https://j-yeon.tistory.com/entry/Mysql-Windows-11-%EB%A1%9C%EC%BB%AC-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95-MySQL-84-LTS-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%84%A4%EC%A0%95
-https://www.infoq.com/news/2026/05/mysql-97-lts/

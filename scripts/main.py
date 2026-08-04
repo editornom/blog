@@ -2,10 +2,13 @@ import os
 import sys
 import uuid
 import re
+import json
 import time
 import datetime
 from dotenv import load_dotenv
 from urllib.parse import urlparse
+from typing import List
+from pydantic import BaseModel, Field
 import yaml
 
 from crawler import fetch_content, extract_related_links
@@ -20,8 +23,18 @@ from trend_catcher import save_keyword_to_history
 from search_expert import deep_search_and_filter
 from faq_expert import generate_faq
 from api_utils import gemini_tracker
-from glossary_expert import pick_daily_glossary_keyword
 from google import genai
+import models
+import verifier
+import diagram
+
+
+def slugify_fallback(title):
+    """메타데이터 생성이 실패했을 때 쓰는 최소한의 슬러그. 한글은 버리고 영문/숫자만 남깁니다."""
+    ascii_only = re.sub(r'[^a-zA-Z0-9\s\-]', ' ', title)
+    words = [w for w in ascii_only.lower().split() if w]
+    return "-".join(words[:6])
+
 
 def inject_internal_links(draft, folder):
     import glob
@@ -59,31 +72,72 @@ def inject_internal_links(draft, folder):
         
     return draft
 
-def assemble_post_metadata(reviewed_data, folder="posts", keyword="", urls=None):
+class PostMeta(BaseModel):
+    slug: str = Field(description="영문 소문자와 하이픈만 사용한 짧은 URL 슬러그")
+    description: str = Field(description="검색 결과에 노출될 1~2문장 요약. 따옴표·줄바꿈 금지")
+    tags: List[str] = Field(description="이 글의 주제를 나타내는 소문자 영문 태그 2~4개 (예: zero-trust, sase)")
+
+
+def assemble_post_metadata(reviewed_data, folder="posts", keyword="", urls=None, draft=False):
     """
     Creates final Frontmatter and combines it with refined content.
-    Generates SEO-friendly slug and description based on REFINED content.
+
+    [수리] 슬러그·설명·태그를 개별 호출 3회에서 구조화 출력 1회로 통합했습니다.
+    [수리] tags 를 실제로 생성합니다. 기존에는 이 필드를 아예 넣지 않아
+           content.config.ts 의 기본값 ["others"] 로 떨어졌고, 그 결과
+           914편 전부가 같은 태그를 달고 있었습니다.
     """
     api_key = os.getenv("GEMINI_API_KEY")
     client = genai.Client(api_key=api_key)
-    
+
     title = reviewed_data['title']
     content = reviewed_data['content']
-    
-    # 1. Generate SEO-optimized Slug from REFINED Title
-    print(f"  [Assembler] Generating optimized slug...")
-    slug_prompt = f"Create a short, SEO-friendly English URL slug from this blog title: '{title}'. Output ONLY the slug (lowercase-and-hyphens-only)."
-    slug_resp = client.models.generate_content(model='models/gemini-3-flash-preview', contents=slug_prompt)
-    slug = slug_resp.text.strip().lower().replace(' ', '-').replace('"', '').replace("'", "")
-    # Remove any non-alphanumeric/hyphen chars just in case
-    slug = re.sub(r'[^a-z0-9\-]', '', slug)
-    
-    # 2. Generate Description from REFINED Content
-    print(f"  [Assembler] Generating meta description...")
-    desc_prompt = f"Summarize this blog post into 1-2 professional sentences for a meta description (SEO). Output ONLY the raw description text without any introductory remarks, labels, or multiple options: \n\n{content[:1000]}"
-    desc_resp = client.models.generate_content(model='models/gemini-3-flash-preview', contents=desc_prompt)
-    description = desc_resp.text.strip().replace('"', "'")
-    
+
+    print(f"  [Assembler] 슬러그 / 메타 설명 / 태그 생성 중...")
+    meta_prompt = f"""
+아래 기술 문서의 메타데이터를 만들어라.
+
+[제목]
+{title}
+
+[본문 앞부분]
+{content[:1500]}
+
+[규칙]
+- slug: 영문 소문자와 하이픈만. 5단어 이내. 한글 음차 금지.
+- description: 이 글이 어떤 질문에 답하는지 알 수 있게 1~2문장. 과장 표현 금지. 따옴표와 줄바꿈 금지.
+- tags: 본문에서 실제로 다룬 기술 주제만. 소문자 영문 하이픈 표기. 2~4개.
+  ("others", "it", "tech" 처럼 아무 정보도 주지 않는 태그 금지)
+"""
+
+    slug = ""
+    description = ""
+    tags = []
+    try:
+        meta_resp = client.models.generate_content(
+            model=models.FAST,
+            contents=meta_prompt,
+            config={'response_mime_type': 'application/json', 'response_schema': PostMeta}
+        )
+        gemini_tracker.add_text_usage(meta_resp)
+        meta = json.loads(meta_resp.text)
+        slug = re.sub(r'[^a-z0-9\-]', '', meta.get("slug", "").strip().lower().replace(' ', '-'))
+        description = meta.get("description", "").strip().replace('"', "'").replace("\n", " ")
+        tags = [
+            re.sub(r'[^a-z0-9\-]', '', t.strip().lower().replace(' ', '-'))
+            for t in (meta.get("tags") or [])
+        ]
+        tags = [t for t in tags if t and t not in ("others", "it", "tech")][:4]
+    except Exception as e:
+        print(f"  ⚠️ 메타데이터 생성 실패: {e}")
+
+    if not slug:
+        slug = re.sub(r'[^a-z0-9\-]', '', slugify_fallback(title)) or "post"
+    if not description:
+        description = title
+    if not tags:
+        tags = ["uncategorized"]
+
     # 3. Time calculation
     seoul_tz = datetime.timezone(datetime.timedelta(hours=9))
     seoul_now = datetime.datetime.now(seoul_tz)
@@ -99,7 +153,8 @@ def assemble_post_metadata(reviewed_data, folder="posts", keyword="", urls=None)
         "pubDatetime": pub_time, # Pass datetime object directly
         "slug": slug,
         "featured": False,
-        "draft": False,
+        "draft": draft,
+        "tags": tags,
         "ogImage": "../../../../assets/images/placeholder.png",
         "description": description,
         "references": urls[:3] if urls else []
@@ -199,12 +254,28 @@ def print_final_briefing(report):
                 lines.append(f"- ✨ 원고 검수: ✅ 완료 (디톡스 필터 적용)")
             else:
                 lines.append(f"- ✨ 원고 검수: ⚠️ 건너뜀 또는 실패 ({report['detox']['error']})")
+
+            verdict = report["detox"].get("fact_verdict")
+            if verdict == "pass":
+                lines.append("- 🔬 사실 검증: ✅ 통과 (모든 수치가 소스에서 확인됨)")
+            elif verdict == "revised":
+                lines.append("- 🔬 사실 검증: 🔧 교정 후 통과")
+            elif verdict == "hold":
+                lines.append("- 🔬 사실 검증: 🛑 보류 (draft:true 로 저장, 수동 확인 필요)")
         else:
-            lines.append("- 📑 원고 초안: ❌ 실패")
+            err = report["draft"].get("error") or ""
+            if err.startswith("[중단]"):
+                lines.append(f"- 📑 원고 초안: 🛑 발행 중단 — {err[4:].strip()}")
+                lines.append("  (소스로 답할 수 없는 주제였습니다. 나쁜 글을 쓰지 않은 것은 정상 동작입니다)")
+            else:
+                lines.append("- 📑 원고 초안: ❌ 실패")
     else:
         lines.append("- 📑 원고 초안/검수: ⚪ 건너뜀 (기존 파일 사용)")
 
     # 3. Images
+    if report["images"].get("diagrams"):
+        lines.append(f"- 📐 도해 렌더링: ✅ {report['images']['diagrams']}건 (API 비용 0)")
+
     if report["images"]["requested"] > 0:
         status = "✅ 완수" if report["images"]["success"] == report["images"]["requested"] else "⚠️ 부분 성공"
         lines.append(f"- 🖼️ 이미지 생성: {status} ({report['images']['success']} / {report['images']['requested']} 완료)")
@@ -432,115 +503,87 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None, sch
     combined_body = "\n\n---\n\n".join([c['body'] for c in all_content])
     print(f"\n=== Combined {len(all_content)} pages into {len(combined_body)} chars ===")
     
-    print("\n=== Generating Dynamic Editor Stance ===")
-    dynamic_stance = ""
-    try:
-        from google import genai
-        api_key = os.getenv("GEMINI_API_KEY")
-        if api_key:
-            client = genai.Client(api_key=api_key)
-            stance_prompt = f"다음은 작성할 IT 칼럼의 소스 데이터입니다. 이 기술/이슈의 가장 큰 맹점, 한계점, 또는 실무 적용 시의 리스크를 찾아 1~2문장의 '날카로운 비판적 스탠스'로 요약해주세요.\n\n[소스 데이터]\n{combined_body[:10000]}"
-            stance_resp = client.models.generate_content(model='models/gemini-3-flash-preview', contents=stance_prompt)
-            dynamic_stance = stance_resp.text.strip()
-            print(f"  💡 Dynamic Stance: {dynamic_stance}")
-    except Exception as e:
-        print(f"  ⚠️ Error generating dynamic stance: {e}")
+    # [수리] '날카로운 비판적 스탠스' 생성 단계를 제거했습니다.
+    # 이 단계가 모든 글을 비평 칼럼으로 만들었고, 그 결과 발행된 글들이
+    # 전부 "혁신인가 함정인가 / ~의 역설" 형태로 수렴했습니다.
+    # 정보성 문서에는 논조가 필요 없습니다.
 
-    print(f"\nGenerating draft parts with Gemini ({folder} mode)...")
+    print(f"\nGenerating draft with Gemini ({folder} mode)...")
     crawled_summary = {
         "title": all_content[0].get('title', 'Untitled Issue'),
         "url": urls[0],
         "body": combined_body[:30000] # Limit to avoid token issues
     }
-    
-    draft_data, density_warning = generate_blog_post(crawled_summary, folder=folder, keyword=keyword, stance=dynamic_stance, schedule_type=schedule_type)
+
+    draft_data, gen_info = generate_blog_post(crawled_summary, folder=folder, keyword=keyword, schedule_type=schedule_type)
+
+    # [수리] 중단 경로. 소스로 답할 수 없으면 발행하지 않습니다.
+    # 기존 파이프라인에는 "쓸 수 없음"이라는 결과가 없어서 소스가 부실해도 한 편을 뱉었습니다.
     if not draft_data:
-        print("Error: Failed to generate initial blog post parts.")
-        report["draft"]["error"] = "Failed to generate initial blog post parts."
+        reason = gen_info.get("reason", "알 수 없는 사유")
+        print(f"\n🛑 발행 중단: {reason}")
+        report["draft"]["error"] = f"[중단] {reason}"
+        report["system"]["skipped_reason"] = reason
         print_final_briefing(report)
         return
-    
-    if density_warning:
-        report["draft"]["warning"] = density_warning
-    
+
+    source_text = gen_info.get("source_text", combined_body)
+    if gen_info.get("conflicts"):
+        report["draft"]["warning"] = f"소스 간 상충 {len(gen_info['conflicts'])}건 (본문에 명시됨)"
+
     # 3.5 Stage 3.5: Manuscript Inspection (Detox)
-    # [Optimized] Multi-agent generator's 'General Editor' phase already performs detox/polishing.
-    # We only run the additional reviewer script for other folders or as a fallback.
-    if folder != "posts":
-        print(f"\n=== Stage 3.5: Manuscript Inspection (Detox) ===")
-        max_retries = 3
-        reviewed_data = None
-        for attempt in range(max_retries):
-            print(f"  [Attempt {attempt+1}/{max_retries}] Starting detox...")
-            reviewed_data = review_manuscript(draft_data, folder=folder)
-            if reviewed_data and reviewed_data != draft_data:
-                report["detox"]["success"] = True
-                print(f"  ✅ Detox successful.")
-                break
-            else:
-                print(f"  ⚠️ Detox attempt {attempt+1} failed or returned no changes.")
-                if attempt < max_retries - 1:
-                    time.sleep(5) # Wait before retry
-        
-        if not report["detox"]["success"]:
-            report["detox"]["error"] = "Detox failed after all retries, keeping original parts"
-            print(f"  ❌ All detox attempts failed. Using original parts.")
-            reviewed_data = draft_data
-    else:
-        print(f"\n=== Stage 3.5: Skipping Redundant Detox (Handled by General Editor) ===")
+    # [수리] 기존에는 `if folder != "posts"` 조건 때문에 블로그 포스트가 이 단계를
+    #       한 번도 통과하지 않았습니다. 그런데도 report["detox"]["success"] = True 를
+    #       박아넣어 매 실행 "원고 검수 완료"라고 보고했습니다.
+    #       이 저장소에서 가장 잘 작성된 품질 필터가 5개월간 꺼져 있던 원인입니다.
+    print(f"\n=== Stage 3.5: Manuscript Inspection (Detox) ===")
+    max_retries = 3
+    reviewed_data = None
+    for attempt in range(max_retries):
+        print(f"  [Attempt {attempt+1}/{max_retries}] Starting detox...")
+        reviewed_data = review_manuscript(draft_data, folder=folder)
+        if reviewed_data and reviewed_data != draft_data:
+            report["detox"]["success"] = True
+            print(f"  ✅ Detox successful.")
+            break
+        else:
+            print(f"  ⚠️ Detox attempt {attempt+1} failed or returned no changes.")
+            if attempt < max_retries - 1:
+                time.sleep(5) # Wait before retry
+
+    if not report["detox"]["success"]:
+        report["detox"]["error"] = "Detox failed after all retries, keeping original parts"
+        print(f"  ❌ All detox attempts failed. Using original parts.")
         reviewed_data = draft_data
-        report["detox"]["success"] = True
+
+    # 3.6 Stage 3.6: Fact Gate
+    # [신설] 원고의 수치 주장을 소스 원문과 대조합니다.
+    #        미검증 수치는 교정하고, 교정 후에도 남으면 draft:true 로 보류합니다.
+    verified_content, verdict, fact_report = verifier.verify(reviewed_data['content'], source_text)
+    reviewed_data['content'] = verified_content
+    hold_for_review = (verdict == "hold")
+
+    report["detox"]["fact_verdict"] = verdict
+    if verdict == "revised":
+        report["draft"]["warning"] = f"미검증 수치 {len(fact_report['before'])}건 교정됨"
+    elif verdict == "hold":
+        report["draft"]["warning"] = (
+            f"⚠️ 미검증 수치 {len(fact_report['after'])}건이 남아 draft:true 로 보류합니다. "
+            f"수동 확인 후 draft 를 false 로 바꾸세요."
+        )
 
     # NEW STEP: Stage 3.7: Metadata Assembly & Slug Generation
     print(f"\n=== Stage 3.7: Metadata Assembly & Slug Generation ===")
-    draft, prefix, slug = assemble_post_metadata(reviewed_data, folder=folder, keyword=keyword, urls=urls)
+    draft, prefix, slug = assemble_post_metadata(
+        reviewed_data, folder=folder, keyword=keyword, urls=urls, draft=hold_for_review
+    )
     print(f"  ✅ Metadata assembled. Final Slug: {slug}")
 
-    # NEW STEP: Stage 3.7.5: Auto Glossary Extraction
-    if folder != "glossary":
-        print(f"\n=== Stage 3.7.5: Auto Glossary Extraction ===")
-        try:
-            from glossary_expert import extract_and_generate_glossaries
-            glossary_terms = extract_and_generate_glossaries(draft, max_terms=1)
-            for term_info in glossary_terms:
-                term = term_info['term']
-                definition = term_info['definition']
-                g_slug = term_info['slug']
-                
-                print(f"  [Glossary] Generating new glossary post for: {term}")
-                g_summary = {
-                    "title": term,
-                    "url": "Auto-extracted from context",
-                    "body": f"Please explain what '{term}' is based on this context: {draft[:3000]}"
-                }
-                g_final_slug_for_link = g_slug
-                g_draft_data, _ = generate_blog_post(g_summary, folder="glossary", keyword=term, schedule_type=schedule_type)
-                if g_draft_data:
-                    g_draft, g_prefix, g_final_slug = assemble_post_metadata(g_draft_data, folder="glossary", keyword=term)
-                    g_final_slug_for_link = g_final_slug
-                    g_target_dir = os.path.join("src", "data", "blog", "ko", "glossary")
-                    os.makedirs(g_target_dir, exist_ok=True)
-                    g_post_path = os.path.join(g_target_dir, f"{g_prefix}{g_final_slug}.md")
-                    with open(g_post_path, "w", encoding="utf-8") as f:
-                        f.write(g_draft)
-                    print(f"  ✅ Saved glossary: {g_post_path}")
-                    
-                    # 다국어 번역 (Glossary)
-                    print(f"  🌐 Translating Glossary: {term}")
-                    translate_and_save(g_draft, g_final_slug, "glossary")
-                
-                # 본문에 툴팁 링크 주입 (Frontmatter 보호)
-                parts = draft.split("---", 2)
-                if len(parts) >= 3:
-                    body = parts[2]
-                    # 따옴표 이스케이프 처리
-                    safe_definition = definition.replace('"', '&quot;')
-                    replacement = f'<a href="/ko/glossary/{g_final_slug_for_link}" class="glossary-tooltip" data-definition="{safe_definition}">{term}</a>'
-                    body = body.replace(term, replacement, 1)
-                    draft = f"---{parts[1]}---{body}"
-                    print(f"  ✅ Injected tooltip for '{term}' into main post.")
-        except Exception as e:
-            print(f"  ❌ Error in Auto Glossary Extraction: {e}")
+    # [폐지] Stage 3.7.5 Auto Glossary Extraction
+    # 포스트 한 편마다 용어사전 한 편을 자동 생성하고 4개 언어로 번역했습니다.
+    # 그 결과 포스트 118편에 용어사전 109편이 쌓여 콘텐츠의 절반이 자동 생성
+    # 사전 항목이 됐고, 본문에는 실제로 존재하지 않는 용어사전을 가리키는
+    # 툴팁 링크가 43개 박혔습니다. 용어사전 게시판과 함께 전면 폐지합니다.
 
     # 3.7.8 Inject Internal Links (SEO)
     print(f"\n=== Stage 3.7.8: Internal Linking ===")
@@ -564,9 +607,23 @@ def process_urls(keyword=None, folder="posts", include_faq=False, urls=None, sch
         else:
             print(f"Warning: FAQ file not found or empty for keyword '{keyword}'")
 
+    # 3.9 Stage 3.9: 도해 렌더링 (결정론적, API 호출 없음)
+    # [신설] 구조가 있는 내용은 생성 이미지가 아니라 HTML/CSS 도해로 표현합니다.
+    #        생성 모델은 도해 안의 글자를 정확히 그리지 못하고, 장당 과금되며,
+    #        번역판에서 이미지 속 영어 텍스트가 그대로 남습니다.
+    print(f"\n=== Stage 3.9: 도해 렌더링 ===")
+    draft, dgm_count, dgm_dropped = diagram.replace_placeholders(draft)
+    if dgm_count:
+        print(f"  ✅ 도해 {dgm_count}건 렌더링 (비용 0)")
+    else:
+        print("  · 도해 없음")
+    for spec in dgm_dropped:
+        print(f"  ⚠️ 해석할 수 없는 도해 표기를 제거했습니다: {spec[:80]}")
+    report["images"]["diagrams"] = dgm_count
+
     # 4. Process Images
-    # [이미지: ...], ![이미지](...) 등 다양한 형태를 괄호가 포함된 프롬프트도 안전하게 추출하도록 정규식 개선
-    # 공백, 이스케이프된 괄호(\[ \]) 등도 처리 가능하도록 확장
+    # 신 파이프라인은 [이미지:] 를 생성하지 않습니다. 이 경로는 기존 파일 재작업
+    # (process_single_file) 및 레거시 원고 호환용으로만 남겨 둡니다.
     image_pattern = re.compile(r'(?:\*\*|\_)?!*\\?\[\s*이미지\s*:\s*([^\]\\]+)\\?\](?:\*\*|\_)?|(?:\*\*|\_)?!*\[이미지\]\(([^)]+)\)(?:\*\*|\_)?')
     image_matches = list(image_pattern.finditer(draft))
     
@@ -655,7 +712,6 @@ if __name__ == "__main__":
     parser.add_argument("--keyword", help="Target keyword")
     parser.add_argument("--folder", help="Target folder")
     parser.add_argument("--lang", help="Target language")
-    parser.add_argument("--auto-glossary", action="store_true", help="Automated glossary generation mode")
     parser.add_argument("--schedule", help="Override schedule type (e.g. 09_tech_news, 12_tech_feature)")
 
     args = parser.parse_args()
@@ -665,18 +721,6 @@ if __name__ == "__main__":
     folder = args.folder if args.folder else (args.p_folder if args.p_folder else "posts")
     target_lang = args.lang if args.lang else args.p_target_lang
     
-    # 🚀 [New] 자동 용어 사전 모드 지원
-    if args.auto_glossary:
-        print("\n📚 [AUTO GLOSSARY MODE] Selecting a new technical term...")
-        auto_term = pick_daily_glossary_keyword()
-        if auto_term:
-            input_arg = auto_term
-            folder = "glossary"
-            print(f"✨ Selected Keyword: {input_arg}")
-        else:
-            print("❌ Failed to select a glossary term. Aborting.")
-            sys.exit(1)
-
     # 🚀 무인 자동화 모드: 질문 없이 FAQ 생성 및 삽입을 기본값으로 설정
     include_faq = True
     print("\n✅ FAQ 자동 생성 모드가 활성화되었습니다.")

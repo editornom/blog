@@ -1,2 +1,0 @@
-https://bitfieldconsulting.com/posts/why-rust
-https://blog.rust-lang.org/

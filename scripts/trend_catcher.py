@@ -1,3 +1,4 @@
+import models
 import os
 import re
 import datetime
@@ -123,7 +124,7 @@ def get_topic_for_schedule(schedule_type, filename=None):
 
     try:
         response = client.models.generate_content(
-            model='models/gemini-3-flash-preview', 
+            model=models.MAIN, 
             contents=prompt
         )
         
