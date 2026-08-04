@@ -40,6 +40,20 @@ JARGON = {
     "프론트엔드", "백엔드", "서버리스", "미들웨어", "라우팅",
     "터미널", "셸", "커맨드", "플래그", "옵션", "인자", "파라미터",
     "레포", "푸시", "풀", "스테이징", "체크아웃",
+    "리팩토링", "리팩터링", "프로토타입", "아키텍처", "스택", "번들", "린트",
+}
+
+# 제품·프레임워크 이름. 비개발자에게는 이것도 모르는 단어입니다.
+# 첫 생성물에서 "Next.js 15와 Tailwind CSS를 사용해서 헤드리스 아키텍처의 블로그"라는
+# 문장이 아무 설명 없이 통과했습니다. 약어도 한글 사이 영문도 아니라 잡히지 않았습니다.
+TOOL_NAMES = {
+    "Next.js", "React", "Vue", "Svelte", "Angular", "Astro", "Node.js", "Deno", "Bun",
+    "Tailwind", "Tailwind CSS", "Bootstrap", "TypeScript", "JavaScript", "Python",
+    "Django", "Flask", "FastAPI", "Express", "Rails", "Laravel", "Spring",
+    "Docker", "Kubernetes", "Nginx", "Redis", "PostgreSQL", "MySQL", "MongoDB",
+    "Supabase", "Firebase", "Vercel", "Netlify", "Cloudflare", "AWS", "GCP", "Azure",
+    "Git", "GitHub", "GitLab", "npm", "pnpm", "yarn", "pip", "Homebrew",
+    "VS Code", "Cursor", "Claude Code", "Copilot", "Figma", "Postman",
 }
 
 # 영문 약어 (2~6자 대문자). 코드 밖에서 쓰이면 설명이 필요합니다.
@@ -50,8 +64,11 @@ _EMBEDDED_EN = re.compile(r'[가-힣]\s*([A-Za-z][A-Za-z0-9.+-]{2,})\s*[가-힣]
 
 # 설명이 붙었다고 인정하는 형태
 _DEFINED_PATTERNS = [
-    r'{t}\s*\(([^)]{{4,}})\)',              # 용어(풀이)
-    r'\(\s*{t}\s*\)',                        # 풀이(용어)
+    # 용어(풀이). 용어와 괄호 사이에 수식어가 낄 수 있습니다.
+    #   "예외 상황(프로그램 실행 중 예상치 못한 문제)" 처럼요.
+    # 풀이가 짧아도 인정합니다. "프로토타입(시제품)" 은 충분한 설명입니다.
+    r'{t}[가-힣\s]{{0,8}}\(([^)]{{2,}})\)',
+    r'\(\s*{t}\s*[;,·]?\s*[^)]*\)',          # 풀이(용어) 또는 용어(원어; 풀이)
     r'{t}\s*(?:란|이란|는|은)\s+[^.\n]{{8,}}(?:입니다|말합니다|뜻입니다|의미합니다)',
     r'\*\*{t}\*\*\s*[:：-]',                 # **용어**: 설명
     r'{t}\s*[:：]\s*\S',                     # 용어: 설명
@@ -113,6 +130,12 @@ def find_candidates(text):
             if _is_standalone(text, term, m.start()):
                 found[term] = m.start()
                 break
+
+    # 제품·프레임워크 이름은 긴 것부터 확인합니다 (Tailwind CSS 가 Tailwind 보다 우선)
+    for term in sorted(TOOL_NAMES, key=len, reverse=True):
+        pos = text.find(term)
+        if pos != -1 and not any(term in t and term != t for t in found):
+            found.setdefault(term, pos)
 
     for m in _ACRONYM.finditer(text):
         term = m.group(1)

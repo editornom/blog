@@ -198,6 +198,25 @@ def next_lesson(cur=None, published=None, force_id=None):
     return lesson, context
 
 
+def upcoming_lessons(after_id, limit=2, cur=None, published=None):
+    """
+    이 레슨을 발행했다고 가정했을 때 다음에 올 레슨들.
+    글 하단의 '다음에 다룰 내용' 예고에 씁니다.
+    """
+    cur = cur or load_curriculum()
+    published = published_lessons() if published is None else published
+    virtual = [{"id": after_id, "title": "", "slug": "", "goal": "", "mtime": 9e9}] + list(published)
+
+    out = []
+    for _ in range(limit):
+        lesson, ctx = next_lesson(cur, published=virtual)
+        if lesson is None:
+            break
+        out.append({"id": lesson["id"], "goal": lesson["goal"], "track": lesson["track"]})
+        virtual = [{"id": lesson["id"], "title": "", "slug": "", "goal": "", "mtime": 9e9}] + virtual
+    return out
+
+
 def print_status(cur=None, published=None):
     cur = cur or load_curriculum()
     published = published_lessons() if published is None else published

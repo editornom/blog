@@ -6,10 +6,12 @@ import IconArchive from "@/assets/icons/IconArchive.svg";
 import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
 import IconMenuDeep from "@/assets/icons/IconMenuDeep.svg";
 import LinkButton from "./LinkButton.astro";
-import { SITE, LOGO_IMAGE } from "@/config";
+import { SITE, LOGO_IMAGE, siteMeta } from "@/config";
 
 const { pathname } = Astro.url;
 const supportedLangs = ["en", "ko", "cn", "jp"];
+const _segs = pathname.split("/").filter(Boolean);
+const brandMeta = siteMeta(supportedLangs.includes(_segs[0]) ? _segs[0] : "ko");
 const firstSegment = pathname.split("/").filter(Boolean)[0];
 const lang = supportedLangs.includes(firstSegment) ? firstSegment : (SITE.lang || "ko");
 const base = `/${lang}`;
@@ -51,12 +53,12 @@ const isActive = (path: string) => {
           LOGO_IMAGE.enable ? (
             <img
               src="/logo.png"
-              alt={SITE.title}
+              alt={brandMeta.title}
               width={LOGO_IMAGE.width}
               height={LOGO_IMAGE.height}
             />
           ) : (
-            SITE.title
+            brandMeta.brand
           )
         }
       </a>
